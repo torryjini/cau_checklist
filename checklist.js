@@ -10,11 +10,7 @@ function Liberal_Sum() {
   var common_eng_point = Math.floor(Number(document.getElementById("common_eng").value));
   var common_etc_point = Number(document.getElementById("common_etc").value);
   var core_total_point = Number(document.getElementById("core_total").value);
-  if (elective_point + common_kor_point + common_eng_point + common_etc_point + core_total_point > 45) {
-    document.getElementById("liberal_total").value = 45;
-  } else {
     document.getElementById("liberal_total").value = elective_point + common_kor_point + common_eng_point + common_etc_point + core_total_point;
-  }
 }
 
 function Liberal_cal() {
