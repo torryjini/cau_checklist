@@ -10,7 +10,7 @@ function Liberal_Sum() {
   var common_eng_point = Math.floor(Number(document.getElementById("common_eng").value));
   var common_etc_point = Number(document.getElementById("common_etc").value);
   var core_total_point = Number(document.getElementById("core_total").value);
-    document.getElementById("liberal_total").value = elective_point + common_kor_point + common_eng_point + common_etc_point + core_total_point;
+  document.getElementById("liberal_total").value = elective_point + common_kor_point + common_eng_point + common_etc_point + core_total_point;
 }
 
 function Liberal_cal() {
@@ -42,7 +42,7 @@ function Liberal_cal() {
 
   if (common_eng_point < 2 && common_eng_ex) {
     word += " - 영어 : 면제\n"
-  } else if(common_eng_point < 2 && !common_eng_ex) {
+  } else if (common_eng_point < 2 && !common_eng_ex) {
     word += " - 영어 : " + [2 - common_eng_point] + " 학점 미달\n";
   } else {
     word += " - 영어 : 기준 통과\n";
@@ -87,7 +87,7 @@ function Liberal_cal() {
   if (liberal_total_point <= 45) {
     word += "\n교양영역 계 : " + liberal_total_point + " 학점"
   } else {
-    word += "\n교양영역 계 : " + liberal_total_point + " 학점_ " + [liberal_total_point - 45] + "학점 초과"
+    word += "\n교양영역 계 : " + liberal_total_point + " 학점_ " + [liberal_total_point - 45] + "학점 초과\n 45 학점만 인정"
   }
 
   alert(word)
@@ -97,32 +97,32 @@ function Liberal_cal() {
 function BaseNeceStandard() {
   var Major_base = {
     "psyche": "10",
-    "politics":"12",
-    "lis":"12",
-    "socialwelfare":"12",
-    "cmc":"15",
-    "planning":"12",
-    "sociology":"12",
-    "public-admin":"18",
-    "public-policy":"17"
+    "politics": "12",
+    "lis": "12",
+    "socialwelfare": "12",
+    "cmc": "15",
+    "planning": "12",
+    "sociology": "12",
+    "public-admin": "18",
+    "public-policy": "17"
   };
 
   var Major_nece = {
-    "psyche":"9",
-    "politics":"9",
-    "lis":"18",
-    "socialwelfare":"18",
-    "cmc":"9",
-    "planning":"18",
-    "sociology":"9",
-    "public-admin":"26",
-    "public-policy":"24"
+    "psyche": "9",
+    "politics": "9",
+    "lis": "18",
+    "socialwelfare": "18",
+    "cmc": "9",
+    "planning": "18",
+    "sociology": "9",
+    "public-admin": "26",
+    "public-policy": "24"
   };
   var Major = document.getElementById("Major_select").value;
-  if(Major=="none"){
+  if (Major == "none") {
     document.getElementById("base_standard").value = "-";
     document.getElementById("nece_standard").value = "-";
-  }else {
+  } else {
     document.getElementById("base_standard").value = Major_base[Major];
     document.getElementById("nece_standard").value = Major_nece[Major];
   }
@@ -293,7 +293,7 @@ function Major_result() {
   if (MajorSelect == "none") {
     alert("전공 학과를 선택하세요!");
     return false;
-  } else if(Majorstandard < 45){
+  } else if (Majorstandard < 45) {
     alert("다전공 여부를 선택하세요!");
     return false;
   } else {
@@ -431,7 +431,11 @@ function total_point_sum() {
   var Minorpoint = Number(document.getElementById("minor_point").value);
   var Freepoint = Number(document.getElementById("free_point").value);
   var Teachpoint = Number(document.getElementById("teaching_point").value);
-  document.getElementById("the_total").value = LiberalTotal + Basepoint + Majorpoint + Doublepoint + Linkpoint + Fusionpoint + Planpoint + Minorpoint + Freepoint + Teachpoint;
+  if (LiberalTotal > 45) {
+    document.getElementById("the_total").value = 45 + Basepoint + Majorpoint + Doublepoint + Linkpoint + Fusionpoint + Planpoint + Minorpoint + Freepoint + Teachpoint;
+  } else {
+    document.getElementById("the_total").value = LiberalTotal + Basepoint + Majorpoint + Doublepoint + Linkpoint + Fusionpoint + Planpoint + Minorpoint + Freepoint + Teachpoint;
+  }
 }
 
 function Etc_result() {
