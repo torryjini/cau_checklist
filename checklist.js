@@ -4,21 +4,21 @@ function maxLengthCheck(object) {
   }
 }
 
-function Liveral_Sum() {
-  var elective_point = Number(document.getElementById("elective_liveral").value);
+function Liberal_Sum() {
+  var elective_point = Number(document.getElementById("elective_liberal").value);
   var common_kor_point = Number(document.getElementById("common_kor").value);
   var common_eng_point = Math.floor(Number(document.getElementById("common_eng").value));
   var common_etc_point = Number(document.getElementById("common_etc").value);
   var core_total_point = Number(document.getElementById("core_total").value);
   if (elective_point + common_kor_point + common_eng_point + common_etc_point + core_total_point > 45) {
-    document.getElementById("liveral_total").value = 45;
+    document.getElementById("liberal_total").value = 45;
   } else {
-    document.getElementById("liveral_total").value = elective_point + common_kor_point + common_eng_point + common_etc_point + core_total_point;
+    document.getElementById("liberal_total").value = elective_point + common_kor_point + common_eng_point + common_etc_point + core_total_point;
   }
 }
 
-function Liveral_cal() {
-  var elective_point = Number(document.getElementById("elective_liveral").value);
+function Liberal_cal() {
+  var elective_point = Number(document.getElementById("elective_liberal").value);
   var common_kor_point = Number(document.getElementById("common_kor").value);
   var common_eng_point = Number(document.getElementById("common_eng").value);
   var common_eng_ex = document.getElementById("eng_ex").checked;
@@ -30,7 +30,7 @@ function Liveral_cal() {
   var Core4 = document.getElementById("core4").checked;
   var Core5 = document.getElementById("core5").checked;
   var core_total_point = Number(document.getElementById("core_total").value);
-  var liveral_total_point = Number(document.getElementById("liveral_total").value);
+  var liberal_total_point = Number(document.getElementById("liberal_total").value);
   var word = "선택교양 : " + elective_point + " 학점\n";
 
   if (core_total_point > 0 && !Core1 && !Core2 && !Core3 && !Core4 && !Core5) {
@@ -88,22 +88,49 @@ function Liveral_cal() {
     word += "소통"
   }
 
-  if (liveral_total_point <= 45) {
-    word += "\n교양영역 계 : " + liveral_total_point + " 학점"
+  if (liberal_total_point <= 45) {
+    word += "\n교양영역 계 : " + liberal_total_point + " 학점"
   } else {
-    word += "\n교양영역 계 : " + liveral_total_point + " 학점_ " + [liveral_total_point - 45] + "학점 초과"
+    word += "\n교양영역 계 : " + liberal_total_point + " 학점_ " + [liberal_total_point - 45] + "학점 초과"
   }
 
   alert(word)
 }
 
-var Major_base = {
-  "psyche": 10
-};
 
-var Major_nece = {
-  "psyche": 9
-};
+function BaseNeceStandard() {
+  var Major_base = {
+    "psyche": "10",
+    "politics":"12",
+    "lis":"12",
+    "socialwelfare":"12",
+    "cmc":"15",
+    "planning":"12",
+    "sociology":"12",
+    "public-admin":"18",
+    "public-policy":"17"
+  };
+
+  var Major_nece = {
+    "psyche":"9",
+    "politics":"9",
+    "lis":"18",
+    "socialwelfare":"18",
+    "cmc":"9",
+    "planning":"18",
+    "sociology":"9",
+    "public-admin":"26",
+    "public-policy":"24"
+  };
+  var Major = document.getElementById("Major_select").value;
+  if(Major=="none"){
+    document.getElementById("base_standard").value = "-";
+    document.getElementById("nece_standard").value = "-";
+  }else {
+    document.getElementById("base_standard").value = Major_base[Major];
+    document.getElementById("nece_standard").value = Major_nece[Major];
+  }
+}
 
 function checkcont1(none, point) {
   var none_checked = document.getElementById(none).checked;
@@ -246,7 +273,7 @@ function major_standard_maker() {
     document.getElementById("plan_major_none").checked = false;
     document.getElementById("plan_major_point").readOnly = false;
     document.getElementById("cross_point3").readOnly = false;
-  } else if (Multimajortext.includes("다전공")) {
+  } else if (Multimajortext.includes("선 택")) {
     document.getElementById("double_major_none").checked = false;
     document.getElementById("double_major_point").readOnly = false;
 
@@ -266,8 +293,12 @@ function major_standard_maker() {
 
 function Major_result() {
   var Majorstandard = document.getElementById("MultiMajor_selector").value;
-  if (Majorstandard < 45) {
-    alert("다전공 여부를 선택하세요.");
+  var MajorSelect = document.getElementById("Major_select").value;
+  if (MajorSelect == "none") {
+    alert("전공 학과를 선택하세요!");
+    return false;
+  } else if(Majorstandard < 45){
+    alert("다전공 여부를 선택하세요!");
     return false;
   } else {
     BaseNeceresult(Majorstandard);
@@ -275,13 +306,17 @@ function Major_result() {
 }
 
 function BaseNeceresult(Majorstandard) {
+  var Major = document.getElementById("Major_select");
+  var Majortext = Major.options[Major.selectedIndex].text;
   var Multimajor = document.getElementById("MultiMajor_selector");
   var Multimajortext = Multimajor.options[Multimajor.selectedIndex].text;
+  var BaseStandard = document.getElementById("base_standard").value;
+  var NeceStandard = document.getElementById("nece_standard").value;
   var Basepoint = Number(document.getElementById("base_selector").value);
   var Necepoint = Number(document.getElementById("nece_selector").value);
   var Majorpoint = Number(document.getElementById("major_input").value);
   Majorstandard = Number(Majorstandard);
-  var word = "주전공 : 심리학과\n다전공 : " + Multimajortext + "\n";
+  var word = "주전공 : " + Majortext + "\n다전공 : " + Multimajortext + "\n";
 
   if (Majorpoint < Necepoint) {
     alert("전공 과목은 전공 필수를 포함합니다!");
@@ -293,14 +328,14 @@ function BaseNeceresult(Majorstandard) {
     return false;
   }
 
-  if (Basepoint < 10) {
-    word += "전공기초 : " + [10 - Basepoint] + " 학점 미달\n";
+  if (Basepoint < BaseStandard) {
+    word += "전공기초 : " + [BaseStandard - Basepoint] + " 학점 미달\n";
   } else {
     word += "전공기초 : 기준 통과\n";
   }
 
-  if (Necepoint < 9) {
-    word += "전공필수 : " + [9 - Necepoint] + " 학점 미달\n";
+  if (Necepoint < NeceStandard) {
+    word += "전공필수 : " + [NeceStandard - Necepoint] + " 학점 미달\n";
   } else {
     word += "전공필수 : 기준 통과\n";
   }
@@ -390,7 +425,7 @@ function BaseNeceresult(Majorstandard) {
 }
 
 function total_point_sum() {
-  var LiveralTotal = Number(document.getElementById("liveral_total").value);
+  var LiberalTotal = Number(document.getElementById("liberal_total").value);
   var Basepoint = Number(document.getElementById("base_selector").value);
   var Majorpoint = Number(document.getElementById("major_input").value);
   var Doublepoint = Number(document.getElementById("double_major_point").value);
@@ -400,7 +435,7 @@ function total_point_sum() {
   var Minorpoint = Number(document.getElementById("minor_point").value);
   var Freepoint = Number(document.getElementById("free_point").value);
   var Teachpoint = Number(document.getElementById("teaching_point").value);
-  document.getElementById("the_total").value = LiveralTotal + Basepoint + Majorpoint + Doublepoint + Linkpoint + Fusionpoint + Planpoint + Minorpoint + Freepoint + Teachpoint;
+  document.getElementById("the_total").value = LiberalTotal + Basepoint + Majorpoint + Doublepoint + Linkpoint + Fusionpoint + Planpoint + Minorpoint + Freepoint + Teachpoint;
 }
 
 function Etc_result() {
@@ -462,5 +497,5 @@ function removeChar(event) {
 }
 
 function Form_Reset(id) {
-  document.getElementById(id).reset()
+  document.getElementById(id).reset();
 }
