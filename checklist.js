@@ -308,8 +308,8 @@ function BaseNeceresult(Majorstandard) {
   var Multimajortext = Multimajor.options[Multimajor.selectedIndex].text;
   var BaseStandard = document.getElementById("base_standard").value;
   var NeceStandard = document.getElementById("nece_standard").value;
-  var Basepoint = Number(document.getElementById("base_selector").value);
-  var Necepoint = Number(document.getElementById("nece_selector").value);
+  var Basepoint = Number(document.getElementById("base_input").value);
+  var Necepoint = Number(document.getElementById("nece_input").value);
   var Majorpoint = Number(document.getElementById("major_input").value);
   Majorstandard = Number(Majorstandard);
   var word = "주전공 : " + Majortext + "\n다전공 : " + Multimajortext + "\n";
@@ -422,7 +422,7 @@ function BaseNeceresult(Majorstandard) {
 
 function total_point_sum() {
   var LiberalTotal = Number(document.getElementById("liberal_total").value);
-  var Basepoint = Number(document.getElementById("base_selector").value);
+  var Basepoint = Number(document.getElementById("base_input").value);
   var Majorpoint = Number(document.getElementById("major_input").value);
   var Doublepoint = Number(document.getElementById("double_major_point").value);
   var Linkpoint = Number(document.getElementById("link_major_point").value);
