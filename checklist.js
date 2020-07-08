@@ -152,12 +152,14 @@ function checkcont(none, point, cross) {
 }
 
 function FusionStandardCheck() {
-  var fusion_standard = document.getElementById("fusion-45-check").checked;
-  if (fusion_standard) {
+  var fusion_min = document.getElementById("fusion-options").value;
+  var crosspoint = document.getElementById("cross_point2");
+  if (fusion_min == 45) {
     document.getElementById("fusion_standard").value = 45;
-  } else {
+    crosspoint.setAttribute("max", 15);
+    } else {
     document.getElementById("fusion_standard").value = 36;
-
+    crosspoint.setAttribute("max", 6);
   }
 }
 
@@ -290,11 +292,15 @@ function major_standard_maker() {
 function Major_result() {
   var Majorstandard = document.getElementById("MultiMajor_selector").value;
   var MajorSelect = document.getElementById("Major_select").value;
+  var LinkCross = Number(document.getElementById("cross_point1").value);
   if (MajorSelect == "none") {
     alert("전공 학과를 선택하세요!");
     return false;
   } else if (Majorstandard < 45) {
     alert("다전공 여부를 선택하세요!");
+    return false;
+  } else if (LinkCross > 12) {
+    alert("연계전공의 교차인정 최대학점은 12 학점입니다!")
     return false;
   } else {
     BaseNeceresult(Majorstandard);
@@ -353,7 +359,8 @@ function BaseNeceresult(Majorstandard) {
   }
 
   var Linkcheck = document.getElementById("link_major_none").checked;
-  var Linkpoint = Number(document.getElementById("link_major_point").value) + Number(document.getElementById("cross_point1").value);
+  var LinkCross = Number(document.getElementById("cross_point1").value);
+  var Linkpoint = Number(document.getElementById("link_major_point").value) + LinkCross;
   if (!Linkcheck) {
     if (Linkpoint < 36) {
       word += "연계전공 : " + [36 - Linkpoint] + " 학점 미달\n"
@@ -364,13 +371,15 @@ function BaseNeceresult(Majorstandard) {
 
 
   var Fusioncheck = document.getElementById("fusion_major_none").checked;
+  var Fusion = document.getElementById("fusion-options");
+  var Fusiontext = Fusion.options[Fusion.selectedIndex].text;
   var Fusionpoint = Number(document.getElementById("fusion_major_point").value) + Number(document.getElementById("cross_point2").value);
   var FusionStandard = Number(document.getElementById("fusion_standard").value);
   if (!Fusioncheck) {
     if (Fusionpoint < FusionStandard) {
-      word += "융합전공 : " + [FusionStandard - Fusionpoint] + " 학점 미달\n"
+      word += "융합전공_" + Fusiontext + " : " + [FusionStandard - Fusionpoint] + " 학점 미달\n"
     } else {
-      word += "융합전공 : 최소학점 기준 통과\n"
+      word += "융합전공_" + Fusiontext + " : 최소학점 기준 통과\n"
     }
   }
 

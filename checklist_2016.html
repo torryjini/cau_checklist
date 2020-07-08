@@ -32,7 +32,7 @@
           <option value="society">사회과학대학</option>
         </select></th>
       <th>학과(부)<br>
-        <select id="Major_select" onchange="BaseNeceStandard()" required>
+        <select id="Major_select" onchange="BaseNeceStandard()" onkeyup="BaseNeceStandard()" required>
           <option value="none">선 택</option>
           <option value="politics">정치국제학과</option>
           <optgroup label="공공인재학부">
@@ -59,18 +59,7 @@
           <option value="45">설계전공</option>
         </select></th>
       <th hidden>
-        전공명<br>
-        <select class="" name="" required>
-          <option value="">선 택</option>
-          <option value="">문화컨텐츠</option>
-          <option value="">창업학</option>
-          <option value="">게임.인터렉티브미디어</option>
-          <option value="">금융공학</option>
-          <option value="">소프트웨어.인문</option>
-          <option value="">사이버보안</option>
-          <option value="">테크놀로지아트</option>
-          <option value="">소프트웨어.벤처</option>
-        </select>
+      
       </th>
     </tr>
   </table>
@@ -245,7 +234,17 @@
         <th>융합<br>전공</th>
         <td>
           <input type="text" id="fusion_standard" value="36" style="width:2.9rem;height:1.2rem;text-align:center;border:0px;" readonly><br>
-          <input type="checkbox" id="fusion-45-check" onchange="FusionStandardCheck()"> 기준변경
+          <select id="fusion-options" onchange="FusionStandardCheck()" onkeyup="onchange="FusionStandardCheck()"">
+            <option selected disabled>선 택</option>
+            <option value="36">문화컨텐츠</option>
+            <option value="36">창업학</option>
+            <option value="36">게임.인터렉티브미디어</option>
+            <option value="45">금융공학</option>
+            <option value="45">소프트웨어.인문</option>
+            <option value="45">사이버보안</option>
+            <option value="45">테크놀로지아트</option>
+            <option value="45">소프트웨어벤처</option>
+          </select>
         </td>
         <td>
           <input type="number" id="fusion_major_point" placeholder="0" name="" value="" onchange="total_point_sum()" onkeydown='return onlyNumber(event)' onkeyup='removeChar(event)' class="inputnumber" min="0" maxlength="2"
