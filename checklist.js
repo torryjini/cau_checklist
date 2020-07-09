@@ -94,40 +94,6 @@ function Liberal_cal() {
 }
 
 
-function BaseNeceStandard() {
-  var Major_base = {
-    "psyche": "10",
-    "politics": "12",
-    "lis": "12",
-    "socialwelfare": "12",
-    "cmc": "15",
-    "planning": "12",
-    "sociology": "12",
-    "public-admin": "18",
-    "public-policy": "17"
-  };
-
-  var Major_nece = {
-    "psyche": "9",
-    "politics": "9",
-    "lis": "18",
-    "socialwelfare": "18",
-    "cmc": "9",
-    "planning": "18",
-    "sociology": "9",
-    "public-admin": "26",
-    "public-policy": "24"
-  };
-  var Major = document.getElementById("Major_select").value;
-  if (Major == "none") {
-    document.getElementById("base_standard").value = "-";
-    document.getElementById("nece_standard").value = "-";
-  } else {
-    document.getElementById("base_standard").value = Major_base[Major];
-    document.getElementById("nece_standard").value = Major_nece[Major];
-  }
-}
-
 function checkcont1(none, point) {
   var none_checked = document.getElementById(none).checked;
   if (!none_checked) {
@@ -157,16 +123,16 @@ function FusionStandardCheck() {
   if (fusion_min == 45) {
     document.getElementById("fusion_standard").value = 45;
     crosspoint.setAttribute("max", 15);
-    } else {
+  } else {
     document.getElementById("fusion_standard").value = 36;
     crosspoint.setAttribute("max", 6);
   }
 }
 
 function major_standard_maker() {
-  var Multimajor_standard = Number(document.getElementById("MultiMajor_selector").value);
+  var Multimajor_standard = Number(document.getElementById("MultiMajor_select").value);
   document.getElementById("major_standard").value = Multimajor_standard;
-  var Multimajor = document.getElementById("MultiMajor_selector");
+  var Multimajor = document.getElementById("MultiMajor_select");
   var Multimajortext = Multimajor.options[Multimajor.selectedIndex].text;
   if (Multimajortext.includes("심화")) {
     document.getElementById("double_major_none").checked = true;
@@ -290,17 +256,23 @@ function major_standard_maker() {
 }
 
 function Major_result() {
-  var Majorstandard = document.getElementById("MultiMajor_selector").value;
+  var Majorstandard = document.getElementById("MultiMajor_select").value;
   var MajorSelect = document.getElementById("Major_select").value;
   var LinkCross = Number(document.getElementById("cross_point1").value);
+  var PlanCross = Number(document.getElementById("cross_point3").value);
   if (MajorSelect == "none") {
+    document.getElementById("Major_select").scrollIntoView();
     alert("전공 학과를 선택하세요!");
     return false;
   } else if (Majorstandard < 45) {
+    document.getElementById("MultiMajor_select").scrollIntoView();
     alert("다전공 여부를 선택하세요!");
     return false;
   } else if (LinkCross > 12) {
     alert("연계전공의 교차인정 최대학점은 12 학점입니다!")
+    return false;
+  } else if (PlanCross > 6) {
+    alert("설계전공의 교차인정 최대학점은 6 학점입니다!")
     return false;
   } else {
     BaseNeceresult(Majorstandard);
@@ -310,7 +282,7 @@ function Major_result() {
 function BaseNeceresult(Majorstandard) {
   var Major = document.getElementById("Major_select");
   var Majortext = Major.options[Major.selectedIndex].text;
-  var Multimajor = document.getElementById("MultiMajor_selector");
+  var Multimajor = document.getElementById("MultiMajor_select");
   var Multimajortext = Multimajor.options[Multimajor.selectedIndex].text;
   var BaseStandard = document.getElementById("base_standard").value;
   var NeceStandard = document.getElementById("nece_standard").value;

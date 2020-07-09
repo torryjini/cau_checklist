@@ -50,7 +50,7 @@
     <tr>
       <th>
         다전공<br>
-        <select id="MultiMajor_selector" onchange="major_standard_maker();" required>
+        <select id="MultiMajor_select" onchange="major_standard_maker();" required>
           <option value="0">선 택</option>
           <option value="66">전공심화</option>
           <option value="45">복수전공</option>
@@ -59,7 +59,7 @@
           <option value="45">설계전공</option>
         </select></th>
       <th hidden>
-      
+
       </th>
     </tr>
   </table>
@@ -234,7 +234,7 @@
         <th>융합<br>전공</th>
         <td>
           <input type="text" id="fusion_standard" value="36" style="width:2.9rem;height:1.2rem;text-align:center;border:0px;" readonly><br>
-          <select id="fusion-options" onchange="FusionStandardCheck()" onkeyup="onchange="FusionStandardCheck()"">
+          <select id="fusion-options" onchange="FusionStandardCheck()" onkeyup="onchange=" FusionStandardCheck()"">
             <option selected disabled>선 택</option>
             <option value="36">문화컨텐츠</option>
             <option value="36">창업학</option>
@@ -332,7 +332,7 @@
       <tr>
         <th>한자</th>
         <td>
-          <input type="checkbox" id="Hanja"> 통과
+          <input type="checkbox" id="Hanja"> 통과/면제
         </td>
         <td>국가공인 한자능력<br>검정시험 3급 이상</td>
       </tr>
@@ -361,7 +361,41 @@
   <input type="button" value="결과확인" onclick="Etc_result()">
   <input type="reset" value="초기화" onclick="Form_Reset('etc')">
   </form><br>
+  <script>
+    function BaseNeceStandard() {
+      var Major_base = {
+        "psyche": "10",
+        "politics": "12",
+        "lis": "12",
+        "socialwelfare": "12",
+        "cmc": "15",
+        "planning": "12",
+        "sociology": "12",
+        "public-admin": "18",
+        "public-policy": "17"
+      };
 
+      var Major_nece = {
+        "psyche": "9",
+        "politics": "9",
+        "lis": "18",
+        "socialwelfare": "18",
+        "cmc": "9",
+        "planning": "18",
+        "sociology": "9",
+        "public-admin": "26",
+        "public-policy": "24"
+      };
+      var Major = document.getElementById("Major_select").value;
+      if (Major == "none") {
+        document.getElementById("base_standard").value = "-";
+        document.getElementById("nece_standard").value = "-";
+      } else {
+        document.getElementById("base_standard").value = Major_base[Major];
+        document.getElementById("nece_standard").value = Major_nece[Major];
+      }
+    }
+  </script>
 </body>
 
 </html>
