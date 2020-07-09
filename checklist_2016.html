@@ -32,7 +32,7 @@
           <option value="society">사회과학대학</option>
         </select></th>
       <th>학과(부)<br>
-        <select id="Major_select" onchange="BaseNeceStandard()" onkeyup="BaseNeceStandard()" required>
+        <select id="Major_select" onchange="BaseNeceStandard();OfficeNumber()" onkeyup="BaseNeceStandard();OfficeNumber()" required>
           <option value="none">선 택</option>
           <option value="politics">정치국제학과</option>
           <optgroup label="공공인재학부">
@@ -58,10 +58,6 @@
           <option value="45">융합전공</option>
           <option value="45">설계전공</option>
         </select></th>
-      <th hidden>
-
-      </th>
-    </tr>
   </table>
   <br>
   <form id="Liberal">
@@ -157,8 +153,8 @@
       </tr>
     </table>
   </form>
-  <br>
-  <input type="submit" value="결과확인" onclick="Liberal_cal()">
+  <p>다빈치교양대학 문의 : 02-820-6633/6639</p>
+  <input type="submit" value="✔ 결과확인" onclick="Liberal_cal()">
   <input type="reset" value="초기화" onclick="Form_Reset('Liberal')">
   <br>
   <br>
@@ -310,7 +306,9 @@
     </table>
   </form>
   <br>
-  <input type="submit" value="결과확인" onclick="Major_result()">
+  <input type="text" id="dept" readonly> 사무실 문의 : 02-820-<input type="text" id="phone" readonly>
+  <br><br>
+  <input type="submit" value="✔ 결과확인" onclick="Major_result()">
   <input type="reset" value="초기화" onclick="Form_Reset('Major')">
   <br><br>
   <form id='etc'>
@@ -358,7 +356,7 @@
       </tr>
     </table>
   </form><br>
-  <input type="button" value="결과확인" onclick="Etc_result()">
+  <input type="button" value="✔ 결과확인" onclick="Etc_result()">
   <input type="reset" value="초기화" onclick="Form_Reset('etc')">
   </form><br>
   <script>

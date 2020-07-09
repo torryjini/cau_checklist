@@ -93,6 +93,39 @@ function Liberal_cal() {
   alert(word)
 }
 
+function OfficeNumber() {
+  var Office = {
+    "psyche": "심리학과",
+    "politics": "정치국제학과",
+    "lis": "문헌정보학과",
+    "socialwelfare": "사회복지학부",
+    "cmc": "미디어커뮤니케이션학부",
+    "planning": "도시계획/부동산학과",
+    "sociology": "사회학과",
+    "public-admin": "공공인재학부",
+    "public-policy": "공공인재학부"
+  };
+  var PhoneNumber = {
+    "psyche": "5124",
+    "politics": "5473",
+    "lis": "5144",
+    "socialwelfare": "5149",
+    "cmc": "5481",
+    "planning": "5108",
+    "sociology": "6351",
+    "public-admin": "5445",
+    "public-policy": "5445"
+  };
+  var Major = document.getElementById("Major_select").value;
+  if (Major == "none") {
+    document.getElementById("dept").value = "-";
+    document.getElementById("phone").value = "-";
+  } else {
+    document.getElementById("dept").value = Office[Major];
+    document.getElementById("phone").value = PhoneNumber[Major];
+  }
+}
+
 
 function checkcont1(none, point) {
   var none_checked = document.getElementById(none).checked;
