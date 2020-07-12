@@ -90,7 +90,7 @@ input[type=submit], input[type=reset] {
 }
 
 @media all and (orientation:portrait) {
-  html{
+  html {
     margin-left: 0;
     margin-right: 0;
   }
@@ -99,6 +99,12 @@ input[type=submit], input[type=reset] {
     margin-left: 0;
     margin-right: 0;
   }
+
+  form {
+    margin-left: 0;
+    margin-right: 0;
+  }
+
   table {
     width: 100%;
     margin-left: 0;
@@ -152,6 +158,6 @@ input[type=submit], input[type=reset] {
   text-align: center;
 }
 
-#phone,#Davinci {
+#phone, #Davinci {
   width: 7rem;
 }
