@@ -72,6 +72,10 @@ td {
   color: black;
 }
 
+input[type=checkbox], label {
+  cursor: pointer;
+}
+
 label {
   font-size: 0.9rem;
 }
