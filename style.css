@@ -1,0 +1,112 @@
+:root {
+  --text-color: #f0f4f5;
+  --background-color: rgb(33, 85, 164);
+}
+
+html {
+  word-break: keep-all;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  margin-left: 10%;
+  margin-right: 10%;
+}
+
+header {
+  text-align: center;
+  justify-content: center;
+}
+
+i {
+  color: var(--text-color);
+  font-size: 1.5rem;
+}
+
+footer{
+  text-align: center;
+  justify-content: center;
+}
+
+ul {
+  text-align: center;
+  list-style: none;
+  margin: auto;
+  display: table;
+}
+
+table {
+  margin: auto;
+  width: 100%;
+  border-top: var(--background-color);
+  border-bottom: var(--background-color);
+  border-left: var(--background-color);
+  border-right: var(--background-color);
+  border: 1px solid gray;
+  border-collapse: collapse;
+}
+
+legend {
+  font-size: 1.5rem;
+  padding-bottom: 0.7rem;
+}
+
+th, td {
+  text-align: center;
+  padding: 5px;
+}
+
+td {
+  background-color: white;
+  color: black;
+}
+
+@media all and (orientation:portrait) {
+  table {
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+
+.checkselect {
+  width: 3.2rem;
+  height: 1.5rem;
+}
+
+.inputnumber {
+  width: 3.25rem;
+  height: 1.5rem;
+  text-align: center;
+  border-radius: 3px;
+}
+
+.totalnumber {
+  width: 2.5rem;
+  height: 1.2rem;
+  text-align: center;
+  border: 0px;
+}
+
+.call {
+  text-align: center;
+  font-size: 1.2rem;
+}
+
+.buttons {
+  margin: auto;
+  text-align: center;
+}
+
+#ad-year, #college_select, #MultiMajor_select {
+  width: 9rem;
+}
+
+#dept, #phone {
+  border: none;
+  font-size: 1.2rem;
+  color: var(--text-color);
+  background-color: var(--background-color);
+  text-align: center;
+}
+
+#phone {
+  width: 3.2rem;
+}

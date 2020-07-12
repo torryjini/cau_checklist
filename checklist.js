@@ -34,6 +34,13 @@ function Liberal_cal() {
     return false;
   }
 
+  if (Core1 || Core2 || Core3 || Core4 || Core5){
+    if(core_total_point == 0){
+      alert("핵심교양 학점을 입력하세요!")
+    }
+    return false;
+  }
+
   if (common_kor_point < 2) {
     word += "공통교양\n - 국어 : " + [2 - common_kor_point] + " 학점 미달\n";
   } else {
@@ -62,8 +69,10 @@ function Liberal_cal() {
     }
   }
 
-  if (core_total_point < 15) {
-    word += "핵심교양 : " + [15 - core_total_point] + " 학점 미달\n- 미이수 영역 : "
+  if (Core1 && Core2 && Core3 && Core4 && Core5 && core_total_point >= 14) {
+    word += "핵심교양 : 기준 통과\n"
+  } else if (core_total_point < 15) {
+     word += "핵심교양 : " + [15 - core_total_point] + " 학점 미달\n- 미이수 영역 : "
   } else {
     word += "핵심교양 : 최소학점 기준 통과\n- 미이수 영역 : "
   }
@@ -294,11 +303,11 @@ function Major_result() {
   var LinkCross = Number(document.getElementById("cross_point1").value);
   var PlanCross = Number(document.getElementById("cross_point3").value);
   if (MajorSelect == "none") {
-    document.getElementById("Major_select").scrollIntoView();
+    document.getElementById("student-info").scrollIntoView();
     alert("전공 학과를 선택하세요!");
     return false;
   } else if (Majorstandard < 45) {
-    document.getElementById("MultiMajor_select").scrollIntoView();
+    document.getElementById("student-info").scrollIntoView();
     alert("다전공 여부를 선택하세요!");
     return false;
   } else if (LinkCross > 12) {
