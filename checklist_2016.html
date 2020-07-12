@@ -76,7 +76,7 @@
         <th>최소 학점</th>
         <th>최대 학점</th>
         <th colspan="2">이수 학점</th>
-        <!-- <th width="35%">이수기준</th> -->
+        <!-- <th>이수기준</th> -->
       </tr>
       <tr>
         <th colspan="2">선택</th>
@@ -229,7 +229,7 @@
             oninput="maxLengthCheck(this)"> 학점<br>
           <input type="checkbox" id="link_major_none" onclick="checkcont('link_major_none', 'link_major_point', 'cross_point1')"><label for="link_major_none">해당없음</label>
         </td>
-        <th rowspan="3" width="10%">교차<br>인정</th>
+        <th rowspan="3">교차<br>인정</th>
         <td>
           <input type="number" id="cross_point1" placeholder="0" name="" value="" onkeydown='return onlyNumber(event)' onkeyup='removeChar(event)' class="inputnumber" min="0" max="12" maxlength="2" oninput="maxLengthCheck(this)"> 학점
         </td>
