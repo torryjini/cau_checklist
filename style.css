@@ -90,7 +90,12 @@ input[type=submit], input[type=reset] {
 }
 
 @media all and (orientation:portrait) {
-  html {
+  html{
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  body {
     margin-left: 0;
     margin-right: 0;
   }
