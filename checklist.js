@@ -115,15 +115,15 @@ function OfficeNumber() {
     "public-policy": "공공인재학부"
   };
   var PhoneNumber = {
-    "psyche": "5124",
-    "politics": "5473",
-    "lis": "5144",
-    "socialwelfare": "5149",
-    "cmc": "5481",
-    "planning": "5108",
-    "sociology": "6351",
-    "public-admin": "5445",
-    "public-policy": "5445"
+    "psyche": "02-820-5124",
+    "politics": "02-820-5473",
+    "lis": "02-820-5144",
+    "socialwelfare": "02-820-5149",
+    "cmc": "02-820-5481",
+    "planning": "02-820-5108",
+    "sociology": "02-820-6351",
+    "public-admin": "02-820-5445",
+    "public-policy": "02-820-5445"
   };
   var Major = document.getElementById("Major_select").value;
   if (Major == "none") {
