@@ -82,6 +82,7 @@ input[type=submit], input[type=reset] {
   cursor: pointer;
   border-radius: 0.4rem;
   font-size: 1rem;
+  background-color: var(--background-color);
 }
 
 @media all and (orientation:portrait) {
