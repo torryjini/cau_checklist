@@ -141,12 +141,26 @@ input[type=submit], input[type=reset] {
   text-align: center;
 }
 
-#ad-year, #college_select, #MultiMajor_select {
-  width: 6.5rem;
+#index_logo {
+  width: auto;
+  height: auto;
+  max-width: 15rem;
+  max-height: 15rem;
+}
+
+#logo {
+  width: auto;
+  height: auto;
+  max-width: 7rem;
+  max-height: 7rem;
+}
+
+#ad-year, #MultiMajor_select {
+  width: 4.5rem;
   height: 1.5rem;
 }
 
-#Major_select {
+#Major_select, #college_select {
   height: 1.5rem;
 }
 
