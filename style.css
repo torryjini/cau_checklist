@@ -82,7 +82,7 @@ label {
 
 input[type=submit], input[type=reset] {
   padding: 0.6rem 1.5rem;
-  margin: 0.3rem 1.5rem;
+  margin: 0.3rem 1.2rem;
   cursor: pointer;
   border-radius: 0.4rem;
   font-size: 1rem;
@@ -101,8 +101,8 @@ input[type=submit], input[type=reset] {
   }
 
   form {
-    margin-left: 0;
-    margin-right: 0;
+    margin-left: 0.3rem;
+    margin-right: 0.3rem;
   }
 
   table {
