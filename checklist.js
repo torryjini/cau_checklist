@@ -34,6 +34,7 @@ function Liberal_Sum() {
 }
 
 function Liberal_cal() {
+  var AdYear = Number(document.getElementById("ad-year").value);
   var elective_point = Number(document.getElementById("elective_liberal").value);
   var common_kor_point = Number(document.getElementById("common_kor").value);
   var common_eng_point = Number(document.getElementById("common_eng").value);
@@ -47,7 +48,13 @@ function Liberal_cal() {
   var Core5 = document.getElementById("core5").checked;
   var core_total_point = Number(document.getElementById("core_total").value);
   var liberal_total_point = Number(document.getElementById("liberal_total").value);
-  var word = "선택교양 : " + elective_point + " 학점\n";
+  var word = "입학년도 : " + AdYear + " 년\n선택교양 : " + elective_point + " 학점\n";
+
+  if(AdYear < 1000){
+    document.getElementById("student-info").scrollIntoView();
+    alert("입학년도를 선택하세요!");
+    return false;
+  }
 
   if (core_total_point > 0 && !Core1 && !Core2 && !Core3 && !Core4 && !Core5) {
     alert("핵심교양 영역 이수를 체크하세요!")
@@ -98,19 +105,19 @@ function Liberal_cal() {
   }
 
   if (!Core1) {
-    word += "도전 "
+    word += "「도전」"
   }
   if (!Core2) {
-    word += "창의 "
+    word += "「창의」"
   }
   if (!Core3) {
-    word += "융합 "
+    word += "「융합」"
   }
   if (!Core4) {
-    word += "신뢰 "
+    word += "「신뢰」"
   }
   if (!Core5) {
-    word += "소통"
+    word += "「소통」"
   }
 
   if (liberal_total_point <= 45) {
@@ -318,11 +325,18 @@ function major_standard_maker() {
 }
 
 function Major_result() {
+  var AdYear = Number(document.getElementById("ad-year").value);
   var Majorstandard = document.getElementById("MultiMajor_select").value;
   var MajorSelect = document.getElementById("Major_select").value;
   var LinkCross = Number(document.getElementById("cross_point1").value);
   var FusionCross = Number(document.getElementById("cross_point2").value);
   var PlanCross = Number(document.getElementById("cross_point3").value);
+  if(AdYear < 1000){
+    document.getElementById("student-info").scrollIntoView();
+    alert("입학년도를 선택하세요!");
+    return false;
+  }
+
   if (MajorSelect == "none") {
     document.getElementById("student-info").scrollIntoView();
     alert("전공 학과를 선택하세요!");
@@ -345,6 +359,7 @@ function Major_result() {
 }
 
 function BaseNeceresult(Majorstandard) {
+  var AdYear = Number(document.getElementById("ad-year").value);
   var Major = document.getElementById("Major_select");
   var Majortext = Major.options[Major.selectedIndex].text;
   var Multimajor = document.getElementById("MultiMajor_select");
@@ -355,7 +370,7 @@ function BaseNeceresult(Majorstandard) {
   var Necepoint = Number(document.getElementById("nece_input").value);
   var Majorpoint = Number(document.getElementById("major_input").value);
   Majorstandard = Number(Majorstandard);
-  var word = "주전공 : " + Majortext + "\n다전공 : " + Multimajortext + "\n";
+  var word = "입학년도 : " + AdYear + " 년\n주전공 : " + Majortext + "\n다전공 : " + Multimajortext + "\n";
 
   if (Majorpoint < Necepoint) {
     alert("전공 과목은 전공 필수를 포함합니다!");
