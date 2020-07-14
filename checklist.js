@@ -64,8 +64,8 @@ function Liberal_cal() {
   if (Core1 || Core2 || Core3 || Core4 || Core5){
     if(core_total_point == 0){
       alert("핵심교양 학점을 입력하세요!")
+      return false;
     }
-    return false;
   }
 
   if (common_kor_point < 2) {
