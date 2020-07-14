@@ -22,7 +22,11 @@ function removeChar(event) {
     event.target.value = event.target.value.replace(/[^0-9]/g, "");
 }
 
-// 여기까지는 기본적인 사항에 대한 코드 ex)글자수 제한, 숫자 외 문자 기입 제한 등
+function Form_Reset(id) {
+  document.getElementById(id).reset();
+}
+
+// 여기까지는 기본적인 사항에 대한 코드 ex)글자수 제한, 숫자 외 문자 기입 제한, 리셋 등
 
 function Liberal_Sum() {
   var elective_point = Number(document.getElementById("elective_liberal").value);
@@ -50,7 +54,7 @@ function Liberal_cal() {
   var liberal_total_point = Number(document.getElementById("liberal_total").value);
   var word = "입학년도 : " + AdYear + " 년\n선택교양 : " + elective_point + " 학점\n";
 
-  if(AdYear < 1000){
+  if (AdYear < 1000) {
     document.getElementById("student-info").scrollIntoView();
     alert("입학년도를 선택하세요!");
     return false;
@@ -61,8 +65,8 @@ function Liberal_cal() {
     return false;
   }
 
-  if (Core1 || Core2 || Core3 || Core4 || Core5){
-    if(core_total_point == 0){
+  if (Core1 || Core2 || Core3 || Core4 || Core5) {
+    if (core_total_point == 0) {
       alert("핵심교양 학점을 입력하세요!")
       return false;
     }
@@ -99,7 +103,7 @@ function Liberal_cal() {
   if (Core1 && Core2 && Core3 && Core4 && Core5 && core_total_point >= 14) {
     word += "핵심교양 : 기준 통과\n"
   } else if (core_total_point < 15) {
-     word += "핵심교양 : " + [15 - core_total_point] + " 학점 미달\n- 미이수 영역 : "
+    word += "핵심교양 : " + [15 - core_total_point] + " 학점 미달\n- 미이수 영역 : "
   } else {
     word += "핵심교양 : 최소학점 기준 통과\n- 미이수 영역 : "
   }
@@ -128,6 +132,9 @@ function Liberal_cal() {
 
   alert(word)
 }
+
+
+// 여기서부터는 전공영역
 
 function OfficeNumber() {
   var Office = {
@@ -331,7 +338,7 @@ function Major_result() {
   var LinkCross = Number(document.getElementById("cross_point1").value);
   var FusionCross = Number(document.getElementById("cross_point2").value);
   var PlanCross = Number(document.getElementById("cross_point3").value);
-  if(AdYear < 1000){
+  if (AdYear < 1000) {
     document.getElementById("student-info").scrollIntoView();
     alert("입학년도를 선택하세요!");
     return false;
@@ -370,7 +377,22 @@ function BaseNeceresult(Majorstandard) {
   var Necepoint = Number(document.getElementById("nece_input").value);
   var Majorpoint = Number(document.getElementById("major_input").value);
   Majorstandard = Number(Majorstandard);
-  var word = "입학년도 : " + AdYear + " 년\n주전공 : " + Majortext + "\n다전공 : " + Multimajortext + "\n";
+  var word = "입학년도 : " + AdYear + " 년";
+
+  if (Majortext.includes("트랙")) {
+    word += "\n주전공 : 공공인재학부 " + Majortext + "\n다전공 : " + Multimajortext + "\n";
+  } else {
+    word += "\n주전공 : " + Majortext + "\n다전공 : " + Multimajortext + "\n";
+  }
+
+  var FusionOption = Number(document.getElementById("fusion-options").value);
+  if (Multimajortext.includes("융합")) {
+    if (FusionOption == 0) {
+      alert("융합전공 옵션을 선택하세요!");
+      document.getElementById("fusion_standard").scrollIntoView();
+      return false;
+    }
+  }
 
   if (Majorpoint < Necepoint) {
     alert("전공 과목은 전공 필수를 포함합니다!");
@@ -494,6 +516,8 @@ function total_point_sum() {
   }
 }
 
+// 여기서부터는 졸업인정제 등 졸업요건 관련
+
 function Etc_result() {
   var English_result = document.getElementById("English").checked;
   var Hanja_result = document.getElementById("Hanja").checked;
@@ -532,10 +556,4 @@ function Etc_result() {
   }
 
   alert(word);
-}
-
-
-
-function Form_Reset(id) {
-  document.getElementById(id).reset();
 }
