@@ -105,8 +105,8 @@ input[type=submit], input[type=reset] {
 
 @media all and (orientation:portrait) {
   html {
-    margin-left: 1rem;
-    margin-right: 1rem;
+    margin-left: 2rem;
+    margin-right: 2rem;
   }
 
   table {
