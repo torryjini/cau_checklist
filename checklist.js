@@ -4,6 +4,26 @@ function maxLengthCheck(object) {
   }
 }
 
+function onlyNumber(event) {
+  event = event || window.event;
+  var keyID = (event.which) ? event.which : event.keyCode;
+  if ((keyID >= 48 && keyID <= 57) || (keyID >= 96 && keyID <= 105) || keyID == 8 || keyID == 46 || keyID == 37 || keyID == 39)
+    return;
+  else
+    return false;
+}
+
+function removeChar(event) {
+  event = event || window.event;
+  var keyID = (event.which) ? event.which : event.keyCode;
+  if (keyID == 8 || keyID == 46 || keyID == 37 || keyID == 39)
+    return;
+  else
+    event.target.value = event.target.value.replace(/[^0-9]/g, "");
+}
+
+// 여기까지는 기본적인 사항에 대한 코드 ex)글자수 제한, 숫자 외 문자 기입 제한 등
+
 function Liberal_Sum() {
   var elective_point = Number(document.getElementById("elective_liberal").value);
   var common_kor_point = Number(document.getElementById("common_kor").value);
@@ -301,6 +321,7 @@ function Major_result() {
   var Majorstandard = document.getElementById("MultiMajor_select").value;
   var MajorSelect = document.getElementById("Major_select").value;
   var LinkCross = Number(document.getElementById("cross_point1").value);
+  var FusionCross = Number(document.getElementById("cross_point2").value);
   var PlanCross = Number(document.getElementById("cross_point3").value);
   if (MajorSelect == "none") {
     document.getElementById("student-info").scrollIntoView();
@@ -313,6 +334,8 @@ function Major_result() {
   } else if (LinkCross > 12) {
     alert("연계전공의 교차인정 최대학점은 12 학점입니다!")
     return false;
+  } else if (FusionCross > 15) {
+    alert("융합전공의 교차인정 최대학점은 6 또는 15 학점입니다!\n- 문화컨텐츠/창업학/게임인터렉티브 : 6학점\n- 그 외 : 15 학점")
   } else if (PlanCross > 6) {
     alert("설계전공의 교차인정 최대학점은 6 학점입니다!")
     return false;
@@ -336,11 +359,6 @@ function BaseNeceresult(Majorstandard) {
 
   if (Majorpoint < Necepoint) {
     alert("전공 과목은 전공 필수를 포함합니다!");
-    return false;
-  }
-
-  if (Majorpoint > 78) {
-    alert("전공 과목 최대 학점은 78학점 입니다!");
     return false;
   }
 
@@ -501,23 +519,7 @@ function Etc_result() {
   alert(word);
 }
 
-function onlyNumber(event) {
-  event = event || window.event;
-  var keyID = (event.which) ? event.which : event.keyCode;
-  if ((keyID >= 48 && keyID <= 57) || (keyID >= 96 && keyID <= 105) || keyID == 8 || keyID == 46 || keyID == 37 || keyID == 39)
-    return;
-  else
-    return false;
-}
 
-function removeChar(event) {
-  event = event || window.event;
-  var keyID = (event.which) ? event.which : event.keyCode;
-  if (keyID == 8 || keyID == 46 || keyID == 37 || keyID == 39)
-    return;
-  else
-    event.target.value = event.target.value.replace(/[^0-9]/g, "");
-}
 
 function Form_Reset(id) {
   document.getElementById(id).reset();
