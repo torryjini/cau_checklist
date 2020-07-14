@@ -101,6 +101,12 @@ input[type=submit], input[type=reset] {
     margin-left: 0;
     margin-right: 0;
   }
+
+  #total_checklist {
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+  }
 }
 
 .checkselect {
