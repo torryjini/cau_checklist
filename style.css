@@ -79,7 +79,7 @@ td {
 
 input[type=checkbox], label {
   cursor: pointer;
-  padding-top: 5px;
+  margin-top: 10px;
 }
 
 label {
