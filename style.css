@@ -24,6 +24,11 @@ html {
                                 supported by Chrome, Edge, Opera and Firefox */
 }
 
+body {
+  margin: 0;
+  padding: 0;
+}
+
 header {
   text-align: center;
   justify-content: center;
@@ -74,6 +79,7 @@ td {
 
 input[type=checkbox], label {
   cursor: pointer;
+  padding-top: 5px;
 }
 
 label {
