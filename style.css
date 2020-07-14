@@ -161,8 +161,8 @@ input[type=submit], input[type=reset] {
 #logo {
   width: auto;
   height: auto;
-  max-width: 7rem;
-  max-height: 7rem;
+  max-width: 6rem;
+  max-height: 6rem;
 }
 
 #ad-year, #MultiMajor_select {
