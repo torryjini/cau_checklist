@@ -91,11 +91,6 @@ input[type=submit], input[type=reset] {
 
 @media all and (orientation:portrait) {
 
-  body {
-    margin-left: 0.3rem;
-    margin-right: 0.3rem;
-  }
-
   table {
     width: 100%;
     margin-left: 0;
