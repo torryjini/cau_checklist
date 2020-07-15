@@ -65,6 +65,7 @@ table {
 legend {
   font-size: 1.5rem;
   padding-bottom: 0.7rem;
+  font-weight: 600;
 }
 
 th, td {
