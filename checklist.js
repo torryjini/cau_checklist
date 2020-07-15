@@ -331,6 +331,90 @@ function major_standard_maker() {
   }
 }
 
+// 연도별 학과 전공기초, 전공필수 기준
+function BaseNeceStandard() {
+  var Major_base = {
+    "psyche": "10",
+    "politics": "12",
+    "lis": "12",
+    "socialwelfare": "12",
+    "cmc": "15",
+    "planning": "12",
+    "sociology": "12",
+    "public-admin": "18",
+    "public-policy": "16"
+  };
+
+  var Major_nece = {
+    "psyche": "9",
+    "politics": "9",
+    "lis": "18",
+    "socialwelfare": "18",
+    "cmc": "9",
+    "planning": "18",
+    "sociology": "9",
+    "public-admin": "26",
+    "public-policy": "24"
+  };
+
+  var Major_base1718 = {
+    "public-admin": "18",
+    "public-policy": "17"
+  };
+
+  var Major_nece1718 = {
+    "public-admin": "26",
+    "public-policy": "24"
+  };
+
+  var Major_base2019 = {
+    "public-admin": "17",
+    "public-policy": "17"
+  };
+
+  var Major_nece2020 = {
+    "sociology": "12",
+    "public-admin": "18",
+    "public-policy": "18"
+  };
+  var Major = document.getElementById("Major_select").value;
+  var AdYear = Number(document.getElementById("ad-year").value);
+  if (Major == "none") {
+    document.getElementById("base_standard").value = "-";
+    document.getElementById("nece_standard").value = "-";
+  } else if (AdYear == 2017 || AdYear == 2018) {
+    if (Major == "public-admin" || Major == "public-policy") {
+      document.getElementById("base_standard").value = Major_base1718[Major];
+      document.getElementById("nece_standard").value = Major_nece1718[Major];
+    } else {
+      document.getElementById("base_standard").value = Major_base[Major];
+      document.getElementById("nece_standard").value = Major_nece[Major];
+    }
+  } else if (AdYear == 2019) {
+    if (Major == "public-admin" || Major == "public-policy") {
+      document.getElementById("base_standard").value = Major_base2019[Major];
+      document.getElementById("nece_standard").value = Major_nece2020[Major];
+    } else {
+      document.getElementById("base_standard").value = Major_base[Major];
+      document.getElementById("nece_standard").value = Major_nece[Major];
+    }
+  } else if (AdYear >= 2020) {
+    if (Major == "public-admin" || Major == "public-policy") {
+      document.getElementById("base_standard").value = Major_base2019[Major];
+      document.getElementById("nece_standard").value = Major_nece2020[Major];
+    } else if (Major == "sociology") {
+      document.getElementById("base_standard").value = Major_base[Major];
+      document.getElementById("nece_standard").value = Major_nece2020[Major];
+    } else {
+      document.getElementById("base_standard").value = Major_base[Major];
+      document.getElementById("nece_standard").value = Major_nece[Major];
+    }
+  } else {
+    document.getElementById("base_standard").value = Major_base[Major];
+    document.getElementById("nece_standard").value = Major_nece[Major];
+  }
+}
+
 function Major_result() {
   var AdYear = Number(document.getElementById("ad-year").value);
   var Majorstandard = document.getElementById("MultiMajor_select").value;
@@ -476,7 +560,7 @@ function BaseNeceresult(Majorstandard) {
   if (Freepoint < 1) {
     word += "자유선택 : " + Freepoint + " 학점 이수_CAU세미나 미수강\n"
   } else {
-    word += "자유선택 : " + Freepoint + " 학점 이수_CAU세미나(1),(2) 이수 확인\n"
+    word += "자유선택 : " + Freepoint + " 학점 이수_CAU세미나 이수 확인 필수!\n"
   }
 
   var Teachingcheck = document.getElementById("teaching_none").checked;
