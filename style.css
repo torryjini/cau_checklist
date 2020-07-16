@@ -23,7 +23,7 @@ html {
   /* Non-prefixed version, currently
                                 supported by Chrome, Edge, Opera and Firefox */
 
-  min-width: 10rem;
+  min-width: 25rem;
 }
 
 body {
