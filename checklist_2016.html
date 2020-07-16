@@ -93,16 +93,6 @@
           <!-- <th>이수기준</th> -->
         </tr>
         <tr>
-          <th colspan="2">선택</th>
-          <td>0</td>
-          <td></td>
-          <td colspan="2">
-            <input type="number" id="elective_liberal" placeholder="0" value="" onchange="Liberal_Sum();" onkeydown='return onlyNumber(event);' onkeyup='removeChar(event);Liberal_Sum();' min="0" max="50" class="inputnumber" maxlength="2"
-              oninput="maxLengthCheck(this)"> 학점
-          </td>
-          <!-- <td>자율이수</td> -->
-        </tr>
-        <tr>
           <th rowspan="3">공통</th>
           <th>국어</th>
           <td>2</td>
@@ -140,6 +130,16 @@
             <input type="checkbox" id="account_check"><label for="account_check">회계학원론(회계원리) 이수</label></td>
           <!-- <td>1학년 : 창의와소통/회계와사회/<br>컴퓨팅적 사고와 문제해결/<br>2학년 : ACT/한국사
           <br>회계학원론(회계원리) 이수 시<br>"회계와사회" 면제</td> -->
+        </tr>
+        <tr>
+          <th colspan="2">선택</th>
+          <td>0</td>
+          <td></td>
+          <td colspan="2">
+            <input type="number" id="elective_liberal" placeholder="0" value="" onchange="Liberal_Sum();" onkeydown='return onlyNumber(event);' onkeyup='removeChar(event);Liberal_Sum();' min="0" max="50" class="inputnumber" maxlength="2"
+              oninput="maxLengthCheck(this)"> 학점
+          </td>
+          <!-- <td>자율이수</td> -->
         </tr>
         <tr>
           <th rowspan="5" colspan="2">핵심</th>
