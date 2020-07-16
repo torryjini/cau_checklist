@@ -51,6 +51,10 @@ ul {
   display: table;
 }
 
+select {
+  cursor: pointer;
+}
+
 table {
   margin: auto;
   width: 100%;
@@ -128,8 +132,9 @@ input[type=submit], input[type=reset] {
 }
 
 .checkselect {
-  width: 3.2rem;
-  height: 1.5rem;
+  width: 3.5rem;
+  height: 1.8rem;
+  border-radius: 3px;
 }
 
 .inputnumber {
@@ -141,7 +146,7 @@ input[type=submit], input[type=reset] {
 
 .totalnumber {
   width: 2.5rem;
-  height: 1.2rem;
+  height: 1.5rem;
   text-align: center;
   border: 0px;
 }
@@ -155,6 +160,16 @@ input[type=submit], input[type=reset] {
   margin: auto;
   text-align: center;
   display: block;
+}
+
+input[type=submit]:hover {
+  color: var(--text-color);
+  background-color: #98c1fe85;
+}
+
+input[type=reset]:hover {
+  color: var(--text-color);
+  background-color: #98c1fe85;
 }
 
 #index_logo {
@@ -192,4 +207,26 @@ input[type=submit], input[type=reset] {
 
 #phone, #Davinci {
   width: 7rem;
+}
+
+#TopBtn {
+  display: none;
+  position: fixed;
+  bottom: 1rem;
+  right: 1.5rem;
+  z-index: 99;
+  font-size: 1rem;
+  border: none;
+  outline: none;
+  background-color: white;
+  color: var(--background-color);
+  cursor: pointer;
+  padding: 0.8rem;
+  border-radius: 0.5rem;
+  opacity: 0.4;
+}
+
+#TopBtn:hover {
+  background-color: #98c1fe85;
+  color: var(--text-color);
 }
