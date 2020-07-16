@@ -128,6 +128,7 @@ input[type=submit], input[type=reset] {
 
   #fusion-options {
     width: 5rem;
+    height: 1.8rem;
   }
 }
 
@@ -207,6 +208,10 @@ input[type=reset]:hover {
 
 #phone, #Davinci {
   width: 7rem;
+}
+
+#fusion-options {
+  height: 1.5rem;
 }
 
 #TopBtn {
