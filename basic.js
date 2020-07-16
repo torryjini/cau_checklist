@@ -48,3 +48,36 @@ function removeChar(event) {
 function Form_Reset(id) {
   document.getElementById(id).reset();
 }
+
+function OfficeNumber() {
+  var Office = {
+    "psyche": "심리학과",
+    "politics": "정치국제학과",
+    "lis": "문헌정보학과",
+    "socialwelfare": "사회복지학부",
+    "cmc": "미디어커뮤니케이션학부",
+    "planning": "도시계획/부동산학과",
+    "sociology": "사회학과",
+    "public-admin": "공공인재학부",
+    "public-policy": "공공인재학부"
+  };
+  var PhoneNumber = {
+    "psyche": "02-820-5124",
+    "politics": "02-820-5473",
+    "lis": "02-820-5144",
+    "socialwelfare": "02-820-5149",
+    "cmc": "02-820-5481",
+    "planning": "02-820-5108",
+    "sociology": "02-820-6351",
+    "public-admin": "02-820-5445",
+    "public-policy": "02-820-5445"
+  };
+  var Major = document.getElementById("Major_select").value;
+  if (Major == "none") {
+    document.getElementById("dept").value = "-";
+    document.getElementById("phone").value = "-";
+  } else {
+    document.getElementById("dept").value = Office[Major];
+    document.getElementById("phone").value = PhoneNumber[Major];
+  }
+}

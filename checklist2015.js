@@ -15,32 +15,9 @@ function Liberal_cal() {
   var common_eng_ex = document.getElementById("eng_ex").checked;
   var common_etc_point = Number(document.getElementById("common_etc").value);
   var account_check_SF = document.getElementById("account_check").checked;
-  var Core1 = document.getElementById("core1").checked;
-  var Core2 = document.getElementById("core2").checked;
-  var Core3 = document.getElementById("core3").checked;
-  var Core4 = document.getElementById("core4").checked;
-  var Core5 = document.getElementById("core5").checked;
   var core_total_point = Number(document.getElementById("core_total").value);
   var liberal_total_point = Number(document.getElementById("liberal_total").value);
   var word = "입학년도 : " + AdYear + " 년\n선택교양 : " + elective_point + " 학점\n";
-
-  if (AdYear < 1000) {
-    document.getElementById("student-info").scrollIntoView();
-    alert("입학년도를 선택하세요!");
-    return false;
-  }
-
-  if (core_total_point > 0 && !Core1 && !Core2 && !Core3 && !Core4 && !Core5) {
-    alert("핵심교양 영역 이수를 체크하세요!")
-    return false;
-  }
-
-  if (Core1 || Core2 || Core3 || Core4 || Core5) {
-    if (core_total_point == 0) {
-      alert("핵심교양 학점을 입력하세요!")
-      return false;
-    }
-  }
 
   if (common_kor_point < 2) {
     word += "공통교양\n - 국어 : " + [2 - common_kor_point] + " 학점 미달\n";
@@ -57,8 +34,8 @@ function Liberal_cal() {
   }
 
   if (!account_check_SF) {
-    if (common_etc_point < 10) {
-      word += " - 기타 : " + [10 - common_etc_point] + " 학점 미달\n"
+    if (common_etc_point < 8) {
+      word += " - 기타 : " + [8 - common_etc_point] + " 학점 미달\n"
     } else {
       word += " - 기타 : 기준 통과\n"
     }
@@ -70,28 +47,10 @@ function Liberal_cal() {
     }
   }
 
-  if (Core1 && Core2 && Core3 && Core4 && Core5 && core_total_point >= 14) {
-    word += "핵심교양 : 기준 통과\n"
-  } else if (core_total_point < 15) {
-    word += "핵심교양 : " + [15 - core_total_point] + " 학점 미달\n- 미이수 영역 : "
+if (core_total_point < 12) {
+    word += "핵심교양 : " + [12 - core_total_point] + " 학점 미달_핵심 역량 4개 영역\n 각 1과목 이상 이수 필요!"
   } else {
-    word += "핵심교양 : 최소학점 기준 통과\n- 미이수 영역 : "
-  }
-
-  if (!Core1) {
-    word += "「도전」"
-  }
-  if (!Core2) {
-    word += "「창의」"
-  }
-  if (!Core3) {
-    word += "「융합」"
-  }
-  if (!Core4) {
-    word += "「신뢰」"
-  }
-  if (!Core5) {
-    word += "「소통」"
+    word += "핵심교양 : 최소학점 기준 통과\n- 핵심 역량 4개 영역 각 1과목 이상 이수 확인!"
   }
 
   if (liberal_total_point <= 45) {
@@ -105,8 +64,6 @@ function Liberal_cal() {
 
 
 // 여기서부터는 전공영역
-
-
 
 function checkcont1(none, point) {
   var none_checked = document.getElementById(none).checked;
