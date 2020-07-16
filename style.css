@@ -270,6 +270,16 @@ input[type=reset]:hover {
     width: 5rem;
     height: 1.8rem;
   }
+
+  #TopBtn {
+    background-color: gray;
+    color: var(--text-color);
+  }
+
+  #TopBtn:hover {
+    background-color: #98c1fe85;
+    color: var(--background-color);
+  }
 }
 
 footer {
