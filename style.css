@@ -108,29 +108,6 @@ input[type=submit], input[type=reset] {
   background-color: var(--text-color);
 }
 
-@media all and (orientation:portrait) {
-  html {
-    margin-left: 0.5rem;
-    margin-right: 0.5rem;
-  }
-
-  table {
-    width: 100%;
-    margin-left: 0;
-    margin-right: 0;
-  }
-
-  #total_checklist {
-    width: 100%;
-    margin-left: 0;
-    margin-right: 0;
-  }
-
-  #fusion-options {
-    width: 5rem;
-    height: 1.8rem;
-  }
-}
 
 .checkselect {
   width: 3.5rem;
@@ -234,4 +211,54 @@ input[type=reset]:hover {
 #TopBtn:hover {
   background-color: #98c1fe85;
   color: var(--text-color);
+}
+
+
+@media all and (orientation:portrait) {
+  html {
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+  }
+
+  body {
+    padding-top: 5rem;
+  }
+
+  header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.3rem;
+    background: var(--background-color);
+    justify-content: center;
+    align-items: center;
+  }
+
+#logo {
+    margin: 0;
+    width: auto;
+    height: auto;
+    max-width: 3.5rem;
+    max-height: 3.5rem;
+  }
+
+  table {
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  #total_checklist {
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  #fusion-options {
+    width: 5rem;
+    height: 1.8rem;
+  }
 }
