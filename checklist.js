@@ -575,10 +575,17 @@ function total_point_sum() {
 function Etc_result() {
   var English_result = document.getElementById("English").checked;
   var Hanja_result = document.getElementById("Hanja").checked;
-  var paper_result = document.getElementById("major_paper").checked;
-  var paper_result2 = document.getElementById("double_major_paper").checked;
-  var average_result = Number(document.getElementById("average").value);
+  var Paper_result = document.getElementById("major_paper").checked;
+  var Paper_result2 = document.getElementById("double_major_paper").checked;
+  var Average_result = Number(document.getElementById("average").value);
+
+  if(Average_result > 4.5){
+    alert("평균평점은 4.5 만점입니다!")
+    return false;
+  }
+
   var word = "졸업인정제 통과 여부\n";
+
   if (!English_result) {
     word += "영어 : 미통과\n"
   } else {
@@ -591,19 +598,19 @@ function Etc_result() {
     word += "한자 : 미통과\n졸업시험/논문\n"
   }
 
-  if (paper_result) {
+  if (Paper_result) {
     word += "- 주전공 : 합격\n"
   } else {
     word += "- 주전공 : 불합격\n"
   }
 
-  if (paper_result2) {
+  if (Paper_result2) {
     word += "- 복수전공 : 통과/해당없음\n"
   } else {
     word += "- 복수전공 : 불합격\n"
   }
 
-  if (average_result >= 2) {
+  if (Average_result >= 2) {
     word += "평균평점 : 통과"
   } else {
     word += "평균평점 : 미통과_졸업불가"
