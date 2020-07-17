@@ -408,11 +408,7 @@ function BaseNeceresult(Majorstandard) {
   }
 
   var Freepoint = Number(document.getElementById("free_point").value);
-  if (Freepoint < 1) {
-    word += "자유선택 : " + Freepoint + " 학점 이수_CAU세미나 미수강\n"
-  } else {
-    word += "자유선택 : " + Freepoint + " 학점 이수_CAU세미나 이수 확인 필수!\n"
-  }
+    word += "자유선택 : " + Freepoint + " 학점 이수\n"
 
   var Teachingcheck = document.getElementById("teaching_none").checked;
   var Teachingpoint = Number(document.getElementById("teaching_point").value);
@@ -468,15 +464,15 @@ function Etc_result() {
   var word = "졸업인정제 통과 여부\n";
 
   if (!English_result) {
-    word += "영어 : 미통과\n"
+    word += "- 영어 : 미통과\n"
   } else {
-    word += "영어 : 통과\n"
+    word += "- 영어 : 통과\n"
   }
 
   if (Hanja_result) {
-    word += "한자 : 통과\n졸업시험/논문\n"
+    word += "- 한자 : 통과\n졸업시험/논문\n"
   } else {
-    word += "한자 : 미통과\n졸업시험/논문\n"
+    word += "- 한자 : 미통과\n졸업시험/논문\n"
   }
 
   if (Paper_result) {

@@ -559,15 +559,15 @@ function Etc_result() {
   var word = "졸업인정제 통과 여부\n";
 
   if (!English_result) {
-    word += "영어 : 미통과\n"
+    word += "- 영어 : 미통과\n"
   } else {
-    word += "영어 : 통과\n"
+    word += "- 영어 : 통과\n"
   }
 
   if (Hanja_result) {
-    word += "한자 : 통과\n졸업시험/논문\n"
+    word += "- 한자 : 통과\n졸업시험/논문\n"
   } else {
-    word += "한자 : 미통과\n졸업시험/논문\n"
+    word += "- 한자 : 미통과\n졸업시험/논문\n"
   }
 
   if (Paper_result) {
