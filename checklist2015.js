@@ -47,7 +47,7 @@ function Liberal_cal() {
     }
   }
 
-if (core_total_point < 12) {
+  if (core_total_point < 12) {
     word += "핵심교양 : " + [12 - core_total_point] + " 학점 미달_핵심 역량 4개 영역\n 각 1과목 이상 이수 필요!"
   } else {
     word += "핵심교양 : 최소학점 기준 통과\n- 핵심 역량 4개 영역 각 1과목 이상 이수 확인!"
@@ -59,7 +59,7 @@ if (core_total_point < 12) {
     word += "\n교양영역 계 : " + liberal_total_point + " 학점_ " + [liberal_total_point - 45] + "학점 초과 45 학점만 인정"
   }
 
-  alert(word)
+  swal("교양영역 결과", word, "success")
 }
 
 
@@ -271,25 +271,25 @@ function Major_result() {
   var PlanCross = Number(document.getElementById("cross_point3").value);
   if (AdYear < 1000) {
     document.getElementById("student-info").scrollIntoView();
-    alert("입학년도를 선택하세요!");
+    swal("입학년도를 선택하세요!", "", "error");
     return false;
   }
 
   if (MajorSelect == "none") {
     document.getElementById("student-info").scrollIntoView();
-    alert("전공 학과를 선택하세요!");
+    swal("전공 학과를 선택하세요!", "", "error");
     return false;
   } else if (Majorstandard < 45) {
     document.getElementById("student-info").scrollIntoView();
-    alert("다전공 여부를 선택하세요!");
+    swal("다전공 여부를 선택하세요!", "", "error");
     return false;
   } else if (LinkCross > 12) {
-    alert("연계전공의 교차인정 최대학점은 12 학점입니다!")
+    swal("연계전공의 교차인정 최대학점은 12 학점입니다!", "", "error")
     return false;
   } else if (FusionCross > 15) {
-    alert("융합전공의 교차인정 최대학점은 6 또는 15 학점입니다!\n- 문화컨텐츠/창업학/게임인터렉티브 : 6학점\n- 그 외 : 15 학점")
+    swal("융합전공의 교차인정 최대학점은\n6 또는 15 학점입니다!", "- 문화컨텐츠/창업학/게임인터렉티브 : 6학점\n- 그 외 : 15 학점", "error")
   } else if (PlanCross > 6) {
-    alert("설계전공의 교차인정 최대학점은 6 학점입니다!")
+    swal("설계전공의 교차인정 최대학점은 6 학점입니다!", "", "error")
     return false;
   } else {
     BaseNeceresult(Majorstandard);
@@ -319,18 +319,18 @@ function BaseNeceresult(Majorstandard) {
   var FusionOption = Number(document.getElementById("fusion-options").value);
   if (Multimajortext.includes("융합")) {
     if (FusionOption == 0) {
-      alert("융합전공 옵션을 선택하세요!");
-      document.getElementById("fusion_standard").scrollIntoView();
+      swal("융합전공 옵션을 선택하세요!", "", "error");
+      document.getElementById("double_major_none").scrollIntoView();
       return false;
     }
   }
 
   if (Majorpoint < Necepoint) {
-    alert("전공 과목은 전공 필수를 포함합니다!");
+    swal("전공 과목은 전공 필수를 포함합니다!", "", "error");
     return false;
   }
 
-  if(Majortext.includes("행정")){
+  if (Majortext.includes("행정")) {
     if (1 >= BaseStandard - Basepoint) {
       word += "전공기초 : 기준 통과\n";
     }
@@ -430,7 +430,7 @@ function BaseNeceresult(Majorstandard) {
   } else {
     word += "전체 이수학점 : 기준 통과"
   }
-  alert(word)
+  swal("전공영역 결과", word, "success")
 }
 
 function total_point_sum() {
@@ -460,8 +460,8 @@ function Etc_result() {
   var Paper_result2 = document.getElementById("double_major_paper").checked;
   var Average_result = Number(document.getElementById("average").value);
 
-  if(Average_result > 4.5){
-    alert("평균평점은 4.5 만점입니다!")
+  if (Average_result > 4.5) {
+    swal("평균평점은 4.5 만점입니다!", "", "error")
     return false;
   }
 
@@ -497,5 +497,5 @@ function Etc_result() {
     word += "평균평점 : 미통과_졸업불가"
   }
 
-  alert(word);
+  swal("기타 졸업요건 결과", word, "success");
 }
