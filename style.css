@@ -127,6 +127,14 @@ input[type=submit], input[type=reset] {
   border-radius: 3px;
 }
 
+.standard_number{
+  width:2.9rem;
+  height:1.5rem;
+  text-align:center;
+  border:0px;
+  font-size: 1rem;
+}
+
 .inputnumber {
   width: 3.25rem;
   height: 1.5rem;

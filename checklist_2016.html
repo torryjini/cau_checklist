@@ -211,7 +211,7 @@
         </tr>
         <tr>
           <th colspan="2">전공기초</th>
-          <td><input type="text" id="base_standard" value="" style="width:2.9rem;height:1.2rem;text-align:center;border:0px;" readonly>
+          <td><input type="text" class="standard_number" id="base_standard" value="" readonly>
           </td>
           <td colspan="3">
             <input type="number" id="base_input" placeholder="0" name="major" value="" onchange="total_point_sum()" onkeydown='return onlyNumber(event)' onkeyup='removeChar(event)' min="0" max="99" class="inputnumber" maxlength="2"
@@ -221,7 +221,7 @@
         </tr>
         <tr>
           <th colspan="2">전공필수</th>
-          <td><input type="text" id="nece_standard" value="" style="width:2.9rem;height:1.2rem;text-align:center;border:0px;" readonly>
+          <td><input type="text" class="standard_number" id="nece_standard" value="" readonly>
           </td>
           <td colspan="3">
             <input type="number" id="nece_input" placeholder="0" name="major" value="" onchange="total_point_sum()" onkeydown='return onlyNumber(event)' onkeyup='removeChar(event)' min="0" max="99" class="inputnumber" maxlength="2"
@@ -232,7 +232,7 @@
         <tr>
           <th colspan="2">전공과목</th>
           <td>
-            <input type="text" id="major_standard" value="" style="width:2.9rem;height:1.2rem;text-align:center;border:0px;" readonly>
+            <input type="text" class="standard_number" id="major_standard" value="" readonly>
             <br>(전공필수 포함)</td>
           <td colspan="3">
             <input type="number" id="major_input" placeholder="0" name="major" value="" onchange="total_point_sum()" onkeydown='return onlyNumber(event)' onkeyup='removeChar(event)' min="0" max="99" class="inputnumber" maxlength="2"
@@ -270,7 +270,7 @@
         <tr>
           <th>융합</th>
           <td>
-            <input type="text" id="fusion_standard" value="36" style="width:2.9rem;height:1.2rem;text-align:center;border:0px;" readonly><br>
+            <input type="text" class="standard_number" id="fusion_standard" value="36" readonly><br>
             <select id="fusion-options" onchange="FusionStandardCheck()" onkeyup="onchange=" FusionStandardCheck()"">
               <option value="0" selected>선 택</option>
               <option value="36">문화컨텐츠</option>

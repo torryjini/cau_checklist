@@ -358,12 +358,28 @@ function Major_result() {
   var Majorstandard = document.getElementById("MultiMajor_select").value;
   var MajorSelect = document.getElementById("Major_select").value;
   var LinkCross = Number(document.getElementById("cross_point1").value);
+  var Fusion = document.getElementById("fusion-options");
+  var Fusiontext = Fusion.options[Fusion.selectedIndex].text;
   var FusionCross = Number(document.getElementById("cross_point2").value);
   var PlanCross = Number(document.getElementById("cross_point3").value);
   if (AdYear < 1000) {
     document.getElementById("student-info").scrollIntoView();
     swal("입학년도를 선택하세요!", "", "error");
     return false;
+  }
+
+  if (Fusiontext.includes("문화") || Fusiontext.includes("창업") || Fusiontext.includes("게임")) {
+    if (FusionCross > 6) {
+      document.getElementById("double_major_none").scrollIntoView();
+      swal(Fusiontext + " 융합전공 교차인정\n최대학점은 6 학점입니다!", "", "error")
+      return false;
+    }
+  } else if (Fusiontext.includes("금융") || Fusiontext.includes("인문") || Fusiontext.includes("보안") ||Fusiontext.includes("테크") ||Fusiontext.includes("벤처")) {
+    if (FusionCross > 15) {
+      document.getElementById("double_major_none").scrollIntoView();
+      swal(Fusiontext + " 융합전공 교차인정\n최대학점은 15 학점입니다!", "", "error")
+      return false;
+    }
   }
 
   if (MajorSelect == "none") {
@@ -375,12 +391,12 @@ function Major_result() {
     swal("다전공 여부를 선택하세요!", "", "error");
     return false;
   } else if (LinkCross > 12) {
+    document.getElementById("double_major_point").scrollIntoView();
     swal("연계전공의 교차인정 최대학점은 12 학점입니다!", "", "error")
     return false;
-  } else if (FusionCross > 15) {
-    swal("융합전공의 교차인정 최대학점은\n6 또는 15 학점입니다!", "- 문화컨텐츠/창업학/게임인터렉티브 : 6학점\n- 그 외 : 15 학점", "error")
   } else if (PlanCross > 6) {
-    swal("설계전공의 교차인정 최대학점은 6 학점입니다!", "", "error")
+    document.getElementById("link_major_none").scrollIntoView();
+    swal("자기설계전공의 교차인정 최대학점은 6 학점입니다!", "", "error")
     return false;
   } else {
     BaseNeceresult(Majorstandard);
