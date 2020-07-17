@@ -29,35 +29,36 @@
     <img src="white_logo.png" id="index_logo">
   </header>
   <ul>
-    <li>언어<br>
+    <li>| 언어<br>
       <select class="index_select" id="langbox" onchange="location = this.value">
         <option value="#">한국어</option>
-        <option value="index-eng.html">영어</option>
-        <option value="index-cn.html">중국어</option>
+        <!-- <option value="index-eng.html">영어</option>
+        <option value="index-cn.html">중국어</option> -->
       </select></li>
     <form>
-      <li>입학시기<br>
-        <select id="index-year" class="index_select" required>
-          <option value="">선 택</option>
-          <option value="2014">2012 ~ 2014</option>
-          <option value="2015">2015</option>
-          <option value="2016">2016 ~</option>
-        </select></li>
-      <li>입학유형<br>
+      <li>| 입학유형<br>
         <select class="index_select">
           <option value="">선택</option>
           <option value="">신입학</option>
-          <option value="">전 과</option>
+          <!-- <option value="">전 과</option>
           <optgroup label="편입학">
             <option value="">- 2학년</option>
             <option value="">- 3학년</option>
-          </optgroup>
-        </select></li><br>
+          </optgroup> -->
+        </select></li>
+      <li>| 입학시기<br>
+        <select id="index-year" class="index_select" required>
+          <option value="">선 택</option>
+          <!-- <option value="2014">2012 ~ 2014</option> -->
+          <option value="2015">2015</option>
+          <option value="2016">2016 ~</option>
+        </select></li>
+      <br>
       <input type="submit" id="enter" value="시 작" onclick="doLink();">
     </form>
   </ul>
   <footer>Version_2020.07. <br>
-    개발자 정보 : 
+    개발자 정보 :
   </footer>
 
   <script>
@@ -65,12 +66,14 @@
       var Year = document.getElementById('index-year').value;
       if (Year >= 2016) {
         window.location.href = "checklist_2016.html";
-        alert('※ 사용방법\n' + ' 1. 중앙대포탈 접속 후 로그인\n' +
-          ' 2. 강의마당 - 졸업관련 성적조회\n' + ' 3. 체크리스트에 수강학점 입력 후 결과확인 클릭!\n' +
-          '\n※ 주의사항' + '\n이 체크리스트는 수강신청 및 졸업준비를 위한 참고용입니다.' +
-          '\n결과가 정확하지 않을 수 있으며, 그로 인한 책임은 지지 않습니다.' +
-          '\n사용 후, 반드시 학과 사무실에 문의하여 확인하시기 바랍니다.');
+      } else if (Year == 2015) {
+        window.location.href = "checklist_2015.html";
       }
+      alert('※ 사용방법\n' + ' 1. 중앙대포탈 접속 후 로그인\n' +
+        ' 2. 강의마당 - 졸업관련 성적조회\n' + ' 3. 체크리스트에 수강학점 입력 후 결과확인 클릭!\n' +
+        '\n※ 주의사항' + '\n이 체크리스트는 수강신청 및 졸업준비를 위한 참고용입니다.' +
+        '\n결과가 정확하지 않을 수 있으며, 그로 인한 책임은 지지 않습니다.' +
+        '\n확인 후, 반드시 학과 사무실에 문의하여 확인하시기 바랍니다.');
     }
   </script>
 </body>
