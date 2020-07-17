@@ -421,7 +421,11 @@ function BaseNeceresult(Majorstandard) {
     return false;
   }
 
-  if (Basepoint < BaseStandard) {
+  if(AdYear == 2016 && Majortext.includes("행정")){
+    if (1 >= BaseStandard - Basepoint) {
+      word += "전공기초 : 기준 통과\n";
+    }
+  } else if (Basepoint < BaseStandard) {
     word += "전공기초 : " + [BaseStandard - Basepoint] + " 학점 미달\n";
   } else {
     word += "전공기초 : 기준 통과\n";

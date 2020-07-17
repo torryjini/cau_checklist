@@ -40,8 +40,8 @@ function Liberal_cal() {
       word += " - 기타 : 기준 통과\n"
     }
   } else {
-    if (common_etc_point < 8) {
-      word += " - 기타 : " + [8 - common_etc_point] + " 학점 미달 ( 회계와사회 : 면제 )\n"
+    if (common_etc_point < 6) {
+      word += " - 기타 : " + [6 - common_etc_point] + " 학점 미달 ( 회계와사회 : 면제 )\n"
     } else {
       word += " - 기타 : 기준 통과 ( 회계와사회 : 면제 )\n"
     }
@@ -252,58 +252,10 @@ function BaseNeceStandard() {
     "public-policy": "24"
   };
 
-  var Major_base1718 = {
-    "public-admin": "18",
-    "public-policy": "17"
-  };
-
-  var Major_nece1718 = {
-    "public-admin": "26",
-    "public-policy": "24"
-  };
-
-  var Major_base2019 = {
-    "public-admin": "17",
-    "public-policy": "17"
-  };
-
-  var Major_nece2020 = {
-    "sociology": "12",
-    "public-admin": "18",
-    "public-policy": "18"
-  };
   var Major = document.getElementById("Major_select").value;
-  var AdYear = Number(document.getElementById("ad-year").value);
   if (Major == "none") {
     document.getElementById("base_standard").value = "-";
     document.getElementById("nece_standard").value = "-";
-  } else if (AdYear == 2017 || AdYear == 2018) {
-    if (Major == "public-admin" || Major == "public-policy") {
-      document.getElementById("base_standard").value = Major_base1718[Major];
-      document.getElementById("nece_standard").value = Major_nece1718[Major];
-    } else {
-      document.getElementById("base_standard").value = Major_base[Major];
-      document.getElementById("nece_standard").value = Major_nece[Major];
-    }
-  } else if (AdYear == 2019) {
-    if (Major == "public-admin" || Major == "public-policy") {
-      document.getElementById("base_standard").value = Major_base2019[Major];
-      document.getElementById("nece_standard").value = Major_nece2020[Major];
-    } else {
-      document.getElementById("base_standard").value = Major_base[Major];
-      document.getElementById("nece_standard").value = Major_nece[Major];
-    }
-  } else if (AdYear >= 2020) {
-    if (Major == "public-admin" || Major == "public-policy") {
-      document.getElementById("base_standard").value = Major_base2019[Major];
-      document.getElementById("nece_standard").value = Major_nece2020[Major];
-    } else if (Major == "sociology") {
-      document.getElementById("base_standard").value = Major_base[Major];
-      document.getElementById("nece_standard").value = Major_nece2020[Major];
-    } else {
-      document.getElementById("base_standard").value = Major_base[Major];
-      document.getElementById("nece_standard").value = Major_nece[Major];
-    }
   } else {
     document.getElementById("base_standard").value = Major_base[Major];
     document.getElementById("nece_standard").value = Major_nece[Major];
@@ -378,7 +330,11 @@ function BaseNeceresult(Majorstandard) {
     return false;
   }
 
-  if (Basepoint < BaseStandard) {
+  if(Majortext.includes("행정")){
+    if (1 >= BaseStandard - Basepoint) {
+      word += "전공기초 : 기준 통과\n";
+    }
+  } else if (Basepoint < BaseStandard) {
     word += "전공기초 : " + [BaseStandard - Basepoint] + " 학점 미달\n";
   } else {
     word += "전공기초 : 기준 통과\n";
