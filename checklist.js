@@ -79,19 +79,19 @@ function Liberal_cal() {
   }
 
   if (!Core1) {
-    word += "「도전」"
+    word += "도전 "
   }
   if (!Core2) {
-    word += "「창의」"
+    word += "창의 "
   }
   if (!Core3) {
-    word += "「융합」"
+    word += "융합 "
   }
   if (!Core4) {
-    word += "「신뢰」"
+    word += "신뢰 "
   }
   if (!Core5) {
-    word += "「소통」"
+    word += "소통"
   }
 
   if (liberal_total_point <= 45) {
