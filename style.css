@@ -99,7 +99,7 @@ label {
   font-size: 0.9rem;
 }
 
-input[type=submit] {
+input[type=button] {
   border-color: #9BFA73;
 }
 
@@ -107,7 +107,7 @@ input[type=reset] {
   border-color: #FF5050;
 }
 
-input[type=submit], input[type=reset] {
+input[type=button], input[type=reset] {
   padding: 0.6rem 1.5rem;
   margin: 0.3rem 1rem;
   cursor: pointer;
@@ -160,7 +160,7 @@ input[type=submit], input[type=reset] {
   display: block;
 }
 
-input[type=submit]:hover {
+input[type=button]:hover {
   color: var(--text-color);
   background-color: #98c1fe85;
 }
