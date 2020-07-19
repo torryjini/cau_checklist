@@ -4,6 +4,7 @@
 }
 
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap');
 
 html {
   word-break: keep-all;
@@ -25,6 +26,7 @@ html {
   /* Non-prefixed version, currently
                                 supported by Chrome, Edge, Opera and Firefox */
   min-width: 25rem;
+  font-family: 'Nanum Gothic', sans-serif;
 }
 
 body {
@@ -159,6 +161,7 @@ input[type=button], input[type=reset] {
   text-align: center;
   border: 0px;
   font-size: 1rem;
+  font-family: inherit;
 }
 
 .inputnumber {
@@ -166,6 +169,7 @@ input[type=button], input[type=reset] {
   height: 1.5rem;
   text-align: center;
   border-radius: 3px;
+  font-family: inherit;
 }
 
 .totalnumber {
@@ -173,11 +177,13 @@ input[type=button], input[type=reset] {
   height: 1.5rem;
   text-align: center;
   border: 0px;
+  font-family: inherit;
 }
 
 .call {
   text-align: center;
   font-size: 1.2rem;
+  font-family: inherit;
 }
 
 .buttons {
