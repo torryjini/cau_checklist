@@ -35,9 +35,9 @@
     </header>
     <div id="student-info">
       <table border="solid" width="100%">
-        <legend>| 기본정보 <i class="fas fa-info-circle"></i></legend>
+        <legend>| 기본정보 <button class="info-btn"><i class="fas fa-info-circle" onclick="infomodal()"></i></button> </legend>
         <tr>
-          <th width="50%">입학년도</th>
+          <th width="50%">입학연도</th>
           <th width="50%">단과대학</th>
         </tr>
         <tr>
@@ -99,7 +99,7 @@
     <br>
     <form id="Liberal">
       <table border="solid" width="100%">
-        <legend>| 교양영역 <i class="fas fa-info-circle"></i></legend>
+        <legend>| 교양영역 <button class="info-btn"><i class="fas fa-info-circle"></i></button></legend>
         <tr>
           <th colspan="2">구분</th>
           <th>최소 학점</th>
@@ -147,16 +147,6 @@
           <br>회계학원론(회계원리) 이수 시<br>"회계와사회" 면제</td> -->
         </tr>
         <tr>
-          <th colspan="2">선택</th>
-          <td>0</td>
-          <td></td>
-          <td colspan="2">
-            <input type="number" id="elective_liberal" placeholder="0" value="" onchange="Liberal_Sum();" onkeydown='return onlyNumber(event);' onkeyup='removeChar(event);Liberal_Sum();' min="0" max="50" class="inputnumber" maxlength="2"
-              oninput="maxLengthCheck(this)"> 학점
-          </td>
-          <!-- <td>자율이수</td> -->
-        </tr>
-        <tr>
           <th rowspan="5" colspan="2">핵심</th>
           <td rowspan="5">15</td>
           <td rowspan="5"></td>
@@ -180,13 +170,23 @@
           <td><input type="checkbox" id="core5"><label for="core5">소통</label></td>
         </tr>
         <tr>
-          <th colspan="2">합계</th>
-          <td>29</td>
-          <td>45</td>
+        <tr>
+          <th colspan="2">선택</th>
+          <td>0</td>
+          <td></td>
           <td colspan="2">
-            <input type="text" id="liberal_total" value="0" class="totalnumber" onchange="total_point_sum()" readonly> 학점
+            <input type="number" id="elective_liberal" placeholder="0" value="" onchange="Liberal_Sum();" onkeydown='return onlyNumber(event);' onkeyup='removeChar(event);Liberal_Sum();' min="0" max="50" class="inputnumber" maxlength="2"
+              oninput="maxLengthCheck(this)"> 학점
           </td>
-          <!-- <td>45 학점 초과 시<br>졸업 학점에서 감산</td> -->
+          <!-- <td>자율이수</td> -->
+        </tr>
+        <th colspan="2">합계</th>
+        <td>29</td>
+        <td>45</td>
+        <td colspan="2">
+          <input type="text" id="liberal_total" value="0" class="totalnumber" onchange="total_point_sum()" readonly> 학점
+        </td>
+        <!-- <td>45 학점 초과 시<br>졸업 학점에서 감산</td> -->
         </tr>
       </table>
     </form>
@@ -202,7 +202,7 @@
     <br>
     <form id="Major">
       <table border="solid" width="100%">
-        <legend>| 전공영역 <i class="fas fa-info-circle"></i></legend>
+        <legend>| 전공영역 <button id="" class="info-btn"><i class="fas fa-info-circle"></i></button></legend>
         <tr>
           <th colspan="2">구분</th>
           <th>최소학점</th>
@@ -357,7 +357,7 @@
     <br><br>
     <form id='etc'>
       <table border="solid" width="100%">
-        <legend>| 기타 졸업요건 <i class="fas fa-info-circle"></i></legend>
+        <legend>| 기타 졸업요건 <button class="info-btn"><i class="fas fa-info-circle"></i></button></legend>
         <tr>
           <th colspan="2">구분</th>
           <th>통과 여부</th>

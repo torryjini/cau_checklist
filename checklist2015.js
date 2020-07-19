@@ -17,7 +17,7 @@ function Liberal_cal() {
   var account_check_SF = document.getElementById("account_check").checked;
   var core_total_point = Number(document.getElementById("core_total").value);
   var liberal_total_point = Number(document.getElementById("liberal_total").value);
-  var word = "입학년도 : " + AdYear + " 년\n선택교양 : " + elective_point + " 학점\n";
+  var word = "입학연도 : " + AdYear + " 년\n선택교양 : " + elective_point + " 학점\n";
 
   if (common_kor_point < 2) {
     word += "공통교양\n - 국어 : " + [2 - common_kor_point] + " 학점 미달\n";
@@ -318,7 +318,7 @@ function BaseNeceresult(Majorstandard) {
   var Necepoint = Number(document.getElementById("nece_input").value);
   var Majorpoint = Number(document.getElementById("major_input").value);
   Majorstandard = Number(Majorstandard);
-  var word = "입학년도 : " + AdYear + " 년";
+  var word = "입학연도 : " + AdYear + " 년";
 
   if (Majortext.includes("트랙")) {
     word += "\n주전공 : 공공인재학부 " + Majortext + "\n다전공 : " + Multimajortext + "\n";

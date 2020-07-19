@@ -22,11 +22,11 @@ function Liberal_cal() {
   var Core5 = document.getElementById("core5").checked;
   var core_total_point = Number(document.getElementById("core_total").value);
   var liberal_total_point = Number(document.getElementById("liberal_total").value);
-  var word = "입학년도 : " + AdYear + " 년\n선택교양 : " + elective_point + " 학점\n";
+  var word = "입학연도 : " + AdYear + " 년\n선택교양 : " + elective_point + " 학점\n";
 
   if (AdYear < 1000) {
     document.getElementById("student-info").scrollIntoView();
-    swal("입학년도를 선택하세요!", "", "error");
+    swal("입학연도를 선택하세요!", "", "error");
     return false;
   }
 
@@ -364,7 +364,7 @@ function Major_result() {
   var PlanCross = Number(document.getElementById("cross_point3").value);
   if (AdYear < 1000) {
     document.getElementById("student-info").scrollIntoView();
-    swal("입학년도를 선택하세요!", "", "error");
+    swal("입학연도를 선택하세요!", "", "error");
     return false;
   }
 
@@ -415,7 +415,7 @@ function BaseNeceresult(Majorstandard) {
   var Necepoint = Number(document.getElementById("nece_input").value);
   var Majorpoint = Number(document.getElementById("major_input").value);
   Majorstandard = Number(Majorstandard);
-  var word = "입학년도 : " + AdYear + " 년";
+  var word = "입학연도 : " + AdYear + " 년";
 
   if (Majortext.includes("트랙")) {
     word += "\n주전공 : 공공인재학부 " + Majortext + "\n다전공 : " + Multimajortext + "\n";
