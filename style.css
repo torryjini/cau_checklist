@@ -119,12 +119,33 @@ input[type=button], input[type=reset] {
 .index_select{
   width: 6rem;
   height: 2rem;
+  margin-top: 0.5rem;
 }
 
 .checkselect {
   width: 3.5rem;
   height: 1.8rem;
   border-radius: 3px;
+}
+
+.info-btn {
+  background-color: var(--background-color);
+  /* Blue background */
+  border: none;
+  /* Remove borders */
+  color: white;
+  /* White text */
+  padding: 0.2rem 0.2rem;
+  border-radius: 1rem;
+  font-size: 1rem;
+  /* Set a font size */
+  cursor: pointer;
+  /* Mouse pointer on hover */
+}
+
+/* Darker background on mouse-over */
+.info-btn:hover {
+  background-color: RoyalBlue;
 }
 
 .standard_number{
@@ -162,12 +183,12 @@ input[type=button], input[type=reset] {
 
 input[type=button]:hover {
   color: var(--text-color);
-  background-color: #98c1fe85;
+  background-color: RoyalBlue;
 }
 
 input[type=reset]:hover {
   color: var(--text-color);
-  background-color: #98c1fe85;
+  background-color: RoyalBlue;
 }
 
 #index_logo {
