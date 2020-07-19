@@ -48,7 +48,7 @@ function Liberal_cal() {
   }
 
   if (core_total_point < 12) {
-    word += "핵심교양 : " + [12 - core_total_point] + " 학점 미달_핵심 역량 4개 영역\n 각 1과목 이상 이수 필요!"
+    word += "핵심교양 : " + [12 - core_total_point] + " 학점 미달\n- 핵심 역량 4개 영역 각 1과목 이상 이수 필요!"
   } else {
     word += "핵심교양 : 최소학점 기준 통과\n- 핵심 역량 4개 영역 각 1과목 이상 이수 확인!"
   }
