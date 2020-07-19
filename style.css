@@ -119,8 +119,9 @@ input[type=button], input[type=reset] {
   margin: 0.3rem 1rem;
   cursor: pointer;
   border-radius: 0.4rem;
-  font-size: 1rem;
+  font-size: 1.2rem;
   background-color: var(--text-color);
+  font-weight: 600;
 }
 
 .index_select {
