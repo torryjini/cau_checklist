@@ -65,41 +65,6 @@ function Liberal_cal() {
 
 // 여기서부터는 전공영역
 
-function checkcont1(none, point) {
-  var none_checked = document.getElementById(none).checked;
-  if (!none_checked) {
-    document.getElementById(point).readOnly = false;
-  } else {
-    document.getElementById(point).value = null;
-    document.getElementById(point).readOnly = true;
-  }
-}
-
-function checkcont(none, point, cross) {
-  var none_checked = document.getElementById(none).checked;
-  if (!none_checked) {
-    document.getElementById(point).readOnly = false;
-    document.getElementById(cross).readOnly = false;
-  } else {
-    document.getElementById(point).value = null;
-    document.getElementById(point).readOnly = true;
-    document.getElementById(cross).value = null;
-    document.getElementById(cross).readOnly = true;
-  }
-}
-
-function FusionStandardCheck() {
-  var fusion_min = document.getElementById("fusion-options").value;
-  var crosspoint = document.getElementById("cross_point2");
-  if (fusion_min == 45) {
-    document.getElementById("fusion_standard").value = 45;
-    crosspoint.setAttribute("max", 15);
-  } else {
-    document.getElementById("fusion_standard").value = 36;
-    crosspoint.setAttribute("max", 6);
-  }
-}
-
 function major_standard_maker() {
   var Multimajor_standard = Number(document.getElementById("MultiMajor_select").value);
   document.getElementById("major_standard").value = Multimajor_standard;

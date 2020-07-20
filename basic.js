@@ -56,6 +56,7 @@ function OfficeNumber() {
     "lis": "문헌정보학과",
     "socialwelfare": "사회복지학부",
     "cmc": "미디어커뮤니케이션학부",
+    "cmc2": "미디어커뮤니케이션학부",
     "planning": "도시계획/부동산학과",
     "sociology": "사회학과",
     "public-admin": "공공인재학부",
@@ -68,6 +69,7 @@ function OfficeNumber() {
     "lis": "02-820-5144",
     "socialwelfare": "02-820-5149",
     "cmc": "02-820-5481",
+    "cmc2": "02-820-5481",
     "planning": "02-820-5108",
     "sociology": "02-820-6351",
     "public-admin": "02-820-5445",
@@ -94,4 +96,39 @@ function liveralmodal2016() {
   var word = "교양영역 이수기준"
   var content = "공통교양\n- 국어 : 글쓰기\n- 영어 : Communication in English\n- 기타 : 창의와소통 / 회계와사회 / ACT / 한국사 / 컴퓨팅적사고와문제해결\n핵심교양 : 도전 / 창의 / 융합 / 신뢰 / 소통\n각 영역에서 1과목 이상 이수\n선택교양 : 자율이수\n" + "총 교양학점 45학점까지만 인정됩니다!"
   swal(word, content, "warning");
+}
+
+function checkcont1(none, point) {
+  var none_checked = document.getElementById(none).checked;
+  if (!none_checked) {
+    document.getElementById(point).readOnly = false;
+  } else {
+    document.getElementById(point).value = null;
+    document.getElementById(point).readOnly = true;
+  }
+}
+
+function checkcont(none, point, cross) {
+  var none_checked = document.getElementById(none).checked;
+  if (!none_checked) {
+    document.getElementById(point).readOnly = false;
+    document.getElementById(cross).readOnly = false;
+  } else {
+    document.getElementById(point).value = null;
+    document.getElementById(point).readOnly = true;
+    document.getElementById(cross).value = null;
+    document.getElementById(cross).readOnly = true;
+  }
+}
+
+function FusionStandardCheck() {
+  var fusion_min = document.getElementById("fusion-options").value;
+  var crosspoint = document.getElementById("cross_point2");
+  if (fusion_min == 45) {
+    document.getElementById("fusion_standard").value = 45;
+    crosspoint.setAttribute("max", 15);
+  } else {
+    document.getElementById("fusion_standard").value = 36;
+    crosspoint.setAttribute("max", 6);
+  }
 }

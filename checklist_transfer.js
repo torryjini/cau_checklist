@@ -1,84 +1,16 @@
-function Liberal_Sum() {
-  var elective_point = Number(document.getElementById("elective_liberal").value);
-  var common_kor_point = Number(document.getElementById("common_kor").value);
-  var common_eng_point = Math.floor(Number(document.getElementById("common_eng").value));
-  var common_etc_point = Number(document.getElementById("common_etc").value);
-  var core_total_point = Number(document.getElementById("core_total").value);
-  document.getElementById("liberal_total").value = elective_point + common_kor_point + common_eng_point + common_etc_point + core_total_point;
-}
-
-function Liberal_cal() {
-  var AdYear = Number(document.getElementById("ad-year").value);
-  var elective_point = Number(document.getElementById("elective_liberal").value);
-  var common_kor_point = Number(document.getElementById("common_kor").value);
-  var common_eng_point = Number(document.getElementById("common_eng").value);
-  var common_eng_ex = document.getElementById("eng_ex").checked;
-  var common_etc_point = Number(document.getElementById("common_etc").value);
-  var account_check_SF = document.getElementById("account_check").checked;
-  var core_total_point = Number(document.getElementById("core_total").value);
-  var liberal_total_point = Number(document.getElementById("liberal_total").value);
-  var word = "입학연도 : " + AdYear + " 년\n선택교양 : " + elective_point + " 학점\n";
-
-  if (AdYear < 1000) {
-    document.getElementById("student-info").scrollIntoView();
-    swal("입학연도를 선택하세요!", "", "error");
-    return false;
-  }
-
-  if (common_kor_point < 2) {
-    word += "공통교양\n - 국어 : " + [2 - common_kor_point] + " 학점 미달\n";
-  } else {
-    word += "공통교양\n - 국어 : 기준 통과\n";
-  }
-
-  if (common_eng_point < 4 && common_eng_ex) {
-    word += " - 영어 : 면제\n"
-  } else if (common_eng_point < 4 && !common_eng_ex) {
-    word += " - 영어 : " + [4 - common_eng_point] + " 학점 미달\n";
-  } else {
-    word += " - 영어 : 기준 통과\n";
-  }
-
-  if (!account_check_SF) {
-    if (common_etc_point < 8) {
-      word += " - 기타 : " + [8 - common_etc_point] + " 학점 미달\n"
-    } else {
-      word += " - 기타 : 기준 통과\n"
-    }
-  } else {
-    if (common_etc_point < 6) {
-      word += " - 기타 : " + [6 - common_etc_point] + " 학점 미달 ( 회계와사회 : 면제 )\n"
-    } else {
-      word += " - 기타 : 기준 통과 ( 회계와사회 : 면제 )\n"
-    }
-  }
-
-  if (core_total_point < 9) {
-    word += "핵심교양 : " + [9 - core_total_point] + " 학점 미달"
-  } else {
-    word += "핵심교양 : 최소학점 기준 통과"
-  }
-
-
-  if (liberal_total_point <= 45) {
-    word += "\n교양영역 계 : " + liberal_total_point + " 학점"
-  } else {
-    word += "\n교양영역 계 : " + liberal_total_point + " 학점_ " + [liberal_total_point - 45] + "학점 초과 45 학점만 인정"
-  }
-
-  swal("교양영역 결과", word, "success")
-}
-
-
-// 여기서부터는 전공영역
-
-
 function major_standard_maker() {
   var Multimajor_standard = Number(document.getElementById("MultiMajor_select").value);
-  document.getElementById("major_standard").value = Multimajor_standard;
   var Multimajor = document.getElementById("MultiMajor_select");
   var Multimajortext = Multimajor.options[Multimajor.selectedIndex].text;
-  if (Multimajortext.includes("심화")) {
+
+  document.getElementById("major_standard").value = Multimajor_standard;
+  if (Multimajortext.includes("해당없음")) {
+    document.getElementById("total_standard").value = 66;
+  } else {
+    document.getElementById("total_standard").value = 99;
+  }
+
+  if (Multimajortext.includes("심화") || Multimajortext.includes("해당없음")) {
     document.getElementById("double_major_none").checked = true;
     document.getElementById("double_major_point").value = null;
     document.getElementById("double_major_point").readOnly = true;
@@ -201,15 +133,27 @@ function major_standard_maker() {
 
 // 연도별 학과 전공기초, 전공필수 기준
 function BaseNeceStandard() {
+  var Major_base1718 = {
+    "public-admin": "9",
+    "public-policy": "7"
+  };
+
+  var Major_nece1718 = {
+    "public-admin": "26",
+    "public-policy":"24"
+  };
+
   var Major_base = {
     "psyche": "10",
-    "politics": "12",
+    "politics": "6",
     "lis": "12",
     "socialwelfare": "12",
-    "cmc": "15",
-    "planning": "12",
+    "cmc2": "12",
+    "cmc": "9",
+    "planning": "0",
     "sociology": "12",
-    "public": "18"
+    "public-admin": "12",
+    "public-policy": "11"
   };
 
   var Major_nece = {
@@ -217,14 +161,16 @@ function BaseNeceStandard() {
     "politics": "9",
     "lis": "18",
     "socialwelfare": "18",
+    "cmc2": "19",
     "cmc": "9",
     "planning": "18",
-    "sociology": "9",
-    "public": "26"
+    "sociology": "12",
+    "public-admin": "18",
+    "public-policy": "18"
   };
 
-  var Major_base12 = {
-    "lis": "10",
+  var Major_nece1619 = {
+    "sociology":"9"
   };
 
   var Major = document.getElementById("Major_select").value;
@@ -232,10 +178,18 @@ function BaseNeceStandard() {
   if (Major == "none") {
     document.getElementById("base_standard").value = "-";
     document.getElementById("nece_standard").value = "-";
-  } else if (AdYear == 2012) {
-    if (Major == "lis") {
-      document.getElementById("base_standard").value = Major_base12[Major];
+  } else if (AdYear == 2017 || AdYear ==2018) {
+    if (Major.includes("public")) {
+      document.getElementById("base_standard").value = Major_base1718[Major];
+      document.getElementById("nece_standard").value = Major_nece1718[Major];
+    } else {
+      document.getElementById("base_standard").value = Major_base[Major];
       document.getElementById("nece_standard").value = Major_nece[Major];
+    }
+  }  else if (AdYear == 2017 || AdYear ==2018 || AdYear ==2019) {
+    if (Major== "sociology") {
+      document.getElementById("base_standard").value = Major_base[Major];
+      document.getElementById("nece_standard").value = Major_nece1619[Major];
     } else {
       document.getElementById("base_standard").value = Major_base[Major];
       document.getElementById("nece_standard").value = Major_nece[Major];
@@ -250,6 +204,8 @@ function Major_result() {
   var AdYear = Number(document.getElementById("ad-year").value);
   var Majorstandard = document.getElementById("MultiMajor_select").value;
   var MajorSelect = document.getElementById("Major_select").value;
+  var Multimajor = document.getElementById("MultiMajor_select");
+  var Multimajortext = Multimajor.options[Multimajor.selectedIndex].text;
   var LinkCross = Number(document.getElementById("cross_point1").value);
   var Fusion = document.getElementById("fusion-options");
   var Fusiontext = Fusion.options[Fusion.selectedIndex].text;
@@ -257,7 +213,7 @@ function Major_result() {
   var PlanCross = Number(document.getElementById("cross_point3").value);
   if (AdYear < 1000) {
     document.getElementById("student-info").scrollIntoView();
-    swal("입학연도를 선택하세요!", "", "error");
+    swal("편입학연도를 선택하세요!", "", "error");
     return false;
   }
 
@@ -279,7 +235,7 @@ function Major_result() {
     document.getElementById("student-info").scrollIntoView();
     swal("전공 학과를 선택하세요!", "", "error");
     return false;
-  } else if (Majorstandard < 45) {
+  } else if (MajorSelect == "cmc2" && Multimajortext.includes("해당")) {
     document.getElementById("student-info").scrollIntoView();
     swal("다전공 여부를 선택하세요!", "", "error");
     return false;
@@ -302,13 +258,20 @@ function BaseNeceresult(Majorstandard) {
   var Majortext = Major.options[Major.selectedIndex].text;
   var Multimajor = document.getElementById("MultiMajor_select");
   var Multimajortext = Multimajor.options[Multimajor.selectedIndex].text;
+  var Liberal_point = Number(document.getElementById("liberal_input").value);
   var BaseStandard = document.getElementById("base_standard").value;
   var NeceStandard = document.getElementById("nece_standard").value;
   var Basepoint = Number(document.getElementById("base_input").value);
   var Necepoint = Number(document.getElementById("nece_input").value);
   var Majorpoint = Number(document.getElementById("major_input").value);
   Majorstandard = Number(Majorstandard);
-  var word = "입학연도 : " + AdYear + " 년" + "\n주전공 : " + Majortext + "\n다전공 : " + Multimajortext + "\n";
+  var word = "편입학연도 : " + AdYear + " 년";
+
+  if (Majortext.includes("트랙")) {
+    word += "\n주전공 : 공공인재학부 " + Majortext + "\n다전공 : " + Multimajortext + "\n교양 : " + Liberal_point + " 학점 이수\n";
+  } else {
+    word += "\n주전공 : " + Majortext + "\n다전공 : " + Multimajortext + "\n교양 : " + Liberal_point + " 학점 이수\n";
+  }
 
   var FusionOption = Number(document.getElementById("fusion-options").value);
   if (Multimajortext.includes("융합")) {
@@ -399,9 +362,9 @@ function BaseNeceresult(Majorstandard) {
 
   var Freepoint = Number(document.getElementById("free_point").value);
   if (Freepoint < 1) {
-    word += "자유선택 : " + Freepoint + " 학점 이수_CAU세미나 미수강\n"
+    word += "자유선택 : " + Freepoint + " 학점 이수\n"
   } else {
-    word += "자유선택 : " + Freepoint + " 학점 이수_CAU세미나 이수 확인 필수!\n"
+    word += "자유선택 : " + Freepoint + " 학점 이수\n"
   }
 
   var Teachingcheck = document.getElementById("teaching_none").checked;
@@ -415,16 +378,17 @@ function BaseNeceresult(Majorstandard) {
   }
 
   var TotalPoint = Number(document.getElementById("the_total").value);
+  var TotalStandard = Number(document.getElementById("total_standard").value);
   if (TotalPoint < 132) {
-    word += "전체 이수학점 : " + [132 - TotalPoint] + " 학점 미달"
+    word += "전체 이수학점 : " + [TotalStandard - TotalPoint] + " 학점 미달"
   } else {
     word += "전체 이수학점 : 기준 통과"
   }
-  swal("전공영역 결과", word, "success")
+  swal("학점 이수 결과", word, "success")
 }
 
 function total_point_sum() {
-  var LiberalTotal = Number(document.getElementById("liberal_total").value);
+  var Liberal_point = Number(document.getElementById("liberal_input").value);
   var Basepoint = Number(document.getElementById("base_input").value);
   var Majorpoint = Number(document.getElementById("major_input").value);
   var Doublepoint = Number(document.getElementById("double_major_point").value);
@@ -434,11 +398,8 @@ function total_point_sum() {
   var Minorpoint = Number(document.getElementById("minor_point").value);
   var Freepoint = Number(document.getElementById("free_point").value);
   var Teachpoint = Number(document.getElementById("teaching_point").value);
-  if (LiberalTotal > 45) {
-    document.getElementById("the_total").value = 45 + Basepoint + Majorpoint + Doublepoint + Linkpoint + Fusionpoint + Planpoint + Minorpoint + Freepoint + Teachpoint;
-  } else {
-    document.getElementById("the_total").value = LiberalTotal + Basepoint + Majorpoint + Doublepoint + Linkpoint + Fusionpoint + Planpoint + Minorpoint + Freepoint + Teachpoint;
-  }
+
+  document.getElementById("the_total").value = Liberal_point + Basepoint + Majorpoint + Doublepoint + Linkpoint + Fusionpoint + Planpoint + Minorpoint + Freepoint + Teachpoint;
 }
 
 // 여기서부터는 졸업인정제 등 졸업요건 관련
