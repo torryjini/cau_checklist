@@ -129,7 +129,7 @@ function FusionStandardCheck() {
     crosspoint.setAttribute("max", 15);
   } else {
     document.getElementById("fusion_standard").value = 36;
-    crosspoint.setAttribute("max", 6);
+    crosspoint.setAttribute("max", 12);
   }
 }
 
