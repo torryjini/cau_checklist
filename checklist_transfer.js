@@ -132,6 +132,7 @@ function major_standard_maker() {
 }
 
 // 연도별 학과 전공기초, 전공필수 기준
+
 function BaseNeceStandard() {
   var Major_base1718 = {
     "public-admin": "9",
@@ -140,7 +141,7 @@ function BaseNeceStandard() {
 
   var Major_nece1718 = {
     "public-admin": "26",
-    "public-policy":"24"
+    "public-policy": "24"
   };
 
   var Major_base = {
@@ -170,15 +171,19 @@ function BaseNeceStandard() {
   };
 
   var Major_nece1619 = {
-    "sociology":"9"
+    "sociology": "9"
   };
 
   var Major = document.getElementById("Major_select").value;
   var AdYear = Number(document.getElementById("ad-year").value);
+  var SecYear = document.getElementById("2ndyear").checked;
   if (Major == "none") {
     document.getElementById("base_standard").value = "-";
     document.getElementById("nece_standard").value = "-";
-  } else if (AdYear == 2017 || AdYear ==2018) {
+  } else if (SecYear && Major == "cmc") {
+    document.getElementById("base_standard").value = Major_base.cmc2;
+    document.getElementById("nece_standard").value = Major_nece.cmc2;
+  } else if (AdYear == 2017 || AdYear == 2018) {
     if (Major.includes("public")) {
       document.getElementById("base_standard").value = Major_base1718[Major];
       document.getElementById("nece_standard").value = Major_nece1718[Major];
@@ -186,8 +191,8 @@ function BaseNeceStandard() {
       document.getElementById("base_standard").value = Major_base[Major];
       document.getElementById("nece_standard").value = Major_nece[Major];
     }
-  }  else if (AdYear == 2017 || AdYear ==2018 || AdYear ==2019) {
-    if (Major== "sociology") {
+  } else if (AdYear == 2017 || AdYear == 2018 || AdYear == 2019) {
+    if (Major == "sociology") {
       document.getElementById("base_standard").value = Major_base[Major];
       document.getElementById("nece_standard").value = Major_nece1619[Major];
     } else {
@@ -202,6 +207,7 @@ function BaseNeceStandard() {
 
 function Major_result() {
   var AdYear = Number(document.getElementById("ad-year").value);
+  var SecYear = document.getElementById("2ndyear").checked;
   var Majorstandard = document.getElementById("MultiMajor_select").value;
   var MajorSelect = document.getElementById("Major_select").value;
   var Multimajor = document.getElementById("MultiMajor_select");
@@ -235,7 +241,7 @@ function Major_result() {
     document.getElementById("student-info").scrollIntoView();
     swal("전공 학과를 선택하세요!", "", "error");
     return false;
-  } else if (MajorSelect == "cmc2" && Multimajortext.includes("해당")) {
+  } else if (SecYear && Multimajortext.includes("해당")) {
     document.getElementById("student-info").scrollIntoView();
     swal("다전공 여부를 선택하세요!", "", "error");
     return false;
