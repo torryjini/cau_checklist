@@ -219,6 +219,16 @@ input[type=reset]:hover {
   max-height: 6rem;
 }
 
+#H2U {
+  margin-left: 7rem;
+  margin-right: 7rem;
+}
+
+#H2Utitle {
+  text-align: center;
+  margin: 0;
+}
+
 #ad-year, #MultiMajor_select {
   width: 5rem;
   height: 1.5rem;
@@ -283,6 +293,11 @@ input[type=reset]:hover {
     background: var(--background-color);
     justify-content: center;
     align-items: center;
+  }
+
+  #H2U {
+    margin-left: 0;
+    margin-right: 0;
   }
 
   #logo {

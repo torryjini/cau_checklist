@@ -243,7 +243,7 @@ function Major_result() {
     return false;
   } else if (SecYear && Multimajortext.includes("해당")) {
     document.getElementById("student-info").scrollIntoView();
-    swal("다전공 여부를 선택하세요!", "", "error");
+    swal("다전공 여부를 선택하세요!", "2학년 편입은 다전공 대상입니다.", "error");
     return false;
   } else if (LinkCross > 12) {
     document.getElementById("double_major_point").scrollIntoView();
@@ -260,6 +260,7 @@ function Major_result() {
 
 function BaseNeceresult(Majorstandard) {
   var AdYear = Number(document.getElementById("ad-year").value);
+  var SecYear = document.getElementById("2ndyear").checked;
   var Major = document.getElementById("Major_select");
   var Majortext = Major.options[Major.selectedIndex].text;
   var Multimajor = document.getElementById("MultiMajor_select");
@@ -272,6 +273,12 @@ function BaseNeceresult(Majorstandard) {
   var Majorpoint = Number(document.getElementById("major_input").value);
   Majorstandard = Number(Majorstandard);
   var word = "편입학연도 : " + AdYear + " 년";
+
+  if(SecYear){
+    word += " - 2학년 편입";
+  } else {
+    word += " - 3학년 편입"
+  }
 
   if (Majortext.includes("트랙")) {
     word += "\n주전공 : 공공인재학부 " + Majortext + "\n다전공 : " + Multimajortext + "\n교양 : " + Liberal_point + " 학점 이수\n";

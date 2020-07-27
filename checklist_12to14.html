@@ -34,6 +34,14 @@
       <script type="text/javascript" src="checklist12to14.js"></script>
     </header>
     <div id="student-info">
+      <div id="H2U">
+        <h2 id="H2Utitle">How To Use</h2>
+        <ol>
+          <li>중앙대포탈 로그인 - 강의마당 - 졸업관련 성적조회</li>
+          <li>기본정보에 입학연도, 소속학과, 다전공 선택</li>
+          <li>교양영역, 전공영역, 기타 졸업요건에 정확히 입력 후 결과확인!</li>
+        </ol>
+      </div>
       <table border="solid" width="100%">
         <legend>| 기본정보 <i class="fas fa-info-circle"></i></legend>
         <tr>
@@ -61,7 +69,7 @@
         <tr>
           <td>
             <form id="Major_select_form">
-              <select id="Major_select" onchange="BaseNeceStandard();OfficeNumber();Form_Reset('Multimajor_form')" onkeyup="BaseNeceStandard();OfficeNumber()" required>
+              <select id="Major_select" onchange="BaseNeceStandard();OfficeNumber();Form_Reset('Multimajor_form')" onclick="BaseNeceStandard();OfficeNumber();Form_Reset('Multimajor_form')" onkeyup="BaseNeceStandard();OfficeNumber()" required>
                 <option value="none">선 택</option>
                 <option value="politics">정치국제학과</option>
                 <option value="public">공공인재학부</option>
