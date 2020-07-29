@@ -86,18 +86,6 @@ function OfficeNumber() {
   }
 }
 
-function infomodal() {
-  var word = "입학연도, 전공학과, 다전공을 정확히 입력하세요."
-  var content = "연도별, 학과별, 다전공별로 학점 기준이 다릅니다.\n반드시 정확히 입력하세요!"
-  swal(word, content, "warning");
-}
-
-function liveralmodal2016() {
-  var word = "교양영역 이수기준"
-  var content = "공통교양\n- 국어 : 글쓰기\n- 영어 : Communication in English\n- 기타 : 창의와소통 / 회계와사회 / ACT / 한국사 / 컴퓨팅적사고와문제해결\n핵심교양 : 도전 / 창의 / 융합 / 신뢰 / 소통\n각 영역에서 1과목 이상 이수\n선택교양 : 자율이수\n" + "총 교양학점 45학점까지만 인정됩니다!"
-  swal(word, content, "warning");
-}
-
 function checkcont1(none, point) {
   var none_checked = document.getElementById(none).checked;
   if (!none_checked) {

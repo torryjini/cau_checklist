@@ -1,3 +1,32 @@
+function liveralmodal() {
+  var word = "교양영역 이수기준"
+  var content = "공통교양\n- 국어 : 글쓰기\n- 영어 : English1(Communication in English)\nEnglish2(English fo Professional Track)"
+   + "\n- 기타 : 논리와사고(ACT) / 회계와사회 / 독서와토론(창의와소통) / 한국사\n"
+   + "ㄴ 회계학원론(회계원리)을 이수했을 경우, '회계와사회' 면제\n"
+   + "\n핵심교양 : 이수학점 및 역량 관계없이 최소 3과목 이상 이수 시 인정"
+   + "\n선택교양 : 자율이수\n" + "총 교양학점 45학점까지만 인정됩니다!"
+  swal(word, content, "info");
+}
+
+function majormodal() {
+  var word = "전공영역 이수기준"
+  var content = "전공 : 각 학과별 세부 기준 참고\n"
+   + "복수전공 : 복수전공 학과의 기준 참고\n ㄴ복수전공의 전공기초는 자유선택으로 인정"
+   + "\n연계/융합/설계전공 : 각 과정별 교과과정표를 참고하여 필수 과목 확인!"
+   + "\n부전공 : 부전공 전공필수 6학점 이상 포함하여 수강"
+   + "\n교직 : 교직팀에 문의하여 교직과정 이수 확인"
+   + "\n총 이수학점 : 132 학점 이상(교양은 최대 45학점까지 인정)"
+  swal(word, content, "info");
+}
+
+function etcmodal() {
+  var word = "기타 졸업요건"
+  var content = "졸업가능 : 학점 이수 기준 모두 통과 + 졸업인정제 통과 + 졸업시험/논문 합격 + 최저 평점 기준 통과\n\n"
+   + "수료 : 학점 이수 기준은 모두 통과했으나 졸업인정제(영어, 한자, 한국어)와 졸업시험/논문 중 하나라도 미통과시 수료\n\n"
+   + "졸업불가 : 학점 이수 기준 중 하나라도 부족하거나 전 학년 평점이 2.0 미만인 경우 졸업불가"
+  swal(word, content, "info");
+}
+
 function Liberal_Sum() {
   var elective_point = Number(document.getElementById("elective_liberal").value);
   var common_kor_point = Number(document.getElementById("common_kor").value);
