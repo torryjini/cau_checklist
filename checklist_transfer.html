@@ -89,7 +89,7 @@
           </td>
           <td>
             <form id="Multimajor_form">
-              <select id="MultiMajor_select" onchange="major_standard_maker();" required>
+              <select id="MultiMajor_select" onchange="tr_major_standard_maker();" required>
                 <option value="45">해당없음</option>
                 <option value="66">전공심화</option>
                 <option value="45">복수전공</option>
@@ -107,7 +107,7 @@
     <br>
     <form id="Major">
       <table border="solid" width="100%">
-        <legend>| 학점 이수 내역 <button type="button" class="info-btn" onclick="majormodal()"><i class="fas fa-info-circle"></i></button></legend>
+        <legend>| 학점 이수 내역 <button type="button" class="info-btn" onclick="majormodal()"><i class="fas fa-info-circle"></i> 세부기준</button></legend>
         <tr>
           <th colspan="2">구분</th>
           <th>최소학점</th>
@@ -271,7 +271,7 @@
     <br><br>
     <form id='etc'>
       <table border="solid" width="100%">
-        <legend>| 기타 졸업요건 <button type="button" class="info-btn" onclick="etcmodal()"><i class="fas fa-info-circle"></i></button></legend>
+        <legend>| 기타 졸업요건 <button type="button" class="info-btn" onclick="etcmodal()"><i class="fas fa-info-circle"></i> 도움말</button></legend>
         <tr>
           <th colspan="2">구분</th>
           <th>통과 여부</th>
@@ -310,7 +310,7 @@
         <tr>
           <th>복수전공</th>
           <td>
-            <input type="checkbox" id="double_major_paper"><label for="double_major_paper">합격/해당없음</label>
+            <input type="checkbox" id="double_major_paper" checked><label for="double_major_paper">합격/해당없음</label>
           </td>
           <td></td>
         </tr>

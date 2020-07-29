@@ -138,20 +138,15 @@ input[type=button], input[type=reset] {
 
 .info-btn {
   background-color: var(--background-color);
-  /* Blue background */
-  border: none;
-  /* Remove borders */
+  border: 2px;
+  border-color: var(--text-color);
   color: white;
-  /* White text */
   padding: 0.5rem;
   border-radius: 1rem;
   font-size: 1rem;
-  /* Set a font size */
   cursor: pointer;
-  /* Mouse pointer on hover */
 }
 
-/* Darker background on mouse-over */
 .info-btn:hover {
   background-color: RoyalBlue;
 }
