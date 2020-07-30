@@ -77,7 +77,7 @@ table {
   border-bottom: var(--background-color);
   border-left: var(--background-color);
   border-right: var(--background-color);
-  border: 1.5px solid gray;
+  border: 1.3px solid var(--text-color);
   border-collapse: collapse;
 }
 
@@ -90,6 +90,7 @@ legend {
 th, td {
   text-align: center;
   padding: 5px;
+  border: solid 1px;
 }
 
 td {
