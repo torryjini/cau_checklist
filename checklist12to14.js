@@ -1,3 +1,12 @@
+function koreancheck() {
+  AdYear = Number(document.getElementById("ad-year").value);
+  if(AdYear == 2014 || AdYear == 0){
+    document.getElementById("Korean").checked = false;
+  } else {
+    document.getElementById("Korean").checked = true;
+  }
+}
+
 function liveralmodal() {
   var word = "교양영역 이수기준"
   var content = "공통교양\n- 국어 : 글쓰기\n- 영어 : English1(Communication in English)\nEnglish2(English fo Professional Track)"
