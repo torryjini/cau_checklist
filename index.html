@@ -54,16 +54,16 @@
     </form>
     <br>
   </ul>
-  <footer>Version_2020.07.<br><br>
-    Made by Thingcol<br>
-    (torryjini@naver.com)
+  <footer><button type="button" class="index-info" onclick="index_info()"><i class="fas fa-info-circle"></i> info </button><br><br>
   </footer>
 
   <script>
     function doLink() {
       var EntStyle = document.getElementById("ent_style").value;
       var Year = document.getElementById('index-year').value;
-      var word = "본 체크리스트는 수강신청 및 졸업준비를 위한 참고용입니다." + "\n학점 기준 및 졸업요건 통과 여부만 확인할 수 있으며\n졸업 및 수료 가능 여부는 판별하지 않습니다." + "\n사용 후, 반드시 학과 사무실에 문의하여 확인하시기 바랍니다."
+      var word = "본 체크리스트는 수강신청 및 졸업준비를 위한 참고용입니다."
+       + "\n학점 기준 및 졸업요건 통과 여부를 확인할 수 있습니다."
+       + "\n사용 후, 학과 사무실에 문의하여 확인하시기 바랍니다."
 
       if (Year == 0) {
         swal("입학시기를 선택하세요!", "", "error")
@@ -83,6 +83,12 @@
           }
         });
       }
+    }
+
+    function index_info() {
+      title = "Version. Jul. 2020"
+      word = "Code by Thingcol\ne-mail to : torryjini@naver.com"
+      swal(title, word, "info")
     }
   </script>
 </body>

@@ -131,6 +131,22 @@ input[type=button], input[type=reset] {
   margin-top: 0.5rem;
 }
 
+.index-info {
+  background-color: var(--background-color);
+  border: 1.5px;
+  border-style: solid;
+  border-color: var(--text-color);
+  color: white;
+  padding: 0.3rem;
+  border-radius: 2rem;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.index-info:hover {
+  background-color: RoyalBlue;
+}
+
 .legend-icon {
   width: auto;
   height: auto;
