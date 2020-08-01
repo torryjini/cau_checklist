@@ -28,14 +28,6 @@ function majormodal() {
   swal(word, content, "info");
 }
 
-function etcmodal() {
-  var word = "기타 졸업요건"
-  var content = "졸업가능 : 학점 이수 기준 모두 통과 + 졸업인정제 통과 + 졸업시험/논문 합격 + 최저 평점 기준 통과\n\n"
-   + "수료 : 학점 이수 기준은 모두 통과했으나 졸업인정제(영어, 한자, 한국어)와 졸업시험/논문 중 하나라도 미통과시 수료\n\n"
-   + "졸업불가 : 학점 이수 기준 중 하나라도 부족하거나 전 학년 평점이 2.0 미만인 경우 졸업불가"
-  swal(word, content, "info");
-}
-
 function Liberal_Sum() {
   var elective_point = Number(document.getElementById("elective_liberal").value);
   var common_kor_point = Number(document.getElementById("common_kor").value);
@@ -168,63 +160,6 @@ function BaseNeceStandard() {
   } else {
     document.getElementById("base_standard").value = Major_base[Major];
     document.getElementById("nece_standard").value = Major_nece[Major];
-  }
-}
-
-function Major_result() {
-  var AdYear = Number(document.getElementById("ad-year").value);
-  var Majorstandard = document.getElementById("MultiMajor_select").value;
-  var MajorSelect = document.getElementById("Major_select").value;
-  var LinkCross = Number(document.getElementById("cross_point1").value);
-  var Fusion = document.getElementById("fusion-options");
-  var Fusiontext = Fusion.options[Fusion.selectedIndex].text;
-  var FusionCross = Number(document.getElementById("cross_point2").value);
-  var PlanCross = Number(document.getElementById("cross_point3").value);
-
-  if (AdYear < 1000) {
-    document.getElementById("student-info").scrollIntoView();
-    swal("입학연도를 선택하세요!", "", "error");
-    return false;
-  }
-
-  if (Fusiontext.includes("문화") || Fusiontext.includes("창업") || Fusiontext.includes("게임")) {
-    if (FusionCross > 6) {
-      document.getElementById("double_major_none").scrollIntoView();
-      swal(Fusiontext + " 융합전공 교차인정\n최대학점은 6 학점입니다!", "", "error")
-      return false;
-    }
-  } else if (Fusiontext.includes("금융")) {
-    if (FusionCross > 15) {
-      document.getElementById("double_major_none").scrollIntoView();
-      swal(Fusiontext + " 융합전공 교차인정\n최대학점은 15 학점입니다!", "", "error")
-      return false;
-    }
-  } else if (Fusiontext.includes("인문") || Fusiontext.includes("보안") || Fusiontext.includes("테크") || Fusiontext.includes("벤처")) {
-    if (FusionCross > 12) {
-      document.getElementById("double_major_none").scrollIntoView();
-      swal(Fusiontext + " 융합전공 교차인정\n최대학점은 12 학점입니다!", "", "error")
-      return false;
-    }
-  }
-
-  if (MajorSelect == "none") {
-    document.getElementById("student-info").scrollIntoView();
-    swal("전공 학과를 선택하세요!", "", "error");
-    return false;
-  } else if (Majorstandard < 45) {
-    document.getElementById("student-info").scrollIntoView();
-    swal("다전공 여부를 선택하세요!", "", "error");
-    return false;
-  } else if (LinkCross > 12) {
-    document.getElementById("double_major_point").scrollIntoView();
-    swal("연계전공의 교차인정 최대학점은 12 학점입니다!", "", "error")
-    return false;
-  } else if (PlanCross > 6) {
-    document.getElementById("link_major_none").scrollIntoView();
-    swal("자기설계전공의 교차인정 최대학점은 6 학점입니다!", "", "error")
-    return false;
-  } else {
-    BaseNeceresult(Majorstandard);
   }
 }
 

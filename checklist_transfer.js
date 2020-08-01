@@ -11,14 +11,6 @@ function majormodal() {
   swal(word, content, "info");
 }
 
-function etcmodal() {
-  var word = "기타 졸업요건"
-  var content = "졸업가능 : 학점 이수 기준 모두 통과 + 졸업인정제 통과 + 졸업시험/논문 합격 + 최저 평점 기준 통과\n\n"
-   + "수료 : 학점 이수 기준은 모두 통과했으나 졸업인정제(영어, 한자, 한국어)와 졸업시험/논문 중 하나라도 미통과시 수료\n\n"
-   + "졸업불가 : 학점 이수 기준 중 하나라도 부족하거나 전 학년 평점이 2.0 미만인 경우 졸업불가"
-  swal(word, content, "info");
-}
-
 function tr_major_standard_maker() {
   var Multimajor_standard = Number(document.getElementById("MultiMajor_select").value);
   document.getElementById("major_standard").value = Multimajor_standard;
@@ -232,7 +224,7 @@ function BaseNeceStandard() {
   }
 }
 
-function Major_result() {
+function tr_Major_result() {
   var AdYear = Number(document.getElementById("ad-year").value);
   var SecYear = document.getElementById("2ndyear").checked;
   var Majorstandard = document.getElementById("MultiMajor_select").value;
