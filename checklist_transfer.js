@@ -419,7 +419,7 @@ function BaseNeceresult(Majorstandard) {
   swal("학점 이수 결과", word, "success")
 }
 
-function total_point_sum() {
+function tr_total_point_sum() {
   var Liberal_point = Number(document.getElementById("liberal_input").value);
   var Basepoint = Number(document.getElementById("base_input").value);
   var Majorpoint = Number(document.getElementById("major_input").value);
