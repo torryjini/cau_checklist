@@ -137,7 +137,7 @@ input[type=button], input[type=reset] {
   border-style: solid;
   border-color: var(--text-color);
   color: white;
-  padding: 0.3rem;
+  padding: 0.5rem;
   border-radius: 2rem;
   font-size: 1rem;
   cursor: pointer;
