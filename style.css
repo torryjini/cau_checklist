@@ -85,7 +85,6 @@ legend {
   font-size: 1.5rem;
   padding-bottom: 0.7rem;
   font-weight: 600;
-  clear: both;
 }
 
 th, td {
@@ -130,6 +129,13 @@ input[type=button], input[type=reset] {
   width: 7rem;
   height: 2rem;
   margin-top: 0.5rem;
+}
+
+.legend-icon {
+  width: auto;
+  height: auto;
+  max-width: 1.8rem;
+  max-height: 1.8rem;
 }
 
 .checkselect {
