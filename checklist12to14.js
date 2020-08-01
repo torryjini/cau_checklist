@@ -104,7 +104,21 @@ function Liberal_cal() {
     word += "\n교양영역 계 : " + liberal_total_point + " 학점_ " + [liberal_total_point - 45] + "학점 초과 45 학점만 인정"
   }
 
-  swal("교양영역 결과", word, "success")
+  if (common_kor_point == 2 && core_total_point >= 9) {
+    if (common_eng_point == 4 && common_etc_point == 8) {
+      swal("교양영역 결과", word, "success")
+    } else if (common_eng_point <= 4 && common_eng_ex && common_etc_point == 8) {
+      swal("교양영역 결과", word, "success")
+    } else if (common_eng_point == 4 && common_etc_point >= 6 && account_check_SF) {
+      swal("교양영역 결과", word, "success")
+    } else if (common_eng_point <= 4 && common_eng_ex && common_etc_point >= 6 && account_check_SF) {
+      swal("교양영역 결과", word, "success")
+    } else {
+      swal("교양영역 결과", word, "error")
+    }
+  } else {
+    swal("교양영역 결과", word, "error")
+  }
 }
 
 
@@ -166,6 +180,7 @@ function Major_result() {
   var Fusiontext = Fusion.options[Fusion.selectedIndex].text;
   var FusionCross = Number(document.getElementById("cross_point2").value);
   var PlanCross = Number(document.getElementById("cross_point3").value);
+
   if (AdYear < 1000) {
     document.getElementById("student-info").scrollIntoView();
     swal("입학연도를 선택하세요!", "", "error");
@@ -230,7 +245,7 @@ function BaseNeceresult(Majorstandard) {
   var FusionOption = Number(document.getElementById("fusion-options").value);
   if (Multimajortext.includes("융합")) {
     if (FusionOption == 0) {
-      swal("융합전공 옵션을 선택하세요!", "", "error");
+      swal("세부 융합전공을 선택하세요!", "", "error");
       document.getElementById("double_major_none").scrollIntoView();
       return false;
     }

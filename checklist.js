@@ -1,29 +1,29 @@
 function liveralmodal() {
   var word = "교양영역 이수기준"
-  var content = "공통교양\n- 국어 : 글쓰기\n- 영어 : Communication in English\n- 기타 : 창의와소통 / 회계와사회 / ACT / 한국사 / 컴퓨팅적사고와문제해결\n"
-   + "ㄴ 회계학원론(회계원리)을 이수했을 경우, '회계와사회' 면제\n"
-   + "\n핵심교양 : 도전 / 창의 / 융합 / 신뢰 / 소통\n"
-   + "ㄴ 각 영역에서 1과목 이상 이수!\n선택교양 : 자율이수\n" + "총 교양학점 45학점까지만 인정됩니다!"
+  var content = "공통교양\n- 국어 : 글쓰기\n- 영어 : Communication in English\n- 기타 : 창의와소통 / 회계와사회 / ACT / 한국사 / 컴퓨팅적사고와문제해결\n" +
+    "ㄴ 회계학원론(회계원리)을 이수했을 경우, '회계와사회' 면제\n" +
+    "\n핵심교양 : 도전 / 창의 / 융합 / 신뢰 / 소통\n" +
+    "ㄴ 각 영역에서 1과목 이상 이수!\n선택교양 : 자율이수\n" + "총 교양학점 45학점까지만 인정됩니다!"
   swal(word, content, "info");
 }
 
 function majormodal() {
   var word = "전공영역 이수기준"
-  var content = "전공 : 각 학과별 세부 기준 참고\n"
-   + "복수전공 : 복수전공 학과의 기준 참고\n ㄴ복수전공의 전공기초는 자유선택으로 인정"
-   + "\n연계/융합/설계전공 : 각 과정별 교과과정표를 참고하여 필수 과목 확인!"
-   + "\n부전공 : 부전공 전공필수 6학점 이상 포함하여 수강"
-   + "\n자유선택 : CAU세미나 1학점 의무수강"
-   + "\n교직 : 교직팀에 문의하여 교직과정 이수 확인"
-   + "\n총 이수학점 : 132 학점 이상(교양은 최대 45학점까지 인정)"
+  var content = "전공 : 각 학과별 세부 기준 참고\n" +
+    "복수전공 : 복수전공 학과의 기준 참고\n ㄴ복수전공의 전공기초는 자유선택으로 인정" +
+    "\n연계/융합/설계전공 : 각 과정별 교과과정표를 참고하여 필수 과목 확인!" +
+    "\n부전공 : 부전공 전공필수 6학점 이상 포함하여 수강" +
+    "\n자유선택 : CAU세미나 1학점 의무수강" +
+    "\n교직 : 교직팀에 문의하여 교직과정 이수 확인" +
+    "\n총 이수학점 : 132 학점 이상(교양은 최대 45학점까지 인정)"
   swal(word, content, "info");
 }
 
 function etcmodal() {
   var word = "기타 졸업요건"
-  var content = "졸업가능 : 학점 이수 기준 모두 통과 + 졸업인정제 통과 + 졸업시험/논문 합격 + 최저 평점 기준 통과\n\n"
-   + "수료 : 학점 이수 기준은 모두 통과했으나 졸업인정제(영어, 한자, 한국어)와 졸업시험/논문 중 하나라도 미통과시 수료\n\n"
-   + "졸업불가 : 학점 이수 기준 중 하나라도 부족하거나 전 학년 평점이 2.0 미만인 경우 졸업불가"
+  var content = "졸업가능 : 학점 이수 기준 모두 통과 + 졸업인정제 통과 + 졸업시험/논문 합격 + 최저 평점 기준 통과\n\n" +
+    "수료 : 학점 이수 기준은 모두 통과했으나 졸업인정제(영어, 한자, 한국어)와 졸업시험/논문 중 하나라도 미통과시 수료\n\n" +
+    "졸업불가 : 학점 이수 기준 중 하나라도 부족하거나 전 학년 평점이 2.0 미만인 경우 졸업불가"
   swal(word, content, "info");
 }
 
@@ -129,7 +129,21 @@ function Liberal_cal() {
     word += "\n교양영역 계 : " + liberal_total_point + " 학점_ " + [liberal_total_point - 45] + "학점 초과 45 학점만 인정"
   }
 
-  swal("교양영역 결과", word, "success")
+  if (common_kor_point == 2 && Core1 && Core2 && Core3 && Core4 && Core5 && core_total_point >= 14) {
+    if (common_eng_point == 2 && common_etc_point == 10) {
+      swal("교양영역 결과", word, "success")
+    } else if (common_eng_point <= 2 && common_eng_ex && common_etc_point == 10) {
+      swal("교양영역 결과", word, "success")
+    } else if (common_eng_point == 2 && common_etc_point >= 8 && account_check_SF) {
+      swal("교양영역 결과", word, "success")
+    } else if (common_eng_point <= 2 && common_eng_ex && common_etc_point >= 8 && account_check_SF) {
+      swal("교양영역 결과", word, "success")
+    } else {
+      swal("교양영역 결과", word, "error")
+    }
+  } else {
+    swal("교양영역 결과", word, "error")
+  }
 }
 
 
@@ -228,6 +242,7 @@ function Major_result() {
   var Fusiontext = Fusion.options[Fusion.selectedIndex].text;
   var FusionCross = Number(document.getElementById("cross_point2").value);
   var PlanCross = Number(document.getElementById("cross_point3").value);
+
   if (AdYear < 1000) {
     document.getElementById("student-info").scrollIntoView();
     swal("입학연도를 선택하세요!", "", "error");
@@ -298,7 +313,7 @@ function BaseNeceresult(Majorstandard) {
   var FusionOption = Number(document.getElementById("fusion-options").value);
   if (Multimajortext.includes("융합")) {
     if (FusionOption == 0) {
-      swal("융합전공 옵션을 선택하세요!", "", "error");
+      swal("세부 융합전공을 선택하세요!", "", "error");
       document.getElementById("double_major_none").scrollIntoView();
       return false;
     }

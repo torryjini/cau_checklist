@@ -61,7 +61,7 @@ function OfficeNumber() {
     "sociology": "사회학과",
     "public-admin": "공공인재학부",
     "public-policy": "공공인재학부",
-    "public":"공공인재학부"
+    "public": "공공인재학부"
   };
   var PhoneNumber = {
     "psyche": "02-820-5124",
@@ -74,7 +74,7 @@ function OfficeNumber() {
     "sociology": "02-820-6351",
     "public-admin": "02-820-5445",
     "public-policy": "02-820-5445",
-    "public":"02-820-5445"
+    "public": "02-820-5445"
   };
   var Major = document.getElementById("Major_select").value;
   if (Major == "none") {
@@ -283,7 +283,7 @@ function Etc_result() {
     word += "- 한자 : 미통과\n"
   }
 
-  if(Korean_result){
+  if (Korean_result) {
     word += "- 한국어 : 통과\n"
   } else {
     word += "- 한국어 : 미통과\n"
@@ -307,5 +307,13 @@ function Etc_result() {
     word += "평균평점 : 미통과_졸업불가"
   }
 
-  swal("기타 졸업요건 결과", word, "success");
+  if (English_result && Hanja_result && Korean_result && Paper_result && Paper_result2 && Average_result >= 2) {
+    swal("기타 졸업요건 결과", word, "success");
+  } else if (Average_result >= 2) {
+    if (!English_result || !Hanja_result || !Korean_result || !Paper_result || !Paper_result2) {
+      swal("기타 졸업요건 결과", word, "warning");
+    }
+  } else if(Average_result <= 2) {
+    swal("기타 졸업요건 결과", word, "error");
+  }
 }

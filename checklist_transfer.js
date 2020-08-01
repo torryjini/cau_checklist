@@ -316,7 +316,7 @@ function BaseNeceresult(Majorstandard) {
   var FusionOption = Number(document.getElementById("fusion-options").value);
   if (Multimajortext.includes("융합")) {
     if (FusionOption == 0) {
-      swal("융합전공 옵션을 선택하세요!", "", "error");
+      swal("세부 융합전공을 선택하세요!", "", "error");
       document.getElementById("double_major_none").scrollIntoView();
       return false;
     }
