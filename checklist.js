@@ -359,23 +359,6 @@ function BaseNeceresult(Majorstandard) {
   } else {
     word += "전체 이수학점 : 기준 통과"
   }
-  swal("전공영역 결과", word, "success")
-}
 
-function total_point_sum() {
-  var LiberalTotal = Number(document.getElementById("liberal_total").value);
-  var Basepoint = Number(document.getElementById("base_input").value);
-  var Majorpoint = Number(document.getElementById("major_input").value);
-  var Doublepoint = Number(document.getElementById("double_major_point").value);
-  var Linkpoint = Number(document.getElementById("link_major_point").value);
-  var Fusionpoint = Number(document.getElementById("fusion_major_point").value);
-  var Planpoint = Number(document.getElementById("plan_major_point").value);
-  var Minorpoint = Number(document.getElementById("minor_point").value);
-  var Freepoint = Number(document.getElementById("free_point").value);
-  var Teachpoint = Number(document.getElementById("teaching_point").value);
-  if (LiberalTotal > 45) {
-    document.getElementById("the_total").value = 45 + Basepoint + Majorpoint + Doublepoint + Linkpoint + Fusionpoint + Planpoint + Minorpoint + Freepoint + Teachpoint;
-  } else {
-    document.getElementById("the_total").value = LiberalTotal + Basepoint + Majorpoint + Doublepoint + Linkpoint + Fusionpoint + Planpoint + Minorpoint + Freepoint + Teachpoint;
-  }
+  swal("전공영역 결과", word, "success")
 }
