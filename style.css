@@ -86,6 +86,7 @@ legend {
   padding-bottom: 0.7rem;
   font-weight: 600;
   vertical-align:middle;
+  display: block;
 }
 
 th, td {
