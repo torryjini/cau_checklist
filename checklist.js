@@ -43,7 +43,7 @@ function Liberal_cal() {
   var Core5 = document.getElementById("core5").checked;
   var core_total_point = Number(document.getElementById("core_total").value);
   var liberal_total_point = Number(document.getElementById("liberal_total").value);
-  var word = "입학연도 : " + AdYear + " 년\n선택교양 : " + elective_point + " 학점\n";
+  var word = "입학연도 : " + AdYear + "년\n선택교양 : " + elective_point + " 학점\n";
 
   if (AdYear < 1000) {
     document.getElementById("student-info").scrollIntoView();
@@ -237,7 +237,7 @@ function BaseNeceresult(Majorstandard) {
   var Necepoint = Number(document.getElementById("nece_input").value);
   var Majorpoint = Number(document.getElementById("major_input").value);
   Majorstandard = Number(Majorstandard);
-  var word = "입학연도 : " + AdYear + " 년";
+  var word = "입학연도 : " + AdYear + "년";
 
   if (Majortext.includes("트랙")) {
     word += "\n주전공 : 공공인재학부 " + Majortext + "\n다전공 : " + Multimajortext + "\n";
@@ -360,5 +360,123 @@ function BaseNeceresult(Majorstandard) {
     word += "전체 이수학점 : 기준 통과"
   }
 
-  swal("전공영역 결과", word, "success")
+  if (Basepoint >= BaseStandard && Necepoint >= NeceStandard && Majorpoint >= Majorstandard && Freepoint >= 1 && TotalPoint >= 132) {
+    if (Minorcheck && Teachingcheck) {
+      if (Multimajortext.includes("심화")) {
+        swal("전공영역 결과", word, "success")
+      } else if (Multimajortext.includes("복수")) {
+        if (Doublepoint >= 45) {
+          swal("전공영역 결과", word, "success")
+        } else {
+          swal("전공영역 결과", word, "error")
+        }
+      } else if (Multimajortext.includes("연계")) {
+        if (Linkpoint >= 36) {
+          swal("전공영역 결과", word, "success")
+        } else {
+          swal("전공영역 결과", word, "error")
+        }
+      } else if (Multimajortext.includes("융합")) {
+        if (Fusionpoint >= FusionStandard) {
+          swal("전공영역 결과", word, "success")
+        } else {
+          swal("전공영역 결과", word, "error")
+        }
+      } else if (Multimajortext.includes("설계")) {
+        if (Planpoint >= 36) {
+          swal("전공영역 결과", word, "success")
+        } else {
+          swal("전공영역 결과", word, "error")
+        }
+      }
+    } else if (Minorpoint >= 21 && Teachingcheck) {
+      if (Multimajortext.includes("심화")) {
+        swal("전공영역 결과", word, "success")
+      } else if (Multimajortext.includes("복수")) {
+        if (Doublepoint >= 45) {
+          swal("전공영역 결과", word, "success")
+        } else {
+          swal("전공영역 결과", word, "error")
+        }
+      } else if (Multimajortext.includes("연계")) {
+        if (Linkpoint >= 36) {
+          swal("전공영역 결과", word, "success")
+        } else {
+          swal("전공영역 결과", word, "error")
+        }
+      } else if (Multimajortext.includes("융합")) {
+        if (Fusionpoint >= FusionStandard) {
+          swal("전공영역 결과", word, "success")
+        } else {
+          swal("전공영역 결과", word, "error")
+        }
+      } else if (Multimajortext.includes("설계")) {
+        if (Planpoint >= 36) {
+          swal("전공영역 결과", word, "success")
+        } else {
+          swal("전공영역 결과", word, "error")
+        }
+      }
+    } else if (Minorpoint >= 21 && Teachingpoint >= 22) {
+      if (Multimajortext.includes("심화")) {
+        swal("전공영역 결과", word, "success")
+      } else if (Multimajortext.includes("복수")) {
+        if (Doublepoint >= 45) {
+          swal("전공영역 결과", word, "success")
+        } else {
+          swal("전공영역 결과", word, "error")
+        }
+      } else if (Multimajortext.includes("연계")) {
+        if (Linkpoint >= 36) {
+          swal("전공영역 결과", word, "success")
+        } else {
+          swal("전공영역 결과", word, "error")
+        }
+      } else if (Multimajortext.includes("융합")) {
+        if (Fusionpoint >= FusionStandard) {
+          swal("전공영역 결과", word, "success")
+        } else {
+          swal("전공영역 결과", word, "error")
+        }
+      } else if (Multimajortext.includes("설계")) {
+        if (Planpoint >= 36) {
+          swal("전공영역 결과", word, "success")
+        } else {
+          swal("전공영역 결과", word, "error")
+        }
+      }
+    } else if (Minorcheck && Teachingpoint >= 22) {
+      if (Multimajortext.includes("심화")) {
+        swal("전공영역 결과", word, "success")
+      } else if (Multimajortext.includes("복수")) {
+        if (Doublepoint >= 45) {
+          swal("전공영역 결과", word, "success")
+        } else {
+          swal("전공영역 결과", word, "error")
+        }
+      } else if (Multimajortext.includes("연계")) {
+        if (Linkpoint >= 36) {
+          swal("전공영역 결과", word, "success")
+        } else {
+          swal("전공영역 결과", word, "error")
+        }
+      } else if (Multimajortext.includes("융합")) {
+        if (Fusionpoint >= FusionStandard) {
+          swal("전공영역 결과", word, "success")
+        } else {
+          swal("전공영역 결과", word, "error")
+        }
+      } else if (Multimajortext.includes("설계")) {
+        if (Planpoint >= 36) {
+          swal("전공영역 결과", word, "success")
+        } else {
+          swal("전공영역 결과", word, "error")
+        }
+      }
+    } else {
+      swal("전공영역 결과", word, "error")
+    }
+  } else {
+    swal("전공영역 결과", word, "error")
+  }
 }

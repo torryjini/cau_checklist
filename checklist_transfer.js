@@ -291,7 +291,7 @@ function BaseNeceresult(Majorstandard) {
   var Necepoint = Number(document.getElementById("nece_input").value);
   var Majorpoint = Number(document.getElementById("major_input").value);
   Majorstandard = Number(Majorstandard);
-  var word = "편입학연도 : " + AdYear + " 년";
+  var word = "편입학연도 : " + AdYear + "년";
 
   if(SecYear){
     word += " - 2학년 편입";
@@ -358,7 +358,6 @@ function BaseNeceresult(Majorstandard) {
     }
   }
 
-
   var Fusioncheck = document.getElementById("fusion_major_none").checked;
   var Fusion = document.getElementById("fusion-options");
   var Fusiontext = Fusion.options[Fusion.selectedIndex].text;
@@ -411,12 +410,139 @@ function BaseNeceresult(Majorstandard) {
 
   var TotalPoint = Number(document.getElementById("the_total").value);
   var TotalStandard = Number(document.getElementById("total_standard").value);
-  if (TotalPoint < 132) {
+  if (TotalPoint < TotalStandard) {
     word += "전체 이수학점 : " + [TotalStandard - TotalPoint] + " 학점 미달"
   } else {
     word += "전체 이수학점 : 기준 통과"
   }
-  swal("학점 이수 결과", word, "success")
+
+  if (Basepoint >= BaseStandard && Necepoint >= NeceStandard && Majorpoint >= Majorstandard && TotalPoint >= TotalStandard) {
+    if (Minorcheck && Teachingcheck) {
+      if (Multimajortext.includes("해당")) {
+        swal("학점 이수 결과", word, "success")
+      } else if (Multimajortext.includes("심화")) {
+        swal("학점 이수 결과", word, "success")
+      } else if (Multimajortext.includes("복수")) {
+        if (Doublepoint >= 45) {
+          swal("학점 이수 결과", word, "success")
+        } else {
+          swal("학점 이수 결과", word, "error")
+        }
+      } else if (Multimajortext.includes("연계")) {
+        if (Linkpoint >= 36) {
+          swal("학점 이수 결과", word, "success")
+        } else {
+          swal("학점 이수 결과", word, "error")
+        }
+      } else if (Multimajortext.includes("융합")) {
+        if (Fusionpoint >= FusionStandard) {
+          swal("학점 이수 결과", word, "success")
+        } else {
+          swal("학점 이수 결과", word, "error")
+        }
+      } else if (Multimajortext.includes("설계")) {
+        if (Planpoint >= 36) {
+          swal("학점 이수 결과", word, "success")
+        } else {
+          swal("학점 이수 결과", word, "error")
+        }
+      }
+    } else if (Minorpoint >= 21 && Teachingcheck) {
+      if (Multimajortext.includes("해당")) {
+        swal("학점 이수 결과", word, "success")
+      } else if (Multimajortext.includes("심화")) {
+        swal("학점 이수 결과", word, "success")
+      } else if (Multimajortext.includes("복수")) {
+        if (Doublepoint >= 45) {
+          swal("학점 이수 결과", word, "success")
+        } else {
+          swal("학점 이수 결과", word, "error")
+        }
+      } else if (Multimajortext.includes("연계")) {
+        if (Linkpoint >= 36) {
+          swal("학점 이수 결과", word, "success")
+        } else {
+          swal("학점 이수 결과", word, "error")
+        }
+      } else if (Multimajortext.includes("융합")) {
+        if (Fusionpoint >= FusionStandard) {
+          swal("학점 이수 결과", word, "success")
+        } else {
+          swal("학점 이수 결과", word, "error")
+        }
+      } else if (Multimajortext.includes("설계")) {
+        if (Planpoint >= 36) {
+          swal("학점 이수 결과", word, "success")
+        } else {
+          swal("학점 이수 결과", word, "error")
+        }
+      }
+    } else if (Minorpoint >= 21 && Teachingpoint >= 22) {
+      if (Multimajortext.includes("해당")) {
+        swal("학점 이수 결과", word, "success")
+      } else if (Multimajortext.includes("심화")) {
+        swal("학점 이수 결과", word, "success")
+      } else if (Multimajortext.includes("복수")) {
+        if (Doublepoint >= 45) {
+          swal("학점 이수 결과", word, "success")
+        } else {
+          swal("학점 이수 결과", word, "error")
+        }
+      } else if (Multimajortext.includes("연계")) {
+        if (Linkpoint >= 36) {
+          swal("학점 이수 결과", word, "success")
+        } else {
+          swal("학점 이수 결과", word, "error")
+        }
+      } else if (Multimajortext.includes("융합")) {
+        if (Fusionpoint >= FusionStandard) {
+          swal("학점 이수 결과", word, "success")
+        } else {
+          swal("학점 이수 결과", word, "error")
+        }
+      } else if (Multimajortext.includes("설계")) {
+        if (Planpoint >= 36) {
+          swal("학점 이수 결과", word, "success")
+        } else {
+          swal("학점 이수 결과", word, "error")
+        }
+      }
+    } else if (Minorcheck && Teachingpoint >= 22) {
+      if (Multimajortext.includes("해당")) {
+        swal("학점 이수 결과", word, "success")
+      } else if (Multimajortext.includes("심화")) {
+        swal("학점 이수 결과", word, "success")
+      } else if (Multimajortext.includes("복수")) {
+        if (Doublepoint >= 45) {
+          swal("학점 이수 결과", word, "success")
+        } else {
+          swal("학점 이수 결과", word, "error")
+        }
+      } else if (Multimajortext.includes("연계")) {
+        if (Linkpoint >= 36) {
+          swal("학점 이수 결과", word, "success")
+        } else {
+          swal("학점 이수 결과", word, "error")
+        }
+      } else if (Multimajortext.includes("융합")) {
+        if (Fusionpoint >= FusionStandard) {
+          swal("학점 이수 결과", word, "success")
+        } else {
+          swal("학점 이수 결과", word, "error")
+        }
+      } else if (Multimajortext.includes("설계")) {
+        if (Planpoint >= 36) {
+          swal("학점 이수 결과", word, "success")
+        } else {
+          swal("학점 이수 결과", word, "error")
+        }
+      }
+    } else {
+      swal("학점 이수 결과", word, "error")
+    }
+  } else {
+    swal("학점 이수 결과", word, "error")
+  }
 }
 
 function tr_total_point_sum() {
