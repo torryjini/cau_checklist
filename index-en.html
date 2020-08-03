@@ -26,7 +26,7 @@
 
 <body>
   <header>
-    <h1>CAU<br>Checklist</h1>
+    <h1>CAU<br>Check 4 Grad</h1>
     <img src="white_logo.png" id="index_logo">
   </header>
   <ul>
@@ -60,9 +60,9 @@
     function doLink() {
       var EntStyle = document.getElementById("ent_style").value;
       var Year = document.getElementById('index-year').value;
-      var word = "This checklist is to be used as a reference for enrollment and graduation preparation."
-       + "\nYou can check your graduation requirements such as required GPA and etc."
-       + "\nPlease contact the psychology department office for confirmation after using the checklist."
+      var word = "This checklist is to be used as a reference for enrollment and graduation preparation." +
+        "\nYou can check your graduation requirements such as required GPA and etc." +
+        "\nPlease contact the psychology department office for confirmation after using the checklist."
 
       if (Year == 0) {
         swal("Select your entrance year!", "", "error")
@@ -78,7 +78,7 @@
               window.location.href = "12to14-en.html";
             }
           } else if (EntStyle == "transfer") {
-              window.location.href = "transfer-en.html";
+            window.location.href = "transfer-en.html";
           }
         });
       }
