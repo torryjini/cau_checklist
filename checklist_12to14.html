@@ -154,7 +154,7 @@
           <td>9</td>
           <td></td>
           <td>
-            <input type="number" id="core_total" placeholder="0" value="" onchange="Liberal_Sum();" onkeydown='return onlyNumber(event);' onkeyup='removeChar(event);Liberal_Sum();' class="inputnumber" min="0" max="50" maxlength="2"
+            <input type="number" id="core_total" placeholder="0" value="" onchange="Liberal_Sum();" onkeyup='Liberal_Sum();' class="inputnumber" min="0" max="50" maxlength="2"
               oninput="maxLengthCheck(this)"> 학점
           </td>
           <!-- <td>각 영역당<br>1과목 이상 필수 이수</td> -->
@@ -164,7 +164,7 @@
           <td>0</td>
           <td></td>
           <td>
-            <input type="number" id="elective_liberal" placeholder="0" value="" onchange="Liberal_Sum();" onkeydown='return onlyNumber(event);' onkeyup='removeChar(event);Liberal_Sum();' min="0" max="50" class="inputnumber" maxlength="2"
+            <input type="number" id="elective_liberal" placeholder="0" value="" onchange="Liberal_Sum();" onkeyup='Liberal_Sum();' min="0" max="50" class="inputnumber" maxlength="2"
               oninput="maxLengthCheck(this)"> 학점
           </td>
           <!-- <td>자율이수</td> -->
@@ -203,7 +203,7 @@
           <td><input type="text" class="standard_number" id="base_standard" value="" readonly>
           </td>
           <td colspan="3">
-            <input type="number" id="base_input" placeholder="0" name="major" value="" onchange="total_point_sum()" onkeydown='return onlyNumber(event)' onkeyup='removeChar(event)' min="0" max="99" class="inputnumber" maxlength="2"
+            <input type="number" id="base_input" placeholder="0" name="major" value="" onchange="total_point_sum()" onkeyup="total_point_sum()" min="0" max="99" class="inputnumber" maxlength="2"
               oninput="maxLengthCheck(this)"> 학점
           </td>
         </tr>
@@ -212,7 +212,7 @@
           <td><input type="text" class="standard_number" id="nece_standard" value="" readonly>
           </td>
           <td colspan="3">
-            <input type="number" id="nece_input" placeholder="0" name="major" value="" onchange="total_point_sum()" onkeydown='return onlyNumber(event)' onkeyup='removeChar(event)' min="0" max="99" class="inputnumber" maxlength="2"
+            <input type="number" id="nece_input" placeholder="0" name="major" value="" onchange="total_point_sum()" onkeyup="total_point_sum()" min="0" max="99" class="inputnumber" maxlength="2"
               oninput="maxLengthCheck(this)"> 학점
           </td>
         </tr>
@@ -222,7 +222,7 @@
             <input type="text" class="standard_number" id="major_standard" value="" readonly>
             <br>(전공필수 포함)</td>
           <td colspan="3">
-            <input type="number" id="major_input" placeholder="0" name="major" value="" onchange="total_point_sum()" onkeydown='return onlyNumber(event)' onkeyup='removeChar(event)' min="0" max="99" class="inputnumber" maxlength="2"
+            <input type="number" id="major_input" placeholder="0" name="major" value="" onchange="total_point_sum()" onkeyup="total_point_sum()" min="0" max="99" class="inputnumber" maxlength="2"
               oninput="maxLengthCheck(this)"> 학점
           </td>
         </tr>
@@ -231,7 +231,7 @@
           <th>복수</th>
           <td>45</td>
           <td colspan="3">
-            <input type="number" id="double_major_point" placeholder="0" name="" value="" onchange="total_point_sum()" onkeydown='return onlyNumber(event)' onkeyup='removeChar(event)' class="inputnumber" min="0" max="78" maxlength="2"
+            <input type="number" id="double_major_point" placeholder="0" name="" value="" onchange="total_point_sum()" onkeyup="total_point_sum()" class="inputnumber" min="0" max="78" maxlength="2"
               oninput="maxLengthCheck(this)"> 학점<br>
             <input type="checkbox" id="double_major_none" onclick="checkcont1('double_major_none', 'double_major_point')"><label for="double_major_none">해당없음</label>
           </td>
@@ -240,20 +240,20 @@
           <th>연계</th>
           <td>36</td>
           <td>
-            <input type="number" id="link_major_point" placeholder="0" name="" value="" onchange="total_point_sum()" onkeydown='return onlyNumber(event)' onkeyup='removeChar(event)' class="inputnumber" min="0" maxlength="2"
+            <input type="number" id="link_major_point" placeholder="0" name="" value="" onchange="total_point_sum()" onkeyup="total_point_sum()" class="inputnumber" min="0" maxlength="2"
               oninput="maxLengthCheck(this)"> 학점<br>
             <input type="checkbox" id="link_major_none" onclick="checkcont('link_major_none', 'link_major_point', 'cross_point1')"><label for="link_major_none">해당없음</label>
           </td>
           <th rowspan="3">교차<br>인정</th>
           <td>
-            <input type="number" id="cross_point1" placeholder="0" name="" value="" onkeydown='return onlyNumber(event)' onkeyup='removeChar(event)' class="inputnumber" min="0" max="12" maxlength="2" oninput="maxLengthCheck(this)"> 학점
+            <input type="number" id="cross_point1" placeholder="0" name="" value="" onchange="total_point_sum()" onkeyup="total_point_sum()" class="inputnumber" min="0" max="12" maxlength="2" oninput="maxLengthCheck(this)"> 학점
           </td>
         </tr>
         <tr>
           <th>융합</th>
           <td>
             <input type="text" class="standard_number" id="fusion_standard" value="36" readonly><br>
-            <select id="fusion-options" onchange="FusionStandardCheck()" onkeyup="onchange=" FusionStandardCheck()"">
+            <select id="fusion-options" onchange="FusionStandardCheck()" onkeyup="FusionStandardCheck()">
               <option value="0" selected>선 택</option>
               <option value="36">문화컨텐츠</option>
               <option value="36">창업학</option>
@@ -267,32 +267,32 @@
             </select>
           </td>
           <td>
-            <input type="number" id="fusion_major_point" placeholder="0" name="" value="" onchange="total_point_sum()" onkeydown='return onlyNumber(event)' onkeyup='removeChar(event)' class="inputnumber" min="0" maxlength="2"
+            <input type="number" id="fusion_major_point" placeholder="0" name="" value="" onchange="total_point_sum()" onkeyup='removeChar(event)' class="inputnumber" min="0" maxlength="2"
               oninput="maxLengthCheck(this)"> 학점<br>
             <input type="checkbox" id="fusion_major_none" onclick="checkcont('fusion_major_none', 'fusion_major_point', 'cross_point2')"><label for="fusion_major_none">해당없음</label>
           </td>
           <td>
-            <input type="number" id="cross_point2" placeholder="0" name="" value="" onkeydown='return onlyNumber(event)' onkeyup='removeChar(event)' class="inputnumber" min="0" max="15" maxlength="2" oninput="maxLengthCheck(this)"> 학점
+            <input type="number" id="cross_point2" placeholder="0" name="" value="" onchange="total_point_sum()" onkeyup="total_point_sum()" class="inputnumber" min="0" max="15" maxlength="2" oninput="maxLengthCheck(this)"> 학점
           </td>
         </tr>
         <tr>
           <th>설계</th>
           <td>36</td>
           <td>
-            <input type="number" id="plan_major_point" placeholder="0" name="" value="" onchange="total_point_sum()" onkeydown='return onlyNumber(event)' onkeyup='removeChar(event)' class="inputnumber" min="0" maxlength="2"
+            <input type="number" id="plan_major_point" placeholder="0" name="" value="" onchange="total_point_sum()" onkeyup="total_point_sum()" class="inputnumber" min="0" maxlength="2"
               oninput="maxLengthCheck(this)"> 학점<br>
             <input type="checkbox" id="plan_major_none" onclick="checkcont('plan_major_none', 'plan_major_point', 'cross_point3')"><label for="plan_major_none">해당없음</label>
           </td>
           <td>
-            <input type="number" id="cross_point3" placeholder="0" name="" value="" onkeydown='return onlyNumber(event)' onkeyup='removeChar(event)' class="inputnumber" min="0" max="6" maxlength="1" oninput="maxLengthCheck(this)"> 학점
+            <input type="number" id="cross_point3" placeholder="0" name="" value="" onchange="total_point_sum()" onkeyup="total_point_sum()" class="inputnumber" min="0" max="6" maxlength="1" oninput="maxLengthCheck(this)"> 학점
           </td>
         </tr>
         <tr>
           <th colspan="2">부전공</th>
           <td>21</td>
           <td colspan="3">
-            <input type="number" id="minor_point" placeholder="0" name="" value="" onchange="total_point_sum()" onkeydown='return onlyNumber(event)' onkeyup='removeChar(event)' class="inputnumber
-            " min="0" maxlength="2" oninput="maxLengthCheck(this)"> 학점 <br>
+            <input type="number" id="minor_point" placeholder="0" name="" value="" onchange="total_point_sum()" onkeyup="total_point_sum()" class="inputnumber"
+             min="0" maxlength="2" oninput="maxLengthCheck(this)"> 학점 <br>
             <input type="checkbox" id="minor_none" onclick="checkcont1('minor_none', 'minor_point')"><label for="minor_none">해당없음</label>
           </td>
           <!-- <td>부전공 전공 필수 6학점 이상 포함하여 수강</td> -->
@@ -301,7 +301,7 @@
           <th colspan="2">자유선택</th>
           <td>0</td>
           <td colspan="3">
-            <input type="number" id="free_point" placeholder="0" name="" value="" onchange="total_point_sum()" onkeydown='return onlyNumber(event)' onkeyup='removeChar(event)' class="inputnumber" min="0" maxlength="2" oninput="maxLengthCheck(this)">
+            <input type="number" id="free_point" placeholder="0" name="" value="" onchange="total_point_sum()"  onkeyup="total_point_sum()" class="inputnumber" min="0" maxlength="2" oninput="maxLengthCheck(this)">
             학점
           </td>
         </tr>
@@ -309,7 +309,7 @@
           <th colspan="2">교직</th>
           <td>22</td>
           <td colspan="3">
-            <input type="number" id="teaching_point" placeholder="0" name="" value="" onchange="total_point_sum()" onkeydown='return onlyNumber(event)' onkeyup='removeChar(event)' min="0" max="30" class="inputnumber" maxlength="2"
+            <input type="number" id="teaching_point" placeholder="0" name="" value="" onchange="total_point_sum()"  onkeyup="total_point_sum()" min="0" max="30" class="inputnumber" maxlength="2"
               oninput="maxLengthCheck(this)"> 학점<br>
             <input type="checkbox" id="teaching_none" onclick="checkcont1('teaching_none', 'teaching_point')"><label for="teaching_none">해당없음</label>
           </td>
