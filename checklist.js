@@ -151,7 +151,7 @@ function BaseNeceStandard() {
     "cmc": "15",
     "planning": "12",
     "sociology": "12",
-    "public-admin": "18",
+    "public-admin": "17",
     "public-policy": "16"
   };
 

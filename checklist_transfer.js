@@ -154,7 +154,7 @@ function tr_major_standard_maker() {
 
 function BaseNeceStandard() {
   var Major_base1718 = {
-    "public-admin": "9",
+    "public-admin": "8",
     "public-policy": "7"
   };
 
