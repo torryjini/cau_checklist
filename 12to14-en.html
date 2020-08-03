@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>CAU CHECKLIST</title>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-172846071-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag('js', new Date());
+
+    gtag('config', 'UA-172846071-1');
+  </script>
+  <link rel=" shortcut icon" href="logo-icon/favicon-32x32.png">
+  <link rel="icon" href="logo-icon/favicon-32x32.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+  <script src="https://kit.fontawesome.com/b170da0ad3.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div id="total_checklist">
+    <header id="page_header">
+      <a href="index-en.html"><img src="white_logo.png" id="logo"></a>
+      <br>
+      <button onclick="topFunction()" id="TopBtn" title="Go to top">Top</button>
+      <script type="text/javascript" src="basic.js"></script>
+      <script type="text/javascript" src="checklist12to14.js"></script>
+    </header>
+    <div id="student-info">
+      <div id="H2U">
+        <h2 id="H2Utitle">How To Use</h2>
+        <ol>
+          <li>CAU Portal Login - 강의마당 - 졸업관련 성적조회</li>
+          <li>Put your information for basic info section.</li>
+          <li>After accurately entering your current credits for General, Major and other requirements, check for results!</li>
+        </ol>
+      </div>
+      <table border="solid" width="100%">
+        <legend><img class="legend-icon" src="legend-icon.png"> Basic Info</legend>
+        <tr>
+          <th width="50%">Entrance year</th>
+          <th width="50%">College</th>
+        </tr>
+        <tr>
+          <td>
+            <select id="ad-year" onchange="Form_Reset('Major_select_form');Form_Reset('Multimajor_form');koreancheck()" required tabindex="1">
+              <option value="0">Select</option>
+              <option value="2012">2012</option>
+              <option value="2013">2013</option>
+              <option value="2014">2014</option>
+            </select>
+          </td>
+          <td>
+            <select id="college_select" tabindex="2">
+              <option value="society">사회과학대학</option>
+            </select></td>
+        </tr>
+        <tr>
+          <th>Major(department)</th>
+          <th>다전공 Multiple Major</th>
+        </tr>
+        <tr>
+          <td>
+            <form id="Major_select_form">
+              <select id="Major_select" onchange="BaseNeceStandard();OfficeNumber();Form_Reset('Multimajor_form')"
+               onclick="BaseNeceStandard();OfficeNumber();Form_Reset('Multimajor_form')" onkeyup="BaseNeceStandard();OfficeNumber()" required tabindex="3">
+                <option value="none">Select</option>
+                <option value="politics">정치국제학과</option>
+                <option value="public">공공인재학부</option>
+                <option value="psyche">심리학과</option>
+                <option value="lis">문헌정보학과</option>
+                <option value="socialwelfare">사회복지학부</option>
+                <option value="cmc">신문방송학부</option>
+                <option value="planning">도시계획/부동산학과</option>
+                <option value="sociology">사회학과</option>
+              </select>
+            </form>
+          </td>
+          <td>
+            <form id="Multimajor_form">
+              <select id="MultiMajor_select" onchange="major_standard_maker();" required tabindex="4">
+                <option value="0">Select</option>
+                <option value="66">전공심화</option>
+                <option value="45">복수전공</option>
+                <option value="45">연계전공</option>
+                <option value="45">융합전공</option>
+                <option value="45">설계전공</option>
+              </select>
+            </form>
+          </td>
+        </tr>
+      </table>
+    </div>
+    <br>
+    <br>
+    <br>
+    <form id="Liberal">
+      <table border="solid" width="100%">
+        <legend><img class="legend-icon" src="legend-icon.png"> General credits (Non-major) <button type="button" class="info-btn" onclick="liveralmodal()"><i class="fas fa-info-circle"></i> Details</button></legend>
+        <tr>
+          <th colspan="2">Type</th>
+          <th>Minimum credits</th>
+          <th>Maximum credits</th>
+          <th colspan="2">Current credits</th>
+          <!-- <th>이수기준</th> -->
+        </tr>
+        <tr>
+          <th rowspan="3">공통</th>
+          <th>국어</th>
+          <td>2</td>
+          <td>2</td>
+          <td><select class="checkselect" id="common_kor" onchange="Liberal_Sum();" tabindex="5">
+              <option value="0">0</option>
+              <option value="2">2</option>
+            </select> credits</td>
+          <!-- <td>글쓰기</td> -->
+        </tr>
+        <tr>
+          <th>영어</th>
+          <td>4</td>
+          <td>4</td>
+          <td><select id="common_eng" class="checkselect" onchange="Liberal_Sum();" tabindex="6">
+              <option value="0">0</option>
+              <option value="2">2</option>
+              <option value="4">4</option>
+            </select> credits<br>
+            <input type="checkbox" id="eng_ex" tabindex="-1"><label for="eng_ex">Exemption</label>
+          </td>
+          <!-- <td>Communication in English</td> -->
+        </tr>
+        <tr>
+          <th>기타</th>
+          <td>8</td>
+          <td>8</td>
+          <td><select id="common_etc" class="checkselect" onchange="Liberal_Sum();" tabindex="7">
+              <option value="0">0</option>
+              <option value="2">2</option>
+              <option value="4">4</option>
+              <option value="6">6</option>
+              <option value="8">8</option>
+            </select> credits<br>
+            <input type="checkbox" id="account_check" tabindex="-1"><label for="account_check">회계학원론(회계원리) 이수</label></td>
+          <!-- <td>1학년 : 창의와소통/회계와사회/<br>컴퓨팅적 사고와 문제해결/<br>2학년 : ACT/한국사
+          <br>회계학원론(회계원리) 이수 시<br>"회계와사회" 면제</td> -->
+        </tr>
+        <tr>
+          <th colspan="2">핵심</th>
+          <td>9</td>
+          <td></td>
+          <td>
+            <input type="number" id="core_total" placeholder="0" value="" onchange="Liberal_Sum();" onkeyup='Liberal_Sum();' class="inputnumber" min="0" max="50" maxlength="2"
+              oninput="maxLengthCheck(this)" tabindex="8"> credits
+          </td>
+          <!-- <td>각 영역당<br>1과목 이상 필수 이수</td> -->
+        </tr>
+        <tr>
+          <th colspan="2">선택</th>
+          <td>0</td>
+          <td></td>
+          <td>
+            <input type="number" id="elective_liberal" placeholder="0" value="" onchange="Liberal_Sum();" onkeyup='Liberal_Sum();' min="0" max="50" class="inputnumber" maxlength="2"
+              oninput="maxLengthCheck(this)" tabindex="9"> credits
+          </td>
+          <!-- <td>자율이수</td> -->
+        </tr>
+        <tr>
+          <th colspan="2">Total</th>
+          <td>23</td>
+          <td>45</td>
+          <td>
+            <input type="text" id="liberal_total" value="0" class="totalnumber" onchange="total_point_sum()" readonly tabindex="-1"> credits
+          </td>
+          <!-- <td>45 credits 초과 시<br>졸업 credits에서 감산</td> -->
+        </tr>
+      </table>
+    </form>
+    <br>
+    <div class="buttons">
+      <input type="reset" value="&#8635; Reset" onclick="Form_Reset('Liberal')">
+      <input type="button" value="&#10003; Check for results" onclick="Liberal_cal();total_point_sum()" tabindex="10">
+    </div>
+    <br>
+    <div class="call">Da Vinci College of<br>General Education<br><i class="fas fa-phone-alt"></i>
+      <input type="text" id="Davinci" value="02-820-6633" readonly tabindex="-1">/6639</div>
+    <br>
+    <br>
+    <form id="Major">
+      <table border="solid" width="100%">
+        <legend><img class="legend-icon" src="legend-icon.png"> Major credits <button type="button" class="info-btn" onclick="majormodal()"><i class="fas fa-info-circle"></i> Details</button></legend>
+        <tr>
+          <th colspan="2">Type</th>
+          <th>Minimum credits</th>
+          <th colspan="3">Current credits</th>
+        </tr>
+        <tr>
+          <th colspan="2">전공기초</th>
+          <td><input type="text" class="standard_number" id="base_standard" value="" readonly tabindex="-1">
+          </td>
+          <td colspan="3">
+            <input type="number" id="base_input" placeholder="0" name="major" value="" onchange="total_point_sum()" onkeyup="total_point_sum()" min="0" max="99" class="inputnumber" maxlength="2"
+              oninput="maxLengthCheck(this)" tabindex="11"> credits
+          </td>
+        </tr>
+        <tr>
+          <th colspan="2">전공필수</th>
+          <td><input type="text" class="standard_number" id="nece_standard" value="" readonly tabindex="-1">
+          </td>
+          <td colspan="3">
+            <input type="number" id="nece_input" placeholder="0" name="major" value="" onchange="total_point_sum()" onkeyup="total_point_sum()" min="0" max="99" class="inputnumber" maxlength="2"
+              oninput="maxLengthCheck(this)" tabindex="12"> credits
+          </td>
+        </tr>
+        <tr>
+          <th colspan="2">전공과목</th>
+          <td>
+            <input type="text" class="standard_number" id="major_standard" value="" readonly tabindex="-1">
+            <br>(includes 전공필수)</td>
+          <td colspan="3">
+            <input type="number" id="major_input" placeholder="0" name="major" value="" onchange="total_point_sum()" onkeyup="total_point_sum()" min="0" max="99" class="inputnumber" maxlength="2"
+              oninput="maxLengthCheck(this)" tabindex="13"> credits
+          </td>
+        </tr>
+        <tr>
+          <th rowspan="4">다전공<br>Multiple Major</th>
+          <th>복수</th>
+          <td>45</td>
+          <td colspan="3">
+            <input type="number" id="double_major_point" placeholder="0" name="" value="" onchange="total_point_sum()" onkeyup="total_point_sum()" class="inputnumber" min="0" max="78" maxlength="2"
+              oninput="maxLengthCheck(this)" tabindex="14"> credits<br>
+            <input type="checkbox" id="double_major_none" onclick="checkcont1('double_major_none', 'double_major_point')" tabindex="-1"><label for="double_major_none">N/A</label>
+          </td>
+        </tr>
+        <tr>
+          <th>연계</th>
+          <td>36</td>
+          <td>
+            <input type="number" id="link_major_point" placeholder="0" name="" value="" onchange="total_point_sum()" onkeyup="total_point_sum()" class="inputnumber" min="0" maxlength="2"
+              oninput="maxLengthCheck(this)" tabindex="15"> credits<br>
+            <input type="checkbox" id="link_major_none" onclick="checkcont('link_major_none', 'link_major_point', 'cross_point1')" tabindex="-1"><label for="link_major_none">N/A</label>
+          </td>
+          <th rowspan="3">교차<br>인정</th>
+          <td>
+            <input type="number" id="cross_point1" placeholder="0" name="" value="" onchange="total_point_sum()" onkeyup="total_point_sum()"
+             class="inputnumber" min="0" max="12" maxlength="2" oninput="maxLengthCheck(this)" tabindex="16"> credits
+          </td>
+        </tr>
+        <tr>
+          <th>융합</th>
+          <td>
+            <input type="text" class="standard_number" id="fusion_standard" value="36" readonly tabindex="-1"><br>
+            <select id="fusion-options" onchange="FusionStandardCheck()" onkeyup="FusionStandardCheck()" tabindex="17">
+              <option value="0" selected>Select</option>
+              <option value="36">문화컨텐츠</option>
+              <option value="36">창업학</option>
+              <option value="36">게임.인터렉티브</option>
+              <option value="45">금융공학</option>
+              <option value="36">소프트웨어.인문</option>
+              <option value="36">사이버보안</option>
+              <option value="36">테크놀로지아트</option>
+              <option value="36">소프트웨어벤처</option>
+              <option value="36">문화다양성</option>
+            </select>
+          </td>
+          <td>
+            <input type="number" id="fusion_major_point" placeholder="0" name="" value="" onchange="total_point_sum()" onkeyup='removeChar(event)' class="inputnumber" min="0" maxlength="2"
+              oninput="maxLengthCheck(this)" tabindex="18"> credits<br>
+            <input type="checkbox" id="fusion_major_none" onclick="checkcont('fusion_major_none', 'fusion_major_point', 'cross_point2')" tabindex="-1"><label for="fusion_major_none">N/A</label>
+          </td>
+          <td>
+            <input type="number" id="cross_point2" placeholder="0" name="" value="" onchange="total_point_sum()" onkeyup="total_point_sum()"
+             class="inputnumber" min="0" max="15" maxlength="2" oninput="maxLengthCheck(this)" tabindex="19"> credits
+          </td>
+        </tr>
+        <tr>
+          <th>설계</th>
+          <td>36</td>
+          <td>
+            <input type="number" id="plan_major_point" placeholder="0" name="" value="" onchange="total_point_sum()" onkeyup="total_point_sum()" class="inputnumber" min="0" maxlength="2"
+              oninput="maxLengthCheck(this)" tabindex="20"> credits<br>
+            <input type="checkbox" id="plan_major_none" onclick="checkcont('plan_major_none', 'plan_major_point', 'cross_point3')" tabindex="-1"><label for="plan_major_none">N/A</label>
+          </td>
+          <td>
+            <input type="number" id="cross_point3" placeholder="0" name="" value="" onchange="total_point_sum()" onkeyup="total_point_sum()"
+             class="inputnumber" min="0" max="6" maxlength="1" oninput="maxLengthCheck(this)" tabindex="21"> credits
+          </td>
+        </tr>
+        <tr>
+          <th colspan="2">Minor</th>
+          <td>21</td>
+          <td colspan="3">
+            <input type="number" id="minor_point" placeholder="0" name="" value="" onchange="total_point_sum()" onkeyup="total_point_sum()" class="inputnumber"
+             min="0" maxlength="2" oninput="maxLengthCheck(this)" tabindex="22"> credits <br>
+            <input type="checkbox" id="minor_none" onclick="checkcont1('minor_none', 'minor_point')" tabindex="-1"><label for="minor_none">N/A</label>
+          </td>
+          <!-- <td>Minor 전공 필수 6credits 이상 포함하여 수강</td> -->
+        </tr>
+        <tr>
+          <th colspan="2">자유선택</th>
+          <td>0</td>
+          <td colspan="3">
+            <input type="number" id="free_point" placeholder="0" name="" value="" onchange="total_point_sum()"  onkeyup="total_point_sum()"
+             class="inputnumber" min="0" maxlength="2" oninput="maxLengthCheck(this)" tabindex="23"> credits
+          </td>
+        </tr>
+        <tr>
+          <th colspan="2">교직</th>
+          <td>22</td>
+          <td colspan="3">
+            <input type="number" id="teaching_point" placeholder="0" name="" value="" onchange="total_point_sum()"  onkeyup="total_point_sum()" min="0" max="30" class="inputnumber" maxlength="2"
+              oninput="maxLengthCheck(this)" tabindex="24" readonly> credits<br>
+            <input type="checkbox" id="teaching_none" onclick="checkcont1('teaching_none', 'teaching_point')" tabindex="-1" checked><label for="teaching_none">N/A</label>
+          </td>
+          <!-- <td>이수기준 통과 여부는 교직팀에 문의할 것</td> -->
+        </tr>
+        <tr>
+          <th colspan="2">Total credits</th>
+          <td><input type="text" class="standard_number" id="total_standard" value="132" readonly tabindex="-1"></td>
+          <td colspan="3">
+            <input type="text" id="the_total" value="0" class="totalnumber" readonly tabindex="-1"> credits
+          </td>
+          <!-- <td>교양credits은 최대 45credits까지 인정</td> -->
+        </tr>
+      </table>
+    </form>
+    <br>
+    <div class="buttons">
+      <input type="reset" value="&#8635; Reset" onclick="Form_Reset('Major');Form_Reset('Multimajor_form')">
+      <input type="button" value="&#10003; Check for results" onclick="Major_result()" tabindex="25">
+    </div>
+    <br>
+    <div class="call">
+      <input type="text" id="dept" readonly tabindex="-1"><br><i class="fas fa-phone-alt"></i>
+      <input type="text" id="phone" readonly tabindex="-1">
+    </div>
+    <br><br>
+    <form id='etc'>
+      <table border="solid" width="100%">
+        <legend><img class="legend-icon" src="legend-icon.png"> Other requirements <button type="button" class="info-btn" onclick="etcmodal()"><i class="fas fa-info-circle"></i> Help</button></legend>
+        <tr>
+          <th colspan="2">Type</th>
+          <th>Results</th>
+          <th>Criteria</th>
+        </tr>
+        <tr>
+          <th rowspan="3">졸업인정제</th>
+          <th>영어</th>
+          <td>
+            <input type="checkbox" id="English" tabindex="26" checked><label for="English">Pass</label>
+          </td>
+          <td rowspan="2">*Only for Koreans</td>
+        </tr>
+        <tr>
+          <th>한자</th>
+          <td>
+            <input type="checkbox" id="Hanja" tabindex="27" checked><label for="Hanja">Pass</label>
+          </td>
+        </tr>
+        <tr>
+          <th>한국어</th>
+          <td>
+            <input type="checkbox" id="Korean" tabindex="28"><label for="Korean">Pass</label>
+          </td>
+          <td>Above TOPIK level 4</td>
+        </tr>
+        <tr>
+          <th rowspan="2">GradExam<br>/Thesis</th>
+          <th>Major</th>
+          <td>
+            <input type="checkbox" id="major_paper" tabindex="29"><label for="major_paper">Pass</label>
+          </td>
+          <td></td>
+        </tr>
+        <tr>
+          <th>Double major</th>
+          <td>
+            <input type="checkbox" id="double_major_paper" tabindex="30"><label for="double_major_paper">Pass/ N/A</label>
+          </td>
+          <td></td>
+        </tr>
+        <tr>
+          <th colspan="2">Accumulated GPA</th>
+          <td><input type="number" placeholder="0" id="average" value="" max="4.5" min="0" step=".01"
+             class="inputnumber" maxlength="4" oninput="maxLengthCheck(this)" tabindex="31"> / 4.5</td>
+             <td>If your final GPA is less than 2.0, you cannot graduate.</td>
+        </tr>
+      </table>
+    </form><br>
+    <div class="buttons">
+      <input type="reset" value="&#8635; Reset" onclick="Form_Reset('etc')">
+      <input type="button" value="&#10003; Check for results" onclick="Etc_result()" tabindex="32">
+    </div>
+    </form><br>
+  </div>
+  <div id="disqus_thread"></div>
+  <script>
+    /**
+     *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+     *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/unibersalcode/#configuration-variables*/
+    /*
+    var disqus_config = function () {
+    this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+    this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
+    */
+    (function() { // DON'T EDIT BELOW THIS LINE
+      var d = document,
+        s = d.createElement('script');
+      s.src = 'https://cau-checklist.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+</body>
+
+</html>

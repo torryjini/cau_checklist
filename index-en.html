@@ -30,27 +30,25 @@
     <img src="white_logo.png" id="index_logo">
   </header>
   <ul>
-    <li>언 어<br>
+    <li>Language<br>
       <select class="index_select" id="langbox" onchange="location = this.value">
-        <option value="#">한국어</option>
-        <option value="index-en.html">English</option>
-        <!-- <option value="index-cn.html">중국어</option> -->
-      </select></li>
+        <option value="#">English</option>
+        <option value="index.html">Korean<      </select></li>
     <form>
-      <li>입학유형<br>
+      <li>Admission type<br>
         <select class="index_select" id="ent_style">
-          <option value="entrance">신입학</option>
-          <option value="transfer">편입학</option>
+          <option value="entrance">Non-transfer</option>
+          <option value="transfer">Transfer</option>
         </select></li>
-      <li>입학시기<br>
+      <li>Entrance year<br>
         <select id="index-year" class="index_select">
-          <option value="0">선 택</option>
+          <option value="0">Select</option>
           <option value="2014">2012 ~ 2014</option>
           <option value="2015">2015</option>
           <option value="2016">2016 ~</option>
         </select></li>
       <br>
-      <input type="button" id="enter" value="시 작" onclick="doLink()">
+      <input type="button" id="enter" value="Enter" onclick="doLink()">
     </form>
     <br>
   </ul>
@@ -61,25 +59,25 @@
     function doLink() {
       var EntStyle = document.getElementById("ent_style").value;
       var Year = document.getElementById('index-year').value;
-      var word = "본 체크리스트는 수강신청 및 졸업준비를 위한 참고용입니다."
-       + "\n학점 기준 및 졸업요건 통과 여부를 확인할 수 있습니다."
-       + "\n사용 후, 학과 사무실에 문의하여 확인하시기 바랍니다."
+      var word = "This checklist is to be used as a reference for enrollment and graduation preparation."
+       + "\nYou can check your graduation requirements such as required GPA and etc."
+       + "\nPlease contact the psychology department office for confirmation after using the checklist."
 
       if (Year == 0) {
-        swal("입학시기를 선택하세요!", "", "error")
+        swal("Select your entrance year!", "", "error")
       } else {
-        swal("주의사항",
+        swal("Warning",
           word, "warning").then(okay => {
           if (EntStyle == "entrance") {
             if (Year >= 2016) {
-              window.location.href = "2016.html";
+              window.location.href = "2016-en.html";
             } else if (Year == 2015) {
-              window.location.href = "2015.html";
+              window.location.href = "2015-en.html";
             } else if (Year == 2014) {
-              window.location.href = "12to14.html";
+              window.location.href = "12to14-en.html";
             }
           } else if (EntStyle == "transfer") {
-              window.location.href = "transfer.html";
+              window.location.href = "transfer-en.html";
           }
         });
       }
