@@ -252,8 +252,13 @@ input[type=reset]:hover {
   margin: 0;
 }
 
-#ad-year, #MultiMajor_select {
+#ad-year {
   width: 5rem;
+  height: 1.5rem;
+}
+
+#MultiMajor_select {
+  width: 6.5rem;
   height: 1.5rem;
 }
 
