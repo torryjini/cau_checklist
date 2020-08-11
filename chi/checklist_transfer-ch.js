@@ -28,125 +28,149 @@ function tr_major_standard_maker() {
     document.getElementById("double_major_point").value = null;
     document.getElementById("double_major_point").readOnly = true;
     document.getElementById("double_major_paper").checked = true;
+    document.getElementById("double_table").style.display = "none";
 
     document.getElementById("link_major_none").checked = true;
     document.getElementById("link_major_point").value = null;
     document.getElementById("link_major_point").readOnly = true;
     document.getElementById("cross_point1").value = null;
     document.getElementById("cross_point1").readOnly = true;
+    document.getElementById("link_table").style.display = "none";
 
     document.getElementById("fusion_major_none").checked = true;
     document.getElementById("fusion_major_point").value = null;
     document.getElementById("fusion_major_point").readOnly = true;
     document.getElementById("cross_point2").value = null;
     document.getElementById("cross_point2").readOnly = true;
+    document.getElementById("fusion_table").style.display = "none";
 
     document.getElementById("plan_major_none").checked = true;
     document.getElementById("plan_major_point").value = null;
     document.getElementById("plan_major_point").readOnly = true;
     document.getElementById("cross_point3").value = null;
     document.getElementById("cross_point3").readOnly = true;
+    document.getElementById("plan_table").style.display = "none";
   } else if (Multimajortext.includes("복수")) {
     document.getElementById("double_major_none").checked = false;
     document.getElementById("double_major_point").readOnly = false;
     document.getElementById("double_major_paper").checked = false;
+    document.getElementById("double_table").style.display = "";
 
     document.getElementById("link_major_none").checked = true;
     document.getElementById("link_major_point").value = null;
     document.getElementById("link_major_point").readOnly = true;
     document.getElementById("cross_point1").value = null;
     document.getElementById("cross_point1").readOnly = true;
+    document.getElementById("link_table").style.display = "none";
 
     document.getElementById("fusion_major_none").checked = true;
     document.getElementById("fusion_major_point").value = null;
     document.getElementById("fusion_major_point").readOnly = true;
     document.getElementById("cross_point2").value = null;
     document.getElementById("cross_point2").readOnly = true;
+    document.getElementById("fusion_table").style.display = "none";
 
     document.getElementById("plan_major_none").checked = true;
     document.getElementById("plan_major_point").value = null;
     document.getElementById("plan_major_point").readOnly = true;
     document.getElementById("cross_point3").value = null;
     document.getElementById("cross_point3").readOnly = true;
+    document.getElementById("plan_table").style.display = "none";
   } else if (Multimajortext.includes("연계")) {
     document.getElementById("double_major_none").checked = true;
     document.getElementById("double_major_point").value = null;
     document.getElementById("double_major_point").readOnly = true;
     document.getElementById("double_major_paper").checked = true;
+    document.getElementById("double_table").style.display = "none";
 
     document.getElementById("link_major_none").checked = false;
     document.getElementById("link_major_point").readOnly = false;
     document.getElementById("cross_point1").readOnly = false;
+    document.getElementById("link_table").style.display = "";
 
     document.getElementById("fusion_major_none").checked = true;
     document.getElementById("fusion_major_point").value = null;
     document.getElementById("fusion_major_point").readOnly = true;
     document.getElementById("cross_point2").value = null;
     document.getElementById("cross_point2").readOnly = true;
+    document.getElementById("fusion_table").style.display = "none";
 
     document.getElementById("plan_major_none").checked = true;
     document.getElementById("plan_major_point").value = null;
     document.getElementById("plan_major_point").readOnly = true;
     document.getElementById("cross_point3").value = null;
     document.getElementById("cross_point3").readOnly = true;
+    document.getElementById("plan_table").style.display = "none";
   } else if (Multimajortext.includes("융합")) {
     document.getElementById("double_major_none").checked = true;
     document.getElementById("double_major_point").value = null;
     document.getElementById("double_major_point").readOnly = true;
     document.getElementById("double_major_paper").checked = true;
+    document.getElementById("double_table").style.display = "none";
 
     document.getElementById("link_major_none").checked = true;
     document.getElementById("link_major_point").value = null;
     document.getElementById("link_major_point").readOnly = true;
     document.getElementById("cross_point1").value = null;
     document.getElementById("cross_point1").readOnly = true;
+    document.getElementById("link_table").style.display = "none";
 
     document.getElementById("fusion_major_none").checked = false;
     document.getElementById("fusion_major_point").readOnly = false;
     document.getElementById("cross_point2").readOnly = false;
+    document.getElementById("fusion_table").style.display = "";
 
     document.getElementById("plan_major_none").checked = true;
     document.getElementById("plan_major_point").value = null;
     document.getElementById("plan_major_point").readOnly = true;
     document.getElementById("cross_point3").value = null;
     document.getElementById("cross_point3").readOnly = true;
+    document.getElementById("plan_table").style.display = "none";
   } else if (Multimajortext.includes("설계")) {
     document.getElementById("double_major_none").checked = true;
     document.getElementById("double_major_point").value = null;
     document.getElementById("double_major_point").readOnly = true;
     document.getElementById("double_major_paper").checked = true;
+    document.getElementById("double_table").style.display = "none";
 
     document.getElementById("link_major_none").checked = true;
     document.getElementById("link_major_point").value = null;
     document.getElementById("link_major_point").readOnly = true;
     document.getElementById("cross_point1").value = null;
     document.getElementById("cross_point1").readOnly = true;
+    document.getElementById("link_table").style.display = "none";
 
     document.getElementById("fusion_major_none").checked = true;
     document.getElementById("fusion_major_point").value = null;
     document.getElementById("fusion_major_point").readOnly = true;
     document.getElementById("cross_point2").value = null;
     document.getElementById("cross_point2").readOnly = true;
+    document.getElementById("fusion_table").style.display = "none";
 
     document.getElementById("plan_major_none").checked = false;
     document.getElementById("plan_major_point").readOnly = false;
     document.getElementById("cross_point3").readOnly = false;
+    document.getElementById("plan_table").style.display = "";
   } else if (Multimajortext.includes("선 택")) {
     document.getElementById("double_major_none").checked = false;
     document.getElementById("double_major_point").readOnly = false;
-    document.getElementById("double_major_paper").checked = true;
+    document.getElementById("double_major_paper").checked = false;
+    document.getElementById("double_table").style.display = "none";
 
     document.getElementById("link_major_none").checked = false;
     document.getElementById("link_major_point").readOnly = false;
     document.getElementById("cross_point1").readOnly = false;
+    document.getElementById("link_table").style.display = "none";
 
     document.getElementById("fusion_major_none").checked = false;
     document.getElementById("fusion_major_point").readOnly = false;
     document.getElementById("cross_point2").readOnly = false;
+    document.getElementById("fusion_table").style.display = "none";
 
     document.getElementById("plan_major_none").checked = false;
     document.getElementById("plan_major_point").readOnly = false;
     document.getElementById("cross_point3").readOnly = false;
+    document.getElementById("plan_table").style.display = "none";
   }
 }
 
