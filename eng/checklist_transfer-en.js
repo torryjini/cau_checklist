@@ -324,9 +324,9 @@ function BaseNeceresult(Majorstandard) {
   }
 
   if (Majortext.includes("트랙")) {
-    word += "\n주전공 : 공공인재학부 " + Majortext + "\n다전공 : " + Multimajortext + "\n교양 : " + Liberal_point + " 학점 이수\n";
+    word += "\n주전공 : 공공인재학부 " + Majortext + "\n다전공 : " + Multimajortext + "\n교양 : " + Liberal_point + " credit\n";
   } else {
-    word += "\n주전공 : " + Majortext + "\n다전공 : " + Multimajortext + "\n교양 : " + Liberal_point + " 학점 이수\n";
+    word += "\n주전공 : " + Majortext + "\n다전공 : " + Multimajortext + "\n교양 : " + Liberal_point + " credit\n";
   }
 
   var FusionOption = Number(document.getElementById("fusion-options").value);
@@ -344,30 +344,30 @@ function BaseNeceresult(Majorstandard) {
   }
 
   if (Basepoint < BaseStandard) {
-    word += "전공기초 : " + [BaseStandard - Basepoint] + " 학점 미달\n";
+    word += "전공기초 : " + [BaseStandard - Basepoint] + " more credits required\n";
   } else {
-    word += "전공기초 : 기준 통과\n";
+    word += "전공기초 : passed the requirement\n";
   }
 
   if (Necepoint < NeceStandard) {
-    word += "전공필수 : " + [NeceStandard - Necepoint] + " 학점 미달\n";
+    word += "전공필수 : " + [NeceStandard - Necepoint] + " more credits required\n";
   } else {
-    word += "전공필수 : 기준 통과\n";
+    word += "전공필수 : passed the requirement\n";
   }
 
   if (Majorpoint < Majorstandard) {
-    word += "전공과목 : " + [Majorstandard - Majorpoint] + " 학점 미달\n"
+    word += "전공과목 : " + [Majorstandard - Majorpoint] + " more credits required\n"
   } else {
-    word += "전공과목 : 기준 통과\n"
+    word += "전공과목 : passed the requirement\n"
   }
 
   var Doublecheck = document.getElementById("double_major_none").checked;
   var Doublepoint = Number(document.getElementById("double_major_point").value);
   if (!Doublecheck) {
     if (Doublepoint < 45) {
-      word += "복수전공 : " + [45 - Doublepoint] + " 학점 미달\n"
+      word += "복수전공 : " + [45 - Doublepoint] + " more credits required\n"
     } else {
-      word += "복수전공 : 최소학점 기준 통과\n"
+      word += "복수전공 : passed the minimum credit requirement\n"
     }
   }
 
@@ -376,9 +376,9 @@ function BaseNeceresult(Majorstandard) {
   var Linkpoint = Number(document.getElementById("link_major_point").value) + LinkCross;
   if (!Linkcheck) {
     if (Linkpoint < 36) {
-      word += "연계전공 : " + [36 - Linkpoint] + " 학점 미달\n"
+      word += "연계전공 : " + [36 - Linkpoint] + " more credits required\n"
     } else {
-      word += "연계전공 : 최소학점 기준 통과\n"
+      word += "연계전공 : passed the minimum credit requirement\n"
     }
   }
 
@@ -389,9 +389,9 @@ function BaseNeceresult(Majorstandard) {
   var FusionStandard = Number(document.getElementById("fusion_standard").value);
   if (!Fusioncheck) {
     if (Fusionpoint < FusionStandard) {
-      word += "융합전공_" + Fusiontext + " : " + [FusionStandard - Fusionpoint] + " 학점 미달\n"
+      word += "융합전공_" + Fusiontext + " : " + [FusionStandard - Fusionpoint] + " more credits required\n"
     } else {
-      word += "융합전공_" + Fusiontext + " : 최소학점 기준 통과\n"
+      word += "융합전공_" + Fusiontext + " : passed the minimum credit requirement\n"
     }
   }
 
@@ -399,9 +399,9 @@ function BaseNeceresult(Majorstandard) {
   var Planpoint = Number(document.getElementById("plan_major_point").value) + Number(document.getElementById("cross_point3").value);
   if (!Plancheck) {
     if (Planpoint < 36) {
-      word += "설계전공 : " + [36 - Planpoint] + " 학점 미달\n"
+      word += "설계전공 : " + [36 - Planpoint] + " more credits required\n"
     } else {
-      word += "설계전공 : 최소학점 기준 통과\n"
+      word += "설계전공 : passed the minimum credit requirement\n"
     }
   }
 
@@ -409,35 +409,35 @@ function BaseNeceresult(Majorstandard) {
   var Minorpoint = Number(document.getElementById("minor_point").value);
   if (!Minorcheck) {
     if (Minorpoint < 21) {
-      word += "부전공 : " + [21 - Minorpoint] + " 학점 미달\n"
+      word += "부전공 : " + [21 - Minorpoint] + " more credits required\n"
     } else {
-      word += "부전공 : 최소학점 기준 통과\n"
+      word += "부전공 : passed the minimum credit requirement\n"
     }
   }
 
   var Freepoint = Number(document.getElementById("free_point").value);
   if (Freepoint < 1) {
-    word += "자유선택 : " + Freepoint + " 학점 이수\n"
+    word += "자유선택 : " + Freepoint + " credit\n"
   } else {
-    word += "자유선택 : " + Freepoint + " 학점 이수\n"
+    word += "자유선택 : " + Freepoint + " credit\n"
   }
 
   var Teachingcheck = document.getElementById("teaching_none").checked;
   var Teachingpoint = Number(document.getElementById("teaching_point").value);
   if (!Teachingcheck) {
     if (Teachingpoint < 22)
-      word += "교직이수 : " + [22 - Teachingpoint] + " 학점 미달\n"
+      word += "교직이수 : " + [22 - Teachingpoint] + " more credits required\n"
     else {
-      word += "교직이수 : 최소학점 기준 통과\n"
+      word += "교직이수 : passed the minimum credit requirement\n"
     }
   }
 
   var TotalPoint = Number(document.getElementById("the_total").value);
   var TotalStandard = Number(document.getElementById("total_standard").value);
   if (TotalPoint < TotalStandard) {
-    word += "전체 이수학점 : " + [TotalStandard - TotalPoint] + " 학점 미달"
+    word += "전체 이수학점 : " + [TotalStandard - TotalPoint] + " more credits required"
   } else {
-    word += "전체 이수학점 : 기준 통과"
+    word += "전체 이수학점 : passed the requirement"
   }
 
   if (Basepoint >= BaseStandard && Necepoint >= NeceStandard && Majorpoint >= Majorstandard && TotalPoint >= TotalStandard) {

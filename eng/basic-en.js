@@ -61,7 +61,7 @@ function Major_result() {
 
   if (AdYear < 1000) {
     document.getElementById("student-info").scrollIntoView();
-    swal("입학연도를 선택하세요!", "", "error");
+    swal("Choose your entrance year!", "", "error");
     return false;
   }
 

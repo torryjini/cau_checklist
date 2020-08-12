@@ -73,6 +73,8 @@ function Liberal_cal() {
     word += "核心教养 : 通过最少学分\n- 确认核心教养各领域的履修情况（每个领域需要履修1个以上的科目!）"
   }
 
+  "\n选择教养 : " + elective_point + " 学分"
+
   if (liberal_total_point <= 45) {
     word += "\n教养领域 总计 : " + liberal_total_point + " 学分 "
   } else {

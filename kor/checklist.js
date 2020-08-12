@@ -43,7 +43,7 @@ function Liberal_cal() {
   var Core5 = document.getElementById("core5").checked;
   var core_total_point = Number(document.getElementById("core_total").value);
   var liberal_total_point = Number(document.getElementById("liberal_total").value);
-  var word = "입학연도 : " + AdYear + "년\n선택교양 : " + elective_point + " 학점\n";
+  var word = "입학연도 : " + AdYear + "년\n";
 
   if (AdYear < 1000) {
     document.getElementById("student-info").scrollIntoView();
@@ -114,6 +114,8 @@ function Liberal_cal() {
   if (!Core5) {
     word += "소통"
   }
+
+  word += "\n선택교양 : " + elective_point + " 학점"
 
   if (liberal_total_point <= 45) {
     word += "\n교양영역 계 : " + liberal_total_point + " 학점"

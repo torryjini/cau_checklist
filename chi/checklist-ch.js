@@ -43,7 +43,7 @@ function Liberal_cal() {
   var Core5 = document.getElementById("core5").checked;
   var core_total_point = Number(document.getElementById("core_total").value);
   var liberal_total_point = Number(document.getElementById("liberal_total").value);
-  var word = "入学年度 : " + AdYear + "年\n选择教养 : " + elective_point + " 学分\n";
+  var word = "入学年度 : " + AdYear + "年\n";
 
   if (AdYear < 1000) {
     document.getElementById("student-info").scrollIntoView();
@@ -114,6 +114,8 @@ function Liberal_cal() {
   if (!Core5) {
     word += "소통"
   }
+
+  "\n选择教养 : " + elective_point + " 学分"
 
   if (liberal_total_point <= 45) {
     word += "\n教养领域 总计 : " + liberal_total_point + " 学分"

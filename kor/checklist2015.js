@@ -37,7 +37,7 @@ function Liberal_cal() {
   var account_check_SF = document.getElementById("account_check").checked;
   var core_total_point = Number(document.getElementById("core_total").value);
   var liberal_total_point = Number(document.getElementById("liberal_total").value);
-  var word = "입학연도 : " + AdYear + "년\n선택교양 : " + elective_point + " 학점\n";
+  var word = "입학연도 : " + AdYear + "년\n";
 
   if (common_kor_point < 2) {
     word += "공통교양\n - 국어 : " + [2 - common_kor_point] + " 학점 미달\n";
@@ -72,6 +72,8 @@ function Liberal_cal() {
   } else {
     word += "핵심교양 : 최소학점 기준 통과\n- 핵심 역량 4개 영역 각 1과목 이상 이수 확인!"
   }
+
+  word += "\n선택교양 : " + elective_point + " 학점"
 
   if (liberal_total_point <= 45) {
     word += "\n교양영역 계 : " + liberal_total_point + " 학점"

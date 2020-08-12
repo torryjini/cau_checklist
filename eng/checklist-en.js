@@ -43,7 +43,7 @@ function Liberal_cal() {
   var Core5 = document.getElementById("core5").checked;
   var core_total_point = Number(document.getElementById("core_total").value);
   var liberal_total_point = Number(document.getElementById("liberal_total").value);
-  var word = "Entrance Year : " + AdYear + "\n선택교양 : " + elective_point + " credit\n";
+  var word = "Entrance Year : " + AdYear + "\n";
 
   if (AdYear < 1000) {
     document.getElementById("student-info").scrollIntoView();
@@ -114,6 +114,8 @@ function Liberal_cal() {
   if (!Core5) {
     word += "소통"
   }
+
+  word += "\n선택교양 : " + elective_point + " credit"
 
   if (liberal_total_point <= 45) {
     word += "\nTotal : " + liberal_total_point + " credit"
@@ -237,7 +239,7 @@ function BaseNeceresult(Majorstandard) {
   var Necepoint = Number(document.getElementById("nece_input").value);
   var Majorpoint = Number(document.getElementById("major_input").value);
   Majorstandard = Number(Majorstandard);
-  var word = "입학연도 : " + AdYear + "";
+  var word = "Entrance Year : " + AdYear;
 
   if (Majortext.includes("트랙")) {
     word += "\n주전공 : 공공인재학부 " + Majortext + "\n다전공 : " + Multimajortext + "\n";
@@ -283,7 +285,7 @@ function BaseNeceresult(Majorstandard) {
     if (Doublepoint < 45) {
       word += "복수전공 : " + [45 - Doublepoint] + " more credits required\n"
     } else {
-      word += "복수전공 : 최소credit passed the requirement\n"
+      word += "복수전공 : passed the minimum credit requirement\n"
     }
   }
 
@@ -294,7 +296,7 @@ function BaseNeceresult(Majorstandard) {
     if (Linkpoint < 36) {
       word += "연계전공 : " + [36 - Linkpoint] + " more credits required\n"
     } else {
-      word += "연계전공 : 최소credit passed the requirement\n"
+      word += "연계전공 : passed the minimum credit requirement\n"
     }
   }
 
@@ -308,7 +310,7 @@ function BaseNeceresult(Majorstandard) {
     if (Fusionpoint < FusionStandard) {
       word += "융합전공_" + Fusiontext + " : " + [FusionStandard - Fusionpoint] + " more credits required\n"
     } else {
-      word += "융합전공_" + Fusiontext + " : 최소credit passed the requirement\n"
+      word += "융합전공_" + Fusiontext + " : passed the minimum credit requirement\n"
     }
   }
 
@@ -318,7 +320,7 @@ function BaseNeceresult(Majorstandard) {
     if (Planpoint < 36) {
       word += "설계전공 : " + [36 - Planpoint] + " more credits required\n"
     } else {
-      word += "설계전공 : 최소credit passed the requirement\n"
+      word += "설계전공 : passed the minimum credit requirement\n"
     }
   }
 
@@ -328,7 +330,7 @@ function BaseNeceresult(Majorstandard) {
     if (Minorpoint < 21) {
       word += "부전공 : " + [21 - Minorpoint] + " more credits required\n"
     } else {
-      word += "부전공 : 최소credit passed the requirement\n"
+      word += "부전공 : passed the minimum credit requirement\n"
     }
   }
 
@@ -345,7 +347,7 @@ function BaseNeceresult(Majorstandard) {
     if (Teachingpoint < 22)
       word += "교직이수 : " + [22 - Teachingpoint] + " more credits required\n"
     else {
-      word += "교직이수 : 최소credit passed the requirement\n"
+      word += "교직이수 : passed the minimum credit requirement\n"
     }
   }
 
