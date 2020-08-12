@@ -37,7 +37,7 @@ function Liberal_cal() {
   var account_check_SF = document.getElementById("account_check").checked;
   var core_total_point = Number(document.getElementById("core_total").value);
   var liberal_total_point = Number(document.getElementById("liberal_total").value);
-  var word = "入学年度 : " + AdYear + "年\n选择教养 : " + elective_point + " 学分\n";
+  var word = "入学年度 : " + AdYear + "年\n";
 
   if (common_kor_point < 2) {
     word += "共同教养\n - 국어 : " + [2 - common_kor_point] + "学分未达到要求\n";
@@ -73,7 +73,7 @@ function Liberal_cal() {
     word += "核心教养 : 通过最少学分\n- 确认核心教养各领域的履修情况（每个领域需要履修1个以上的科目!）"
   }
 
-  "\n选择教养 : " + elective_point + " 学分"
+  word += "\n选择教养 : " + elective_point + " 学分"
 
   if (liberal_total_point <= 45) {
     word += "\n教养领域 总计 : " + liberal_total_point + " 学分 "

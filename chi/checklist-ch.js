@@ -115,7 +115,7 @@ function Liberal_cal() {
     word += "소통"
   }
 
-  "\n选择教养 : " + elective_point + " 学分"
+  word += "\n选择教养 : " + elective_point + " 学分"
 
   if (liberal_total_point <= 45) {
     word += "\n教养领域 总计 : " + liberal_total_point + " 学分"
