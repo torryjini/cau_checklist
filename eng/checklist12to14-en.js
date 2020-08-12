@@ -94,7 +94,7 @@ function Liberal_cal() {
   if (liberal_total_point <= 45) {
     word += "\nTotal : " + liberal_total_point + " credit"
   } else {
-    word += "\nTotal : " + liberal_total_point + " credit_ " + [liberal_total_point - 45] + "credit 초과_45 credit만 인정"
+    word += "\nTotal : " + liberal_total_point + " credit_ " + [liberal_total_point - 45] + "Any credits over 45 don't count."
   }
 
   if (common_kor_point == 2 && core_total_point >= 9) {
