@@ -118,7 +118,7 @@ function Liberal_cal() {
   if (liberal_total_point <= 45) {
     word += "\n교양영역 계 : " + liberal_total_point + " 학점"
   } else {
-    word += "\n교양영역 계 : " + liberal_total_point + " 학점_ " + [liberal_total_point - 45] + "학점 초과 45 학점만 인정"
+    word += "\n교양영역 계 : " + liberal_total_point + " 학점_ " + [liberal_total_point - 45] + "학점 초과_45 학점만 인정"
   }
 
   if (common_kor_point == 2 && Core1 && Core2 && Core3 && Core4 && Core5 && core_total_point >= 14) {
