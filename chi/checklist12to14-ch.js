@@ -9,22 +9,22 @@ function koreancheck() {
 
 function liveralmodal() {
   var word = "교양영역 이수기준"
-  var content = "공통교양\n- 국어 : 글쓰기\n- 영어 : English1(Communication in English)\nEnglish2(English fo Professional Track)"
-   + "\n- 기타 : 논리와사고(ACT) / 회계와사회 / 독서와토론(창의와소통) / 한국사\n"
-   + "ㄴ 회계학원론(회계원리)을 이수했을 경우, '회계와사회' 면제\n"
-   + "\n핵심교양 : 이수학점 및 역량 관계없이 최소 3과목 이상 이수 시 인정"
-   + "\n선택교양 : 자율이수\n" + "총 교양학점 45학점까지만 인정됩니다!"
+  var content = "共同教养\n- 국어 : 글쓰기\n- 英语 : English1(Communication in English)\nEnglish2(English fo Professional Track)"
+   + "\n- 其他 : 논리와사고(ACT) / 회계와사회 / 독서와토론(창의와소통) / 한국사\n"
+   + "ㄴ 회계학원론(회계원리)을 이수했을 경우, '회계와사회' 免\n"
+   + "\n核心教养 : 이수学分 및 역량 관계없이 최소 3과목 이상 이수 시 인정"
+   + "\n选择教养 : 자율이수\n" + "총 교양学分 45学分까지만 인정됩니다!"
   swal(word, content, "info");
 }
 
 function majormodal() {
-  var word = "전공영역 이수기준"
-  var content = "전공 : 각 학과별 세부 기준 참고\n"
-   + "복수전공 : 복수전공 학과의 기준 참고\n ㄴ복수전공의 전공기초는 자유선택으로 인정"
-   + "\n연계/융합/설계전공 : 각 과정별 교과과정표를 참고하여 필수 과목 확인!"
-   + "\n부전공 : 부전공 전공필수 6학점 이상 포함하여 수강"
-   + "\n교직 : 교직팀에 문의하여 교직과정 이수 확인"
-   + "\n총 이수학점 : 132 학점 이상(교양은 최대 45학점까지 인정)"
+  var word = "专攻领域履修基准"
+  var content = "专攻 전공 : 请参考各学科的具体要求\n" +
+    "双专攻 복수전공 : 请参考双专攻学科的要求\n ㄴ 双专攻的专攻基础认证为自由选择" +
+    "\n联系/融合/设计专攻 연계/융합/설계전공 : 请参考各分类的教课过程表确认必修科目！" +
+    "\n副专攻 부전공 : 需要包括副专攻的专攻必修6学分以上" +
+    "\n教职 교직 : 请联系教职部确认教职过程所需要求" +
+    "\n总履修学分 총 이수학점 : 132学分以上(教养最多可以认证45学分)"
   swal(word, content, "info");
 }
 
@@ -47,69 +47,69 @@ function Liberal_cal() {
   var account_check_SF = document.getElementById("account_check").checked;
   var core_total_point = Number(document.getElementById("core_total").value);
   var liberal_total_point = Number(document.getElementById("liberal_total").value);
-  var word = "입학연도 : " + AdYear + "년\n선택교양 : " + elective_point + " 학점\n";
+  var word = "入学年度 : " + AdYear + "年\n选择教养 : " + elective_point + " 学分\n";
 
   if (AdYear < 1000) {
     document.getElementById("student-info").scrollIntoView();
-    swal("입학연도를 선택하세요!", "", "error");
+    swal("入学年度를 선택하세요!", "", "error");
     return false;
   }
 
   if (common_kor_point < 2) {
-    word += "공통교양\n - 국어 : " + [2 - common_kor_point] + " 학점 미달\n";
+    word += "共同教养\n - 국어 : " + [2 - common_kor_point] + " 学分未达到要求\n";
   } else {
-    word += "공통교양\n - 국어 : 기준 통과\n";
+    word += "共同教养\n - 국어 : 通过\n";
   }
 
   if (common_eng_point < 4 && common_eng_ex) {
-    word += " - 영어 : 면제\n"
+    word += " - 英语 : 免\n"
   } else if (common_eng_point < 4 && !common_eng_ex) {
-    word += " - 영어 : " + [4 - common_eng_point] + " 학점 미달\n";
+    word += " - 英语 : " + [4 - common_eng_point] + " 学分未达到要求\n";
   } else {
-    word += " - 영어 : 기준 통과\n";
+    word += " - 英语 : 通过\n";
   }
 
   if (!account_check_SF) {
     if (common_etc_point < 8) {
-      word += " - 기타 : " + [8 - common_etc_point] + " 학점 미달\n"
+      word += " - 其他 : " + [8 - common_etc_point] + " 学分未达到要求\n"
     } else {
-      word += " - 기타 : 기준 통과\n"
+      word += " - 其他 : 通过\n"
     }
   } else {
     if (common_etc_point < 6) {
-      word += " - 기타 : " + [6 - common_etc_point] + " 학점 미달 ( 회계와사회 : 면제 )\n"
+      word += " - 其他 : " + [6 - common_etc_point] + " 学分未达到要求 ( 회계와사회 : 免 )\n"
     } else {
-      word += " - 기타 : 기준 통과 ( 회계와사회 : 면제 )\n"
+      word += " - 其他 : 通过 ( 회계와사회 : 免 )\n"
     }
   }
 
   if (core_total_point < 9) {
-    word += "핵심교양 : " + [9 - core_total_point] + " 학점 미달"
+    word += "核心教养 : " + [9 - core_total_point] + " 学分未达到要求"
   } else {
-    word += "핵심교양 : 최소학점 기준 통과"
+    word += "核心教养 : 通过最少学分"
   }
 
 
   if (liberal_total_point <= 45) {
-    word += "\n교양영역 계 : " + liberal_total_point + " 학점"
+    word += "\n教养领域 总计 : " + liberal_total_point + " 学分"
   } else {
-    word += "\n교양영역 계 : " + liberal_total_point + " 학점_ " + [liberal_total_point - 45] + "학점 초과 45 학점만 인정"
+    word += "\n教养领域 总计 : " + liberal_total_point + " 学分_ " + [liberal_total_point - 45] + "学分，学分超过45学分时只认证45学分。"
   }
 
   if (common_kor_point == 2 && core_total_point >= 9) {
     if (common_eng_point == 4 && common_etc_point == 8) {
-      swal("교양영역 결과", word, "success")
+      swal("教养领域结果", word, "success")
     } else if (common_eng_point <= 4 && common_eng_ex && common_etc_point == 8) {
-      swal("교양영역 결과", word, "success")
+      swal("教养领域结果", word, "success")
     } else if (common_eng_point == 4 && common_etc_point >= 6 && account_check_SF) {
-      swal("교양영역 결과", word, "success")
+      swal("教养领域结果", word, "success")
     } else if (common_eng_point <= 4 && common_eng_ex && common_etc_point >= 6 && account_check_SF) {
-      swal("교양영역 결과", word, "success")
+      swal("教养领域结果", word, "success")
     } else {
-      swal("교양영역 결과", word, "error")
+      swal("教养领域结果", word, "error")
     }
   } else {
-    swal("교양영역 결과", word, "error")
+    swal("教养领域结果", word, "error")
   }
 }
 
@@ -175,47 +175,47 @@ function BaseNeceresult(Majorstandard) {
   var Necepoint = Number(document.getElementById("nece_input").value);
   var Majorpoint = Number(document.getElementById("major_input").value);
   Majorstandard = Number(Majorstandard);
-  var word = "입학연도 : " + AdYear + "년" + "\n주전공 : " + Majortext + "\n다전공 : " + Multimajortext + "\n";
+  var word = "入学年度 : " + AdYear + "年" + "\n主专攻 : " + Majortext + "\n多专攻 : " + Multimajortext + "\n";
 
   var FusionOption = Number(document.getElementById("fusion-options").value);
   if (Multimajortext.includes("융합")) {
     if (FusionOption == 0) {
-      swal("세부 융합전공을 선택하세요!", "", "error");
+      swal("请选择细部融合专攻（세부융합전공）!", "", "error");
       document.getElementById("double_major_none").scrollIntoView();
       return false;
     }
   }
 
   if (Majorpoint < Necepoint) {
-    swal("전공 과목은 전공 필수를 포함합니다!", "", "error");
+    swal("专攻科目暴扣专攻必修!", "", "error");
     return false;
   }
 
   if (Basepoint < BaseStandard) {
-    word += "전공기초 : " + [BaseStandard - Basepoint] + " 학점 미달\n";
+    word += "专攻基础 : " + [BaseStandard - Basepoint] + " 学分未达到要求\n";
   } else {
-    word += "전공기초 : 기준 통과\n";
+    word += "专攻基础 : 通过\n";
   }
 
   if (Necepoint < NeceStandard) {
-    word += "전공필수 : " + [NeceStandard - Necepoint] + " 학점 미달\n";
+    word += "专攻必修 : " + [NeceStandard - Necepoint] + " 学分未达到要求\n";
   } else {
-    word += "전공필수 : 기준 통과\n";
+    word += "专攻必修 : 通过\n";
   }
 
   if (Majorpoint < Majorstandard) {
-    word += "전공과목 : " + [Majorstandard - Majorpoint] + " 학점 미달\n"
+    word += "专攻科目 : " + [Majorstandard - Majorpoint] + " 学分未达到要求\n"
   } else {
-    word += "전공과목 : 기준 통과\n"
+    word += "专攻科目 : 通过\n"
   }
 
   var Doublecheck = document.getElementById("double_major_none").checked;
   var Doublepoint = Number(document.getElementById("double_major_point").value);
   if (!Doublecheck) {
     if (Doublepoint < 45) {
-      word += "복수전공 : " + [45 - Doublepoint] + " 학점 미달\n"
+      word += "双专攻 : " + [45 - Doublepoint] + " 学分未达到要求\n"
     } else {
-      word += "복수전공 : 최소학점 기준 통과\n"
+      word += "双专攻 : 通过最少学分\n"
     }
   }
 
@@ -224,9 +224,9 @@ function BaseNeceresult(Majorstandard) {
   var Linkpoint = Number(document.getElementById("link_major_point").value) + LinkCross;
   if (!Linkcheck) {
     if (Linkpoint < 36) {
-      word += "연계전공 : " + [36 - Linkpoint] + " 학점 미달\n"
+      word += "연계전공 : " + [36 - Linkpoint] + " 学分未达到要求\n"
     } else {
-      word += "연계전공 : 최소학점 기준 통과\n"
+      word += "연계전공 : 通过最少学分\n"
     }
   }
 
@@ -238,9 +238,9 @@ function BaseNeceresult(Majorstandard) {
   var FusionStandard = Number(document.getElementById("fusion_standard").value);
   if (!Fusioncheck) {
     if (Fusionpoint < FusionStandard) {
-      word += "융합전공_" + Fusiontext + " : " + [FusionStandard - Fusionpoint] + " 학점 미달\n"
+      word += "융합전공" + Fusiontext + " : " + [FusionStandard - Fusionpoint] + " 学分未达到要求\n"
     } else {
-      word += "융합전공_" + Fusiontext + " : 최소학점 기준 통과\n"
+      word += "융합전공" + Fusiontext + " : 通过最少学分\n"
     }
   }
 
@@ -248,9 +248,9 @@ function BaseNeceresult(Majorstandard) {
   var Planpoint = Number(document.getElementById("plan_major_point").value) + Number(document.getElementById("cross_point3").value);
   if (!Plancheck) {
     if (Planpoint < 36) {
-      word += "설계전공 : " + [36 - Planpoint] + " 학점 미달\n"
+      word += "설계전공 : " + [36 - Planpoint] + " 学分未达到要求\n"
     } else {
-      word += "설계전공 : 최소학점 기준 통과\n"
+      word += "설계전공 : 通过最少学分\n"
     }
   }
 
@@ -258,153 +258,153 @@ function BaseNeceresult(Majorstandard) {
   var Minorpoint = Number(document.getElementById("minor_point").value);
   if (!Minorcheck) {
     if (Minorpoint < 21) {
-      word += "부전공 : " + [21 - Minorpoint] + " 학점 미달\n"
+      word += "부전공 : " + [21 - Minorpoint] + " 学分未达到要求\n"
     } else {
-      word += "부전공 : 최소학점 기준 통과\n"
+      word += "부전공 : 通过最少学分\n"
     }
   }
 
   var Freepoint = Number(document.getElementById("free_point").value);
   if (Freepoint < 1) {
-    word += "자유선택 : " + Freepoint + " 학점 이수_CAU세미나 미수강\n"
+    word += "자유선택 : " + Freepoint + " 学分 이수_CAU세미나 미수강\n"
   } else {
-    word += "자유선택 : " + Freepoint + " 학점 이수_CAU세미나 이수 확인 필수!\n"
+    word += "자유선택 : " + Freepoint + " 学分 이수_CAU세미나 이수 확인 필수!\n"
   }
 
   var Teachingcheck = document.getElementById("teaching_none").checked;
   var Teachingpoint = Number(document.getElementById("teaching_point").value);
   if (!Teachingcheck) {
     if (Teachingpoint < 22)
-      word += "교직이수 : " + [22 - Teachingpoint] + " 학점 미달\n"
+      word += "교직이수 : " + [22 - Teachingpoint] + " 学分未达到要求\n"
     else {
-      word += "교직이수 : 최소학점 기준 통과\n"
+      word += "교직이수 : 通过最少学分\n"
     }
   }
 
   var TotalPoint = Number(document.getElementById("the_total").value);
   if (TotalPoint < 132) {
-    word += "전체 이수학점 : " + [132 - TotalPoint] + " 학점 미달"
+    word += "总履修学分 : " + [132 - TotalPoint] + " 学分未达到要求"
   } else {
-    word += "전체 이수학점 : 기준 통과"
+    word += "总履修学分 : 通过"
   }
 
   if (Basepoint >= BaseStandard && Necepoint >= NeceStandard && Majorpoint >= Majorstandard && TotalPoint >= 132) {
     if (Minorcheck && Teachingcheck) {
       if (Multimajortext.includes("심화")) {
-        swal("전공영역 결과", word, "success")
+        swal("专攻领域结果", word, "success")
       } else if (Multimajortext.includes("복수")) {
         if (Doublepoint >= 45) {
-          swal("전공영역 결과", word, "success")
+          swal("专攻领域结果", word, "success")
         } else {
-          swal("전공영역 결과", word, "error")
+          swal("专攻领域结果", word, "error")
         }
       } else if (Multimajortext.includes("연계")) {
         if (Linkpoint >= 36) {
-          swal("전공영역 결과", word, "success")
+          swal("专攻领域结果", word, "success")
         } else {
-          swal("전공영역 결과", word, "error")
+          swal("专攻领域结果", word, "error")
         }
       } else if (Multimajortext.includes("융합")) {
         if (Fusionpoint >= FusionStandard) {
-          swal("전공영역 결과", word, "success")
+          swal("专攻领域结果", word, "success")
         } else {
-          swal("전공영역 결과", word, "error")
+          swal("专攻领域结果", word, "error")
         }
       } else if (Multimajortext.includes("설계")) {
         if (Planpoint >= 36) {
-          swal("전공영역 결과", word, "success")
+          swal("专攻领域结果", word, "success")
         } else {
-          swal("전공영역 결과", word, "error")
+          swal("专攻领域结果", word, "error")
         }
       }
     } else if (Minorpoint >= 21 && Teachingcheck) {
       if (Multimajortext.includes("심화")) {
-        swal("전공영역 결과", word, "success")
+        swal("专攻领域结果", word, "success")
       } else if (Multimajortext.includes("복수")) {
         if (Doublepoint >= 45) {
-          swal("전공영역 결과", word, "success")
+          swal("专攻领域结果", word, "success")
         } else {
-          swal("전공영역 결과", word, "error")
+          swal("专攻领域结果", word, "error")
         }
       } else if (Multimajortext.includes("연계")) {
         if (Linkpoint >= 36) {
-          swal("전공영역 결과", word, "success")
+          swal("专攻领域结果", word, "success")
         } else {
-          swal("전공영역 결과", word, "error")
+          swal("专攻领域结果", word, "error")
         }
       } else if (Multimajortext.includes("융합")) {
         if (Fusionpoint >= FusionStandard) {
-          swal("전공영역 결과", word, "success")
+          swal("专攻领域结果", word, "success")
         } else {
-          swal("전공영역 결과", word, "error")
+          swal("专攻领域结果", word, "error")
         }
       } else if (Multimajortext.includes("설계")) {
         if (Planpoint >= 36) {
-          swal("전공영역 결과", word, "success")
+          swal("专攻领域结果", word, "success")
         } else {
-          swal("전공영역 결과", word, "error")
+          swal("专攻领域结果", word, "error")
         }
       }
     } else if (Minorpoint >= 21 && Teachingpoint >= 22) {
       if (Multimajortext.includes("심화")) {
-        swal("전공영역 결과", word, "success")
+        swal("专攻领域结果", word, "success")
       } else if (Multimajortext.includes("복수")) {
         if (Doublepoint >= 45) {
-          swal("전공영역 결과", word, "success")
+          swal("专攻领域结果", word, "success")
         } else {
-          swal("전공영역 결과", word, "error")
+          swal("专攻领域结果", word, "error")
         }
       } else if (Multimajortext.includes("연계")) {
         if (Linkpoint >= 36) {
-          swal("전공영역 결과", word, "success")
+          swal("专攻领域结果", word, "success")
         } else {
-          swal("전공영역 결과", word, "error")
+          swal("专攻领域结果", word, "error")
         }
       } else if (Multimajortext.includes("융합")) {
         if (Fusionpoint >= FusionStandard) {
-          swal("전공영역 결과", word, "success")
+          swal("专攻领域结果", word, "success")
         } else {
-          swal("전공영역 결과", word, "error")
+          swal("专攻领域结果", word, "error")
         }
       } else if (Multimajortext.includes("설계")) {
         if (Planpoint >= 36) {
-          swal("전공영역 결과", word, "success")
+          swal("专攻领域结果", word, "success")
         } else {
-          swal("전공영역 결과", word, "error")
+          swal("专攻领域结果", word, "error")
         }
       }
     } else if (Minorcheck && Teachingpoint >= 22) {
       if (Multimajortext.includes("심화")) {
-        swal("전공영역 결과", word, "success")
+        swal("专攻领域结果", word, "success")
       } else if (Multimajortext.includes("복수")) {
         if (Doublepoint >= 45) {
-          swal("전공영역 결과", word, "success")
+          swal("专攻领域结果", word, "success")
         } else {
-          swal("전공영역 결과", word, "error")
+          swal("专攻领域结果", word, "error")
         }
       } else if (Multimajortext.includes("연계")) {
         if (Linkpoint >= 36) {
-          swal("전공영역 결과", word, "success")
+          swal("专攻领域结果", word, "success")
         } else {
-          swal("전공영역 결과", word, "error")
+          swal("专攻领域结果", word, "error")
         }
       } else if (Multimajortext.includes("융합")) {
         if (Fusionpoint >= FusionStandard) {
-          swal("전공영역 결과", word, "success")
+          swal("专攻领域结果", word, "success")
         } else {
-          swal("전공영역 결과", word, "error")
+          swal("专攻领域结果", word, "error")
         }
       } else if (Multimajortext.includes("설계")) {
         if (Planpoint >= 36) {
-          swal("전공영역 결과", word, "success")
+          swal("专攻领域结果", word, "success")
         } else {
-          swal("전공영역 결과", word, "error")
+          swal("专攻领域结果", word, "error")
         }
       }
     } else {
-      swal("전공영역 결과", word, "error")
+      swal("专攻领域结果", word, "error")
     }
   } else {
-    swal("전공영역 결과", word, "error")
+    swal("专攻领域结果", word, "error")
   }
 }
