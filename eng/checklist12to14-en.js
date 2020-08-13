@@ -86,7 +86,7 @@ function Liberal_cal() {
   if (core_total_point < 9) {
     word += "핵심교양 : " + [9 - core_total_point] + " more credits required"
   } else {
-    word += "핵심교양 : passed the minimum credits requirement"
+    word += "핵심교양 : passed the requirement"
   }
 
   word += "\n선택교양 : " + elective_point + " credits"
