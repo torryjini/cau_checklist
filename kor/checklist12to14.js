@@ -86,7 +86,7 @@ function Liberal_cal() {
   if (core_total_point < 9) {
     word += "핵심교양 : " + [9 - core_total_point] + " 학점 미달"
   } else {
-    word += "핵심교양 : 최소학점 기준 통과"
+    word += "핵심교양 : 기준 통과"
   }
 
   word += "\n선택교양 : " + elective_point + " 학점"
