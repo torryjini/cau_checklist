@@ -66,6 +66,10 @@ li {
   padding: 0.25rem;
 }
 
+ol {
+  margin-top: 0.5rem;
+}
+
 select {
   cursor: pointer;
 }
