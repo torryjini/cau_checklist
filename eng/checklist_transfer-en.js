@@ -262,39 +262,45 @@ function tr_Major_result() {
   var PlanCross = Number(document.getElementById("cross_point3").value);
   if (AdYear < 1000) {
     document.getElementById("student-info").scrollIntoView();
-    swal("편입학연도를 선택하세요!", "", "error");
+    swal("Choose your transfer year!", "", "error");
     return false;
   }
 
   if (Fusiontext.includes("문화") || Fusiontext.includes("창업") || Fusiontext.includes("게임")) {
     if (FusionCross > 6) {
       document.getElementById("double_major_none").scrollIntoView();
-      swal(Fusiontext + " 융합전공 교차인정\n최대학점은 6 학점입니다!", "", "error")
+      swal("Maximum credits for\n" + Fusiontext + " 융합전공 are 6!", "", "error")
       return false;
     }
-  } else if (Fusiontext.includes("금융") || Fusiontext.includes("인문") || Fusiontext.includes("보안") || Fusiontext.includes("테크") || Fusiontext.includes("벤처")) {
+  } else if (Fusiontext.includes("금융")) {
     if (FusionCross > 15) {
       document.getElementById("double_major_none").scrollIntoView();
-      swal(Fusiontext + " 융합전공 교차인정\n최대학점은 15 학점입니다!", "", "error")
+      swal("Maximum credits for\n" + Fusiontext + " 융합전공 are 15!", "", "error")
+      return false;
+    }
+  } else if (Fusiontext.includes("인문") || Fusiontext.includes("보안") || Fusiontext.includes("테크") || Fusiontext.includes("벤처")) {
+    if (FusionCross > 12) {
+      document.getElementById("double_major_none").scrollIntoView();
+      swal("Maximum credits for\n" + Fusiontext + " 융합전공 are 12!", "", "error")
       return false;
     }
   }
 
   if (MajorSelect == "none") {
     document.getElementById("student-info").scrollIntoView();
-    swal("전공 학과를 선택하세요!", "", "error");
+    swal("Choose your major!", "", "error");
     return false;
   } else if (SecYear && Multimajortext.includes("해당")) {
     document.getElementById("student-info").scrollIntoView();
-    swal("다전공 여부를 선택하세요!", "2학년 편입은 다전공 대상입니다.", "error");
+    swal("Choose your multiple major!", "2학년 편입은 다전공 대상입니다.", "error");
     return false;
   } else if (LinkCross > 12) {
     document.getElementById("double_major_point").scrollIntoView();
-    swal("연계전공의 교차인정 최대학점은 12 학점입니다!", "", "error")
+    swal("Maximum cross credits for 연계전공 are 12!", "", "error")
     return false;
   } else if (PlanCross > 6) {
     document.getElementById("link_major_none").scrollIntoView();
-    swal("자기설계전공의 교차인정 최대학점은 6 학점입니다!", "", "error")
+    swal("Maximum cross credits for 자기설계전공 are 6!", "", "error")
     return false;
   } else {
     BaseNeceresult(Majorstandard);
@@ -315,7 +321,7 @@ function BaseNeceresult(Majorstandard) {
   var Necepoint = Number(document.getElementById("nece_input").value);
   var Majorpoint = Number(document.getElementById("major_input").value);
   Majorstandard = Number(Majorstandard);
-  var word = "편입학연도 : " + AdYear + "년";
+  var word = "Transfer year : " + AdYear;
 
   if(SecYear){
     word += " - 2학년 편입";
@@ -443,129 +449,129 @@ function BaseNeceresult(Majorstandard) {
   if (Basepoint >= BaseStandard && Necepoint >= NeceStandard && Majorpoint >= Majorstandard && TotalPoint >= TotalStandard) {
     if (Minorcheck && Teachingcheck) {
       if (Multimajortext.includes("해당")) {
-        swal("학점 이수 결과", word, "success")
+        swal("Total credits result", word, "success")
       } else if (Multimajortext.includes("심화")) {
-        swal("학점 이수 결과", word, "success")
+        swal("Total credits result", word, "success")
       } else if (Multimajortext.includes("복수")) {
         if (Doublepoint >= 45) {
-          swal("학점 이수 결과", word, "success")
+          swal("Total credits result", word, "success")
         } else {
-          swal("학점 이수 결과", word, "error")
+          swal("Total credits result", word, "error")
         }
       } else if (Multimajortext.includes("연계")) {
         if (Linkpoint >= 36) {
-          swal("학점 이수 결과", word, "success")
+          swal("Total credits result", word, "success")
         } else {
-          swal("학점 이수 결과", word, "error")
+          swal("Total credits result", word, "error")
         }
       } else if (Multimajortext.includes("융합")) {
         if (Fusionpoint >= FusionStandard) {
-          swal("학점 이수 결과", word, "success")
+          swal("Total credits result", word, "success")
         } else {
-          swal("학점 이수 결과", word, "error")
+          swal("Total credits result", word, "error")
         }
       } else if (Multimajortext.includes("설계")) {
         if (Planpoint >= 36) {
-          swal("학점 이수 결과", word, "success")
+          swal("Total credits result", word, "success")
         } else {
-          swal("학점 이수 결과", word, "error")
+          swal("Total credits result", word, "error")
         }
       }
     } else if (Minorpoint >= 21 && Teachingcheck) {
       if (Multimajortext.includes("해당")) {
-        swal("학점 이수 결과", word, "success")
+        swal("Total credits result", word, "success")
       } else if (Multimajortext.includes("심화")) {
-        swal("학점 이수 결과", word, "success")
+        swal("Total credits result", word, "success")
       } else if (Multimajortext.includes("복수")) {
         if (Doublepoint >= 45) {
-          swal("학점 이수 결과", word, "success")
+          swal("Total credits result", word, "success")
         } else {
-          swal("학점 이수 결과", word, "error")
+          swal("Total credits result", word, "error")
         }
       } else if (Multimajortext.includes("연계")) {
         if (Linkpoint >= 36) {
-          swal("학점 이수 결과", word, "success")
+          swal("Total credits result", word, "success")
         } else {
-          swal("학점 이수 결과", word, "error")
+          swal("Total credits result", word, "error")
         }
       } else if (Multimajortext.includes("융합")) {
         if (Fusionpoint >= FusionStandard) {
-          swal("학점 이수 결과", word, "success")
+          swal("Total credits result", word, "success")
         } else {
-          swal("학점 이수 결과", word, "error")
+          swal("Total credits result", word, "error")
         }
       } else if (Multimajortext.includes("설계")) {
         if (Planpoint >= 36) {
-          swal("학점 이수 결과", word, "success")
+          swal("Total credits result", word, "success")
         } else {
-          swal("학점 이수 결과", word, "error")
+          swal("Total credits result", word, "error")
         }
       }
     } else if (Minorpoint >= 21 && Teachingpoint >= 22) {
       if (Multimajortext.includes("해당")) {
-        swal("학점 이수 결과", word, "success")
+        swal("Total credits result", word, "success")
       } else if (Multimajortext.includes("심화")) {
-        swal("학점 이수 결과", word, "success")
+        swal("Total credits result", word, "success")
       } else if (Multimajortext.includes("복수")) {
         if (Doublepoint >= 45) {
-          swal("학점 이수 결과", word, "success")
+          swal("Total credits result", word, "success")
         } else {
-          swal("학점 이수 결과", word, "error")
+          swal("Total credits result", word, "error")
         }
       } else if (Multimajortext.includes("연계")) {
         if (Linkpoint >= 36) {
-          swal("학점 이수 결과", word, "success")
+          swal("Total credits result", word, "success")
         } else {
-          swal("학점 이수 결과", word, "error")
+          swal("Total credits result", word, "error")
         }
       } else if (Multimajortext.includes("융합")) {
         if (Fusionpoint >= FusionStandard) {
-          swal("학점 이수 결과", word, "success")
+          swal("Total credits result", word, "success")
         } else {
-          swal("학점 이수 결과", word, "error")
+          swal("Total credits result", word, "error")
         }
       } else if (Multimajortext.includes("설계")) {
         if (Planpoint >= 36) {
-          swal("학점 이수 결과", word, "success")
+          swal("Total credits result", word, "success")
         } else {
-          swal("학점 이수 결과", word, "error")
+          swal("Total credits result", word, "error")
         }
       }
     } else if (Minorcheck && Teachingpoint >= 22) {
       if (Multimajortext.includes("해당")) {
-        swal("학점 이수 결과", word, "success")
+        swal("Total credits result", word, "success")
       } else if (Multimajortext.includes("심화")) {
-        swal("학점 이수 결과", word, "success")
+        swal("Total credits result", word, "success")
       } else if (Multimajortext.includes("복수")) {
         if (Doublepoint >= 45) {
-          swal("학점 이수 결과", word, "success")
+          swal("Total credits result", word, "success")
         } else {
-          swal("학점 이수 결과", word, "error")
+          swal("Total credits result", word, "error")
         }
       } else if (Multimajortext.includes("연계")) {
         if (Linkpoint >= 36) {
-          swal("학점 이수 결과", word, "success")
+          swal("Total credits result", word, "success")
         } else {
-          swal("학점 이수 결과", word, "error")
+          swal("Total credits result", word, "error")
         }
       } else if (Multimajortext.includes("융합")) {
         if (Fusionpoint >= FusionStandard) {
-          swal("학점 이수 결과", word, "success")
+          swal("Total credits result", word, "success")
         } else {
-          swal("학점 이수 결과", word, "error")
+          swal("Total credits result", word, "error")
         }
       } else if (Multimajortext.includes("설계")) {
         if (Planpoint >= 36) {
-          swal("학점 이수 결과", word, "success")
+          swal("Total credits result", word, "success")
         } else {
-          swal("학점 이수 결과", word, "error")
+          swal("Total credits result", word, "error")
         }
       }
     } else {
-      swal("학점 이수 결과", word, "error")
+      swal("Total credits result", word, "error")
     }
   } else {
-    swal("학점 이수 결과", word, "error")
+    swal("Total credits result", word, "error")
   }
 }
 

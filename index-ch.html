@@ -66,9 +66,9 @@
        + "\n 参考相关资料之后，请再联系学科办公室加以确认。"
 
       if (Year == 0) {
-        swal(" 请选择入学时期!", "", "error")
+        swal("请选择入学时期!", "", "error")
       } else {
-        swal(" 注意",
+        swal("注意",
           word, "warning").then(okay => {
           if (EntStyle == "entrance") {
             if (Year >= 2016) {
@@ -87,7 +87,7 @@
 
     function index_info() {
       title = "Version. Jul. 2020"
-      word = "Code by Thingcol\ne-mail to : torryjini@naver.com"
+      word = "Code by Thingcol\nTranslated by HUA & SUN\nE-mail : torryjini@naver.com"
       swal(title, word, "info")
     }
   </script>

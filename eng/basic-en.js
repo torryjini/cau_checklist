@@ -68,38 +68,38 @@ function Major_result() {
   if (Fusiontext.includes("문화") || Fusiontext.includes("창업") || Fusiontext.includes("게임")) {
     if (FusionCross > 6) {
       document.getElementById("double_major_none").scrollIntoView();
-      swal(Fusiontext + " 융합전공 교차인정\n최대학점은 6 학점입니다!", "", "error")
+      swal("Maximum credits for\n" + Fusiontext + " 융합전공 are 6!", "", "error")
       return false;
     }
   } else if (Fusiontext.includes("금융")) {
     if (FusionCross > 15) {
       document.getElementById("double_major_none").scrollIntoView();
-      swal(Fusiontext + " 융합전공 교차인정\n최대학점은 15 학점입니다!", "", "error")
+      swal("Maximum credits for\n" + Fusiontext + " 융합전공 are 15!", "", "error")
       return false;
     }
   } else if (Fusiontext.includes("인문") || Fusiontext.includes("보안") || Fusiontext.includes("테크") || Fusiontext.includes("벤처")) {
     if (FusionCross > 12) {
       document.getElementById("double_major_none").scrollIntoView();
-      swal(Fusiontext + " 융합전공 교차인정\n최대학점은 12 학점입니다!", "", "error")
+      swal("Maximum credits for\n" + Fusiontext + " 융합전공 are 12!", "", "error")
       return false;
     }
   }
 
   if (MajorSelect == "none") {
     document.getElementById("student-info").scrollIntoView();
-    swal("전공 학과를 선택하세요!", "", "error");
+    swal("Choose your major!", "", "error");
     return false;
   } else if (Majorstandard < 45) {
     document.getElementById("student-info").scrollIntoView();
-    swal("다전공 여부를 선택하세요!", "", "error");
+    swal("Choose your multiple major!", "", "error");
     return false;
   } else if (LinkCross > 12) {
     document.getElementById("double_major_point").scrollIntoView();
-    swal("연계전공의 교차인정 최대학점은 12 학점입니다!", "", "error")
+    swal("Maximum cross credits for 연계전공 are 12!", "", "error")
     return false;
   } else if (PlanCross > 6) {
     document.getElementById("link_major_none").scrollIntoView();
-    swal("자기설계전공의 교차인정 최대학점은 6 학점입니다!", "", "error")
+    swal("Maximum cross credits for 자기설계전공 are 6!", "", "error")
     return false;
   } else {
     BaseNeceresult(Majorstandard);
@@ -337,14 +337,6 @@ function major_standard_maker() {
 
 // 여기서부터는 졸업인정제 등 졸업요건 관련
 
-function etcmodal() {
-  var word = "기타 졸업요건"
-  var content = "졸업가능 : 학점 이수 기준 모두 통과 + 졸업인정제 통과 + 졸업시험/논문 합격 + 최저 평점 기준 통과\n\n"
-   + "수료 : 학점 이수 기준은 모두 통과했으나 졸업인정제(영어, 한자, 한국어)와 졸업시험/논문 중 하나라도 미통과시 수료\n\n"
-   + "졸업불가 : 학점 이수 기준 중 하나라도 부족하거나 전 학년 평점이 2.0 미만인 경우 졸업불가"
-  swal(word, content, "info");
-}
-
 function Etc_result() {
   var English_result = document.getElementById("English").checked;
   var Hanja_result = document.getElementById("Hanja").checked;
@@ -354,55 +346,55 @@ function Etc_result() {
   var Average_result = Number(document.getElementById("average").value);
 
   if (Average_result > 4.5) {
-    swal("평균평점은 4.5 만점입니다!", "", "error")
+    swal("You cannot enter credits above 4.5!", "", "error")
     return false;
   }
 
-  var word = "졸업인정제 통과 여부\n";
+  var word = "Graduation Recognition System\n";
 
   if (!English_result) {
-    word += "- 영어 : 미통과\n"
+    word += "- 영어 : not qualified\n"
   } else {
-    word += "- 영어 : 통과\n"
+    word += "- 영어 : Qualified\n"
   }
 
   if (Hanja_result) {
-    word += "- 한자 : 통과\n"
+    word += "- 한자 : Qualified\n"
   } else {
-    word += "- 한자 : 미통과\n"
+    word += "- 한자 : not qualified\n"
   }
 
   if (Korean_result) {
-    word += "- 한국어 : 통과\n"
+    word += "- 한국어(TOPIK) : Qualified\n"
   } else {
-    word += "- 한국어 : 미통과\n"
+    word += "- 한국어(TOPIK) : not qualified\n"
   }
 
   if (Paper_result) {
-    word += "졸업시험/논문\n- 주전공 : 합격\n"
+    word += "Grad Exam/Thesis\n- Major : Qualified\n"
   } else {
-    word += "졸업시험/논문\n- 주전공 : 불합격\n"
+    word += "Grad Exam/Thesis\n- Major : not qualified\n"
   }
 
   if (Paper_result2) {
-    word += "- 복수전공 : 통과/해당없음\n"
+    word += "- Double major : Qualified/N/A\n"
   } else {
-    word += "- 복수전공 : 불합격\n"
+    word += "- Double major : not qualified\n"
   }
 
   if (Average_result >= 2) {
-    word += "평균평점 : 통과"
+    word += "GPA : Qualified"
   } else {
-    word += "평균평점 : 미통과_졸업불가"
+    word += "GPA : not qualified for gradution"
   }
 
   if (English_result && Hanja_result && Korean_result && Paper_result && Paper_result2 && Average_result >= 2) {
-    swal("기타 졸업요건 결과", word, "success");
+    swal("Other requirements result", word, "success");
   } else if (Average_result >= 2) {
     if (!English_result || !Hanja_result || !Korean_result || !Paper_result || !Paper_result2) {
-      swal("기타 졸업요건 결과", word, "warning");
+      swal("Other requirements result", word, "warning");
     }
   } else if(Average_result <= 2) {
-    swal("기타 졸업요건 결과", word, "error");
+    swal("Other requirements result", word, "error");
   }
 }
