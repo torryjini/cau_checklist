@@ -98,11 +98,11 @@ function Liberal_cal() {
   }
 
   if (common_kor_point == 2 && core_total_point >= 9) {
-    if (common_eng_point == 4 && common_etc_point == 8) {
+    if (common_eng_point >= 4 && common_etc_point == 8) {
       swal("教养领域结果", word, "success")
     } else if (common_eng_point <= 4 && common_eng_ex && common_etc_point == 8) {
       swal("教养领域结果", word, "success")
-    } else if (common_eng_point == 4 && common_etc_point >= 6 && account_check_SF) {
+    } else if (common_eng_point >= 4 && common_etc_point >= 6 && account_check_SF) {
       swal("教养领域结果", word, "success")
     } else if (common_eng_point <= 4 && common_eng_ex && common_etc_point >= 6 && account_check_SF) {
       swal("教养领域结果", word, "success")
