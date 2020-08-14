@@ -80,9 +80,9 @@ function Liberal_cal() {
 
   if (!account_check_SF) {
     if (common_etc_point < 10) {
-      word += " - Others : " + [10 - common_etc_point] + " more credits required\n"
+      word += " - 기타 : " + [10 - common_etc_point] + " more credits required\n"
     } else {
-      word += " - Others : Passed the requirement\n"
+      word += " - 기타 : Passed the requirement\n"
     }
   } else {
     if (common_etc_point < 8) {
@@ -116,7 +116,7 @@ function Liberal_cal() {
     word += "소통"
   }
 
-  word += "\n선택교양 : " + elective_point + " credits"
+  word += "\nElective : " + elective_point + " credits"
 
   if (liberal_total_point <= 45) {
     word += "\nTotal : " + liberal_total_point + " credits"
