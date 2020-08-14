@@ -17,13 +17,13 @@ function tr_major_standard_maker() {
   var Multimajor = document.getElementById("MultiMajor_select");
   var Multimajortext = Multimajor.options[Multimajor.selectedIndex].text;
 
-  if (Multimajortext.includes("N/A")) {
+  if (Multimajortext.includes("해당없음")) {
     document.getElementById("total_standard").value = 66;
   } else {
     document.getElementById("total_standard").value = 99;
   }
 
-  if (Multimajortext.includes("심화") || Multimajortext.includes("N/A")) {
+  if (Multimajortext.includes("심화") || Multimajortext.includes("")) {
     document.getElementById("double_major_none").checked = true;
     document.getElementById("double_major_point").value = null;
     document.getElementById("double_major_point").readOnly = true;
