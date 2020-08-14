@@ -120,7 +120,7 @@ function Liberal_cal() {
   if (liberal_total_point <= 45) {
     word += "\n教养领域 总计 : " + liberal_total_point + " 学分"
   } else {
-    word += "\n教养领域 总计 : " + liberal_total_point + " 学分_ " + [liberal_total_point - 45] + "学分 초과 45 学分만 인정"
+    word += "\n教养领域 总计 : " + liberal_total_point + " 学分_超过" + [liberal_total_point - 45] + "学分 초과_45 学分만 인정"
   }
 
   if (common_kor_point == 2 && Core1 && Core2 && Core3 && Core4 && Core5 && core_total_point >= 14) {
