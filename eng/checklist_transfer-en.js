@@ -441,9 +441,9 @@ function BaseNeceresult(Majorstandard) {
   var TotalPoint = Number(document.getElementById("the_total").value);
   var TotalStandard = Number(document.getElementById("total_standard").value);
   if (TotalPoint < TotalStandard) {
-    word += "전체 이수학점 : " + [TotalStandard - TotalPoint] + " more credits required"
+    word += "Total credits : " + [TotalStandard - TotalPoint] + " more credits required"
   } else {
-    word += "전체 이수학점 : passed the requirement"
+    word += "Total credits : passed the requirement"
   }
 
   if (Basepoint >= BaseStandard && Necepoint >= NeceStandard && Majorpoint >= Majorstandard && TotalPoint >= TotalStandard) {

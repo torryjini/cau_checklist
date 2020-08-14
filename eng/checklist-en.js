@@ -120,7 +120,7 @@ function Liberal_cal() {
   if (liberal_total_point <= 45) {
     word += "\nTotal : " + liberal_total_point + " credits"
   } else {
-    word += "\nTotal : " + liberal_total_point + " credits_ " + [liberal_total_point - 45] + "credits exceeded\nAny credits over 45 don't count."
+    word += "\nTotal : " + liberal_total_point + " credits_" + [liberal_total_point - 45] + "credits exceeded\nAny credits over 45 don't count."
   }
 
   if (common_kor_point == 2 && Core1 && Core2 && Core3 && Core4 && Core5 && core_total_point >= 14) {
@@ -336,9 +336,9 @@ function BaseNeceresult(Majorstandard) {
 
   var Freepoint = Number(document.getElementById("free_point").value);
   if (Freepoint < 1) {
-    word += "자유선택 : " + Freepoint + " credits 이수_CAU세미나 미수강\n"
+    word += "자유선택 : " + Freepoint + " credits_CAU세미나 미수강\n"
   } else {
-    word += "자유선택 : " + Freepoint + " credits 이수_CAU세미나 이수 확인 필수!\n"
+    word += "자유선택 : " + Freepoint + " credits_CAU세미나 이수 확인 필수!\n"
   }
 
   var Teachingcheck = document.getElementById("teaching_none").checked;
@@ -353,9 +353,9 @@ function BaseNeceresult(Majorstandard) {
 
   var TotalPoint = Number(document.getElementById("the_total").value);
   if (TotalPoint < 132) {
-    word += "전체 이수credits : " + [132 - TotalPoint] + " more credits required"
+    word += "Total credits : " + [132 - TotalPoint] + " more credits required"
   } else {
-    word += "전체 이수credits : passed the requirement"
+    word += "Total credits : passed the requirement"
   }
 
   if (Basepoint >= BaseStandard && Necepoint >= NeceStandard && Majorpoint >= Majorstandard && Freepoint >= 1 && TotalPoint >= 132) {
