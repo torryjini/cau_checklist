@@ -61,45 +61,45 @@ function Major_result() {
 
   if (AdYear < 1000) {
     document.getElementById("student-info").scrollIntoView();
-    swal("입학연도를 선택하세요!", "", "error");
+    swal("请选择入学年度!", "", "error");
     return false;
   }
 
   if (Fusiontext.includes("문화") || Fusiontext.includes("창업") || Fusiontext.includes("게임")) {
     if (FusionCross > 6) {
       document.getElementById("double_major_none").scrollIntoView();
-      swal(Fusiontext + " 융합전공 교차인정\n최대학점은 6 학점입니다!", "", "error")
+      swal(Fusiontext + "融合专攻(융합전공)最多可以交叉认证6学分!\n ", "", "error")
       return false;
     }
-  } else if (Fusiontext.includes("금융")) {
+  } else if (Fusiontext.includes("金融")) {
     if (FusionCross > 15) {
       document.getElementById("double_major_none").scrollIntoView();
-      swal(Fusiontext + " 융합전공 교차인정\n최대학점은 15 학점입니다!", "", "error")
+      swal(Fusiontext + "融合专攻(융합전공)最多可以交叉认证15学分!\n", "", "error")
       return false;
     }
   } else if (Fusiontext.includes("인문") || Fusiontext.includes("보안") || Fusiontext.includes("테크") || Fusiontext.includes("벤처")) {
     if (FusionCross > 12) {
       document.getElementById("double_major_none").scrollIntoView();
-      swal(Fusiontext + " 융합전공 교차인정\n최대학점은 12 학점입니다!", "", "error")
+      swal(Fusiontext + "融合专攻(융합전공)最多可以交叉认证12学分! \n", "", "error")
       return false;
     }
   }
 
   if (MajorSelect == "none") {
     document.getElementById("student-info").scrollIntoView();
-    swal("전공 학과를 선택하세요!", "", "error");
+    swal(" 请选择专攻学科!", "", "error");
     return false;
   } else if (Majorstandard < 45) {
     document.getElementById("student-info").scrollIntoView();
-    swal("다전공 여부를 선택하세요!", "", "error");
+    swal("请选择是否是多专攻!", "", "error");
     return false;
   } else if (LinkCross > 12) {
     document.getElementById("double_major_point").scrollIntoView();
-    swal("연계전공의 교차인정 최대학점은 12 학점입니다!", "", "error")
+    swal(" 联系专攻(연계전공)最多可以交叉认证12学分!", "", "error")
     return false;
   } else if (PlanCross > 6) {
     document.getElementById("link_major_none").scrollIntoView();
-    swal("자기설계전공의 교차인정 최대학점은 6 학점입니다!", "", "error")
+    swal("自我设计专攻(자기설계전공)最多可以交叉认证6学分!", "", "error")
     return false;
   } else {
     BaseNeceresult(Majorstandard);
@@ -346,55 +346,55 @@ function Etc_result() {
   var Average_result = Number(document.getElementById("average").value);
 
   if (Average_result > 4.5) {
-    swal("평균평점은 4.5 만점입니다!", "", "error")
+    swal("平均学分4.5满分!", "", "error")
     return false;
   }
 
-  var word = "졸업인정제 통과 여부\n";
+  var word = "졸업인정제\n";
 
   if (!English_result) {
-    word += "- 영어 : 미통과\n"
+    word += "-英语 영어 :未通过\n"
   } else {
-    word += "- 영어 : 통과\n"
+    word += "-英语 영어 :通过\n"
   }
 
   if (Hanja_result) {
-    word += "- 한자 : 통과\n"
+    word += "-汉字 한자 :通过\n"
   } else {
-    word += "- 한자 : 미통과\n"
+    word += "-汉字 한자 :未通过\n"
   }
 
   if (Korean_result) {
-    word += "- 한국어(TOPIK) : 통과\n"
+    word += "-韩国语 한국어(TOPIK) :通过\n"
   } else {
-    word += "- 한국어(TOPIK) : 미통과\n"
+    word += "-韩国语 한국어(TOPIK) :未通过\n"
   }
 
   if (Paper_result) {
-    word += "졸업시험/논문\n- 주전공 : 합격\n"
+    word += "毕业考试/论文\n- 主专攻 주전공 : 合格\n"
   } else {
-    word += "졸업시험/논문\n- 주전공 : 불합격\n"
+    word += "毕业考试/论文\n- 主专攻 주전공 : 不合格\n"
   }
 
   if (Paper_result2) {
-    word += "- 복수전공 : 통과/해당없음\n"
+    word += "- 双专攻 복수전공 : 合格 / 无 \n"
   } else {
-    word += "- 복수전공 : 불합격\n"
+    word += "- 双专攻 복수전공 : 不合格\n"
   }
 
   if (Average_result >= 2) {
-    word += "평균평점 : 통과"
+    word += "平均学分 : 合格"
   } else {
-    word += "평균평점 : 미통과_졸업불가"
+    word += "平均学分 : 不合格_不可毕业"
   }
 
   if (English_result && Hanja_result && Korean_result && Paper_result && Paper_result2 && Average_result >= 2) {
-    swal("기타 졸업요건 결과", word, "success");
+    swal("其他毕业条件结果", word, "success");
   } else if (Average_result >= 2) {
     if (!English_result || !Hanja_result || !Korean_result || !Paper_result || !Paper_result2) {
-      swal("기타 졸업요건 결과", word, "warning");
+      swal("其他毕业条件结果", word, "warning");
     }
   } else if(Average_result <= 2) {
-    swal("기타 졸업요건 결과", word, "error");
+    swal("其他毕业条件结果", word, "error");
   }
 }

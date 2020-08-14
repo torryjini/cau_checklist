@@ -40,9 +40,9 @@ function Liberal_cal() {
   var word = "Entrance Year : " + AdYear + "\n";
 
   if (common_kor_point < 2) {
-    word += "공통교양\n - 국어 : " + [2 - common_kor_point] + " more credits required\n";
+    word += "Mandatory\n - 국어 : " + [2 - common_kor_point] + " more credits required\n";
   } else {
-    word += "공통교양\n - 국어 : Passed the requirement\n";
+    word += "Mandatory\n - 국어 : Passed the requirement\n";
   }
 
   if (common_eng_point < 2 && common_eng_ex) {
@@ -68,12 +68,12 @@ function Liberal_cal() {
   }
 
   if (core_total_point < 12) {
-    word += "핵심교양 : " + [12 - core_total_point] + " more credits required\n- 핵심 역량 4개 영역 각 1과목 이상 이수 필요!"
+    word += "Core : " + [12 - core_total_point] + " more credits required\n- Take at least 1 course from 4 different core areas!"
   } else {
-    word += "핵심교양 : Passed the minimum credits requirement\n- 핵심 역량 4개 영역 각 1과목 이상 이수 확인!"
+    word += "Core : Passed the minimum credits requirement\n- Check to see if the courses are from 4 different areas!"
   }
 
-  word += "\n선택교양 : " + elective_point + " credits"
+  word += "\nElective : " + elective_point + " credits"
 
   if (liberal_total_point <= 45) {
     word += "\nTotal : " + liberal_total_point + " credits"

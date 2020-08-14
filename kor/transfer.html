@@ -143,10 +143,10 @@
         <tr>
           <th>전공과목</th>
           <td>
-            <input type="text" class="standard_number" id="major_standard" value="45" readonly tabindex="-1">
+            <input type="text" class="standard_number" id="major_standard" value="" readonly tabindex="-1">
             <br>(전공필수 포함)</td>
           <td colspan="3">
-            <input type="number" id="major_input" placeholder="0" name="major" value="" onchange="tr_total_point_sum()"  onkeyup="tr_total_point_sum()" min="0" max="99" class="inputnumber" maxlength="2"
+            <input type="number" id="major_input" placeholder="0" name="major" value="45" onchange="tr_total_point_sum()"  onkeyup="tr_total_point_sum()" min="0" max="99" class="inputnumber" maxlength="2"
               oninput="maxLengthCheck(this)"> 학점
           </td>
           <!-- <td>전공 심화 : 최소 66 학점<br>복수/설계/연계/융합 : 최소 45 학점</td> -->
@@ -157,7 +157,7 @@
           <td colspan="3">
             <input type="number" id="double_major_point" placeholder="0" name="" value="" onchange="tr_total_point_sum()" onkeyup="tr_total_point_sum()" class="inputnumber" min="0" max="78" maxlength="2"
               oninput="maxLengthCheck(this)"> 학점<br>
-            <input type="checkbox" id="double_major_none" onclick="checkcont1('double_major_none', 'double_major_point')" tabindex="-1" hidden>
+            <input type="checkbox" id="double_major_none" onclick="checkcont1('double_major_none', 'double_major_point')" checked tabindex="-1" hidden>
           </td>
           <!-- <td>복수전공 전공기초는 자유선택으로 인정<br>복수전공을 교직이수할 경우,<br>복수전공 이수학점이 상향 조정됨</td> -->
         </tr>
@@ -167,7 +167,7 @@
           <td>
             <input type="number" id="link_major_point" placeholder="0" name="" value="" onchange="tr_total_point_sum()" onkeyup="tr_total_point_sum()" class="inputnumber" min="0" maxlength="2"
               oninput="maxLengthCheck(this)"> 학점<br>
-            <input type="checkbox" id="link_major_none" onclick="checkcont('link_major_none', 'link_major_point', 'cross_point1')" tabindex="-1" hidden>
+            <input type="checkbox" id="link_major_none" onclick="checkcont('link_major_none', 'link_major_point', 'cross_point1')" tabindex="-1" checked hidden>
           </td>
           <th>교차<br>인정</th>
           <td>
@@ -198,7 +198,7 @@
           <td>
             <input type="number" id="fusion_major_point" placeholder="0" name="" value="" onchange="tr_total_point_sum()" onkeyup="tr_total_point_sum()" class="inputnumber" min="0" maxlength="2"
               oninput="maxLengthCheck(this)"> 학점<br>
-            <input type="checkbox" id="fusion_major_none" onclick="checkcont('fusion_major_none', 'fusion_major_point', 'cross_point2')" tabindex="-1" hidden>
+            <input type="checkbox" id="fusion_major_none" onclick="checkcont('fusion_major_none', 'fusion_major_point', 'cross_point2')" checked tabindex="-1" hidden>
           </td>
           <th>교차<br>인정</th>
           <td>
@@ -211,7 +211,7 @@
           <td>
             <input type="number" id="plan_major_point" placeholder="0" name="" value="" onchange="tr_total_point_sum()" onkeyup="tr_total_point_sum()" class="inputnumber" min="0" maxlength="2"
               oninput="maxLengthCheck(this)"> 학점<br>
-            <input type="checkbox" id="plan_major_none" onclick="checkcont('plan_major_none', 'plan_major_point', 'cross_point3')" tabindex="-1" hidden>
+            <input type="checkbox" id="plan_major_none" onclick="checkcont('plan_major_none', 'plan_major_point', 'cross_point3')" checked tabindex="-1" hidden>
           </td>
           <th>교차<br>인정</th>
           <td>

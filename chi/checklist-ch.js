@@ -1,21 +1,21 @@
 function liveralmodal() {
-  var word = "교양영역 이수기준"
+  var word = "教养领域履修要求"
   var content = "共同教养\n- 국어 : 글쓰기\n- 英语 : Communication in English\n- 其他 : 창의와소통 / 회계와사회 / ACT / 한국사 / 컴퓨팅적사고와문제해결\n" +
-    "ㄴ 회계학원론(회계원리)을 이수했을 경우, '회계와사회' 免\n" +
+    "ㄴ 履修회계학원론(회계원리)时, 免'회계와사회' \n" +
     "\n核心教养 : 도전 / 창의 / 융합 / 신뢰 / 소통\n" +
-    "ㄴ 각 영역에서 1과목 이상 이수!\n选择教养 : 자율이수\n" + "총 교양学分 45学分까지만 인정됩니다!"
+    "ㄴ  各领域需要履修一个以上科目!\n选择教养 : 자율이수\n" + " 教养最多可以认证45学分!"
   swal(word, content, "info");
 }
 
 function majormodal() {
-  var word = "전공영역 이수기준"
-  var content = "전공 : 각 학과별 세부 기준 참고\n" +
-    "双专攻 : 双专攻 학과의 기준 참고\n ㄴ 双专攻的专攻基础认证为自由选择" +
-    "\n연계/융합/설계전공 : 각 과정별 교과과정표를 참고하여 필수 과목 확인!" +
-    "\n부전공 : 부전공 전공필수 6学分 이상 포함하여 수강" +
-    "\n자유선택 : CAU세미나 1学分 의무수강" +
-    "\n교직 : 교직과정 이수 확인(Tel.02-820-5080)" +
-    "\n총 이수学分 : 132 学分 이상(교양은 최대 45学分까지 인정)"
+  var word = "专攻领域履修要求"
+  var content = "专攻 : 请参考各学科的具体要求。\n" +
+    "双专攻 복수전공 : 请参考双专攻学科的要求\n ㄴ 双专攻的专攻基础认证为自由选择" +
+    "\n联系/融合/设计专攻 연계/융합/설계전공 :  请参考各部分的教课课程表确认必修科目!" +
+    "\n副专攻 부전공 : 부전공 전공필수 6学分 이상 포함하여 수강" +
+    "\n自由选择 자유선택 : 必修修完CAU세미나1学分" +
+    "\n教职 교직 : 确认教职过程履修情况请联系(Tel.02-820-5080)" +
+    "\n总履修学分 : 132 学分以上(教养最多可以认证45学分)"
   swal(word, content, "info");
 }
 
@@ -47,18 +47,18 @@ function Liberal_cal() {
 
   if (AdYear < 1000) {
     document.getElementById("student-info").scrollIntoView();
-    swal("入学年度를 선택하세요!", "", "error");
+    swal("请选择入学年度!", "", "error");
     return false;
   }
 
   if (core_total_point > 0 && !Core1 && !Core2 && !Core3 && !Core4 && !Core5) {
-    swal("核心教养 영역을 체크하세요!", "", "error")
+    swal("请选择核心教养!", "", "error")
     return false;
   }
 
   if (Core1 || Core2 || Core3 || Core4 || Core5) {
     if (core_total_point == 0) {
-      swal("核心教养 学分을 입력하세요!", "", "error")
+      swal("请输入核心教养学分!", "", "error")
       return false;
     }
   }
@@ -94,9 +94,9 @@ function Liberal_cal() {
   if (Core1 && Core2 && Core3 && Core4 && Core5 && core_total_point >= 14) {
     word += "核心教养 : 通过\n"
   } else if (core_total_point < 15) {
-    word += "核心教养 : " + [15 - core_total_point] + " 学分未达到要求\n- 미이수 영역 : "
+    word += "核心教养 : " + [15 - core_total_point] + " 学分未达到要求\n-  未履修领域 : "
   } else {
-    word += "核心教养 : 通过最少学分\n- 미이수 영역 : "
+    word += "核心教养 : 通过最少学分\n-未履修领域 : "
   }
 
   if (!Core1) {
@@ -120,7 +120,7 @@ function Liberal_cal() {
   if (liberal_total_point <= 45) {
     word += "\n教养领域 总计 : " + liberal_total_point + " 学分"
   } else {
-    word += "\n教养领域 总计 : " + liberal_total_point + " 学分_超过" + [liberal_total_point - 45] + "学分 초과_45 学分만 인정"
+    word += "\n教养领域 总计 : " + liberal_total_point + " 学分_超过" + [liberal_total_point - 45] + "学分 초과_ 只认证45 学分"
   }
 
   if (common_kor_point == 2 && Core1 && Core2 && Core3 && Core4 && Core5 && core_total_point >= 14) {
@@ -328,17 +328,17 @@ function BaseNeceresult(Majorstandard) {
   var Minorpoint = Number(document.getElementById("minor_point").value);
   if (!Minorcheck) {
     if (Minorpoint < 21) {
-      word += "부전공 : " + [21 - Minorpoint] + " 学分未达到要求\n"
+      word += "副专攻 부전공 : " + [21 - Minorpoint] + " 学分未达到要求\n"
     } else {
-      word += "부전공 : 通过最少学分\n"
+      word += "副专攻 부전공 : 通过最少学分\n"
     }
   }
 
   var Freepoint = Number(document.getElementById("free_point").value);
   if (Freepoint < 1) {
-    word += "자유선택 : " + Freepoint + " 学分 이수_CAU세미나 미수강\n"
+    word += "自由选择 자유선택 : 履修" + Freepoint + " 学分_CAU세미나未受讲\n"
   } else {
-    word += "자유선택 : " + Freepoint + " 学分 이수_CAU세미나 이수 확인 필수!\n"
+    word += "自由选择 자유선택 : 履修" + Freepoint + " 学分_ 必须确认CAU세미나受讲情况!\n"
   }
 
   var Teachingcheck = document.getElementById("teaching_none").checked;

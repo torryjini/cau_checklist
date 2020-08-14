@@ -12,8 +12,8 @@ function liveralmodal() {
   var content = "共同教养\n- 국어 : 글쓰기\n- 英语 : English1(Communication in English)\nEnglish2(English fo Professional Track)"
    + "\n- 其他 : 논리와사고(ACT) / 회계와사회 / 독서와토론(창의와소통) / 한국사\n"
    + "ㄴ 회계학원론(회계원리)을 이수했을 경우, '회계와사회' 免\n"
-   + "\n核心教养 : 이수学分 및 역량 관계없이 최소 3과목 이상 이수 시 인정"
-   + "\n选择教养 : 자율이수\n" + "총 교양学分 45学分까지만 인정됩니다!"
+   + "\n核心教养 : 受讲9学分以上。"
+   + "\n选择教养 : 자율이수\n" + "教养最多只认证45学分!"
   swal(word, content, "info");
 }
 
