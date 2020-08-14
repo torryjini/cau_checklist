@@ -1,13 +1,13 @@
 function majormodal() {
   var word = "학점 이수기준"
-  var content = "교양 : 이수 의무 없음\n"
-   + "전공 : 각 학과별 세부 기준 참고\n"
-   + "다전공 : 2학년 편입생만 해당."
-   + "\n- 복수전공 : 복수전공 학과의 기준 참고\n ㄴ복수전공의 전공기초는 자유선택으로 인정"
-   + "\n- 연계/융합/설계전공 : 각 과정별 교과과정표를 참고하여 필수 과목 확인!"
-   + "\n부전공 : 부전공 전공필수 6학점 이상 포함하여 수강"
-   + "\n교직 : 교직팀에 문의하여 교직과정 이수 확인"
-   + "\n총 이수학점 : 132 학점 이상(교양은 최대 45학점까지 인정)"
+  var content = "교양 : 이수 의무 없음\n" +
+    "전공 : 각 학과별 세부 기준 참고\n" +
+    "다전공 : 2학년 편입생만 해당." +
+    "\n- 복수전공 : 복수전공 학과의 기준 참고\n ㄴ복수전공의 전공기초는 자유선택으로 인정" +
+    "\n- 연계/융합/설계전공 : 각 과정별 교과과정표를 참고하여 필수 과목 확인!" +
+    "\n부전공 : 부전공 전공필수 6학점 이상 포함하여 수강" +
+    "\n교직 : 교직과정 이수 확인(Tel.02-820-5080)" +
+    "\n총 이수학점 : 132 학점 이상(교양은 최대 45학점까지 인정)"
   swal(word, content, "info");
 }
 
@@ -17,13 +17,13 @@ function tr_major_standard_maker() {
   var Multimajor = document.getElementById("MultiMajor_select");
   var Multimajortext = Multimajor.options[Multimajor.selectedIndex].text;
 
-  if (Multimajortext.includes("해당없음")) {
+  if (Multimajortext.includes("N/A")) {
     document.getElementById("total_standard").value = 66;
   } else {
     document.getElementById("total_standard").value = 99;
   }
 
-  if (Multimajortext.includes("심화") || Multimajortext.includes("해당없음")) {
+  if (Multimajortext.includes("심화") || Multimajortext.includes("N/A")) {
     document.getElementById("double_major_none").checked = true;
     document.getElementById("double_major_point").value = null;
     document.getElementById("double_major_point").readOnly = true;
@@ -323,7 +323,7 @@ function BaseNeceresult(Majorstandard) {
   Majorstandard = Number(Majorstandard);
   var word = "편입학연도 : " + AdYear + "년";
 
-  if(SecYear){
+  if (SecYear) {
     word += " - 2학년 편입";
   } else {
     word += " - 3학년 편입"
@@ -422,11 +422,7 @@ function BaseNeceresult(Majorstandard) {
   }
 
   var Freepoint = Number(document.getElementById("free_point").value);
-  if (Freepoint < 1) {
-    word += "자유선택 : " + Freepoint + " 학점 이수\n"
-  } else {
-    word += "자유선택 : " + Freepoint + " 학점 이수\n"
-  }
+  word += "자유선택 : " + Freepoint + " 학점 이수\n"
 
   var Teachingcheck = document.getElementById("teaching_none").checked;
   var Teachingpoint = Number(document.getElementById("teaching_point").value);

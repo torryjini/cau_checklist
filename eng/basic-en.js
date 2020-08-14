@@ -361,31 +361,31 @@ function Etc_result() {
   if (Hanja_result) {
     word += "- 한자 : Qualified\n"
   } else {
-    word += "- 한자 : not qualified\n"
+    word += "- 한자 : Not qualified\n"
   }
 
   if (Korean_result) {
     word += "- 한국어(TOPIK) : Qualified\n"
   } else {
-    word += "- 한국어(TOPIK) : not qualified\n"
+    word += "- 한국어(TOPIK) : Not qualified\n"
   }
 
   if (Paper_result) {
     word += "Grad Exam/Thesis\n- Major : Qualified\n"
   } else {
-    word += "Grad Exam/Thesis\n- Major : not qualified\n"
+    word += "Grad Exam/Thesis\n- Major : Not qualified\n"
   }
 
   if (Paper_result2) {
     word += "- Double major : Qualified/N/A\n"
   } else {
-    word += "- Double major : not qualified\n"
+    word += "- Double major : Not qualified\n"
   }
 
   if (Average_result >= 2) {
     word += "GPA : Qualified"
   } else {
-    word += "GPA : not qualified for gradution"
+    word += "GPA : Not qualified for gradution"
   }
 
   if (English_result && Hanja_result && Korean_result && Paper_result && Paper_result2 && Average_result >= 2) {
