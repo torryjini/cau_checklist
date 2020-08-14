@@ -117,7 +117,7 @@ function Liberal_cal() {
 
 // 여기서부터는 전공영역
 
-// 연도별 학과 전공기초, 전공필수 기준
+// 연도별 학과 전공기초, Required 기준
 function BaseNeceStandard() {
   var Major_base = {
     "psyche": "10",
@@ -176,7 +176,7 @@ function BaseNeceresult(Majorstandard) {
   var Necepoint = Number(document.getElementById("nece_input").value);
   var Majorpoint = Number(document.getElementById("major_input").value);
   Majorstandard = Number(Majorstandard);
-  var word = "Entrance Year : " + AdYear + "\n주전공 : " + Majortext + "\n다전공 : " + Multimajortext + "\n";
+  var word = "Entrance Year : " + AdYear + "\nMajor : " + Majortext + "\nMultiple Major : " + Multimajortext + "\n";
 
   var FusionOption = Number(document.getElementById("fusion-options").value);
   if (Multimajortext.includes("융합")) {
@@ -193,30 +193,30 @@ function BaseNeceresult(Majorstandard) {
   }
 
   if (Basepoint < BaseStandard) {
-    word += "전공기초 : " + [BaseStandard - Basepoint] + " more credits required\n";
+    word += "Basics : " + [BaseStandard - Basepoint] + " more credits required\n";
   } else {
-    word += "전공기초 : Passed the requirement\n";
+    word += "Basics : Passed the requirement\n";
   }
 
   if (Necepoint < NeceStandard) {
-    word += "전공필수 : " + [NeceStandard - Necepoint] + " more credits required\n";
+    word += "Required : " + [NeceStandard - Necepoint] + " more credits required\n";
   } else {
-    word += "전공필수 : Passed the requirement\n";
+    word += "Required : Passed the requirement\n";
   }
 
   if (Majorpoint < Majorstandard) {
-    word += "전공과목 : " + [Majorstandard - Majorpoint] + " more credits required\n"
+    word += "Major course : " + [Majorstandard - Majorpoint] + " more credits required\n"
   } else {
-    word += "전공과목 : Passed the requirement\n"
+    word += "Major course : Passed the requirement\n"
   }
 
   var Doublecheck = document.getElementById("double_major_none").checked;
   var Doublepoint = Number(document.getElementById("double_major_point").value);
   if (!Doublecheck) {
     if (Doublepoint < 45) {
-      word += "복수전공 : " + [45 - Doublepoint] + " more credits required\n"
+      word += "Double major : " + [45 - Doublepoint] + " more credits required\n"
     } else {
-      word += "복수전공 : Passed the minimum credits requirement\n"
+      word += "Double major : Passed the minimum credits requirement\n"
     }
   }
 
