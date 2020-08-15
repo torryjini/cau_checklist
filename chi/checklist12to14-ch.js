@@ -1,6 +1,6 @@
 function koreancheck() {
   AdYear = Number(document.getElementById("ad-year").value);
-  if(AdYear == 2014 || AdYear == 0){
+  if (AdYear == 2014 || AdYear == 0) {
     document.getElementById("Korean").checked = false;
   } else {
     document.getElementById("Korean").checked = true;
@@ -9,11 +9,11 @@ function koreancheck() {
 
 function liveralmodal() {
   var word = "교양영역 이수기준"
-  var content = "共同教养\n- 국어 : 글쓰기\n- 英语 : English1(Communication in English)\nEnglish2(English fo Professional Track)"
-   + "\n- 其他 : 논리와사고(ACT) / 회계와사회 / 독서와토론(창의와소통) / 한국사\n"
-   + "ㄴ 회계학원론(회계원리)을 이수했을 경우, '회계와사회' 免\n"
-   + "\n核心教养 : 受讲9学分以上。"
-   + "\n选择教养 : 자율이수\n" + "教养最多只认证45学分!"
+  var content = "共同教养\n- 국어 : 글쓰기\n- 英语 : English1(Communication in English)\nEnglish2(English fo Professional Track)" +
+    "\n- 其他 : 논리와사고(ACT) / 회계와사회 / 독서와토론(창의와소통) / 한국사\n" +
+    "ㄴ 회계학원론(회계원리)을 이수했을 경우, '회계와사회' 免\n" +
+    "\n核心教养 : 受讲9学分以上。" +
+    "\n选择教养 : 자율이수\n" + "教养最多只认证45学分!"
   swal(word, content, "info");
 }
 
@@ -266,8 +266,7 @@ function BaseNeceresult(Majorstandard) {
   }
 
   var Freepoint = Number(document.getElementById("free_point").value);
-  if (Freepoint < 1) {
-    word += "자유선택 : " + Freepoint + " 학점 이수\n"
+  word += "자유선택 : " + Freepoint + " 학점 이수\n"
 
 
   var Teachingcheck = document.getElementById("teaching_none").checked;
