@@ -289,7 +289,7 @@ function tr_Major_result() {
     document.getElementById("student-info").scrollIntoView();
     swal("Choose your major!", "", "error");
     return false;
-  } else if (SecYear && Multimajortext.includes("해당")) {
+  } else if (SecYear && Multimajortext.includes("N/A")) {
     document.getElementById("student-info").scrollIntoView();
     swal("Choose your multiple major!", "If you transferred to 2nd year, multiple majors are required!.", "error");
     return false;
@@ -443,7 +443,7 @@ function BaseNeceresult(Majorstandard) {
 
   if (Basepoint >= BaseStandard && Necepoint >= NeceStandard && Majorpoint >= Majorstandard && TotalPoint >= TotalStandard) {
     if (Minorcheck && Teachingcheck) {
-      if (Multimajortext.includes("해당")) {
+      if (Multimajortext.includes("N/A")) {
         swal("Total credits result", word, "success")
       } else if (Multimajortext.includes("심화")) {
         swal("Total credits result", word, "success")
@@ -473,7 +473,7 @@ function BaseNeceresult(Majorstandard) {
         }
       }
     } else if (Minorpoint >= 21 && Teachingcheck) {
-      if (Multimajortext.includes("해당")) {
+      if (Multimajortext.includes("N/A")) {
         swal("Total credits result", word, "success")
       } else if (Multimajortext.includes("심화")) {
         swal("Total credits result", word, "success")
@@ -503,7 +503,7 @@ function BaseNeceresult(Majorstandard) {
         }
       }
     } else if (Minorpoint >= 21 && Teachingpoint >= 22) {
-      if (Multimajortext.includes("해당")) {
+      if (Multimajortext.includes("N/A")) {
         swal("Total credits result", word, "success")
       } else if (Multimajortext.includes("심화")) {
         swal("Total credits result", word, "success")
@@ -533,7 +533,7 @@ function BaseNeceresult(Majorstandard) {
         }
       }
     } else if (Minorcheck && Teachingpoint >= 22) {
-      if (Multimajortext.includes("해당")) {
+      if (Multimajortext.includes("N/A")) {
         swal("Total credits result", word, "success")
       } else if (Multimajortext.includes("심화")) {
         swal("Total credits result", word, "success")
