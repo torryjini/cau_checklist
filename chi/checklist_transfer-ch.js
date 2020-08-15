@@ -1,13 +1,13 @@
 function majormodal() {
   var word = "学分 이수기준"
   var content = "교양 : 이수 의무 없음\n" +
-    "전공 : 각 학과별 세부 기준 참고\n" +
+    "专攻 : 请参考各学科的具体要求\n" +
     "多专攻 : 2학년 편입생만 해당." +
-    "\n- 双专攻 : 双专攻 학과의 기준 참고\n ㄴ 双专攻的专攻基础认证为自由选择" +
-    "\n- 연계/융합/설계전공 : 각 과정별 교과과정표를 참고하여 필수 과목 확인!" +
-    "\n부전공 : 부전공 전공필수 6学分 이상 포함하여 수강" +
-    "\n교직 : 교직과정 이수 확인(Tel.02-820-5080)" +
-    "\n총 이수学分 : 132 学分 이상(교양은 최대 45学分까지 인정)"
+    "\n- 双专攻 : 请参考双专攻学科的要求\n ㄴ 双专攻的专攻基础认证为自由选择" +
+    "\n- 联系/融合/设计专攻(연계/융합/설계전공) : 请参考各部分的教课课程表确认必修科目!" +
+    "\n副专攻 : 需要包括副专攻的专攻必修6学分以上" +
+    "\n教职 : 确认教职过程履修情况请联系(Tel.02-820-5080)" +
+    "\n总履修学分 : 66 学分以上(2학년 편입은 99 학점 이상)"
   swal(word, content, "info");
 }
 
@@ -269,38 +269,38 @@ function tr_Major_result() {
   if (Fusiontext.includes("문화") || Fusiontext.includes("창업") || Fusiontext.includes("게임")) {
     if (FusionCross > 6) {
       document.getElementById("double_major_none").scrollIntoView();
-      swal(Fusiontext + " 융합전공 교차인정\n최대학점은 6 학점입니다!", "", "error")
+      swal(Fusiontext + " 融合专攻(융합전공)最多可以交叉认证6学分!", "", "error")
       return false;
     }
   } else if (Fusiontext.includes("금융")) {
     if (FusionCross > 15) {
       document.getElementById("double_major_none").scrollIntoView();
-      swal(Fusiontext + " 융합전공 교차인정\n최대학점은 15 학점입니다!", "", "error")
+      swal(Fusiontext + " 融合专攻(융합전공)最多可以交叉认证15学分!", "", "error")
       return false;
     }
   } else if (Fusiontext.includes("인문") || Fusiontext.includes("보안") || Fusiontext.includes("테크") || Fusiontext.includes("벤처")) {
     if (FusionCross > 12) {
       document.getElementById("double_major_none").scrollIntoView();
-      swal(Fusiontext + " 융합전공 교차인정\n최대학점은 12 학점입니다!", "", "error")
+      swal(Fusiontext + " 融合专攻(융합전공)最多可以交叉认证12学分!", "", "error")
       return false;
     }
   }
 
   if (MajorSelect == "none") {
     document.getElementById("student-info").scrollIntoView();
-    swal("전공 학과를 선택하세요!", "", "error");
+    swal("请选择专攻学科!", "", "error");
     return false;
   } else if (SecYear && Multimajortext.includes("해당")) {
     document.getElementById("student-info").scrollIntoView();
-    swal("多专攻 여부를 선택하세요!", "2학년 편입은 多专攻 대상입니다.", "error");
+    swal("请选择是否是多专攻", "2학년 편입은 多专攻 대상입니다.", "error");
     return false;
   } else if (LinkCross > 12) {
     document.getElementById("double_major_point").scrollIntoView();
-    swal("연계전공의 교차인정 최대学分은 12 学分입니다!", "", "error")
+    swal("联系专攻(연계전공)最多可以交叉认证12学分!", "", "error")
     return false;
   } else if (PlanCross > 6) {
     document.getElementById("link_major_none").scrollIntoView();
-    swal("자기설계전공의 교차인정 최대学分은 6 学分입니다!", "", "error")
+    swal("自我设计专攻(자기설계전공)最多可以交叉认证6学分!", "", "error")
     return false;
   } else {
     BaseNeceresult(Majorstandard);
@@ -395,9 +395,9 @@ function BaseNeceresult(Majorstandard) {
   var FusionStandard = Number(document.getElementById("fusion_standard").value);
   if (!Fusioncheck) {
     if (Fusionpoint < FusionStandard) {
-      word += "融合专攻_" + Fusiontext + " : " + [FusionStandard - Fusionpoint] + " 学分未达到要求\n"
+      word += Fusiontext + "융합전공 : " + [FusionStandard - Fusionpoint] + " 学分未达到要求\n"
     } else {
-      word += "融合专攻_" + Fusiontext + " : 通过最少学分\n"
+      word += Fusiontext + "융합전공 : 通过最少学分\n"
     }
   }
 
@@ -405,9 +405,9 @@ function BaseNeceresult(Majorstandard) {
   var Planpoint = Number(document.getElementById("plan_major_point").value) + Number(document.getElementById("cross_point3").value);
   if (!Plancheck) {
     if (Planpoint < 36) {
-      word += "设计专攻 : " + [36 - Planpoint] + " 学分未达到要求\n"
+      word += "연계전공 : " + [36 - Planpoint] + " 学分未达到要求\n"
     } else {
-      word += "设计专攻 : 최소学分 通过\n"
+      word += "연계전공 : 通过最少学分\n"
     }
   }
 
@@ -422,7 +422,7 @@ function BaseNeceresult(Majorstandard) {
   }
 
   var Freepoint = Number(document.getElementById("free_point").value);
-  word += "자유선택 : " + Freepoint + " 学分 이수\n"
+  word += "자유선택 : " + Freepoint + " 学分\n"
 
   var Teachingcheck = document.getElementById("teaching_none").checked;
   var Teachingpoint = Number(document.getElementById("teaching_point").value);

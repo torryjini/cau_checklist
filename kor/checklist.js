@@ -308,9 +308,9 @@ function BaseNeceresult(Majorstandard) {
   var FusionStandard = Number(document.getElementById("fusion_standard").value);
   if (!Fusioncheck) {
     if (Fusionpoint < FusionStandard) {
-      word += "융합전공_" + Fusiontext + " : " + [FusionStandard - Fusionpoint] + " 학점 미달\n"
+      word += Fusiontext + "융합전공 : " + [FusionStandard - Fusionpoint] + " 학점 미달\n"
     } else {
-      word += "융합전공_" + Fusiontext + " : 최소학점 기준 통과\n"
+      word += Fusiontext + "융합전공 : 최소학점 기준 통과\n"
     }
   }
 

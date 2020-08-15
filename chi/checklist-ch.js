@@ -10,11 +10,11 @@ function liveralmodal() {
 function majormodal() {
   var word = "专攻领域履修要求"
   var content = "专攻 : 请参考各学科的具体要求。\n" +
-    "双专攻 복수전공 : 请参考双专攻学科的要求\n ㄴ 双专攻的专攻基础认证为自由选择" +
-    "\n联系/融合/设计专攻 연계/융합/설계전공 :  请参考各部分的教课课程表确认必修科目!" +
-    "\n副专攻 부전공 : 부전공 전공필수 6学分 이상 포함하여 수강" +
-    "\n自由选择 자유선택 : 必修修完CAU세미나1学分" +
-    "\n教职 교직 : 确认教职过程履修情况请联系(Tel.02-820-5080)" +
+    "双专攻 : 请参考双专攻学科的要求\n ㄴ 双专攻的专攻基础认证为自由选择" +
+    "\n联系/融合/设计专攻(연계/융합/설계전공) :  请参考各部分的教课课程表确认必修科目!" +
+    "\n副专攻 : 需要包括副专攻的专攻必修6学分以上" +
+    "\n自由选择 : 必修修完CAU세미나1学分" +
+    "\n教职 : 确认教职过程履修情况请联系(Tel.02-820-5080)" +
     "\n总履修学分 : 132 学分以上(教养最多可以认证45学分)"
   swal(word, content, "info");
 }
@@ -308,9 +308,9 @@ function BaseNeceresult(Majorstandard) {
   var FusionStandard = Number(document.getElementById("fusion_standard").value);
   if (!Fusioncheck) {
     if (Fusionpoint < FusionStandard) {
-      word += "융합전공" + Fusiontext + " : " + [FusionStandard - Fusionpoint] + " 学分未达到要求\n"
+      word += Fusiontext + "융합전공 : " + [FusionStandard - Fusionpoint] + " 学分未达到要求\n"
     } else {
-      word += "융합전공" + Fusiontext + " : 通过最少学分\n"
+      word += Fusiontext + "융합전공 : 通过最少学分\n"
     }
   }
 
@@ -328,17 +328,17 @@ function BaseNeceresult(Majorstandard) {
   var Minorpoint = Number(document.getElementById("minor_point").value);
   if (!Minorcheck) {
     if (Minorpoint < 21) {
-      word += "副专攻 부전공 : " + [21 - Minorpoint] + " 学分未达到要求\n"
+      word += "부전공 : " + [21 - Minorpoint] + " 学分未达到要求\n"
     } else {
-      word += "副专攻 부전공 : 通过最少学分\n"
+      word += "부전공 : 通过最少学分\n"
     }
   }
 
   var Freepoint = Number(document.getElementById("free_point").value);
   if (Freepoint < 1) {
-    word += "自由选择 자유선택 : 履修" + Freepoint + " 学分_CAU세미나未受讲\n"
+    word += "자유선택 : 履修" + Freepoint + " 学分_CAU세미나未受讲\n"
   } else {
-    word += "自由选择 자유선택 : 履修" + Freepoint + " 学分_ 必须确认CAU세미나受讲情况!\n"
+    word += "자유선택 : 履修" + Freepoint + " 学分_ 必须确认CAU세미나受讲情况!\n"
   }
 
   var Teachingcheck = document.getElementById("teaching_none").checked;

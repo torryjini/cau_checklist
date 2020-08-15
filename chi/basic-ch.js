@@ -68,26 +68,26 @@ function Major_result() {
   if (Fusiontext.includes("문화") || Fusiontext.includes("창업") || Fusiontext.includes("게임")) {
     if (FusionCross > 6) {
       document.getElementById("double_major_none").scrollIntoView();
-      swal(Fusiontext + "融合专攻(융합전공)最多可以交叉认证6学分!\n ", "", "error")
+      swal(Fusiontext + " 融合专攻(융합전공)最多可以交叉认证6学分!\n ", "", "error")
       return false;
     }
   } else if (Fusiontext.includes("金融")) {
     if (FusionCross > 15) {
       document.getElementById("double_major_none").scrollIntoView();
-      swal(Fusiontext + "融合专攻(융합전공)最多可以交叉认证15学分!\n", "", "error")
+      swal(Fusiontext + " 融合专攻(융합전공)最多可以交叉认证15学分!\n", "", "error")
       return false;
     }
   } else if (Fusiontext.includes("인문") || Fusiontext.includes("보안") || Fusiontext.includes("테크") || Fusiontext.includes("벤처")) {
     if (FusionCross > 12) {
       document.getElementById("double_major_none").scrollIntoView();
-      swal(Fusiontext + "融合专攻(융합전공)最多可以交叉认证12学分! \n", "", "error")
+      swal(Fusiontext + " 融合专攻(융합전공)最多可以交叉认证12学分! \n", "", "error")
       return false;
     }
   }
 
   if (MajorSelect == "none") {
     document.getElementById("student-info").scrollIntoView();
-    swal(" 请选择专攻学科!", "", "error");
+    swal("请选择专攻学科!", "", "error");
     return false;
   } else if (Majorstandard < 45) {
     document.getElementById("student-info").scrollIntoView();
@@ -95,7 +95,7 @@ function Major_result() {
     return false;
   } else if (LinkCross > 12) {
     document.getElementById("double_major_point").scrollIntoView();
-    swal(" 联系专攻(연계전공)最多可以交叉认证12学分!", "", "error")
+    swal("联系专攻(연계전공)最多可以交叉认证12学分!", "", "error")
     return false;
   } else if (PlanCross > 6) {
     document.getElementById("link_major_none").scrollIntoView();

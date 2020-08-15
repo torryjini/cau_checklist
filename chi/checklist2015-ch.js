@@ -9,12 +9,12 @@ function liveralmodal() {
 
 function majormodal() {
   var word = "专攻领域履修基准"
-  var content = "专攻 전공 : 请参考各学科的具体要求\n" +
-    "双专攻 복수전공 : 请参考双专攻学科的要求\n ㄴ 双专攻的专攻基础认证为自由选择" +
-    "\n联系/融合/设计专攻 연계/융합/설계전공 : 请参考各分类的教课过程表确认必修科目！" +
-    "\n副专攻 부전공 : 需要包括副专攻的专攻必修6学分以上" +
-    "\n教职 교직 : 请联系教职部确认教职过程所需要求(Tel.02-820-5080)" +
-    "\n总履修学分 총 이수학점 : 132学分以上(教养最多可以认证45学分)"
+  var content = "专攻 : 请参考各学科的具体要求\n" +
+    "双专攻 : 请参考双专攻学科的要求\n ㄴ 双专攻的专攻基础认证为自由选择" +
+    "\n联系/融合/设计专攻(연계/융합/설계전공) : 请参考各部分的教课课程表确认必修科目！" +
+    "\n副专攻 : 需要包括副专攻的专攻必修6学分以上" +
+    "\n教职 : 确认教职过程履修情况请联系(Tel.02-820-5080)" +
+    "\n总履修学分 : 132学分以上(教养最多可以认证45学分)"
   swal(word, content, "info");
 }
 
@@ -218,9 +218,9 @@ function BaseNeceresult(Majorstandard) {
   var FusionStandard = Number(document.getElementById("fusion_standard").value);
   if (!Fusioncheck) {
     if (Fusionpoint < FusionStandard) {
-      word += "융합전공" + Fusiontext + " : " + [FusionStandard - Fusionpoint] + " 学分未达到要求\n"
+      word += Fusiontext + "융합전공 : " + [FusionStandard - Fusionpoint] + " 学分未达到要求\n"
     } else {
-      word += "융합전공" + Fusiontext + " : 通过最少学分\n"
+      word += Fusiontext + "융합전공 : 通过最少学分\n"
     }
   }
 
@@ -266,27 +266,27 @@ function BaseNeceresult(Majorstandard) {
 
   if (Basepoint >= BaseStandard && Necepoint >= NeceStandard && Majorpoint >= Majorstandard && TotalPoint >= 132) {
     if (Minorcheck && Teachingcheck) {
-      if (Multimajortext.includes("深化심화")) {
+      if (Multimajortext.includes("심화")) {
         swal("专攻领域结果", word, "success")
-      } else if (Multimajortext.includes("双복수")) {
+      } else if (Multimajortext.includes("복수")) {
         if (Doublepoint >= 45) {
           swal("专攻领域结果", word, "success")
         } else {
           swal("专攻领域结果", word, "error")
         }
-      } else if (Multimajortext.includes("联系연계")) {
+      } else if (Multimajortext.includes("연계")) {
         if (Linkpoint >= 36) {
           swal("专攻领域结果", word, "success")
         } else {
           swal("专攻领域结果", word, "error")
         }
-      } else if (Multimajortext.includes("融合융합")) {
+      } else if (Multimajortext.includes("융합")) {
         if (Fusionpoint >= FusionStandard) {
           swal("专攻领域结果", word, "success")
         } else {
           swal("专攻领域结果", word, "error")
         }
-      } else if (Multimajortext.includes("设计설계")) {
+      } else if (Multimajortext.includes("설계")) {
         if (Planpoint >= 36) {
           swal("专攻领域结果", word, "success")
         } else {
@@ -302,19 +302,19 @@ function BaseNeceresult(Majorstandard) {
         } else {
           swal("专攻领域结果", word, "error")
         }
-      } else if (Multimajortext.includes("联系연계")) {
+      } else if (Multimajortext.includes("연계")) {
         if (Linkpoint >= 36) {
           swal("专攻领域结果", word, "success")
         } else {
           swal("专攻领域结果", word, "error")
         }
-      } else if (Multimajortext.includes("融合융합")) {
+      } else if (Multimajortext.includes("융합")) {
         if (Fusionpoint >= FusionStandard) {
           swal("专攻领域结果", word, "success")
         } else {
           swal("专攻领域结果", word, "error")
         }
-      } else if (Multimajortext.includes("设计설계")) {
+      } else if (Multimajortext.includes("설계")) {
         if (Planpoint >= 36) {
           swal("专攻领域结果", word, "success")
         } else {
@@ -322,27 +322,27 @@ function BaseNeceresult(Majorstandard) {
         }
       }
     } else if (Minorpoint >= 21 && Teachingpoint >= 22) {
-      if (Multimajortext.includes("深化심화")) {
+      if (Multimajortext.includes("심화")) {
         swal("专攻领域结果", word, "success")
-      } else if (Multimajortext.includes("双복수")) {
+      } else if (Multimajortext.includes("복수")) {
         if (Doublepoint >= 45) {
           swal("专攻领域结果", word, "success")
         } else {
           swal("专攻领域结果", word, "error")
         }
-      } else if (Multimajortext.includes("联系연계")) {
+      } else if (Multimajortext.includes("연계")) {
         if (Linkpoint >= 36) {
           swal("专攻领域结果", word, "success")
         } else {
           swal("专攻领域结果", word, "error")
         }
-      } else if (Multimajortext.includes("融合융합")) {
+      } else if (Multimajortext.includes("융합")) {
         if (Fusionpoint >= FusionStandard) {
           swal("专攻领域结果", word, "success")
         } else {
           swal("专攻领域结果", word, "error")
         }
-      } else if (Multimajortext.includes("设计설계")) {
+      } else if (Multimajortext.includes("설계")) {
         if (Planpoint >= 36) {
           swal("专攻领域结果", word, "success")
         } else {
@@ -352,25 +352,25 @@ function BaseNeceresult(Majorstandard) {
     } else if (Minorcheck && Teachingpoint >= 22) {
       if (Multimajortext.includes("深化심화")) {
         swal("专攻领域结果", word, "success")
-      } else if (Multimajortext.includes("双복수")) {
+      } else if (Multimajortext.includes("복수")) {
         if (Doublepoint >= 45) {
           swal("专攻领域结果", word, "success")
         } else {
           swal("专攻领域结果", word, "error")
         }
-      } else if (Multimajortext.includes("联系연계")) {
+      } else if (Multimajortext.includes("연계")) {
         if (Linkpoint >= 36) {
           swal("专攻领域结果", word, "success")
         } else {
           swal("专攻领域结果", word, "error")
         }
-      } else if (Multimajortext.includes("融合융합")) {
+      } else if (Multimajortext.includes("융합")) {
         if (Fusionpoint >= FusionStandard) {
           swal("专攻领域结果", word, "success")
         } else {
           swal("专攻领域结果", word, "error")
         }
-      } else if (Multimajortext.includes("设计설계")) {
+      } else if (Multimajortext.includes("설계")) {
         if (Planpoint >= 36) {
           swal("专攻领域结果", word, "success")
         } else {

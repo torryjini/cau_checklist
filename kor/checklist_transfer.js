@@ -7,7 +7,7 @@ function majormodal() {
     "\n- 연계/융합/설계전공 : 각 과정별 교과과정표를 참고하여 필수 과목 확인!" +
     "\n부전공 : 부전공 전공필수 6학점 이상 포함하여 수강" +
     "\n교직 : 교직과정 이수 확인(Tel.02-820-5080)" +
-    "\n총 이수학점 : 132 학점 이상(교양은 최대 45학점까지 인정)"
+    "\n총 이수학점 : 66 학점 이상(2학년 편입은 99 학점 이상)"
   swal(word, content, "info");
 }
 
@@ -292,7 +292,7 @@ function tr_Major_result() {
     return false;
   } else if (SecYear && Multimajortext.includes("해당")) {
     document.getElementById("student-info").scrollIntoView();
-    swal("다전공 여부를 선택하세요!", "2학년 편입은 다전공 대상입니다.", "error");
+    swal("다전공을 선택하세요!", "2학년 편입은 다전공 대상입니다.", "error");
     return false;
   } else if (LinkCross > 12) {
     document.getElementById("double_major_point").scrollIntoView();
@@ -395,9 +395,9 @@ function BaseNeceresult(Majorstandard) {
   var FusionStandard = Number(document.getElementById("fusion_standard").value);
   if (!Fusioncheck) {
     if (Fusionpoint < FusionStandard) {
-      word += "융합전공_" + Fusiontext + " : " + [FusionStandard - Fusionpoint] + " 학점 미달\n"
+      word += Fusiontext + "융합전공 : " + [FusionStandard - Fusionpoint] + " 학점 미달\n"
     } else {
-      word += "융합전공_" + Fusiontext + " : 최소학점 기준 통과\n"
+      word += Fusiontext + "융합전공 : 최소학점 기준 통과\n"
     }
   }
 

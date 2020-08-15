@@ -91,7 +91,7 @@ function Major_result() {
     return false;
   } else if (Majorstandard < 45) {
     document.getElementById("student-info").scrollIntoView();
-    swal("다전공 여부를 선택하세요!", "", "error");
+    swal("다전공을 선택하세요!", "", "error");
     return false;
   } else if (LinkCross > 12) {
     document.getElementById("double_major_point").scrollIntoView();
@@ -336,7 +336,7 @@ function major_standard_maker() {
 }
 
 // 여기서부터는 졸업인정제 등 졸업요건 관련
-// 
+//
 // function etcmodal() {
 //   var word = "기타 졸업요건"
 //   var content = "졸업가능 : 학점 이수 기준 모두 통과 + 졸업인정제 통과 + 졸업시험/논문 합격 + 최저 평점 기준 통과\n\n"

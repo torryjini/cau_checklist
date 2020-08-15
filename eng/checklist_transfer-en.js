@@ -6,7 +6,7 @@ function majormodal() {
     "\n연계/융합/설계전공 : Check for required courses for each track!" +
     "\nMinor : Earn more than 6 credits from required courses of your minor" +
     "\nTeaching : Check for details(Tel.02-820-5080)" +
-    "\nTotal credits : Only 132 credits count for graduation\n(only up to 45 credits for general courses)"
+    "\nTotal credits : Only 66 credits count for graduation(2학년 편입은 99 학점 이상)"
   swal(word, content, "info");
 }
 
@@ -394,9 +394,9 @@ function BaseNeceresult(Majorstandard) {
   var FusionStandard = Number(document.getElementById("fusion_standard").value);
   if (!Fusioncheck) {
     if (Fusionpoint < FusionStandard) {
-      word += "융합전공_" + Fusiontext + " : " + [FusionStandard - Fusionpoint] + " more credits required\n"
+      word += Fusiontext + "융합전공 : " + [FusionStandard - Fusionpoint] + " more credits required\n"
     } else {
-      word += "융합전공_" + Fusiontext + " : Passed the minimum credits requirement\n"
+      word += Fusiontext + "융합전공 : Passed the minimum credits requirement\n"
     }
   }
 
