@@ -51,7 +51,7 @@ function Liberal_cal() {
 
   if (AdYear < 1000) {
     document.getElementById("student-info").scrollIntoView();
-    swal("入学年度를 선택하세요!", "", "error");
+    swal("请选择入学年度!", "", "error");
     return false;
   }
 
