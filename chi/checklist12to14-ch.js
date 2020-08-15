@@ -11,7 +11,7 @@ function liveralmodal() {
   var word = "教养领域履修基准"
   var content = "共同教养\n- 국어 : 글쓰기\n- 英语 : English1(Communication in English)\nEnglish2(English fo Professional Track)" +
     "\n- 其他 : 논리와사고(ACT) / 회계와사회 / 독서와토론(창의와소통) / 한국사\n" +
-    "ㄴ 회계학원론(회계원리)을 이수했을 경우, '회계와사회' 免\n" +
+    "ㄴ 履修회계학원론(회계원리)时, 免'회계와사회'\n" +
     "\n核心教养 : 受讲9学分以上。" +
     "\n选择教养 : 자율이수\n" + "教养最多只认证45学分!"
   swal(word, content, "info");
