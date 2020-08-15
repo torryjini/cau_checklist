@@ -353,33 +353,33 @@ function Etc_result() {
   var word = "졸업인정제\n";
 
   if (!English_result) {
-    word += "-英语 영어 :未通过\n"
+    word += "- 영어 :未通过\n"
   } else {
-    word += "-英语 영어 :通过\n"
+    word += "- 영어 :通过\n"
   }
 
   if (Hanja_result) {
-    word += "-汉字 한자 :通过\n"
+    word += "- 한자 :通过\n"
   } else {
-    word += "-汉字 한자 :未通过\n"
+    word += "- 한자 :未通过\n"
   }
 
   if (Korean_result) {
-    word += "-韩国语 한국어(TOPIK) :通过\n"
+    word += "- 한국어(TOPIK) :通过\n"
   } else {
-    word += "-韩国语 한국어(TOPIK) :未通过\n"
+    word += "- 한국어(TOPIK) :未通过\n"
   }
 
   if (Paper_result) {
-    word += "毕业考试/论文\n- 主专攻 주전공 : 合格\n"
+    word += "毕业考试/论文\n- 主专攻 : 合格\n"
   } else {
-    word += "毕业考试/论文\n- 主专攻 주전공 : 不合格\n"
+    word += "毕业考试/论文\n- 主专攻 : 不合格\n"
   }
 
   if (Paper_result2) {
-    word += "- 双专攻 복수전공 : 合格 / 无 \n"
+    word += "- 双专攻 : 合格 / 无 \n"
   } else {
-    word += "- 双专攻 복수전공 : 不合格\n"
+    word += "- 双专攻 : 不合格\n"
   }
 
   if (Average_result >= 2) {

@@ -330,9 +330,9 @@ function BaseNeceresult(Majorstandard) {
   }
 
   if (Majortext.includes("트랙")) {
-    word += "\n主专攻 : 공공인재학부 " + Majortext + "\n多专攻 : " + Multimajortext + "\n教养 : " + Liberal_point + " 学分 이수\n";
+    word += "\n主专攻 : 공공인재학부 " + Majortext + "\n多专攻 : " + Multimajortext + "\n教养 : " + Liberal_point + " 学分\n";
   } else {
-    word += "\n主专攻 : " + Majortext + "\n多专攻 : " + Multimajortext + "\n教养 : " + Liberal_point + " 学分 이수\n";
+    word += "\n主专攻 : " + Majortext + "\n多专攻 : " + Multimajortext + "\n教养 : " + Liberal_point + " 学分\n";
   }
 
   var FusionOption = Number(document.getElementById("fusion-options").value);

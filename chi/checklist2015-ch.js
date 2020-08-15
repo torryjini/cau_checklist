@@ -294,9 +294,9 @@ function BaseNeceresult(Majorstandard) {
         }
       }
     } else if (Minorpoint >= 21 && Teachingcheck) {
-      if (Multimajortext.includes("深化심화")) {
+      if (Multimajortext.includes("심화")) {
         swal("专攻领域结果", word, "success")
-      } else if (Multimajortext.includes("双복수")) {
+      } else if (Multimajortext.includes("복수")) {
         if (Doublepoint >= 45) {
           swal("专攻领域结果", word, "success")
         } else {
@@ -350,7 +350,7 @@ function BaseNeceresult(Majorstandard) {
         }
       }
     } else if (Minorcheck && Teachingpoint >= 22) {
-      if (Multimajortext.includes("深化심화")) {
+      if (Multimajortext.includes("심화")) {
         swal("专攻领域结果", word, "success")
       } else if (Multimajortext.includes("복수")) {
         if (Doublepoint >= 45) {
