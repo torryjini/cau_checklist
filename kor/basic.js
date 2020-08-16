@@ -335,6 +335,28 @@ function major_standard_maker() {
   }
 }
 
+function MajortableReset() {
+  document.getElementById("double_major_none").checked = false;
+  document.getElementById("double_major_point").readOnly = false;
+  document.getElementById("double_major_paper").checked = false;
+  document.getElementById("double_table").style.display = "none";
+
+  document.getElementById("link_major_none").checked = false;
+  document.getElementById("link_major_point").readOnly = false;
+  document.getElementById("cross_point1").readOnly = false;
+  document.getElementById("link_table").style.display = "none";
+
+  document.getElementById("fusion_major_none").checked = false;
+  document.getElementById("fusion_major_point").readOnly = false;
+  document.getElementById("cross_point2").readOnly = false;
+  document.getElementById("fusion_table").style.display = "none";
+
+  document.getElementById("plan_major_none").checked = false;
+  document.getElementById("plan_major_point").readOnly = false;
+  document.getElementById("cross_point3").readOnly = false;
+  document.getElementById("plan_table").style.display = "none";
+}
+
 // 여기서부터는 졸업인정제 등 졸업요건 관련
 //
 // function etcmodal() {

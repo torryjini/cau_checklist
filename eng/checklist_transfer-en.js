@@ -291,7 +291,7 @@ function tr_Major_result() {
     return false;
   } else if (SecYear && Multimajortext.includes("N/A")) {
     document.getElementById("student-info").scrollIntoView();
-    swal("Choose your multiple major!", "If you transferred to 2nd year, multiple majors are required!.", "error");
+    swal("Choose your multiple major!", "If you transferred to 2nd year, multiple majors are required!", "error");
     return false;
   } else if (LinkCross > 12) {
     document.getElementById("double_major_point").scrollIntoView();
