@@ -173,7 +173,7 @@ function BaseNeceStandard() {
   var Major_base1718 = {
     "public-admin": "18",
     "public-policy": "17"
-  };Required
+  };
 
   var Major_nece1718 = {
     "public-admin": "26",
