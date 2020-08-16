@@ -324,9 +324,9 @@ function BaseNeceresult(Majorstandard) {
   var word = "插班年度 : " + AdYear + "年";
 
   if (SecYear) {
-    word += " - 2학년 편입";
+    word += " - 二年级插班";
   } else {
-    word += " - 3학년 편입"
+    word += " - 三年级插班"
   }
 
   if (Majortext.includes("트랙")) {
