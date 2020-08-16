@@ -321,7 +321,7 @@ function BaseNeceresult(Majorstandard) {
   var Necepoint = Number(document.getElementById("nece_input").value);
   var Majorpoint = Number(document.getElementById("major_input").value);
   Majorstandard = Number(Majorstandard);
-  var word = "편입학연도 : " + AdYear + "年";
+  var word = "插班年度 : " + AdYear + "年";
 
   if (SecYear) {
     word += " - 2학년 편입";
