@@ -68,6 +68,7 @@ li {
 
 ol {
   margin-top: 0.5rem;
+  margin-left: 15%;
 }
 
 select {
@@ -233,8 +234,8 @@ input[type=reset]:hover {
 #index_logo {
   width: auto;
   height: auto;
-  max-width: 15rem;
-  max-height: 15rem;
+  max-width: 14rem;
+  max-height: 14rem;
 }
 
 #logo {
@@ -242,8 +243,8 @@ input[type=reset]:hover {
   margin-bottom: 1rem;
   width: auto;
   height: auto;
-  max-width: 6rem;
-  max-height: 6rem;
+  max-width: 5rem;
+  max-height: 5rem;
 }
 
 #H2U {
@@ -316,6 +317,7 @@ input[type=reset]:hover {
 
   ol {
     padding-left: 20px;
+    margin-left: 0;
   }
 
   #page_header {
