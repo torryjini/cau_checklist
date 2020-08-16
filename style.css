@@ -74,6 +74,7 @@ ol {
 select {
   cursor: pointer;
   text-align-last:center;
+  border-color: gray;
 }
 
 table {
@@ -208,6 +209,7 @@ input[type=button], input[type=reset] {
   border-radius: 3px;
   font-family: inherit;
   font-size: 1rem;
+  border-color: gray;
 }
 
 .totalnumber {
