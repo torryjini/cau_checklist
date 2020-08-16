@@ -346,6 +346,11 @@ input[type=reset]:hover {
     font-size: 1.3rem;
   }
 
+  #index_logo {
+    max-width: 10rem;
+    max-height: 10rem;
+  }
+
   #page_header {
     position: fixed;
     top: 0;
