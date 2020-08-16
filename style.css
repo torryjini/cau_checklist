@@ -212,6 +212,7 @@ input[type=button], input[type=reset] {
   text-align: center;
   border: 0px;
   font-family: inherit;
+  font-size: 1rem;
 }
 
 .call {
