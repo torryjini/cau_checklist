@@ -1,6 +1,6 @@
 function majormodal() {
-  var word = "学分 이수기준"
-  var content = "교양 : 이수 의무 없음\n" +
+  var word = "学分履修基准"
+  var content = "教养 : 이수 의무 없음\n" +
     "专攻 : 请参考各学科的具体要求\n" +
     "多专攻 : 2학년 편입생만 해당." +
     "\n- 双专攻 : 请参考双专攻学科的要求\n ㄴ 双专攻的专攻基础认证为自由选择" +
@@ -445,129 +445,129 @@ function BaseNeceresult(Majorstandard) {
   if (Basepoint >= BaseStandard && Necepoint >= NeceStandard && Majorpoint >= Majorstandard && TotalPoint >= TotalStandard) {
     if (Minorcheck && Teachingcheck) {
       if (Multimajortext.includes("해당")) {
-        swal("选课学分", word, "success")
+        swal("学分履修结果", word, "success")
       } else if (Multimajortext.includes("심화")) {
-        swal("选课学分", word, "success")
+        swal("学分履修结果", word, "success")
       } else if (Multimajortext.includes("복수")) {
         if (Doublepoint >= 45) {
-          swal("选课学分", word, "success")
+          swal("学分履修结果", word, "success")
         } else {
-          swal("选课学分", word, "error")
+          swal("学分履修结果", word, "error")
         }
       } else if (Multimajortext.includes("연계")) {
         if (Linkpoint >= 36) {
-          swal("选课学分", word, "success")
+          swal("学分履修结果", word, "success")
         } else {
-          swal("选课学分", word, "error")
+          swal("学分履修结果", word, "error")
         }
       } else if (Multimajortext.includes("융합")) {
         if (Fusionpoint >= FusionStandard) {
-          swal("选课学分", word, "success")
+          swal("学分履修结果", word, "success")
         } else {
-          swal("选课学分", word, "error")
+          swal("学分履修结果", word, "error")
         }
       } else if (Multimajortext.includes("설계")) {
         if (Planpoint >= 36) {
-          swal("选课学分", word, "success")
+          swal("学分履修结果", word, "success")
         } else {
-          swal("选课学分", word, "error")
+          swal("学分履修结果", word, "error")
         }
       }
     } else if (Minorpoint >= 21 && Teachingcheck) {
       if (Multimajortext.includes("해당")) {
-        swal("选课学分", word, "success")
+        swal("学分履修结果", word, "success")
       } else if (Multimajortext.includes("심화")) {
-        swal("选课学分", word, "success")
+        swal("学分履修结果", word, "success")
       } else if (Multimajortext.includes("복수")) {
         if (Doublepoint >= 45) {
-          swal("选课学分", word, "success")
+          swal("学分履修结果", word, "success")
         } else {
-          swal("选课学分", word, "error")
+          swal("学分履修结果", word, "error")
         }
       } else if (Multimajortext.includes("연계")) {
         if (Linkpoint >= 36) {
-          swal("选课学分", word, "success")
+          swal("学分履修结果", word, "success")
         } else {
-          swal("选课学分", word, "error")
+          swal("学分履修结果", word, "error")
         }
       } else if (Multimajortext.includes("융합")) {
         if (Fusionpoint >= FusionStandard) {
-          swal("选课学分", word, "success")
+          swal("学分履修结果", word, "success")
         } else {
-          swal("选课学分", word, "error")
+          swal("学分履修结果", word, "error")
         }
       } else if (Multimajortext.includes("설계")) {
         if (Planpoint >= 36) {
-          swal("选课学分", word, "success")
+          swal("学分履修结果", word, "success")
         } else {
-          swal("选课学分", word, "error")
+          swal("学分履修结果", word, "error")
         }
       }
     } else if (Minorpoint >= 21 && Teachingpoint >= 22) {
       if (Multimajortext.includes("해당")) {
-        swal("选课学分", word, "success")
+        swal("学分履修结果", word, "success")
       } else if (Multimajortext.includes("심화")) {
-        swal("选课学分", word, "success")
+        swal("学分履修结果", word, "success")
       } else if (Multimajortext.includes("복수")) {
         if (Doublepoint >= 45) {
-          swal("选课学分", word, "success")
+          swal("学分履修结果", word, "success")
         } else {
-          swal("选课学分", word, "error")
+          swal("学分履修结果", word, "error")
         }
       } else if (Multimajortext.includes("연계")) {
         if (Linkpoint >= 36) {
-          swal("选课学分", word, "success")
+          swal("学分履修结果", word, "success")
         } else {
-          swal("选课学分", word, "error")
+          swal("学分履修结果", word, "error")
         }
       } else if (Multimajortext.includes("융합")) {
         if (Fusionpoint >= FusionStandard) {
-          swal("选课学分", word, "success")
+          swal("学分履修结果", word, "success")
         } else {
-          swal("选课学分", word, "error")
+          swal("学分履修结果", word, "error")
         }
       } else if (Multimajortext.includes("설계")) {
         if (Planpoint >= 36) {
-          swal("选课学分", word, "success")
+          swal("学分履修结果", word, "success")
         } else {
-          swal("选课学分", word, "error")
+          swal("学分履修结果", word, "error")
         }
       }
     } else if (Minorcheck && Teachingpoint >= 22) {
       if (Multimajortext.includes("해당")) {
-        swal("选课学分", word, "success")
+        swal("学分履修结果", word, "success")
       } else if (Multimajortext.includes("심화")) {
-        swal("选课学分", word, "success")
+        swal("学分履修结果", word, "success")
       } else if (Multimajortext.includes("복수")) {
         if (Doublepoint >= 45) {
-          swal("选课学分", word, "success")
+          swal("学分履修结果", word, "success")
         } else {
-          swal("选课学分", word, "error")
+          swal("学分履修结果", word, "error")
         }
       } else if (Multimajortext.includes("연계")) {
         if (Linkpoint >= 36) {
-          swal("选课学分", word, "success")
+          swal("学分履修结果", word, "success")
         } else {
-          swal("选课学分", word, "error")
+          swal("学分履修结果", word, "error")
         }
       } else if (Multimajortext.includes("융합")) {
         if (Fusionpoint >= FusionStandard) {
-          swal("选课学分", word, "success")
+          swal("学分履修结果", word, "success")
         } else {
-          swal("选课学分", word, "error")
+          swal("学分履修结果", word, "error")
         }
       } else if (Multimajortext.includes("설계")) {
         if (Planpoint >= 36) {
-          swal("选课学分", word, "success")
+          swal("学分履修结果", word, "success")
         } else {
-          swal("选课学分", word, "error")
+          swal("学分履修结果", word, "error")
         }
       }
     } else {
-      swal("选课学分", word, "error")
+      swal("学分履修结果", word, "error")
     }
   } else {
-    swal("选课学分", word, "error")
+    swal("学分履修结果", word, "error")
   }
 }
 
