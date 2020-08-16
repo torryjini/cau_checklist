@@ -1,4 +1,4 @@
-function liveralmodal() {
+function liberalmodal() {
   var word = "교양영역 이수기준"
   var content = "공통교양\n- 국어 : 글쓰기\n- 영어 : Communication in English\n- 기타 : 창의와소통 / 회계와사회 / ACT / 한국사 / 컴퓨팅적사고와문제해결\n" +
     "ㄴ 회계학원론(회계원리)을 이수했을 경우, '회계와사회' 면제\n" +

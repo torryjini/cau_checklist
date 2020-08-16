@@ -1,4 +1,4 @@
-function liveralmodal() {
+function liberalmodal() {
   var word = "教养领域履修基准"
   var content = "共同教养\n- 국어 : 글쓰기\n- 英语 : Communication in English\n- 其他 : 창의와소통 / 회계와사회 / ACT / 한국사\n" +
     "ㄴ 履修회계학원론(회계원리)时, 免'회계와사회'\n" +

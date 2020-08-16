@@ -7,7 +7,7 @@ function koreancheck() {
   }
 }
 
-function liveralmodal() {
+function liberalmodal() {
   var word = "교양영역 이수기준"
   var content = "공통교양\n- 국어 : 글쓰기\n- 영어 : English1(Communication in English)\nEnglish2(English fo Professional Track)" +
     "\n- 기타 : 논리와사고(ACT) / 회계와사회 / 독서와토론(창의와소통) / 한국사\n" +

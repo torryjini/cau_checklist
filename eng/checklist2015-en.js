@@ -1,4 +1,4 @@
-function liveralmodal() {
+function liberalmodal() {
   var word = "Requirements for general credits"
   var content = "Mandatory\n- 국어 : 글쓰기\n- 영어 : Communication in English\n- Others : 창의와소통 / 회계와사회 / ACT / 한국사\n" +
     "ㄴ No need to take '회계와사회' if you already took 회계학원론(회계원리)\n" +

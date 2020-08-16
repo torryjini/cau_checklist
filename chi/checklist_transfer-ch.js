@@ -262,7 +262,7 @@ function tr_Major_result() {
   var PlanCross = Number(document.getElementById("cross_point3").value);
   if (AdYear < 1000) {
     document.getElementById("student-info").scrollIntoView();
-    swal("편입학연도를 선택하세요!", "", "error");
+    swal("请选择插班年度!", "", "error");
     return false;
   }
 

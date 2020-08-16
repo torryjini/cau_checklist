@@ -7,7 +7,7 @@ function koreancheck() {
   }
 }
 
-function liveralmodal() {
+function liberalmodal() {
   var word = "Requirements for general credits"
   var content = "Mandatory\n- 국어 : 글쓰기\n- 영어 : English1(Communication in English)\nEnglish2(English fo Professional Track)"
    + "\n- Others : 논리와사고(ACT) / 회계와사회 / 독서와토론(창의와소통) / 한국사\n"
