@@ -138,6 +138,7 @@ input[type=button], input[type=reset] {
   height: 2.5rem;
   margin-top: 0.5rem;
   border-radius: 5px;
+  font-size: 1rem;
 }
 
 .index-info {
@@ -167,6 +168,7 @@ input[type=button], input[type=reset] {
   width: 3.5rem;
   height: 1.8rem;
   border-radius: 3px;
+  font-size: 1.3rem;
 }
 
 .info-btn {
@@ -201,6 +203,7 @@ input[type=button], input[type=reset] {
   text-align: center;
   border-radius: 3px;
   font-family: inherit;
+  font-size: 1.3rem;
 }
 
 .totalnumber {
@@ -321,24 +324,14 @@ input[type=reset]:hover {
     margin-left: 0;
   }
 
-  .index_select {
-    font-size: 1rem;
-  }
-
   .checkselect {
     width: 3.5rem;
     height: 2.2rem;
-    border-radius: 3px;
-    font-size: 1.3rem;
   }
 
   .inputnumber {
     width: 3.5rem;
     height: 2.2rem;
-    text-align: center;
-    border-radius: 3px;
-    font-family: inherit;
-    font-size: 1.3rem;
   }
 
   .totalnumber {
