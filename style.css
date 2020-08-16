@@ -25,7 +25,7 @@ html {
   user-select: none;
   /* Non-prefixed version, currently
                                 supported by Chrome, Edge, Opera and Firefox */
-  min-width: 20rem;
+  min-width: 15rem;
   font-family: 'Nanum Gothic', sans-serif;
 }
 
@@ -322,6 +322,27 @@ input[type=reset]:hover {
   ol {
     padding-left: 20px;
     margin-left: 0;
+  }
+
+  .checkselect {
+    width: 4.3rem;
+    height: 2.3rem;
+    border-radius: 3px;
+  }
+
+  .inputnumber {
+    width: 4.3rem;
+    height: 2.3rem;
+    text-align: center;
+    border-radius: 3px;
+    font-family: inherit;
+    font-size: 1.3rem;
+  }
+
+  .totalnumber {
+    width: 4rem;
+    height: 2rem;
+    font-size: 1.3rem;
   }
 
   #page_header {
