@@ -73,6 +73,7 @@ ol {
 
 select {
   cursor: pointer;
+  text-align-last:center;
 }
 
 table {
@@ -137,7 +138,6 @@ input[type=button], input[type=reset] {
   height: 2.5rem;
   margin-top: 0.5rem;
   border-radius: 5px;
-  text-align-last:center;
 }
 
 .index-info {
@@ -167,7 +167,6 @@ input[type=button], input[type=reset] {
   width: 3.5rem;
   height: 1.8rem;
   border-radius: 3px;
-  text-align-last:center;
 }
 
 .info-btn {
@@ -271,7 +270,6 @@ input[type=reset]:hover {
 #ad-year, #MultiMajor_select, #Major_select, #college_select {
   border-radius: 5px;
   height: 2rem;
-  text-align-last:center;
 }
 
 #dept, #phone, #Davinci {
