@@ -137,7 +137,7 @@ input[type=button], input[type=reset] {
   height: 2.5rem;
   margin-top: 0.5rem;
   border-radius: 5px;
-  text-align-last:center
+  text-align-last:center;
 }
 
 .index-info {
