@@ -324,6 +324,10 @@ input[type=reset]:hover {
     margin-left: 0;
   }
 
+  .index_select {
+    font-size: 1rem;
+  }
+
   .checkselect {
     width: 3.5rem;
     height: 2.2rem;
