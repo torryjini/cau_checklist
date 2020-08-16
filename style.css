@@ -240,8 +240,8 @@ input[type=reset]:hover {
 #index_logo {
   width: auto;
   height: auto;
-  max-width: 13rem;
-  max-height: 13rem;
+  max-width: 12rem;
+  max-height: 12rem;
 }
 
 #logo {
