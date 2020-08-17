@@ -338,7 +338,7 @@ function BaseNeceresult(Majorstandard) {
   if (Freepoint < 1) {
     word += "자유선택 : 履修" + Freepoint + " 学分_CAU세미나未受讲\n"
   } else {
-    word += "자유선택 : 履修" + Freepoint + " 学分_ 必须确认CAU세미나受讲情况!\n"
+    word += "자유선택 : 履修" + Freepoint + " 学分\n_必须确认CAU세미나受讲情况!\n"
   }
 
   var Teachingcheck = document.getElementById("teaching_none").checked;
