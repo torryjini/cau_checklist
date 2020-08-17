@@ -360,21 +360,21 @@ function Etc_result() {
   var word = "졸업인정제\n";
 
   if (!English_result) {
-    word += "- 영어 :未通过\n"
+    word += "- 영어 : 未通过\n"
   } else {
-    word += "- 영어 :通过\n"
+    word += "- 영어 : 通过\n"
   }
 
   if (Hanja_result) {
-    word += "- 한자 :通过\n"
+    word += "- 한자 : 通过\n"
   } else {
-    word += "- 한자 :未通过\n"
+    word += "- 한자 : 未通过\n"
   }
 
   if (Korean_result) {
-    word += "- 한국어(TOPIK) :通过\n"
+    word += "- 한국어(TOPIK) : 通过\n"
   } else {
-    word += "- 한국어(TOPIK) :未通过\n"
+    word += "- 한국어(TOPIK) : 未通过\n"
   }
 
   if (Paper_result) {
