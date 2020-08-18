@@ -365,7 +365,7 @@ function Etc_result() {
     return false;
   }
 
-  var word = "졸업인정제 통과 여부\n";
+  var word = "👉졸업인정제\n";
 
   if (!English_result) {
     word += "- 영어 : 미통과\n"
@@ -386,9 +386,9 @@ function Etc_result() {
   }
 
   if (Paper_result) {
-    word += "졸업시험/논문\n- 주전공 : 합격\n"
+    word += "👉졸업시험/논문\n- 주전공 : 합격\n"
   } else {
-    word += "졸업시험/논문\n- 주전공 : 불합격\n"
+    word += "👉졸업시험/논문\n- 주전공 : 불합격\n"
   }
 
   if (Paper_result2) {
@@ -398,9 +398,9 @@ function Etc_result() {
   }
 
   if (Average_result >= 2) {
-    word += "평균평점 : 통과"
+    word += "👉평균평점 : 통과"
   } else {
-    word += "평균평점 : 미통과_졸업불가"
+    word += "👉평균평점 : 미통과_졸업불가"
   }
 
   if (English_result && Hanja_result && Korean_result && Paper_result && Paper_result2 && Average_result >= 2) {

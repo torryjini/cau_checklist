@@ -320,7 +320,7 @@ function BaseNeceresult(Majorstandard) {
   var Necepoint = Number(document.getElementById("nece_input").value);
   var Majorpoint = Number(document.getElementById("major_input").value);
   Majorstandard = Number(Majorstandard);
-  var word = "Transfer year : " + AdYear;
+  var word = "👉Transfer year : " + AdYear;
 
   if (SecYear) {
     word += " - 2nd year transfer";
@@ -329,9 +329,9 @@ function BaseNeceresult(Majorstandard) {
   }
 
   if (Majortext.includes("트랙")) {
-    word += "\nMajor : 공공인재학부 " + Majortext + "\nMultiple Major : " + Multimajortext + "\n교양 : " + Liberal_point + " credits\n";
+    word += "\n👉Major : 공공인재학부 " + Majortext + "\n👉Multiple Major : " + Multimajortext + "\n👉교양 : " + Liberal_point + " credits\n";
   } else {
-    word += "\nMajor : " + Majortext + "\nMultiple Major : " + Multimajortext + "\n교양 : " + Liberal_point + " credits\n";
+    word += "\n👉Major : " + Majortext + "\n👉Multiple Major : " + Multimajortext + "\n👉교양 : " + Liberal_point + " credits\n";
   }
 
   var FusionOption = Number(document.getElementById("fusion-options").value);
@@ -349,30 +349,30 @@ function BaseNeceresult(Majorstandard) {
   }
 
   if (Basepoint < BaseStandard) {
-    word += "Basics : " + [BaseStandard - Basepoint] + " more credits required\n";
+    word += "👉Basics : " + [BaseStandard - Basepoint] + " more credits required\n";
   } else {
-    word += "Basics : Passed the requirement\n";
+    word += "👉Basics : Passed the requirement\n";
   }
 
   if (Necepoint < NeceStandard) {
-    word += "Required : " + [NeceStandard - Necepoint] + " more credits required\n";
+    word += "👉Required : " + [NeceStandard - Necepoint] + " more credits required\n";
   } else {
-    word += "Required : Passed the requirement\n";
+    word += "👉Required : Passed the requirement\n";
   }
 
   if (Majorpoint < Majorstandard) {
-    word += "Major course : " + [Majorstandard - Majorpoint] + " more credits required\n"
+    word += "👉Major course : " + [Majorstandard - Majorpoint] + " more credits required\n"
   } else {
-    word += "Major course : Passed the requirement\n"
+    word += "👉Major course : Passed the requirement\n"
   }
 
   var Doublecheck = document.getElementById("double_major_none").checked;
   var Doublepoint = Number(document.getElementById("double_major_point").value);
   if (!Doublecheck) {
     if (Doublepoint < 45) {
-      word += "Double major : " + [45 - Doublepoint] + " more credits required\n"
+      word += "👉Double major : " + [45 - Doublepoint] + " more credits required\n"
     } else {
-      word += "Double major : Passed the minimum credits requirement\n"
+      word += "👉Double major : Passed the minimum credits requirement\n"
     }
   }
 
@@ -381,9 +381,9 @@ function BaseNeceresult(Majorstandard) {
   var Linkpoint = Number(document.getElementById("link_major_point").value) + LinkCross;
   if (!Linkcheck) {
     if (Linkpoint < 36) {
-      word += "연계전공 : " + [36 - Linkpoint] + " more credits required\n"
+      word += "👉연계전공 : " + [36 - Linkpoint] + " more credits required\n"
     } else {
-      word += "연계전공 : Passed the minimum credits requirement\n"
+      word += "👉연계전공 : Passed the minimum credits requirement\n"
     }
   }
 
@@ -394,9 +394,9 @@ function BaseNeceresult(Majorstandard) {
   var FusionStandard = Number(document.getElementById("fusion_standard").value);
   if (!Fusioncheck) {
     if (Fusionpoint < FusionStandard) {
-      word += Fusiontext + "융합전공 : " + [FusionStandard - Fusionpoint] + " more credits required\n"
+      word += Fusiontext + "👉융합전공 : " + [FusionStandard - Fusionpoint] + " more credits required\n"
     } else {
-      word += Fusiontext + "융합전공 : Passed the minimum credits requirement\n"
+      word += Fusiontext + "👉융합전공 : Passed the minimum credits requirement\n"
     }
   }
 
@@ -404,9 +404,9 @@ function BaseNeceresult(Majorstandard) {
   var Planpoint = Number(document.getElementById("plan_major_point").value) + Number(document.getElementById("cross_point3").value);
   if (!Plancheck) {
     if (Planpoint < 36) {
-      word += "설계전공 : " + [36 - Planpoint] + " more credits required\n"
+      word += "👉설계전공 : " + [36 - Planpoint] + " more credits required\n"
     } else {
-      word += "설계전공 : Passed the minimum credits requirement\n"
+      word += "👉설계전공 : Passed the minimum credits requirement\n"
     }
   }
 
@@ -414,31 +414,31 @@ function BaseNeceresult(Majorstandard) {
   var Minorpoint = Number(document.getElementById("minor_point").value);
   if (!Minorcheck) {
     if (Minorpoint < 21) {
-      word += "Minor : " + [21 - Minorpoint] + " more credits required\n"
+      word += "👉Minor : " + [21 - Minorpoint] + " more credits required\n"
     } else {
-      word += "Minor : Passed the minimum credits requirement\n"
+      word += "👉Minor : Passed the minimum credits requirement\n"
     }
   }
 
   var Freepoint = Number(document.getElementById("free_point").value);
-  word += "Free choice : " + Freepoint + " credits\n"
+  word += "👉Free choice : " + Freepoint + " credits\n"
 
   var Teachingcheck = document.getElementById("teaching_none").checked;
   var Teachingpoint = Number(document.getElementById("teaching_point").value);
   if (!Teachingcheck) {
     if (Teachingpoint < 22)
-      word += "Teaching : " + [22 - Teachingpoint] + " more credits required\n"
+      word += "👉Teaching : " + [22 - Teachingpoint] + " more credits required\n"
     else {
-      word += "Teaching : Passed the minimum credits requirement\n"
+      word += "👉Teaching : Passed the minimum credits requirement\n"
     }
   }
 
   var TotalPoint = Number(document.getElementById("the_total").value);
   var TotalStandard = Number(document.getElementById("total_standard").value);
   if (TotalPoint < TotalStandard) {
-    word += "Total credits : " + [TotalStandard - TotalPoint] + " more credits required"
+    word += "👉Total credits : " + [TotalStandard - TotalPoint] + " more credits required"
   } else {
-    word += "Total credits : Passed the requirement"
+    word += "👉Total credits : Passed the requirement"
   }
 
   if (Basepoint >= BaseStandard && Necepoint >= NeceStandard && Majorpoint >= Majorstandard && TotalPoint >= TotalStandard) {

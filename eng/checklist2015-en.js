@@ -37,12 +37,12 @@ function Liberal_cal() {
   var account_check_SF = document.getElementById("account_check").checked;
   var core_total_point = Number(document.getElementById("core_total").value);
   var liberal_total_point = Number(document.getElementById("liberal_total").value);
-  var word = "Entrance Year : " + AdYear + "\n";
+  var word = "👉Entrance Year : " + AdYear + "\n";
 
   if (common_kor_point < 2) {
-    word += "Mandatory\n - 국어 : " + [2 - common_kor_point] + " more credits required\n";
+    word += "👉Mandatory\n - 국어 : " + [2 - common_kor_point] + " more credits required\n";
   } else {
-    word += "Mandatory\n - 국어 : Passed the requirement\n";
+    word += "👉Mandatory\n - 국어 : Passed the requirement\n";
   }
 
   if (common_eng_point < 2 && common_eng_ex) {
@@ -68,17 +68,17 @@ function Liberal_cal() {
   }
 
   if (core_total_point < 12) {
-    word += "Core : " + [12 - core_total_point] + " more credits required\n- Take at least 1 course from 4 different core areas!"
+    word += "👉Core : " + [12 - core_total_point] + " more credits required\n- Take at least 1 course from 4 different core areas!"
   } else {
-    word += "Core : Passed the minimum credits requirement\n- Check to see if the courses are from 4 different areas!"
+    word += "👉Core : Passed the minimum credits requirement\n- Check to see if the courses are from 4 different areas!"
   }
 
-  word += "\nElective : " + elective_point + " credits"
+  word += "\n👉Elective : " + elective_point + " credits"
 
   if (liberal_total_point <= 45) {
-    word += "\nTotal : " + liberal_total_point + " credits"
+    word += "\n👉Total : " + liberal_total_point + " credits"
   } else {
-    word += "\nTotal : " + liberal_total_point + " credits_" + [liberal_total_point - 45] + "credits exceeded\nAny credits over 45 don't count."
+    word += "\n👉Total : " + liberal_total_point + " credits_" + [liberal_total_point - 45] + "credits exceeded\nAny credits over 45 don't count."
   }
 
   if (common_kor_point == 2 && core_total_point >= 11) {
@@ -149,12 +149,12 @@ function BaseNeceresult(Majorstandard) {
   var Necepoint = Number(document.getElementById("nece_input").value);
   var Majorpoint = Number(document.getElementById("major_input").value);
   Majorstandard = Number(Majorstandard);
-  var word = "Entrance Year : " + AdYear;
+  var word = "👉Entrance Year : " + AdYear;
 
   if (Majortext.includes("트랙")) {
-    word += "\nMajor : 공공인재학부 " + Majortext + "\nMultiple Major : " + Multimajortext + "\n";
+    word += "\n👉Major : 공공인재학부 " + Majortext + "\n👉Multiple Major : " + Multimajortext + "\n";
   } else {
-    word += "\nMajor : " + Majortext + "\nMultiple Major : " + Multimajortext + "\n";
+    word += "\n👉Major : " + Majortext + "\n👉Multiple Major : " + Multimajortext + "\n";
   }
 
   var FusionOption = Number(document.getElementById("fusion-options").value);
@@ -172,30 +172,30 @@ function BaseNeceresult(Majorstandard) {
   }
 
   if (Basepoint < BaseStandard) {
-    word += "Basics : " + [BaseStandard - Basepoint] + " more credits required\n";
+    word += "👉Basics : " + [BaseStandard - Basepoint] + " more credits required\n";
   } else {
-    word += "Basics : Passed the requirement\n";
+    word += "👉Basics : Passed the requirement\n";
   }
 
   if (Necepoint < NeceStandard) {
-    word += "Required : " + [NeceStandard - Necepoint] + " more credits required\n";
+    word += "👉Required : " + [NeceStandard - Necepoint] + " more credits required\n";
   } else {
-    word += "Required : Passed the requirement\n";
+    word += "👉Required : Passed the requirement\n";
   }
 
   if (Majorpoint < Majorstandard) {
-    word += "Major course : " + [Majorstandard - Majorpoint] + " more credits required\n"
+    word += "👉Major course : " + [Majorstandard - Majorpoint] + " more credits required\n"
   } else {
-    word += "Major course : Passed the requirement\n"
+    word += "👉Major course : Passed the requirement\n"
   }
 
   var Doublecheck = document.getElementById("double_major_none").checked;
   var Doublepoint = Number(document.getElementById("double_major_point").value);
   if (!Doublecheck) {
     if (Doublepoint < 45) {
-      word += "Double major : " + [45 - Doublepoint] + " more credits required\n"
+      word += "👉Double major : " + [45 - Doublepoint] + " more credits required\n"
     } else {
-      word += "Double major : Passed the minimum credits requirement\n"
+      word += "👉Double major : Passed the minimum credits requirement\n"
     }
   }
 
@@ -204,9 +204,9 @@ function BaseNeceresult(Majorstandard) {
   var Linkpoint = Number(document.getElementById("link_major_point").value) + LinkCross;
   if (!Linkcheck) {
     if (Linkpoint < 36) {
-      word += "연계전공 : " + [36 - Linkpoint] + " more credits required\n"
+      word += "👉연계전공 : " + [36 - Linkpoint] + " more credits required\n"
     } else {
-      word += "연계전공 : Passed the minimum credits requirement\n"
+      word += "👉연계전공 : Passed the minimum credits requirement\n"
     }
   }
 
@@ -218,9 +218,9 @@ function BaseNeceresult(Majorstandard) {
   var FusionStandard = Number(document.getElementById("fusion_standard").value);
   if (!Fusioncheck) {
     if (Fusionpoint < FusionStandard) {
-      word += Fusiontext + "융합전공 : " + [FusionStandard - Fusionpoint] + " more credits required\n"
+      word += "👉" + Fusiontext + "융합전공 : " + [FusionStandard - Fusionpoint] + " more credits required\n"
     } else {
-      word += Fusiontext + "융합전공 : Passed the minimum credits requirement\n"
+      word += "👉" + Fusiontext + "융합전공 : Passed the minimum credits requirement\n"
     }
   }
 
@@ -228,9 +228,9 @@ function BaseNeceresult(Majorstandard) {
   var Planpoint = Number(document.getElementById("plan_major_point").value) + Number(document.getElementById("cross_point3").value);
   if (!Plancheck) {
     if (Planpoint < 36) {
-      word += "설계전공 : " + [36 - Planpoint] + " more credits required\n"
+      word += "👉설계전공 : " + [36 - Planpoint] + " more credits required\n"
     } else {
-      word += "설계전공 : Passed the minimum credits requirement\n"
+      word += "👉설계전공 : Passed the minimum credits requirement\n"
     }
   }
 
@@ -238,30 +238,30 @@ function BaseNeceresult(Majorstandard) {
   var Minorpoint = Number(document.getElementById("minor_point").value);
   if (!Minorcheck) {
     if (Minorpoint < 21) {
-      word += "Minor : " + [21 - Minorpoint] + " more credits required\n"
+      word += "👉Minor : " + [21 - Minorpoint] + " more credits required\n"
     } else {
-      word += "Minor : Passed the minimum credits requirement\n"
+      word += "👉Minor : Passed the minimum credits requirement\n"
     }
   }
 
   var Freepoint = Number(document.getElementById("free_point").value);
-  word += "Free choice : " + Freepoint + " credits\n"
+  word += "👉Free choice : " + Freepoint + " credits\n"
 
   var Teachingcheck = document.getElementById("teaching_none").checked;
   var Teachingpoint = Number(document.getElementById("teaching_point").value);
   if (!Teachingcheck) {
     if (Teachingpoint < 22)
-      word += "Teaching : " + [22 - Teachingpoint] + " more credits required\n"
+      word += "👉Teaching : " + [22 - Teachingpoint] + " more credits required\n"
     else {
-      word += "Teaching : Passed the minimum credits requirement\n"
+      word += "👉Teaching : Passed the minimum credits requirement\n"
     }
   }
 
   var TotalPoint = Number(document.getElementById("the_total").value);
   if (TotalPoint < 132) {
-    word += "Total credits : " + [132 - TotalPoint] + " more credits required"
+    word += "👉Total credits : " + [132 - TotalPoint] + " more credits required"
   } else {
-    word += "Total credits : Passed the requirement"
+    word += "👉Total credits : Passed the requirement"
   }
 
   if (Basepoint >= BaseStandard && Necepoint >= NeceStandard && Majorpoint >= Majorstandard && TotalPoint >= 132) {

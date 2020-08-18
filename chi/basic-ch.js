@@ -68,19 +68,19 @@ function Major_result() {
   if (Fusiontext.includes("문화") || Fusiontext.includes("창업") || Fusiontext.includes("게임")) {
     if (FusionCross > 6) {
       document.getElementById("double_major_none").scrollIntoView();
-      swal(Fusiontext + " 融合专业(융합전공)最多可以交叉认证6学分!\n ", "", "error")
+      swal(Fusiontext + "融合专业(융합전공)最多可以交叉认证6学分!\n ", "", "error")
       return false;
     }
   } else if (Fusiontext.includes("金融")) {
     if (FusionCross > 15) {
       document.getElementById("double_major_none").scrollIntoView();
-      swal(Fusiontext + " 融合专业(융합전공)最多可以交叉认证15学分!\n", "", "error")
+      swal(Fusiontext + "融合专业(융합전공)最多可以交叉认证15学分!\n", "", "error")
       return false;
     }
   } else if (Fusiontext.includes("인문") || Fusiontext.includes("보안") || Fusiontext.includes("테크") || Fusiontext.includes("벤처")) {
     if (FusionCross > 12) {
       document.getElementById("double_major_none").scrollIntoView();
-      swal(Fusiontext + " 融合专业(융합전공)最多可以交叉认证12学分! \n", "", "error")
+      swal(Fusiontext + "融合专业(융합전공)最多可以交叉认证12学分! \n", "", "error")
       return false;
     }
   }
@@ -357,7 +357,7 @@ function Etc_result() {
     return false;
   }
 
-  var word = "졸업인정제\n";
+  var word = "👉졸업인정제\n";
 
   if (!English_result) {
     word += "- 영어 : 未通过\n"
@@ -378,9 +378,9 @@ function Etc_result() {
   }
 
   if (Paper_result) {
-    word += "毕业考试/论文\n- 主专业 : 合格\n"
+    word += "👉毕业考试/论文\n- 主专业 : 合格\n"
   } else {
-    word += "毕业考试/论文\n- 主专业 : 不合格\n"
+    word += "👉毕业考试/论文\n- 主专业 : 不合格\n"
   }
 
   if (Paper_result2) {
@@ -390,9 +390,9 @@ function Etc_result() {
   }
 
   if (Average_result >= 2) {
-    word += "平均学分 : 合格"
+    word += "👉平均学分 : 合格"
   } else {
-    word += "平均学分 : 不合格_不可毕业"
+    word += "👉平均学分 : 不合格_不可毕业"
   }
 
   if (English_result && Hanja_result && Korean_result && Paper_result && Paper_result2 && Average_result >= 2) {

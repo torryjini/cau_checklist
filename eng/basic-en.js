@@ -356,7 +356,7 @@ function Etc_result() {
     return false;
   }
 
-  var word = "Graduation Recognition System\n";
+  var word = "👉Graduation Recognition System\n";
 
   if (!English_result) {
     word += "- 영어 : not qualified\n"
@@ -377,9 +377,9 @@ function Etc_result() {
   }
 
   if (Paper_result) {
-    word += "Grad Exam/Thesis\n- Major : Qualified\n"
+    word += "👉Grad Exam/Thesis\n- Major : Qualified\n"
   } else {
-    word += "Grad Exam/Thesis\n- Major : Not qualified\n"
+    word += "👉Grad Exam/Thesis\n- Major : Not qualified\n"
   }
 
   if (Paper_result2) {
@@ -389,9 +389,9 @@ function Etc_result() {
   }
 
   if (Average_result >= 2) {
-    word += "GPA : Qualified"
+    word += "👉GPA : Qualified"
   } else {
-    word += "GPA : Not qualified for gradution"
+    word += "👉GPA : Not qualified for gradution"
   }
 
   if (English_result && Hanja_result && Korean_result && Paper_result && Paper_result2 && Average_result >= 2) {
