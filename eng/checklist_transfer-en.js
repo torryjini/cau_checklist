@@ -1,12 +1,12 @@
 function majormodal() {
   var word = "Requirements for credits"
-  var content = "General courses : No need to take credits\n" +
-    "Major : Check the department's detailed requiremetns\n" +
-    "Double major : Check each department's detailed requiremetns\n ㄴBasics of double majors are counted as Free choice" +
-    "\n연계/융합/설계전공 : Check for required courses for each track!" +
-    "\nMinor : Earn more than 6 credits from required courses of your minor" +
-    "\nTeaching : Check for details(Tel.02-820-5080)" +
-    "\nTotal credits : Only 66 credits count for graduation(2학년 편입은 99 학점 이상)"
+  var content = "👉General courses : No need to take credits\n" +
+    "👉Major : Check the department's detailed requiremetns\n" +
+    "👉Double major : Check each department's detailed requiremetns\nBasics of double majors are counted as Free choice" +
+    "\n👉연계/융합/설계전공 : Check for required courses for each track!" +
+    "\n👉Minor : Earn more than 6 credits from required courses of your minor" +
+    "\n👉Teaching : Check for details(Tel.02-820-5080)" +
+    "\n👉Total credits : Only 66 credits count for graduation(over 99 credits for 2nd year transfer students)"
   swal(word, content, "info");
 }
 

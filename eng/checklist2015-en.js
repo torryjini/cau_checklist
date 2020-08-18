@@ -1,20 +1,20 @@
 function liberalmodal() {
   var word = "Requirements for general credits"
-  var content = "Mandatory\n- 국어 : 글쓰기\n- 영어 : Communication in English\n- Others : 창의와소통 / 회계와사회 / ACT / 한국사\n" +
-    "ㄴ No need to take '회계와사회' if you already took 회계학원론(회계원리)\n" +
-    "\nCore : Complete at least one course from 4 different areas\n" +
-    "Electives : free to choose any\n" + "Any credits over 45 are not counted!"
+  var content = "👉Mandatory\n- 국어 : 글쓰기\n- 영어 : Communication in English\n- Others : 창의와소통 / 회계와사회 / ACT / 한국사\n" +
+    "No need to take '회계와사회' if you already took 회계학원론(회계원리)" +
+    "\n👉Core : Complete at least one course from 4 different areas\n" +
+    "👉Electives : free to choose any\n" + "👉Any credits over 45 are not counted!"
   swal(word, content, "info");
 }
 
 function majormodal() {
   var word = "Requirements for major credits"
-  var content = "Major : Check the department's detailed requiremetns\n" +
-    "Double major : Check each department's detailed requiremetns\n ㄴBasics of double majors are counted as Free choice" +
-    "\n연계/융합/설계전공 : Check for required courses for each track!" +
-    "\nMinor : Earn more than 6 credits from required courses of your minor" +
-    "\nTeaching : Check for details(Tel.02-820-5080)" +
-    "\nTotal credits : Only 132 credits count for graduation\n(only up to 45 credits for general courses)"
+  var content = "👉Major : Check the department's detailed requiremetns\n" +
+    "👉Double major : Check each department's detailed requiremetns\n ㄴBasics of double majors are counted as Free choice" +
+    "\n👉연계/융합/설계전공 : Check for required courses for each track!" +
+    "\n👉Minor : Earn more than 6 credits from required courses of your minor" +
+    "\n👉Teaching : Check for details(Tel.02-820-5080)" +
+    "\n👉Total credits : Only 132 credits count for graduation\n(only up to 45 credits for general courses)"
   swal(word, content, "info");
 }
 

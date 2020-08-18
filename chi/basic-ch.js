@@ -68,38 +68,38 @@ function Major_result() {
   if (Fusiontext.includes("문화") || Fusiontext.includes("창업") || Fusiontext.includes("게임")) {
     if (FusionCross > 6) {
       document.getElementById("double_major_none").scrollIntoView();
-      swal(Fusiontext + " 融合专攻(융합전공)最多可以交叉认证6学分!\n ", "", "error")
+      swal(Fusiontext + " 融合专业(융합전공)最多可以交叉认证6学分!\n ", "", "error")
       return false;
     }
   } else if (Fusiontext.includes("金融")) {
     if (FusionCross > 15) {
       document.getElementById("double_major_none").scrollIntoView();
-      swal(Fusiontext + " 融合专攻(융합전공)最多可以交叉认证15学分!\n", "", "error")
+      swal(Fusiontext + " 融合专业(융합전공)最多可以交叉认证15学分!\n", "", "error")
       return false;
     }
   } else if (Fusiontext.includes("인문") || Fusiontext.includes("보안") || Fusiontext.includes("테크") || Fusiontext.includes("벤처")) {
     if (FusionCross > 12) {
       document.getElementById("double_major_none").scrollIntoView();
-      swal(Fusiontext + " 融合专攻(융합전공)最多可以交叉认证12学分! \n", "", "error")
+      swal(Fusiontext + " 融合专业(융합전공)最多可以交叉认证12学分! \n", "", "error")
       return false;
     }
   }
 
   if (MajorSelect == "none") {
     document.getElementById("student-info").scrollIntoView();
-    swal("请选择专攻学科!", "", "error");
+    swal("请选择专业学科!", "", "error");
     return false;
   } else if (Majorstandard < 45) {
     document.getElementById("student-info").scrollIntoView();
-    swal("请选择是否是多专攻!", "", "error");
+    swal("请选择是否是多专业!", "", "error");
     return false;
   } else if (LinkCross > 12) {
     document.getElementById("double_major_point").scrollIntoView();
-    swal("联系专攻(연계전공)最多可以交叉认证12学分!", "", "error")
+    swal("联系专业(연계전공)最多可以交叉认证12学分!", "", "error")
     return false;
   } else if (PlanCross > 6) {
     document.getElementById("link_major_none").scrollIntoView();
-    swal("自我设计专攻(자기설계전공)最多可以交叉认证6学分!", "", "error")
+    swal("自我设计专业(자기설계전공)最多可以交叉认证6学分!", "", "error")
     return false;
   } else {
     BaseNeceresult(Majorstandard);
@@ -378,15 +378,15 @@ function Etc_result() {
   }
 
   if (Paper_result) {
-    word += "毕业考试/论文\n- 主专攻 : 合格\n"
+    word += "毕业考试/论文\n- 主专业 : 合格\n"
   } else {
-    word += "毕业考试/论文\n- 主专攻 : 不合格\n"
+    word += "毕业考试/论文\n- 主专业 : 不合格\n"
   }
 
   if (Paper_result2) {
-    word += "- 双专攻 : 合格 / 无 \n"
+    word += "- 双专业 : 合格 / 无 \n"
   } else {
-    word += "- 双专攻 : 不合格\n"
+    word += "- 双专业 : 不合格\n"
   }
 
   if (Average_result >= 2) {

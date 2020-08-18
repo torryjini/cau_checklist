@@ -22,9 +22,14 @@
   <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
   <script src="https://kit.fontawesome.com/b170da0ad3.js" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="style.css">
-  <meta property="og:title" content="CAU CHECK 4 GRAD">
+  <meta property="og:title" content="CHECK4GRAD">
   <meta property="og:description" content="CAU Checklist for Graduation">
   <meta property="og:image" content="thumbnail.png">
+  <style>
+    html{
+      word-break: break-all;
+    }
+  </style>
 </head>
 
 <body>
@@ -41,7 +46,7 @@
         <option value="index-en.html">English</option>
       </select></li>
     <form>
-      <li>入学典型<br>
+      <li>入学类别<br>
         <select class="index_select" id="ent_style">
           <option value="entrance">新入学</option>
           <option value="transfer">插班生</option>
@@ -65,9 +70,9 @@
     function doLink() {
       var EntStyle = document.getElementById("ent_style").value;
       var Year = document.getElementById('index-year').value;
-      var word = "此CHECKLIST提供关于选课和毕业的相关信息。"
-       + "\n 可以确认学分要求以及毕业条件满足情况。"
-       + "\n 参考相关资料之后，请再联系学科办公室加以确认。"
+      var word = "👉本CHECKLIST可以确认关于学分,选课,毕业等的相关信息。"
+       + "\n 👉同学们可以通过本CHECKLIST方便查找自己的学分进修情况以及所缺条件。😎"
+       + "\n 👉本CHECKLIST只供参考,确认相关信息之后请再联系学科办公室加以确认 ❗ "
 
       if (Year == 0) {
         swal("请选择入学时期!", "", "error")
