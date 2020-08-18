@@ -1,7 +1,7 @@
 function liberalmodal() {
   var word = "教养领域履修要求"
-  var content = "共同教养\n- 국어 : 글쓰기\n- 英语 : Communication in English\n- 其他 : 창의와소통 / 회계와사회 / ACT / 한국사 / 컴퓨팅적사고와문제해결\n" +
-    "ㄴ 履修회계학원론(회계원리)时, 免'회계와사회' \n" +
+  var content = "共同教养\n- 국어 : 글쓰기\n- 英语 : Communication in English\n- 其他 : 창의와소통/ACT/한국사/컴퓨팅적사고와문제해결/\n 앙트레프레너십시대의회계(회계와사회)\n" +
+    "ㄴ 履修회계학원론(회계원리)时, 免'앙트레프레너십시대의회계' \n" +
     "\n核心教养 : 도전 / 창의 / 융합 / 신뢰 / 소통\n" +
     "ㄴ  各领域需要履修一个以上科目!\n选择教养 : 자율이수\n" + " 教养最多可以认证45学分!"
   swal(word, content, "info");
@@ -85,9 +85,9 @@ function Liberal_cal() {
     }
   } else {
     if (common_etc_point < 8) {
-      word += " - 其他 : " + [8 - common_etc_point] + " 学分未达到要求 ( 회계와사회 : 免 )\n"
+      word += " - 其他 : " + [8 - common_etc_point] + " 学分未达到要求 (앙트레프레너십시대의회계 : 免)\n"
     } else {
-      word += " - 其他 : 通过 ( 회계와사회 : 免 )\n"
+      word += " - 其他 : 通过 (앙트레프레너십시대의회계 : 免)\n"
     }
   }
 
