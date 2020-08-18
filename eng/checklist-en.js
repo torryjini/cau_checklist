@@ -1,7 +1,7 @@
 function liberalmodal() {
   var word = "Requirements for general credits"
-  var content = "Mandatory\n- 국어 : 글쓰기(Writing)\n- 영어 : Communication in English\n- Others : 창의와소통 / 회계와사회 / ACT / 한국사 / 컴퓨팅적사고와문제해결\n" +
-    "ㄴ No need to take '회계와사회' if you already took 회계학원론(회계원리)\n" +
+  var content = "Mandatory\n- 국어 : 글쓰기(Writing)\n- 영어 : Communication in English\n- Others : 창의와소통/ACT/한국사/컴퓨팅적사고와문제해결/\n 앙트레프레너십시대의회계(회계와사회)\n" +
+    "ㄴ No need to take '앙트레프레너십시대의회계' if you already took 회계학원론(회계원리)\n" +
     "\nCore : 도전 / 창의 / 융합 / 신뢰 / 소통\n" +
     "ㄴ Take more than one class per each area!\nElectives : free to choose any\n"
      + "Any credits over 45 are not counted!"
@@ -86,9 +86,9 @@ function Liberal_cal() {
     }
   } else {
     if (common_etc_point < 8) {
-      word += " - Others : " + [8 - common_etc_point] + " more credits required ( 회계와사회 : 면제 )\n"
+      word += " - Others : " + [8 - common_etc_point] + " more credits required (앙트레프레너십시대의회계 : Exempted)\n"
     } else {
-      word += " - Others : Passed the requirement ( 회계와사회 : 면제 )\n"
+      word += " - Others : Passed the requirement (회계와사회 : Exempted)\n"
     }
   }
 
