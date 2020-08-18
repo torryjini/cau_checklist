@@ -1,7 +1,7 @@
 function liberalmodal() {
   var word = "교양영역 이수기준"
-  var content = "공통교양\n- 국어 : 글쓰기\n- 영어 : Communication in English\n- 기타 : 창의와소통 / 회계와사회 / ACT / 한국사 / 컴퓨팅적사고와문제해결\n" +
-    "ㄴ 회계학원론(회계원리)을 이수했을 경우, '회계와사회' 면제\n" +
+  var content = "공통교양\n- 국어 : 글쓰기\n- 영어 : Communication in English\n- 기타 : 창의와소통/ACT/한국사/컴퓨팅적사고와문제해결/\n 앙트레프레너십시대의회계(회계와사회)\n" +
+    "ㄴ 회계학원론(회계원리)을 이수했을 경우, '앙트레프레너십시대의회계' 면제\n" +
     "\n핵심교양 : 도전 / 창의 / 융합 / 신뢰 / 소통\n" +
     "ㄴ 각 영역에서 1과목 이상 이수!\n선택교양 : 자율이수\n" + "총 교양학점 45학점까지만 인정됩니다!"
   swal(word, content, "info");
@@ -85,9 +85,9 @@ function Liberal_cal() {
     }
   } else {
     if (common_etc_point < 8) {
-      word += " - 기타 : " + [8 - common_etc_point] + " 학점 미달 ( 회계와사회 : 면제 )\n"
+      word += " - 기타 : " + [8 - common_etc_point] + " 학점 미달 (앙트레프레너십시대의회계 : 면제)\n"
     } else {
-      word += " - 기타 : 기준 통과 ( 회계와사회 : 면제 )\n"
+      word += " - 기타 : 기준 통과 (앙트레프레너십시대의회계 : 면제)\n"
     }
   }
 
