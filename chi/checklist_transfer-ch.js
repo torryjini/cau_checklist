@@ -269,19 +269,19 @@ function tr_Major_result() {
   if (Fusiontext.includes("문화") || Fusiontext.includes("창업") || Fusiontext.includes("게임")) {
     if (FusionCross > 6) {
       document.getElementById("double_major_none").scrollIntoView();
-      swal(Fusiontext + "融合专业(융합전공)最多可以交叉认证6学分!", "", "error")
+      swal(Fusiontext + "융합전공最多可以交叉认证6学分!", "", "error")
       return false;
     }
   } else if (Fusiontext.includes("금융")) {
     if (FusionCross > 15) {
       document.getElementById("double_major_none").scrollIntoView();
-      swal(Fusiontext + "融合专业(융합전공)最多可以交叉认证15学分!", "", "error")
+      swal(Fusiontext + "융합전공最多可以交叉认证15学分!", "", "error")
       return false;
     }
   } else if (Fusiontext.includes("인문") || Fusiontext.includes("보안") || Fusiontext.includes("테크") || Fusiontext.includes("벤처")) {
     if (FusionCross > 12) {
       document.getElementById("double_major_none").scrollIntoView();
-      swal(Fusiontext + "融合专业(융합전공)最多可以交叉认证12学分!", "", "error")
+      swal(Fusiontext + "융합전공最多可以交叉认证12学分!", "", "error")
       return false;
     }
   }
@@ -324,13 +324,13 @@ function BaseNeceresult(Majorstandard) {
   var word = "👉插班年度 : " + AdYear + "年";
 
   if (SecYear) {
-    word += " - 二年级插班";
+    word += "- 二年级插班";
   } else {
-    word += " - 三年级插班"
+    word += "- 三年级插班"
   }
 
   if (Majortext.includes("트랙")) {
-    word += "\n👉主专业 : 공공인재학부 " + Majortext + "\n👉多专业 : " + Multimajortext + "\n👉教养 : " + Liberal_point + " 学分\n";
+    word += "\n👉主专业 : 공공인재학부" + Majortext + "\n👉多专业 : " + Multimajortext + "\n👉教养 : " + Liberal_point + " 学分\n";
   } else {
     word += "\n👉主专业 : " + Majortext + "\n👉多专业 : " + Multimajortext + "\n👉教养 : " + Liberal_point + " 学分\n";
   }

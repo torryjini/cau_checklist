@@ -243,7 +243,7 @@ function BaseNeceresult(Majorstandard) {
   var word = "👉Entrance Year : " + AdYear;
 
   if (Majortext.includes("트랙")) {
-    word += "\n👉Major : 공공인재학부 " + Majortext + "\n👉Multiple Major : " + Multimajortext + "\n";
+    word += "\n👉Major : 공공인재학부" + Majortext + "\n👉Multiple Major : " + Multimajortext + "\n";
   } else {
     word += "\n👉Major : " + Majortext + "\n👉Multiple Major : " + Multimajortext + "\n";
   }

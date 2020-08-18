@@ -152,7 +152,7 @@ function BaseNeceresult(Majorstandard) {
   var word = "👉入学年度 : " + AdYear + "年";
 
   if (Majortext.includes("트랙")) {
-    word += "\n👉主专业 : 공공인재학부 " + Majortext + "\n👉多专业 : " + Multimajortext + "\n";
+    word += "\n👉主专业 : 공공인재학부" + Majortext + "\n👉多专业 : " + Multimajortext + "\n";
   } else {
     word += "\n👉主专业 : " + Majortext + "\n👉多专业 : " + Multimajortext + "\n";
   }

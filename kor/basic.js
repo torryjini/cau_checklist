@@ -68,19 +68,19 @@ function Major_result() {
   if (Fusiontext.includes("문화") || Fusiontext.includes("창업") || Fusiontext.includes("게임")) {
     if (FusionCross > 6) {
       document.getElementById("double_major_none").scrollIntoView();
-      swal(Fusiontext + " 융합전공 교차인정\n최대학점은 6 학점입니다!", "", "error")
+      swal(Fusiontext + "융합전공 교차인정\n최대학점은 6 학점입니다!", "", "error")
       return false;
     }
   } else if (Fusiontext.includes("금융")) {
     if (FusionCross > 15) {
       document.getElementById("double_major_none").scrollIntoView();
-      swal(Fusiontext + " 융합전공 교차인정\n최대학점은 15 학점입니다!", "", "error")
+      swal(Fusiontext + "융합전공 교차인정\n최대학점은 15 학점입니다!", "", "error")
       return false;
     }
   } else if (Fusiontext.includes("인문") || Fusiontext.includes("보안") || Fusiontext.includes("테크") || Fusiontext.includes("벤처")) {
     if (FusionCross > 12) {
       document.getElementById("double_major_none").scrollIntoView();
-      swal(Fusiontext + " 융합전공 교차인정\n최대학점은 12 학점입니다!", "", "error")
+      swal(Fusiontext + "융합전공 교차인정\n최대학점은 12 학점입니다!", "", "error")
       return false;
     }
   }

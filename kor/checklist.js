@@ -242,7 +242,7 @@ function BaseNeceresult(Majorstandard) {
   var word = "👉입학연도 : " + AdYear + "년";
 
   if (Majortext.includes("트랙")) {
-    word += "\n👉주전공 : 공공인재학부 " + Majortext + "\n👉다전공 : " + Multimajortext + "\n";
+    word += "\n👉주전공 : 공공인재학부" + Majortext + "\n👉다전공 : " + Multimajortext + "\n";
   } else {
     word += "\n👉주전공 : " + Majortext + "\n👉다전공 : " + Multimajortext + "\n";
   }

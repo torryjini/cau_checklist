@@ -268,19 +268,19 @@ function tr_Major_result() {
   if (Fusiontext.includes("문화") || Fusiontext.includes("창업") || Fusiontext.includes("게임")) {
     if (FusionCross > 6) {
       document.getElementById("double_major_none").scrollIntoView();
-      swal("Maximum credits for\n" + Fusiontext + " 융합전공 are 6!", "", "error")
+      swal("Maximum credits for\n" + Fusiontext + "융합전공 are 6!", "", "error")
       return false;
     }
   } else if (Fusiontext.includes("금융")) {
     if (FusionCross > 15) {
       document.getElementById("double_major_none").scrollIntoView();
-      swal("Maximum credits for\n" + Fusiontext + " 융합전공 are 15!", "", "error")
+      swal("Maximum credits for\n" + Fusiontext + "융합전공 are 15!", "", "error")
       return false;
     }
   } else if (Fusiontext.includes("인문") || Fusiontext.includes("보안") || Fusiontext.includes("테크") || Fusiontext.includes("벤처")) {
     if (FusionCross > 12) {
       document.getElementById("double_major_none").scrollIntoView();
-      swal("Maximum credits for\n" + Fusiontext + " 융합전공 are 12!", "", "error")
+      swal("Maximum credits for\n" + Fusiontext + "융합전공 are 12!", "", "error")
       return false;
     }
   }
@@ -323,13 +323,13 @@ function BaseNeceresult(Majorstandard) {
   var word = "👉Transfer year : " + AdYear;
 
   if (SecYear) {
-    word += " - 2nd year transfer";
+    word += "- 2nd year transfer";
   } else {
-    word += " - 3rd year transfer"
+    word += "- 3rd year transfer"
   }
 
   if (Majortext.includes("트랙")) {
-    word += "\n👉Major : 공공인재학부 " + Majortext + "\n👉Multiple Major : " + Multimajortext + "\n👉교양 : " + Liberal_point + " credits\n";
+    word += "\n👉Major : 공공인재학부" + Majortext + "\n👉Multiple Major : " + Multimajortext + "\n👉교양 : " + Liberal_point + " credits\n";
   } else {
     word += "\n👉Major : " + Majortext + "\n👉Multiple Major : " + Multimajortext + "\n👉교양 : " + Liberal_point + " credits\n";
   }
