@@ -176,7 +176,7 @@ function BaseNeceresult(Majorstandard) {
   var Necepoint = Number(document.getElementById("nece_input").value);
   var Majorpoint = Number(document.getElementById("major_input").value);
   Majorstandard = Number(Majorstandard);
-  var word = "👉入学年度 : " + AdYear + "年" + "\n主专业 : " + Majortext + "\n👉多专业 : " + Multimajortext + "\n";
+  var word = "👉入学年度 : " + AdYear + "年" + "\n👉主专业 : " + Majortext + "\n👉多专业 : " + Multimajortext + "\n";
 
   var FusionOption = Number(document.getElementById("fusion-options").value);
   if (Multimajortext.includes("융합")) {
