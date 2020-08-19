@@ -138,7 +138,7 @@ function BaseNeceStandard() {
     "cmc": "9",
     "planning": "18",
     "sociology": "9",
-    "public": "26"
+    "public": "19"
   };
 
   var Major_base12 = {

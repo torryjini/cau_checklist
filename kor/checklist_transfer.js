@@ -183,8 +183,8 @@ function BaseNeceStandard() {
   };
 
   var Major_nece1718 = {
-    "public-admin": "26",
-    "public-policy": "24"
+    "public-admin": "19",
+    "public-policy": "17"
   };
 
   var Major_base = {

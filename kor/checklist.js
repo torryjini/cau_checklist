@@ -165,8 +165,8 @@ function BaseNeceStandard() {
     "cmc": "9",
     "planning": "18",
     "sociology": "9",
-    "public-admin": "26",
-    "public-policy": "24"
+    "public-admin": "19",
+    "public-policy": "17"
   };
 
   var Major_base1718 = {
@@ -175,8 +175,8 @@ function BaseNeceStandard() {
   };
 
   var Major_nece1718 = {
-    "public-admin": "26",
-    "public-policy": "24"
+    "public-admin": "19",
+    "public-policy": "17"
   };
 
   var Major_base2019 = {
