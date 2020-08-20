@@ -68,9 +68,13 @@
             <input type="checkbox" id="2ndyear" onchange="Form_Reset('Major_select_form')" tabindex="-1"><label for="2ndyear"> 二年级插班</label>
           </td>
           <td>
-            <select id="college_select">
-              <option value="society">사회과학대학</option>
-            </select></td>
+            <form id="Major_select_form">
+              <select id="college_select" onchange="collegechanges(document.getElementById('college_select').value)">
+                <option value="0"> 选 择 </option>
+                <option value="society">사회과학대학</option>
+                <option value="bne">경영경제대학</option>
+              </select>
+          </td>
         </tr>
         <tr>
           <th>专业</th>
@@ -78,22 +82,9 @@
         </tr>
         <tr>
           <td>
-            <form id="Major_select_form">
-              <select id="Major_select" onchange="BaseNeceStandard();OfficeNumber();Form_Reset('Multimajor_form')"
-               onclick="BaseNeceStandard();OfficeNumber();Form_Reset('Multimajor_form')" onkeyup="BaseNeceStandard();OfficeNumber()" required>
-                <option value="none"> 选 择 </option>
-                <option value="politics">정치국제학과</option>
-                <optgroup label="공공인재학부">
-                  <option value="public-admin">- 행정학트랙</option>
-                  <option value="public-policy">- 정책학트랙</option>
-                </optgroup>
-                <option value="psyche">심리학과</option>
-                <option value="lis">문헌정보학과</option>
-                <option value="socialwelfare">사회복지학부</option>
-                <option value="cmc">미디어커뮤니케이션학부</option>
-                <option value="planning">도시계획/부동산학과</option>
-                <option value="sociology">사회학과</option>
-              </select>
+            <select id="Major_select" onchange="BaseNeceStandard();OfficeNumber();Form_Reset('Multimajor_form')" onclick="BaseNeceStandard();OfficeNumber();Form_Reset('Multimajor_form')" onkeyup="BaseNeceStandard();OfficeNumber()" required>
+              <option value="none"> 选 择 </option>
+            </select>
             </form>
           </td>
           <td>

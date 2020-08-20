@@ -102,6 +102,24 @@ function Liberal_cal() {
 // 여기서부터는 전공영역
 
 // 연도별 학과 전공기초, 전공필수 기준
+function collegechanges(fr) {
+  if (fr == "society") {
+    num = new Array("选 择", "정치국제학과", "공공인재_행정학트랙", "공공인재_정책학트랙", "심리학과", "문헌정보학과", "사회복지학부", "미디어커뮤니케이션학부", "도시계획부동산학과", "사회학과");
+    vnum = new Array("none", "politics", "public-admin", "public-policy", "psyche", "lis", "socialwelfare", "cmc", "planning", "sociology");
+  } else if (fr == "bne") {
+    num = new Array("选 择", "경영학부_경영학전공", "경영학부_글로벌금융", "경제학부", "광고홍보학과", "응용통계학과", "지식경영학부", "국제물류학과", "산업보안학과");
+    vnum = new Array("none", "biz_ba", "biz_glofi", "econ", "adpr", "stat", "gloknol", "log", "security");
+  }
+
+  for (i = 0; i < document.getElementById("Major_select").length; i++) {
+    document.getElementById("Major_select").options[0] = null;
+  };
+
+  for (i = 0; i < num.length; i++) {
+    document.getElementById("Major_select").options[i] = new Option(num[i], vnum[i]);
+  }
+}
+
 function BaseNeceStandard() {
   var Major_base = {
     "psyche": "10",
@@ -112,7 +130,16 @@ function BaseNeceStandard() {
     "planning": "12",
     "sociology": "12",
     "public-admin": "17",
-    "public-policy": "16"
+    "public-policy": "16",
+    //경영경제대학
+    "biz_ba": "14",
+    "biz_glofi": "18",
+    "econ": "6",
+    "adpr": "9",
+    "stat": "12",
+    "gloknol": "18",
+    "log": "15",
+    "security": "15"
   };
 
   var Major_nece = {
@@ -124,7 +151,16 @@ function BaseNeceStandard() {
     "planning": "18",
     "sociology": "9",
     "public-admin": "19",
-    "public-policy": "17"
+    "public-policy": "17",
+    //경영경제대학
+    "biz_ba": "24",
+    "biz_glofi": "39",
+    "econ": "9",
+    "adpr": "12",
+    "stat": "15",
+    "gloknol": "21",
+    "log": "18",
+    "security": "18"
   };
 
   var Major = document.getElementById("Major_select").value;

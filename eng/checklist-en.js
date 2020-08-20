@@ -145,8 +145,28 @@ function Liberal_cal() {
 // 여기서부터는 전공영역
 
 // 연도별 학과 전공기초, Required 기준
+function collegechanges(fr) {
+  if (fr == "society") {
+    //뿌려줄값을 배열로정렬
+    num = new Array("Select", "정치국제학과", "공공인재_행정학트랙", "공공인재_정책학트랙", "심리학과", "문헌정보학과", "사회복지학부", "미디어커뮤니케이션학부", "도시계획부동산학과", "사회학과");
+    vnum = new Array("none", "politics", "public-admin", "public-policy", "psyche", "lis", "socialwelfare", "cmc", "planning", "sociology");
+  } else if (fr == "bne") {
+    num = new Array("Select", "경영학부_경영학전공", "경영학부_글로벌금융", "경제학부", "광고홍보학과", "응용통계학과", "지식경영학부", "국제물류학과", "산업보안학과");
+    vnum = new Array("none", "biz_ba", "biz_glofi", "econ", "adpr", "stat", "gloknol", "log", "security");
+  }
+
+  for (i = 0; i < document.getElementById("Major_select").length; i++) {
+    document.getElementById("Major_select").options[0] = null;
+  };
+
+  for (i = 0; i < num.length; i++) {
+    document.getElementById("Major_select").options[i] = new Option(num[i], vnum[i]);
+  }
+}
+
 function BaseNeceStandard() {
   var Major_base = {
+    //사회과학대학
     "psyche": "10",
     "politics": "12",
     "lis": "12",
@@ -155,10 +175,20 @@ function BaseNeceStandard() {
     "planning": "12",
     "sociology": "12",
     "public-admin": "17",
-    "public-policy": "16"
+    "public-policy": "16",
+    //경영경제대학
+    "biz_ba": "14",
+    "biz_glofi": "18",
+    "econ": "6",
+    "adpr": "9",
+    "stat": "12",
+    "gloknol": "18",
+    "log": "15",
+    "security": "15"
   };
 
   var Major_nece = {
+    //사회과학대학
     "psyche": "9",
     "politics": "9",
     "lis": "18",
@@ -167,25 +197,48 @@ function BaseNeceStandard() {
     "planning": "18",
     "sociology": "9",
     "public-admin": "19",
-    "public-policy": "17"
+    "public-policy": "17",
+    //경영경제대학
+    "biz_ba": "24",
+    "biz_glofi": "39",
+    "econ": "9",
+    "adpr": "12",
+    "stat": "12",
+    "gloknol": "21",
+    "log": "12",
+    "security": "18"
+  };
+
+  var Major_base16 = {
+    "gloknol": "15"
+  };
+
+  var Major_nece16 = {
+    "log": "18",
+    "security": "15",
+    "stat": "15"
   };
 
   var Major_base1718 = {
+    //사회과학대학
     "public-admin": "18",
     "public-policy": "17"
   };
 
   var Major_nece1718 = {
+    //사회과학대학
     "public-admin": "19",
     "public-policy": "17"
   };
 
   var Major_base2019 = {
+    //사회과학대학
     "public-admin": "17",
     "public-policy": "17"
   };
 
   var Major_nece2020 = {
+    //사회과학대학
     "sociology": "12",
     "public-admin": "18",
     "public-policy": "18"
@@ -195,6 +248,9 @@ function BaseNeceStandard() {
   if (Major == "none") {
     document.getElementById("base_standard").value = "-";
     document.getElementById("nece_standard").value = "-";
+  } else if (AdYear == 2017 && Major == "stat") {
+      document.getElementById("base_standard").value = Major_base[Major];
+      document.getElementById("nece_standard").value = Major_nece16[Major];
   } else if (AdYear == 2017 || AdYear == 2018) {
     if (Major == "public-admin" || Major == "public-policy") {
       document.getElementById("base_standard").value = Major_base1718[Major];
@@ -218,6 +274,17 @@ function BaseNeceStandard() {
     } else if (Major == "sociology") {
       document.getElementById("base_standard").value = Major_base[Major];
       document.getElementById("nece_standard").value = Major_nece2020[Major];
+    } else {
+      document.getElementById("base_standard").value = Major_base[Major];
+      document.getElementById("nece_standard").value = Major_nece[Major];
+    }
+  } else if (AdYear == 2016) {
+    if (Major == "log" || Major == "security" || Major == "stat") {
+      document.getElementById("base_standard").value = Major_base[Major];
+      document.getElementById("nece_standard").value = Major_nece16[Major];
+    } else if (Major == "gloknol") {
+      document.getElementById("base_standard").value = Major_base16[Major];
+      document.getElementById("nece_standard").value = Major_nece[Major];
     } else {
       document.getElementById("base_standard").value = Major_base[Major];
       document.getElementById("nece_standard").value = Major_nece[Major];

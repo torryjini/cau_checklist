@@ -118,8 +118,26 @@ function Liberal_cal() {
 // 여기서부터는 전공영역
 
 // 연도별 학과 전공기초, 전공필수 기준
+function collegechanges(fr) {
+  if (fr == "society") {
+    num = new Array("选 择", "정치국제학과", "공공인재학부", "심리학과", "문헌정보학과", "사회복지학부", "미디어커뮤니케이션학부", "도시계획부동산학과", "사회학과");
+    vnum = new Array("none", "politics", "public", "psyche", "lis", "socialwelfare", "cmc", "planning", "sociology");
+  } else if (fr == "bne") {
+    num = new Array("选 择", "경영학부_경영학전공", "경영학부_글로벌금융", "경제학부", "광고홍보학과", "응용통계학과", "지식경영학부", "국제물류학과");
+    vnum = new Array("none", "biz_ba", "biz_glofi", "econ", "adpr", "stat", "gloknol", "log");
+  }
+
+  for (i = 0; i < document.getElementById("Major_select").length; i++) {
+    document.getElementById("Major_select").options[0] = null;
+  };
+  for (i = 0; i < num.length; i++) {
+    document.getElementById("Major_select").options[i] = new Option(num[i], vnum[i]);
+  }
+}
+
 function BaseNeceStandard() {
   var Major_base = {
+    //사회과학대학
     "psyche": "10",
     "politics": "12",
     "lis": "12",
@@ -127,10 +145,19 @@ function BaseNeceStandard() {
     "cmc": "15",
     "planning": "12",
     "sociology": "12",
-    "public": "18"
+    "public": "18",
+    //경영경제대학
+    "biz_ba": "14",
+    "biz_glofi": "18",
+    "econ": "6",
+    "adpr": "9",
+    "stat": "12",
+    "gloknol": "18",
+    "log": "15"
   };
 
   var Major_nece = {
+    //사회과학대학
     "psyche": "9",
     "politics": "9",
     "lis": "18",
@@ -138,11 +165,23 @@ function BaseNeceStandard() {
     "cmc": "9",
     "planning": "18",
     "sociology": "9",
-    "public": "19"
+    "public": "19",
+    //경영경제대학
+    "biz_ba": "24",
+    "biz_glofi": "39",
+    "econ": "9",
+    "adpr": "12",
+    "stat": "15",
+    "gloknol": "21",
+    "log": "18"
   };
 
   var Major_base12 = {
-    "lis": "10",
+    "lis": "10"
+  };
+
+  var Major_nece12 = {
+    "adpr":"9"
   };
 
   var Major = document.getElementById("Major_select").value;
@@ -154,6 +193,9 @@ function BaseNeceStandard() {
     if (Major == "lis") {
       document.getElementById("base_standard").value = Major_base12[Major];
       document.getElementById("nece_standard").value = Major_nece[Major];
+    } else if (Major == "adpr") {
+      document.getElementById("base_standard").value = Major_base[Major];
+      document.getElementById("nece_standard").value = Major_nece12[Major];
     } else {
       document.getElementById("base_standard").value = Major_base[Major];
       document.getElementById("nece_standard").value = Major_nece[Major];

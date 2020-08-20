@@ -108,6 +108,7 @@ function Major_result() {
 
 function OfficeNumber() {
   var Office = {
+    //사회과학대학
     "psyche": "심리학과",
     "politics": "정치국제학과",
     "lis": "문헌정보학과",
@@ -118,9 +119,19 @@ function OfficeNumber() {
     "sociology": "사회학과",
     "public-admin": "공공인재학부",
     "public-policy": "공공인재학부",
-    "public": "공공인재학부"
+    "public": "공공인재학부",
+    //경영경제대학
+    "biz_ba":"경영학부",
+    "biz_glofi":"경영학부",
+    "econ":"경제학부",
+    "adpr":"광고홍보학과",
+    "stat":"응용통계학과",
+    "gloknol":"지식경영학부",
+    "log":"국제물류학과",
+    "security":"산업보안학과"
   };
   var PhoneNumber = {
+    //사회과학대학
     "psyche": "02-820-5124",
     "politics": "02-820-5473",
     "lis": "02-820-5144",
@@ -131,7 +142,16 @@ function OfficeNumber() {
     "sociology": "02-820-6351",
     "public-admin": "02-820-5445",
     "public-policy": "02-820-5445",
-    "public": "02-820-5445"
+    "public": "02-820-5445",
+    //경영경제대학
+    "biz_ba":"02-820-5539",
+    "biz_glofi":"02-820-5540",
+    "econ":"02-820-5487",
+    "adpr":"02-820-5504",
+    "stat":"02-820-5499",
+    "gloknol":"02-820-5527",
+    "log":"02-820-5537",
+    "security":"02-820-5730"
   };
   var Major = document.getElementById("Major_select").value;
   if (Major == "none") {
