@@ -182,9 +182,12 @@ function collegechanges(fr) {
   } else if (fr == "bne") {
     num = new Array("选 择", "경영학부_경영학전공", "경영학부_글로벌금융", "경제학부", "광고홍보학과", "응용통계학과", "국제물류학과", "산업보안학과");
     vnum = new Array("none", "biz_ba", "biz_glofi", "econ", "adpr", "stat", "log", "security");
+  } else if (fr == "none") {
+    num = new Array("선  택");
+    vnum = new Array("none");
   }
 
-  for (i = 0; i < document.getElementById("Major_select").length; i++) {
+  for (i = 0; i = document.getElementById("Major_select").length; i++) {
     document.getElementById("Major_select").options[0] = null;
   };
 

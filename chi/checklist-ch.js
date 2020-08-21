@@ -146,15 +146,17 @@ function Liberal_cal() {
 // 연도별 학과 전공기초, 전공필수 기준
 function collegechanges(fr) {
   if (fr == "society") {
-    //뿌려줄값을 배열로정렬
     num = new Array("选 择", "정치국제학과", "공공인재_행정학트랙", "공공인재_정책학트랙", "심리학과", "문헌정보학과", "사회복지학부", "미디어커뮤니케이션학부", "도시계획부동산학과", "사회학과");
     vnum = new Array("none", "politics", "public-admin", "public-policy", "psyche", "lis", "socialwelfare", "cmc", "planning", "sociology");
   } else if (fr == "bne") {
     num = new Array("选 择", "경영학부_경영학전공", "경영학부_글로벌금융", "경제학부", "광고홍보학과", "응용통계학과", "지식경영학부", "국제물류학과", "산업보안학과");
     vnum = new Array("none", "biz_ba", "biz_glofi", "econ", "adpr", "stat", "gloknol", "log", "security");
+  } else if (fr == "none") {
+    num = new Array("选 择");
+    vnum = new Array("none");
   }
 
-  for (i = 0; i < document.getElementById("Major_select").length; i++) {
+  for (i = 0; i = document.getElementById("Major_select").length; i++) {
     document.getElementById("Major_select").options[0] = null;
   };
 
