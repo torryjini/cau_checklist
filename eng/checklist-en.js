@@ -404,9 +404,9 @@ function BaseNeceresult(Majorstandard) {
 
   var Freepoint = Number(document.getElementById("free_point").value);
   if (Freepoint < 1) {
-    word += "👉Free choice : " + Freepoint + " credits_CAU세미나 미수강\n"
+    word += "👉Free choice : " + Freepoint + " credits_take CAU세미나\n"
   } else {
-    word += "👉Free choice : " + Freepoint + " credits\n_CAU세미나 이수 확인 필수!\n"
+    word += "👉Free choice : " + Freepoint + " credits\n_check CAU세미나!\n"
   }
 
   var Teachingcheck = document.getElementById("teaching_none").checked;
