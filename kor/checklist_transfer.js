@@ -201,10 +201,13 @@ function BaseNeceStandard() {
 
   var Major_nece1718 = {
     "public-admin": "19",
-    "public-policy": "17"
+    "public-policy": "17",
+    //17년도만
+    "stat": "15"
   };
 
   var Major_base = {
+    //사회과학대학
     "psyche": "10",
     "politics": "6",
     "lis": "12",
@@ -214,10 +217,21 @@ function BaseNeceStandard() {
     "planning": "0",
     "sociology": "12",
     "public-admin": "12",
-    "public-policy": "11"
+    "public-policy": "11",
+    //경영경제대학
+    "biz_ba": "14",
+    "biz_glofi": "18",
+    "econ": "6",
+    "adpr": "9",
+    "stat": "12",
+    "gloknol": "9",
+    "log": "3",
+    "log2": "15",
+    "security": "15"
   };
 
   var Major_nece = {
+    //사회과학대학
     "psyche": "9",
     "politics": "9",
     "lis": "18",
@@ -227,7 +241,16 @@ function BaseNeceStandard() {
     "planning": "18",
     "sociology": "12",
     "public-admin": "18",
-    "public-policy": "18"
+    "public-policy": "18",
+    //경영경제대학
+    "biz_ba": "24",
+    "biz_glofi": "39",
+    "econ": "9",
+    "adpr": "6",
+    "stat": "12",
+    "gloknol": "21",
+    "log": "12",
+    "security": "18"
   };
 
   var Major_nece1619 = {
@@ -243,6 +266,12 @@ function BaseNeceStandard() {
   } else if (SecYear && Major == "cmc") {
     document.getElementById("base_standard").value = Major_base.cmc2;
     document.getElementById("nece_standard").value = Major_nece.cmc2;
+  } else if (SecYear && Major == "log") {
+    document.getElementById("base_standard").value = Major_base.log2;
+    document.getElementById("nece_standard").value = Major_nece.log;
+  } else if (AdYear == 2017 && Major == "stat") {
+    document.getElementById("base_standard").value = Major_base[Major];
+    document.getElementById("nece_standard").value = Major_nece1718[Major];
   } else if (AdYear == 2017 || AdYear == 2018) {
     if (Major.includes("public")) {
       document.getElementById("base_standard").value = Major_base1718[Major];
