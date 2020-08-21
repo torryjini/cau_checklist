@@ -370,9 +370,9 @@ function BaseNeceresult(Majorstandard) {
   var word = "👉편입학연도 : " + AdYear + "년";
 
   if (SecYear) {
-    word += " - 2학년 편입";
+    word += " - 2학년편입";
   } else {
-    word += " - 3학년 편입"
+    word += " - 3학년편입"
   }
 
   word += "\n👉주전공 : " + Majortext + "\n👉다전공 : " + Multimajortext + "\n👉교양 : " + Liberal_point + " 학점 이수\n";
