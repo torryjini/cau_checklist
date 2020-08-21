@@ -48,6 +48,11 @@ i {
   font-size: 1rem;
 }
 
+a {
+  text-decoration: none;
+  color: var(--text-color);
+}
+
 footer {
   text-align: center;
   justify-content: center;
@@ -73,7 +78,7 @@ ol {
 
 select {
   cursor: pointer;
-  text-align-last:center;
+  text-align-last: center;
   border-color: gray;
 }
 
@@ -92,7 +97,7 @@ legend {
   font-size: 1.5rem;
   padding-bottom: 0.7rem;
   font-weight: 600;
-  vertical-align:middle;
+  vertical-align: middle;
   display: block;
 }
 
@@ -260,7 +265,7 @@ input[type=reset]:hover {
 }
 
 #H2U {
-  margin:auto;
+  margin: auto;
   justify-content: center;
 }
 
