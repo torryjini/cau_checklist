@@ -61,9 +61,9 @@ function Liberal_cal() {
     }
   } else {
     if (common_etc_point < 6) {
-      word += " - 기타 : " + [6 - common_etc_point] + " more credits required ( 회계와사회 : Exempted )\n"
+      word += " - 기타 : " + [6 - common_etc_point] + " more credits required(회계와사회 : Exempted)\n"
     } else {
-      word += " - 기타 : Passed the requirement ( 회계와사회 : Exempted )\n"
+      word += " - 기타 : Passed the requirement(회계와사회 : Exempted)\n"
     }
   }
 

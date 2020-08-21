@@ -85,9 +85,9 @@ function Liberal_cal() {
     }
   } else {
     if (common_etc_point < 8) {
-      word += " - 其他 : 缺少" + [8 - common_etc_point] + " 学分 (앙트레프레너십시대의회계 : 免)\n"
+      word += " - 其他 : 缺少" + [8 - common_etc_point] + " 学分(앙트레프레너십시대의회계 : 免)\n"
     } else {
-      word += " - 其他 : 通过 (앙트레프레너십시대의회계 : 免)\n"
+      word += " - 其他 : 通过(앙트레프레너십시대의회계 : 免)\n"
     }
   }
 

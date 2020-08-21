@@ -86,9 +86,9 @@ function Liberal_cal() {
     }
   } else {
     if (common_etc_point < 8) {
-      word += " - Others : " + [8 - common_etc_point] + " more credits required (앙트레프레너십시대의회계 : Exempted)\n"
+      word += " - Others : " + [8 - common_etc_point] + " more credits required(앙트레프레너십시대의회계 : Exempted)\n"
     } else {
-      word += " - Others : Passed the requirement (회계와사회 : Exempted)\n"
+      word += " - Others : Passed the requirement(앙트레프레너십시대의회계 : Exempted)\n"
     }
   }
 

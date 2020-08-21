@@ -61,9 +61,9 @@ function Liberal_cal() {
     }
   } else {
     if (common_etc_point < 6) {
-      word += " - 기타 : " + [6 - common_etc_point] + " 학점 미달 ( 회계와사회 : 면제 )\n"
+      word += " - 기타 : " + [6 - common_etc_point] + " 학점 미달(회계와사회 : 면제)\n"
     } else {
-      word += " - 기타 : 기준 통과 ( 회계와사회 : 면제 )\n"
+      word += " - 기타 : 기준 통과(회계와사회 : 면제)\n"
     }
   }
 

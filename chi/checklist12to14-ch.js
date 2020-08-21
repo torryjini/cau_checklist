@@ -77,9 +77,9 @@ function Liberal_cal() {
     }
   } else {
     if (common_etc_point < 6) {
-      word += " - 其他 : 缺少" + [6 - common_etc_point] + " 学分 ( 회계와사회 : 免 )\n"
+      word += " - 其他 : 缺少" + [6 - common_etc_point] + " 学分(회계와사회 : 免)\n"
     } else {
-      word += " - 其他 : 通过 ( 회계와사회 : 免 )\n"
+      word += " - 其他 : 通过(회계와사회 : 免)\n"
     }
   }
 
