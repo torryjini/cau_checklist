@@ -196,103 +196,69 @@ function collegechanges(fr) {
 }
 
 function BaseNeceStandard() {
-  var Major_base1718 = {
-    "public-admin": "8",
-    "public-policy": "7"
-  };
-
-  var Major_nece1718 = {
-    "public-admin": "19",
-    "public-policy": "17",
-    //17년도만
-    "stat": "15"
-  };
-
-  var Major_base = {
+  var Base = { // 전공기초: [2017, 2018, 2019, 2020]
     //사회과학대학
-    "psyche": "10",
-    "politics": "6",
-    "lis": "12",
-    "socialwelfare": "12",
-    "cmc2": "12",
-    "cmc": "9",
-    "planning": "0",
-    "sociology": "12",
-    "public-admin": "12",
-    "public-policy": "11",
+    "psyche": ["10", "10", "10", "10"],
+    "politics": ["6", "6", "6", "6"],
+    "lis": ["12", "12", "12", "12"],
+    "socialwelfare": ["12", "12", "12", "12"],
+    "cmc": ["9", "9", "9", "9"],
+    "cmc2": ["12", "12", "12", "12"],
+    "planning": ["0", "0", "0", "0"],
+    "sociology": ["12", "12", "12", "12"],
+    "public-admin": ["8", "8", "12", "12"],
+    "public-policy": ["7", "7", "11", "11"],
     //경영경제대학
-    "biz_ba": "14",
-    "biz_glofi": "18",
-    "econ": "6",
-    "adpr": "9",
-    "stat": "12",
-    "gloknol": "9",
-    "log": "3",
-    "log2": "15",
-    "security": "15"
+    "biz_ba": ["14", "14", "14", "14"],
+    "biz_glofi": ["18", "18", "18", "18"],
+    "econ": ["6", "6", "6", "6"],
+    "adpr": ["9", "9", "9", "9"],
+    "stat": ["12", "12", "12", "12"],
+    "gloknol": ["9", "9", "9", "9"],
+    "log": ["3", "3", "3", "3"],
+    "log2": ["15", "15", "15", "15"],
+    "security": ["15", "15", "15", "15"]
   };
-
-  var Major_nece = {
+  var Nece = { //전공필수: [2017, 2018, 2019, 2020]
     //사회과학대학
-    "psyche": "9",
-    "politics": "9",
-    "lis": "18",
-    "socialwelfare": "18",
-    "cmc2": "19",
-    "cmc": "9",
-    "planning": "18",
-    "sociology": "12",
-    "public-admin": "18",
-    "public-policy": "18",
+    "psyche": ["9", "9", "9", "9"],
+    "politics": ["9", "9", "9", "9"],
+    "lis": ["18", "18", "18", "18"],
+    "socialwelfare": ["18", "18", "18", "18"],
+    "cmc": ["9", "9", "9", "9"],
+    "planning": ["18", "18", "18", "18"],
+    "sociology": ["9", "9", "9", "12"],
+    "public-admin": ["19", "19", "18", "18"],
+    "public-policy": ["17", "17", "18", "18"],
     //경영경제대학
-    "biz_ba": "24",
-    "biz_glofi": "39",
-    "econ": "9",
-    "adpr": "6",
-    "stat": "12",
-    "gloknol": "21",
-    "log": "12",
-    "security": "18"
-  };
-
-  var Major_nece1619 = {
-    "sociology": "9"
+    "biz_ba": ["24", "24", "24", "24"],
+    "biz_glofi": ["39", "39", "39", "39"],
+    "econ": ["9", "9", "9", "9"],
+    "adpr": ["6", "6", "6", "6"],
+    "stat": ["15", "12", "12", "12"],
+    "gloknol": ["21", "21", "21", "21"],
+    "log": ["12", "12", "12", "12"],
+    "security": ["18", "18", "18", "18"]
   };
 
   var Major = document.getElementById("Major_select").value;
   var AdYear = Number(document.getElementById("ad-year").value);
   var SecYear = document.getElementById("2ndyear").checked;
+  var i = AdYear - 2017;
+  var Baseselect = Base[Major];
+  var Neceselect = Nece[Major];
   if (Major == "none") {
     document.getElementById("base_standard").value = "-";
     document.getElementById("nece_standard").value = "-";
   } else if (SecYear && Major == "cmc") {
-    document.getElementById("base_standard").value = Major_base.cmc2;
-    document.getElementById("nece_standard").value = Major_nece.cmc2;
+    document.getElementById("base_standard").value = Base.cmc2[i];
+    document.getElementById("nece_standard").value = Neceselect[i];
   } else if (SecYear && Major == "log") {
-    document.getElementById("base_standard").value = Major_base.log2;
-    document.getElementById("nece_standard").value = Major_nece.log;
-  } else if (AdYear == 2017 && Major == "stat") {
-    document.getElementById("base_standard").value = Major_base[Major];
-    document.getElementById("nece_standard").value = Major_nece1718[Major];
-  } else if (AdYear == 2017 || AdYear == 2018) {
-    if (Major.includes("public")) {
-      document.getElementById("base_standard").value = Major_base1718[Major];
-      document.getElementById("nece_standard").value = Major_nece1718[Major];
-    } else {
-      document.getElementById("base_standard").value = Major_base[Major];
-      document.getElementById("nece_standard").value = Major_nece[Major];
-    }
-  } else if (AdYear == 2017 || AdYear == 2018 || AdYear == 2019) {
-    if (Major == "sociology") {
-      document.getElementById("base_standard").value = Major_base[Major];
-      document.getElementById("nece_standard").value = Major_nece1619[Major];
-    } else {
-      document.getElementById("base_standard").value = Major_base[Major];
-      document.getElementById("nece_standard").value = Major_nece[Major];
-    }
+    document.getElementById("base_standard").value = Base.log2[i];
+    document.getElementById("nece_standard").value = Neceselect[i];
   } else {
-    document.getElementById("base_standard").value = Major_base[Major];
-    document.getElementById("nece_standard").value = Major_nece[Major];
+    document.getElementById("base_standard").value = Baseselect[i];
+    document.getElementById("nece_standard").value = Neceselect[i];
   }
 }
 
