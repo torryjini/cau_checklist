@@ -168,133 +168,60 @@ function collegechanges(fr) {
 }
 
 function BaseNeceStandard() {
-  var Major_base = {
+  var Base = { // 전공기초: [2016, 2017, 2018, 2019, 2020]
     //사회과학대학
-    "psyche": "10",
-    "politics": "12",
-    "lis": "12",
-    "socialwelfare": "12",
-    "cmc": "15",
-    "planning": "12",
-    "sociology": "12",
-    "public-admin": "17",
-    "public-policy": "16",
+    "psyche": ["10", "10", "10", "10", "10"],
+    "politics": ["12", "12", "12", "12", "12"],
+    "lis": ["12", "12", "12", "12", "12"],
+    "socialwelfare": ["12", "12", "12", "12", "12"],
+    "cmc": ["15", "15", "15", "15", "15"],
+    "planning": ["12", "12", "12", "12", "12"],
+    "sociology": ["12", "12", "12", "12", "12"],
+    "public-admin": ["17", "18", "18", "17", "17"],
+    "public-policy": ["16", "17", "17", "17", "17"],
     //경영경제대학
-    "biz_ba": "14",
-    "biz_glofi": "18",
-    "econ": "6",
-    "adpr": "9",
-    "stat": "12",
-    "gloknol": "18",
-    "log": "15",
-    "security": "15"
+    "biz_ba": ["14", "14", "14", "14", "14"],
+    "biz_glofi": ["18", "18", "18", "18", "18"],
+    "econ": ["6", "6", "6", "6", "6"],
+    "adpr": ["9", "9", "9", "9", "9"],
+    "stat": ["12", "12", "12", "12", "12"],
+    "gloknol": ["15", "18", "18", "18", "18"],
+    "log": ["15", "15", "15", "15", "15"],
+    "security": ["15", "15", "15", "15", "15"]
   };
-
-  var Major_nece = {
+  var Nece = { //전공필수: [2016, 2017, 2018, 2019, 2020]
     //사회과학대학
-    "psyche": "9",
-    "politics": "9",
-    "lis": "18",
-    "socialwelfare": "18",
-    "cmc": "9",
-    "planning": "18",
-    "sociology": "9",
-    "public-admin": "19",
-    "public-policy": "17",
+    "psyche": ["9", "9", "9", "9", "9"],
+    "politics": ["9", "9", "9", "9", "9"],
+    "lis": ["18", "18", "18", "18", "18"],
+    "socialwelfare": ["18", "18", "18", "18", "18"],
+    "cmc": ["9", "9", "9", "9", "9"],
+    "planning": ["18", "18", "18", "18", "18"],
+    "sociology": ["9", "9", "9", "9", "12"],
+    "public-admin": ["19", "19", "19", "18", "18"],
+    "public-policy": ["17", "17", "17", "18", "18"],
     //경영경제대학
-    "biz_ba": "24",
-    "biz_glofi": "39",
-    "econ": "9",
-    "adpr": "12",
-    "stat": "12",
-    "gloknol": "21",
-    "log": "12",
-    "security": "18"
+    "biz_ba": ["24", "24", "24", "24", "24"],
+    "biz_glofi": ["39", "39", "39", "39", "39"],
+    "econ": ["9", "9", "9", "9", "9"],
+    "adpr": ["12", "12", "12", "12", "12"],
+    "stat": ["15", "15", "12", "12", "12"],
+    "gloknol": ["21", "21", "21", "21", "21"],
+    "log": ["18", "12", "12", "12", "12"],
+    "security": ["15", "18", "18", "18", "18"]
   };
 
-  var Major_base16 = {
-    "gloknol": "15"
-  };
-
-  var Major_nece16 = {
-    "log": "18",
-    "security": "15",
-    "stat": "15"
-  };
-
-  var Major_base1718 = {
-    //사회과학대학
-    "public-admin": "18",
-    "public-policy": "17"
-  };
-
-  var Major_nece1718 = {
-    //사회과학대학
-    "public-admin": "19",
-    "public-policy": "17"
-  };
-
-  var Major_base2019 = {
-    //사회과학대학
-    "public-admin": "17",
-    "public-policy": "17"
-  };
-
-  var Major_nece2020 = {
-    //사회과학대학
-    "sociology": "12",
-    "public-admin": "18",
-    "public-policy": "18"
-  };
   var Major = document.getElementById("Major_select").value;
   var AdYear = Number(document.getElementById("ad-year").value);
+  var i = AdYear - 2016;
+  var Baseselect = Base[Major];
+  var Neceselect = Nece[Major];
   if (Major == "none") {
     document.getElementById("base_standard").value = "-";
     document.getElementById("nece_standard").value = "-";
-  } else if (AdYear == 2017 && Major == "stat") {
-      document.getElementById("base_standard").value = Major_base[Major];
-      document.getElementById("nece_standard").value = Major_nece16[Major];
-  } else if (AdYear == 2017 || AdYear == 2018) {
-    if (Major == "public-admin" || Major == "public-policy") {
-      document.getElementById("base_standard").value = Major_base1718[Major];
-      document.getElementById("nece_standard").value = Major_nece1718[Major];
-    } else {
-      document.getElementById("base_standard").value = Major_base[Major];
-      document.getElementById("nece_standard").value = Major_nece[Major];
-    }
-  } else if (AdYear == 2019) {
-    if (Major == "public-admin" || Major == "public-policy") {
-      document.getElementById("base_standard").value = Major_base2019[Major];
-      document.getElementById("nece_standard").value = Major_nece2020[Major];
-    } else {
-      document.getElementById("base_standard").value = Major_base[Major];
-      document.getElementById("nece_standard").value = Major_nece[Major];
-    }
-  } else if (AdYear >= 2020) {
-    if (Major == "public-admin" || Major == "public-policy") {
-      document.getElementById("base_standard").value = Major_base2019[Major];
-      document.getElementById("nece_standard").value = Major_nece2020[Major];
-    } else if (Major == "sociology") {
-      document.getElementById("base_standard").value = Major_base[Major];
-      document.getElementById("nece_standard").value = Major_nece2020[Major];
-    } else {
-      document.getElementById("base_standard").value = Major_base[Major];
-      document.getElementById("nece_standard").value = Major_nece[Major];
-    }
-  } else if (AdYear == 2016) {
-    if (Major == "log" || Major == "security" || Major == "stat") {
-      document.getElementById("base_standard").value = Major_base[Major];
-      document.getElementById("nece_standard").value = Major_nece16[Major];
-    } else if (Major == "gloknol") {
-      document.getElementById("base_standard").value = Major_base16[Major];
-      document.getElementById("nece_standard").value = Major_nece[Major];
-    } else {
-      document.getElementById("base_standard").value = Major_base[Major];
-      document.getElementById("nece_standard").value = Major_nece[Major];
-    }
   } else {
-    document.getElementById("base_standard").value = Major_base[Major];
-    document.getElementById("nece_standard").value = Major_nece[Major];
+    document.getElementById("base_standard").value = Baseselect[i];
+    document.getElementById("nece_standard").value = Neceselect[i];
   }
 }
 
