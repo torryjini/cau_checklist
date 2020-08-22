@@ -139,73 +139,56 @@ function collegechanges(fr) {
 }
 
 function BaseNeceStandard() {
-  var Major_base = {
+  var Base = { // 전공기초: [2012, 2013, 2014]
     //사회과학대학
-    "psyche": "10",
-    "politics": "12",
-    "lis": "12",
-    "socialwelfare": "12",
-    "cmc": "15",
-    "planning": "12",
-    "sociology": "12",
-    "public": "18",
+    "psyche": ["10", "10", "10"],
+    "politics": ["12", "12", "12"],
+    "lis": ["10", "12", "12"],
+    "socialwelfare": ["12", "12", "12"],
+    "cmc": ["15", "15", "15"],
+    "planning": ["12", "12", "12"],
+    "sociology": ["12", "12", "12"],
+    "public": ["18", "18", "18"],
     //경영경제대학
-    "biz_ba": "14",
-    "biz_glofi": "18",
-    "econ": "6",
-    "adpr": "9",
-    "stat": "12",
-    "gloknol": "18",
-    "log": "15"
+    "biz_ba": ["14", "14", "14"],
+    "biz_glofi": ["18", "18", "18"],
+    "econ": ["6", "6", "6"],
+    "adpr": ["9", "9", "9"],
+    "stat": ["12", "12", "12"],
+    "gloknol": ["18", "18", "18"],
+    "log": ["15", "15", "15"],
   };
-
-  var Major_nece = {
+  var Nece = { //전공필수: [2012, 2013, 2014]
     //사회과학대학
-    "psyche": "9",
-    "politics": "9",
-    "lis": "18",
-    "socialwelfare": "18",
-    "cmc": "9",
-    "planning": "18",
-    "sociology": "9",
-    "public": "19",
+    "psyche": ["9", "9", "9"],
+    "politics": ["9", "9", "9"],
+    "lis": ["18", "18", "18"],
+    "socialwelfare": ["18", "18", "18"],
+    "cmc": ["9", "9", "9"],
+    "planning": ["18", "18", "18"],
+    "sociology": ["9", "9", "9"],
+    "public": ["19", "19", "19"],
     //경영경제대학
-    "biz_ba": "24",
-    "biz_glofi": "39",
-    "econ": "9",
-    "adpr": "12",
-    "stat": "15",
-    "gloknol": "21",
-    "log": "18"
-  };
-
-  var Major_base12 = {
-    "lis": "10"
-  };
-
-  var Major_nece12 = {
-    "adpr":"9"
+    "biz_ba": ["24", "24", "24"],
+    "biz_glofi": ["39", "39", "39"],
+    "econ": ["9", "9", "9"],
+    "adpr": ["9", "12", "12"],
+    "stat": ["15", "15", "15"],
+    "gloknol": ["21", "21", "21"],
+    "log": ["18", "18", "18"],
   };
 
   var Major = document.getElementById("Major_select").value;
   var AdYear = Number(document.getElementById("ad-year").value);
+  var i = AdYear - 2012;
+  var Baseselect = Base[Major];
+  var Neceselect = Nece[Major];
   if (Major == "none") {
     document.getElementById("base_standard").value = "-";
     document.getElementById("nece_standard").value = "-";
-  } else if (AdYear == 2012) {
-    if (Major == "lis") {
-      document.getElementById("base_standard").value = Major_base12[Major];
-      document.getElementById("nece_standard").value = Major_nece[Major];
-    } else if (Major == "adpr") {
-      document.getElementById("base_standard").value = Major_base[Major];
-      document.getElementById("nece_standard").value = Major_nece12[Major];
-    } else {
-      document.getElementById("base_standard").value = Major_base[Major];
-      document.getElementById("nece_standard").value = Major_nece[Major];
-    }
   } else {
-    document.getElementById("base_standard").value = Major_base[Major];
-    document.getElementById("nece_standard").value = Major_nece[Major];
+    document.getElementById("base_standard").value = Baseselect[i];
+    document.getElementById("nece_standard").value = Neceselect[i];
   }
 }
 
