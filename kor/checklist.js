@@ -115,7 +115,7 @@ function Liberal_cal() {
     word += "소통"
   }
 
-  word += "👉선택교양 : " + elective_point + " 학점"
+  word += "\n👉선택교양 : " + elective_point + " 학점"
 
   if (liberal_total_point <= 45) {
     word += "\n👉교양영역 계 : " + liberal_total_point + " 학점"
