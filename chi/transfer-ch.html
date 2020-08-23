@@ -38,6 +38,7 @@
       <a href="../index-ch.html"><img src="../white_logo.png" id="logo"></a>
       <br>
       <button onclick="topFunction()" id="TopBtn" title="Go to top">Top</button>
+      <script type="text/javascript" src="../settings.js"></script>
       <script type="text/javascript" src="basic-ch.js"></script>
       <script type="text/javascript" src="checklist_transfer-ch.js"></script>
     </header>
@@ -58,7 +59,7 @@
         </tr>
         <tr>
           <td>
-            <select id="ad-year" onchange="Form_Reset('Major_select_form');Form_Reset('Multimajor_form')" required>
+            <select id="ad-year" onchange="Form_Reset('Major_select_form');Form_Reset('Multimajor_form');majorselectreset();" required>
               <option value="0"> 选 择 </option>
               <option value="2017">2017</option>
               <option value="2018">2018</option>

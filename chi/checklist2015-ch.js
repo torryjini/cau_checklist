@@ -284,7 +284,7 @@ function BaseNeceresult(Majorstandard) {
   }
 
   var Freepoint = Number(document.getElementById("free_point").value);
-  word += "👉자유선택 : " + Freepoint + " 학점 이수\n"
+  word += "👉자유선택 : " + Freepoint + " 学分\n"
 
   var Teachingcheck = document.getElementById("teaching_none").checked;
   var Teachingpoint = Number(document.getElementById("teaching_point").value);

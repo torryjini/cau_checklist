@@ -33,6 +33,7 @@
       <a href="../index-en.html"><img src="../white_logo.png" id="logo"></a>
       <br>
       <button onclick="topFunction()" id="TopBtn" title="Go to top">Top</button>
+      <script type="text/javascript" src="../settings.js"></script>
       <script type="text/javascript" src="basic-en.js"></script>
       <script type="text/javascript" src="checklist-en.js"></script>
     </header>
@@ -53,7 +54,7 @@
         </tr>
         <tr>
           <td>
-            <select id="ad-year" onchange="Form_Reset('Major_select_form');Form_Reset('Multimajor_form')" required>
+            <select id="ad-year" onchange="Form_Reset('Major_select_form');Form_Reset('Multimajor_form');majorselectreset();" required>
               <option value="0">Select</option>
               <option value="2016">2016</option>
               <option value="2017">2017</option>
