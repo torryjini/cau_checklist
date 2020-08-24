@@ -31,6 +31,25 @@ function Form_Reset(id) {
   document.getElementById(id).reset();
 }
 
+function numbercolor(st, number) {
+  var standard = Number(document.getElementById(st).value);
+  var point = Number(document.getElementById(number).value);
+  if(point >= standard){
+    document.getElementById(number).style.color = "blue";
+  } else {
+    document.getElementById(number).style.color = "red";
+  }
+}
+
+function gpacolor() {
+  var point = Number(document.getElementById("average").value);
+  if(point >= 2){
+    document.getElementById("average").style.color = "blue";
+  } else {
+    document.getElementById("average").style.color = "red";
+  }
+}
+
 function total_point_sum() {
   var LiberalTotal = Number(document.getElementById("liberal_total").value);
   var Basepoint = Number(document.getElementById("base_input").value);

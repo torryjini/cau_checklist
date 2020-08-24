@@ -179,6 +179,7 @@ input[type=button], input[type=reset] {
   height: 1.8rem;
   border-radius: 3px;
   font-size: 1rem;
+  color:red;
 }
 
 .info-btn {
@@ -205,6 +206,7 @@ input[type=button], input[type=reset] {
   border: 0px;
   font-size: 1rem;
   font-family: inherit;
+  color: blue;
 }
 
 .inputnumber {
@@ -215,6 +217,7 @@ input[type=button], input[type=reset] {
   font-family: inherit;
   font-size: 1rem;
   border-color: gray;
+  color: red;
 }
 
 .totalnumber {
@@ -224,6 +227,7 @@ input[type=button], input[type=reset] {
   border: 0px;
   font-family: inherit;
   font-size: 1rem;
+  color:red;
 }
 
 .call {
@@ -276,6 +280,10 @@ input[type=reset]:hover {
 
 #ad-year {
   width: 5rem;
+}
+
+#elective_liberal, #free_point, #liberal_input, #cross_point1, #cross_point2, #cross_point3 {
+  color: blue;
 }
 
 #MultiMajor_select {
