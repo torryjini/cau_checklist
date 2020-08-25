@@ -93,7 +93,7 @@ function Liberal_cal() {
   }
 
   if (Core1 && Core2 && Core3 && Core4 && Core5 && core_total_point >= 14) {
-    word += "👉Core : Passed the requirement\n"
+    word += "👉Core : Passed the requirement"
   } else if (core_total_point < 15) {
     word += "👉Core : " + [15 - core_total_point] + " more credits required\n- Incomplete course : "
   } else {
