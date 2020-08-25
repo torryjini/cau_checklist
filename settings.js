@@ -50,6 +50,12 @@ function gpacolor() {
   }
 }
 
+function libcolorreset() {
+  document.getElementById("common_kor").style.color = "red";
+  document.getElementById("common_eng").style.color = "red";
+  document.getElementById("common_etc").style.color = "red";
+}
+
 function total_point_sum() {
   var LiberalTotal = Number(document.getElementById("liberal_total").value);
   var Basepoint = Number(document.getElementById("base_input").value);
