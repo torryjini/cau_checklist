@@ -211,7 +211,7 @@
           <td><input type="text" class="standard_number" id="base_standard" value="" readonly tabindex="-1">
           </td>
           <td colspan="3">
-            <input type="number" id="base_input" placeholder="0" name="major" value="" onchange="total_point_sum()" onkeyup="total_point_sum()" min="0" max="99"
+            <input type="number" id="base_input" placeholder="0" name="major" value="" onchange="total_point_sum();numbercolor('base_standard','base_input');" onkeyup="total_point_sum();numbercolor('base_standard','base_input');" min="0" max="99"
              class="inputnumber" maxlength="2" oninput="maxLengthCheck(this)"><label for="base_input"> 学分</label>
           </td>
         </tr>
@@ -220,7 +220,7 @@
           <td><input type="text" class="standard_number" id="nece_standard" value="" readonly tabindex="-1">
           </td>
           <td colspan="3">
-            <input type="number" id="nece_input" placeholder="0" name="major" value="" onchange="total_point_sum()" onkeyup="total_point_sum()" min="0" max="99"
+            <input type="number" id="nece_input" placeholder="0" name="major" value="" onchange="total_point_sum();numbercolor('nece_standard','nece_input');" onkeyup="total_point_sum();numbercolor('nece_standard','nece_input');" min="0" max="99"
              class="inputnumber" maxlength="2" oninput="maxLengthCheck(this)"><label for="nece_input"> 学分</label>
           </td>
         </tr>
@@ -230,7 +230,7 @@
             <input type="text" class="standard_number" id="major_standard" value="" readonly tabindex="-1">
             <br>(包括专业必修)</td>
           <td colspan="3">
-            <input type="number" id="major_input" placeholder="0" name="major" value="" onchange="total_point_sum()" onkeyup="total_point_sum()" min="0" max="99"
+            <input type="number" id="major_input" placeholder="0" name="major" value="" onchange="total_point_sum();numbercolor('major_standard','major_input');" onkeyup="total_point_sum();numbercolor('major_standard','major_input');" min="0" max="99"
              class="inputnumber" maxlength="2" oninput="maxLengthCheck(this)"><label for="major_input"> 学分</label>
           </td>
           <!-- <td>전공 심화 : 최소 66 학점<br>복수/설계/연계/융합 : 최소 45 학점</td> -->
@@ -239,7 +239,7 @@
           <th>복수전공<br>双专业</th>
           <td><input type="text" class="standard_number" id="double_st" value="45" readonly tabindex="-1"></td>
           <td colspan="3">
-            <input type="number" id="double_major_point" placeholder="0" value="" onchange="total_point_sum()" onkeyup="total_point_sum()"
+            <input type="number" id="double_major_point" placeholder="0" value="" onchange="total_point_sum();numbercolor('double_st','double_major_point');" onkeyup="total_point_sum();numbercolor('double_st','double_major_point');"
              class="inputnumber" min="0" max="78" maxlength="2" oninput="maxLengthCheck(this)"><label for="double_major_point"> 学分</label><br>
             <input type="checkbox" id="double_major_none" onclick="checkcont1('double_major_none', 'double_major_point')" tabindex="-1" hidden>
           </td>
@@ -249,7 +249,7 @@
           <th>연계전공<br>联系专业</th>
           <td><input type="text" class="standard_number" id="link_st" value="36" readonly tabindex="-1"></td>
           <td>
-            <input type="number" id="link_major_point" placeholder="0" value="" onchange="total_point_sum()" onkeyup="total_point_sum()"
+            <input type="number" id="link_major_point" placeholder="0" value="" onchange="total_point_sum();numbercolor('link_st','link_major_point');" onkeyup="total_point_sum();numbercolor('link_st','link_major_point');"
              class="inputnumber" min="0" maxlength="2" oninput="maxLengthCheck(this)"><label for="link_major_point"> 学分</label><br>
             <input type="checkbox" id="link_major_none" onclick="checkcont('link_major_none', 'link_major_point', 'cross_point1')" tabindex="-1" hidden>
           </td>
@@ -280,7 +280,7 @@
             </select>
           </td>
           <td>
-            <input type="number" id="fusion_major_point" placeholder="0" value="" onchange="total_point_sum()" onkeyup="total_point_sum()"
+            <input type="number" id="fusion_major_point" placeholder="0" value="" onchange="total_point_sum();numbercolor('fusion_standard','fusion_major_point');" onkeyup="total_point_sum();numbercolor('fusion_standard','fusion_major_point');"
              class="inputnumber" min="0" maxlength="2" oninput="maxLengthCheck(this)"><label for="fusion_major_point"> 学分</label><br>
             <input type="checkbox" id="fusion_major_none" onclick="checkcont('fusion_major_none', 'fusion_major_point', 'cross_point2')" tabindex="-1" hidden>
           </td>
@@ -294,7 +294,7 @@
           <th>설계전공<br>设计专业</th>
           <td><input type="text" class="standard_number" id="plan_st" value="36" readonly tabindex="-1"></td>
           <td>
-            <input type="number" id="plan_major_point" placeholder="0" value="" onchange="total_point_sum()" onkeyup="total_point_sum()"
+            <input type="number" id="plan_major_point" placeholder="0" value="" onchange="total_point_sum();numbercolor('plan_st','plan_major_point');" onkeyup="total_point_sum();numbercolor('plan_st','plan_major_point');"
              class="inputnumber" min="0" maxlength="2" oninput="maxLengthCheck(this)"><label for="plan_major_point"> 学分</label><br>
             <input type="checkbox" id="plan_major_none" onclick="checkcont('plan_major_none', 'plan_major_point', 'cross_point3')" tabindex="-1" hidden>
           </td>
@@ -309,7 +309,7 @@
           <th>부전공<br>副专业</th>
           <td><input type="text" class="standard_number" id="minor_st" value="21" readonly tabindex="-1"></td>
           <td colspan="3">
-            <input type="number" id="minor_point" placeholder="0" value="" onchange="total_point_sum()" onkeyup="total_point_sum()"
+            <input type="number" id="minor_point" placeholder="0" value="" onchange="total_point_sum();numbercolor('minor_st','minor_point');" onkeyup="total_point_sum();numbercolor('minor_st','minor_point');"
              class="inputnumber" min="0" maxlength="2" oninput="maxLengthCheck(this)"><label for="minor_point"> 学分</label> <br>
             <input type="checkbox" id="minor_none" onclick="checkcont1('minor_none', 'minor_point')" tabindex="-1"><label for="minor_none">无</label>
           </td>
@@ -328,7 +328,7 @@
           <th>교직<br>教职</th>
           <td><input type="text" class="standard_number" id="teaching_st" value="22" readonly tabindex="-1"></td>
           <td colspan="3">
-            <input type="number" id="teaching_point" placeholder="0" value="" onchange="total_point_sum()" onkeyup="total_point_sum()" min="0" max="30"
+            <input type="number" id="teaching_point" placeholder="0" value="" onchange="total_point_sum();numbercolor('teaching_st','teaching_point');" onkeyup="total_point_sum();numbercolor('teaching_st','teaching_point');" min="0" max="30"
              class="inputnumber" maxlength="2" oninput="maxLengthCheck(this)" readonly><label for="teaching_point"> 学分</label><br>
             <input type="checkbox" id="teaching_none" onclick="checkcont1('teaching_none', 'teaching_point')" tabindex="-1" checked><label for="teaching_none">无</label>
           </td>
@@ -338,7 +338,7 @@
           <th>总学分</th>
           <td><input type="text" class="standard_number" id="total_standard" value="132" readonly tabindex="-1"></td>
           <td colspan="3">
-            <input type="text" id="the_total" value="0" class="totalnumber" readonly tabindex="-1"> 学分
+            <input type="text" id="the_total" value="0" class="totalnumber" onchange="numbercolor('total_standard','the_total');" readonly tabindex="-1"> 学分
           </td>
           <!-- <td>교양학점은 최대 45학점까지 인정</td> -->
         </tr>
