@@ -390,7 +390,7 @@
         </tr>
         <tr>
           <th colspan="2">Accumulated GPA</th>
-          <td><input type="number" placeholder="0" id="average" value="" max="4.5" min="0" step=".01" class="inputnumber" maxlength="4" oninput="maxLengthCheck(this)"><label for="average"> / 4.5</label></td>
+          <td><input type="number" placeholder="0" id="average" value="" max="4.5" min="0" step=".01" class="inputnumber" maxlength="4" oninput="maxLengthCheck(this)" onkeyup="gpacolor();" onchange="gpacolor();"><label for="average"> / 4.5</label></td>
           <td>If your final GPA is less than 2.0, you cannot graduate.</td>
         </tr>
       </table>
