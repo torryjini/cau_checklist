@@ -92,7 +92,7 @@ function Liberal_cal() {
   }
 
   if (Core1 && Core2 && Core3 && Core4 && Core5 && core_total_point >= 14) {
-    word += "👉핵심교양 : 기준 통과\n"
+    word += "👉핵심교양 : 기준 통과"
   } else if (core_total_point < 15) {
     word += "👉핵심교양 : " + [15 - core_total_point] + " 학점 미달\n- 미이수 영역 : "
   } else {
