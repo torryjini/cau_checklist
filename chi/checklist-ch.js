@@ -92,7 +92,7 @@ function Liberal_cal() {
   }
 
   if (Core1 && Core2 && Core3 && Core4 && Core5 && core_total_point >= 14) {
-    word += "👉核心教养 : 通过\n"
+    word += "👉核心教养 : 通过"
   } else if (core_total_point < 15) {
     word += "👉核心教养 : 缺少" + [15 - core_total_point] + " 学分\n-  未进修领域 : "
   } else {
