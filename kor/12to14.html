@@ -115,7 +115,7 @@
           <th>국어</th>
           <td><input type="text" class="standard_number" id="com_kor_st" value="2" readonly tabindex="-1"></td>
           <td>2</td>
-          <td><select class="checkselect" id="common_kor" onchange="Liberal_Sum();total_point_sum()">
+          <td><select class="checkselect" id="common_kor" onchange="Liberal_Sum();total_point_sum();numbercolor('com_kor_st', 'common_kor');numbercolor('total_lib_st','liberal_total');">
               <option value="0">0</option>
               <option value="2">2</option>
             </select><label for="common_kor"> 학점</label></td>
@@ -125,7 +125,7 @@
           <th>영어</th>
           <td><input type="text" class="standard_number" id="com_eng_st" value="4" readonly tabindex="-1"></td>
           <td>4</td>
-          <td><select id="common_eng" class="checkselect" onchange="Liberal_Sum();total_point_sum()">
+          <td><select id="common_eng" class="checkselect" onchange="Liberal_Sum();total_point_sum();numbercolor('com_eng_st', 'common_eng');numbercolor('total_lib_st','liberal_total');">
               <option value="0">0</option>
               <option value="2">2</option>
               <option value="3">3</option>
@@ -140,7 +140,7 @@
           <th>기타</th>
           <td><input type="text" class="standard_number" id="com_etc_st" value="8" readonly tabindex="-1"></td>
           <td>8</td>
-          <td><select id="common_etc" class="checkselect" onchange="Liberal_Sum();total_point_sum()">
+          <td><select id="common_etc" class="checkselect" onchange="Liberal_Sum();total_point_sum();numbercolor('com_etc_st', 'common_etc');numbercolor('total_lib_st','liberal_total');">
               <option value="0">0</option>
               <option value="2">2</option>
               <option value="4">4</option>
@@ -156,7 +156,7 @@
           <td><input type="text" class="standard_number" id="core_st" value="9" readonly tabindex="-1"></td>
           <td></td>
           <td>
-            <input type="number" id="core_total" placeholder="0" value="" onchange="Liberal_Sum();total_point_sum()" onkeyup='Liberal_Sum();total_point_sum()' class="inputnumber" min="0" max="50" maxlength="2"
+            <input type="number" id="core_total" placeholder="0" value="" onchange="Liberal_Sum();total_point_sum();numbercolor('core_st', 'core_total');numbercolor('total_lib_st','liberal_total');" onkeyup="Liberal_Sum();total_point_sum();numbercolor('core_st', 'core_total');numbercolor('total_lib_st','liberal_total');" class="inputnumber" min="0" max="50" maxlength="2"
               oninput="maxLengthCheck(this)"><label for="core_total"> 학점</label>
           </td>
           <!-- <td>각 영역당<br>1과목 이상 필수 이수</td> -->
@@ -166,8 +166,9 @@
           <td><input type="text" class="standard_number" id="elective_st" value="0" readonly tabindex="-1"></td>
           <td></td>
           <td>
-            <input type="number" id="elective_liberal" placeholder="0" value="" onchange="Liberal_Sum();total_point_sum()" onkeyup='Liberal_Sum();total_point_sum()' min="0" max="50" class="inputnumber" maxlength="2"
-              oninput="maxLengthCheck(this)"><label for="elective_liberal"> 학점</label>
+            <input type="number" id="elective_liberal" placeholder="0" value="" onchange="Liberal_Sum();total_point_sum();numbercolor('total_lib_st','liberal_total');"
+             onkeyup="Liberal_Sum();total_point_sum();numbercolor('total_lib_st','liberal_total');" min="0" max="50" class="inputnumber" maxlength="2" oninput="maxLengthCheck(this)">
+             <label for="elective_liberal"> 학점</label>
           </td>
           <!-- <td>자율이수</td> -->
         </tr>
@@ -176,7 +177,7 @@
           <td><input type="text" class="standard_number" id="total_lib_st" value="23" readonly tabindex="-1"></td>
           <td>45</td>
           <td>
-            <input type="text" id="liberal_total" value="0" class="totalnumber" onchange="total_point_sum()" readonly tabindex="-1"> 학점
+            <input type="text" id="liberal_total" value="0" class="totalnumber" onchange="total_point_sum();numbercolor('total_lib_st','liberal_total');" readonly tabindex="-1"> 학점
           </td>
           <!-- <td>45 학점 초과 시<br>졸업 학점에서 감산</td> -->
         </tr>
