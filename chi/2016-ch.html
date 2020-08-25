@@ -124,7 +124,7 @@
           <th>국어</th>
           <td><input type="text" class="standard_number" id="com_kor_st" value="2" readonly tabindex="-1"></td>
           <td>2</td>
-          <td colspan="2"><select class="checkselect" id="common_kor" onchange="Liberal_Sum();total_point_sum()">
+          <td colspan="2"><select class="checkselect" id="common_kor" onchange="Liberal_Sum();total_point_sum();numbercolor('com_kor_st', 'common_kor');numbercolor('total_lib_st','liberal_total');">
               <option value="0">0</option>
               <option value="2">2</option>
             </select><label for="common_kor"> 学分</label></td>
@@ -134,7 +134,7 @@
           <th>영어</th>
           <td><input type="text" class="standard_number" id="com_eng_st" value="2" readonly tabindex="-1"></td>
           <td>2</td>
-          <td colspan="2"><select id="common_eng" class="checkselect" onchange="Liberal_Sum();total_point_sum()">
+          <td colspan="2"><select id="common_eng" class="checkselect" onchange="Liberal_Sum();total_point_sum();numbercolor('com_eng_st', 'common_eng');numbercolor('total_lib_st','liberal_total');">
               <option value="0">0</option>
               <option value="2">2</option>
             </select><label for="common_eng"> 学分</label><br>
@@ -146,7 +146,7 @@
           <th>기타</th>
           <td><input type="text" class="standard_number" id="com_etc_st" value="10" readonly tabindex="-1"></td>
           <td>10</td>
-          <td colspan="2"><select id="common_etc" class="checkselect" onchange="Liberal_Sum();total_point_sum()">
+          <td colspan="2"><select id="common_etc" class="checkselect" onchange="Liberal_Sum();total_point_sum();numbercolor('com_etc_st', 'common_etc');numbercolor('total_lib_st','liberal_total');">
               <option value="0">0</option>
               <option value="2">2</option>
               <option value="4">4</option>
@@ -164,7 +164,7 @@
           <td rowspan="5"></td>
           <td><input type="checkbox" id="core1" tabindex="-1"><label for="core1">도전</label></td>
           <td rowspan="5">
-            <input type="number" id="core_total" placeholder="0" value="" onchange="Liberal_Sum();total_point_sum()" onkeyup='Liberal_Sum();total_point_sum()' class="inputnumber" min="0" max="50" maxlength="2" oninput="maxLengthCheck(this)"><label
+            <input type="number" id="core_total" placeholder="0" value="" onchange="Liberal_Sum();total_point_sum();numbercolor('core_st', 'core_total');numbercolor('total_lib_st','liberal_total');" onkeyup="Liberal_Sum();total_point_sum();numbercolor('core_st', 'core_total');numbercolor('total_lib_st','liberal_total');" class="inputnumber" min="0" max="50" maxlength="2" oninput="maxLengthCheck(this)"><label
               for="core_total"> 学分</label>
           </td>
           <!-- <td rowspan="5">각 영역당<br>1과목 이상 필수 이수</td> -->
@@ -187,7 +187,7 @@
           <td><input type="text" class="standard_number" id="elective_st" value="0" readonly tabindex="-1"></td>
           <td></td>
           <td colspan="2">
-            <input type="number" id="elective_liberal" placeholder="0" value="" onchange="Liberal_Sum();total_point_sum()" onkeyup='Liberal_Sum();total_point_sum()' min="0" max="50" class="inputnumber" maxlength="2"
+            <input type="number" id="elective_liberal" placeholder="0" value="" onchange="Liberal_Sum();total_point_sum();numbercolor('total_lib_st','liberal_total');" onkeyup="Liberal_Sum();total_point_sum();numbercolor('total_lib_st','liberal_total');" min="0" max="50" class="inputnumber" maxlength="2"
               oninput="maxLengthCheck(this)"><label for="elective_liberal"> 学分</label>
           </td>
           <!-- <td>자율이수</td> -->
@@ -196,7 +196,7 @@
         <td><input type="text" class="standard_number" id="total_lib_st" value="29" readonly tabindex="-1"></td>
         <td>45</td>
         <td colspan="2">
-          <input type="text" id="liberal_total" value="0" class="totalnumber" onchange="total_point_sum()" readonly tabindex="-1">学分
+          <input type="text" id="liberal_total" value="0" class="totalnumber" onchange="total_point_sum();numbercolor('total_lib_st','liberal_total');" readonly tabindex="-1">学分
         </td>
         <!-- <td>45 학점 초과 시<br>졸업 학점에서 감산</td> -->
         </tr>
