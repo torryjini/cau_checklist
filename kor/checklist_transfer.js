@@ -23,8 +23,6 @@ function tr_major_standard_maker() {
     document.getElementById("total_standard").value = 99;
   }
 
-  document.getElementById("the_total").value = "0";
-
   if (Multimajortext.includes("심화") || Multimajortext.includes("해당없음")) {
     document.getElementById("double_major_none").checked = true;
     document.getElementById("double_major_point").value = null;

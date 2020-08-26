@@ -74,8 +74,6 @@ function major_standard_maker() {
   var Multimajor = document.getElementById("MultiMajor_select");
   var Multimajortext = Multimajor.options[Multimajor.selectedIndex].text;
 
-  document.getElementById("the_total").value = "0";
-
   if (Multimajortext.includes("심화")) {
     document.getElementById("double_major_none").checked = true;
     document.getElementById("double_major_point").value = null;
