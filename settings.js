@@ -83,6 +83,16 @@ function MajortableReset() {
 
 function OfficeNumber() {
   var Office = {
+    //인문대학
+    "korean": "국어국문학과",
+    "english": "영어영문학과",
+    "german": "유럽문화학부 독일어문학",
+    "france": "유럽문화학부 프랑스어문학",
+    "russia": "유럽문화학부 러시아어문학",
+    "japan": "아시아문화학부 일본어문학",
+    "china": "아시아문화학부 중국어문학",
+    "philosophy": "철학과",
+    "history": "역사학과",
     //사회과학대학
     "psyche": "심리학과",
     "politics": "정치국제학과",
@@ -95,6 +105,11 @@ function OfficeNumber() {
     "public-admin": "공공인재학부",
     "public-policy": "공공인재학부",
     "public": "공공인재학부",
+    //자연과학대학
+    "physics":"물리학과",
+    "chemistry":"화학과",
+    "bio-science":"생명과학과",
+    "math":"수학과",
     //경영경제대학
     "biz_ba":"경영학부",
     "biz_glofi":"경영학부",
@@ -106,6 +121,16 @@ function OfficeNumber() {
     "security":"산업보안학과"
   };
   var PhoneNumber = {
+    //인문대학
+    "korean": "02-820-5084",
+    "english": "02-820-5095",
+    "german": "02-820-5105",
+    "france": "02-820-5171",
+    "russia": "02-820-5239",
+    "japan": "02-820-5118",
+    "china": "02-820-5243",
+    "philosophy": "02-820-5130",
+    "history": "02-820-5137",
     //사회과학대학
     "psyche": "02-820-5124",
     "politics": "02-820-5473",
@@ -118,6 +143,11 @@ function OfficeNumber() {
     "public-admin": "02-820-5445",
     "public-policy": "02-820-5445",
     "public": "02-820-5445",
+    //자연과학대학
+    "physics":"02-820-5189",
+    "chemistry":"02-820-5196",
+    "bio-science":"02-820-5206",
+    "math":"02-820-5214",
     //경영경제대학
     "biz_ba":"02-820-5539",
     "biz_glofi":"02-820-5540",
