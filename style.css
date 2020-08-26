@@ -303,6 +303,10 @@ input[type=reset]:hover {
   text-align: center;
 }
 
+#dept {
+  width: 15rem;
+}
+
 #phone, #Davinci {
   width: 7rem;
 }
