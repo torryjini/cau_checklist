@@ -68,7 +68,9 @@
             <form id="Major_select_form">
               <select id="college_select" onchange="collegechanges(document.getElementById('college_select').value)">
                 <option value="none">Select</option>
+                <option value="humanity">인문대학</option>
                 <option value="society">사회과학대학</option>
+                <option value="natural">자연과학대학</option>
                 <option value="bne">경영경제대학</option>
               </select>
           </td>
@@ -79,7 +81,7 @@
         </tr>
         <tr>
           <td>
-            <select id="Major_select" onchange="BaseNeceStandard();OfficeNumber();Form_Reset('Multimajor_form')" onclick="BaseNeceStandard();OfficeNumber();Form_Reset('Multimajor_form')" onkeyup="BaseNeceStandard();OfficeNumber()" required>
+            <select id="Major_select" onchange="BaseNeceStandard2016();OfficeNumber();Form_Reset('Multimajor_form')" onclick="BaseNeceStandard2016();OfficeNumber();Form_Reset('Multimajor_form')" onkeyup="BaseNeceStandard2016();OfficeNumber()" required>
               <option value="none">Select</option>
             </select>
             </form>

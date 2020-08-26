@@ -119,9 +119,15 @@ function Liberal_cal() {
 
 // 연도별 학과 전공기초, 전공필수 기준
 function collegechanges(fr) {
-  if (fr == "society") {
-    num = new Array("선  택", "정치국제학과", "공공인재학부", "심리학과", "문헌정보학과", "사회복지학부", "미디어커뮤니케이션학부", "도시계획부동산학과", "사회학과");
+  if (fr == "humanity") {
+    num = new Array("선  택", "국어국문학과", "영어영문학과", "유럽문화_독일어문학", "유럽문화_프랑스어문학", "유럽문화_러시아어문학", "아시아문화_일본어문학", "아시아문화_중국어문학", "철학과", "역사학과");
+    vnum = new Array("none", "korean", "english", "german", "france", "russia", "japan", "china", "philosophy", "history");
+  } else if (fr == "society") {
+    num = new Array("선  택", "정치국제학과", "공공인재학부", "심리학과", "문헌정보학과", "사회복지학부", "신문방송학부", "도시계획부동산학과", "사회학과");
     vnum = new Array("none", "politics", "public", "psyche", "lis", "socialwelfare", "cmc", "planning", "sociology");
+  } else if (fr == "natural") {
+    num = new Array("선  택", "물리학과", "화학과", "생명과학과", "수학과");
+    vnum = new Array("none", "physics", "chemistry", "bio-science", "math");
   } else if (fr == "bne") {
     num = new Array("선  택", "경영학부_경영학전공", "경영학부_글로벌금융", "경제학부", "광고홍보학과", "응용통계학과", "지식경영학부", "국제물류학과");
     vnum = new Array("none", "biz_ba", "biz_glofi", "econ", "adpr", "stat", "gloknol", "log");
@@ -133,62 +139,9 @@ function collegechanges(fr) {
   for (i = 0; i = document.getElementById("Major_select").length; i++) {
     document.getElementById("Major_select").options[0] = null;
   };
+
   for (i = 0; i < num.length; i++) {
     document.getElementById("Major_select").options[i] = new Option(num[i], vnum[i]);
-  }
-}
-
-function BaseNeceStandard() {
-  var Base = { // 전공기초: [2012, 2013, 2014]
-    //사회과학대학
-    "psyche": ["10", "10", "10"],
-    "politics": ["12", "12", "12"],
-    "lis": ["10", "12", "12"],
-    "socialwelfare": ["12", "12", "12"],
-    "cmc": ["15", "15", "15"],
-    "planning": ["12", "12", "12"],
-    "sociology": ["12", "12", "12"],
-    "public": ["18", "18", "18"],
-    //경영경제대학
-    "biz_ba": ["14", "14", "14"],
-    "biz_glofi": ["18", "18", "18"],
-    "econ": ["6", "6", "6"],
-    "adpr": ["9", "9", "9"],
-    "stat": ["12", "12", "12"],
-    "gloknol": ["18", "18", "18"],
-    "log": ["15", "15", "15"],
-  };
-  var Nece = { //전공필수: [2012, 2013, 2014]
-    //사회과학대학
-    "psyche": ["9", "9", "9"],
-    "politics": ["9", "9", "9"],
-    "lis": ["18", "18", "18"],
-    "socialwelfare": ["18", "18", "18"],
-    "cmc": ["9", "9", "9"],
-    "planning": ["18", "18", "18"],
-    "sociology": ["9", "9", "9"],
-    "public": ["19", "19", "19"],
-    //경영경제대학
-    "biz_ba": ["24", "24", "24"],
-    "biz_glofi": ["39", "39", "39"],
-    "econ": ["9", "9", "9"],
-    "adpr": ["9", "12", "12"],
-    "stat": ["15", "15", "15"],
-    "gloknol": ["21", "21", "21"],
-    "log": ["18", "18", "18"],
-  };
-
-  var Major = document.getElementById("Major_select").value;
-  var AdYear = Number(document.getElementById("ad-year").value);
-  var i = AdYear - 2012;
-  var Baseselect = Base[Major];
-  var Neceselect = Nece[Major];
-  if (Major == "none") {
-    document.getElementById("base_standard").value = "-";
-    document.getElementById("nece_standard").value = "-";
-  } else {
-    document.getElementById("base_standard").value = Baseselect[i];
-    document.getElementById("nece_standard").value = Neceselect[i];
   }
 }
 

@@ -168,6 +168,360 @@ function OfficeNumber() {
   }
 }
 
+function BaseNeceStandard12to14() {
+  var Base = { // 전공기초: [2012, 2013, 2014]
+    //인문대학
+    "korean": ["10", "10", "10"],
+    "english": ["12", "12", "12"],
+    "german": ["14", "14", "14"],
+    "france": ["14", "14", "14"],
+    "russia": ["14", "14", "14"],
+    "japan": ["12", "12", "12"],
+    "china": ["12", "12", "12"],
+    "philosophy": ["12", "12", "12"],
+    "history": ["12", "12", "12"],
+    //사회과학대학
+    "psyche": ["10", "10", "10"],
+    "politics": ["12", "12", "12"],
+    "lis": ["10", "12", "12"],
+    "socialwelfare": ["12", "12", "12"],
+    "cmc": ["15", "15", "15"],
+    "planning": ["12", "12", "12"],
+    "sociology": ["12", "12", "12"],
+    "public": ["18", "18", "18"],
+    //자연과학대학
+    "physics": ["10", "10", "14"],
+    "chemistry": ["14", "14", "14"],
+    "bio-science": ["14", "14", "14"],
+    "math": ["16", "16", "16"],
+    //경영경제대학
+    "biz_ba": ["14", "14", "14"],
+    "biz_glofi": ["18", "18", "18"],
+    "econ": ["6", "6", "6"],
+    "adpr": ["9", "9", "9"],
+    "stat": ["12", "12", "12"],
+    "gloknol": ["18", "18", "18"],
+    "log": ["15", "15", "15"],
+  };
+  var Nece = { //전공필수: [2012, 2013, 2014]
+    //인문대학
+    "korean": ["12", "12", "12"],
+    "english": ["9", "9", "9"],
+    "german": ["15", "15", "15"],
+    "france": ["19", "15", "15"],
+    "russia": ["18", "18", "18"],
+    "japan": ["15", "15", "15"],
+    "china": ["15", "15", "15"],
+    "philosophy": ["18", "18", "18"],
+    "history": ["9", "9", "9"],
+    //사회과학대학
+    "psyche": ["9", "9", "9"],
+    "politics": ["9", "9", "9"],
+    "lis": ["18", "18", "18"],
+    "socialwelfare": ["18", "18", "18"],
+    "cmc": ["9", "9", "9"],
+    "planning": ["18", "18", "18"],
+    "sociology": ["9", "9", "9"],
+    "public": ["19", "19", "19"],
+    //자연과학대학
+    "physics": ["15", "15", "15"],
+    "chemistry": ["15", "15", "15"],
+    "bio-science": ["18", "18", "18"],
+    "math": ["18", "18", "18"],
+    //경영경제대학
+    "biz_ba": ["24", "24", "24"],
+    "biz_glofi": ["39", "39", "39"],
+    "econ": ["9", "9", "9"],
+    "adpr": ["9", "12", "12"],
+    "stat": ["15", "15", "15"],
+    "gloknol": ["21", "21", "21"],
+    "log": ["18", "18", "18"],
+  };
+
+  var Major = document.getElementById("Major_select").value;
+  var AdYear = Number(document.getElementById("ad-year").value);
+  var i = AdYear - 2012;
+  var Baseselect = Base[Major];
+  var Neceselect = Nece[Major];
+  if (Major == "none") {
+    document.getElementById("base_standard").value = "-";
+    document.getElementById("nece_standard").value = "-";
+  } else {
+    document.getElementById("base_standard").value = Baseselect[i];
+    document.getElementById("nece_standard").value = Neceselect[i];
+  }
+}
+
+function BaseNeceStandard2015() {
+  var Major_base = {
+    //인문대학
+    "korean": "10",
+    "english": "12",
+    "german": "14",
+    "france": "14",
+    "russia": "14",
+    "japan": "12",
+    "china": "12",
+    "philosophy": "12",
+    "history": "12",
+    //사회과학대학
+    "psyche": "10",
+    "politics": "12",
+    "lis": "12",
+    "socialwelfare": "12",
+    "cmc": "15",
+    "planning": "12",
+    "sociology": "12",
+    "public-admin": "17",
+    "public-policy": "16",
+    //자연과학대학
+    "physics": "14",
+    "chemistry": "14",
+    "bio-science": "14",
+    "math": "16",
+    //경영경제대학
+    "biz_ba": "14",
+    "biz_glofi": "18",
+    "econ": "6",
+    "adpr": "9",
+    "stat": "12",
+    "gloknol": "18",
+    "log": "15",
+    "security": "15"
+  };
+
+  var Major_nece = {
+    //인문대학
+    "korean": "12",
+    "english": "9",
+    "german": "15",
+    "france": "15",
+    "russia": "18",
+    "japan": "15",
+    "china": "15",
+    "philosophy": "18",
+    "history": "19",
+    //사회과학대학
+    "psyche": "9",
+    "politics": "9",
+    "lis": "18",
+    "socialwelfare": "18",
+    "cmc": "9",
+    "planning": "18",
+    "sociology": "9",
+    "public-admin": "19",
+    "public-policy": "17",
+    //자연과학대학
+    "physics": "18",
+    "chemistry": "15",
+    "bio-science": "18",
+    "math": "18",
+    //경영경제대학
+    "biz_ba": "24",
+    "biz_glofi": "39",
+    "econ": "9",
+    "adpr": "12",
+    "stat": "15",
+    "gloknol": "21",
+    "log": "18",
+    "security": "18"
+  };
+
+  var Major = document.getElementById("Major_select").value;
+  if (Major == "none") {
+    document.getElementById("base_standard").value = "-";
+    document.getElementById("nece_standard").value = "-";
+  } else {
+    document.getElementById("base_standard").value = Major_base[Major];
+    document.getElementById("nece_standard").value = Major_nece[Major];
+  }
+}
+
+function BaseNeceStandard2016() {
+  var Base = { // 전공기초: [2016, 2017, 2018, 2019, 2020]
+    //인문대학
+    "korean": ["10", "10", "10", "10", "10"],
+    "english": ["12", "12", "12", "12", "12"],
+    "german": ["14", "14", "14", "14", "14"],
+    "france": ["14", "14", "14", "14", "14"],
+    "russia": ["14", "14", "14", "14", "14"],
+    "japan": ["12", "12", "12", "12", "12"],
+    "china": ["12", "12", "12", "12", "12"],
+    "philosophy": ["12", "12", "12", "12", "12"],
+    "history": ["12", "12", "12", "12", "12"],
+    //사회과학대학
+    "psyche": ["10", "10", "10", "10", "10"],
+    "politics": ["12", "12", "12", "12", "12"],
+    "lis": ["12", "12", "12", "12", "12"],
+    "socialwelfare": ["12", "12", "12", "12", "12"],
+    "cmc": ["15", "15", "15", "15", "15"],
+    "planning": ["12", "12", "12", "12", "12"],
+    "sociology": ["12", "12", "12", "12", "12"],
+    "public-admin": ["17", "18", "18", "17", "17"],
+    "public-policy": ["16", "17", "17", "17", "17"],
+    //자연과학대학
+    "physics": ["14", "14", "14", "14", "14"],
+    "chemistry": ["14", "14", "14", "14", "14"],
+    "bio-science": ["14", "14", "14", "14", "14"],
+    "math": ["16", "16", "16", "16", "16"],
+    //경영경제대학
+    "biz_ba": ["14", "14", "14", "14", "14"],
+    "biz_glofi": ["18", "18", "18", "18", "18"],
+    "econ": ["6", "6", "6", "6", "6"],
+    "adpr": ["9", "9", "9", "9", "9"],
+    "stat": ["12", "12", "12", "12", "12"],
+    "gloknol": ["15", "18", "18", "18", "18"],
+    "log": ["15", "15", "15", "15", "15"],
+    "security": ["15", "15", "15", "15", "15"]
+  };
+  var Nece = { //전공필수: [2016, 2017, 2018, 2019, 2020]
+    //인문대학
+    "korean": ["12", "12", "12", "12", "12"],
+    "english": ["9", "9", "9", "9", "9"],
+    "german": ["15", "15", "15", "15", "15"],
+    "france": ["15", "15", "15", "15", "15"],
+    "russia": ["18", "18", "18", "18", "18"],
+    "japan": ["15", "15", "15", "15", "15"],
+    "china": ["15", "15", "15", "15", "15"],
+    "philosophy": ["18", "18", "18", "18", "18"],
+    "history": ["9", "9", "9", "9", "9"],
+    //사회과학대학
+    "psyche": ["9", "9", "9", "9", "9"],
+    "politics": ["9", "9", "9", "9", "9"],
+    "lis": ["18", "18", "18", "18", "18"],
+    "socialwelfare": ["18", "18", "18", "18", "18"],
+    "cmc": ["9", "9", "9", "9", "9"],
+    "planning": ["18", "18", "18", "18", "18"],
+    "sociology": ["9", "9", "9", "9", "12"],
+    "public-admin": ["19", "19", "19", "18", "18"],
+    "public-policy": ["17", "17", "17", "18", "18"],
+    //자연과학대학
+    "physics": ["18", "18", "17", "17", "17"],
+    "chemistry": ["15", "15", "15", "15", "15"],
+    "bio-science": ["18", "18", "18", "18", "18"],
+    "math": ["18", "18", "18", "18", "18"],
+    //경영경제대학
+    "biz_ba": ["24", "24", "24", "24", "24"],
+    "biz_glofi": ["39", "39", "39", "39", "39"],
+    "econ": ["9", "9", "9", "9", "9"],
+    "adpr": ["12", "12", "12", "12", "12"],
+    "stat": ["15", "15", "12", "12", "12"],
+    "gloknol": ["21", "21", "21", "21", "21"],
+    "log": ["18", "12", "12", "12", "12"],
+    "security": ["15", "18", "18", "18", "18"]
+  };
+
+  var Major = document.getElementById("Major_select").value;
+  var AdYear = Number(document.getElementById("ad-year").value);
+  var i = AdYear - 2016;
+  var Baseselect = Base[Major];
+  var Neceselect = Nece[Major];
+  if (Major == "none") {
+    document.getElementById("base_standard").value = "-";
+    document.getElementById("nece_standard").value = "-";
+  } else {
+    document.getElementById("base_standard").value = Baseselect[i];
+    document.getElementById("nece_standard").value = Neceselect[i];
+  }
+}
+
+function BaseNeceStandard_tr2017() {
+  var Base = { // 전공기초: [2017, 2018, 2019, 2020]
+    //인문대학
+    "korean": ["10", "10", "10", "10"],
+    "english": ["12", "12", "12", "12"],
+    "german": ["14", "14", "14", "14"],
+    "france": ["14", "14", "14", "14"],
+    "russia": ["14", "14", "14", "14"],
+    "japan": ["12", "12", "12", "12"],
+    "china": ["12", "12", "12", "12"],
+    "philosophy": ["12", "12", "12", "12"],
+    "history": ["12", "12", "12", "12"],
+    //사회과학대학
+    "psyche": ["10", "10", "10", "10"],
+    "politics": ["6", "6", "6", "6"],
+    "lis": ["12", "12", "12", "12"],
+    "socialwelfare": ["12", "12", "12", "12"],
+    "cmc": ["9", "9", "9", "9"],
+    "cmc2": ["12", "12", "12", "12"],
+    "planning": ["0", "0", "0", "0"],
+    "sociology": ["12", "12", "12", "12"],
+    "public-admin": ["8", "8", "12", "12"],
+    "public-policy": ["7", "7", "11", "11"],
+    //자연과학대학
+    "physics": ["14", "14", "14", "14"],
+    "chemistry": ["14", "14", "14", "14"],
+    "bio-science": ["14", "14", "14", "14"],
+    "math": ["0", "0", "0", "0"],
+    //경영경제대학
+    "biz_ba": ["14", "14", "14", "14"],
+    "biz_glofi": ["18", "18", "18", "18"],
+    "econ": ["6", "6", "6", "6"],
+    "adpr": ["9", "9", "9", "9"],
+    "stat": ["12", "12", "12", "12"],
+    "gloknol": ["9", "9", "9", "9"],
+    "log": ["3", "3", "3", "3"],
+    "log2": ["15", "15", "15", "15"],
+    "security": ["15", "15", "15", "15"]
+  };
+  var Nece = { //전공필수: [2017, 2018, 2019, 2020]
+    //인문대학
+    "korean": ["12", "12", "12", "12"],
+    "english": ["9", "9", "9", "9"],
+    "german": ["15", "15", "15", "15"],
+    "france": ["15", "15", "15", "15"],
+    "russia": ["18", "18", "18", "18"],
+    "japan": ["15", "15", "15", "15"],
+    "china": ["15", "15", "15", "15"],
+    "philosophy": ["18", "18", "18", "18"],
+    "history": ["9", "9", "9", "9"],
+    //사회과학대학
+    "psyche": ["9", "9", "9", "9"],
+    "politics": ["9", "9", "9", "9"],
+    "lis": ["18", "18", "18", "18"],
+    "socialwelfare": ["18", "18", "18", "18"],
+    "cmc": ["9", "9", "9", "9"],
+    "planning": ["18", "18", "18", "18"],
+    "sociology": ["9", "9", "9", "12"],
+    "public-admin": ["19", "19", "18", "18"],
+    "public-policy": ["17", "17", "18", "18"],
+    //자연과학대학
+    "physics": ["18", "17", "17", "17"],
+    "chemistry": ["15", "15", "15", "15"],
+    "bio-science": ["18", "18", "18", "18"],
+    "math": ["18", "18", "18", "18"],
+    //경영경제대학
+    "biz_ba": ["24", "24", "24", "24"],
+    "biz_glofi": ["39", "39", "39", "39"],
+    "econ": ["9", "9", "9", "9"],
+    "adpr": ["6", "6", "6", "6"],
+    "stat": ["15", "12", "12", "12"],
+    "gloknol": ["21", "21", "21", "21"],
+    "log": ["12", "12", "12", "12"],
+    "security": ["18", "18", "18", "18"]
+  };
+
+  var Major = document.getElementById("Major_select").value;
+  var AdYear = Number(document.getElementById("ad-year").value);
+  var SecYear = document.getElementById("2ndyear").checked;
+  var i = AdYear - 2017;
+  var Baseselect = Base[Major];
+  var Neceselect = Nece[Major];
+  if (Major == "none") {
+    document.getElementById("base_standard").value = "-";
+    document.getElementById("nece_standard").value = "-";
+  } else if (SecYear && Major == "cmc") {
+    document.getElementById("base_standard").value = Base.cmc2[i];
+    document.getElementById("nece_standard").value = Neceselect[i];
+  } else if (SecYear && Major == "log") {
+    document.getElementById("base_standard").value = Base.log2[i];
+    document.getElementById("nece_standard").value = Neceselect[i];
+  } else {
+    document.getElementById("base_standard").value = Baseselect[i];
+    document.getElementById("nece_standard").value = Neceselect[i];
+  }
+}
+
 function checkcont1(none, point) {
   var none_checked = document.getElementById(none).checked;
   if (!none_checked) {
