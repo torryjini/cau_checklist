@@ -55,18 +55,18 @@
         </tr>
         <tr>
           <td>
-            <select id="ad-year" onchange="Form_Reset('Major_select_form');Form_Reset('Multimajor_form');majorselectreset();MajortableReset();" required>
+            <select id="ad-year" onchange="Form_Reset('Major_select_form');Form_Reset('Multimajor_form');Form_Reset('Major');majorselectreset();MajortableReset();" required>
               <option value="0">선 택</option>
               <option value="2017">2017</option>
               <option value="2018">2018</option>
               <option value="2019">2019</option>
               <option value="2020">2020</option>
             </select>
-            <input type="checkbox" id="2ndyear" onchange="Form_Reset('Major_select_form');majorselectreset();MajortableReset();" tabindex="-1"><label for="2ndyear">2학년편입</label>
+            <input type="checkbox" id="2ndyear" onchange="Form_Reset('Major_select_form');Form_Reset('Major');majorselectreset();MajortableReset();" tabindex="-1"><label for="2ndyear">2학년편입</label>
           </td>
           <td>
             <form id="Major_select_form">
-              <select id="college_select" onchange="collegechanges(document.getElementById('college_select').value);MajortableReset();">
+              <select id="college_select" onchange="collegechanges(document.getElementById('college_select').value);Form_Reset('Major');MajortableReset();">
                 <option value="none">선 택</option>
                 <option value="humanity">인문대학</option>
                 <option value="society">사회과학대학</option>
@@ -81,7 +81,7 @@
         </tr>
         <tr>
           <td>
-            <select id="Major_select" onchange="BaseNeceStandard_tr2017();OfficeNumber();Form_Reset('Multimajor_form');MajortableReset();" onclick="BaseNeceStandard_tr2017();OfficeNumber();Form_Reset('Multimajor_form')" onkeyup="BaseNeceStandard_tr2017();OfficeNumber()" required>
+            <select id="Major_select" onchange="BaseNeceStandard_tr2017();OfficeNumber();Form_Reset('Multimajor_form');Form_Reset('Major');MajortableReset();" onclick="BaseNeceStandard_tr2017();OfficeNumber();Form_Reset('Multimajor_form')" onkeyup="BaseNeceStandard_tr2017();OfficeNumber()" required>
               <option value="none">선 택</option>
             </select>
             </form>
