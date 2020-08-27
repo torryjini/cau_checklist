@@ -62,7 +62,7 @@
               <option value="2019">2019</option>
               <option value="2020">2020</option>
             </select>
-            <input type="checkbox" id="2ndyear" onchange="Form_Reset('Major_select_form');Form_Reset('Major');majorselectreset();MajortableReset();" tabindex="-1"><label for="2ndyear">2학년편입</label>
+            <input type="checkbox" id="2ndyear" onchange="Form_Reset('Major_select_form');Form_Reset('Major');majorselectreset();MajortableReset();secyearmultimajor();" tabindex="-1"><label for="2ndyear">2학년편입</label>
           </td>
           <td>
             <form id="Major_select_form">
@@ -88,7 +88,7 @@
           </td>
           <td>
             <form id="Multimajor_form">
-              <select id="MultiMajor_select" onchange="tr_major_standard_maker();total_point_sum();" required>
+              <select id="MultiMajor_select" onchange="tr_major_standard_maker();total_point_sum();" required disabled>
                 <option value="45">해당없음</option>
                 <option value="66">전공심화</option>
                 <option value="45">복수전공</option>
