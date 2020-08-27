@@ -56,6 +56,15 @@ function libcolorreset() {
   document.getElementById("common_etc").style.color = "red";
 }
 
+function Liberal_Sum() {
+  var elective_point = Number(document.getElementById("elective_liberal").value);
+  var common_kor_point = Number(document.getElementById("common_kor").value);
+  var common_eng_point = Math.floor(Number(document.getElementById("common_eng").value));
+  var common_etc_point = Number(document.getElementById("common_etc").value);
+  var core_total_point = Number(document.getElementById("core_total").value);
+  document.getElementById("liberal_total").value = elective_point + common_kor_point + common_eng_point + common_etc_point + core_total_point;
+}
+
 function total_point_sum() {
   var LiberalTotal = Number(document.getElementById("liberal_total").value);
   var Basepoint = Number(document.getElementById("base_input").value);
@@ -379,6 +388,21 @@ function tr_major_standard_maker() {
     document.getElementById("cross_point3").readOnly = false;
     document.getElementById("plan_table").style.display = "";
   }
+}
+
+function tr_total_point_sum() {
+  var Liberal_point = Number(document.getElementById("liberal_input").value);
+  var Basepoint = Number(document.getElementById("base_input").value);
+  var Majorpoint = Number(document.getElementById("major_input").value);
+  var Doublepoint = Number(document.getElementById("double_major_point").value);
+  var Linkpoint = Number(document.getElementById("link_major_point").value);
+  var Fusionpoint = Number(document.getElementById("fusion_major_point").value);
+  var Planpoint = Number(document.getElementById("plan_major_point").value);
+  var Minorpoint = Number(document.getElementById("minor_point").value);
+  var Freepoint = Number(document.getElementById("free_point").value);
+  var Teachpoint = Number(document.getElementById("teaching_point").value);
+
+  document.getElementById("the_total").value = Liberal_point + Basepoint + Majorpoint + Doublepoint + Linkpoint + Fusionpoint + Planpoint + Minorpoint + Freepoint + Teachpoint;
 }
 
 function OfficeNumber() {
