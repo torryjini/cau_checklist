@@ -247,6 +247,16 @@ function major_standard_maker() {
   }
 }
 
+//편입생 관련
+function secyearmultimajor(){
+  var SecYear = document.getElementById("2ndyear").checked;
+  if(!SecYear) {
+    document.getElementById("MultiMajor_select").disabled = true;
+  } else {
+    document.getElementById("MultiMajor_select").disabled = false;
+  }
+}
+
 function tr_major_standard_maker() {
   var Multimajor_standard = Number(document.getElementById("MultiMajor_select").value);
   document.getElementById("major_standard").value = Multimajor_standard;
