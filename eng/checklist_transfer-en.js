@@ -360,18 +360,3 @@ function BaseNeceresult(Majorstandard) {
     swal("Total credits result", word, "error")
   }
 }
-
-function tr_total_point_sum() {
-  var Liberal_point = Number(document.getElementById("liberal_input").value);
-  var Basepoint = Number(document.getElementById("base_input").value);
-  var Majorpoint = Number(document.getElementById("major_input").value);
-  var Doublepoint = Number(document.getElementById("double_major_point").value);
-  var Linkpoint = Number(document.getElementById("link_major_point").value);
-  var Fusionpoint = Number(document.getElementById("fusion_major_point").value);
-  var Planpoint = Number(document.getElementById("plan_major_point").value);
-  var Minorpoint = Number(document.getElementById("minor_point").value);
-  var Freepoint = Number(document.getElementById("free_point").value);
-  var Teachpoint = Number(document.getElementById("teaching_point").value);
-
-  document.getElementById("the_total").value = Liberal_point + Basepoint + Majorpoint + Doublepoint + Linkpoint + Fusionpoint + Planpoint + Minorpoint + Freepoint + Teachpoint;
-}
