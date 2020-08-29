@@ -187,7 +187,7 @@ input[type=button], input[type=reset] {
   grid-template-columns: 73% 27%;
 }
 
-.row:before, .row:after{
+.container:before, .container:after{
 display: inline-block !important;
 }
 
