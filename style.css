@@ -188,7 +188,7 @@ input[type=button], input[type=reset] {
 }
 
 .container:before, .container:after{
-display: inline-block !important;
+display: none !important;
 }
 
 .item2 {
