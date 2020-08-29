@@ -499,6 +499,7 @@ function OfficeNumber() {
   } else {
     document.getElementById("dept").value = Office[Major];
     document.getElementById("phone").value = PhoneNumber[Major];
+    document.getElementById("phonenumber").setAttribute("href","tel:" + PhoneNumber[Major]); //전화연결 가능
   }
 }
 
