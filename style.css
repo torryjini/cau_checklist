@@ -184,7 +184,7 @@ input[type=button], input[type=reset] {
 
 .container {
   display: grid;
-  grid-template-columns: 73% 27%;
+  grid-template-columns: 75% 25%;
 }
 
 .container:before, .container:after{
