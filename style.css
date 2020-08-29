@@ -187,6 +187,10 @@ input[type=button], input[type=reset] {
   grid-template-columns: 73% 27%;
 }
 
+.row:before, .row:after{
+display: inline-block !important;
+}
+
 .item2 {
   text-align: right;
 }
