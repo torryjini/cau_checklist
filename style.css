@@ -179,7 +179,16 @@ input[type=button], input[type=reset] {
   height: 1.8rem;
   border-radius: 3px;
   font-size: 1rem;
-  color:red;
+  color: red;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 73% 27%;
+}
+
+.item2 {
+  text-align: right;
 }
 
 .info-btn {
@@ -192,7 +201,6 @@ input[type=button], input[type=reset] {
   border-radius: 2rem;
   font-size: 1rem;
   cursor: pointer;
-  float: right;
 }
 
 .info-btn:hover {
@@ -227,7 +235,7 @@ input[type=button], input[type=reset] {
   border: 0px;
   font-family: inherit;
   font-size: 1rem;
-  color:red;
+  color: red;
 }
 
 .call {
