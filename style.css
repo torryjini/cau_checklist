@@ -182,7 +182,7 @@ input[type=button], input[type=reset] {
   color: red;
 }
 
-.container {
+#container {
   display: grid;
   width: 100%;
   grid-template-columns: 75% 25%;
