@@ -188,11 +188,11 @@ input[type=button], input[type=reset] {
   grid-template-columns: 75% 25%;
 }
 
-#container:before, #container:after{
+/* #container:before, #container:after{
 display: none !important;
-}
+} */
 
-.item2 {
+.item {
   text-align: right;
 }
 
