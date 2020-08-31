@@ -11,6 +11,24 @@ function majorselectreset() {
   }
 }
 
+function multimajorchanges(fr) {
+  if (fr == "edu") {
+    num = new Array("选 择", "전공심화", "복수전공", "연계전공", "융합전공", "설계전공");
+    vnum = new Array("0", "66", "50", "50", "50", "50");
+  } else {
+    num = new Array("选 择", "전공심화", "복수전공", "연계전공", "융합전공", "설계전공");
+    vnum = new Array("0", "66", "45", "45", "45", "45");
+  }
+
+  for (i = 0; i = document.getElementById("MultiMajor_select").length; i++) {
+    document.getElementById("MultiMajor_select").options[0] = null;
+  };
+
+  for (i = 0; i < num.length; i++) {
+    document.getElementById("MultiMajor_select").options[i] = new Option(num[i], vnum[i]);
+  }
+}
+
 function Major_result() {
   var AdYear = Number(document.getElementById("ad-year").value);
   var Majorstandard = document.getElementById("MultiMajor_select").value;
