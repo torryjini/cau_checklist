@@ -11,6 +11,26 @@ function majormodal() {
   swal(word, content, "info");
 }
 
+function tr_multimajorchanges(fr) {
+  if (fr == "edu") {
+    document.getElementById("major_standard").value = 50;
+    num = new Array("无(해당없음)", "전공심화", "복수전공", "연계전공", "융합전공", "설계전공");
+    vnum = new Array("50", "66", "50", "50", "50", "50");
+  } else {
+    document.getElementById("major_standard").value = 45;
+    num = new Array("无(해당없음)", "전공심화", "복수전공", "연계전공", "융합전공", "설계전공");
+    vnum = new Array("45", "66", "45", "45", "45", "45");
+  }
+
+  for (i = 0; i = document.getElementById("MultiMajor_select").length; i++) {
+    document.getElementById("MultiMajor_select").options[0] = null;
+  };
+
+  for (i = 0; i < num.length; i++) {
+    document.getElementById("MultiMajor_select").options[i] = new Option(num[i], vnum[i]);
+  }
+}
+
 // 연도별 학과 전공기초, 전공필수 기준
 function collegechanges(fr) {
   if (fr == "humanity") {
