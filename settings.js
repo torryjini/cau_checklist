@@ -439,6 +439,11 @@ function OfficeNumber() {
     "public-admin": "공공인재학부",
     "public-policy": "공공인재학부",
     "public": "공공인재학부",
+    //사범대학
+    "education": "교육학과",
+    "ece": "유아교육과",
+    "englishedu": "영어교육과",
+    "pe": "체육교육과",
     //자연과학대학
     "physics":"물리학과",
     "chemistry":"화학과",
@@ -477,6 +482,11 @@ function OfficeNumber() {
     "public-admin": "02-820-5445",
     "public-policy": "02-820-5445",
     "public": "02-820-5445",
+    //사범대학
+    "education": "02-820-5362",
+    "ece": "02-820-5372",
+    "englishedu": "02-820-5391",
+    "pe": "02-820-5382",
     //자연과학대학
     "physics":"02-820-5189",
     "chemistry":"02-820-5196",
@@ -524,6 +534,11 @@ function BaseNeceStandard12to14() {
     "planning": ["12", "12", "12"],
     "sociology": ["12", "12", "12"],
     "public": ["18", "18", "18"],
+    //사범대학
+    "education": ["0", "0", "0"],
+    "ece": ["9", "9", "9"],
+    "englishedu": ["11", "11", "11"],
+    "pe": ["10", "10", "10"],
     //자연과학대학
     "physics": ["10", "10", "14"],
     "chemistry": ["14", "14", "14"],
@@ -558,6 +573,11 @@ function BaseNeceStandard12to14() {
     "planning": ["18", "18", "18"],
     "sociology": ["9", "9", "9"],
     "public": ["19", "19", "19"],
+    //사범대학
+    "education": ["15", "15", "15"],
+    "ece": ["18", "18", "18"],
+    "englishedu": ["18", "18", "18"],
+    "pe": ["18", "18", "18"],
     //자연과학대학
     "physics": ["15", "15", "15"],
     "chemistry": ["15", "15", "15"],
@@ -609,6 +629,11 @@ function BaseNeceStandard2015() {
     "sociology": "12",
     "public-admin": "17",
     "public-policy": "16",
+    //사범대학
+    "education": "0",
+    "ece": "9",
+    "englishedu": "11",
+    "pe": "10",
     //자연과학대학
     "physics": "14",
     "chemistry": "14",
@@ -646,6 +671,11 @@ function BaseNeceStandard2015() {
     "sociology": "9",
     "public-admin": "19",
     "public-policy": "17",
+    //사범대학
+    "education": "15",
+    "ece": "18",
+    "englishedu": "18",
+    "pe": "18",
     //자연과학대학
     "physics": "18",
     "chemistry": "15",
@@ -694,6 +724,11 @@ function BaseNeceStandard2016() {
     "sociology": ["12", "12", "12", "12", "12"],
     "public-admin": ["17", "18", "18", "17", "17"],
     "public-policy": ["16", "17", "17", "17", "17"],
+    //사범대학
+    "education": ["0", "0", "0", "0", "0"],
+    "ece": ["9", "9", "9", "9", "9"],
+    "englishedu": ["11", "11", "11", "11", "11"],
+    "pe": ["10", "10", "10", "10", "10"],
     //자연과학대학
     "physics": ["14", "14", "14", "14", "14"],
     "chemistry": ["14", "14", "14", "14", "14"],
@@ -730,6 +765,11 @@ function BaseNeceStandard2016() {
     "sociology": ["9", "9", "9", "9", "12"],
     "public-admin": ["19", "19", "19", "18", "18"],
     "public-policy": ["17", "17", "17", "18", "18"],
+    //사범대학
+    "education": ["15", "15", "15", "15", "15"],
+    "ece": ["18", "19", "19", "19", "19"],
+    "englishedu": ["18", "18", "18", "18", "18"],
+    "pe": ["18", "18", "18", "18", "18"],
     //자연과학대학
     "physics": ["18", "18", "17", "17", "17"],
     "chemistry": ["15", "15", "15", "15", "15"],
@@ -783,6 +823,11 @@ function BaseNeceStandard_tr2017() {
     "sociology": ["12", "12", "12", "12"],
     "public-admin": ["8", "8", "12", "12"],
     "public-policy": ["7", "7", "11", "11"],
+    //사범대학
+    "education": ["0", "0", "0", "0"],
+    "ece": ["9", "9", "9", "9"],
+    "englishedu": ["11", "11", "11", "11"],
+    "pe": ["10", "10", "10", "10"],
     //자연과학대학
     "physics": ["14", "14", "14", "14"],
     "chemistry": ["14", "14", "14", "14"],
@@ -820,6 +865,11 @@ function BaseNeceStandard_tr2017() {
     "sociology": ["9", "9", "9", "12"],
     "public-admin": ["19", "19", "18", "18"],
     "public-policy": ["17", "17", "18", "18"],
+    //사범대학
+    "education": ["15", "15", "15", "15"],
+    "ece": ["19", "19", "19", "19"],
+    "englishedu": ["18", "18", "18", "18"],
+    "pe": ["18", "18", "18", "18"],
     //자연과학대학
     "physics": ["18", "17", "17", "17"],
     "chemistry": ["15", "15", "15", "15"],
