@@ -61,7 +61,7 @@
           </td>
           <td>
             <form id="Major_select_form">
-              <select id="college_select" onchange="collegechanges(document.getElementById('college_select').value);Form_Reset('Major');MajortableReset();">
+              <select id="college_select" onchange="collegechanges(document.getElementById('college_select').value);Form_Reset('Major');MajortableReset();multimajorchanges(document.getElementById('college_select').value);">
                 <option value="none">Select</option>
                 <option value="humanity">인문대학</option>
                 <option value="society">사회과학대학</option>
@@ -77,7 +77,7 @@
         </tr>
         <tr>
           <td>
-            <select id="Major_select" onchange="BaseNeceStandard2015();OfficeNumber();Form_Reset('Multimajor_form');MajortableReset();" onclick="BaseNeceStandard2015();OfficeNumber();Form_Reset('Multimajor_form')"
+            <select id="Major_select" onchange="BaseNeceStandard2015();OfficeNumber();Form_Reset('Multimajor_form');MajortableReset();" onclick="BaseNeceStandard2015();OfficeNumber();Form_Reset('Multimajor_form');"
               onkeyup="BaseNeceStandard2015();OfficeNumber()" required>
               <option value="none">Select</option>
             </select>
@@ -87,8 +87,8 @@
             <form id="Multimajor_form">
               <select id="MultiMajor_select" onchange="major_standard_maker();total_point_sum();" required>
                 <option value="0">Select</option>
-                <option value="66">전공심화(Advance course)</option>
-                <option value="45">복수전공(Double major)</option>
+                <option value="66">전공심화</option>
+                <option value="45">복수전공</option>
                 <option value="45">연계전공</option>
                 <option value="45">융합전공</option>
                 <option value="45">설계전공</option>
