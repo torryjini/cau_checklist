@@ -116,6 +116,9 @@ function collegechanges(fr) {
   } else if (fr == "society") {
     num = new Array("选 择", "정치국제학과", "공공인재학부", "심리학과", "문헌정보학과", "사회복지학부", "신문방송학부", "도시계획부동산학과", "사회학과");
     vnum = new Array("none", "politics", "public", "psyche", "lis", "socialwelfare", "cmc", "planning", "sociology");
+  } else if (fr == "edu") {
+    num = new Array("选 择", "교육학과", "유아교육과", "영어교육과", "체육교육과");
+    vnum = new Array("none", "education", "ece", "englishedu", "pe");
   } else if (fr == "natural") {
     num = new Array("选 择", "물리학과", "화학과", "생명과학과", "수학과");
     vnum = new Array("none", "physics", "chemistry", "bio-science", "math");
