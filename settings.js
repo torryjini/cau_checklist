@@ -65,7 +65,7 @@ function Liberal_Sum() {
   document.getElementById("liberal_total").value = elective_point + common_kor_point + common_eng_point + common_etc_point + core_total_point;
 }
 
-function teachingcheck() {//교직이수 과목
+function teachingcheck() {//교직과정 설치 학과 구분
   var teachingmajor = ["education", "ece", "englishedu", "pe",
    "korean", "english", "german", "russia", "japan", "china", "philosophy", "history",
   "psyche", "lis", "physics", "chemistry", "bio-science", "math"]
