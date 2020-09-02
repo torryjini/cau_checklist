@@ -74,6 +74,7 @@ function teachingcheck() {//교직과정 설치 학과 구분
     document.getElementById("teaching_point").readOnly = false;
     document.getElementById("teaching_none").checked = false;
   } else {
+    document.getElementById("teaching_point").value = 0;
     document.getElementById("teaching_point").readOnly = true;
     document.getElementById("teaching_none").checked = true;
   }
