@@ -82,8 +82,9 @@
         </tr>
         <tr>
           <td>
-            <select id="Major_select" onchange="BaseNeceStandard2015();OfficeNumber();Form_Reset('Multimajor_form');MajortableReset();" onclick="BaseNeceStandard2015();OfficeNumber();Form_Reset('Multimajor_form')"
-              onkeyup="BaseNeceStandard2015();OfficeNumber()" required>
+            <select id="Major_select" onchange="BaseNeceStandard2015();OfficeNumber();Form_Reset('Multimajor_form');MajortableReset();teachingcheck();"
+             onclick="BaseNeceStandard2015();OfficeNumber();Form_Reset('Multimajor_form');teachingcheck();"
+              onkeyup="BaseNeceStandard2015();OfficeNumber();teachingcheck();" required>
               <option value="none"> 选 择 </option>
             </select>
             </form>
