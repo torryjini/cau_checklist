@@ -65,6 +65,20 @@ function Liberal_Sum() {
   document.getElementById("liberal_total").value = elective_point + common_kor_point + common_eng_point + common_etc_point + core_total_point;
 }
 
+function teachingcheck() {//교직이수 과목
+  var teachingmajor = ["education", "ece", "englishedu", "pe",
+   "korean", "english", "german", "russia", "japan", "china", "philosophy", "history",
+  "psyche", "lis", "physics", "chemistry", "bio-science", "math"]
+  var major = document.getElementById("Major_select").value;
+  if(teachingmajor.includes(major)) {
+    document.getElementById("teaching_point").readOnly = false;
+    document.getElementById("teaching_none").checked = false;
+  } else {
+    document.getElementById("teaching_point").readOnly = true;
+    document.getElementById("teaching_none").checked = true;
+  }
+}
+
 function total_point_sum() {
   var LiberalTotal = Number(document.getElementById("liberal_total").value);
   var Basepoint = Number(document.getElementById("base_input").value);
