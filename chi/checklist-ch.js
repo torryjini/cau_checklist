@@ -25,6 +25,7 @@ function Liberal_cal() {
   var common_kor_point = Number(document.getElementById("common_kor").value);
   var common_eng_point = Number(document.getElementById("common_eng").value);
   var common_eng_ex = document.getElementById("eng_ex").checked;
+  var cometcst = Number(document.getElementById("com_etc_st").value);
   var common_etc_point = Number(document.getElementById("common_etc").value);
   var account_check_SF = document.getElementById("account_check").checked;
   var Core1 = document.getElementById("core1").checked;
@@ -69,14 +70,14 @@ function Liberal_cal() {
   }
 
   if (!account_check_SF) {
-    if (common_etc_point < 10) {
-      word += " - 其他 : 缺少" + [10 - common_etc_point] + " 学分\n"
+    if (common_etc_point < cometcst) {
+      word += " - 其他 : 缺少" + [cometcst - common_etc_point] + " 学分\n"
     } else {
       word += " - 其他 : 通过\n"
     }
   } else {
-    if (common_etc_point < 8) {
-      word += " - 其他 : 缺少" + [8 - common_etc_point] + " 学分(앙트레프레너십시대의회계 : 免)\n"
+    if (common_etc_point < cometcst - 2) {
+      word += " - 其他 : 缺少" + [cometcst - 2 - common_etc_point] + " 学分(앙트레프레너십시대의회계 : 免)\n"
     } else {
       word += " - 其他 : 通过(앙트레프레너십시대의회계 : 免)\n"
     }
