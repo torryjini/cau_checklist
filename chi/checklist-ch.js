@@ -1,10 +1,21 @@
 function liberalmodal() {
+  var AdYear = Number(document.getElementById("ad-year").value);
   var word = "教养领域进修要求"
-  var content = "👉共同教养\n- 국어 : 글쓰기\n- 英语 : Communication in English\n- 其他 : 창의와소통/ACT/한국사/컴퓨팅적사고와문제해결/앙트레프레너십시대의회계(회계와사회)\n" +
-    "进修회계학원론(회계원리)时, 免'앙트레프레너십시대의회계'" +
+  var content1618 = "👉共同教养\n- 국어 : 글쓰기\n- 英语 : Communication in English\n- 其他 : 창의와소통/ACT/한국사/컴퓨팅적사고와문제해결/앙트레프레너십시대의회계(회계와사회)" +
+    "\n进修회계학원론(회계원리)时, 免'앙트레프레너십시대의회계'" +
     "\n👉核心教养 : 도전 / 창의 / 융합 / 신뢰 / 소통\n" +
     "各领域需要进修一个以上课程!\n👉选择教养 : 自律进修\n" + "👉教养最多可以认证45学分!"
-  swal(word, content, "info");
+  var content = "👉共同教养\n- 국어 : 글쓰기\n- 英语 : Communication in English\n- 其他 : 창의와소통/ACT/한국사/\n앙트레프레너십시대의회계/\n컴퓨팅적사고와문제해결(비공학계열)/\n디자인적사고와문제해결(공학계열)" +
+    "\n进修회계학원론(회계원리)时, 免'앙트레프레너십시대의회계'" +
+    "\n👉核心教养 : 도전 / 창의 / 융합 / 신뢰 / 소통\n" +
+    "各领域需要进修一个以上课程!\n👉选择教养 : 自律进修\n" + "👉教养最多可以认证45学分!"
+
+
+  if (AdYear == 2016 || AdYear == 2017 || AdYear == 2018) {
+    swal(word, content1618, "info");
+  } else {
+    swal(word, content, "info");
+  }
 }
 
 function majormodal() {
