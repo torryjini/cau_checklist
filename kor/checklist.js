@@ -1,10 +1,20 @@
 function liberalmodal() {
+  var AdYear = Number(document.getElementById("ad-year").value);
   var word = "교양영역 이수기준"
-  var content = "👉공통교양\n- 국어 : 글쓰기\n- 영어 : Communication in English\n- 기타 : 창의와소통/ACT/한국사/컴퓨팅적사고와문제해결/\n 앙트레프레너십시대의회계(회계와사회)\n" +
+  var content1618 = "👉공통교양\n- 국어 : 글쓰기\n- 영어 : Communication in English\n- 기타 : 창의와소통/ACT/한국사/컴퓨팅적사고와문제해결/\n 앙트레프레너십시대의회계(회계와사회)\n" +
     "회계학원론(회계원리)을 이수했을 경우, '앙트레프레너십시대의회계' 면제" +
     "\n👉핵심교양 : 도전 / 창의 / 융합 / 신뢰 / 소통\n" +
     "각 영역에서 1과목 이상 이수!\n👉선택교양 : 자율이수\n" + "👉총 교양학점 45학점까지만 인정됩니다!"
-  swal(word, content, "info");
+  var content = "👉공통교양\n- 국어 : 글쓰기\n- 영어 : Communication in English\n- 기타 : 창의와소통/ACT/한국사/\n앙트레프레너십시대의회계/\n컴퓨팅적사고와문제해결(비공학계열)/\n디자인적사고와문제해결(공학계열)" +
+    "\n회계학원론(회계원리)을 이수했을 경우, '앙트레프레너십시대의회계' 면제" +
+    "\n👉핵심교양 : 도전 / 창의 / 융합 / 신뢰 / 소통\n" +
+    "각 영역에서 1과목 이상 이수!\n👉선택교양 : 자율이수\n" + "👉총 교양학점 45학점까지만 인정됩니다!"
+
+    if (AdYear == 2016 || AdYear == 2017 || AdYear == 2018) {
+      swal(word, content1618, "info");
+    } else {
+      swal(word, content, "info");
+    }
 }
 
 function majormodal() {
