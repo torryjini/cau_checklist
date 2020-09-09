@@ -26,6 +26,7 @@ function Liberal_cal() {
   var common_kor_point = Number(document.getElementById("common_kor").value);
   var common_eng_point = Number(document.getElementById("common_eng").value);
   var common_eng_ex = document.getElementById("eng_ex").checked;
+  var cometcst = Number(document.getElementById("com_etc_st").value);
   var common_etc_point = Number(document.getElementById("common_etc").value);
   var account_check_SF = document.getElementById("account_check").checked;
   var Core1 = document.getElementById("core1").checked;
@@ -70,14 +71,14 @@ function Liberal_cal() {
   }
 
   if (!account_check_SF) {
-    if (common_etc_point < 10) {
-      word += " - 기타 : " + [10 - common_etc_point] + " more credits required\n"
+    if (common_etc_point < cometcst) {
+      word += " - 기타 : " + [cometcst - common_etc_point] + " more credits required\n"
     } else {
       word += " - 기타 : Passed the requirement\n"
     }
   } else {
-    if (common_etc_point < 8) {
-      word += " - Others : " + [8 - common_etc_point] + " more credits required(앙트레프레너십시대의회계 : Exempted)\n"
+    if (common_etc_point < cometcst - 2) {
+      word += " - Others : " + [cometcst - 2 - common_etc_point] + " more credits required(앙트레프레너십시대의회계 : Exempted)\n"
     } else {
       word += " - Others : Passed the requirement(앙트레프레너십시대의회계 : Exempted)\n"
     }
