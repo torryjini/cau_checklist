@@ -1,6 +1,6 @@
 function majorselectreset() {
-    num = new Array("선  택");
-    vnum = new Array("none");
+  num = new Array("선  택");
+  vnum = new Array("none");
 
   for (i = 0; i = document.getElementById("Major_select").length; i++) {
     document.getElementById("Major_select").options[0] = null;
@@ -11,13 +11,22 @@ function majorselectreset() {
   }
 }
 
-function multimajorchanges(fr) {
-  if (fr == "edu") {
+function multimajorchanges() {
+  var major = document.getElementById("Major_select").value;
+  var Edu = ["education", "ece", "englishedu", "pe"]
+  var Archi = ["archi"]
+  if (Edu.includes(major)) {
     num = new Array("선  택", "전공심화", "복수전공", "연계전공", "융합전공", "설계전공");
     vnum = new Array("0", "66", "50", "50", "50", "50");
+    document.getElementById("total_standard").value = "132";
+  } else if (Archi.includes(major)) {
+    num = new Array("선  택", "전공심화", "복수전공", "연계전공", "융합전공", "설계전공");
+    vnum = new Array("0", "105", "105", "105", "105", "105");
+    document.getElementById("total_standard").value = "160";
   } else {
     num = new Array("선  택", "전공심화", "복수전공", "연계전공", "융합전공", "설계전공");
     vnum = new Array("0", "66", "45", "45", "45", "45");
+    document.getElementById("total_standard").value = "132";
   }
 
   for (i = 0; i = document.getElementById("MultiMajor_select").length; i++) {
@@ -153,7 +162,7 @@ function Etc_result() {
     if (!English_result || !Hanja_result || !Korean_result || !Paper_result || !Paper_result2) {
       swal("기타 졸업요건 결과", word, "warning");
     }
-  } else if(Average_result <= 2) {
+  } else if (Average_result <= 2) {
     swal("기타 졸업요건 결과", word, "error");
   }
 }

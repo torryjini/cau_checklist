@@ -11,13 +11,23 @@ function majorselectreset() {
   }
 }
 
-function multimajorchanges(fr) {
-  if (fr == "edu") {
+
+function multimajorchanges() {
+  var major = document.getElementById("Major_select").value;
+  var Edu = ["education", "ece", "englishedu", "pe"]
+  var Archi = ["archi"]
+  if (Edu.includes(major)) {
     num = new Array("Select", "전공심화", "복수전공", "연계전공", "융합전공", "설계전공");
     vnum = new Array("0", "66", "50", "50", "50", "50");
+    document.getElementById("total_standard").value = "132";
+  } else if (Archi.includes(major)) {
+    num = new Array("Select", "전공심화", "복수전공", "연계전공", "융합전공", "설계전공");
+    vnum = new Array("0", "105", "105", "105", "105", "105");
+    document.getElementById("total_standard").value = "160";
   } else {
     num = new Array("Select", "전공심화", "복수전공", "연계전공", "융합전공", "설계전공");
     vnum = new Array("0", "66", "45", "45", "45", "45");
+    document.getElementById("total_standard").value = "132";
   }
 
   for (i = 0; i = document.getElementById("MultiMajor_select").length; i++) {

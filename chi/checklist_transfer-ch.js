@@ -11,15 +11,25 @@ function majormodal() {
   swal(word, content, "info");
 }
 
-function tr_multimajorchanges(fr) {
-  if (fr == "edu") {
-    document.getElementById("major_standard").value = 50;
+function tr_multimajorchanges() {
+  var major = document.getElementById("Major_select").value;
+  var Edu = ["education", "ece", "englishedu", "pe"]
+  var Archi = ["archi"]
+  if (Edu.includes(major)) {
     num = new Array("无(해당없음)", "전공심화", "복수전공", "연계전공", "융합전공", "설계전공");
     vnum = new Array("50", "66", "50", "50", "50", "50");
+    document.getElementById("major_standard").value = "50";
+    document.getElementById("total_standard").value = "66";
+  } else if (Archi.includes(major)) {
+    num = new Array("无(해당없음)", "전공심화", "복수전공", "연계전공", "융합전공", "설계전공");
+    vnum = new Array("105", "105", "105", "105", "105", "105");
+    document.getElementById("major_standard").value = "105";
+    document.getElementById("total_standard").value = "105";
   } else {
-    document.getElementById("major_standard").value = 45;
     num = new Array("无(해당없음)", "전공심화", "복수전공", "연계전공", "융합전공", "설계전공");
     vnum = new Array("45", "66", "45", "45", "45", "45");
+    document.getElementById("major_standard").value = "45";
+    document.getElementById("total_standard").value = "66";
   }
 
   for (i = 0; i = document.getElementById("MultiMajor_select").length; i++) {
@@ -32,7 +42,8 @@ function tr_multimajorchanges(fr) {
 }
 
 // 연도별 학과 전공기초, 전공필수 기준
-function collegechanges(fr) {
+function collegechanges() {
+  var fr = document.getElementById("college_select").value;
   if (fr == "humanity") {
     num = new Array("选 择", "국어국문학과", "영어영문학과", "유럽문화_독일어문학", "유럽문화_프랑스어문학", "유럽문화_러시아어문학", "아시아문화_일본어문학", "아시아문화_중국어문학", "철학과", "역사학과");
     vnum = new Array("none", "korean", "english", "german", "france", "russia", "japan", "china", "philosophy", "history");

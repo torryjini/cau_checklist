@@ -93,7 +93,8 @@ function Liberal_cal() {
 // 여기서부터는 전공영역
 
 // 연도별 학과 전공기초, 전공필수 기준
-function collegechanges(fr) {
+function collegechanges() {
+  var fr = document.getElementById("college_select").value;
   if (fr == "humanity") {
     num = new Array("选 择", "국어국문학과", "영어영문학과", "유럽문화_독일어문학", "유럽문화_프랑스어문학", "유럽문화_러시아어문학", "아시아문화_일본어문학", "아시아문화_중국어문학", "철학과", "역사학과");
     vnum = new Array("none", "korean", "english", "german", "france", "russia", "japan", "china", "philosophy", "history");
