@@ -56,6 +56,19 @@ function libcolorreset() {
   document.getElementById("common_etc").style.color = "red";
 }
 
+
+function etcchange() {
+  var AdYear = Number(document.getElementById("ad-year").value);
+  var College = document.getElementById("college_select").value;
+  if( AdYear >= 2016 && AdYear <= 2018 && College == "engineering"){
+    document.getElementById("com_etc_st").value = 8;
+    document.getElementById("etc_max").value = 8;
+  } else {
+    document.getElementById("com_etc_st").value = 10;
+    document.getElementById("etc_max").value = 10;
+  }
+}
+
 function Liberal_Sum() {
   var elective_point = Number(document.getElementById("elective_liberal").value);
   var common_kor_point = Number(document.getElementById("common_kor").value);
