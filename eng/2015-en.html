@@ -122,7 +122,7 @@
           <th rowspan="3">공통<br>교양<br>Manda-<br>tory</th>
           <th>국어</th>
           <td><input type="text" class="standard_number" id="com_kor_st" value="2" readonly tabindex="-1"></td>
-          <td>2</td>
+          <td><input type="text" class="standard_number" id="kor_max" value="2" readonly tabindex="-1"></td>
           <td><select class="checkselect" id="common_kor" onchange="Liberal_Sum();total_point_sum();numbercolor('total_standard','the_total');numbercolor('com_kor_st', 'common_kor');numbercolor('total_lib_st','liberal_total');">
               <option value="0">0</option>
               <option value="2">2</option>
@@ -132,7 +132,7 @@
         <tr>
           <th>영어</th>
           <td><input type="text" class="standard_number" id="com_eng_st" value="2" readonly tabindex="-1"></td>
-          <td>2</td>
+          <td><input type="text" class="standard_number" id="eng_max" value="2" readonly tabindex="-1"></td>
           <td><select id="common_eng" class="checkselect" onchange="Liberal_Sum();total_point_sum();numbercolor('total_standard','the_total');numbercolor('com_eng_st', 'common_eng');numbercolor('total_lib_st','liberal_total');">
               <option value="0">0</option>
               <option value="2">2</option>
@@ -144,7 +144,7 @@
         <tr>
           <th>기타</th>
           <td><input type="text" class="standard_number" id="com_etc_st" value="8" readonly tabindex="-1"></td>
-          <td>8</td>
+          <td><input type="text" class="standard_number" id="etc_max" value="8" readonly tabindex="-1"></td>
           <td><select id="common_etc" class="checkselect" onchange="Liberal_Sum();total_point_sum();numbercolor('total_standard','the_total');numbercolor('com_etc_st', 'common_etc');numbercolor('total_lib_st','liberal_total');">
               <option value="0">0</option>
               <option value="2">2</option>
@@ -182,7 +182,7 @@
         <tr>
           <th colspan="2">Total</th>
           <td><input type="text" class="standard_number" id="total_lib_st" value="24" readonly tabindex="-1"></td>
-          <td>45</td>
+          <td><input type="text" class="standard_number" id="lib_max" value="45" readonly tabindex="-1"></td>
           <td>
             <input type="text" id="liberal_total" value="0" class="totalnumber" onchange="total_point_sum();numbercolor('total_standard','the_total');numbercolor('total_lib_st','liberal_total');" readonly tabindex="-1"> credits
           </td>
