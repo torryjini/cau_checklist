@@ -472,7 +472,14 @@ function OfficeNumber() {
     "stat":"응용통계학과",
     "gloknol":"지식경영학부",
     "log":"국제물류학과",
-    "security":"산업보안학과"
+    "security":"산업보안학과",
+    //공과대학
+    "infra":"사회기반시스템공학부",
+    "archi":"건축학부",
+    "archieng":"건축학부",
+    "chemeng":"화학신소재공학부",
+    "me":"기계공학부",
+    "ese":"에너지시스템공학부"
   };
   var PhoneNumber = {
     //인문대학
@@ -515,7 +522,14 @@ function OfficeNumber() {
     "stat":"02-820-5499",
     "gloknol":"02-820-5527",
     "log":"02-820-5537",
-    "security":"02-820-5730"
+    "security":"02-820-5730",
+    //공과대학
+    "infra":"02-820-5253",
+    "archi":"02-820-5260",
+    "archieng":"02-820-5260",
+    "chemeng":"02-820-5268",
+    "me":"02-820-5276",
+    "ese":"02-820-5867"
   };
   var Major = document.getElementById("Major_select").value;
   if (Major == "none") {
