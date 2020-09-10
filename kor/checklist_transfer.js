@@ -48,6 +48,9 @@ function collegechanges(fr) {
   } else if (fr == "bne") {
     num = new Array("선  택", "경영학부_경영학전공", "경영학부_글로벌금융", "경제학부", "광고홍보학과", "응용통계학과", "국제물류학과", "산업보안학과");
     vnum = new Array("none", "biz_ba", "biz_glofi", "econ", "adpr", "stat", "log", "security");
+  } else if (fr == "engineering") {
+    num = new Array("선  택", "사회기반시스템공학부", "건축학부_건축학", "건축학부_건축공학", "화학신소재공학부", "기계공학부", "에너지시스템공학부");
+    vnum = new Array("none", "infra", "archi", "archieng", "chemeng", "me", "ese");
   } else if (fr == "none") {
     num = new Array("선  택");
     vnum = new Array("none");
