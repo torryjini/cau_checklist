@@ -566,7 +566,7 @@ function BaseNeceStandard12to14() {
     "adpr": ["9", "9", "9"],
     "stat": ["12", "12", "12"],
     "gloknol": ["18", "18", "18"],
-    "log": ["15", "15", "15"],
+    "log": ["15", "15", "15"]
   };
   var Nece = { //전공필수: [2012, 2013, 2014]
     //인문대학
@@ -605,7 +605,7 @@ function BaseNeceStandard12to14() {
     "adpr": ["9", "12", "12"],
     "stat": ["15", "15", "15"],
     "gloknol": ["21", "21", "21"],
-    "log": ["18", "18", "18"],
+    "log": ["18", "18", "18"]
   };
 
   var Major = document.getElementById("Major_select").value;
