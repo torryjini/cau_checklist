@@ -267,6 +267,12 @@ input[type=reset]:hover {
   max-width: 17rem;
 }
 
+#c4g_logo {
+  width: auto;
+  height: auto;
+  max-width: 10rem;
+}
+
 #index_logo {
   width: auto;
   height: auto;
