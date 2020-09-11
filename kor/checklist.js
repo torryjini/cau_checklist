@@ -126,13 +126,13 @@ function Liberal_cal() {
   }
 
   if (common_kor_point == 2 && Core1 && Core2 && Core3 && Core4 && Core5 && core_total_point >= 14) {
-    if (common_eng_point == 2 && common_etc_point == 10) {
+    if (common_eng_point == 2 && common_etc_point >= cometcst) {
       swal("교양영역 결과", word, "success")
-    } else if (common_eng_point <= 2 && common_eng_ex && common_etc_point == 10) {
+    } else if (common_eng_point <= 2 && common_eng_ex && common_etc_point >= cometcst) {
       swal("교양영역 결과", word, "success")
-    } else if (common_eng_point == 2 && common_etc_point >= 8 && account_check_SF) {
+    } else if (common_eng_point == 2 && common_etc_point >= [cometcst - 2] && account_check_SF) {
       swal("교양영역 결과", word, "success")
-    } else if (common_eng_point <= 2 && common_eng_ex && common_etc_point >= 8 && account_check_SF) {
+    } else if (common_eng_point <= 2 && common_eng_ex && common_etc_point >= [cometcst - 2] && account_check_SF) {
       swal("교양영역 결과", word, "success")
     } else {
       swal("교양영역 결과", word, "error")
