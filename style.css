@@ -261,6 +261,12 @@ input[type=reset]:hover {
   background-color: RoyalBlue;
 }
 
+#check4grad_logo {
+  width: auto;
+  height: auto;
+  max-width: 17rem;
+}
+
 #index_logo {
   width: auto;
   height: auto;
