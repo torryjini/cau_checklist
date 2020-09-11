@@ -63,9 +63,11 @@ function etcchange() {
   if( AdYear >= 2016 && AdYear <= 2018 && College == "engineering"){
     document.getElementById("com_etc_st").value = 8;
     document.getElementById("etc_max").value = 8;
+    document.getElementById("total_lib_st").value = 27;
   } else {
     document.getElementById("com_etc_st").value = 10;
     document.getElementById("etc_max").value = 10;
+    document.getElementById("total_lib_st").value = 29;
   }
 }
 
