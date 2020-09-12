@@ -457,5 +457,12 @@ footer {
   margin-top: 1rem;
   margin-bottom: 1rem;
   text-align: center;
+}
+
+.at-resp-share-element {
   position: static;
+  padding: 0;
+  margin: 0;
+  font-size: 0;
+  line-height: 0;
 }
