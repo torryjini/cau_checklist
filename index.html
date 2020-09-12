@@ -24,9 +24,9 @@
   <script src="https://kit.fontawesome.com/b170da0ad3.js" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="style.css">
   <meta property="og:url" content="https://check4grad.tk">
-	<meta property="og:title" content="CHECK4GRAD">
-	<meta property="og:description" content="CAU Checklist for Graduation">
-	<meta property="og:image" content="thumbnail.png">
+  <meta property="og:title" content="CHECK4GRAD">
+  <meta property="og:description" content="CAU Checklist for Graduation">
+  <meta property="og:image" content="thumbnail.png">
 </head>
 
 <body>
@@ -39,7 +39,7 @@
     <li>언 어<br>
       <select class="index_select" id="langbox" onchange="location = this.value">
         <option value="#">한국어</option>
-        <option value="index-ch.html">中  文</option>
+        <option value="index-ch.html">中 文</option>
         <option value="index-en.html">English</option>
       </select></li>
     <form>
@@ -51,25 +51,28 @@
       <li>입학시기<br>
         <select id="index-year" class="index_select">
           <option value="0">선 택</option>
-            <option value="2014">2012 ~ 2014</option>
-            <option value="2015">2015</option>
-            <option value="2016">2016 ~</option>
+          <option value="2014">2012 ~ 2014</option>
+          <option value="2015">2015</option>
+          <option value="2016">2016 ~</option>
         </select></li>
       <br>
       <input type="button" id="enter" value="ENTER" onclick="doLink()">
     </form>
     <br>
   </ul>
-  <footer><button type="button" class="index-info" onclick="index_info()"><i class="fas fa-info-circle"></i> info </button><br><br>
+  <footer>
+    <button type="button" class="index-info" onclick="index_info()"><i class="fas fa-info-circle"></i> info </button><br><br>
+    <!-- Go to www.addthis.com/dashboard to customize your tools -->
+    <div class="addthis_inline_share_toolbox"></div>
   </footer>
 
   <script>
     function doLink() {
       var EntStyle = document.getElementById("ent_style").value;
       var Year = document.getElementById('index-year').value;
-      var word = "👉본 체크리스트는 수강신청 및 졸업준비를 위한 참고용입니다."
-       + "\n👉학점 기준 및 졸업요건 통과 여부를 확인할 수 있습니다."
-       + "\n👉사용 후, 학과 사무실에 문의하여 확인하시기 바랍니다."
+      var word = "👉본 체크리스트는 수강신청 및 졸업준비를 위한 참고용입니다." +
+        "\n👉학점 기준 및 졸업요건 통과 여부를 확인할 수 있습니다." +
+        "\n👉사용 후, 학과 사무실에 문의하여 확인하시기 바랍니다."
 
       if (Year == 0) {
         swal("입학시기를 선택하세요!", "", "error")
@@ -85,7 +88,7 @@
               window.location.href = "kor/12to14.html";
             }
           } else if (EntStyle == "transfer") {
-              window.location.href = "kor/transfer.html";
+            window.location.href = "kor/transfer.html";
           }
         });
       }
@@ -106,17 +109,19 @@
         num = new Array("선  택", "2017 ~");
         vnum = new Array("0", "2017");
       }
-        // 셀렉트안의 리스트를 기본값으로 한다.
+      // 셀렉트안의 리스트를 기본값으로 한다.
 
-        for (i = 0; i < document.getElementById("index-year").length; i++) {
-          document.getElementById("index-year").options[0] = null;
-        };
+      for (i = 0; i < document.getElementById("index-year").length; i++) {
+        document.getElementById("index-year").options[0] = null;
+      };
       //포문을 이용하여 두번째(test2)셀렉트 박스에 값을 뿌려줍니당)
       for (i = 0; i < num.length; i++) {
         document.getElementById("index-year").options[i] = new Option(num[i], vnum[i]);
       }
     }
   </script>
+  <!-- Go to www.addthis.com/dashboard to customize your tools -->
+  <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5f5c861cc88b9f15"></script>
 </body>
 
 </html>
