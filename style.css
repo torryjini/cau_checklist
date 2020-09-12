@@ -457,4 +457,5 @@ footer {
   margin-top: 1rem;
   margin-bottom: 1rem;
   text-align: center;
+  position: static;
 }
