@@ -66,8 +66,8 @@
           </td>
           <td>
             <form id="Major_select_form">
-              <select id="college_select" onchange="collegechanges();Form_Reset('Major');MajortableReset();">
-                <option value="none"> 选 择 </option>
+              <select id="college_select" onchange="collegechanges15();Form_Reset('Major');MajortableReset();">
+                <option value="none">--</option>
                 <option value="humanity">인문대학</option>
                 <option value="society">사회과학대학</option>
                 <option value="edu">사범대학</option>
@@ -84,14 +84,14 @@
         <tr>
           <td>
             <select id="Major_select" onchange="BaseNeceStandard2015();OfficeNumber();Form_Reset('Multimajor_form');MajortableReset();teachingcheck();multimajorchanges();" required>
-              <option value="none"> 选 择 </option>
+              <option value="none">--</option>
             </select>
             </form>
           </td>
           <td>
             <form id="Multimajor_form">
               <select id="MultiMajor_select" onchange="major_standard_maker();total_point_sum();" required>
-                <option value="0"> 选 择 </option>
+                <option value="0">--</option>
                 <option value="66">전공심화</option>
                 <option value="45">복수전공</option>
                 <option value="45">연계전공</option>
