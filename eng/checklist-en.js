@@ -1,19 +1,30 @@
 function liberalmodal() {
   var AdYear = Number(document.getElementById("ad-year").value);
+  var College = document.getElementById("college_select").value;
+  var Engin = ["engineering", "ict", "software"]
   var word = "Requirements for general credits"
-  var content1618 = "👉Mandatory\n- 국어 : 글쓰기(Writing)\n- 영어 : Communication in English\n- Others : 창의와소통/ACT/한국사/컴퓨팅적사고와문제해결/\n 앙트레프레너십시대의회계(회계와사회)" +
+  var content1618 = "👉Mandatory\n- 국어 : 글쓰기(Writing)\n- 영어 : Communication in English\n- Others : 창의와소통/ACT/한국사/\n 앙트레프레너십시대의회계(회계와사회)" +
     "\nNo need to take '앙트레프레너십시대의회계' if you already took 회계학원론(회계원리)" +
     "\n👉Core : 도전 / 창의 / 융합 / 신뢰 / 소통\n" +
     "Take more than one class per each area!\nElectives : free to choose any\n" +
     "👉Any credits over 45 are not counted!"
-  var content = "👉Mandatory\n- 국어 : 글쓰기(Writing)\n- 영어 : Communication in English\n- Others : 창의와소통/ACT/한국사/\n앙트레프레너십시대의회계/\n컴퓨팅적사고와문제해결(비공학계열)/\n디자인적사고와문제해결(공학계열)" +
+  var contenteng = "👉Mandatory\n- 국어 : 글쓰기(Writing)\n- 영어 : Communication in English\n- Others : 창의와소통/ACT/한국사/\n앙트레프레너십시대의회계/\n디자인적사고와문제해결" +
+    "\nNo need to take '앙트레프레너십시대의회계' if you already took 회계학원론(회계원리)" +
+    "\n👉Core : 도전 / 창의 / 융합 / 신뢰 / 소통\n" +
+    "Take more than one class per each area!\nElectives : free to choose any\n" +
+    "👉Any credits over 45 are not counted!"
+  var content = "👉Mandatory\n- 국어 : 글쓰기(Writing)\n- 영어 : Communication in English\n- Others : 창의와소통/ACT/한국사/\n앙트레프레너십시대의회계/\n컴퓨팅적사고와문제해결" +
     "\nNo need to take '앙트레프레너십시대의회계' if you already took 회계학원론(회계원리)" +
     "\n👉Core : 도전 / 창의 / 융합 / 신뢰 / 소통\n" +
     "Take more than one class per each area!\nElectives : free to choose any\n" +
     "👉Any credits over 45 are not counted!"
 
-  if (AdYear == 2016 || AdYear == 2017 || AdYear == 2018) {
-    swal(word, content1618, "info");
+  if (Engin.includes(College)) {
+    if (AdYear >= 2016 && AdYear <= 2018) {
+      swal(word, content1618, "info");
+    } else {
+      swal(word, contenteng, "info");
+    }
   } else {
     swal(word, content, "info");
   }
