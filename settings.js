@@ -60,7 +60,8 @@ function libcolorreset() {
 function etcchange() {
   var AdYear = Number(document.getElementById("ad-year").value);
   var College = document.getElementById("college_select").value;
-  if( AdYear >= 2016 && AdYear <= 2018 && College == "engineering"){
+  var Engin = ["engineering", "ict", "software"]
+  if( AdYear >= 2016 && AdYear <= 2018 && Engin.includes(College)){
     document.getElementById("com_etc_st").value = 8;
     document.getElementById("etc_max").value = 8;
     document.getElementById("total_lib_st").value = 27;
