@@ -316,6 +316,10 @@ input[type=reset]:hover {
   height: 2rem;
 }
 
+#Major_select, #college_select {
+  min-width: 6rem;
+}
+
 #dept, #phone, #Davinci {
   border: none;
   font-size: 1.2rem;
