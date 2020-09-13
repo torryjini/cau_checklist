@@ -1,4 +1,4 @@
-//Get the button
+//Get the button "top" 버튼 관련
 var mybutton = document.getElementById("TopBtn");
 
 // When the user scrolls down 10px from the top of the document, show the button
@@ -20,7 +20,6 @@ function topFunction() {
   document.documentElement.scrollTop = 0;
 }
 
-
 function maxLengthCheck(object) {
   if (object.value.length > object.maxLength) {
     object.value = object.value.slice(0, object.maxLength);
@@ -29,6 +28,26 @@ function maxLengthCheck(object) {
 
 function Form_Reset(id) {
   document.getElementById(id).reset();
+}
+
+function majorselectreset() {
+  num = new Array("--");
+  vnum = new Array("none");
+
+  for (i = 0; i = document.getElementById("Major_select").length; i++) {
+    document.getElementById("Major_select").options[0] = null;
+  };
+
+  for (i = 0; i < num.length; i++) {
+    document.getElementById("Major_select").options[i] = new Option(num[i], vnum[i]);
+  }
+}
+
+function MajortableReset() {
+  document.getElementById("double_table").style.display = "none";
+  document.getElementById("link_table").style.display = "none";
+  document.getElementById("fusion_table").style.display = "none";
+  document.getElementById("plan_table").style.display = "none";
 }
 
 function numbercolor(st, number) {
@@ -114,11 +133,168 @@ function total_point_sum() {
   }
 }
 
-function MajortableReset() {
-  document.getElementById("double_table").style.display = "none";
-  document.getElementById("link_table").style.display = "none";
-  document.getElementById("fusion_table").style.display = "none";
-  document.getElementById("plan_table").style.display = "none";
+//대학별 학과 변환
+function collegechanges1214() {
+  var fr = document.getElementById("college_select").value;
+  if (fr == "humanity") {
+    num = new Array("--", "국어국문학과", "영어영문학과", "유럽문화_독일어문학", "유럽문화_프랑스어문학", "유럽문화_러시아어문학", "아시아문화_일본어문학", "아시아문화_중국어문학", "철학과", "역사학과");
+    vnum = new Array("none", "korean", "english", "german", "france", "russia", "japan", "china", "philosophy", "history");
+  } else if (fr == "society") {
+    num = new Array("--", "정치국제학과", "공공인재학부", "심리학과", "문헌정보학과", "사회복지학부", "신문방송학부", "도시계획부동산학과", "사회학과");
+    vnum = new Array("none", "politics", "public", "psyche", "lis", "socialwelfare", "cmc", "planning", "sociology");
+  } else if (fr == "edu") {
+    num = new Array("--", "교육학과", "유아교육과", "영어교육과", "체육교육과");
+    vnum = new Array("none", "education", "ece", "englishedu", "pe");
+  } else if (fr == "natural") {
+    num = new Array("--", "물리학과", "화학과", "생명과학과", "수학과");
+    vnum = new Array("none", "physics", "chemistry", "bio-science", "math");
+  } else if (fr == "bne") {
+    num = new Array("--", "경영학부_경영학전공", "경영학부_글로벌금융", "경제학부", "광고홍보학과", "응용통계학과", "지식경영학부", "국제물류학과");
+    vnum = new Array("none", "biz_ba", "biz_glofi", "econ", "adpr", "stat", "gloknol", "log");
+  } else if (fr == "engineering") {
+    num = new Array("--", "사회기반시스템공학부", "건축학부_건축학", "건축학부_건축공학", "화학신소재공학부", "기계공학부", "에너지시스템공학부");
+    vnum = new Array("none", "infra", "archi", "archieng", "chemeng", "me", "ese");
+  } else if (fr == "none") {
+    num = new Array("--");
+    vnum = new Array("none");
+  }
+
+  for (i = 0; i = document.getElementById("Major_select").length; i++) {
+    document.getElementById("Major_select").options[0] = null;
+  };
+
+  for (i = 0; i < num.length; i++) {
+    document.getElementById("Major_select").options[i] = new Option(num[i], vnum[i]);
+  }
+}
+
+function collegechanges15() {
+  var fr = document.getElementById("college_select").value;
+  if (fr == "humanity") {
+    num = new Array("--", "국어국문학과", "영어영문학과", "유럽문화_독일어문학", "유럽문화_프랑스어문학", "유럽문화_러시아어문학", "아시아문화_일본어문학", "아시아문화_중국어문학", "철학과", "역사학과");
+    vnum = new Array("none", "korean", "english", "german", "france", "russia", "japan", "china", "philosophy", "history");
+  } else if (fr == "society") {
+    num = new Array("--", "정치국제학과", "공공인재_행정학트랙", "공공인재_정책학트랙", "심리학과", "문헌정보학과", "사회복지학부", "미디어커뮤니케이션학부", "도시계획부동산학과", "사회학과");
+    vnum = new Array("none", "politics", "public-admin", "public-policy", "psyche", "lis", "socialwelfare", "cmc", "planning", "sociology");
+  } else if (fr == "edu") {
+    num = new Array("--", "교육학과", "유아교육과", "영어교육과", "체육교육과");
+    vnum = new Array("none", "education", "ece", "englishedu", "pe");
+  } else if (fr == "natural") {
+    num = new Array("--", "물리학과", "화학과", "생명과학과", "수학과");
+    vnum = new Array("none", "physics", "chemistry", "bio-science", "math");
+  } else if (fr == "bne") {
+    num = new Array("--", "경영학부_경영학전공", "경영학부_글로벌금융", "경제학부", "광고홍보학과", "응용통계학과", "지식경영학부", "국제물류학과", "산업보안학과");
+    vnum = new Array("none", "biz_ba", "biz_glofi", "econ", "adpr", "stat", "gloknol", "log", "security");
+  } else if (fr == "engineering") {
+    num = new Array("--", "사회기반시스템공학부", "건축학부_건축학", "건축학부_건축공학", "화학신소재공학부", "기계공학부", "에너지시스템공학부");
+    vnum = new Array("none", "infra", "archi", "archieng", "chemeng", "me", "ese");
+  } else if (fr == "none") {
+    num = new Array("--");
+    vnum = new Array("none");
+  }
+
+  for (i = 0; i = document.getElementById("Major_select").length; i++) {
+    document.getElementById("Major_select").options[0] = null;
+  };
+
+  for (i = 0; i < num.length; i++) {
+    document.getElementById("Major_select").options[i] = new Option(num[i], vnum[i]);
+  }
+}
+
+function collegechanges16() {
+  var fr = document.getElementById("college_select").value;
+  if (fr == "humanity") {
+    num = new Array("--", "국어국문학과", "영어영문학과", "유럽문화_독일어문학", "유럽문화_프랑스어문학", "유럽문화_러시아어문학", "아시아문화_일본어문학", "아시아문화_중국어문학", "철학과", "역사학과");
+    vnum = new Array("none", "korean", "english", "german", "france", "russia", "japan", "china", "philosophy", "history");
+  } else if (fr == "society") {
+    num = new Array("--", "정치국제학과", "공공인재_행정학트랙", "공공인재_정책학트랙", "심리학과", "문헌정보학과", "사회복지학부", "미디어커뮤니케이션학부", "도시계획부동산학과", "사회학과");
+    vnum = new Array("none", "politics", "public-admin", "public-policy", "psyche", "lis", "socialwelfare", "cmc", "planning", "sociology");
+  } else if (fr == "edu") {
+    num = new Array("--", "교육학과", "유아교육과", "영어교육과", "체육교육과");
+    vnum = new Array("none", "education", "ece", "englishedu", "pe");
+  } else if (fr == "natural") {
+    num = new Array("--", "물리학과", "화학과", "생명과학과", "수학과");
+    vnum = new Array("none", "physics", "chemistry", "bio-science", "math");
+  } else if (fr == "bne") {
+    num = new Array("--", "경영학부_경영학전공", "경영학부_글로벌금융", "경제학부", "광고홍보학과", "응용통계학과", "지식경영학부", "국제물류학과", "산업보안학과");
+    vnum = new Array("none", "biz_ba", "biz_glofi", "econ", "adpr", "stat", "gloknol", "log", "security");
+  } else if (fr == "engineering") {
+    num = new Array("--", "사회기반시스템공학부", "건축학부_건축학", "건축학부_건축공학", "화학신소재공학부", "기계공학부", "에너지시스템공학부");
+    vnum = new Array("none", "infra", "archi", "archieng", "chemeng", "me", "ese");
+  } else if (fr == "none") {
+    num = new Array("--");
+    vnum = new Array("none");
+  }
+
+  for (i = 0; i = document.getElementById("Major_select").length; i++) {
+    document.getElementById("Major_select").options[0] = null;
+  };
+
+  for (i = 0; i < num.length; i++) {
+    document.getElementById("Major_select").options[i] = new Option(num[i], vnum[i]);
+  }
+}
+
+function tr_collegechanges() {
+  var fr = document.getElementById("college_select").value;
+  if (fr == "humanity") {
+    num = new Array("--", "국어국문학과", "영어영문학과", "유럽문화_독일어문학", "유럽문화_프랑스어문학", "유럽문화_러시아어문학", "아시아문화_일본어문학", "아시아문화_중국어문학", "철학과", "역사학과");
+    vnum = new Array("none", "korean", "english", "german", "france", "russia", "japan", "china", "philosophy", "history");
+  } else if (fr == "society") {
+    num = new Array("--", "정치국제학과", "공공인재_행정학트랙", "공공인재_정책학트랙", "심리학과", "문헌정보학과", "사회복지학부", "미디어커뮤니케이션학부", "도시계획부동산학과", "사회학과");
+    vnum = new Array("none", "politics", "public-admin", "public-policy", "psyche", "lis", "socialwelfare", "cmc", "planning", "sociology");
+  } else if (fr == "edu") {
+    num = new Array("--", "교육학과", "유아교육과", "영어교육과", "체육교육과");
+    vnum = new Array("none", "education", "ece", "englishedu", "pe");
+  } else if (fr == "natural") {
+    num = new Array("--", "물리학과", "화학과", "생명과학과", "수학과");
+    vnum = new Array("none", "physics", "chemistry", "bio-science", "math");
+  } else if (fr == "bne") {
+    num = new Array("--", "경영학부_경영학전공", "경영학부_글로벌금융", "경제학부", "광고홍보학과", "응용통계학과", "국제물류학과", "산업보안학과");
+    vnum = new Array("none", "biz_ba", "biz_glofi", "econ", "adpr", "stat", "log", "security");
+  } else if (fr == "engineering") {
+    num = new Array("--", "사회기반시스템공학부", "건축학부_건축학", "건축학부_건축공학", "화학신소재공학부", "기계공학부", "에너지시스템공학부");
+    vnum = new Array("none", "infra", "archi", "archieng", "chemeng", "me", "ese");
+  } else if (fr == "none") {
+    num = new Array("--");
+    vnum = new Array("none");
+  }
+
+  for (i = 0; i = document.getElementById("Major_select").length; i++) {
+    document.getElementById("Major_select").options[0] = null;
+  };
+
+  for (i = 0; i < num.length; i++) {
+    document.getElementById("Major_select").options[i] = new Option(num[i], vnum[i]);
+  }
+}
+
+function multimajorchanges() {
+  var major = document.getElementById("Major_select").value;
+  var Edu = ["education", "ece", "englishedu", "pe"]
+  var Archi = ["archi"]
+  if (Edu.includes(major)) {
+    num = new Array("--", "전공심화", "복수전공", "연계전공", "융합전공", "설계전공");
+    vnum = new Array("0", "66", "50", "50", "50", "50");
+    document.getElementById("total_standard").value = "132";
+  } else if (Archi.includes(major)) {
+    num = new Array("--", "전공심화", "복수전공", "연계전공", "융합전공", "설계전공");
+    vnum = new Array("0", "105", "105", "105", "105", "105");
+    document.getElementById("total_standard").value = "160";
+  } else {
+    num = new Array("--", "전공심화", "복수전공", "연계전공", "융합전공", "설계전공");
+    vnum = new Array("0", "66", "45", "45", "45", "45");
+    document.getElementById("total_standard").value = "132";
+  }
+
+  for (i = 0; i = document.getElementById("MultiMajor_select").length; i++) {
+    document.getElementById("MultiMajor_select").options[0] = null;
+  };
+
+  for (i = 0; i < num.length; i++) {
+    document.getElementById("MultiMajor_select").options[i] = new Option(num[i], vnum[i]);
+  }
 }
 
 function major_standard_maker() {
@@ -558,6 +734,7 @@ function OfficeNumber() {
   }
 }
 
+//연도별 학과 전공기초, 전공필수 기준
 function BaseNeceStandard12to14() {
   var Base = { // 전공기초: [2012, 2013, 2014]
     //인문대학
@@ -772,40 +949,6 @@ function BaseNeceStandard2015() {
   } else {
     document.getElementById("base_standard").value = Major_base[Major];
     document.getElementById("nece_standard").value = Major_nece[Major];
-  }
-}
-
-function tr_collegechanges() {
-  var fr = document.getElementById("college_select").value;
-  if (fr == "humanity") {
-    num = new Array("--", "국어국문학과", "영어영문학과", "유럽문화_독일어문학", "유럽문화_프랑스어문학", "유럽문화_러시아어문학", "아시아문화_일본어문학", "아시아문화_중국어문학", "철학과", "역사학과");
-    vnum = new Array("none", "korean", "english", "german", "france", "russia", "japan", "china", "philosophy", "history");
-  } else if (fr == "society") {
-    num = new Array("--", "정치국제학과", "공공인재_행정학트랙", "공공인재_정책학트랙", "심리학과", "문헌정보학과", "사회복지학부", "미디어커뮤니케이션학부", "도시계획부동산학과", "사회학과");
-    vnum = new Array("none", "politics", "public-admin", "public-policy", "psyche", "lis", "socialwelfare", "cmc", "planning", "sociology");
-  } else if (fr == "edu") {
-    num = new Array("--", "교육학과", "유아교육과", "영어교육과", "체육교육과");
-    vnum = new Array("none", "education", "ece", "englishedu", "pe");
-  } else if (fr == "natural") {
-    num = new Array("--", "물리학과", "화학과", "생명과학과", "수학과");
-    vnum = new Array("none", "physics", "chemistry", "bio-science", "math");
-  } else if (fr == "bne") {
-    num = new Array("--", "경영학부_경영학전공", "경영학부_글로벌금융", "경제학부", "광고홍보학과", "응용통계학과", "국제물류학과", "산업보안학과");
-    vnum = new Array("none", "biz_ba", "biz_glofi", "econ", "adpr", "stat", "log", "security");
-  } else if (fr == "engineering") {
-    num = new Array("--", "사회기반시스템공학부", "건축학부_건축학", "건축학부_건축공학", "화학신소재공학부", "기계공학부", "에너지시스템공학부");
-    vnum = new Array("none", "infra", "archi", "archieng", "chemeng", "me", "ese");
-  } else if (fr == "none") {
-    num = new Array("--");
-    vnum = new Array("none");
-  }
-
-  for (i = 0; i = document.getElementById("Major_select").length; i++) {
-    document.getElementById("Major_select").options[0] = null;
-  };
-
-  for (i = 0; i < num.length; i++) {
-    document.getElementById("Major_select").options[i] = new Option(num[i], vnum[i]);
   }
 }
 
