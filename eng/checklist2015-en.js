@@ -89,43 +89,7 @@ function Liberal_cal() {
   }
 }
 
-
 // 여기서부터는 전공영역
-
-// 연도별 학과 전공기초, Required 기준
-function collegechanges() {
-  var fr = document.getElementById("college_select").value;
-  if (fr == "humanity") {
-    num = new Array("Select", "국어국문학과", "영어영문학과", "유럽문화_독일어문학", "유럽문화_프랑스어문학", "유럽문화_러시아어문학", "아시아문화_일본어문학", "아시아문화_중국어문학", "철학과", "역사학과");
-    vnum = new Array("none", "korean", "english", "german", "france", "russia", "japan", "china", "philosophy", "history");
-  } else if (fr == "society") {
-    num = new Array("Select", "정치국제학과", "공공인재_행정학트랙", "공공인재_정책학트랙", "심리학과", "문헌정보학과", "사회복지학부", "미디어커뮤니케이션학부", "도시계획부동산학과", "사회학과");
-    vnum = new Array("none", "politics", "public-admin", "public-policy", "psyche", "lis", "socialwelfare", "cmc", "planning", "sociology");
-  } else if (fr == "edu") {
-    num = new Array("Select", "교육학과", "유아교육과", "영어교육과", "체육교육과");
-    vnum = new Array("none", "education", "ece", "englishedu", "pe");
-  } else if (fr == "natural") {
-    num = new Array("Select", "물리학과", "화학과", "생명과학과", "수학과");
-    vnum = new Array("none", "physics", "chemistry", "bio-science", "math");
-  } else if (fr == "bne") {
-    num = new Array("Select", "경영학부_경영학전공", "경영학부_글로벌금융", "경제학부", "광고홍보학과", "응용통계학과", "지식경영학부", "국제물류학과", "산업보안학과");
-    vnum = new Array("none", "biz_ba", "biz_glofi", "econ", "adpr", "stat", "gloknol", "log", "security");
-  } else if (fr == "engineering") {
-    num = new Array("Select", "사회기반시스템공학부", "건축학부_건축학", "건축학부_건축공학", "화학신소재공학부", "기계공학부", "에너지시스템공학부");
-    vnum = new Array("none", "infra", "archi", "archieng", "chemeng", "me", "ese");
-  } else if (fr == "none") {
-    num = new Array("Select");
-    vnum = new Array("none");
-  }
-
-  for (i = 0; i = document.getElementById("Major_select").length; i++) {
-    document.getElementById("Major_select").options[0] = null;
-  };
-
-  for (i = 0; i < num.length; i++) {
-    document.getElementById("Major_select").options[i] = new Option(num[i], vnum[i]);
-  }
-}
 
 function BaseNeceresult(Majorstandard) {
   var AdYear = Number(document.getElementById("ad-year").value);
@@ -199,7 +163,6 @@ function BaseNeceresult(Majorstandard) {
       word += "👉연계전공 : Passed the minimum credits requirement\n"
     }
   }
-
 
   var Fusioncheck = document.getElementById("fusion_major_none").checked;
   var Fusion = document.getElementById("fusion-options");
