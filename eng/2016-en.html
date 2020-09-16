@@ -107,14 +107,14 @@
     <br>
     <form id="Liberal">
       <table border="solid" width="100%">
-          <div id="container">
-            <legend>
-              <img class="legend-icon" src="../legend-icon.png"> General Credits
-            </legend>
-            <div class="item">
-              <button type="button" class="info-btn" onclick="liberalmodal()"><i class="fas fa-info-circle"></i> Details</button>
-            </div>
+        <div id="container">
+          <legend>
+            <img class="legend-icon" src="../legend-icon.png"> General Credits
+          </legend>
+          <div class="item">
+            <button type="button" class="info-btn" onclick="liberalmodal()"><i class="fas fa-info-circle"></i> Details</button>
           </div>
+        </div>
         <tr>
           <th colspan="2" width="15%">Type</th>
           <th width="23%">Min. credits</th>
@@ -186,7 +186,6 @@
           <td><input type="checkbox" id="core5" tabindex="-1"><label for="core5">소통</label></td>
         </tr>
         <tr>
-        <tr>
           <th colspan="2">선택교양<br>Elective</th>
           <td><input type="text" class="standard_number" id="elective_st" value="0" readonly tabindex="-1"></td>
           <td></td>
@@ -197,13 +196,14 @@
           </td>
           <!-- <td>자율이수</td> -->
         </tr>
-        <th colspan="2">Total</th>
-        <td><input type="text" class="standard_number" id="total_lib_st" value="29" readonly tabindex="-1"></td>
-        <td><input type="text" class="standard_number" id="lib_max" value="45" readonly tabindex="-1"></td>
-        <td colspan="2">
-          <input type="text" id="liberal_total" value="0" class="totalnumber" onchange="total_point_sum();numbercolor('total_standard','the_total');numbercolor('total_lib_st','liberal_total');" readonly tabindex="-1"> credits
-        </td>
-        <!-- <td>45 credits 초과 시<br>졸업 credits에서 감산</td> -->
+        <tr>
+          <th colspan="2">Total</th>
+          <td><input type="text" class="standard_number" id="total_lib_st" value="29" readonly tabindex="-1"></td>
+          <td><input type="text" class="standard_number" id="lib_max" value="45" readonly tabindex="-1"></td>
+          <td colspan="2">
+            <input type="text" id="liberal_total" value="0" class="totalnumber" onchange="total_point_sum();numbercolor('total_standard','the_total');numbercolor('total_lib_st','liberal_total');" readonly tabindex="-1"> credits
+          </td>
+          <!-- <td>45 credits 초과 시<br>졸업 credits에서 감산</td> -->
         </tr>
       </table>
     </form>
@@ -221,14 +221,14 @@
     <br>
     <form id="Major">
       <table border="solid" width="100%">
-          <div id="container">
-            <legend>
-              <img class="legend-icon" src="../legend-icon.png"> Major Credits
-            </legend>
-            <div class="item">
-              <button type="button" class="info-btn" onclick="majormodal()"><i class="fas fa-info-circle"></i> Details</button>
-            </div>
+        <div id="container">
+          <legend>
+            <img class="legend-icon" src="../legend-icon.png"> Major Credits
+          </legend>
+          <div class="item">
+            <button type="button" class="info-btn" onclick="majormodal()"><i class="fas fa-info-circle"></i> Details</button>
           </div>
+        </div>
         <tr>
           <th>Type</th>
           <th>Min. credits</th>
