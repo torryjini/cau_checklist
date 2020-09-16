@@ -187,7 +187,6 @@
           <td><input type="checkbox" id="core5" tabindex="-1"><label for="core5">소통</label></td>
         </tr>
         <tr>
-        <tr>
           <th colspan="2">선택교양</th>
           <td><input type="text" class="standard_number" id="elective_st" value="0" readonly tabindex="-1"></td>
           <td></td>
@@ -198,13 +197,14 @@
           </td>
           <!-- <td>자율이수</td> -->
         </tr>
-        <th colspan="2">합계</th>
-        <td><input type="text" class="standard_number" id="total_lib_st" value="29" readonly tabindex="-1"></td>
-        <td><input type="text" class="standard_number" id="lib_max" value="45" readonly tabindex="-1"></td>
-        <td colspan="2">
-          <input type="text" id="liberal_total" value="0" class="totalnumber" onchange="total_point_sum();numbercolor('total_standard','the_total');numbercolor('total_lib_st','liberal_total');" readonly tabindex="-1"> 학점
-        </td>
-        <!-- <td>45 학점 초과 시<br>졸업 학점에서 감산</td> -->
+        <tr>
+          <th colspan="2">합계</th>
+          <td><input type="text" class="standard_number" id="total_lib_st" value="29" readonly tabindex="-1"></td>
+          <td><input type="text" class="standard_number" id="lib_max" value="45" readonly tabindex="-1"></td>
+          <td colspan="2">
+            <input type="text" id="liberal_total" value="0" class="totalnumber" onchange="total_point_sum();numbercolor('total_standard','the_total');numbercolor('total_lib_st','liberal_total');" readonly tabindex="-1"> 학점
+          </td>
+          <!-- <td>45 학점 초과 시<br>졸업 학점에서 감산</td> -->
         </tr>
       </table>
     </form>
