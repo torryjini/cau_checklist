@@ -53,7 +53,7 @@ function MajortableReset() {
 function numbercolor(st, number) {
   var standard = Number(document.getElementById(st).value);
   var point = Number(document.getElementById(number).value);
-  if(point >= standard){
+  if (point >= standard) {
     document.getElementById(number).style.color = "blue";
   } else {
     document.getElementById(number).style.color = "red";
@@ -62,7 +62,7 @@ function numbercolor(st, number) {
 
 function gpacolor() {
   var point = Number(document.getElementById("average").value);
-  if(point >= 2){
+  if (point >= 2) {
     document.getElementById("average").style.color = "blue";
   } else {
     document.getElementById("average").style.color = "red";
@@ -80,7 +80,7 @@ function etcchange() {
   var AdYear = Number(document.getElementById("ad-year").value);
   var College = document.getElementById("college_select").value;
   var Engin = ["engineering", "ict", "software"]
-  if( AdYear >= 2016 && AdYear <= 2018 && Engin.includes(College)){
+  if (AdYear >= 2016 && AdYear <= 2018 && Engin.includes(College)) {
     document.getElementById("com_etc_st").value = 8;
     document.getElementById("etc_max").value = 8;
     document.getElementById("total_lib_st").value = 27;
@@ -100,12 +100,13 @@ function Liberal_Sum() {
   document.getElementById("liberal_total").value = elective_point + common_kor_point + common_eng_point + common_etc_point + core_total_point;
 }
 
-function teachingcheck() {//교직과정 설치 학과 구분
+function teachingcheck() { //교직과정 설치 학과 구분
   var teachingmajor = ["education", "ece", "englishedu", "pe",
-   "korean", "english", "german", "russia", "japan", "china", "philosophy", "history",
-  "psyche", "lis", "physics", "chemistry", "bio-science", "math"]
+    "korean", "english", "german", "russia", "japan", "china", "philosophy", "history",
+    "psyche", "lis", "physics", "chemistry", "bio-science", "math"
+  ]
   var major = document.getElementById("Major_select").value;
-  if(teachingmajor.includes(major)) {
+  if (teachingmajor.includes(major)) {
     document.getElementById("teaching_point").readOnly = false;
     document.getElementById("teaching_none").checked = false;
   } else {
@@ -455,14 +456,6 @@ function major_standard_maker() {
 }
 
 //편입생 관련
-function secyearmultimajor(){
-  var SecYear = document.getElementById("2ndyear").checked;
-  if(!SecYear) {
-    document.getElementById("MultiMajor_select").disabled = true;
-  } else {
-    document.getElementById("MultiMajor_select").disabled = false;
-  }
-}
 
 function tr_major_standard_maker() {
   var Multimajor_standard = Number(document.getElementById("MultiMajor_select").value);
@@ -470,13 +463,7 @@ function tr_major_standard_maker() {
   var Multimajor = document.getElementById("MultiMajor_select");
   var Multimajortext = Multimajor.options[Multimajor.selectedIndex].text;
 
-  if (Multimajortext.includes("해당없음")) {
-    document.getElementById("total_standard").value = 66;
-  } else {
-    document.getElementById("total_standard").value = 99;
-  }
-
-  if (Multimajortext.includes("심화") || Multimajortext.includes("해당없음")|| Multimajortext.includes("N/A")) {
+  if (Multimajortext.includes("심화") || Multimajortext.includes("해당없음") || Multimajortext.includes("N/A")) {
     document.getElementById("double_major_none").checked = true;
     document.getElementById("double_major_point").value = null;
     document.getElementById("double_major_point").readOnly = true;
@@ -652,26 +639,26 @@ function OfficeNumber() {
     "englishedu": "영어교육과",
     "pe": "체육교육과",
     //자연과학대학
-    "physics":"물리학과",
-    "chemistry":"화학과",
-    "bio-science":"생명과학과",
-    "math":"수학과",
+    "physics": "물리학과",
+    "chemistry": "화학과",
+    "bio-science": "생명과학과",
+    "math": "수학과",
     //경영경제대학
-    "biz_ba":"경영학부",
-    "biz_glofi":"경영학부",
-    "econ":"경제학부",
-    "adpr":"광고홍보학과",
-    "stat":"응용통계학과",
-    "gloknol":"지식경영학부",
-    "log":"국제물류학과",
-    "security":"산업보안학과",
+    "biz_ba": "경영학부",
+    "biz_glofi": "경영학부",
+    "econ": "경제학부",
+    "adpr": "광고홍보학과",
+    "stat": "응용통계학과",
+    "gloknol": "지식경영학부",
+    "log": "국제물류학과",
+    "security": "산업보안학과",
     //공과대학
-    "infra":"사회기반시스템공학부",
-    "archi":"건축학부",
-    "archieng":"건축학부",
-    "chemeng":"화학신소재공학부",
-    "me":"기계공학부",
-    "ese":"에너지시스템공학부"
+    "infra": "사회기반시스템공학부",
+    "archi": "건축학부",
+    "archieng": "건축학부",
+    "chemeng": "화학신소재공학부",
+    "me": "기계공학부",
+    "ese": "에너지시스템공학부"
   };
   var PhoneNumber = {
     //인문대학
@@ -702,26 +689,26 @@ function OfficeNumber() {
     "englishedu": "02-820-5391",
     "pe": "02-820-5382",
     //자연과학대학
-    "physics":"02-820-5189",
-    "chemistry":"02-820-5196",
-    "bio-science":"02-820-5206",
-    "math":"02-820-5214",
+    "physics": "02-820-5189",
+    "chemistry": "02-820-5196",
+    "bio-science": "02-820-5206",
+    "math": "02-820-5214",
     //경영경제대학
-    "biz_ba":"02-820-5539",
-    "biz_glofi":"02-820-5540",
-    "econ":"02-820-5487",
-    "adpr":"02-820-5504",
-    "stat":"02-820-5499",
-    "gloknol":"02-820-5527",
-    "log":"02-820-5537",
-    "security":"02-820-5730",
+    "biz_ba": "02-820-5539",
+    "biz_glofi": "02-820-5540",
+    "econ": "02-820-5487",
+    "adpr": "02-820-5504",
+    "stat": "02-820-5499",
+    "gloknol": "02-820-5527",
+    "log": "02-820-5537",
+    "security": "02-820-5730",
     //공과대학
-    "infra":"02-820-5253",
-    "archi":"02-820-5260",
-    "archieng":"02-820-5260",
-    "chemeng":"02-820-5268",
-    "me":"02-820-5276",
-    "ese":"02-820-5867"
+    "infra": "02-820-5253",
+    "archi": "02-820-5260",
+    "archieng": "02-820-5260",
+    "chemeng": "02-820-5268",
+    "me": "02-820-5276",
+    "ese": "02-820-5867"
   };
   var Major = document.getElementById("Major_select").value;
   if (Major == "none") {
@@ -730,7 +717,7 @@ function OfficeNumber() {
   } else {
     document.getElementById("dept").value = Office[Major];
     document.getElementById("phone").value = PhoneNumber[Major];
-    document.getElementById("phonenumber").setAttribute("href","tel:" + PhoneNumber[Major]); //전화연결 가능
+    document.getElementById("phonenumber").setAttribute("href", "tel:" + PhoneNumber[Major]); //전화연결 가능
   }
 }
 
@@ -775,12 +762,12 @@ function BaseNeceStandard12to14() {
     "gloknol": ["18", "18", "18"],
     "log": ["15", "15", "15"],
     //공과대학
-    "infra":["10", "10", "10"],
-    "archi":["12", "12", "12"],
-    "archieng":["12", "12", "12"],
-    "chemeng":["10", "10", "14"],
-    "me":["14", "14", "14"],
-    "ese":["14", "14", "14"]
+    "infra": ["10", "10", "10"],
+    "archi": ["12", "12", "12"],
+    "archieng": ["12", "12", "12"],
+    "chemeng": ["10", "10", "14"],
+    "me": ["14", "14", "14"],
+    "ese": ["14", "14", "14"]
   };
   var Nece = { //전공필수: [2012, 2013, 2014]
     //인문대학
@@ -821,12 +808,12 @@ function BaseNeceStandard12to14() {
     "gloknol": ["21", "21", "21"],
     "log": ["18", "18", "18"],
     //공과대학
-    "infra":["18", "18", "18"],
-    "archi":["99", "99", "99"],
-    "archieng":["12", "12", "12"],
-    "chemeng":["18", "18", "18"],
-    "me":["18", "18", "18"],
-    "ese":["12", "12", "12"]
+    "infra": ["18", "18", "18"],
+    "archi": ["99", "99", "99"],
+    "archieng": ["12", "12", "12"],
+    "chemeng": ["18", "18", "18"],
+    "me": ["18", "18", "18"],
+    "ese": ["12", "12", "12"]
   };
 
   var Major = document.getElementById("Major_select").value;
@@ -885,12 +872,12 @@ function BaseNeceStandard2015() {
     "log": "15",
     "security": "15",
     //공과대학
-    "infra":"10",
-    "archi":"12",
-    "archieng":"14",
-    "chemeng":"14",
-    "me":"14",
-    "ese":"14"
+    "infra": "10",
+    "archi": "12",
+    "archieng": "14",
+    "chemeng": "14",
+    "me": "14",
+    "ese": "14"
   };
 
   var Major_nece = {
@@ -934,12 +921,12 @@ function BaseNeceStandard2015() {
     "log": "18",
     "security": "18",
     //공과대학
-    "infra":"18",
-    "archi":"99",
-    "archieng":"17",
-    "chemeng":"18",
-    "me":"18",
-    "ese":"12"
+    "infra": "18",
+    "archi": "99",
+    "archieng": "17",
+    "chemeng": "18",
+    "me": "18",
+    "ese": "12"
   };
 
   var Major = document.getElementById("Major_select").value;
@@ -994,12 +981,12 @@ function BaseNeceStandard2016() {
     "log": ["15", "15", "15", "15", "15"],
     "security": ["15", "15", "15", "15", "15"],
     //공과대학
-    "infra":["10", "10", "10", "10", "10"],
-    "archi":["12", "12", "12", "12", "12"],
-    "archieng":["14", "14", "14", "14", "14"],
-    "chemeng":["14", "14", "14", "14", "14"],
-    "me":["14", "14", "14", "14", "14"],
-    "ese":["14", "15", "15", "15", "15"]
+    "infra": ["10", "10", "10", "10", "10"],
+    "archi": ["12", "12", "12", "12", "12"],
+    "archieng": ["14", "14", "14", "14", "14"],
+    "chemeng": ["14", "14", "14", "14", "14"],
+    "me": ["14", "14", "14", "14", "14"],
+    "ese": ["14", "15", "15", "15", "15"]
   };
   var Nece = { //전공필수: [2016, 2017, 2018, 2019, 2020]
     //인문대학
@@ -1042,12 +1029,12 @@ function BaseNeceStandard2016() {
     "log": ["18", "12", "12", "12", "12"],
     "security": ["15", "18", "18", "18", "18"],
     //공과대학
-    "infra":["18", "18", "18", "18", "18"],
-    "archi":["99", "99", "99", "99", "99"],
-    "archieng":["17", "17", "17", "17", "18"],
-    "chemeng":["18", "18", "18", "18", "18"],
-    "me":["18", "18", "18", "18", "18"],
-    "ese":["15", "15", "15", "15", "15"]
+    "infra": ["18", "18", "18", "18", "18"],
+    "archi": ["99", "99", "99", "99", "99"],
+    "archieng": ["17", "17", "17", "17", "18"],
+    "chemeng": ["18", "18", "18", "18", "18"],
+    "me": ["18", "18", "18", "18", "18"],
+    "ese": ["15", "15", "15", "15", "15"]
   };
 
   var Major = document.getElementById("Major_select").value;
@@ -1108,12 +1095,12 @@ function BaseNeceStandard_tr2017() {
     "log2": ["15", "15", "15", "15"],
     "security": ["15", "15", "15", "15"],
     //공과대학
-    "infra":["0", "0", "0", "0"],
-    "archi":["0", "0", "0", "0"],
-    "archieng":["0", "0", "0", "0"],
-    "chemeng":["0", "0", "0", "0"],
-    "me":["0", "0", "0", "0"],
-    "ese":["0", "0", "0", "0"]
+    "infra": ["0", "0", "0", "0"],
+    "archi": ["0", "0", "0", "0"],
+    "archieng": ["0", "0", "0", "0"],
+    "chemeng": ["0", "0", "0", "0"],
+    "me": ["0", "0", "0", "0"],
+    "ese": ["0", "0", "0", "0"]
   };
   var Nece = { //전공필수: [2017, 2018, 2019, 2020]
     //인문대학
@@ -1156,12 +1143,12 @@ function BaseNeceStandard_tr2017() {
     "log": ["12", "12", "12", "12"],
     "security": ["18", "18", "18", "18"],
     //공과대학
-    "infra":["18", "18", "18", "18"],
-    "archi":["99", "99", "99", "99"],
-    "archieng":["17", "17", "17", "18"],
-    "chemeng":["18", "18", "18", "18"],
-    "me":["18", "18", "18", "18"],
-    "ese":["12", "15", "15", "15"]
+    "infra": ["18", "18", "18", "18"],
+    "archi": ["99", "99", "99", "99"],
+    "archieng": ["17", "17", "17", "18"],
+    "chemeng": ["18", "18", "18", "18"],
+    "me": ["18", "18", "18", "18"],
+    "ese": ["12", "15", "15", "15"]
   };
 
   var Major = document.getElementById("Major_select").value;
