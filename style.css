@@ -139,6 +139,12 @@ input[type=button], input[type=reset] {
   font-weight: 600;
 }
 
+p {
+  text-align: center;
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
 .swal-text {
   font-size: 1.1rem;
 }
