@@ -27,6 +27,12 @@ function Liberal_cal() {
   var common_etc_point = Number(document.getElementById("common_etc").value);
   var account_check_SF = document.getElementById("account_check").checked;
   var core_total_point = Number(document.getElementById("core_total").value);
+  var MACH1 = Number(document.getElementById("mach1").value);
+  var MACH1none = document.getElementById("mach1_none").checked;
+  var MACH2 = Number(document.getElementById("mach2").value);
+  var MACH2none = document.getElementById("mach2_none").checked;
+  var MACH1_st = Number(document.getElementById("mach1_st").value);
+  var MACH2_st = Number(document.getElementById("mach2_st").value);
   var liberal_total_point = Number(document.getElementById("liberal_total").value);
   var word = "👉Entrance Year : " + AdYear + "\n";
 
@@ -66,13 +72,29 @@ function Liberal_cal() {
 
   word += "\n👉Elective : " + elective_point + " credits"
 
+  if (!MACH1none) {
+    if (MACH1 < 4) {
+      word += "\nMACH교양 : " + [4 - MACH1] + " more credits required"
+    } else {
+      word += "\nMACH교양 : Passed the requirement"
+    }
+  }
+
+  if (!MACH2none) {
+    if (MACH2 < 4) {
+      word += "\nMACH실습 : " + [2 - MACH2] + " more credits required"
+    } else {
+      word += "\nMACH실습 : Passed the requirement"
+    }
+  }
+
   if (liberal_total_point <= 45) {
     word += "\n👉Total : " + liberal_total_point + " credits"
   } else {
     word += "\n👉Total : " + liberal_total_point + " credits_" + [liberal_total_point - 45] + "credits exceeded\nAny credits over 45 don't count."
   }
 
-  if (common_kor_point == 2 && core_total_point >= 11) {
+  if (common_kor_point == 2 && core_total_point >= 11 && MACH1 >= MACH1_st && MACH2 >= MACH2_st) {
     if (common_eng_point == 2 && common_etc_point == 8) {
       swal("General credits result", word, "success")
     } else if (common_eng_point <= 2 && common_eng_ex && common_etc_point == 8) {

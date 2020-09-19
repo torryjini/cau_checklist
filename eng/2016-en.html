@@ -66,7 +66,7 @@
           </td>
           <td>
             <form id="Major_select_form">
-              <select id="college_select" onchange="collegechanges16();Form_Reset('Major');MajortableReset();etcchange();">
+              <select id="college_select" onchange="collegechanges16();Form_Reset('Major');Liberal_Sum();MajortableReset();etcchange();machshow();">
                 <option value="none">--</option>
                 <option value="humanity">인문대학</option>
                 <option value="society">사회과학대학</option>
@@ -196,6 +196,26 @@
           </td>
           <!-- <td>자율이수</td> -->
         </tr>
+        <tr id="mach1_table" style="display:none">
+          <th colspan="2">MACH교양</th>
+          <td><input type="text" class="standard_number" id="mach1_st" value="" readonly tabindex="-1"></td>
+          <td></td>
+          <td colspan="2">
+            <input type="number" id="mach1" placeholder="0" value="" onchange="Liberal_Sum();total_point_sum();numbercolor('total_standard','the_total');numbercolor('mach1_st', 'mach1');numbercolor('total_lib_st','liberal_total');"
+              onkeyup="Liberal_Sum();total_point_sum();numbercolor('total_standard','the_total');numbercolor('core_st', 'core_total');numbercolor('total_lib_st','liberal_total');" class="inputnumber" min="0" max="50" maxlength="2"
+              oninput="maxLengthCheck(this)" readonly><label for="mach1"> 학점</label><input type="checkbox" id="mach1_none" checked hidden>
+          </td>
+        </tr>
+        <tr id="mach2_table" style="display:none">
+          <th colspan="2">MACH실습</th>
+          <td><input type="text" class="standard_number" id="mach2_st" value="" readonly tabindex="-1"></td>
+          <td></td>
+          <td colspan="2">
+            <input type="number" id="mach2" placeholder="0" value="" onchange="Liberal_Sum();total_point_sum();numbercolor('total_standard','the_total');numbercolor('mach2_st', 'mach2');numbercolor('total_lib_st','liberal_total');"
+              onkeyup="Liberal_Sum();total_point_sum();numbercolor('total_standard','the_total');numbercolor('core_st', 'core_total');numbercolor('total_lib_st','liberal_total');" class="inputnumber" min="0" max="50" maxlength="2"
+              oninput="maxLengthCheck(this)" readonly><label for="mach2"> 학점</label><input type="checkbox" id="mach2_none" checked hidden>
+          </td>
+        </tr>
         <tr>
           <th colspan="2">Total</th>
           <td><input type="text" class="standard_number" id="total_lib_st" value="29" readonly tabindex="-1"></td>
@@ -209,8 +229,8 @@
     </form>
     <br>
     <div class="buttons">
-      <input type="reset" value="&#8635; Reset" onclick="Form_Reset('Liberal');libcolorreset()" tabindex="-1">
-      <input type="button" value="&#10003; CHECK!" onclick="Liberal_cal();total_point_sum()">
+      <input type="reset" value="&#8635; Reset" onclick="Form_Reset('Liberal');libcolorreset();Lib_st_Sum();" tabindex="-1">
+      <input type="button" value="&#10003; CHECK!" onclick="Liberal_cal();total_point_sum();">
     </div>
     <br>
     <div class="call"><a href="tel:02-820-6633">Da Vinci College of<br>General Education<br><i class="fas fa-phone-alt"></i>
