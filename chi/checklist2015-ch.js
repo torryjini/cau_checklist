@@ -27,6 +27,12 @@ function Liberal_cal() {
   var common_etc_point = Number(document.getElementById("common_etc").value);
   var account_check_SF = document.getElementById("account_check").checked;
   var core_total_point = Number(document.getElementById("core_total").value);
+  var MACH1 = Number(document.getElementById("mach1").value);
+  var MACH1none = document.getElementById("mach1_none").checked;
+  var MACH2 = Number(document.getElementById("mach2").value);
+  var MACH2none = document.getElementById("mach2_none").checked;
+  var MACH1_st = Number(document.getElementById("mach1_st").value);
+  var MACH2_st = Number(document.getElementById("mach2_st").value);
   var liberal_total_point = Number(document.getElementById("liberal_total").value);
   var word = "👉入学年度 : " + AdYear + "年\n";
 
@@ -72,7 +78,23 @@ function Liberal_cal() {
     word += "\n👉教养领域 总计 : " + liberal_total_point + " 学分_ 超过" + [liberal_total_point - 45] + "学分（学分超过45学分时只认证45学分。）"
   }
 
-  if (common_kor_point == 2 && core_total_point >= 11) {
+  if (!MACH1none) {
+    if (MACH1 < 4) {
+      word += "\nMACH교양 : 缺少" + [4 - MACH1] + " 学分"
+    } else {
+      word += "\nMACH교양 : 通过"
+    }
+  }
+
+  if (!MACH2none) {
+    if (MACH2 < 4) {
+      word += "\nMACH실습 : 缺少" + [2 - MACH2] + " 学分"
+    } else {
+      word += "\nMACH실습 : 通过"
+    }
+  }
+
+  if (common_kor_point == 2 && core_total_point >= 11 && MACH1 >= MACH1_st && MACH2 >= MACH2_st) {
     if (common_eng_point == 2 && common_etc_point == 8) {
       swal("教养领域结果", word, "success")
     } else if (common_eng_point <= 2 && common_eng_ex && common_etc_point == 8) {
