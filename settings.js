@@ -75,6 +75,39 @@ function libcolorreset() {
   document.getElementById("common_etc").style.color = "red";
 }
 
+function Liberal_Sum() {
+  var AdYear = Number(document.getElementById("ad-year").value);
+  var College = document.getElementById("college_select").value;
+  var elective_point = Number(document.getElementById("elective_liberal").value);
+  var common_kor_point = Number(document.getElementById("common_kor").value);
+  var common_eng_point = Number(document.getElementById("common_eng").value);
+  var common_etc_point = Number(document.getElementById("common_etc").value);
+  var core_total_point = Number(document.getElementById("core_total").value);
+  var MACH1 = Number(document.getElementById("mach1").value);
+  var MACH2 = Number(document.getElementById("mach2").value);
+  if (AdYear >= 2015 && AdYear <= 2018 && College == "ict") {
+    document.getElementById("liberal_total").value = elective_point + common_kor_point + common_eng_point + common_etc_point + core_total_point + MACH1 + MACH2;
+  } else {
+    document.getElementById("liberal_total").value = elective_point + common_kor_point + common_eng_point + common_etc_point + core_total_point;
+  }
+}
+
+function Lib_st_Sum() {
+  var AdYear = Number(document.getElementById("ad-year").value);
+  var College = document.getElementById("college_select").value;
+  var elec_st = Number(document.getElementById("elective_st").value);
+  var kor_st = Number(document.getElementById("com_kor_st").value);
+  var eng_st = Number(document.getElementById("com_eng_st").value);
+  var etc_st = Number(document.getElementById("com_etc_st").value);
+  var core_st = Number(document.getElementById("core_st").value);
+  var MACH1_st = Number(document.getElementById("mach1_st").value);
+  var MACH2_st = Number(document.getElementById("mach2_st").value);
+  if (AdYear >= 2015 && AdYear <= 2018 && College == "ict") {
+    document.getElementById("total_lib_st").value = elec_st + kor_st + eng_st + etc_st + core_st + MACH1_st + MACH2_st;
+  } else {
+    document.getElementById("total_lib_st").value = elec_st + kor_st + eng_st + etc_st + core_st;
+  }
+}
 
 function etcchange() {
   var AdYear = Number(document.getElementById("ad-year").value);
@@ -83,21 +116,45 @@ function etcchange() {
   if (AdYear >= 2016 && AdYear <= 2018 && Engin.includes(College)) {
     document.getElementById("com_etc_st").value = 8;
     document.getElementById("etc_max").value = 8;
-    document.getElementById("total_lib_st").value = 27;
+    Lib_st_Sum();
   } else {
     document.getElementById("com_etc_st").value = 10;
     document.getElementById("etc_max").value = 10;
-    document.getElementById("total_lib_st").value = 29;
+    Lib_st_Sum();
   }
 }
 
-function Liberal_Sum() {
-  var elective_point = Number(document.getElementById("elective_liberal").value);
-  var common_kor_point = Number(document.getElementById("common_kor").value);
-  var common_eng_point = Math.floor(Number(document.getElementById("common_eng").value));
-  var common_etc_point = Number(document.getElementById("common_etc").value);
-  var core_total_point = Number(document.getElementById("core_total").value);
-  document.getElementById("liberal_total").value = elective_point + common_kor_point + common_eng_point + common_etc_point + core_total_point;
+function machshow() {
+  var AdYear = document.getElementById("ad-year").value;
+  var College = document.getElementById("college_select").value;
+
+  if (AdYear >= 2015 && AdYear <= 2018 && College == "ict") {
+    document.getElementById("mach1_table").style.display = "";
+    document.getElementById("mach1").readOnly = false;
+    document.getElementById("mach1_none").checked = false;
+    document.getElementById("mach1_st").value = "4";
+
+    document.getElementById("mach2_table").style.display = "";
+    document.getElementById("mach2").readOnly = false;
+    document.getElementById("mach2_none").checked = false;
+    document.getElementById("mach2_st").value = "2";
+
+    Lib_st_Sum();
+  } else {
+    document.getElementById("mach1_table").style.display = "none";
+    document.getElementById("mach1").readOnly = true;
+    document.getElementById("mach1").value = null;
+    document.getElementById("mach1_none").checked = true;
+    document.getElementById("mach1_st").value = "0";
+
+    document.getElementById("mach2_table").style.display = "none";
+    document.getElementById("mach2").value = null;
+    document.getElementById("mach2").readOnly = true;
+    document.getElementById("mach2_none").checked = true;
+    document.getElementById("mach2_st").value = "0";
+
+    Lib_st_Sum();
+  }
 }
 
 function teachingcheck() { //교직과정 설치 학과 구분
@@ -189,6 +246,9 @@ function collegechanges15() {
   } else if (fr == "engineering") {
     num = new Array("--", "사회기반시스템공학부", "건축학부_건축학", "건축학부_건축공학", "화학신소재공학부", "기계공학부", "에너지시스템공학부");
     vnum = new Array("none", "infra", "archi", "archieng", "chemeng", "me", "ese");
+  } else if (fr == "ict") {
+    num = new Array("--");
+    vnum = new Array("none");
   } else if (fr == "none") {
     num = new Array("--");
     vnum = new Array("none");
