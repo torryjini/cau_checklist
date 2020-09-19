@@ -28,6 +28,12 @@ function Liberal_cal() {
   var account_check_SF = document.getElementById("account_check").checked;
   var core_total_point = Number(document.getElementById("core_total").value);
   var liberal_total_point = Number(document.getElementById("liberal_total").value);
+  var MACH1 = Number(document.getElementById("mach1").value);
+  var MACH1none = document.getElementById("mach1_none").checked;
+  var MACH2 = Number(document.getElementById("mach2").value);
+  var MACH2none = document.getElementById("mach2_none").checked;
+  var MACH1_st = Number(document.getElementById("mach1_st").value);
+  var MACH2_st = Number(document.getElementById("mach2_st").value);
   var word = "👉입학연도 : " + AdYear + "년\n";
 
   if (common_kor_point < 2) {
@@ -66,13 +72,29 @@ function Liberal_cal() {
 
   word += "\n👉선택교양 : " + elective_point + " 학점"
 
+  if (!MACH1none) {
+    if (MACH1 < 4) {
+      word += "\nMACH교양 : " + [4 - MACH1] + " 학점 미달"
+    } else {
+      word += "\nMACH교양 : 기준 통과"
+    }
+  }
+
+  if (!MACH2none) {
+    if (MACH2 < 4) {
+      word += "\nMACH실습 : " + [2 - MACH2] + " 학점 미달"
+    } else {
+      word += "\nMACH실습 : 기준 통과"
+    }
+  }
+
   if (liberal_total_point <= 45) {
     word += "\n👉교양영역 계 : " + liberal_total_point + " 학점"
   } else {
     word += "\n👉교양영역 계 : " + liberal_total_point + " 학점_ " + [liberal_total_point - 45] + "학점 초과_45 학점만 인정"
   }
 
-  if (common_kor_point == 2 && core_total_point >= 11) {
+  if (common_kor_point == 2 && core_total_point >= 11 && MACH1 >= MACH1_st && MACH2 >= MACH2_st) {
     if (common_eng_point == 2 && common_etc_point == 8) {
       swal("교양영역 결과", word, "success")
     } else if (common_eng_point <= 2 && common_eng_ex && common_etc_point == 8) {
