@@ -240,6 +240,25 @@ function yearchanges() {
   }
 }
 
+function tr_yearchanges() {
+  var fr = document.getElementById("ad-year").value;
+  if (fr >= 2017) {
+    num = new Array("--", "인문대학", "사회과학대학", "사범대학", "자연과학대학", "공과대학", "창의ICT공과대학", "경영경제대학");
+    vnum = new Array("none", "humanity", "society", "edu", "natural", "engineering", "ict", "bne");
+  } else if (fr == "0") {
+    num = new Array("--");
+    vnum = new Array("none");
+  }
+
+  for (i = 0; i = document.getElementById("college_select").length; i++) {
+    document.getElementById("college_select").options[0] = null;
+  };
+
+  for (i = 0; i < num.length; i++) {
+    document.getElementById("college_select").options[i] = new Option(num[i], vnum[i]);
+  }
+}
+
 //대학별 학과 변환
 function collegechanges1214() {
   var fr = document.getElementById("college_select").value;
@@ -381,6 +400,9 @@ function tr_collegechanges() {
   } else if (fr == "engineering") {
     num = new Array("--", "사회기반시스템공학부", "건축학부_건축학", "건축학부_건축공학", "화학신소재공학부", "기계공학부", "에너지시스템공학부");
     vnum = new Array("none", "infra", "archi", "archieng", "chemeng", "me", "ese");
+  } else if (fr == "ict") {
+    num = new Array("--", "전자전기공학부", "융합공학부");
+    vnum = new Array("none", "eee", "ie");
   } else if (fr == "none") {
     num = new Array("--");
     vnum = new Array("none");
@@ -1280,7 +1302,10 @@ function BaseNeceStandard_tr2017() {
     "archieng": ["0", "0", "0", "0"],
     "chemeng": ["0", "0", "0", "0"],
     "me": ["0", "0", "0", "0"],
-    "ese": ["0", "0", "0", "0"]
+    "ese": ["0", "0", "0", "0"],
+    //창의ICT공과대학
+    "eee": ["0", "0", "0", "0"],
+    "ie": ["6", "6", "6", "6"]
   };
   var Nece = { //전공필수: [2017, 2018, 2019, 2020]
     //인문대학
@@ -1328,7 +1353,10 @@ function BaseNeceStandard_tr2017() {
     "archieng": ["17", "17", "17", "18"],
     "chemeng": ["18", "18", "18", "18"],
     "me": ["18", "18", "18", "18"],
-    "ese": ["12", "15", "15", "15"]
+    "ese": ["12", "15", "15", "15"],
+    //창의ICT공과대학
+    "eee": ["9", "9", "9", "9"],
+    "ie": ["18", "18", "18", "18"]
   };
 
   var Major = document.getElementById("Major_select").value;
