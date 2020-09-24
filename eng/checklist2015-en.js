@@ -20,6 +20,7 @@ function majormodal() {
 
 function Liberal_cal() {
   var AdYear = Number(document.getElementById("ad-year").value);
+  var College = document.getElementById("college_select").value;
   var elective_point = Number(document.getElementById("elective_liberal").value);
   var common_kor_point = Number(document.getElementById("common_kor").value);
   var common_eng_point = Number(document.getElementById("common_eng").value);
@@ -35,6 +36,12 @@ function Liberal_cal() {
   var MACH2_st = Number(document.getElementById("mach2_st").value);
   var liberal_total_point = Number(document.getElementById("liberal_total").value);
   var word = "👉Entrance Year : " + AdYear + "\n";
+
+  if (College == "none") {
+    document.getElementById("student-info").scrollIntoView();
+    swal("Choose your college!", "", "error");
+    return false;
+  }
 
   if (common_kor_point < 2) {
     word += "👉Mandatory\n - 국어 : " + [2 - common_kor_point] + " more credits required\n";
