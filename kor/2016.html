@@ -55,7 +55,7 @@
         </tr>
         <tr>
           <td>
-            <select id="ad-year" onchange="Form_Reset('Major_select_form');Form_Reset('Multimajor_form');majorselectreset();Form_Reset('Major');MajortableReset();" required>
+            <select id="ad-year" onchange="Form_Reset('Major_select_form');Form_Reset('Multimajor_form');majorselectreset();Form_Reset('Major');MajortableReset();yearchanges();" required>
               <option value="0">--</option>
               <option value="2016">2016</option>
               <option value="2017">2017</option>
@@ -68,13 +68,6 @@
             <form id="Major_select_form">
               <select id="college_select" onchange="collegechanges16();Form_Reset('Major');Liberal_Sum();MajortableReset();etcchange();machshow();">
                 <option value="none">--</option>
-                <option value="humanity">인문대학</option>
-                <option value="society">사회과학대학</option>
-                <option value="edu">사범대학</option>
-                <option value="natural">자연과학대학</option>
-                <option value="engineering">공과대학</option>
-                <!-- <option value="ict">창의ICT공과대학</option> -->
-                <option value="bne">경영경제대학</option>
               </select>
           </td>
         </tr>
