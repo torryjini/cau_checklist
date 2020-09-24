@@ -191,6 +191,28 @@ function total_point_sum() {
   }
 }
 
+//연도별 대학 변환
+function yearchanges1214() {
+  var fr = document.getElementById("ad-year").value;
+  if (fr == 2012) {
+    num = new Array("--", "인문대학", "사회과학대학", "사범대학", "자연과학대학", "공과대학", "경영경제대학");
+    vnum = new Array("none", "humanity", "society", "edu", "natural", "engineering12", "bne");
+  } else if (fr >= 2013) {
+    num = new Array("--", "인문대학", "사회과학대학", "사범대학", "자연과학대학", "공과대학", "경영경제대학");
+    vnum = new Array("none", "humanity", "society", "edu", "natural", "engineering", "bne");
+  } else if (fr == "0") {
+    num = new Array("--");
+    vnum = new Array("none");
+  }
+
+  for (i = 0; i = document.getElementById("college_select").length; i++) {
+    document.getElementById("college_select").options[0] = null;
+  };
+
+  for (i = 0; i < num.length; i++) {
+    document.getElementById("college_select").options[i] = new Option(num[i], vnum[i]);
+  }
+}
 //대학별 학과 변환
 function collegechanges1214() {
   var fr = document.getElementById("college_select").value;
@@ -210,8 +232,11 @@ function collegechanges1214() {
     num = new Array("--", "경영학부_경영학전공", "경영학부_글로벌금융", "경제학부", "광고홍보학과", "응용통계학과", "지식경영학부", "국제물류학과");
     vnum = new Array("none", "biz_ba", "biz_glofi", "econ", "adpr", "stat", "gloknol", "log");
   } else if (fr == "engineering") {
-    num = new Array("--", "사회기반시스템공학부", "건축학부_건축학", "건축학부_건축공학", "화학신소재공학부", "기계공학부", "에너지시스템공학부");
-    vnum = new Array("none", "infra", "archi", "archieng", "chemeng", "me", "ese");
+    num = new Array("--", "사회기반시스템공학부", "건축학부_건축학", "건축학부_건축공학", "화학신소재공학부", "기계공학부", "에너지시스템공학부", "전자전기공학부", "컴퓨터공학부", "융합공학부");
+    vnum = new Array("none", "infra", "archi", "archieng", "chemeng", "me", "ese", "eee1214", "computer", "ie1214");
+  } else if (fr == "engineering12") {
+    num = new Array("--", "사회기반시스템공학부", "건축학부_건축학", "건축학부_건축공학", "화학신소재공학부", "기계공학부", "전자전기공학부", "컴퓨터공학부", "융합공학부");
+    vnum = new Array("none", "infra", "archi", "archieng", "chemeng", "me", "eee1214", "computer12", "ie1214");
   } else if (fr == "none") {
     num = new Array("--");
     vnum = new Array("none");
@@ -731,10 +756,13 @@ function OfficeNumber() {
     "ese": "에너지시스템공학부",
     //창의ICT공과대학
     "eee": "전자전기공학부",
+    "eee1214": "전자전기공학부",
     "ie": "융합공학부",
+    "ie1214": "융합공학부",
     //소프트웨어대학
     "soft": "소프트웨어학부",
-    "computer": "소프트웨어학부"
+    "computer": "소프트웨어학부",
+    "computer12": "소프트웨어학부"
   };
   var PhoneNumber = {
     //인문대학
@@ -787,10 +815,13 @@ function OfficeNumber() {
     "ese": "02-820-5867",
     //창의ICT공과대학
     "eee": "02-820-5285",
+    "eee1214": "02-820-5285",
     "ie": "02-820-5940",
+    "ie1214": "02-820-5940",
     //소프트웨어대학
     "soft": "02-820-5301",
-    "computer": "02-820-5301"
+    "computer": "02-820-5301",
+    "computer12": "02-820-5301"
   };
   var Major = document.getElementById("Major_select").value;
   if (Major == "none") {
@@ -849,7 +880,11 @@ function BaseNeceStandard12to14() {
     "archieng": ["12", "12", "12"],
     "chemeng": ["10", "10", "14"],
     "me": ["14", "14", "14"],
-    "ese": ["14", "14", "14"]
+    "ese": ["14", "14", "14"],
+    "eee1214": ["14", "14", "14"],
+    "computer12": ["10", "14", "14"],
+    "computer": ["10", "14", "14"],
+    "ie1214": ["18", "18", "18"]
   };
   var Nece = { //전공필수: [2012, 2013, 2014]
     //인문대학
@@ -895,7 +930,11 @@ function BaseNeceStandard12to14() {
     "archieng": ["12", "12", "12"],
     "chemeng": ["18", "18", "18"],
     "me": ["18", "18", "18"],
-    "ese": ["12", "12", "12"]
+    "ese": ["12", "12", "12"],
+    "eee1214": ["9", "9", "9"],
+    "computer12": ["12", "12", "12"],
+    "computer": ["12", "12", "12"],
+    "ie1214": ["18", "18", "18"]
   };
 
   var Major = document.getElementById("Major_select").value;
