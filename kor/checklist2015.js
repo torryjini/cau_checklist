@@ -227,14 +227,15 @@ function BaseNeceresult(Majorstandard) {
     }
   }
 
+  var TotalStandard = Number(document.getElementById("total_standard").value);
   var TotalPoint = Number(document.getElementById("the_total").value);
-  if (TotalPoint < 132) {
-    word += "👉전체 이수학점 : " + [132 - TotalPoint] + " 학점 미달"
+  if (TotalPoint < TotalStandard) {
+    word += "👉전체 이수학점 : " + [TotalStandard - TotalPoint] + " 학점 미달"
   } else {
     word += "👉전체 이수학점 : 기준 통과"
   }
 
-  if (Basepoint >= BaseStandard && Necepoint >= NeceStandard && Majorpoint >= Majorstandard && TotalPoint >= 132) {
+  if (Basepoint >= BaseStandard && Necepoint >= NeceStandard && Majorpoint >= Majorstandard && TotalPoint >= TotalStandard) {
     if (Minorcheck && Teachingcheck) {
       if (Multimajortext.includes("심화")) {
         swal("전공영역 결과", word, "success")
