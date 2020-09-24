@@ -55,7 +55,7 @@
         </tr>
         <tr>
           <td>
-            <select id="ad-year" onchange="Form_Reset('Major_select_form');Form_Reset('Multimajor_form');Form_Reset('Major');majorselectreset();MajortableReset();" required>
+            <select id="ad-year" onchange="Form_Reset('Major_select_form');Form_Reset('Multimajor_form');Form_Reset('Major');majorselectreset();MajortableReset();tr_yearchanges();" required>
               <option value="0">--</option>
               <option value="2017">2017</option>
               <option value="2018">2018</option>
@@ -68,12 +68,6 @@
             <form id="Major_select_form">
               <select id="college_select" onchange="tr_collegechanges();Form_Reset('Major');MajortableReset();">
                 <option value="none">--</option>
-                <option value="humanity">인문대학</option>
-                <option value="society">사회과학대학</option>
-                <option value="edu">사범대학</option>
-                <option value="natural">자연과학대학</option>
-                <option value="engineering">공과대학</option>
-                <option value="bne">경영경제대학</option>
               </select>
           </td>
         </tr>
