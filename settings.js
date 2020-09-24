@@ -112,7 +112,7 @@ function Lib_st_Sum() {
 function etcchange() {
   var AdYear = Number(document.getElementById("ad-year").value);
   var College = document.getElementById("college_select").value;
-  var Engin = ["engineering", "ict", "software"]
+  var Engin = ["engineering", "ict", "ict1617", "ict18", "software"]
   if (AdYear >= 2016 && AdYear <= 2018 && Engin.includes(College)) {
     document.getElementById("com_etc_st").value = 8;
     document.getElementById("etc_max").value = 8;
@@ -127,8 +127,9 @@ function etcchange() {
 function machshow() {
   var AdYear = document.getElementById("ad-year").value;
   var College = document.getElementById("college_select").value;
+  var ICT = ["ict", "ict1617", "ict18"]
 
-  if (AdYear >= 2015 && AdYear <= 2018 && College == "ict") {
+  if (AdYear >= 2015 && AdYear <= 2018 && ICT.includes(College)) {
     document.getElementById("mach1_table").style.display = "";
     document.getElementById("mach1").readOnly = false;
     document.getElementById("mach1_none").checked = false;
@@ -213,6 +214,32 @@ function yearchanges1214() {
     document.getElementById("college_select").options[i] = new Option(num[i], vnum[i]);
   }
 }
+
+function yearchanges() {
+  var fr = document.getElementById("ad-year").value;
+  if (fr == 2016 || fr == 2017) {
+    num = new Array("--", "인문대학", "사회과학대학", "사범대학", "자연과학대학", "공과대학", "창의ICT공과대학", "경영경제대학");
+    vnum = new Array("none", "humanity", "society", "edu", "natural", "engineering", "ict1617", "bne");
+  } else if (fr == 2018) {
+    num = new Array("--", "인문대학", "사회과학대학", "사범대학", "자연과학대학", "공과대학", "창의ICT공과대학", "경영경제대학");
+    vnum = new Array("none", "humanity", "society", "edu", "natural", "engineering", "ict18", "bne");
+  } else if (fr >= 2019) {
+    num = new Array("--", "인문대학", "사회과학대학", "사범대학", "자연과학대학", "공과대학", "창의ICT공과대학", "소프트웨어대학", "경영경제대학");
+    vnum = new Array("none", "humanity", "society", "edu", "natural", "engineering", "ict", "software", "bne");
+  } else if (fr == "0") {
+    num = new Array("--");
+    vnum = new Array("none");
+  }
+
+  for (i = 0; i = document.getElementById("college_select").length; i++) {
+    document.getElementById("college_select").options[0] = null;
+  };
+
+  for (i = 0; i < num.length; i++) {
+    document.getElementById("college_select").options[i] = new Option(num[i], vnum[i]);
+  }
+}
+
 //대학별 학과 변환
 function collegechanges1214() {
   var fr = document.getElementById("college_select").value;
@@ -308,6 +335,18 @@ function collegechanges16() {
   } else if (fr == "engineering") {
     num = new Array("--", "사회기반시스템공학부", "건축학부_건축학", "건축학부_건축공학", "화학신소재공학부", "기계공학부", "에너지시스템공학부");
     vnum = new Array("none", "infra", "archi", "archieng", "chemeng", "me", "ese");
+  } else if (fr == "ict") {
+    num = new Array("--", "전자전기공학부", "융합공학부");
+    vnum = new Array("none", "eee", "ie");
+  } else if (fr == "ict1617") {
+    num = new Array("--", "전자전기공학부", "컴퓨터공학부_컴퓨터공학", "컴퓨터공학부_소프트웨어", "융합공학부");
+    vnum = new Array("none", "eee", "computer", "soft", "ie");
+  } else if (fr == "ict18") {
+    num = new Array("--", "전자전기공학부", "소프트웨어학부", "융합공학부");
+    vnum = new Array("none", "eee", "soft", "ie");
+  } else if (fr == "software") {
+    num = new Array("--", "소프트웨어학부");
+    vnum = new Array("none", "soft");
   } else if (fr == "none") {
     num = new Array("--");
     vnum = new Array("none");
@@ -1117,7 +1156,12 @@ function BaseNeceStandard2016() {
     "archieng": ["14", "14", "14", "14", "14"],
     "chemeng": ["14", "14", "14", "14", "14"],
     "me": ["14", "14", "14", "14", "14"],
-    "ese": ["14", "15", "15", "15", "15"]
+    "ese": ["14", "15", "15", "15", "15"],
+    //창의ICT공과대학
+    "eee": ["14", "14", "14", "14", "14"],
+    "ie": ["18", "18", "18", "18", "18"],
+    "computer": ["14", "14", "14", "14", "14"],
+    "soft": ["14", "14", "14", "14", "14"]
   };
   var Nece = { //전공필수: [2016, 2017, 2018, 2019, 2020]
     //인문대학
@@ -1165,7 +1209,12 @@ function BaseNeceStandard2016() {
     "archieng": ["17", "17", "17", "17", "18"],
     "chemeng": ["18", "18", "18", "18", "18"],
     "me": ["18", "18", "18", "18", "18"],
-    "ese": ["15", "15", "15", "15", "15"]
+    "ese": ["15", "15", "15", "15", "15"],
+    //창의ICT공과대학
+    "eee": ["9", "9", "9", "9", "9"],
+    "ie": ["18", "18", "18", "18", "18"],
+    "computer": ["12", "12", "13", "13", "13"],
+    "soft": ["6", "6", "13", "13", "13"]
   };
 
   var Major = document.getElementById("Major_select").value;
