@@ -30,6 +30,7 @@ function majormodal() {
 
 function Liberal_cal() {
   var AdYear = Number(document.getElementById("ad-year").value);
+  var College = document.getElementById("college_select").value;
   var elective_point = Number(document.getElementById("elective_liberal").value);
   var common_kor_point = Number(document.getElementById("common_kor").value);
   var common_eng_point = Number(document.getElementById("common_eng").value);
