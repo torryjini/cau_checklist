@@ -247,8 +247,8 @@ function collegechanges15() {
     num = new Array("--", "사회기반시스템공학부", "건축학부_건축학", "건축학부_건축공학", "화학신소재공학부", "기계공학부", "에너지시스템공학부");
     vnum = new Array("none", "infra", "archi", "archieng", "chemeng", "me", "ese");
   } else if (fr == "ict") {
-    num = new Array("--");
-    vnum = new Array("none");
+    num = new Array("--", "전자전기공학부", "컴퓨터공학부_컴퓨터공학", "컴퓨터공학부_소프트웨어", "융합공학부");
+    vnum = new Array("none", "eee", "computer", "soft", "ie");
   } else if (fr == "none") {
     num = new Array("--");
     vnum = new Array("none");
@@ -335,6 +335,8 @@ function multimajorchanges() {
   var major = document.getElementById("Major_select").value;
   var Edu = ["education", "ece", "englishedu", "pe"]
   var Archi = ["archi"]
+  var ICT = ["eee", "ie"]
+  var Soft = ["computer", "soft"]
   if (Edu.includes(major)) {
     num = new Array("--", "전공심화", "복수전공", "연계전공", "융합전공", "설계전공");
     vnum = new Array("0", "66", "50", "50", "50", "50");
@@ -343,6 +345,14 @@ function multimajorchanges() {
     num = new Array("--", "전공심화", "복수전공", "연계전공", "융합전공", "설계전공");
     vnum = new Array("0", "105", "105", "105", "105", "105");
     document.getElementById("total_standard").value = "160";
+  } else if (ICT.includes(major)) {
+    num = new Array("--", "전공심화", "복수전공", "연계전공", "융합전공", "설계전공");
+    vnum = new Array("0", "72", "45", "45", "45", "45");
+    document.getElementById("total_standard").value = "140";
+  } else if (Soft.includes(major)) {
+    num = new Array("--", "전공심화", "복수전공", "연계전공", "융합전공", "설계전공");
+    vnum = new Array("0", "84", "84", "84", "84", "84");
+    document.getElementById("total_standard").value = "140";
   } else {
     num = new Array("--", "전공심화", "복수전공", "연계전공", "융합전공", "설계전공");
     vnum = new Array("0", "66", "45", "45", "45", "45");
@@ -718,7 +728,13 @@ function OfficeNumber() {
     "archieng": "건축학부",
     "chemeng": "화학신소재공학부",
     "me": "기계공학부",
-    "ese": "에너지시스템공학부"
+    "ese": "에너지시스템공학부",
+    //창의ICT공과대학
+    "eee": "전자전기공학부",
+    "ie": "융합공학부",
+    //소프트웨어대학
+    "soft": "소프트웨어학부",
+    "computer": "소프트웨어학부"
   };
   var PhoneNumber = {
     //인문대학
@@ -768,7 +784,13 @@ function OfficeNumber() {
     "archieng": "02-820-5260",
     "chemeng": "02-820-5268",
     "me": "02-820-5276",
-    "ese": "02-820-5867"
+    "ese": "02-820-5867",
+    //창의ICT공과대학
+    "eee": "02-820-5285",
+    "ie": "02-820-5940",
+    //소프트웨어대학
+    "soft": "02-820-5301",
+    "computer": "02-820-5301"
   };
   var Major = document.getElementById("Major_select").value;
   if (Major == "none") {
@@ -937,7 +959,12 @@ function BaseNeceStandard2015() {
     "archieng": "14",
     "chemeng": "14",
     "me": "14",
-    "ese": "14"
+    "ese": "14",
+    //창의ICT공과대학
+    "eee": "14",
+    "computer": "14",
+    "soft": "14",
+    "ie": "18"
   };
 
   var Major_nece = {
@@ -986,7 +1013,12 @@ function BaseNeceStandard2015() {
     "archieng": "17",
     "chemeng": "18",
     "me": "18",
-    "ese": "12"
+    "ese": "12",
+    //창의ICT공과대학
+    "eee": "9",
+    "computer": "12",
+    "soft": "6",
+    "ie": "15"
   };
 
   var Major = document.getElementById("Major_select").value;
