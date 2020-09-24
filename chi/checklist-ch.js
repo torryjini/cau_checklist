@@ -133,6 +133,13 @@ function Liberal_cal() {
     word += "소통"
   }
 
+  var AdYear = document.getElementById("ad-year").value;
+  var College = document.getElementById("college_select").value;
+  var Engin =["engineering", "ict", "software"]
+  if (AdYear >= 2019 && Engin.includes(College)) {
+    word += "\n - 需进修一个以上的MACH教养!"
+  }
+
   word += "\n👉选择教养 : " + elective_point + " 学分"
 
   if (!MACH1none) {
