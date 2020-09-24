@@ -301,14 +301,15 @@ function BaseNeceresult(Majorstandard) {
     }
   }
 
+  var TotalStandard = Number(document.getElementById("total_standard").value);
   var TotalPoint = Number(document.getElementById("the_total").value);
-  if (TotalPoint < 132) {
-    word += "👉总进修学分 : 缺少" + [132 - TotalPoint] + " 学分"
+  if (TotalPoint < TotalStandard) {
+    word += "👉总进修学分 : 缺少" + [TotalStandard - TotalPoint] + " 学分"
   } else {
     word += "👉总进修学分 : 通过"
   }
 
-  if (Basepoint >= BaseStandard && Necepoint >= NeceStandard && Majorpoint >= Majorstandard && Freepoint >= 1 && TotalPoint >= 132) {
+  if (Basepoint >= BaseStandard && Necepoint >= NeceStandard && Majorpoint >= Majorstandard && Freepoint >= 1 && TotalPoint >= TotalStandard) {
     if (Minorcheck && Teachingcheck) {
       if (Multimajortext.includes("심화")) {
         swal("专业领域结果", word, "success")
