@@ -102,7 +102,9 @@ function Lib_st_Sum() {
   var core_st = Number(document.getElementById("core_st").value);
   var MACH1_st = Number(document.getElementById("mach1_st").value);
   var MACH2_st = Number(document.getElementById("mach2_st").value);
-  if (AdYear >= 2015 && AdYear <= 2018 && College == "ict") {
+  var Engin = ["engineering", "ict", "ict1617", "ict18", "software"]
+
+  if (AdYear >= 2015 && AdYear <= 2018 && Engin.includes(College)) {
     document.getElementById("total_lib_st").value = elec_st + kor_st + eng_st + etc_st + core_st + MACH1_st + MACH2_st;
   } else {
     document.getElementById("total_lib_st").value = elec_st + kor_st + eng_st + etc_st + core_st;
