@@ -133,6 +133,13 @@ function Liberal_cal() {
     word += "소통"
   }
 
+  var AdYear = document.getElementById("ad-year").value;
+  var College = document.getElementById("college_select").value;
+  var Engin =["engineering", "ict", "software"]
+  if (AdYear >= 2019 && Engin.includes(College)) {
+    word += "\n - MACH 교양 1 과목 이상 이수 확인!"
+  }
+
   word += "\n👉선택교양 : " + elective_point + " 학점"
 
   if (!MACH1none) {
