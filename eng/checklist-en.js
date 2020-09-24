@@ -304,14 +304,15 @@ function BaseNeceresult(Majorstandard) {
     }
   }
 
+  var TotalStandard = Number(document.getElementById("total_standard").value);
   var TotalPoint = Number(document.getElementById("the_total").value);
-  if (TotalPoint < 132) {
-    word += "👉Total credits : " + [132 - TotalPoint] + " more credits required"
+  if (TotalPoint < TotalStandard) {
+    word += "👉Total credits : " + [TotalStandard - TotalPoint] + " more credits required"
   } else {
     word += "👉Total credits : Passed the requirement"
   }
 
-  if (Basepoint >= BaseStandard && Necepoint >= NeceStandard && Majorpoint >= Majorstandard && Freepoint >= 1 && TotalPoint >= 132) {
+  if (Basepoint >= BaseStandard && Necepoint >= NeceStandard && Majorpoint >= Majorstandard && Freepoint >= 1 && TotalPoint >= TotalStandard) {
     if (Minorcheck && Teachingcheck) {
       if (Multimajortext.includes("심화")) {
         swal("Major credits result", word, "success")
