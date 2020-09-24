@@ -36,7 +36,7 @@ function majormodal() {
     "👉Double major : Check each department's detailed requiremetns\n ㄴBasics of double majors are counted as Free choice" +
     "\n👉연계/융합/설계전공 : Check for required courses for each track!" +
     "\n👉Minor : Earn more than 6 credits from required courses of your minor" +
-    "\n👉Free choice : CAU Seminar (1 credit) is mandatory." +
+    "\n👉Free choice : CAU세미나(1 credit) is mandatory." +
     "\n👉Teaching : Check for details(Tel.02-820-5080)" +
     "\n👉Total credits : Only 132 credits count for graduation\n(only up to 45 credits for general courses)"
   swal(word, content, "info");
@@ -134,6 +134,13 @@ function Liberal_cal() {
   }
   if (!Core5) {
     word += "소통"
+  }
+
+  var AdYear = document.getElementById("ad-year").value;
+  var College = document.getElementById("college_select").value;
+  var Engin =["engineering", "ict", "software"]
+  if (AdYear >= 2019 && Engin.includes(College)) {
+    word += "\n - Check if you have taken at least one MACH subject!"
   }
 
   word += "\n👉Elective : " + elective_point + " credits"
@@ -289,9 +296,9 @@ function BaseNeceresult(Majorstandard) {
 
   var Freepoint = Number(document.getElementById("free_point").value);
   if (Freepoint < 1) {
-    word += "👉Free choice : " + Freepoint + " credits_take CAU세미나\n"
+    word += "👉Free choice : " + Freepoint + " credits_Take CAU세미나\n"
   } else {
-    word += "👉Free choice : " + Freepoint + " credits\n_check CAU세미나!\n"
+    word += "👉Free choice : " + Freepoint + " credits\n_Check CAU세미나!\n"
   }
 
   var Teachingcheck = document.getElementById("teaching_none").checked;
