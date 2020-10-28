@@ -85,7 +85,9 @@ function Liberal_Sum() {
   var core_total_point = Number(document.getElementById("core_total").value);
   var MACH1 = Number(document.getElementById("mach1").value);
   var MACH2 = Number(document.getElementById("mach2").value);
-  if (AdYear >= 2015 && AdYear <= 2018 && College == "ict") {
+  var Engin = ["engineering", "ict", "ict1617", "ict18", "software"]
+
+  if (AdYear >= 2015 && AdYear <= 2018 && Engin.includes(College)) {
     document.getElementById("liberal_total").value = elective_point + common_kor_point + common_eng_point + common_etc_point + core_total_point + MACH1 + MACH2;
   } else {
     document.getElementById("liberal_total").value = elective_point + common_kor_point + common_eng_point + common_etc_point + core_total_point;
