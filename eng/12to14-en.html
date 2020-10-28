@@ -177,6 +177,26 @@
           </td>
           <!-- <td>자율이수</td> -->
         </tr>
+        <tr id="mach1_table" style="display:none">
+          <th colspan="2">MACH교양</th>
+          <td><input type="text" class="standard_number" id="mach1_st" value="2" readonly tabindex="-1"></td>
+          <td></td>
+          <td>
+            <input type="number" id="mach1" placeholder="0" value="" onchange="Liberal_Sum();total_point_sum();numbercolor('total_standard','the_total');numbercolor('mach1_st', 'mach1');numbercolor('total_lib_st','liberal_total');"
+              onkeyup="Liberal_Sum();total_point_sum();numbercolor('total_standard','the_total');numbercolor('core_st', 'core_total');numbercolor('total_lib_st','liberal_total');" class="inputnumber" min="0" max="50" maxlength="2"
+              oninput="maxLengthCheck(this)" readonly><label for="mach1"> credits</label><input type="checkbox" id="mach1_none" checked hidden>
+          </td>
+        </tr>
+        <tr id="mach2_table" style="display:none">
+          <th colspan="2">MACH실습</th>
+          <td><input type="text" class="standard_number" id="mach2_st" value="2" readonly tabindex="-1"></td>
+          <td></td>
+          <td>
+            <input type="number" id="mach2" placeholder="0" value="" onchange="Liberal_Sum();total_point_sum();numbercolor('total_standard','the_total');numbercolor('mach2_st', 'mach2');numbercolor('total_lib_st','liberal_total');"
+              onkeyup="Liberal_Sum();total_point_sum();numbercolor('total_standard','the_total');numbercolor('core_st', 'core_total');numbercolor('total_lib_st','liberal_total');" class="inputnumber" min="0" max="50" maxlength="2"
+              oninput="maxLengthCheck(this)" readonly><label for="mach2"> credits</label><input type="checkbox" id="mach2_none" checked hidden>
+          </td>
+        </tr>
         <tr>
           <th colspan="2">Total</th>
           <td><input type="text" class="standard_number" id="total_lib_st" value="23" readonly tabindex="-1"></td>
