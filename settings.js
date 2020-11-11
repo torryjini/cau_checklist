@@ -200,11 +200,11 @@ function total_point_sum() {
 function yearchanges1214() {
   var fr = document.getElementById("ad-year").value;
   if (fr == 2012) {
-    num = new Array("--", "인문대학", "사회과학대학", "사범대학", "자연과학대학", "공과대학", "경영경제대학");
-    vnum = new Array("none", "humanity", "society", "edu", "natural", "engineering12", "bne");
+    num = new Array("--", "인문대학", "사회과학대학", "사범대학", "자연과학대학", "공과대학", "경영경제대학", "예술대학");
+    vnum = new Array("none", "humanity", "society", "edu", "natural", "engineering12", "bne", "arts");
   } else if (fr >= 2013) {
-    num = new Array("--", "인문대학", "사회과학대학", "사범대학", "자연과학대학", "공과대학", "경영경제대학");
-    vnum = new Array("none", "humanity", "society", "edu", "natural", "engineering", "bne");
+    num = new Array("--", "인문대학", "사회과학대학", "사범대학", "자연과학대학", "공과대학", "경영경제대학", "예술대학");
+    vnum = new Array("none", "humanity", "society", "edu", "natural", "engineering", "bne", "arts");
   } else if (fr == "0") {
     num = new Array("--");
     vnum = new Array("none");
@@ -222,14 +222,14 @@ function yearchanges1214() {
 function yearchanges() {
   var fr = document.getElementById("ad-year").value;
   if (fr == 2016 || fr == 2017) {
-    num = new Array("--", "인문대학", "사회과학대학", "사범대학", "자연과학대학", "공과대학", "창의ICT공과대학", "경영경제대학");
-    vnum = new Array("none", "humanity", "society", "edu", "natural", "engineering", "ict1617", "bne");
+    num = new Array("--", "인문대학", "사회과학대학", "사범대학", "자연과학대학", "공과대학", "창의ICT공과대학", "경영경제대학", "예술대학");
+    vnum = new Array("none", "humanity", "society", "edu", "natural", "engineering", "ict1617", "bne", "arts");
   } else if (fr == 2018) {
-    num = new Array("--", "인문대학", "사회과학대학", "사범대학", "자연과학대학", "공과대학", "창의ICT공과대학", "경영경제대학");
-    vnum = new Array("none", "humanity", "society", "edu", "natural", "engineering", "ict18", "bne");
+    num = new Array("--", "인문대학", "사회과학대학", "사범대학", "자연과학대학", "공과대학", "창의ICT공과대학", "경영경제대학", "예술대학");
+    vnum = new Array("none", "humanity", "society", "edu", "natural", "engineering", "ict18", "bne", "arts");
   } else if (fr >= 2019) {
-    num = new Array("--", "인문대학", "사회과학대학", "사범대학", "자연과학대학", "공과대학", "창의ICT공과대학", "소프트웨어대학", "경영경제대학");
-    vnum = new Array("none", "humanity", "society", "edu", "natural", "engineering", "ict", "software", "bne");
+    num = new Array("--", "인문대학", "사회과학대학", "사범대학", "자연과학대학", "공과대학", "창의ICT공과대학", "소프트웨어대학", "경영경제대학", "예술대학");
+    vnum = new Array("none", "humanity", "society", "edu", "natural", "engineering", "ict", "software", "bne", "arts");
   } else if (fr == "0") {
     num = new Array("--");
     vnum = new Array("none");
@@ -247,8 +247,8 @@ function yearchanges() {
 function tr_yearchanges() {
   var fr = document.getElementById("ad-year").value;
   if (fr >= 2017) {
-    num = new Array("--", "인문대학", "사회과학대학", "사범대학", "자연과학대학", "공과대학", "창의ICT공과대학", "경영경제대학");
-    vnum = new Array("none", "humanity", "society", "edu", "natural", "engineering", "ict", "bne");
+    num = new Array("--", "인문대학", "사회과학대학", "사범대학", "자연과학대학", "공과대학", "창의ICT공과대학", "경영경제대학", "예술대학");
+    vnum = new Array("none", "humanity", "society", "edu", "natural", "engineering", "ict", "bne", "arts");
   } else if (fr == "0") {
     num = new Array("--");
     vnum = new Array("none");
@@ -287,6 +287,9 @@ function collegechanges1214() {
   } else if (fr == "engineering12") {
     num = new Array("--", "사회기반시스템공학부", "건축학부_건축학", "건축학부_건축공학", "화학신소재공학부", "기계공학부", "전자전기공학부", "컴퓨터공학부", "융합공학부");
     vnum = new Array("none", "infra", "archi", "archieng", "chemeng", "me", "eee1214", "computer12", "ie1214");
+  } else if (fr == "arts") {
+    num = new Array("--", "연극학과", "영화학과", "공간연출전공");
+    vnum = new Array("none", "theatre", "film", "tfdesign");
   } else if (fr == "none") {
     num = new Array("--");
     vnum = new Array("none");
@@ -324,6 +327,9 @@ function collegechanges15() {
   } else if (fr == "ict") {
     num = new Array("--", "전자전기공학부", "컴퓨터공학부_컴퓨터공학", "컴퓨터공학부_소프트웨어", "융합공학부");
     vnum = new Array("none", "eee", "computer", "soft", "ie");
+  } else if (fr == "arts") {
+    num = new Array("--", "연극학과", "영화학과", "공간연출전공");
+    vnum = new Array("none", "theatre", "film", "tfdesign");
   } else if (fr == "none") {
     num = new Array("--");
     vnum = new Array("none");
@@ -370,6 +376,9 @@ function collegechanges16() {
   } else if (fr == "software") {
     num = new Array("--", "소프트웨어학부");
     vnum = new Array("none", "soft");
+  } else if (fr == "arts") {
+    num = new Array("--", "연극학과", "영화학과", "공간연출전공");
+    vnum = new Array("none", "theatre", "film", "tfdesign");
   } else if (fr == "none") {
     num = new Array("--");
     vnum = new Array("none");
@@ -407,6 +416,9 @@ function tr_collegechanges() {
   } else if (fr == "ict") {
     num = new Array("--", "전자전기공학부", "융합공학부");
     vnum = new Array("none", "eee", "ie");
+  } else if (fr == "arts") {
+    num = new Array("--", "연극학과", "영화학과", "공간연출전공");
+    vnum = new Array("none", "theatre", "film", "tfdesign");
   } else if (fr == "none") {
     num = new Array("--");
     vnum = new Array("none");
@@ -427,6 +439,7 @@ function multimajorchanges() {
   var Archi = ["archi"]
   var ICT = ["eee", "ie"]
   var Soft = ["computer", "soft"]
+  var Arts = ["theatre", "film", "tfdesign"]
   if (Edu.includes(major)) {
     num = new Array("--", "전공심화", "복수전공", "연계전공", "융합전공", "설계전공");
     vnum = new Array("0", "66", "50", "50", "50", "50");
@@ -443,6 +456,10 @@ function multimajorchanges() {
     num = new Array("--", "전공심화", "복수전공", "연계전공", "융합전공", "설계전공");
     vnum = new Array("0", "84", "84", "84", "84", "84");
     document.getElementById("total_standard").value = "140";
+  } else if (Arts.includes(major)) {
+    num = new Array("--", "전공심화", "복수전공", "연계전공", "융합전공", "설계전공");
+    vnum = new Array("0", "69", "54", "54", "54", "54");
+    document.getElementById("total_standard").value = "132";
   } else {
     num = new Array("--", "전공심화", "복수전공", "연계전공", "융합전공", "설계전공");
     vnum = new Array("0", "66", "45", "45", "45", "45");
@@ -827,7 +844,11 @@ function OfficeNumber() {
     //소프트웨어대학
     "soft": "소프트웨어학부",
     "computer": "소프트웨어학부",
-    "computer12": "소프트웨어학부"
+    "computer12": "소프트웨어학부",
+    //예술대학
+    "theatre": "연극학과",
+    "film": "영화학과",
+    "tfdesign": "공간연출전공"
   };
   var PhoneNumber = {
     //인문대학
@@ -886,7 +907,11 @@ function OfficeNumber() {
     //소프트웨어대학
     "soft": "02-820-5301",
     "computer": "02-820-5301",
-    "computer12": "02-820-5301"
+    "computer12": "02-820-5301",
+    //예술대학
+    "theatre": "02-765-0717",
+    "film": "02-820-5799",
+    "tfdesign": "02-820-5809"
   };
   var Major = document.getElementById("Major_select").value;
   if (Major == "none") {
@@ -949,7 +974,11 @@ function BaseNeceStandard12to14() {
     "eee1214": ["14", "14", "14"],
     "computer12": ["10", "14", "14"],
     "computer": ["10", "14", "14"],
-    "ie1214": ["18", "18", "18"]
+    "ie1214": ["18", "18", "18"],
+    //예술대학
+    "theatre": ["10", "10", "10"],
+    "film": ["10", "10", "10"],
+    "tfdesign": ["10", "10", "10"]
   };
   var Nece = { //전공필수: [2012, 2013, 2014]
     //인문대학
@@ -999,7 +1028,11 @@ function BaseNeceStandard12to14() {
     "eee1214": ["9", "9", "9"],
     "computer12": ["12", "12", "12"],
     "computer": ["12", "12", "12"],
-    "ie1214": ["18", "18", "18"]
+    "ie1214": ["18", "18", "18"],
+    //예술대학
+    "theatre": ["0", "0", "0"],
+    "film": ["0", "0", "0"],
+    "tfdesign": ["0", "0", "0"]
   };
 
   var Major = document.getElementById("Major_select").value;
@@ -1068,7 +1101,11 @@ function BaseNeceStandard2015() {
     "eee": "14",
     "computer": "14",
     "soft": "14",
-    "ie": "18"
+    "ie": "18",
+    //예술대학
+    "theatre": "10",
+    "film": "10",
+    "tfdesign": "10"
   };
 
   var Major_nece = {
@@ -1122,7 +1159,11 @@ function BaseNeceStandard2015() {
     "eee": "9",
     "computer": "12",
     "soft": "6",
-    "ie": "15"
+    "ie": "15",
+    //예술대학
+    "theatre": "0",
+    "film": "0",
+    "tfdesign": "0"
   };
 
   var Major = document.getElementById("Major_select").value;
@@ -1187,7 +1228,11 @@ function BaseNeceStandard2016() {
     "eee": ["14", "14", "14", "14", "14"],
     "ie": ["18", "18", "18", "18", "18"],
     "computer": ["14", "14", "14", "14", "14"],
-    "soft": ["14", "14", "14", "14", "14"]
+    "soft": ["14", "14", "14", "14", "14"],
+    //예술대학
+    "theatre": ["10", "10", "10", "10", "10"],
+    "film": ["10", "10", "10", "10", "10"],
+    "tfdesign": ["10", "10", "10", "10", "10"]
   };
   var Nece = { //전공필수: [2016, 2017, 2018, 2019, 2020]
     //인문대학
@@ -1240,7 +1285,11 @@ function BaseNeceStandard2016() {
     "eee": ["9", "9", "9", "9", "9"],
     "ie": ["18", "18", "18", "18", "18"],
     "computer": ["12", "12", "13", "13", "13"],
-    "soft": ["6", "6", "13", "13", "13"]
+    "soft": ["6", "6", "13", "13", "13"],
+    //예술대학
+    "theatre": ["0", "0", "0", "0", "0"],
+    "film": ["0", "0", "0", "0", "0"],
+    "tfdesign": ["0", "0", "0", "0", "0"]
   };
 
   var Major = document.getElementById("Major_select").value;
@@ -1309,7 +1358,11 @@ function BaseNeceStandard_tr2017() {
     "ese": ["0", "0", "0", "0"],
     //창의ICT공과대학
     "eee": ["0", "0", "0", "0"],
-    "ie": ["6", "6", "6", "6"]
+    "ie": ["6", "6", "6", "6"],
+    //예술대학
+    "theatre": ["10", "10", "10", "10"],
+    "film": ["10", "10", "10", "10"],
+    "tfdesign": ["10", "10", "10", "10"]
   };
   var Nece = { //전공필수: [2017, 2018, 2019, 2020]
     //인문대학
@@ -1360,7 +1413,11 @@ function BaseNeceStandard_tr2017() {
     "ese": ["12", "15", "15", "15"],
     //창의ICT공과대학
     "eee": ["9", "9", "9", "9"],
-    "ie": ["18", "18", "18", "18"]
+    "ie": ["18", "18", "18", "18"],
+    //예술대학
+    "theatre": ["0", "0", "0", "0"],
+    "film": ["0", "0", "0", "0"],
+    "tfdesign": ["0", "0", "0", "0"]
   };
 
   var Major = document.getElementById("Major_select").value;
