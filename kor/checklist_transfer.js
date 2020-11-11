@@ -17,6 +17,7 @@ function tr_multimajorchanges() {
   var Edu = ["education", "ece", "englishedu", "pe"]
   var Archi = ["archi"]
   var ICT = ["eee", "ie"]
+  var Arts = ["theatre", "film", "tfdesign"]
   if (Edu.includes(major)) {
     num = new Array("해당없음", "전공심화", "복수전공", "연계전공", "융합전공", "설계전공");
     vnum = new Array("50", "66", "50", "50", "50", "50");
@@ -36,6 +37,15 @@ function tr_multimajorchanges() {
     vnum = new Array("45", "72", "45", "45", "45", "45");
     document.getElementById("major_standard").value = "45";
     document.getElementById("total_standard").value = "70";
+  } else if (Arts.includes(major)) {
+    num = new Array("해당없음", "전공심화", "복수전공", "연계전공", "융합전공", "설계전공");
+    vnum = new Array("54", "66", "54", "54", "54", "54");
+    document.getElementById("major_standard").value = "50";
+    if (SecYear) {
+      document.getElementById("total_standard").value = "99";
+    } else {
+      document.getElementById("total_standard").value = "66";
+    }
   } else {
     num = new Array("해당없음", "전공심화", "복수전공", "연계전공", "융합전공", "설계전공");
     vnum = new Array("45", "66", "45", "45", "45", "45");
