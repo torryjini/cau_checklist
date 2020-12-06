@@ -55,7 +55,7 @@
         </tr>
         <tr>
           <td>
-            <select id="ad-year" onchange="Form_Reset('Major_select_form');Form_Reset('Multimajor_form');Form_Reset('Major');majorselectreset();MajortableReset();yearchanges();" required>
+            <select id="ad-year" onchange="Reset.form('Major_select_form');Reset.form('Multimajor_form');Reset.form('Major');Reset.majorselect();Reset.majortable();yearchanges();" required>
               <option value="0">--</option>
               <option value="2016">2016</option>
               <option value="2017">2017</option>
@@ -66,7 +66,7 @@
           </td>
           <td>
             <form id="Major_select_form">
-              <select id="college_select" onchange="collegechanges16();Form_Reset('Major');Liberal_Sum();MajortableReset();etcchange();machshow();">
+              <select id="college_select" onchange="collegechanges16();Reset.form('Major');Liberal_Sum();Reset.majortable();etcchange();machshow();">
                 <option value="none">--</option>
               </select>
           </td>
@@ -77,7 +77,7 @@
         </tr>
         <tr>
           <td>
-            <select id="Major_select" onchange="BaseNeceStandard2016();OfficeNumber();Form_Reset('Multimajor_form');MajortableReset();teachingcheck();multimajorchanges();" required>
+            <select id="Major_select" onchange="BaseNeceStandard2016();OfficeNumber();Reset.form('Multimajor_form');Reset.majortable();teachingcheck();multimajorchanges();" required>
               <option value="none">--</option>
             </select>
             </form>
@@ -121,7 +121,7 @@
           <th>국어</th>
           <td><input type="text" class="standard_number" id="com_kor_st" value="2" readonly tabindex="-1"></td>
           <td><input type="text" class="standard_number" id="kor_max" value="2" readonly tabindex="-1"></td>
-          <td colspan="2"><select class="checkselect" id="common_kor" onchange="Liberal_Sum();total_point_sum();numbercolor('total_standard','the_total');numbercolor('com_kor_st', 'common_kor');numbercolor('total_lib_st','liberal_total');">
+          <td colspan="2"><select class="checkselect" id="common_kor" onchange="Liberal_Sum();total_point_sum();Color.number('total_standard','the_total');Color.number('com_kor_st', 'common_kor');Color.number('total_lib_st','liberal_total');">
               <option value="0">0</option>
               <option value="2">2</option>
             </select><label for="common_kor"> credits</label></td>
@@ -131,7 +131,7 @@
           <th>영어</th>
           <td><input type="text" class="standard_number" id="com_eng_st" value="2" readonly tabindex="-1"></td>
           <td><input type="text" class="standard_number" id="eng_max" value="2" readonly tabindex="-1"></td>
-          <td colspan="2"><select id="common_eng" class="checkselect" onchange="Liberal_Sum();total_point_sum();numbercolor('total_standard','the_total');numbercolor('com_eng_st', 'common_eng');numbercolor('total_lib_st','liberal_total');">
+          <td colspan="2"><select id="common_eng" class="checkselect" onchange="Liberal_Sum();total_point_sum();Color.number('total_standard','the_total');Color.number('com_eng_st', 'common_eng');Color.number('total_lib_st','liberal_total');">
               <option value="0">0</option>
               <option value="2">2</option>
             </select><label for="common_eng"> credits</label><br>
@@ -143,7 +143,7 @@
           <th>기타</th>
           <td><input type="text" class="standard_number" id="com_etc_st" value="10" readonly tabindex="-1"></td>
           <td><input type="text" class="standard_number" id="etc_max" value="10" readonly tabindex="-1"></td>
-          <td colspan="2"><select id="common_etc" class="checkselect" onchange="Liberal_Sum();total_point_sum();numbercolor('total_standard','the_total');numbercolor('com_etc_st', 'common_etc');numbercolor('total_lib_st','liberal_total');">
+          <td colspan="2"><select id="common_etc" class="checkselect" onchange="Liberal_Sum();total_point_sum();Color.number('total_standard','the_total');Color.number('com_etc_st', 'common_etc');Color.number('total_lib_st','liberal_total');">
               <option value="0">0</option>
               <option value="2">2</option>
               <option value="4">4</option>
@@ -161,8 +161,8 @@
           <td rowspan="5"></td>
           <td><input type="checkbox" id="core1" tabindex="-1"><label for="core1">도전</label></td>
           <td rowspan="5">
-            <input type="number" id="core_total" placeholder="0" value="" onchange="Liberal_Sum();total_point_sum();numbercolor('total_standard','the_total');numbercolor('core_st', 'core_total');numbercolor('total_lib_st','liberal_total');"
-              onkeyup="Liberal_Sum();total_point_sum();numbercolor('total_standard','the_total');numbercolor('core_st', 'core_total');numbercolor('total_lib_st','liberal_total');" class="inputnumber" min="0" max="50" maxlength="2"
+            <input type="number" id="core_total" placeholder="0" value="" onchange="Liberal_Sum();total_point_sum();Color.number('total_standard','the_total');Color.number('core_st', 'core_total');Color.number('total_lib_st','liberal_total');"
+              onkeyup="Liberal_Sum();total_point_sum();Color.number('total_standard','the_total');Color.number('core_st', 'core_total');Color.number('total_lib_st','liberal_total');" class="inputnumber" min="0" max="50" maxlength="2"
               oninput="maxLengthCheck(this)"><label for="core_total"> credits</label>
           </td>
           <!-- <td rowspan="5">각 영역당<br>1과목 이상 필수 이수</td> -->
@@ -184,8 +184,8 @@
           <td><input type="text" class="standard_number" id="elective_st" value="0" readonly tabindex="-1"></td>
           <td></td>
           <td colspan="2">
-            <input type="number" id="elective_liberal" placeholder="0" value="" onchange="Liberal_Sum();total_point_sum();numbercolor('total_standard','the_total');numbercolor('total_lib_st','liberal_total');"
-              onkeyup="Liberal_Sum();total_point_sum();numbercolor('total_standard','the_total');numbercolor('total_lib_st','liberal_total');" min="0" max="50" class="inputnumber" maxlength="2" oninput="maxLengthCheck(this)"><label
+            <input type="number" id="elective_liberal" placeholder="0" value="" onchange="Liberal_Sum();total_point_sum();Color.number('total_standard','the_total');Color.number('total_lib_st','liberal_total');"
+              onkeyup="Liberal_Sum();total_point_sum();Color.number('total_standard','the_total');Color.number('total_lib_st','liberal_total');" min="0" max="50" class="inputnumber" maxlength="2" oninput="maxLengthCheck(this)"><label
               for="elective_liberal"> credits</label>
           </td>
           <!-- <td>자율이수</td> -->
@@ -195,8 +195,8 @@
           <td><input type="text" class="standard_number" id="mach1_st" value="" readonly tabindex="-1"></td>
           <td></td>
           <td colspan="2">
-            <input type="number" id="mach1" placeholder="0" value="" onchange="Liberal_Sum();total_point_sum();numbercolor('total_standard','the_total');numbercolor('mach1_st', 'mach1');numbercolor('total_lib_st','liberal_total');"
-              onkeyup="Liberal_Sum();total_point_sum();numbercolor('total_standard','the_total');numbercolor('core_st', 'core_total');numbercolor('total_lib_st','liberal_total');" class="inputnumber" min="0" max="50" maxlength="2"
+            <input type="number" id="mach1" placeholder="0" value="" onchange="Liberal_Sum();total_point_sum();Color.number('total_standard','the_total');Color.number('mach1_st', 'mach1');Color.number('total_lib_st','liberal_total');"
+              onkeyup="Liberal_Sum();total_point_sum();Color.number('total_standard','the_total');Color.number('core_st', 'core_total');Color.number('total_lib_st','liberal_total');" class="inputnumber" min="0" max="50" maxlength="2"
               oninput="maxLengthCheck(this)" readonly><label for="mach1"> credits</label><input type="checkbox" id="mach1_none" checked hidden>
           </td>
         </tr>
@@ -205,8 +205,8 @@
           <td><input type="text" class="standard_number" id="mach2_st" value="" readonly tabindex="-1"></td>
           <td></td>
           <td colspan="2">
-            <input type="number" id="mach2" placeholder="0" value="" onchange="Liberal_Sum();total_point_sum();numbercolor('total_standard','the_total');numbercolor('mach2_st', 'mach2');numbercolor('total_lib_st','liberal_total');"
-              onkeyup="Liberal_Sum();total_point_sum();numbercolor('total_standard','the_total');numbercolor('core_st', 'core_total');numbercolor('total_lib_st','liberal_total');" class="inputnumber" min="0" max="50" maxlength="2"
+            <input type="number" id="mach2" placeholder="0" value="" onchange="Liberal_Sum();total_point_sum();Color.number('total_standard','the_total');Color.number('mach2_st', 'mach2');Color.number('total_lib_st','liberal_total');"
+              onkeyup="Liberal_Sum();total_point_sum();Color.number('total_standard','the_total');Color.number('core_st', 'core_total');Color.number('total_lib_st','liberal_total');" class="inputnumber" min="0" max="50" maxlength="2"
               oninput="maxLengthCheck(this)" readonly><label for="mach2"> credits</label><input type="checkbox" id="mach2_none" checked hidden>
           </td>
         </tr>
@@ -215,7 +215,7 @@
           <td><input type="text" class="standard_number" id="total_lib_st" value="29" readonly tabindex="-1"></td>
           <td><input type="text" class="standard_number" id="lib_max" value="45" readonly tabindex="-1"></td>
           <td colspan="2">
-            <input type="text" id="liberal_total" value="0" class="totalnumber" onchange="total_point_sum();numbercolor('total_standard','the_total');numbercolor('total_lib_st','liberal_total');" readonly tabindex="-1"> credits
+            <input type="text" id="liberal_total" value="0" class="totalnumber" onchange="total_point_sum();Color.number('total_standard','the_total');Color.number('total_lib_st','liberal_total');" readonly tabindex="-1"> credits
           </td>
           <!-- <td>45 credits 초과 시<br>졸업 credits에서 감산</td> -->
         </tr>
@@ -223,7 +223,7 @@
     </form>
     <br>
     <div class="buttons">
-      <input type="reset" value="&#8635; RESET" onclick="Form_Reset('Major_select_form');Form_Reset('Multimajor_form');Form_Reset('Liberal');libcolorreset();Lib_st_Sum();" tabindex="-1">
+      <input type="reset" value="&#8635; RESET" onclick="Reset.form('Major_select_form');Reset.form('Multimajor_form');Reset.form('Liberal');Reset.libcolor();Lib_st_Sum();" tabindex="-1">
       <input type="button" value="&#10003; CHECK!" onclick="Liberal_cal();total_point_sum();">
     </div>
     <br>
@@ -254,8 +254,8 @@
           <td><input type="text" class="standard_number" id="base_standard" value="" readonly tabindex="-1">
           </td>
           <td colspan="3">
-            <input type="number" id="base_input" placeholder="0" name="major" value="" onchange="total_point_sum();numbercolor('total_standard','the_total');numbercolor('base_standard','base_input');"
-              onkeyup="total_point_sum();numbercolor('total_standard','the_total');numbercolor('base_standard','base_input');" min="0" max="99" class="inputnumber" maxlength="2" oninput="maxLengthCheck(this)"><label for="base_input">
+            <input type="number" id="base_input" placeholder="0" name="major" value="" onchange="total_point_sum();Color.number('total_standard','the_total');Color.number('base_standard','base_input');"
+              onkeyup="total_point_sum();Color.number('total_standard','the_total');Color.number('base_standard','base_input');" min="0" max="99" class="inputnumber" maxlength="2" oninput="maxLengthCheck(this)"><label for="base_input">
               credits</label>
           </td>
         </tr>
@@ -264,8 +264,8 @@
           <td><input type="text" class="standard_number" id="nece_standard" value="" readonly tabindex="-1">
           </td>
           <td colspan="3">
-            <input type="number" id="nece_input" placeholder="0" name="major" value="" onchange="total_point_sum();numbercolor('total_standard','the_total');numbercolor('nece_standard','nece_input');"
-              onkeyup="total_point_sum();numbercolor('total_standard','the_total');numbercolor('nece_standard','nece_input');" min="0" max="99" class="inputnumber" maxlength="2" oninput="maxLengthCheck(this)"><label for="nece_input">
+            <input type="number" id="nece_input" placeholder="0" name="major" value="" onchange="total_point_sum();Color.number('total_standard','the_total');Color.number('nece_standard','nece_input');"
+              onkeyup="total_point_sum();Color.number('total_standard','the_total');Color.number('nece_standard','nece_input');" min="0" max="99" class="inputnumber" maxlength="2" oninput="maxLengthCheck(this)"><label for="nece_input">
               credits</label>
           </td>
         </tr>
@@ -275,8 +275,8 @@
             <input type="text" class="standard_number" id="major_standard" value="" readonly tabindex="-1">
             <br>(includes "Required")</td>
           <td colspan="3">
-            <input type="number" id="major_input" placeholder="0" name="major" value="" onchange="total_point_sum();numbercolor('total_standard','the_total');numbercolor('major_standard','major_input');"
-              onkeyup="total_point_sum();numbercolor('total_standard','the_total');numbercolor('major_standard','major_input');" min="0" max="99" class="inputnumber" maxlength="2" oninput="maxLengthCheck(this)"><label for="major_input">
+            <input type="number" id="major_input" placeholder="0" name="major" value="" onchange="total_point_sum();Color.number('total_standard','the_total');Color.number('major_standard','major_input');"
+              onkeyup="total_point_sum();Color.number('total_standard','the_total');Color.number('major_standard','major_input');" min="0" max="99" class="inputnumber" maxlength="2" oninput="maxLengthCheck(this)"><label for="major_input">
               credits</label>
           </td>
           <!-- <td>전공 심화 : 최소 66 credits<br>복수/설계/연계/융합 : 최소 45 credits</td> -->
@@ -285,8 +285,8 @@
           <th>복수전공<br>Double major</th>
           <td><input type="text" class="standard_number" id="double_st" value="45" readonly tabindex="-1"></td>
           <td colspan="3">
-            <input type="number" id="double_major_point" placeholder="0" value="" onchange="total_point_sum();numbercolor('total_standard','the_total');numbercolor('double_st','double_major_point');"
-              onkeyup="total_point_sum();numbercolor('total_standard','the_total');numbercolor('double_st','double_major_point');" class="inputnumber" min="0" max="78" maxlength="2" oninput="maxLengthCheck(this)"><label for="double_major_point">
+            <input type="number" id="double_major_point" placeholder="0" value="" onchange="total_point_sum();Color.number('total_standard','the_total');Color.number('double_st','double_major_point');"
+              onkeyup="total_point_sum();Color.number('total_standard','the_total');Color.number('double_st','double_major_point');" class="inputnumber" min="0" max="78" maxlength="2" oninput="maxLengthCheck(this)"><label for="double_major_point">
               credits</label><br>
             <input type="checkbox" id="double_major_none" onclick="checkcont1('double_major_none', 'double_major_point')" tabindex="-1" hidden>
           </td>
@@ -296,8 +296,8 @@
           <th>연계전공</th>
           <td><input type="text" class="standard_number" id="link_st" value="36" readonly tabindex="-1"></td>
           <td>
-            <input type="number" id="link_major_point" placeholder="0" value="" onchange="total_point_sum();numbercolor('total_standard','the_total');numbercolor('link_st','link_major_point');"
-              onkeyup="total_point_sum();numbercolor('total_standard','the_total');numbercolor('link_st','link_major_point');" class="inputnumber" min="0" maxlength="2" oninput="maxLengthCheck(this)">
+            <input type="number" id="link_major_point" placeholder="0" value="" onchange="total_point_sum();Color.number('total_standard','the_total');Color.number('link_st','link_major_point');"
+              onkeyup="total_point_sum();Color.number('total_standard','the_total');Color.number('link_st','link_major_point');" class="inputnumber" min="0" maxlength="2" oninput="maxLengthCheck(this)">
             <label for="link_major_point"> credits</label><br>
             <input type="checkbox" id="link_major_none" onclick="checkcont('link_major_none', 'link_major_point', 'cross_point1')" tabindex="-1" hidden>
           <th>Cross<br>credits</th>
@@ -327,8 +327,8 @@
             </select>
           </td>
           <td>
-            <input type="number" id="fusion_major_point" placeholder="0" value="" onchange="total_point_sum();numbercolor('total_standard','the_total');numbercolor('fusion_standard','fusion_major_point');"
-              onkeyup="total_point_sum();numbercolor('total_standard','the_total');numbercolor('fusion_standard','fusion_major_point');" class="inputnumber" min="0" maxlength="2" oninput="maxLengthCheck(this)">
+            <input type="number" id="fusion_major_point" placeholder="0" value="" onchange="total_point_sum();Color.number('total_standard','the_total');Color.number('fusion_standard','fusion_major_point');"
+              onkeyup="total_point_sum();Color.number('total_standard','the_total');Color.number('fusion_standard','fusion_major_point');" class="inputnumber" min="0" maxlength="2" oninput="maxLengthCheck(this)">
             <label for="fusion_major_point"> credits</label><br>
             <input type="checkbox" id="fusion_major_none" onclick="checkcont('fusion_major_none', 'fusion_major_point', 'cross_point2')" tabindex="-1" hidden>
           </td>
@@ -342,8 +342,8 @@
           <th>설계전공</th>
           <td><input type="text" class="standard_number" id="plan_st" value="36" readonly tabindex="-1"></td>
           <td>
-            <input type="number" id="plan_major_point" placeholder="0" value="" onchange="total_point_sum();numbercolor('total_standard','the_total');numbercolor('plan_st','plan_major_point');"
-              onkeyup="total_point_sum();numbercolor('total_standard','the_total');numbercolor('plan_st','plan_major_point');" class="inputnumber" min="0" maxlength="2" oninput="maxLengthCheck(this)">
+            <input type="number" id="plan_major_point" placeholder="0" value="" onchange="total_point_sum();Color.number('total_standard','the_total');Color.number('plan_st','plan_major_point');"
+              onkeyup="total_point_sum();Color.number('total_standard','the_total');Color.number('plan_st','plan_major_point');" class="inputnumber" min="0" maxlength="2" oninput="maxLengthCheck(this)">
             <label for="plan_major_point"> credits</label><br>
             <input type="checkbox" id="plan_major_none" onclick="checkcont('plan_major_none', 'plan_major_point', 'cross_point3')" tabindex="-1" hidden>
           </td>
@@ -358,8 +358,8 @@
           <th>부전공<br>Minor</th>
           <td><input type="text" class="standard_number" id="minor_st" value="21" readonly tabindex="-1"></td>
           <td colspan="3">
-            <input type="number" id="minor_point" placeholder="0" value="" onchange="total_point_sum();numbercolor('total_standard','the_total');numbercolor('minor_st','minor_point');"
-              onkeyup="total_point_sum();numbercolor('total_standard','the_total');numbercolor('minor_st','minor_point');" class="inputnumber" min="0" maxlength="2" oninput="maxLengthCheck(this)">
+            <input type="number" id="minor_point" placeholder="0" value="" onchange="total_point_sum();Color.number('total_standard','the_total');Color.number('minor_st','minor_point');"
+              onkeyup="total_point_sum();Color.number('total_standard','the_total');Color.number('minor_st','minor_point');" class="inputnumber" min="0" maxlength="2" oninput="maxLengthCheck(this)">
             <label for="minor_point"> credits</label> <br>
             <input type="checkbox" id="minor_none" onclick="checkcont1('minor_none', 'minor_point')" tabindex="-1"><label for="minor_none">N/A</label>
           </td>
@@ -369,7 +369,7 @@
           <th>자유선택<br>Free choice</th>
           <td><input type="text" class="standard_number" id="free_st" value="1" readonly tabindex="-1"></td>
           <td colspan="3">
-            <input type="number" id="free_point" placeholder="0" value="" onchange="total_point_sum();numbercolor('total_standard','the_total');" onkeyup="total_point_sum();numbercolor('total_standard','the_total');" class="inputnumber" min="0"
+            <input type="number" id="free_point" placeholder="0" value="" onchange="total_point_sum();Color.number('total_standard','the_total');" onkeyup="total_point_sum();Color.number('total_standard','the_total');" class="inputnumber" min="0"
               maxlength="3" oninput="maxLengthCheck(this)">
             <label for="free_point"> credits</label>
           </td>
@@ -379,8 +379,8 @@
           <th>교직<br>Teaching</th>
           <td><input type="text" class="standard_number" id="teaching_st" value="22" readonly tabindex="-1"></td>
           <td colspan="3">
-            <input type="number" id="teaching_point" placeholder="0" value="" onchange="total_point_sum();numbercolor('total_standard','the_total');numbercolor('teaching_st','teaching_point');"
-              onkeyup="total_point_sum();numbercolor('total_standard','the_total');numbercolor('teaching_st','teaching_point');" min="0" max="30" class="inputnumber" maxlength="2" oninput="maxLengthCheck(this)" readonly><label for="teaching_point">
+            <input type="number" id="teaching_point" placeholder="0" value="" onchange="total_point_sum();Color.number('total_standard','the_total');Color.number('teaching_st','teaching_point');"
+              onkeyup="total_point_sum();Color.number('total_standard','the_total');Color.number('teaching_st','teaching_point');" min="0" max="30" class="inputnumber" maxlength="2" oninput="maxLengthCheck(this)" readonly><label for="teaching_point">
               credits</label><br>
             <input type="checkbox" id="teaching_none" onclick="checkcont1('teaching_none', 'teaching_point')" tabindex="-1" checked><label for="teaching_none">N/A</label>
           </td>
@@ -390,7 +390,7 @@
           <th>Total credits</th>
           <td><input type="text" class="standard_number" id="total_standard" value="132" readonly tabindex="-1"></td>
           <td colspan="3">
-            <input type="text" id="the_total" value="0" onchange="numbercolor('total_standard','the_total');" class="totalnumber" readonly tabindex="-1"> credits
+            <input type="text" id="the_total" value="0" onchange="Color.number('total_standard','the_total');" class="totalnumber" readonly tabindex="-1"> credits
           </td>
           <!-- <td>교양credits은 최대 45credits까지 인정</td> -->
         </tr>
@@ -398,7 +398,7 @@
     </form>
     <p>Please be sure to contact the department phone number below for accurate results!</p>
     <div class="buttons">
-      <input type="reset" value="&#8635; RESET" onclick="Form_Reset('Major');Form_Reset('Major_select_form');Form_Reset('Multimajor_form');MajortableReset();" tabindex="-1">
+      <input type="reset" value="&#8635; RESET" onclick="Reset.form('Major');Reset.form('Major_select_form');Reset.form('Multimajor_form');Reset.majortable();" tabindex="-1">
       <input type="button" value="&#10003; CHECK!" onclick="Major_result()">
     </div>
     <br>
@@ -456,14 +456,14 @@
         </tr>
         <tr>
           <th colspan="2">Accumulated GPA</th>
-          <td><input type="number" placeholder="0" id="average" value="" max="4.5" min="0" step=".01" class="inputnumber" maxlength="4" oninput="maxLengthCheck(this)" onkeyup="gpacolor();" onchange="gpacolor();"><label for="average"> / 4.5</label>
+          <td><input type="number" placeholder="0" id="average" value="" max="4.5" min="0" step=".01" class="inputnumber" maxlength="4" oninput="maxLengthCheck(this)" onkeyup="Color.gpa();" onchange="Color.gpa();"><label for="average"> / 4.5</label>
           </td>
           <td>If your final GPA is less than 2.0, you cannot graduate.</td>
         </tr>
       </table>
     </form><br>
     <div class="buttons">
-      <input type="reset" value="&#8635; RESET" onclick="Form_Reset('etc')" tabindex="-1">
+      <input type="reset" value="&#8635; RESET" onclick="Reset.form('etc')" tabindex="-1">
       <input type="button" value="&#10003; CHECK!" onclick="Etc_result()">
     </div>
     </form><br>
