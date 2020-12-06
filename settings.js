@@ -26,53 +26,53 @@ function maxLengthCheck(object) {
   }
 }
 
-function Form_Reset(id) {
-  document.getElementById(id).reset();
-}
+var Reset = {
+  form: function(id) {
+    document.getElementById(id).reset();
+  },
+  majorselect: function() {
+    num = new Array("--");
+    vnum = new Array("none");
 
-function majorselectreset() {
-  num = new Array("--");
-  vnum = new Array("none");
+    for (i = 0; i = document.getElementById("Major_select").length; i++) {
+      document.getElementById("Major_select").options[0] = null;
+    };
 
-  for (i = 0; i = document.getElementById("Major_select").length; i++) {
-    document.getElementById("Major_select").options[0] = null;
-  };
-
-  for (i = 0; i < num.length; i++) {
-    document.getElementById("Major_select").options[i] = new Option(num[i], vnum[i]);
+    for (i = 0; i < num.length; i++) {
+      document.getElementById("Major_select").options[i] = new Option(num[i], vnum[i]);
+    }
+  },
+  majortable: function() {
+    document.getElementById("double_table").style.display = "none";
+    document.getElementById("link_table").style.display = "none";
+    document.getElementById("fusion_table").style.display = "none";
+    document.getElementById("plan_table").style.display = "none";
+  },
+  libcolor: function() {
+    document.getElementById("common_kor").style.color = "red";
+    document.getElementById("common_eng").style.color = "red";
+    document.getElementById("common_etc").style.color = "red";
   }
 }
 
-function MajortableReset() {
-  document.getElementById("double_table").style.display = "none";
-  document.getElementById("link_table").style.display = "none";
-  document.getElementById("fusion_table").style.display = "none";
-  document.getElementById("plan_table").style.display = "none";
-}
-
-function numbercolor(st, number) {
-  var standard = Number(document.getElementById(st).value);
-  var point = Number(document.getElementById(number).value);
-  if (point >= standard) {
-    document.getElementById(number).style.color = "blue";
-  } else {
-    document.getElementById(number).style.color = "red";
+var Color = {
+  number: function(st, number) {
+    var standard = Number(document.getElementById(st).value);
+    var point = Number(document.getElementById(number).value);
+    if (point >= standard) {
+      document.getElementById(number).style.color = "blue";
+    } else {
+      document.getElementById(number).style.color = "red";
+    }
+  },
+  gpa: function() {
+    var point = Number(document.getElementById("average").value);
+    if (point >= 2) {
+      document.getElementById("average").style.color = "blue";
+    } else {
+      document.getElementById("average").style.color = "red";
+    }
   }
-}
-
-function gpacolor() {
-  var point = Number(document.getElementById("average").value);
-  if (point >= 2) {
-    document.getElementById("average").style.color = "blue";
-  } else {
-    document.getElementById("average").style.color = "red";
-  }
-}
-
-function libcolorreset() {
-  document.getElementById("common_kor").style.color = "red";
-  document.getElementById("common_eng").style.color = "red";
-  document.getElementById("common_etc").style.color = "red";
 }
 
 function Liberal_Sum() {
