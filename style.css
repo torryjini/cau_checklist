@@ -249,6 +249,7 @@ p {
   text-align: center;
   font-size: 1.2rem;
   font-family: inherit;
+  cursor:pointer;
 }
 
 .buttons {
@@ -336,10 +337,12 @@ input[type=reset]:hover {
 
 #dept {
   width: 15rem;
+  cursor:pointer;
 }
 
 #phone, #Davinci {
   width: 7rem;
+  cursor:pointer;
 }
 
 #fusion-options {
