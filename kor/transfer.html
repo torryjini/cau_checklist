@@ -55,7 +55,7 @@
         </tr>
         <tr>
           <td>
-            <select id="ad-year" onchange="Reset.form('Major_select_form');Reset.form('Multimajor_form');Reset.form('Major');Reset.majorselect();Reset.majortable();tr_yearchanges();" required>
+            <select id="ad-year" onchange="Reset.form('Major_select_form');Reset.form('Multimajor_form');Reset.form('Major');Reset.majorselect();Reset.majortable();Change.tr_year();" required>
               <option value="0">--</option>
               <option value="2017">2017</option>
               <option value="2018">2018</option>
@@ -66,7 +66,7 @@
           </td>
           <td>
             <form id="Major_select_form">
-              <select id="college_select" onchange="tr_collegechanges();Reset.form('Major');Reset.majortable();">
+              <select id="college_select" onchange="Change.tr_college();Reset.form('Major');Reset.majortable();">
                 <option value="none">--</option>
               </select>
           </td>
@@ -77,14 +77,14 @@
         </tr>
         <tr>
           <td>
-            <select id="Major_select" onchange="BaseNeceStandard_tr2017();OfficeNumber();Reset.form('Multimajor_form');Reset.majortable();teachingcheck();tr_multimajorchanges();" required>
+            <select id="Major_select" onchange="BaseNeceStandard_tr2017();PhoneNumber.call();Reset.form('Multimajor_form');Reset.majortable();Check.teach();tr_multimajorchanges();" required>
               <option value="none">--</option>
             </select>
             </form>
           </td>
           <td>
             <form id="Multimajor_form">
-              <select id="MultiMajor_select" onchange="tr_major_standard_maker();tr_total_point_sum();" required>
+              <select id="MultiMajor_select" onchange="Standard.tr_major();Total.tr_sum();" required>
                 <option value="45">해당없음</option>
                 <option value="66">전공심화</option>
                 <option value="45">복수전공</option>
@@ -118,7 +118,7 @@
           <th>교양</th>
           <td><input type="text" class="standard_number" id="lib_st" value="0" readonly tabindex="-1"></td>
           <td colspan="3">
-            <input type="number" id="liberal_input" placeholder="0" name="major" value="" onchange="tr_total_point_sum()" onkeyup="tr_total_point_sum()" min="0" max="99" class="inputnumber" maxlength="2" oninput="maxLengthCheck(this)"><label
+            <input type="number" id="liberal_input" placeholder="0" name="major" value="" onchange="Total.tr_sum()" onkeyup="Total.tr_sum()" min="0" max="99" class="inputnumber" maxlength="2" oninput="maxLengthCheck(this)"><label
               for="liberal_input"> 학점</label>
           </td>
         </tr>
@@ -127,8 +127,8 @@
           <td><input type="text" class="standard_number" id="base_standard" value="" readonly tabindex="-1">
           </td>
           <td colspan="3">
-            <input type="number" id="base_input" placeholder="0" name="major" value="" onchange="tr_total_point_sum();Color.number('total_standard','the_total');Color.number('base_standard','base_input');"
-              onkeyup="tr_total_point_sum();Color.number('total_standard','the_total');Color.number('base_standard','base_input');" min="0" max="99" class="inputnumber" maxlength="2" oninput="maxLengthCheck(this)"><label for="base_input"> 학점</label>
+            <input type="number" id="base_input" placeholder="0" name="major" value="" onchange="Total.tr_sum();Color.number('total_standard','the_total');Color.number('base_standard','base_input');"
+              onkeyup="Total.tr_sum();Color.number('total_standard','the_total');Color.number('base_standard','base_input');" min="0" max="99" class="inputnumber" maxlength="2" oninput="maxLengthCheck(this)"><label for="base_input"> 학점</label>
           </td>
         </tr>
         <tr>
@@ -136,8 +136,8 @@
           <td><input type="text" class="standard_number" id="nece_standard" value="" readonly tabindex="-1">
           </td>
           <td colspan="3">
-            <input type="number" id="nece_input" placeholder="0" name="major" value="" onchange="tr_total_point_sum();Color.number('total_standard','the_total');Color.number('nece_standard','nece_input');"
-              onkeyup="tr_total_point_sum();Color.number('total_standard','the_total');Color.number('nece_standard','nece_input');" min="0" max="99" class="inputnumber" maxlength="2" oninput="maxLengthCheck(this)"><label for="nece_input"> 학점</label>
+            <input type="number" id="nece_input" placeholder="0" name="major" value="" onchange="Total.tr_sum();Color.number('total_standard','the_total');Color.number('nece_standard','nece_input');"
+              onkeyup="Total.tr_sum();Color.number('total_standard','the_total');Color.number('nece_standard','nece_input');" min="0" max="99" class="inputnumber" maxlength="2" oninput="maxLengthCheck(this)"><label for="nece_input"> 학점</label>
           </td>
         </tr>
         <tr>
@@ -146,8 +146,8 @@
             <input type="text" class="standard_number" id="major_standard" value="45" readonly tabindex="-1">
             <br>(전공필수 포함)</td>
           <td colspan="3">
-            <input type="number" id="major_input" placeholder="0" name="major" value="" onchange="tr_total_point_sum();Color.number('total_standard','the_total');Color.number('major_standard','major_input');"
-              onkeyup="tr_total_point_sum();Color.number('total_standard','the_total');Color.number('major_standard','major_input');" min="0" max="99" class="inputnumber" maxlength="2" oninput="maxLengthCheck(this)"><label for="major_input"> 학점</label>
+            <input type="number" id="major_input" placeholder="0" name="major" value="" onchange="Total.tr_sum();Color.number('total_standard','the_total');Color.number('major_standard','major_input');"
+              onkeyup="Total.tr_sum();Color.number('total_standard','the_total');Color.number('major_standard','major_input');" min="0" max="99" class="inputnumber" maxlength="2" oninput="maxLengthCheck(this)"><label for="major_input"> 학점</label>
           </td>
           <!-- <td>전공 심화 : 최소 66 학점<br>복수/설계/연계/융합 : 최소 45 학점</td> -->
         </tr>
@@ -155,10 +155,10 @@
           <th>복수전공</th>
           <td><input type="text" class="standard_number" id="double_st" value="45" readonly tabindex="-1"></td>
           <td colspan="3">
-            <input type="number" id="double_major_point" placeholder="0" value="" onchange="tr_total_point_sum();Color.number('total_standard','the_total');Color.number('double_st','double_major_point');"
-              onkeyup="tr_total_point_sum();Color.number('total_standard','the_total');Color.number('double_st','double_major_point');" class="inputnumber" min="0" max="78" maxlength="2" oninput="maxLengthCheck(this)"><label for="double_major_point">
+            <input type="number" id="double_major_point" placeholder="0" value="" onchange="Total.tr_sum();Color.number('total_standard','the_total');Color.number('double_st','double_major_point');"
+              onkeyup="Total.tr_sum();Color.number('total_standard','the_total');Color.number('double_st','double_major_point');" class="inputnumber" min="0" max="78" maxlength="2" oninput="maxLengthCheck(this)"><label for="double_major_point">
               학점</label><br>
-            <input type="checkbox" id="double_major_none" onclick="checkcont1('double_major_none', 'double_major_point')" checked tabindex="-1" hidden>
+            <input type="checkbox" id="double_major_none" onclick="Check.none('double_major_none', 'double_major_point')" checked tabindex="-1" hidden>
           </td>
           <!-- <td>복수전공 전공기초는 자유선택으로 인정<br>복수전공을 교직이수할 경우,<br>복수전공 이수학점이 상향 조정됨</td> -->
         </tr>
@@ -166,13 +166,13 @@
           <th>연계전공</th>
           <td><input type="text" class="standard_number" id="link_st" value="36" readonly tabindex="-1"></td>
           <td>
-            <input type="number" id="link_major_point" placeholder="0" value="" onchange="tr_total_point_sum();Color.number('total_standard','the_total');Color.number('link_st','link_major_point');"
-              onkeyup="tr_total_point_sum();Color.number('total_standard','the_total');Color.number('link_st','link_major_point');" class="inputnumber" min="0" maxlength="2" oninput="maxLengthCheck(this)"><label for="link_major_point"> 학점</label><br>
-            <input type="checkbox" id="link_major_none" onclick="checkcont('link_major_none', 'link_major_point', 'cross_point1')" tabindex="-1" checked hidden>
+            <input type="number" id="link_major_point" placeholder="0" value="" onchange="Total.tr_sum();Color.number('total_standard','the_total');Color.number('link_st','link_major_point');"
+              onkeyup="Total.tr_sum();Color.number('total_standard','the_total');Color.number('link_st','link_major_point');" class="inputnumber" min="0" maxlength="2" oninput="maxLengthCheck(this)"><label for="link_major_point"> 학점</label><br>
+            <input type="checkbox" id="link_major_none" onclick="Check.multinone('link_major_none', 'link_major_point', 'cross_point1')" tabindex="-1" checked hidden>
           </td>
           <th>교차<br>인정</th>
           <td>
-            <input type="number" id="cross_point1" placeholder="0" value="" onchange="tr_total_point_sum()" onkeyup="tr_total_point_sum()" class="inputnumber" min="0" max="12" maxlength="2" oninput="maxLengthCheck(this)"><label for="cross_point1">
+            <input type="number" id="cross_point1" placeholder="0" value="" onchange="Total.tr_sum()" onkeyup="Total.tr_sum()" class="inputnumber" min="0" max="12" maxlength="2" oninput="maxLengthCheck(this)"><label for="cross_point1">
               학점</label>
           </td>
           <!-- <td rowspan="2">수강 및 학사안내 연계/융합전공
@@ -183,7 +183,7 @@
           <th>융합전공</th>
           <td>
             <input type="text" class="standard_number" id="fusion_standard" value="36" readonly tabindex="-1"><br>
-            <select id="fusion-options" onchange="FusionStandardCheck()" onkeyup="FusionStandardCheck()">
+            <select id="fusion-options" onchange="Check.fusionstandard()" onkeyup="Check.fusionstandard()">
               <option value="0" selected>선 택</option>
               <option value="36">문화컨텐츠</option>
               <option value="36">창업학</option>
@@ -197,14 +197,14 @@
             </select>
           </td>
           <td>
-            <input type="number" id="fusion_major_point" placeholder="0" value="" onchange="tr_total_point_sum();Color.number('total_standard','the_total');Color.number('fusion_standard','fusion_major_point');"
-              onkeyup="tr_total_point_sum();Color.number('total_standard','the_total');Color.number('fusion_standard','fusion_major_point');" class="inputnumber" min="0" maxlength="2" oninput="maxLengthCheck(this)"><label for="fusion_major_point">
+            <input type="number" id="fusion_major_point" placeholder="0" value="" onchange="Total.tr_sum();Color.number('total_standard','the_total');Color.number('fusion_standard','fusion_major_point');"
+              onkeyup="Total.tr_sum();Color.number('total_standard','the_total');Color.number('fusion_standard','fusion_major_point');" class="inputnumber" min="0" maxlength="2" oninput="maxLengthCheck(this)"><label for="fusion_major_point">
               학점</label><br>
-            <input type="checkbox" id="fusion_major_none" onclick="checkcont('fusion_major_none', 'fusion_major_point', 'cross_point2')" checked tabindex="-1" hidden>
+            <input type="checkbox" id="fusion_major_none" onclick="Check.multinone('fusion_major_none', 'fusion_major_point', 'cross_point2')" checked tabindex="-1" hidden>
           </td>
           <th>교차<br>인정</th>
           <td>
-            <input type="number" id="cross_point2" placeholder="0" value="" onchange="tr_total_point_sum()" onkeyup="tr_total_point_sum()" class="inputnumber" min="0" max="15" maxlength="2" oninput="maxLengthCheck(this)"><label for="cross_point2">
+            <input type="number" id="cross_point2" placeholder="0" value="" onchange="Total.tr_sum()" onkeyup="Total.tr_sum()" class="inputnumber" min="0" max="15" maxlength="2" oninput="maxLengthCheck(this)"><label for="cross_point2">
               학점</label>
           </td>
         </tr>
@@ -212,13 +212,13 @@
           <th>설계전공</th>
           <td><input type="text" class="standard_number" id="plan_st" value="36" readonly tabindex="-1"></td>
           <td>
-            <input type="number" id="plan_major_point" placeholder="0" value="" onchange="tr_total_point_sum();Color.number('total_standard','the_total');Color.number('plan_st','plan_major_point');"
-              onkeyup="tr_total_point_sum();Color.number('total_standard','the_total');Color.number('plan_st','plan_major_point');" class="inputnumber" min="0" maxlength="2" oninput="maxLengthCheck(this)"><label for="plan_major_point"> 학점</label><br>
-            <input type="checkbox" id="plan_major_none" onclick="checkcont('plan_major_none', 'plan_major_point', 'cross_point3')" checked tabindex="-1" hidden>
+            <input type="number" id="plan_major_point" placeholder="0" value="" onchange="Total.tr_sum();Color.number('total_standard','the_total');Color.number('plan_st','plan_major_point');"
+              onkeyup="Total.tr_sum();Color.number('total_standard','the_total');Color.number('plan_st','plan_major_point');" class="inputnumber" min="0" maxlength="2" oninput="maxLengthCheck(this)"><label for="plan_major_point"> 학점</label><br>
+            <input type="checkbox" id="plan_major_none" onclick="Check.multinone('plan_major_none', 'plan_major_point', 'cross_point3')" checked tabindex="-1" hidden>
           </td>
           <th>교차<br>인정</th>
           <td>
-            <input type="number" id="cross_point3" placeholder="0" value="" onchange="tr_total_point_sum()" onkeyup="tr_total_point_sum()" class="inputnumber" min="0" max="6" maxlength="1" oninput="maxLengthCheck(this)"><label for="cross_point3">
+            <input type="number" id="cross_point3" placeholder="0" value="" onchange="Total.tr_sum()" onkeyup="Total.tr_sum()" class="inputnumber" min="0" max="6" maxlength="1" oninput="maxLengthCheck(this)"><label for="cross_point3">
               학점</label>
           </td>
           <!-- <td>설계전공 허가 사항(교과과정표)와 대조하여 확인</td> -->
@@ -227,9 +227,9 @@
           <th>부전공</th>
           <td><input type="text" class="standard_number" id="minor_st" value="21" readonly tabindex="-1"></td>
           <td colspan="3">
-            <input type="number" id="minor_point" placeholder="0" value="" onchange="tr_total_point_sum();Color.number('total_standard','the_total');Color.number('minor_st','minor_point');"
-              onkeyup="tr_total_point_sum();Color.number('total_standard','the_total');Color.number('minor_st','minor_point');" class="inputnumber" min="0" maxlength="2" oninput="maxLengthCheck(this)"><label for="minor_point"> 학점</label> <br>
-            <input type="checkbox" id="minor_none" onclick="checkcont1('minor_none', 'minor_point')" tabindex="-1"><label for="minor_none">해당없음</label>
+            <input type="number" id="minor_point" placeholder="0" value="" onchange="Total.tr_sum();Color.number('total_standard','the_total');Color.number('minor_st','minor_point');"
+              onkeyup="Total.tr_sum();Color.number('total_standard','the_total');Color.number('minor_st','minor_point');" class="inputnumber" min="0" maxlength="2" oninput="maxLengthCheck(this)"><label for="minor_point"> 학점</label> <br>
+            <input type="checkbox" id="minor_none" onclick="Check.none('minor_none', 'minor_point')" tabindex="-1"><label for="minor_none">해당없음</label>
           </td>
           <!-- <td>부전공 전공 필수 6학점 이상 포함하여 수강</td> -->
         </tr>
@@ -237,7 +237,7 @@
           <th>자유선택</th>
           <td><input type="text" class="standard_number" id="free_st" value="0" readonly tabindex="-1"></td>
           <td colspan="3">
-            <input type="number" id="free_point" placeholder="0" value="" onchange="tr_total_point_sum();Color.number('total_standard','the_total');" onkeyup="tr_total_point_sum();Color.number('total_standard','the_total');" class="inputnumber" min="0"
+            <input type="number" id="free_point" placeholder="0" value="" onchange="Total.tr_sum();Color.number('total_standard','the_total');" onkeyup="Total.tr_sum();Color.number('total_standard','the_total');" class="inputnumber" min="0"
               maxlength="2" oninput="maxLengthCheck(this)"><label for="free_point"> 학점</label>
           </td>
           <!-- <td>CAU세미나(1),(2) 총 1 학점 필수이수</td> -->
@@ -246,10 +246,10 @@
           <th>교직</th>
           <td><input type="text" class="standard_number" id="teaching_st" value="22" readonly tabindex="-1"></td>
           <td colspan="3">
-            <input type="number" id="teaching_point" placeholder="0" value="" onchange="tr_total_point_sum();Color.number('total_standard','the_total');Color.number('teaching_st','teaching_point');"
-              onkeyup="tr_total_point_sum();Color.number('total_standard','the_total');Color.number('teaching_st','teaching_point');" min="0" max="30" class="inputnumber" maxlength="2" oninput="maxLengthCheck(this)"><label for="teaching_point">
+            <input type="number" id="teaching_point" placeholder="0" value="" onchange="Total.tr_sum();Color.number('total_standard','the_total');Color.number('teaching_st','teaching_point');"
+              onkeyup="Total.tr_sum();Color.number('total_standard','the_total');Color.number('teaching_st','teaching_point');" min="0" max="30" class="inputnumber" maxlength="2" oninput="maxLengthCheck(this)"><label for="teaching_point">
               학점</label><br>
-            <input type="checkbox" id="teaching_none" onclick="checkcont1('teaching_none', 'teaching_point')" tabindex="-1"><label for="teaching_none">해당없음</label>
+            <input type="checkbox" id="teaching_none" onclick="Check.none('teaching_none', 'teaching_point')" tabindex="-1"><label for="teaching_none">해당없음</label>
           </td>
           <!-- <td>이수기준 통과 여부는 교직팀에 문의할 것</td> -->
         </tr>
