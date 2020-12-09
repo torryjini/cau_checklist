@@ -162,93 +162,6 @@ var Liberal = {
   }
 }
 
-// function Liberal_Sum() {
-//   var AdYear = Number(document.getElementById("ad-year").value);
-//   var College = document.getElementById("college_select").value;
-//   var elective_point = Number(document.getElementById("elective_liberal").value);
-//   var common_kor_point = Number(document.getElementById("common_kor").value);
-//   var common_eng_point = Number(document.getElementById("common_eng").value);
-//   var common_etc_point = Number(document.getElementById("common_etc").value);
-//   var core_total_point = Number(document.getElementById("core_total").value);
-//   var MACH1 = Number(document.getElementById("mach1").value);
-//   var MACH2 = Number(document.getElementById("mach2").value);
-//   var Engin = ["engineering", "ict", "ict1617", "ict18", "software"]
-//
-//   if (AdYear >= 2015 && AdYear <= 2018 && Engin.includes(College)) {
-//     document.getElementById("liberal_total").value = elective_point + common_kor_point + common_eng_point + common_etc_point + core_total_point + MACH1 + MACH2;
-//   } else {
-//     document.getElementById("liberal_total").value = elective_point + common_kor_point + common_eng_point + common_etc_point + core_total_point;
-//   }
-// }
-//
-// function Lib_st_Sum() {
-//   var AdYear = Number(document.getElementById("ad-year").value);
-//   var College = document.getElementById("college_select").value;
-//   var elec_st = Number(document.getElementById("elective_st").value);
-//   var kor_st = Number(document.getElementById("com_kor_st").value);
-//   var eng_st = Number(document.getElementById("com_eng_st").value);
-//   var etc_st = Number(document.getElementById("com_etc_st").value);
-//   var core_st = Number(document.getElementById("core_st").value);
-//   var MACH1_st = Number(document.getElementById("mach1_st").value);
-//   var MACH2_st = Number(document.getElementById("mach2_st").value);
-//   var Engin = ["engineering", "ict", "ict1617", "ict18", "software"]
-//
-//   if (AdYear >= 2015 && AdYear <= 2018 && Engin.includes(College)) {
-//     document.getElementById("total_lib_st").value = elec_st + kor_st + eng_st + etc_st + core_st + MACH1_st + MACH2_st;
-//   } else {
-//     document.getElementById("total_lib_st").value = elec_st + kor_st + eng_st + etc_st + core_st;
-//   }
-// }
-//
-// function etcchange() {
-//   var AdYear = Number(document.getElementById("ad-year").value);
-//   var College = document.getElementById("college_select").value;
-//   var Engin = ["engineering", "ict", "ict1617", "ict18", "software"]
-//   if (AdYear >= 2016 && AdYear <= 2018 && Engin.includes(College)) {
-//     document.getElementById("com_etc_st").value = 8;
-//     document.getElementById("etc_max").value = 8;
-//     Lib_st_Sum();
-//   } else {
-//     document.getElementById("com_etc_st").value = 10;
-//     document.getElementById("etc_max").value = 10;
-//     Lib_st_Sum();
-//   }
-// }
-//
-// function machshow() {
-//   var AdYear = document.getElementById("ad-year").value;
-//   var College = document.getElementById("college_select").value;
-//   var ICT = ["ict", "ict1617", "ict18"]
-//
-//   if (AdYear >= 2015 && AdYear <= 2018 && ICT.includes(College)) {
-//     document.getElementById("mach1_table").style.display = "";
-//     document.getElementById("mach1").readOnly = false;
-//     document.getElementById("mach1_none").checked = false;
-//     document.getElementById("mach1_st").value = "4";
-//
-//     document.getElementById("mach2_table").style.display = "";
-//     document.getElementById("mach2").readOnly = false;
-//     document.getElementById("mach2_none").checked = false;
-//     document.getElementById("mach2_st").value = "2";
-//
-//     Lib_st_Sum();
-//   } else {
-//     document.getElementById("mach1_table").style.display = "none";
-//     document.getElementById("mach1").readOnly = true;
-//     document.getElementById("mach1").value = null;
-//     document.getElementById("mach1_none").checked = true;
-//     document.getElementById("mach1_st").value = "0";
-//
-//     document.getElementById("mach2_table").style.display = "none";
-//     document.getElementById("mach2").value = null;
-//     document.getElementById("mach2").readOnly = true;
-//     document.getElementById("mach2_none").checked = true;
-//     document.getElementById("mach2_st").value = "0";
-//
-//     Lib_st_Sum();
-//   }
-// }
-
 var Change = {
   year1214: function() {
     var fr = document.getElementById("ad-year").value;
@@ -865,6 +778,41 @@ var Standard = {
       document.getElementById("cross_point3").readOnly = false;
       document.getElementById("plan_table").style.display = "";
     }
+  },
+  BaseNece: function() {
+    var Major = document.getElementById("Major_select").value;
+    var AdYear = Number(document.getElementById("ad-year").value);
+    var i = AdYear - 2012;
+    var Baseselect = Base[Major];
+    var Neceselect = Nece[Major];
+    if (Major == "none") {
+      document.getElementById("base_standard").value = "-";
+      document.getElementById("nece_standard").value = "-";
+    } else {
+      document.getElementById("base_standard").value = Baseselect[i];
+      document.getElementById("nece_standard").value = Neceselect[i];
+    }
+  },
+  BaseNece_tr: function() {
+    var Major = document.getElementById("Major_select").value;
+    var AdYear = Number(document.getElementById("ad-year").value);
+    var SecYear = document.getElementById("2ndyear").checked;
+    var i = AdYear - 2017;
+    var Baseselect = Base_tr[Major];
+    var Neceselect = Nece_tr[Major];
+    if (Major == "none") {
+      document.getElementById("base_standard").value = "-";
+      document.getElementById("nece_standard").value = "-";
+    } else if (SecYear && Major == "cmc") {
+      document.getElementById("base_standard").value = Base_tr.cmc2[i];
+      document.getElementById("nece_standard").value = Neceselect[i];
+    } else if (SecYear && Major == "log") {
+      document.getElementById("base_standard").value = Base_tr.log2[i];
+      document.getElementById("nece_standard").value = Neceselect[i];
+    } else {
+      document.getElementById("base_standard").value = Baseselect[i];
+      document.getElementById("nece_standard").value = Neceselect[i];
+    }
   }
 }
 
@@ -1041,519 +989,239 @@ var PhoneNumber = {
   }
 };
 
-//연도별 학과 전공기초, 전공필수 기준
-function BaseNeceStandard12to14() {
-  var Base = { // 전공기초: [2012, 2013, 2014]
-    //인문대학
-    "korean": ["10", "10", "10"],
-    "english": ["12", "12", "12"],
-    "german": ["14", "14", "14"],
-    "france": ["14", "14", "14"],
-    "russia": ["14", "14", "14"],
-    "japan": ["12", "12", "12"],
-    "china": ["12", "12", "12"],
-    "philosophy": ["12", "12", "12"],
-    "history": ["12", "12", "12"],
-    //사회과학대학
-    "psyche": ["10", "10", "10"],
-    "politics": ["12", "12", "12"],
-    "lis": ["10", "12", "12"],
-    "socialwelfare": ["12", "12", "12"],
-    "cmc": ["15", "15", "15"],
-    "planning": ["12", "12", "12"],
-    "sociology": ["12", "12", "12"],
-    "public": ["18", "18", "18"],
-    //사범대학
-    "education": ["0", "0", "0"],
-    "ece": ["9", "9", "9"],
-    "englishedu": ["11", "11", "11"],
-    "pe": ["10", "10", "10"],
-    //자연과학대학
-    "physics": ["10", "10", "14"],
-    "chemistry": ["14", "14", "14"],
-    "bio-science": ["14", "14", "14"],
-    "math": ["16", "16", "16"],
-    //경영경제대학
-    "biz_ba": ["14", "14", "14"],
-    "biz_glofi": ["18", "18", "18"],
-    "econ": ["6", "6", "6"],
-    "adpr": ["9", "9", "9"],
-    "stat": ["12", "12", "12"],
-    "gloknol": ["18", "18", "18"],
-    "log": ["15", "15", "15"],
-    //공과대학
-    "infra": ["10", "10", "10"],
-    "archi": ["12", "12", "12"],
-    "archieng": ["12", "12", "12"],
-    "chemeng": ["10", "10", "14"],
-    "me": ["14", "14", "14"],
-    "ese": ["14", "14", "14"],
-    "eee1214": ["14", "14", "14"],
-    "computer12": ["10", "14", "14"],
-    "computer": ["10", "14", "14"],
-    "ie1214": ["18", "18", "18"],
-    //예술대학
-    "theatre": ["10", "10", "10"],
-    "film": ["10", "10", "10"],
-    "tfdesign": ["10", "10", "10"]
-  };
-  var Nece = { //전공필수: [2012, 2013, 2014]
-    //인문대학
-    "korean": ["12", "12", "12"],
-    "english": ["9", "9", "9"],
-    "german": ["15", "15", "15"],
-    "france": ["9", "15", "15"],
-    "russia": ["18", "18", "18"],
-    "japan": ["15", "15", "15"],
-    "china": ["15", "15", "15"],
-    "philosophy": ["18", "18", "18"],
-    "history": ["9", "9", "9"],
-    //사회과학대학
-    "psyche": ["9", "9", "9"],
-    "politics": ["9", "9", "9"],
-    "lis": ["18", "18", "18"],
-    "socialwelfare": ["18", "18", "18"],
-    "cmc": ["9", "9", "9"],
-    "planning": ["18", "18", "18"],
-    "sociology": ["9", "9", "9"],
-    "public": ["19", "19", "19"],
-    //사범대학
-    "education": ["15", "15", "15"],
-    "ece": ["18", "18", "18"],
-    "englishedu": ["18", "18", "18"],
-    "pe": ["18", "18", "18"],
-    //자연과학대학
-    "physics": ["15", "15", "15"],
-    "chemistry": ["15", "15", "15"],
-    "bio-science": ["18", "18", "18"],
-    "math": ["18", "18", "18"],
-    //경영경제대학
-    "biz_ba": ["24", "24", "24"],
-    "biz_glofi": ["39", "39", "39"],
-    "econ": ["9", "9", "9"],
-    "adpr": ["9", "12", "12"],
-    "stat": ["15", "15", "15"],
-    "gloknol": ["21", "21", "21"],
-    "log": ["18", "18", "18"],
-    //공과대학
-    "infra": ["18", "18", "18"],
-    "archi": ["99", "99", "99"],
-    "archieng": ["12", "12", "12"],
-    "chemeng": ["18", "18", "18"],
-    "me": ["18", "18", "18"],
-    "ese": ["12", "12", "12"],
-    "eee1214": ["9", "9", "9"],
-    "computer12": ["12", "12", "12"],
-    "computer": ["12", "12", "12"],
-    "ie1214": ["18", "18", "18"],
-    //예술대학
-    "theatre": ["0", "0", "0"],
-    "film": ["0", "0", "0"],
-    "tfdesign": ["0", "0", "0"]
-  };
-
-  var Major = document.getElementById("Major_select").value;
-  var AdYear = Number(document.getElementById("ad-year").value);
-  var i = AdYear - 2012;
-  var Baseselect = Base[Major];
-  var Neceselect = Nece[Major];
-  if (Major == "none") {
-    document.getElementById("base_standard").value = "-";
-    document.getElementById("nece_standard").value = "-";
-  } else {
-    document.getElementById("base_standard").value = Baseselect[i];
-    document.getElementById("nece_standard").value = Neceselect[i];
-  }
+var Base = {
+  //인문대학
+  "korean": ["10", "10", "10", "10", "10", "10", "10", "10", "10"],
+  "english": ["12", "12", "12", "12", "12", "12", "12", "12", "12"],
+  "german": ["14", "14", "14", "14", "14", "14", "14", "14", "14"],
+  "france": ["14", "14", "14", "14", "14", "14", "14", "14", "14"],
+  "russia": ["14", "14", "14", "14", "14", "14", "14", "14", "14"],
+  "japan": ["12", "12", "12", "12", "12", "12", "12", "12", "12"],
+  "china": ["12", "12", "12", "12", "12", "12", "12", "12", "12"],
+  "philosophy": ["12", "12", "12", "12", "12", "12", "12", "12", "12"],
+  "history": ["12", "12", "12", "12", "12", "12", "12", "12", "12"],
+  //사회과학대학
+  "psyche": ["10", "10", "10", "10", "10", "10", "10", "10", "10"],
+  "politics": ["12", "12", "12", "12", "12", "12", "12", "12", "12"],
+  "lis": ["10", "12", "12", "12", "12", "12", "12", "12", "12"],
+  "socialwelfare": ["12", "12", "12", "12", "12", "12", "12", "12", "12"],
+  "cmc": ["15", "15", "15", "15", "15", "15", "15", "15", "15"],
+  "planning": ["12", "12", "12", "12", "12", "12", "12", "12", "12"],
+  "sociology": ["12", "12", "12", "12", "12", "12", "12", "12", "12"],
+  "public": ["18", "18", "18", "18", "18", "18", "18", "18", "18"],
+  "public-admin": ["17", "17", "17", "17", "17", "18", "18", "17", "17"],
+  "public-policy": ["16", "16", "16", "16", "16", "17", "17", "17", "17"],
+  //사범대학
+  "education": ["0", "0", "0", "0", "0", "0", "0", "0", "0"],
+  "ece": ["9", "9", "9", "9", "9", "9", "9", "9", "9"],
+  "englishedu": ["11", "11", "11", "11", "11", "11", "11", "11", "11"],
+  "pe": ["10", "10", "10", "10", "10", "10", "10", "10", "10"],
+  //자연과학대학
+  "physics": ["10", "10", "14", "14", "14", "14", "14", "14", "14"],
+  "chemistry": ["14", "14", "14", "14", "14", "14", "14", "14", "14"],
+  "bio-science": ["14", "14", "14", "14", "14", "14", "14", "14", "14"],
+  "math": ["16", "16", "16", "16", "16", "16", "16", "16", "16"],
+  //경영경제대학
+  "biz_ba": ["14", "14", "14", "14", "14", "14", "14", "14", "14"],
+  "biz_glofi": ["18", "18", "18", "18", "18", "18", "18", "18", "18"],
+  "econ": ["6", "6", "6", "6", "6", "6", "6", "6", "6"],
+  "adpr": ["9", "9", "9", "9", "9", "9", "9", "9", "9"],
+  "stat": ["12", "12", "12", "12", "12", "12", "12", "12", "12"],
+  "gloknol": ["18", "18", "18", "18", "15", "18", "18", "18", "18"],
+  "log": ["15", "15", "15", "15", "15", "15", "15", "15", "15"],
+  "security": ["15", "15", "15", "15", "15", "15", "15", "15", "15"],
+  //공과대학
+  "infra": ["10", "10", "10", "10", "10", "10", "10", "10", "10"],
+  "archi": ["12", "12", "12", "12", "12", "12", "12", "12", "12"],
+  "archieng": ["12", "12", "12", "14", "14", "14", "14", "14", "14"],
+  "chemeng": ["10", "10", "14", "14", "14", "14", "14", "14", "14"],
+  "me": ["14", "14", "14", "14", "14", "14", "14", "14", "14"],
+  "ese": ["14", "14", "14", "14", "14", "15", "15", "15", "15"],
+  //창의ICT공과대학
+  "eee1214": ["14", "14", "14", "14", "14", "14", "14", "14", "14"],
+  "eee": ["14", "14", "14", "14", "14", "14", "14", "14", "14"],
+  "computer12": ["10", "14", "14", "14", "14", "14", "14", "14", "14"],
+  "computer": ["10", "14", "14", "14", "14", "14", "14", "14", "14"],
+  "ie1214": ["18", "18", "18", "18", "18", "18", "18", "18", "18"],
+  "soft": ["14", "14", "14", "14", "14", "14", "14", "14", "14"],
+  "ie": ["18", "18", "18", "18", "18", "18", "18", "18", "18"],
+  //예술대학
+  "theatre": ["10", "10", "10", "10", "10", "10", "10", "10", "10"],
+  "film": ["10", "10", "10", "10", "10", "10", "10", "10", "10"],
+  "tfdesign": ["10", "10", "10", "10", "10", "10", "10", "10", "10"]
 }
 
-function BaseNeceStandard2015() {
-  var Major_base = {
-    //인문대학
-    "korean": "10",
-    "english": "12",
-    "german": "14",
-    "france": "14",
-    "russia": "14",
-    "japan": "12",
-    "china": "12",
-    "philosophy": "12",
-    "history": "12",
-    //사회과학대학
-    "psyche": "10",
-    "politics": "12",
-    "lis": "12",
-    "socialwelfare": "12",
-    "cmc": "15",
-    "planning": "12",
-    "sociology": "12",
-    "public-admin": "17",
-    "public-policy": "16",
-    //사범대학
-    "education": "0",
-    "ece": "9",
-    "englishedu": "11",
-    "pe": "10",
-    //자연과학대학
-    "physics": "14",
-    "chemistry": "14",
-    "bio-science": "14",
-    "math": "16",
-    //경영경제대학
-    "biz_ba": "14",
-    "biz_glofi": "18",
-    "econ": "6",
-    "adpr": "9",
-    "stat": "12",
-    "gloknol": "18",
-    "log": "15",
-    "security": "15",
-    //공과대학
-    "infra": "10",
-    "archi": "12",
-    "archieng": "14",
-    "chemeng": "14",
-    "me": "14",
-    "ese": "14",
-    //창의ICT공과대학
-    "eee": "14",
-    "computer": "14",
-    "soft": "14",
-    "ie": "18",
-    //예술대학
-    "theatre": "10",
-    "film": "10",
-    "tfdesign": "10"
-  };
-
-  var Major_nece = {
-    //인문대학
-    "korean": "12",
-    "english": "9",
-    "german": "15",
-    "france": "15",
-    "russia": "18",
-    "japan": "15",
-    "china": "15",
-    "philosophy": "18",
-    "history": "9",
-    //사회과학대학
-    "psyche": "9",
-    "politics": "9",
-    "lis": "18",
-    "socialwelfare": "18",
-    "cmc": "9",
-    "planning": "18",
-    "sociology": "9",
-    "public-admin": "19",
-    "public-policy": "17",
-    //사범대학
-    "education": "15",
-    "ece": "18",
-    "englishedu": "18",
-    "pe": "18",
-    //자연과학대학
-    "physics": "18",
-    "chemistry": "15",
-    "bio-science": "18",
-    "math": "18",
-    //경영경제대학
-    "biz_ba": "24",
-    "biz_glofi": "39",
-    "econ": "9",
-    "adpr": "12",
-    "stat": "15",
-    "gloknol": "21",
-    "log": "18",
-    "security": "18",
-    //공과대학
-    "infra": "18",
-    "archi": "99",
-    "archieng": "17",
-    "chemeng": "18",
-    "me": "18",
-    "ese": "12",
-    //창의ICT공과대학
-    "eee": "9",
-    "computer": "12",
-    "soft": "6",
-    "ie": "15",
-    //예술대학
-    "theatre": "0",
-    "film": "0",
-    "tfdesign": "0"
-  };
-
-  var Major = document.getElementById("Major_select").value;
-  if (Major == "none") {
-    document.getElementById("base_standard").value = "-";
-    document.getElementById("nece_standard").value = "-";
-  } else {
-    document.getElementById("base_standard").value = Major_base[Major];
-    document.getElementById("nece_standard").value = Major_nece[Major];
-  }
+var Nece = {
+  //인문대학
+  "korean": ["12", "12", "12", "12", "12", "12", "12", "12", "12"],
+  "english": ["9", "9", "9", "9", "9", "9", "9", "9", "9"],
+  "german": ["15", "15", "15", "15", "15", "15", "15", "15", "15"],
+  "france": ["9", "15", "15", "15", "15", "15", "15", "15", "15"],
+  "russia": ["18", "18", "18", "18", "18", "18", "18", "18", "18"],
+  "japan": ["15", "15", "15", "15", "15", "15", "15", "15", "15"],
+  "china": ["15", "15", "15", "15", "15", "15", "15", "15", "15"],
+  "philosophy": ["18", "18", "18", "18", "18", "18", "18", "18", "18"],
+  "history": ["9", "9", "9", "9", "9", "9", "9", "9", "9"],
+  //사회과학대학
+  "psyche": ["9", "9", "9", "9", "9", "9", "9", "9", "9"],
+  "politics": ["9", "9", "9", "9", "9", "9", "9", "9", "9"],
+  "lis": ["18", "18", "18", "18", "18", "18", "18", "18", "18"],
+  "socialwelfare": ["18", "18", "18", "18", "18", "18", "18", "18", "18"],
+  "cmc": ["9", "9", "9", "9", "9", "9", "9", "9", "9"],
+  "planning": ["18", "18", "18", "18", "18", "18", "18", "18", "18"],
+  "sociology": ["9", "9", "9" , "9", "9", "9", "9", "9", "12"],
+  "public": ["19", "19", "19", "19", "19", "19", "19", "19", "19"],
+  "public-admin": ["19", "19", "19", "19", "19", "19", "19", "18", "18"],
+  "public-policy": ["17", "17", "17", "17", "17", "17", "17", "18", "18"],
+  //사범대학
+  "education": ["15", "15", "15", "15", "15", "15", "15", "15", "15"],
+  "ece": ["18", "18", "18", "18", "18", "19", "19", "19", "19"],
+  "englishedu": ["18", "18", "18", "18", "18", "18", "18", "18", "18"],
+  "pe": ["18", "18", "18", "18", "18", "18", "18", "18", "18"],
+  //자연과학대학
+  "physics": ["15", "15", "15", "18", "18", "18", "17", "17", "17"],
+  "chemistry": ["15", "15", "15", "15", "15", "15", "15", "15", "15"],
+  "bio-science": ["18", "18", "18", "18", "18", "18", "18", "18", "18"],
+  "math": ["18", "18", "18", "18", "18", "18", "18", "18", "18"],
+  //경영경제대학
+  "biz_ba": ["24", "24", "24", "24", "24", "24", "24", "24", "24"],
+  "biz_glofi": ["39", "39", "39", "39", "39", "39", "39", "39", "39"],
+  "econ": ["9", "9", "9", "9", "9", "9", "9", "9", "9"],
+  "adpr": ["9", "12", "12", "12", "12", "12", "12", "12", "12"],
+  "stat": ["15", "15", "15", "15", "15", "15", "12", "12", "12"],
+  "gloknol": ["21", "21", "21", "21", "21", "21", "21", "21", "21"],
+  "log": ["18", "18", "18", "18", "18", "12", "12", "12", "12"],
+  "security": ["18", "18", "18", "18", "15", "18", "18", "18", "18"],
+  //공과대학
+  "infra": ["18", "18", "18", "18", "18", "18", "18", "18", "18"],
+  "archi": ["99", "99", "99", "99", "99", "99", "99", "99", "99"],
+  "archieng": ["12", "12", "12", "17", "17", "17", "17", "17", "18"],
+  "chemeng": ["18", "18", "18", "18", "18", "18", "18", "18"],
+  "me": ["18", "18", "18", "18", "18", "18", "18", "18", "18"],
+  "ese": ["12", "12", "12", "12", "15", "15", "15", "15", "15"],
+  "eee1214": ["9", "9", "9", "9", "9", "9", "9", "9", "9"],
+  "eee": ["9", "9", "9", "9", "9", "9", "9", "9", "9"],
+  "computer12": ["12", "12", "12", "12", "12", "12", "13", "13", "13"],
+  "computer": ["12", "12", "12", "12", "12", "12", "13", "13", "13"],
+  "soft": ["6", "6", "6", "6", "6", "6", "13", "13", "13"],
+  "ie1214": ["18", "18", "18", "18", "18", "18", "18", "18", "18"],
+  "ie": ["18", "18", "18", "18", "18", "18", "18", "18", "18"],
+  //예술대학
+  "theatre": ["0", "0", "0", "0", "0", "0", "0", "0", "0"],
+  "film": ["0", "0", "0", "0", "0", "0", "0", "0", "0"],
+  "tfdesign": ["0", "0", "0", "0", "0", "0", "0", "0", "0"]
 }
 
-function BaseNeceStandard2016() {
-  var Base = { // 전공기초: [2016, 2017, 2018, 2019, 2020]
-    //인문대학
-    "korean": ["10", "10", "10", "10", "10"],
-    "english": ["12", "12", "12", "12", "12"],
-    "german": ["14", "14", "14", "14", "14"],
-    "france": ["14", "14", "14", "14", "14"],
-    "russia": ["14", "14", "14", "14", "14"],
-    "japan": ["12", "12", "12", "12", "12"],
-    "china": ["12", "12", "12", "12", "12"],
-    "philosophy": ["12", "12", "12", "12", "12"],
-    "history": ["12", "12", "12", "12", "12"],
-    //사회과학대학
-    "psyche": ["10", "10", "10", "10", "10"],
-    "politics": ["12", "12", "12", "12", "12"],
-    "lis": ["12", "12", "12", "12", "12"],
-    "socialwelfare": ["12", "12", "12", "12", "12"],
-    "cmc": ["15", "15", "15", "15", "15"],
-    "planning": ["12", "12", "12", "12", "12"],
-    "sociology": ["12", "12", "12", "12", "12"],
-    "public-admin": ["17", "18", "18", "17", "17"],
-    "public-policy": ["16", "17", "17", "17", "17"],
-    //사범대학
-    "education": ["0", "0", "0", "0", "0"],
-    "ece": ["9", "9", "9", "9", "9"],
-    "englishedu": ["11", "11", "11", "11", "11"],
-    "pe": ["10", "10", "10", "10", "10"],
-    //자연과학대학
-    "physics": ["14", "14", "14", "14", "14"],
-    "chemistry": ["14", "14", "14", "14", "14"],
-    "bio-science": ["14", "14", "14", "14", "14"],
-    "math": ["16", "16", "16", "16", "16"],
-    //경영경제대학
-    "biz_ba": ["14", "14", "14", "14", "14"],
-    "biz_glofi": ["18", "18", "18", "18", "18"],
-    "econ": ["6", "6", "6", "6", "6"],
-    "adpr": ["9", "9", "9", "9", "9"],
-    "stat": ["12", "12", "12", "12", "12"],
-    "gloknol": ["15", "18", "18", "18", "18"],
-    "log": ["15", "15", "15", "15", "15"],
-    "security": ["15", "15", "15", "15", "15"],
-    //공과대학
-    "infra": ["10", "10", "10", "10", "10"],
-    "archi": ["12", "12", "12", "12", "12"],
-    "archieng": ["14", "14", "14", "14", "14"],
-    "chemeng": ["14", "14", "14", "14", "14"],
-    "me": ["14", "14", "14", "14", "14"],
-    "ese": ["14", "15", "15", "15", "15"],
-    //창의ICT공과대학
-    "eee": ["14", "14", "14", "14", "14"],
-    "ie": ["18", "18", "18", "18", "18"],
-    "computer": ["14", "14", "14", "14", "14"],
-    "soft": ["14", "14", "14", "14", "14"],
-    //예술대학
-    "theatre": ["10", "10", "10", "10", "10"],
-    "film": ["10", "10", "10", "10", "10"],
-    "tfdesign": ["10", "10", "10", "10", "10"]
-  };
-  var Nece = { //전공필수: [2016, 2017, 2018, 2019, 2020]
-    //인문대학
-    "korean": ["12", "12", "12", "12", "12"],
-    "english": ["9", "9", "9", "9", "9"],
-    "german": ["15", "15", "15", "15", "15"],
-    "france": ["15", "15", "15", "15", "15"],
-    "russia": ["18", "18", "18", "18", "18"],
-    "japan": ["15", "15", "15", "15", "15"],
-    "china": ["15", "15", "15", "15", "15"],
-    "philosophy": ["18", "18", "18", "18", "18"],
-    "history": ["9", "9", "9", "9", "9"],
-    //사회과학대학
-    "psyche": ["9", "9", "9", "9", "9"],
-    "politics": ["9", "9", "9", "9", "9"],
-    "lis": ["18", "18", "18", "18", "18"],
-    "socialwelfare": ["18", "18", "18", "18", "18"],
-    "cmc": ["9", "9", "9", "9", "9"],
-    "planning": ["18", "18", "18", "18", "18"],
-    "sociology": ["9", "9", "9", "9", "12"],
-    "public-admin": ["19", "19", "19", "18", "18"],
-    "public-policy": ["17", "17", "17", "18", "18"],
-    //사범대학
-    "education": ["15", "15", "15", "15", "15"],
-    "ece": ["18", "19", "19", "19", "19"],
-    "englishedu": ["18", "18", "18", "18", "18"],
-    "pe": ["18", "18", "18", "18", "18"],
-    //자연과학대학
-    "physics": ["18", "18", "17", "17", "17"],
-    "chemistry": ["15", "15", "15", "15", "15"],
-    "bio-science": ["18", "18", "18", "18", "18"],
-    "math": ["18", "18", "18", "18", "18"],
-    //경영경제대학
-    "biz_ba": ["24", "24", "24", "24", "24"],
-    "biz_glofi": ["39", "39", "39", "39", "39"],
-    "econ": ["9", "9", "9", "9", "9"],
-    "adpr": ["12", "12", "12", "12", "12"],
-    "stat": ["15", "15", "12", "12", "12"],
-    "gloknol": ["21", "21", "21", "21", "21"],
-    "log": ["18", "12", "12", "12", "12"],
-    "security": ["15", "18", "18", "18", "18"],
-    //공과대학
-    "infra": ["18", "18", "18", "18", "18"],
-    "archi": ["99", "99", "99", "99", "99"],
-    "archieng": ["17", "17", "17", "17", "18"],
-    "chemeng": ["18", "18", "18", "18", "18"],
-    "me": ["18", "18", "18", "18", "18"],
-    "ese": ["15", "15", "15", "15", "15"],
-    //창의ICT공과대학
-    "eee": ["9", "9", "9", "9", "9"],
-    "ie": ["18", "18", "18", "18", "18"],
-    "computer": ["12", "12", "13", "13", "13"],
-    "soft": ["6", "6", "13", "13", "13"],
-    //예술대학
-    "theatre": ["0", "0", "0", "0", "0"],
-    "film": ["0", "0", "0", "0", "0"],
-    "tfdesign": ["0", "0", "0", "0", "0"]
-  };
+var Base_tr = { // 전공기초: [2017, 2018, 2019, 2020]
+  //인문대학
+  "korean": ["10", "10", "10", "10"],
+  "english": ["12", "12", "12", "12"],
+  "german": ["14", "14", "14", "14"],
+  "france": ["14", "14", "14", "14"],
+  "russia": ["14", "14", "14", "14"],
+  "japan": ["12", "12", "12", "12"],
+  "china": ["12", "12", "12", "12"],
+  "philosophy": ["12", "12", "12", "12"],
+  "history": ["12", "12", "12", "12"],
+  //사회과학대학
+  "psyche": ["10", "10", "10", "10"],
+  "politics": ["6", "6", "6", "6"],
+  "lis": ["12", "12", "12", "12"],
+  "socialwelfare": ["12", "12", "12", "12"],
+  "cmc": ["9", "9", "9", "9"],
+  "cmc2": ["12", "12", "12", "12"],
+  "planning": ["0", "0", "0", "0"],
+  "sociology": ["12", "12", "12", "12"],
+  "public-admin": ["8", "8", "12", "12"],
+  "public-policy": ["7", "7", "11", "11"],
+  //사범대학
+  "education": ["0", "0", "0", "0"],
+  "ece": ["9", "9", "9", "9"],
+  "englishedu": ["11", "11", "11", "11"],
+  "pe": ["10", "10", "10", "10"],
+  //자연과학대학
+  "physics": ["14", "14", "14", "14"],
+  "chemistry": ["14", "14", "14", "14"],
+  "bio-science": ["14", "14", "14", "14"],
+  "math": ["0", "0", "0", "0"],
+  //경영경제대학
+  "biz_ba": ["14", "14", "14", "14"],
+  "biz_glofi": ["18", "18", "18", "18"],
+  "econ": ["6", "6", "6", "6"],
+  "adpr": ["9", "9", "9", "9"],
+  "stat": ["12", "12", "12", "12"],
+  "gloknol": ["9", "9", "9", "9"],
+  "log": ["3", "3", "3", "3"],
+  "log2": ["15", "15", "15", "15"],
+  "security": ["15", "15", "15", "15"],
+  //공과대학
+  "infra": ["0", "0", "0", "0"],
+  "archi": ["0", "0", "0", "0"],
+  "archieng": ["0", "0", "0", "0"],
+  "chemeng": ["0", "0", "0", "0"],
+  "me": ["0", "0", "0", "0"],
+  "ese": ["0", "0", "0", "0"],
+  //창의ICT공과대학
+  "eee": ["0", "0", "0", "0"],
+  "ie": ["6", "6", "6", "6"],
+  //예술대학
+  "theatre": ["10", "10", "10", "10"],
+  "film": ["10", "10", "10", "10"],
+  "tfdesign": ["10", "10", "10", "10"]
+};
 
-  var Major = document.getElementById("Major_select").value;
-  var AdYear = Number(document.getElementById("ad-year").value);
-  var i = AdYear - 2016;
-  var Baseselect = Base[Major];
-  var Neceselect = Nece[Major];
-  if (Major == "none") {
-    document.getElementById("base_standard").value = "-";
-    document.getElementById("nece_standard").value = "-";
-  } else {
-    document.getElementById("base_standard").value = Baseselect[i];
-    document.getElementById("nece_standard").value = Neceselect[i];
-  }
-}
-
-function BaseNeceStandard_tr2017() {
-  var Base = { // 전공기초: [2017, 2018, 2019, 2020]
-    //인문대학
-    "korean": ["10", "10", "10", "10"],
-    "english": ["12", "12", "12", "12"],
-    "german": ["14", "14", "14", "14"],
-    "france": ["14", "14", "14", "14"],
-    "russia": ["14", "14", "14", "14"],
-    "japan": ["12", "12", "12", "12"],
-    "china": ["12", "12", "12", "12"],
-    "philosophy": ["12", "12", "12", "12"],
-    "history": ["12", "12", "12", "12"],
-    //사회과학대학
-    "psyche": ["10", "10", "10", "10"],
-    "politics": ["6", "6", "6", "6"],
-    "lis": ["12", "12", "12", "12"],
-    "socialwelfare": ["12", "12", "12", "12"],
-    "cmc": ["9", "9", "9", "9"],
-    "cmc2": ["12", "12", "12", "12"],
-    "planning": ["0", "0", "0", "0"],
-    "sociology": ["12", "12", "12", "12"],
-    "public-admin": ["8", "8", "12", "12"],
-    "public-policy": ["7", "7", "11", "11"],
-    //사범대학
-    "education": ["0", "0", "0", "0"],
-    "ece": ["9", "9", "9", "9"],
-    "englishedu": ["11", "11", "11", "11"],
-    "pe": ["10", "10", "10", "10"],
-    //자연과학대학
-    "physics": ["14", "14", "14", "14"],
-    "chemistry": ["14", "14", "14", "14"],
-    "bio-science": ["14", "14", "14", "14"],
-    "math": ["0", "0", "0", "0"],
-    //경영경제대학
-    "biz_ba": ["14", "14", "14", "14"],
-    "biz_glofi": ["18", "18", "18", "18"],
-    "econ": ["6", "6", "6", "6"],
-    "adpr": ["9", "9", "9", "9"],
-    "stat": ["12", "12", "12", "12"],
-    "gloknol": ["9", "9", "9", "9"],
-    "log": ["3", "3", "3", "3"],
-    "log2": ["15", "15", "15", "15"],
-    "security": ["15", "15", "15", "15"],
-    //공과대학
-    "infra": ["0", "0", "0", "0"],
-    "archi": ["0", "0", "0", "0"],
-    "archieng": ["0", "0", "0", "0"],
-    "chemeng": ["0", "0", "0", "0"],
-    "me": ["0", "0", "0", "0"],
-    "ese": ["0", "0", "0", "0"],
-    //창의ICT공과대학
-    "eee": ["0", "0", "0", "0"],
-    "ie": ["6", "6", "6", "6"],
-    //예술대학
-    "theatre": ["10", "10", "10", "10"],
-    "film": ["10", "10", "10", "10"],
-    "tfdesign": ["10", "10", "10", "10"]
-  };
-  var Nece = { //전공필수: [2017, 2018, 2019, 2020]
-    //인문대학
-    "korean": ["12", "12", "12", "12"],
-    "english": ["9", "9", "9", "9"],
-    "german": ["15", "15", "15", "15"],
-    "france": ["15", "15", "15", "15"],
-    "russia": ["18", "18", "18", "18"],
-    "japan": ["15", "15", "15", "15"],
-    "china": ["15", "15", "15", "15"],
-    "philosophy": ["18", "18", "18", "18"],
-    "history": ["9", "9", "9", "9"],
-    //사회과학대학
-    "psyche": ["9", "9", "9", "9"],
-    "politics": ["9", "9", "9", "9"],
-    "lis": ["18", "18", "18", "18"],
-    "socialwelfare": ["18", "18", "18", "18"],
-    "cmc": ["9", "9", "9", "9"],
-    "planning": ["18", "18", "18", "18"],
-    "sociology": ["9", "9", "9", "12"],
-    "public-admin": ["19", "19", "18", "18"],
-    "public-policy": ["17", "17", "18", "18"],
-    //사범대학
-    "education": ["15", "15", "15", "15"],
-    "ece": ["19", "19", "19", "19"],
-    "englishedu": ["18", "18", "18", "18"],
-    "pe": ["18", "18", "18", "18"],
-    //자연과학대학
-    "physics": ["18", "17", "17", "17"],
-    "chemistry": ["15", "15", "15", "15"],
-    "bio-science": ["18", "18", "18", "18"],
-    "math": ["18", "18", "18", "18"],
-    //경영경제대학
-    "biz_ba": ["24", "24", "24", "24"],
-    "biz_glofi": ["39", "39", "39", "39"],
-    "econ": ["9", "9", "9", "9"],
-    "adpr": ["6", "6", "6", "6"],
-    "stat": ["15", "12", "12", "12"],
-    "gloknol": ["21", "21", "21", "21"],
-    "log": ["12", "12", "12", "12"],
-    "security": ["18", "18", "18", "18"],
-    //공과대학
-    "infra": ["18", "18", "18", "18"],
-    "archi": ["99", "99", "99", "99"],
-    "archieng": ["17", "17", "17", "18"],
-    "chemeng": ["18", "18", "18", "18"],
-    "me": ["18", "18", "18", "18"],
-    "ese": ["12", "15", "15", "15"],
-    //창의ICT공과대학
-    "eee": ["9", "9", "9", "9"],
-    "ie": ["18", "18", "18", "18"],
-    //예술대학
-    "theatre": ["0", "0", "0", "0"],
-    "film": ["0", "0", "0", "0"],
-    "tfdesign": ["0", "0", "0", "0"]
-  };
-
-  var Major = document.getElementById("Major_select").value;
-  var AdYear = Number(document.getElementById("ad-year").value);
-  var SecYear = document.getElementById("2ndyear").checked;
-  var i = AdYear - 2017;
-  var Baseselect = Base[Major];
-  var Neceselect = Nece[Major];
-  if (Major == "none") {
-    document.getElementById("base_standard").value = "-";
-    document.getElementById("nece_standard").value = "-";
-  } else if (SecYear && Major == "cmc") {
-    document.getElementById("base_standard").value = Base.cmc2[i];
-    document.getElementById("nece_standard").value = Neceselect[i];
-  } else if (SecYear && Major == "log") {
-    document.getElementById("base_standard").value = Base.log2[i];
-    document.getElementById("nece_standard").value = Neceselect[i];
-  } else {
-    document.getElementById("base_standard").value = Baseselect[i];
-    document.getElementById("nece_standard").value = Neceselect[i];
-  }
-}
+var Nece_tr = { //전공필수: [2017, 2018, 2019, 2020]
+  //인문대학
+  "korean": ["12", "12", "12", "12"],
+  "english": ["9", "9", "9", "9"],
+  "german": ["15", "15", "15", "15"],
+  "france": ["15", "15", "15", "15"],
+  "russia": ["18", "18", "18", "18"],
+  "japan": ["15", "15", "15", "15"],
+  "china": ["15", "15", "15", "15"],
+  "philosophy": ["18", "18", "18", "18"],
+  "history": ["9", "9", "9", "9"],
+  //사회과학대학
+  "psyche": ["9", "9", "9", "9"],
+  "politics": ["9", "9", "9", "9"],
+  "lis": ["18", "18", "18", "18"],
+  "socialwelfare": ["18", "18", "18", "18"],
+  "cmc": ["9", "9", "9", "9"],
+  "planning": ["18", "18", "18", "18"],
+  "sociology": ["9", "9", "9", "12"],
+  "public-admin": ["19", "19", "18", "18"],
+  "public-policy": ["17", "17", "18", "18"],
+  //사범대학
+  "education": ["15", "15", "15", "15"],
+  "ece": ["19", "19", "19", "19"],
+  "englishedu": ["18", "18", "18", "18"],
+  "pe": ["18", "18", "18", "18"],
+  //자연과학대학
+  "physics": ["18", "17", "17", "17"],
+  "chemistry": ["15", "15", "15", "15"],
+  "bio-science": ["18", "18", "18", "18"],
+  "math": ["18", "18", "18", "18"],
+  //경영경제대학
+  "biz_ba": ["24", "24", "24", "24"],
+  "biz_glofi": ["39", "39", "39", "39"],
+  "econ": ["9", "9", "9", "9"],
+  "adpr": ["6", "6", "6", "6"],
+  "stat": ["15", "12", "12", "12"],
+  "gloknol": ["21", "21", "21", "21"],
+  "log": ["12", "12", "12", "12"],
+  "security": ["18", "18", "18", "18"],
+  //공과대학
+  "infra": ["18", "18", "18", "18"],
+  "archi": ["99", "99", "99", "99"],
+  "archieng": ["17", "17", "17", "18"],
+  "chemeng": ["18", "18", "18", "18"],
+  "me": ["18", "18", "18", "18"],
+  "ese": ["12", "15", "15", "15"],
+  //창의ICT공과대학
+  "eee": ["9", "9", "9", "9"],
+  "ie": ["18", "18", "18", "18"],
+  //예술대학
+  "theatre": ["0", "0", "0", "0"],
+  "film": ["0", "0", "0", "0"],
+  "tfdesign": ["0", "0", "0", "0"]
+};
