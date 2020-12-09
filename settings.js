@@ -1235,7 +1235,7 @@ function BaseNeceStandard2015() {
     "japan": "15",
     "china": "15",
     "philosophy": "18",
-    "history": "19",
+    "history": "9",
     //사회과학대학
     "psyche": "9",
     "politics": "9",
