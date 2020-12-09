@@ -47,6 +47,7 @@ var Reset = {
     document.getElementById("link_table").style.display = "none";
     document.getElementById("fusion_table").style.display = "none";
     document.getElementById("plan_table").style.display = "none";
+    document.getElementById("teaching_table").style.display = "none";
   },
   libcolor: function() {
     document.getElementById("common_kor").style.color = "red";
@@ -171,10 +172,12 @@ function teachingcheck() { //교직과정 설치 학과 구분
   if (teachingmajor.includes(major)) {
     document.getElementById("teaching_point").readOnly = false;
     document.getElementById("teaching_none").checked = false;
+    document.getElementById("teaching_table").style.display = "";
   } else {
     document.getElementById("teaching_point").value = 0;
     document.getElementById("teaching_point").readOnly = true;
     document.getElementById("teaching_none").checked = true;
+    document.getElementById("teaching_table").style.display = "none";
   }
 }
 
