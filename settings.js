@@ -76,856 +76,970 @@ var Color = {
   }
 }
 
-function Liberal_Sum() {
-  var AdYear = Number(document.getElementById("ad-year").value);
-  var College = document.getElementById("college_select").value;
-  var elective_point = Number(document.getElementById("elective_liberal").value);
-  var common_kor_point = Number(document.getElementById("common_kor").value);
-  var common_eng_point = Number(document.getElementById("common_eng").value);
-  var common_etc_point = Number(document.getElementById("common_etc").value);
-  var core_total_point = Number(document.getElementById("core_total").value);
-  var MACH1 = Number(document.getElementById("mach1").value);
-  var MACH2 = Number(document.getElementById("mach2").value);
-  var Engin = ["engineering", "ict", "ict1617", "ict18", "software"]
+var Liberal = {
+  standardsum: function() {
+    var AdYear = Number(document.getElementById("ad-year").value);
+    var College = document.getElementById("college_select").value;
+    var elec_st = Number(document.getElementById("elective_st").value);
+    var kor_st = Number(document.getElementById("com_kor_st").value);
+    var eng_st = Number(document.getElementById("com_eng_st").value);
+    var etc_st = Number(document.getElementById("com_etc_st").value);
+    var core_st = Number(document.getElementById("core_st").value);
+    var MACH1_st = Number(document.getElementById("mach1_st").value);
+    var MACH2_st = Number(document.getElementById("mach2_st").value);
+    var Engin = ["engineering", "ict", "ict1617", "ict18", "software"]
 
-  if (AdYear >= 2015 && AdYear <= 2018 && Engin.includes(College)) {
-    document.getElementById("liberal_total").value = elective_point + common_kor_point + common_eng_point + common_etc_point + core_total_point + MACH1 + MACH2;
-  } else {
-    document.getElementById("liberal_total").value = elective_point + common_kor_point + common_eng_point + common_etc_point + core_total_point;
+    if (AdYear >= 2015 && AdYear <= 2018 && Engin.includes(College)) {
+      document.getElementById("total_lib_st").value = elec_st + kor_st + eng_st + etc_st + core_st + MACH1_st + MACH2_st;
+    } else {
+      document.getElementById("total_lib_st").value = elec_st + kor_st + eng_st + etc_st + core_st;
+    }
+  },
+  etcchange: function() {
+    var AdYear = Number(document.getElementById("ad-year").value);
+    var College = document.getElementById("college_select").value;
+    var Engin = ["engineering", "ict", "ict1617", "ict18", "software"]
+    if (AdYear >= 2016 && AdYear <= 2018 && Engin.includes(College)) {
+      document.getElementById("com_etc_st").value = 8;
+      document.getElementById("etc_max").value = 8;
+      Liberal.standardsum();
+    } else {
+      document.getElementById("com_etc_st").value = 10;
+      document.getElementById("etc_max").value = 10;
+      Liberal.standardsum();
+    }
+  },
+   mach: function() {
+    var AdYear = document.getElementById("ad-year").value;
+    var College = document.getElementById("college_select").value;
+    var ICT = ["ict", "ict1617", "ict18"]
+
+    if (AdYear >= 2015 && AdYear <= 2018 && ICT.includes(College)) {
+      document.getElementById("mach1_table").style.display = "";
+      document.getElementById("mach1").readOnly = false;
+      document.getElementById("mach1_none").checked = false;
+      document.getElementById("mach1_st").value = "4";
+
+      document.getElementById("mach2_table").style.display = "";
+      document.getElementById("mach2").readOnly = false;
+      document.getElementById("mach2_none").checked = false;
+      document.getElementById("mach2_st").value = "2";
+
+      Liberal.standardsum();
+    } else {
+      document.getElementById("mach1_table").style.display = "none";
+      document.getElementById("mach1").readOnly = true;
+      document.getElementById("mach1").value = null;
+      document.getElementById("mach1_none").checked = true;
+      document.getElementById("mach1_st").value = "0";
+
+      document.getElementById("mach2_table").style.display = "none";
+      document.getElementById("mach2").value = null;
+      document.getElementById("mach2").readOnly = true;
+      document.getElementById("mach2_none").checked = true;
+      document.getElementById("mach2_st").value = "0";
+
+      Liberal.standardsum();
+    }
+  },
+  sum: function() {
+    var AdYear = Number(document.getElementById("ad-year").value);
+    var College = document.getElementById("college_select").value;
+    var elective_point = Number(document.getElementById("elective_liberal").value);
+    var common_kor_point = Number(document.getElementById("common_kor").value);
+    var common_eng_point = Number(document.getElementById("common_eng").value);
+    var common_etc_point = Number(document.getElementById("common_etc").value);
+    var core_total_point = Number(document.getElementById("core_total").value);
+    var MACH1 = Number(document.getElementById("mach1").value);
+    var MACH2 = Number(document.getElementById("mach2").value);
+    var Engin = ["engineering", "ict", "ict1617", "ict18", "software"]
+
+    if (AdYear >= 2015 && AdYear <= 2018 && Engin.includes(College)) {
+      document.getElementById("liberal_total").value = elective_point + common_kor_point + common_eng_point + common_etc_point + core_total_point + MACH1 + MACH2;
+    } else {
+      document.getElementById("liberal_total").value = elective_point + common_kor_point + common_eng_point + common_etc_point + core_total_point;
+    }
   }
 }
 
-function Lib_st_Sum() {
-  var AdYear = Number(document.getElementById("ad-year").value);
-  var College = document.getElementById("college_select").value;
-  var elec_st = Number(document.getElementById("elective_st").value);
-  var kor_st = Number(document.getElementById("com_kor_st").value);
-  var eng_st = Number(document.getElementById("com_eng_st").value);
-  var etc_st = Number(document.getElementById("com_etc_st").value);
-  var core_st = Number(document.getElementById("core_st").value);
-  var MACH1_st = Number(document.getElementById("mach1_st").value);
-  var MACH2_st = Number(document.getElementById("mach2_st").value);
-  var Engin = ["engineering", "ict", "ict1617", "ict18", "software"]
+// function Liberal_Sum() {
+//   var AdYear = Number(document.getElementById("ad-year").value);
+//   var College = document.getElementById("college_select").value;
+//   var elective_point = Number(document.getElementById("elective_liberal").value);
+//   var common_kor_point = Number(document.getElementById("common_kor").value);
+//   var common_eng_point = Number(document.getElementById("common_eng").value);
+//   var common_etc_point = Number(document.getElementById("common_etc").value);
+//   var core_total_point = Number(document.getElementById("core_total").value);
+//   var MACH1 = Number(document.getElementById("mach1").value);
+//   var MACH2 = Number(document.getElementById("mach2").value);
+//   var Engin = ["engineering", "ict", "ict1617", "ict18", "software"]
+//
+//   if (AdYear >= 2015 && AdYear <= 2018 && Engin.includes(College)) {
+//     document.getElementById("liberal_total").value = elective_point + common_kor_point + common_eng_point + common_etc_point + core_total_point + MACH1 + MACH2;
+//   } else {
+//     document.getElementById("liberal_total").value = elective_point + common_kor_point + common_eng_point + common_etc_point + core_total_point;
+//   }
+// }
+//
+// function Lib_st_Sum() {
+//   var AdYear = Number(document.getElementById("ad-year").value);
+//   var College = document.getElementById("college_select").value;
+//   var elec_st = Number(document.getElementById("elective_st").value);
+//   var kor_st = Number(document.getElementById("com_kor_st").value);
+//   var eng_st = Number(document.getElementById("com_eng_st").value);
+//   var etc_st = Number(document.getElementById("com_etc_st").value);
+//   var core_st = Number(document.getElementById("core_st").value);
+//   var MACH1_st = Number(document.getElementById("mach1_st").value);
+//   var MACH2_st = Number(document.getElementById("mach2_st").value);
+//   var Engin = ["engineering", "ict", "ict1617", "ict18", "software"]
+//
+//   if (AdYear >= 2015 && AdYear <= 2018 && Engin.includes(College)) {
+//     document.getElementById("total_lib_st").value = elec_st + kor_st + eng_st + etc_st + core_st + MACH1_st + MACH2_st;
+//   } else {
+//     document.getElementById("total_lib_st").value = elec_st + kor_st + eng_st + etc_st + core_st;
+//   }
+// }
+//
+// function etcchange() {
+//   var AdYear = Number(document.getElementById("ad-year").value);
+//   var College = document.getElementById("college_select").value;
+//   var Engin = ["engineering", "ict", "ict1617", "ict18", "software"]
+//   if (AdYear >= 2016 && AdYear <= 2018 && Engin.includes(College)) {
+//     document.getElementById("com_etc_st").value = 8;
+//     document.getElementById("etc_max").value = 8;
+//     Lib_st_Sum();
+//   } else {
+//     document.getElementById("com_etc_st").value = 10;
+//     document.getElementById("etc_max").value = 10;
+//     Lib_st_Sum();
+//   }
+// }
+//
+// function machshow() {
+//   var AdYear = document.getElementById("ad-year").value;
+//   var College = document.getElementById("college_select").value;
+//   var ICT = ["ict", "ict1617", "ict18"]
+//
+//   if (AdYear >= 2015 && AdYear <= 2018 && ICT.includes(College)) {
+//     document.getElementById("mach1_table").style.display = "";
+//     document.getElementById("mach1").readOnly = false;
+//     document.getElementById("mach1_none").checked = false;
+//     document.getElementById("mach1_st").value = "4";
+//
+//     document.getElementById("mach2_table").style.display = "";
+//     document.getElementById("mach2").readOnly = false;
+//     document.getElementById("mach2_none").checked = false;
+//     document.getElementById("mach2_st").value = "2";
+//
+//     Lib_st_Sum();
+//   } else {
+//     document.getElementById("mach1_table").style.display = "none";
+//     document.getElementById("mach1").readOnly = true;
+//     document.getElementById("mach1").value = null;
+//     document.getElementById("mach1_none").checked = true;
+//     document.getElementById("mach1_st").value = "0";
+//
+//     document.getElementById("mach2_table").style.display = "none";
+//     document.getElementById("mach2").value = null;
+//     document.getElementById("mach2").readOnly = true;
+//     document.getElementById("mach2_none").checked = true;
+//     document.getElementById("mach2_st").value = "0";
+//
+//     Lib_st_Sum();
+//   }
+// }
 
-  if (AdYear >= 2015 && AdYear <= 2018 && Engin.includes(College)) {
-    document.getElementById("total_lib_st").value = elec_st + kor_st + eng_st + etc_st + core_st + MACH1_st + MACH2_st;
-  } else {
-    document.getElementById("total_lib_st").value = elec_st + kor_st + eng_st + etc_st + core_st;
+var Change = {
+  year1214: function() {
+    var fr = document.getElementById("ad-year").value;
+    if (fr == 2012) {
+      num = new Array("--", "인문대학", "사회과학대학", "사범대학", "자연과학대학", "공과대학", "경영경제대학", "예술대학");
+      vnum = new Array("none", "humanity", "society", "edu", "natural", "engineering12", "bne", "arts");
+    } else if (fr >= 2013) {
+      num = new Array("--", "인문대학", "사회과학대학", "사범대학", "자연과학대학", "공과대학", "경영경제대학", "예술대학");
+      vnum = new Array("none", "humanity", "society", "edu", "natural", "engineering", "bne", "arts");
+    } else if (fr == "0") {
+      num = new Array("--");
+      vnum = new Array("none");
+    }
+
+    for (i = 0; i = document.getElementById("college_select").length; i++) {
+      document.getElementById("college_select").options[0] = null;
+    };
+
+    for (i = 0; i < num.length; i++) {
+      document.getElementById("college_select").options[i] = new Option(num[i], vnum[i]);
+    }
+  },
+  year16: function() {
+    var fr = document.getElementById("ad-year").value;
+    if (fr == 2016 || fr == 2017) {
+      num = new Array("--", "인문대학", "사회과학대학", "사범대학", "자연과학대학", "공과대학", "창의ICT공과대학", "경영경제대학", "예술대학");
+      vnum = new Array("none", "humanity", "society", "edu", "natural", "engineering", "ict1617", "bne", "arts");
+    } else if (fr == 2018) {
+      num = new Array("--", "인문대학", "사회과학대학", "사범대학", "자연과학대학", "공과대학", "창의ICT공과대학", "경영경제대학", "예술대학");
+      vnum = new Array("none", "humanity", "society", "edu", "natural", "engineering", "ict18", "bne", "arts");
+    } else if (fr >= 2019) {
+      num = new Array("--", "인문대학", "사회과학대학", "사범대학", "자연과학대학", "공과대학", "창의ICT공과대학", "소프트웨어대학", "경영경제대학", "예술대학");
+      vnum = new Array("none", "humanity", "society", "edu", "natural", "engineering", "ict", "software", "bne", "arts");
+    } else if (fr == "0") {
+      num = new Array("--");
+      vnum = new Array("none");
+    }
+
+    for (i = 0; i = document.getElementById("college_select").length; i++) {
+      document.getElementById("college_select").options[0] = null;
+    };
+
+    for (i = 0; i < num.length; i++) {
+      document.getElementById("college_select").options[i] = new Option(num[i], vnum[i]);
+    }
+  },
+  tr_year: function() {
+    var fr = document.getElementById("ad-year").value;
+    if (fr >= 2017) {
+      num = new Array("--", "인문대학", "사회과학대학", "사범대학", "자연과학대학", "공과대학", "창의ICT공과대학", "경영경제대학", "예술대학");
+      vnum = new Array("none", "humanity", "society", "edu", "natural", "engineering", "ict", "bne", "arts");
+    } else if (fr == "0") {
+      num = new Array("--");
+      vnum = new Array("none");
+    }
+
+    for (i = 0; i = document.getElementById("college_select").length; i++) {
+      document.getElementById("college_select").options[0] = null;
+    };
+
+    for (i = 0; i < num.length; i++) {
+      document.getElementById("college_select").options[i] = new Option(num[i], vnum[i]);
+    }
+  },
+  college1214: function() {
+    var fr = document.getElementById("college_select").value;
+    if (fr == "humanity") {
+      num = new Array("--", "국어국문학과", "영어영문학과", "유럽문화_독일어문학", "유럽문화_프랑스어문학", "유럽문화_러시아어문학", "아시아문화_일본어문학", "아시아문화_중국어문학", "철학과", "역사학과");
+      vnum = new Array("none", "korean", "english", "german", "france", "russia", "japan", "china", "philosophy", "history");
+    } else if (fr == "society") {
+      num = new Array("--", "정치국제학과", "공공인재학부", "심리학과", "문헌정보학과", "사회복지학부", "신문방송학부", "도시계획부동산학과", "사회학과");
+      vnum = new Array("none", "politics", "public", "psyche", "lis", "socialwelfare", "cmc", "planning", "sociology");
+    } else if (fr == "edu") {
+      num = new Array("--", "교육학과", "유아교육과", "영어교육과", "체육교육과");
+      vnum = new Array("none", "education", "ece", "englishedu", "pe");
+    } else if (fr == "natural") {
+      num = new Array("--", "물리학과", "화학과", "생명과학과", "수학과");
+      vnum = new Array("none", "physics", "chemistry", "bio-science", "math");
+    } else if (fr == "bne") {
+      num = new Array("--", "경영학부_경영학전공", "경영학부_글로벌금융", "경제학부", "광고홍보학과", "응용통계학과", "지식경영학부", "국제물류학과");
+      vnum = new Array("none", "biz_ba", "biz_glofi", "econ", "adpr", "stat", "gloknol", "log");
+    } else if (fr == "engineering") {
+      num = new Array("--", "사회기반시스템공학부", "건축학부_건축학", "건축학부_건축공학", "화학신소재공학부", "기계공학부", "에너지시스템공학부", "전자전기공학부", "컴퓨터공학부", "융합공학부");
+      vnum = new Array("none", "infra", "archi", "archieng", "chemeng", "me", "ese", "eee1214", "computer", "ie1214");
+    } else if (fr == "engineering12") {
+      num = new Array("--", "사회기반시스템공학부", "건축학부_건축학", "건축학부_건축공학", "화학신소재공학부", "기계공학부", "전자전기공학부", "컴퓨터공학부", "융합공학부");
+      vnum = new Array("none", "infra", "archi", "archieng", "chemeng", "me", "eee1214", "computer12", "ie1214");
+    } else if (fr == "arts") {
+      num = new Array("--", "연극학과", "영화학과", "공간연출전공");
+      vnum = new Array("none", "theatre", "film", "tfdesign");
+    } else if (fr == "none") {
+      num = new Array("--");
+      vnum = new Array("none");
+    }
+
+    for (i = 0; i = document.getElementById("Major_select").length; i++) {
+      document.getElementById("Major_select").options[0] = null;
+    };
+
+    for (i = 0; i < num.length; i++) {
+      document.getElementById("Major_select").options[i] = new Option(num[i], vnum[i]);
+    }
+  },
+  college15: function() {
+    var fr = document.getElementById("college_select").value;
+    if (fr == "humanity") {
+      num = new Array("--", "국어국문학과", "영어영문학과", "유럽문화_독일어문학", "유럽문화_프랑스어문학", "유럽문화_러시아어문학", "아시아문화_일본어문학", "아시아문화_중국어문학", "철학과", "역사학과");
+      vnum = new Array("none", "korean", "english", "german", "france", "russia", "japan", "china", "philosophy", "history");
+    } else if (fr == "society") {
+      num = new Array("--", "정치국제학과", "공공인재_행정학트랙", "공공인재_정책학트랙", "심리학과", "문헌정보학과", "사회복지학부", "미디어커뮤니케이션학부", "도시계획부동산학과", "사회학과");
+      vnum = new Array("none", "politics", "public-admin", "public-policy", "psyche", "lis", "socialwelfare", "cmc", "planning", "sociology");
+    } else if (fr == "edu") {
+      num = new Array("--", "교육학과", "유아교육과", "영어교육과", "체육교육과");
+      vnum = new Array("none", "education", "ece", "englishedu", "pe");
+    } else if (fr == "natural") {
+      num = new Array("--", "물리학과", "화학과", "생명과학과", "수학과");
+      vnum = new Array("none", "physics", "chemistry", "bio-science", "math");
+    } else if (fr == "bne") {
+      num = new Array("--", "경영학부_경영학전공", "경영학부_글로벌금융", "경제학부", "광고홍보학과", "응용통계학과", "지식경영학부", "국제물류학과", "산업보안학과");
+      vnum = new Array("none", "biz_ba", "biz_glofi", "econ", "adpr", "stat", "gloknol", "log", "security");
+    } else if (fr == "engineering") {
+      num = new Array("--", "사회기반시스템공학부", "건축학부_건축학", "건축학부_건축공학", "화학신소재공학부", "기계공학부", "에너지시스템공학부");
+      vnum = new Array("none", "infra", "archi", "archieng", "chemeng", "me", "ese");
+    } else if (fr == "ict") {
+      num = new Array("--", "전자전기공학부", "컴퓨터공학부_컴퓨터공학", "컴퓨터공학부_소프트웨어", "융합공학부");
+      vnum = new Array("none", "eee", "computer", "soft", "ie");
+    } else if (fr == "arts") {
+      num = new Array("--", "연극학과", "영화학과", "공간연출전공");
+      vnum = new Array("none", "theatre", "film", "tfdesign");
+    } else if (fr == "none") {
+      num = new Array("--");
+      vnum = new Array("none");
+    }
+
+    for (i = 0; i = document.getElementById("Major_select").length; i++) {
+      document.getElementById("Major_select").options[0] = null;
+    };
+
+    for (i = 0; i < num.length; i++) {
+      document.getElementById("Major_select").options[i] = new Option(num[i], vnum[i]);
+    }
+  },
+  college16: function() {
+    var fr = document.getElementById("college_select").value;
+    if (fr == "humanity") {
+      num = new Array("--", "국어국문학과", "영어영문학과", "유럽문화_독일어문학", "유럽문화_프랑스어문학", "유럽문화_러시아어문학", "아시아문화_일본어문학", "아시아문화_중국어문학", "철학과", "역사학과");
+      vnum = new Array("none", "korean", "english", "german", "france", "russia", "japan", "china", "philosophy", "history");
+    } else if (fr == "society") {
+      num = new Array("--", "정치국제학과", "공공인재_행정학트랙", "공공인재_정책학트랙", "심리학과", "문헌정보학과", "사회복지학부", "미디어커뮤니케이션학부", "도시계획부동산학과", "사회학과");
+      vnum = new Array("none", "politics", "public-admin", "public-policy", "psyche", "lis", "socialwelfare", "cmc", "planning", "sociology");
+    } else if (fr == "edu") {
+      num = new Array("--", "교육학과", "유아교육과", "영어교육과", "체육교육과");
+      vnum = new Array("none", "education", "ece", "englishedu", "pe");
+    } else if (fr == "natural") {
+      num = new Array("--", "물리학과", "화학과", "생명과학과", "수학과");
+      vnum = new Array("none", "physics", "chemistry", "bio-science", "math");
+    } else if (fr == "bne") {
+      num = new Array("--", "경영학부_경영학전공", "경영학부_글로벌금융", "경제학부", "광고홍보학과", "응용통계학과", "지식경영학부", "국제물류학과", "산업보안학과");
+      vnum = new Array("none", "biz_ba", "biz_glofi", "econ", "adpr", "stat", "gloknol", "log", "security");
+    } else if (fr == "engineering") {
+      num = new Array("--", "사회기반시스템공학부", "건축학부_건축학", "건축학부_건축공학", "화학신소재공학부", "기계공학부", "에너지시스템공학부");
+      vnum = new Array("none", "infra", "archi", "archieng", "chemeng", "me", "ese");
+    } else if (fr == "ict") {
+      num = new Array("--", "전자전기공학부", "융합공학부");
+      vnum = new Array("none", "eee", "ie");
+    } else if (fr == "ict1617") {
+      num = new Array("--", "전자전기공학부", "컴퓨터공학부_컴퓨터공학", "컴퓨터공학부_소프트웨어", "융합공학부");
+      vnum = new Array("none", "eee", "computer", "soft", "ie");
+    } else if (fr == "ict18") {
+      num = new Array("--", "전자전기공학부", "소프트웨어학부", "융합공학부");
+      vnum = new Array("none", "eee", "soft", "ie");
+    } else if (fr == "software") {
+      num = new Array("--", "소프트웨어학부");
+      vnum = new Array("none", "soft");
+    } else if (fr == "arts") {
+      num = new Array("--", "연극학과", "영화학과", "공간연출전공");
+      vnum = new Array("none", "theatre", "film", "tfdesign");
+    } else if (fr == "none") {
+      num = new Array("--");
+      vnum = new Array("none");
+    }
+
+    for (i = 0; i = document.getElementById("Major_select").length; i++) {
+      document.getElementById("Major_select").options[0] = null;
+    };
+
+    for (i = 0; i < num.length; i++) {
+      document.getElementById("Major_select").options[i] = new Option(num[i], vnum[i]);
+    }
+  },
+  tr_college: function() {
+    var fr = document.getElementById("college_select").value;
+    if (fr == "humanity") {
+      num = new Array("--", "국어국문학과", "영어영문학과", "유럽문화_독일어문학", "유럽문화_프랑스어문학", "유럽문화_러시아어문학", "아시아문화_일본어문학", "아시아문화_중국어문학", "철학과", "역사학과");
+      vnum = new Array("none", "korean", "english", "german", "france", "russia", "japan", "china", "philosophy", "history");
+    } else if (fr == "society") {
+      num = new Array("--", "정치국제학과", "공공인재_행정학트랙", "공공인재_정책학트랙", "심리학과", "문헌정보학과", "사회복지학부", "미디어커뮤니케이션학부", "도시계획부동산학과", "사회학과");
+      vnum = new Array("none", "politics", "public-admin", "public-policy", "psyche", "lis", "socialwelfare", "cmc", "planning", "sociology");
+    } else if (fr == "edu") {
+      num = new Array("--", "교육학과", "유아교육과", "영어교육과", "체육교육과");
+      vnum = new Array("none", "education", "ece", "englishedu", "pe");
+    } else if (fr == "natural") {
+      num = new Array("--", "물리학과", "화학과", "생명과학과", "수학과");
+      vnum = new Array("none", "physics", "chemistry", "bio-science", "math");
+    } else if (fr == "bne") {
+      num = new Array("--", "경영학부_경영학전공", "경영학부_글로벌금융", "경제학부", "광고홍보학과", "응용통계학과", "국제물류학과", "산업보안학과");
+      vnum = new Array("none", "biz_ba", "biz_glofi", "econ", "adpr", "stat", "log", "security");
+    } else if (fr == "engineering") {
+      num = new Array("--", "사회기반시스템공학부", "건축학부_건축학", "건축학부_건축공학", "화학신소재공학부", "기계공학부", "에너지시스템공학부");
+      vnum = new Array("none", "infra", "archi", "archieng", "chemeng", "me", "ese");
+    } else if (fr == "ict") {
+      num = new Array("--", "전자전기공학부", "융합공학부");
+      vnum = new Array("none", "eee", "ie");
+    } else if (fr == "arts") {
+      num = new Array("--", "연극학과", "영화학과", "공간연출전공");
+      vnum = new Array("none", "theatre", "film", "tfdesign");
+    } else if (fr == "none") {
+      num = new Array("--");
+      vnum = new Array("none");
+    }
+
+    for (i = 0; i = document.getElementById("Major_select").length; i++) {
+      document.getElementById("Major_select").options[0] = null;
+    };
+
+    for (i = 0; i < num.length; i++) {
+      document.getElementById("Major_select").options[i] = new Option(num[i], vnum[i]);
+    }
+  },
+  multimajor: function() {
+    var major = document.getElementById("Major_select").value;
+    var Edu = ["education", "ece", "englishedu", "pe"]
+    var Archi = ["archi"]
+    var ICT = ["eee", "ie"]
+    var Soft = ["computer", "soft"]
+    var Arts = ["theatre", "film", "tfdesign"]
+    if (Edu.includes(major)) {
+      num = new Array("--", "전공심화", "복수전공", "연계전공", "융합전공", "설계전공");
+      vnum = new Array("0", "66", "50", "50", "50", "50");
+      document.getElementById("total_standard").value = "132";
+    } else if (Archi.includes(major)) {
+      num = new Array("--", "전공심화", "복수전공", "연계전공", "융합전공", "설계전공");
+      vnum = new Array("0", "105", "105", "105", "105", "105");
+      document.getElementById("total_standard").value = "160";
+    } else if (ICT.includes(major)) {
+      num = new Array("--", "전공심화", "복수전공", "연계전공", "융합전공", "설계전공");
+      vnum = new Array("0", "72", "45", "45", "45", "45");
+      document.getElementById("total_standard").value = "140";
+    } else if (Soft.includes(major)) {
+      num = new Array("--", "전공심화", "복수전공", "연계전공", "융합전공", "설계전공");
+      vnum = new Array("0", "84", "84", "84", "84", "84");
+      document.getElementById("total_standard").value = "140";
+    } else if (Arts.includes(major)) {
+      num = new Array("--", "전공심화", "복수전공", "연계전공", "융합전공", "설계전공");
+      vnum = new Array("0", "69", "54", "54", "54", "54");
+      document.getElementById("total_standard").value = "132";
+    } else {
+      num = new Array("--", "전공심화", "복수전공", "연계전공", "융합전공", "설계전공");
+      vnum = new Array("0", "66", "45", "45", "45", "45");
+      document.getElementById("total_standard").value = "132";
+    }
+
+    for (i = 0; i = document.getElementById("MultiMajor_select").length; i++) {
+      document.getElementById("MultiMajor_select").options[0] = null;
+    };
+
+    for (i = 0; i < num.length; i++) {
+      document.getElementById("MultiMajor_select").options[i] = new Option(num[i], vnum[i]);
+    }
   }
 }
 
-function etcchange() {
-  var AdYear = Number(document.getElementById("ad-year").value);
-  var College = document.getElementById("college_select").value;
-  var Engin = ["engineering", "ict", "ict1617", "ict18", "software"]
-  if (AdYear >= 2016 && AdYear <= 2018 && Engin.includes(College)) {
-    document.getElementById("com_etc_st").value = 8;
-    document.getElementById("etc_max").value = 8;
-    Lib_st_Sum();
-  } else {
-    document.getElementById("com_etc_st").value = 10;
-    document.getElementById("etc_max").value = 10;
-    Lib_st_Sum();
+var Check = {
+  none: function(none, point) {
+    var none_checked = document.getElementById(none).checked;
+    if (!none_checked) {
+      document.getElementById(point).readOnly = false;
+    } else {
+      document.getElementById(point).value = null;
+      document.getElementById(point).readOnly = true;
+    }
+  },
+  multinone: function(none, point, cross) {
+    var none_checked = document.getElementById(none).checked;
+    if (!none_checked) {
+      document.getElementById(point).readOnly = false;
+      document.getElementById(cross).readOnly = false;
+    } else {
+      document.getElementById(point).value = null;
+      document.getElementById(point).readOnly = true;
+      document.getElementById(cross).value = null;
+      document.getElementById(cross).readOnly = true;
+    }
+  },
+  fusionstandard: function() {
+    var fusion_min = document.getElementById("fusion-options").value;
+    var crosspoint = document.getElementById("cross_point2");
+    if (fusion_min == 45) {
+      document.getElementById("fusion_standard").value = 45;
+      crosspoint.setAttribute("max", 15);
+    } else {
+      document.getElementById("fusion_standard").value = 36;
+      crosspoint.setAttribute("max", 12);
+    }
+  },
+  teach: function() { //교직과정 설치 학과 구분
+    var teachingmajor = ["education", "ece", "englishedu", "pe",
+      "korean", "english", "german", "russia", "japan", "china", "philosophy", "history",
+      "psyche", "lis", "physics", "chemistry", "bio-science", "math"
+    ]
+    var major = document.getElementById("Major_select").value;
+    if (teachingmajor.includes(major)) {
+      document.getElementById("teaching_point").readOnly = false;
+      document.getElementById("teaching_none").checked = false;
+      document.getElementById("teaching_table").style.display = "";
+    } else {
+      document.getElementById("teaching_point").value = 0;
+      document.getElementById("teaching_point").readOnly = true;
+      document.getElementById("teaching_none").checked = true;
+      document.getElementById("teaching_table").style.display = "none";
+    }
   }
 }
 
-function machshow() {
-  var AdYear = document.getElementById("ad-year").value;
-  var College = document.getElementById("college_select").value;
-  var ICT = ["ict", "ict1617", "ict18"]
+var Standard = {
+  major: function() {
+    var Multimajor_standard = Number(document.getElementById("MultiMajor_select").value);
+    document.getElementById("major_standard").value = Multimajor_standard;
+    var Multimajor = document.getElementById("MultiMajor_select");
+    var Multimajortext = Multimajor.options[Multimajor.selectedIndex].text;
 
-  if (AdYear >= 2015 && AdYear <= 2018 && ICT.includes(College)) {
-    document.getElementById("mach1_table").style.display = "";
-    document.getElementById("mach1").readOnly = false;
-    document.getElementById("mach1_none").checked = false;
-    document.getElementById("mach1_st").value = "4";
+    if (Multimajortext.includes("심화")) {
+      document.getElementById("double_major_none").checked = true;
+      document.getElementById("double_major_point").value = null;
+      document.getElementById("double_major_point").readOnly = true;
+      document.getElementById("double_major_paper").checked = true;
+      document.getElementById("double_table").style.display = "none";
 
-    document.getElementById("mach2_table").style.display = "";
-    document.getElementById("mach2").readOnly = false;
-    document.getElementById("mach2_none").checked = false;
-    document.getElementById("mach2_st").value = "2";
+      document.getElementById("link_major_none").checked = true;
+      document.getElementById("link_major_point").value = null;
+      document.getElementById("link_major_point").readOnly = true;
+      document.getElementById("cross_point1").value = null;
+      document.getElementById("cross_point1").readOnly = true;
+      document.getElementById("link_table").style.display = "none";
 
-    Lib_st_Sum();
-  } else {
-    document.getElementById("mach1_table").style.display = "none";
-    document.getElementById("mach1").readOnly = true;
-    document.getElementById("mach1").value = null;
-    document.getElementById("mach1_none").checked = true;
-    document.getElementById("mach1_st").value = "0";
+      document.getElementById("fusion_major_none").checked = true;
+      document.getElementById("fusion_major_point").value = null;
+      document.getElementById("fusion_major_point").readOnly = true;
+      document.getElementById("cross_point2").value = null;
+      document.getElementById("cross_point2").readOnly = true;
+      document.getElementById("fusion_table").style.display = "none";
 
-    document.getElementById("mach2_table").style.display = "none";
-    document.getElementById("mach2").value = null;
-    document.getElementById("mach2").readOnly = true;
-    document.getElementById("mach2_none").checked = true;
-    document.getElementById("mach2_st").value = "0";
+      document.getElementById("plan_major_none").checked = true;
+      document.getElementById("plan_major_point").value = null;
+      document.getElementById("plan_major_point").readOnly = true;
+      document.getElementById("cross_point3").value = null;
+      document.getElementById("cross_point3").readOnly = true;
+      document.getElementById("plan_table").style.display = "none";
+    } else if (Multimajortext.includes("복수")) {
+      document.getElementById("double_major_none").checked = false;
+      document.getElementById("double_major_point").readOnly = false;
+      document.getElementById("double_major_paper").checked = false;
+      document.getElementById("double_table").style.display = "";
 
-    Lib_st_Sum();
+      document.getElementById("link_major_none").checked = true;
+      document.getElementById("link_major_point").value = null;
+      document.getElementById("link_major_point").readOnly = true;
+      document.getElementById("cross_point1").value = null;
+      document.getElementById("cross_point1").readOnly = true;
+      document.getElementById("link_table").style.display = "none";
+
+      document.getElementById("fusion_major_none").checked = true;
+      document.getElementById("fusion_major_point").value = null;
+      document.getElementById("fusion_major_point").readOnly = true;
+      document.getElementById("cross_point2").value = null;
+      document.getElementById("cross_point2").readOnly = true;
+      document.getElementById("fusion_table").style.display = "none";
+
+      document.getElementById("plan_major_none").checked = true;
+      document.getElementById("plan_major_point").value = null;
+      document.getElementById("plan_major_point").readOnly = true;
+      document.getElementById("cross_point3").value = null;
+      document.getElementById("cross_point3").readOnly = true;
+      document.getElementById("plan_table").style.display = "none";
+    } else if (Multimajortext.includes("연계")) {
+      document.getElementById("double_major_none").checked = true;
+      document.getElementById("double_major_point").value = null;
+      document.getElementById("double_major_point").readOnly = true;
+      document.getElementById("double_major_paper").checked = true;
+      document.getElementById("double_table").style.display = "none";
+
+      document.getElementById("link_major_none").checked = false;
+      document.getElementById("link_major_point").readOnly = false;
+      document.getElementById("cross_point1").readOnly = false;
+      document.getElementById("link_table").style.display = "";
+
+      document.getElementById("fusion_major_none").checked = true;
+      document.getElementById("fusion_major_point").value = null;
+      document.getElementById("fusion_major_point").readOnly = true;
+      document.getElementById("cross_point2").value = null;
+      document.getElementById("cross_point2").readOnly = true;
+      document.getElementById("fusion_table").style.display = "none";
+
+      document.getElementById("plan_major_none").checked = true;
+      document.getElementById("plan_major_point").value = null;
+      document.getElementById("plan_major_point").readOnly = true;
+      document.getElementById("cross_point3").value = null;
+      document.getElementById("cross_point3").readOnly = true;
+      document.getElementById("plan_table").style.display = "none";
+    } else if (Multimajortext.includes("융합")) {
+      document.getElementById("double_major_none").checked = true;
+      document.getElementById("double_major_point").value = null;
+      document.getElementById("double_major_point").readOnly = true;
+      document.getElementById("double_major_paper").checked = true;
+      document.getElementById("double_table").style.display = "none";
+
+      document.getElementById("link_major_none").checked = true;
+      document.getElementById("link_major_point").value = null;
+      document.getElementById("link_major_point").readOnly = true;
+      document.getElementById("cross_point1").value = null;
+      document.getElementById("cross_point1").readOnly = true;
+      document.getElementById("link_table").style.display = "none";
+
+      document.getElementById("fusion_major_none").checked = false;
+      document.getElementById("fusion_major_point").readOnly = false;
+      document.getElementById("cross_point2").readOnly = false;
+      document.getElementById("fusion_table").style.display = "";
+
+      document.getElementById("plan_major_none").checked = true;
+      document.getElementById("plan_major_point").value = null;
+      document.getElementById("plan_major_point").readOnly = true;
+      document.getElementById("cross_point3").value = null;
+      document.getElementById("cross_point3").readOnly = true;
+      document.getElementById("plan_table").style.display = "none";
+    } else if (Multimajortext.includes("설계")) {
+      document.getElementById("double_major_none").checked = true;
+      document.getElementById("double_major_point").value = null;
+      document.getElementById("double_major_point").readOnly = true;
+      document.getElementById("double_major_paper").checked = true;
+      document.getElementById("double_table").style.display = "none";
+
+      document.getElementById("link_major_none").checked = true;
+      document.getElementById("link_major_point").value = null;
+      document.getElementById("link_major_point").readOnly = true;
+      document.getElementById("cross_point1").value = null;
+      document.getElementById("cross_point1").readOnly = true;
+      document.getElementById("link_table").style.display = "none";
+
+      document.getElementById("fusion_major_none").checked = true;
+      document.getElementById("fusion_major_point").value = null;
+      document.getElementById("fusion_major_point").readOnly = true;
+      document.getElementById("cross_point2").value = null;
+      document.getElementById("cross_point2").readOnly = true;
+      document.getElementById("fusion_table").style.display = "none";
+
+      document.getElementById("plan_major_none").checked = false;
+      document.getElementById("plan_major_point").readOnly = false;
+      document.getElementById("cross_point3").readOnly = false;
+      document.getElementById("plan_table").style.display = "";
+    } else if (Multimajor_standard == 0) {
+      document.getElementById("double_major_none").checked = false;
+      document.getElementById("double_major_point").readOnly = false;
+      document.getElementById("double_major_paper").checked = false;
+      document.getElementById("double_table").style.display = "none";
+
+      document.getElementById("link_major_none").checked = false;
+      document.getElementById("link_major_point").readOnly = false;
+      document.getElementById("cross_point1").readOnly = false;
+      document.getElementById("link_table").style.display = "none";
+
+      document.getElementById("fusion_major_none").checked = false;
+      document.getElementById("fusion_major_point").readOnly = false;
+      document.getElementById("cross_point2").readOnly = false;
+      document.getElementById("fusion_table").style.display = "none";
+
+      document.getElementById("plan_major_none").checked = false;
+      document.getElementById("plan_major_point").readOnly = false;
+      document.getElementById("cross_point3").readOnly = false;
+      document.getElementById("plan_table").style.display = "none";
+    }
+  },
+  tr_major: function() {
+    var Multimajor_standard = Number(document.getElementById("MultiMajor_select").value);
+    document.getElementById("major_standard").value = Multimajor_standard;
+    var Multimajor = document.getElementById("MultiMajor_select");
+    var Multimajortext = Multimajor.options[Multimajor.selectedIndex].text;
+
+    if (Multimajortext.includes("심화") || Multimajortext.includes("해당없음") || Multimajortext.includes("N/A")) {
+      document.getElementById("double_major_none").checked = true;
+      document.getElementById("double_major_point").value = null;
+      document.getElementById("double_major_point").readOnly = true;
+      document.getElementById("double_major_paper").checked = true;
+      document.getElementById("double_table").style.display = "none";
+
+      document.getElementById("link_major_none").checked = true;
+      document.getElementById("link_major_point").value = null;
+      document.getElementById("link_major_point").readOnly = true;
+      document.getElementById("cross_point1").value = null;
+      document.getElementById("cross_point1").readOnly = true;
+      document.getElementById("link_table").style.display = "none";
+
+      document.getElementById("fusion_major_none").checked = true;
+      document.getElementById("fusion_major_point").value = null;
+      document.getElementById("fusion_major_point").readOnly = true;
+      document.getElementById("cross_point2").value = null;
+      document.getElementById("cross_point2").readOnly = true;
+      document.getElementById("fusion_table").style.display = "none";
+
+      document.getElementById("plan_major_none").checked = true;
+      document.getElementById("plan_major_point").value = null;
+      document.getElementById("plan_major_point").readOnly = true;
+      document.getElementById("cross_point3").value = null;
+      document.getElementById("cross_point3").readOnly = true;
+      document.getElementById("plan_table").style.display = "none";
+    } else if (Multimajortext.includes("복수")) {
+      document.getElementById("double_major_none").checked = false;
+      document.getElementById("double_major_point").readOnly = false;
+      document.getElementById("double_major_paper").checked = false;
+      document.getElementById("double_table").style.display = "";
+
+      document.getElementById("link_major_none").checked = true;
+      document.getElementById("link_major_point").value = null;
+      document.getElementById("link_major_point").readOnly = true;
+      document.getElementById("cross_point1").value = null;
+      document.getElementById("cross_point1").readOnly = true;
+      document.getElementById("link_table").style.display = "none";
+
+      document.getElementById("fusion_major_none").checked = true;
+      document.getElementById("fusion_major_point").value = null;
+      document.getElementById("fusion_major_point").readOnly = true;
+      document.getElementById("cross_point2").value = null;
+      document.getElementById("cross_point2").readOnly = true;
+      document.getElementById("fusion_table").style.display = "none";
+
+      document.getElementById("plan_major_none").checked = true;
+      document.getElementById("plan_major_point").value = null;
+      document.getElementById("plan_major_point").readOnly = true;
+      document.getElementById("cross_point3").value = null;
+      document.getElementById("cross_point3").readOnly = true;
+      document.getElementById("plan_table").style.display = "none";
+    } else if (Multimajortext.includes("연계")) {
+      document.getElementById("double_major_none").checked = true;
+      document.getElementById("double_major_point").value = null;
+      document.getElementById("double_major_point").readOnly = true;
+      document.getElementById("double_major_paper").checked = true;
+      document.getElementById("double_table").style.display = "none";
+
+      document.getElementById("link_major_none").checked = false;
+      document.getElementById("link_major_point").readOnly = false;
+      document.getElementById("cross_point1").readOnly = false;
+      document.getElementById("link_table").style.display = "";
+
+      document.getElementById("fusion_major_none").checked = true;
+      document.getElementById("fusion_major_point").value = null;
+      document.getElementById("fusion_major_point").readOnly = true;
+      document.getElementById("cross_point2").value = null;
+      document.getElementById("cross_point2").readOnly = true;
+      document.getElementById("fusion_table").style.display = "none";
+
+      document.getElementById("plan_major_none").checked = true;
+      document.getElementById("plan_major_point").value = null;
+      document.getElementById("plan_major_point").readOnly = true;
+      document.getElementById("cross_point3").value = null;
+      document.getElementById("cross_point3").readOnly = true;
+      document.getElementById("plan_table").style.display = "none";
+    } else if (Multimajortext.includes("융합")) {
+      document.getElementById("double_major_none").checked = true;
+      document.getElementById("double_major_point").value = null;
+      document.getElementById("double_major_point").readOnly = true;
+      document.getElementById("double_major_paper").checked = true;
+      document.getElementById("double_table").style.display = "none";
+
+      document.getElementById("link_major_none").checked = true;
+      document.getElementById("link_major_point").value = null;
+      document.getElementById("link_major_point").readOnly = true;
+      document.getElementById("cross_point1").value = null;
+      document.getElementById("cross_point1").readOnly = true;
+      document.getElementById("link_table").style.display = "none";
+
+      document.getElementById("fusion_major_none").checked = false;
+      document.getElementById("fusion_major_point").readOnly = false;
+      document.getElementById("cross_point2").readOnly = false;
+      document.getElementById("fusion_table").style.display = "";
+
+      document.getElementById("plan_major_none").checked = true;
+      document.getElementById("plan_major_point").value = null;
+      document.getElementById("plan_major_point").readOnly = true;
+      document.getElementById("cross_point3").value = null;
+      document.getElementById("cross_point3").readOnly = true;
+      document.getElementById("plan_table").style.display = "none";
+    } else if (Multimajortext.includes("설계")) {
+      document.getElementById("double_major_none").checked = true;
+      document.getElementById("double_major_point").value = null;
+      document.getElementById("double_major_point").readOnly = true;
+      document.getElementById("double_major_paper").checked = true;
+      document.getElementById("double_table").style.display = "none";
+
+      document.getElementById("link_major_none").checked = true;
+      document.getElementById("link_major_point").value = null;
+      document.getElementById("link_major_point").readOnly = true;
+      document.getElementById("cross_point1").value = null;
+      document.getElementById("cross_point1").readOnly = true;
+      document.getElementById("link_table").style.display = "none";
+
+      document.getElementById("fusion_major_none").checked = true;
+      document.getElementById("fusion_major_point").value = null;
+      document.getElementById("fusion_major_point").readOnly = true;
+      document.getElementById("cross_point2").value = null;
+      document.getElementById("cross_point2").readOnly = true;
+      document.getElementById("fusion_table").style.display = "none";
+
+      document.getElementById("plan_major_none").checked = false;
+      document.getElementById("plan_major_point").readOnly = false;
+      document.getElementById("cross_point3").readOnly = false;
+      document.getElementById("plan_table").style.display = "";
+    }
   }
 }
 
-function teachingcheck() { //교직과정 설치 학과 구분
-  var teachingmajor = ["education", "ece", "englishedu", "pe",
-    "korean", "english", "german", "russia", "japan", "china", "philosophy", "history",
-    "psyche", "lis", "physics", "chemistry", "bio-science", "math"
-  ]
-  var major = document.getElementById("Major_select").value;
-  if (teachingmajor.includes(major)) {
-    document.getElementById("teaching_point").readOnly = false;
-    document.getElementById("teaching_none").checked = false;
-    document.getElementById("teaching_table").style.display = "";
-  } else {
-    document.getElementById("teaching_point").value = 0;
-    document.getElementById("teaching_point").readOnly = true;
-    document.getElementById("teaching_none").checked = true;
-    document.getElementById("teaching_table").style.display = "none";
+var Total = {
+  sum: function() {
+    var LiberalTotal = Number(document.getElementById("liberal_total").value);
+    var Basepoint = Number(document.getElementById("base_input").value);
+    var Majorpoint = Number(document.getElementById("major_input").value);
+    var Doublepoint = Number(document.getElementById("double_major_point").value);
+    var Linkpoint = Number(document.getElementById("link_major_point").value);
+    var Fusionpoint = Number(document.getElementById("fusion_major_point").value);
+    var Planpoint = Number(document.getElementById("plan_major_point").value);
+    var Minorpoint = Number(document.getElementById("minor_point").value);
+    var Freepoint = Number(document.getElementById("free_point").value);
+    var Teachpoint = Number(document.getElementById("teaching_point").value);
+    if (LiberalTotal > 45) {
+      document.getElementById("the_total").value = 45 + Basepoint + Majorpoint + Doublepoint + Linkpoint + Fusionpoint + Planpoint + Minorpoint + Freepoint + Teachpoint;
+    } else {
+      document.getElementById("the_total").value = LiberalTotal + Basepoint + Majorpoint + Doublepoint + Linkpoint + Fusionpoint + Planpoint + Minorpoint + Freepoint + Teachpoint;
+    }
+  },
+  tr_sum: function() {
+    var Liberal_point = Number(document.getElementById("liberal_input").value);
+    var Basepoint = Number(document.getElementById("base_input").value);
+    var Majorpoint = Number(document.getElementById("major_input").value);
+    var Doublepoint = Number(document.getElementById("double_major_point").value);
+    var Linkpoint = Number(document.getElementById("link_major_point").value);
+    var Fusionpoint = Number(document.getElementById("fusion_major_point").value);
+    var Planpoint = Number(document.getElementById("plan_major_point").value);
+    var Minorpoint = Number(document.getElementById("minor_point").value);
+    var Freepoint = Number(document.getElementById("free_point").value);
+    var Teachpoint = Number(document.getElementById("teaching_point").value);
+
+    document.getElementById("the_total").value = Liberal_point + Basepoint + Majorpoint + Doublepoint + Linkpoint + Fusionpoint + Planpoint + Minorpoint + Freepoint + Teachpoint;
   }
 }
 
-function total_point_sum() {
-  var LiberalTotal = Number(document.getElementById("liberal_total").value);
-  var Basepoint = Number(document.getElementById("base_input").value);
-  var Majorpoint = Number(document.getElementById("major_input").value);
-  var Doublepoint = Number(document.getElementById("double_major_point").value);
-  var Linkpoint = Number(document.getElementById("link_major_point").value);
-  var Fusionpoint = Number(document.getElementById("fusion_major_point").value);
-  var Planpoint = Number(document.getElementById("plan_major_point").value);
-  var Minorpoint = Number(document.getElementById("minor_point").value);
-  var Freepoint = Number(document.getElementById("free_point").value);
-  var Teachpoint = Number(document.getElementById("teaching_point").value);
-  if (LiberalTotal > 45) {
-    document.getElementById("the_total").value = 45 + Basepoint + Majorpoint + Doublepoint + Linkpoint + Fusionpoint + Planpoint + Minorpoint + Freepoint + Teachpoint;
-  } else {
-    document.getElementById("the_total").value = LiberalTotal + Basepoint + Majorpoint + Doublepoint + Linkpoint + Fusionpoint + Planpoint + Minorpoint + Freepoint + Teachpoint;
+var Office = {
+  //인문대학
+  "korean": "국어국문학과",
+  "english": "영어영문학과",
+  "german": "유럽문화학부 독일어문학",
+  "france": "유럽문화학부 프랑스어문학",
+  "russia": "유럽문화학부 러시아어문학",
+  "japan": "아시아문화학부 일본어문학",
+  "china": "아시아문화학부 중국어문학",
+  "philosophy": "철학과",
+  "history": "역사학과",
+  //사회과학대학
+  "psyche": "심리학과",
+  "politics": "정치국제학과",
+  "lis": "문헌정보학과",
+  "socialwelfare": "사회복지학부",
+  "cmc": "미디어커뮤니케이션학부",
+  "cmc2": "미디어커뮤니케이션학부",
+  "planning": "도시계획/부동산학과",
+  "sociology": "사회학과",
+  "public-admin": "공공인재학부",
+  "public-policy": "공공인재학부",
+  "public": "공공인재학부",
+  //사범대학
+  "education": "교육학과",
+  "ece": "유아교육과",
+  "englishedu": "영어교육과",
+  "pe": "체육교육과",
+  //자연과학대학
+  "physics": "물리학과",
+  "chemistry": "화학과",
+  "bio-science": "생명과학과",
+  "math": "수학과",
+  //경영경제대학
+  "biz_ba": "경영학부",
+  "biz_glofi": "경영학부",
+  "econ": "경제학부",
+  "adpr": "광고홍보학과",
+  "stat": "응용통계학과",
+  "gloknol": "지식경영학부",
+  "log": "국제물류학과",
+  "security": "산업보안학과",
+  //공과대학
+  "infra": "사회기반시스템공학부",
+  "archi": "건축학부",
+  "archieng": "건축학부",
+  "chemeng": "화학신소재공학부",
+  "me": "기계공학부",
+  "ese": "에너지시스템공학부",
+  //창의ICT공과대학
+  "eee": "전자전기공학부",
+  "eee1214": "전자전기공학부",
+  "ie": "융합공학부",
+  "ie1214": "융합공학부",
+  //소프트웨어대학
+  "soft": "소프트웨어학부",
+  "computer": "소프트웨어학부",
+  "computer12": "소프트웨어학부",
+  //예술대학
+  "theatre": "연극학과",
+  "film": "영화학과",
+  "tfdesign": "공간연출전공"
+};
+
+var PhoneNumber = {
+  //인문대학
+  "korean": "02-820-5084",
+  "english": "02-820-5095",
+  "german": "02-820-5105",
+  "france": "02-820-5171",
+  "russia": "02-820-5239",
+  "japan": "02-820-5118",
+  "china": "02-820-5243",
+  "philosophy": "02-820-5130",
+  "history": "02-820-5137",
+  //사회과학대학
+  "psyche": "02-820-5124",
+  "politics": "02-820-5473",
+  "lis": "02-820-5144",
+  "socialwelfare": "02-820-5149",
+  "cmc": "02-820-5481",
+  "cmc2": "02-820-5481",
+  "planning": "02-820-5108",
+  "sociology": "02-820-6351",
+  "public-admin": "02-820-5445",
+  "public-policy": "02-820-5445",
+  "public": "02-820-5445",
+  //사범대학
+  "education": "02-820-5362",
+  "ece": "02-820-5372",
+  "englishedu": "02-820-5391",
+  "pe": "02-820-5382",
+  //자연과학대학
+  "physics": "02-820-5189",
+  "chemistry": "02-820-5196",
+  "bio-science": "02-820-5206",
+  "math": "02-820-5214",
+  //경영경제대학
+  "biz_ba": "02-820-5539",
+  "biz_glofi": "02-820-5540",
+  "econ": "02-820-5487",
+  "adpr": "02-820-5504",
+  "stat": "02-820-5499",
+  "gloknol": "02-820-5527",
+  "log": "02-820-5537",
+  "security": "02-820-5730",
+  //공과대학
+  "infra": "02-820-5253",
+  "archi": "02-820-5260",
+  "archieng": "02-820-5260",
+  "chemeng": "02-820-5268",
+  "me": "02-820-5276",
+  "ese": "02-820-5867",
+  //창의ICT공과대학
+  "eee": "02-820-5285",
+  "eee1214": "02-820-5285",
+  "ie": "02-820-5940",
+  "ie1214": "02-820-5940",
+  //소프트웨어대학
+  "soft": "02-820-5301",
+  "computer": "02-820-5301",
+  "computer12": "02-820-5301",
+  //예술대학
+  "theatre": "02-765-0717",
+  "film": "02-820-5799",
+  "tfdesign": "02-820-5809",
+  call: function() {
+    var Major = document.getElementById("Major_select").value;
+    if (Major == "none") {
+      document.getElementById("dept").value = "-";
+      document.getElementById("phone").value = "-";
+    } else {
+      document.getElementById("dept").value = Office[Major];
+      document.getElementById("phone").value = PhoneNumber[Major];
+      document.getElementById("phonenumber").setAttribute("href", "tel:" + PhoneNumber[Major]); //전화연결 가능
+    }
   }
-}
-
-//연도별 대학 변환
-function yearchanges1214() {
-  var fr = document.getElementById("ad-year").value;
-  if (fr == 2012) {
-    num = new Array("--", "인문대학", "사회과학대학", "사범대학", "자연과학대학", "공과대학", "경영경제대학", "예술대학");
-    vnum = new Array("none", "humanity", "society", "edu", "natural", "engineering12", "bne", "arts");
-  } else if (fr >= 2013) {
-    num = new Array("--", "인문대학", "사회과학대학", "사범대학", "자연과학대학", "공과대학", "경영경제대학", "예술대학");
-    vnum = new Array("none", "humanity", "society", "edu", "natural", "engineering", "bne", "arts");
-  } else if (fr == "0") {
-    num = new Array("--");
-    vnum = new Array("none");
-  }
-
-  for (i = 0; i = document.getElementById("college_select").length; i++) {
-    document.getElementById("college_select").options[0] = null;
-  };
-
-  for (i = 0; i < num.length; i++) {
-    document.getElementById("college_select").options[i] = new Option(num[i], vnum[i]);
-  }
-}
-
-function yearchanges() {
-  var fr = document.getElementById("ad-year").value;
-  if (fr == 2016 || fr == 2017) {
-    num = new Array("--", "인문대학", "사회과학대학", "사범대학", "자연과학대학", "공과대학", "창의ICT공과대학", "경영경제대학", "예술대학");
-    vnum = new Array("none", "humanity", "society", "edu", "natural", "engineering", "ict1617", "bne", "arts");
-  } else if (fr == 2018) {
-    num = new Array("--", "인문대학", "사회과학대학", "사범대학", "자연과학대학", "공과대학", "창의ICT공과대학", "경영경제대학", "예술대학");
-    vnum = new Array("none", "humanity", "society", "edu", "natural", "engineering", "ict18", "bne", "arts");
-  } else if (fr >= 2019) {
-    num = new Array("--", "인문대학", "사회과학대학", "사범대학", "자연과학대학", "공과대학", "창의ICT공과대학", "소프트웨어대학", "경영경제대학", "예술대학");
-    vnum = new Array("none", "humanity", "society", "edu", "natural", "engineering", "ict", "software", "bne", "arts");
-  } else if (fr == "0") {
-    num = new Array("--");
-    vnum = new Array("none");
-  }
-
-  for (i = 0; i = document.getElementById("college_select").length; i++) {
-    document.getElementById("college_select").options[0] = null;
-  };
-
-  for (i = 0; i < num.length; i++) {
-    document.getElementById("college_select").options[i] = new Option(num[i], vnum[i]);
-  }
-}
-
-function tr_yearchanges() {
-  var fr = document.getElementById("ad-year").value;
-  if (fr >= 2017) {
-    num = new Array("--", "인문대학", "사회과학대학", "사범대학", "자연과학대학", "공과대학", "창의ICT공과대학", "경영경제대학", "예술대학");
-    vnum = new Array("none", "humanity", "society", "edu", "natural", "engineering", "ict", "bne", "arts");
-  } else if (fr == "0") {
-    num = new Array("--");
-    vnum = new Array("none");
-  }
-
-  for (i = 0; i = document.getElementById("college_select").length; i++) {
-    document.getElementById("college_select").options[0] = null;
-  };
-
-  for (i = 0; i < num.length; i++) {
-    document.getElementById("college_select").options[i] = new Option(num[i], vnum[i]);
-  }
-}
-
-//대학별 학과 변환
-function collegechanges1214() {
-  var fr = document.getElementById("college_select").value;
-  if (fr == "humanity") {
-    num = new Array("--", "국어국문학과", "영어영문학과", "유럽문화_독일어문학", "유럽문화_프랑스어문학", "유럽문화_러시아어문학", "아시아문화_일본어문학", "아시아문화_중국어문학", "철학과", "역사학과");
-    vnum = new Array("none", "korean", "english", "german", "france", "russia", "japan", "china", "philosophy", "history");
-  } else if (fr == "society") {
-    num = new Array("--", "정치국제학과", "공공인재학부", "심리학과", "문헌정보학과", "사회복지학부", "신문방송학부", "도시계획부동산학과", "사회학과");
-    vnum = new Array("none", "politics", "public", "psyche", "lis", "socialwelfare", "cmc", "planning", "sociology");
-  } else if (fr == "edu") {
-    num = new Array("--", "교육학과", "유아교육과", "영어교육과", "체육교육과");
-    vnum = new Array("none", "education", "ece", "englishedu", "pe");
-  } else if (fr == "natural") {
-    num = new Array("--", "물리학과", "화학과", "생명과학과", "수학과");
-    vnum = new Array("none", "physics", "chemistry", "bio-science", "math");
-  } else if (fr == "bne") {
-    num = new Array("--", "경영학부_경영학전공", "경영학부_글로벌금융", "경제학부", "광고홍보학과", "응용통계학과", "지식경영학부", "국제물류학과");
-    vnum = new Array("none", "biz_ba", "biz_glofi", "econ", "adpr", "stat", "gloknol", "log");
-  } else if (fr == "engineering") {
-    num = new Array("--", "사회기반시스템공학부", "건축학부_건축학", "건축학부_건축공학", "화학신소재공학부", "기계공학부", "에너지시스템공학부", "전자전기공학부", "컴퓨터공학부", "융합공학부");
-    vnum = new Array("none", "infra", "archi", "archieng", "chemeng", "me", "ese", "eee1214", "computer", "ie1214");
-  } else if (fr == "engineering12") {
-    num = new Array("--", "사회기반시스템공학부", "건축학부_건축학", "건축학부_건축공학", "화학신소재공학부", "기계공학부", "전자전기공학부", "컴퓨터공학부", "융합공학부");
-    vnum = new Array("none", "infra", "archi", "archieng", "chemeng", "me", "eee1214", "computer12", "ie1214");
-  } else if (fr == "arts") {
-    num = new Array("--", "연극학과", "영화학과", "공간연출전공");
-    vnum = new Array("none", "theatre", "film", "tfdesign");
-  } else if (fr == "none") {
-    num = new Array("--");
-    vnum = new Array("none");
-  }
-
-  for (i = 0; i = document.getElementById("Major_select").length; i++) {
-    document.getElementById("Major_select").options[0] = null;
-  };
-
-  for (i = 0; i < num.length; i++) {
-    document.getElementById("Major_select").options[i] = new Option(num[i], vnum[i]);
-  }
-}
-
-function collegechanges15() {
-  var fr = document.getElementById("college_select").value;
-  if (fr == "humanity") {
-    num = new Array("--", "국어국문학과", "영어영문학과", "유럽문화_독일어문학", "유럽문화_프랑스어문학", "유럽문화_러시아어문학", "아시아문화_일본어문학", "아시아문화_중국어문학", "철학과", "역사학과");
-    vnum = new Array("none", "korean", "english", "german", "france", "russia", "japan", "china", "philosophy", "history");
-  } else if (fr == "society") {
-    num = new Array("--", "정치국제학과", "공공인재_행정학트랙", "공공인재_정책학트랙", "심리학과", "문헌정보학과", "사회복지학부", "미디어커뮤니케이션학부", "도시계획부동산학과", "사회학과");
-    vnum = new Array("none", "politics", "public-admin", "public-policy", "psyche", "lis", "socialwelfare", "cmc", "planning", "sociology");
-  } else if (fr == "edu") {
-    num = new Array("--", "교육학과", "유아교육과", "영어교육과", "체육교육과");
-    vnum = new Array("none", "education", "ece", "englishedu", "pe");
-  } else if (fr == "natural") {
-    num = new Array("--", "물리학과", "화학과", "생명과학과", "수학과");
-    vnum = new Array("none", "physics", "chemistry", "bio-science", "math");
-  } else if (fr == "bne") {
-    num = new Array("--", "경영학부_경영학전공", "경영학부_글로벌금융", "경제학부", "광고홍보학과", "응용통계학과", "지식경영학부", "국제물류학과", "산업보안학과");
-    vnum = new Array("none", "biz_ba", "biz_glofi", "econ", "adpr", "stat", "gloknol", "log", "security");
-  } else if (fr == "engineering") {
-    num = new Array("--", "사회기반시스템공학부", "건축학부_건축학", "건축학부_건축공학", "화학신소재공학부", "기계공학부", "에너지시스템공학부");
-    vnum = new Array("none", "infra", "archi", "archieng", "chemeng", "me", "ese");
-  } else if (fr == "ict") {
-    num = new Array("--", "전자전기공학부", "컴퓨터공학부_컴퓨터공학", "컴퓨터공학부_소프트웨어", "융합공학부");
-    vnum = new Array("none", "eee", "computer", "soft", "ie");
-  } else if (fr == "arts") {
-    num = new Array("--", "연극학과", "영화학과", "공간연출전공");
-    vnum = new Array("none", "theatre", "film", "tfdesign");
-  } else if (fr == "none") {
-    num = new Array("--");
-    vnum = new Array("none");
-  }
-
-  for (i = 0; i = document.getElementById("Major_select").length; i++) {
-    document.getElementById("Major_select").options[0] = null;
-  };
-
-  for (i = 0; i < num.length; i++) {
-    document.getElementById("Major_select").options[i] = new Option(num[i], vnum[i]);
-  }
-}
-
-function collegechanges16() {
-  var fr = document.getElementById("college_select").value;
-  if (fr == "humanity") {
-    num = new Array("--", "국어국문학과", "영어영문학과", "유럽문화_독일어문학", "유럽문화_프랑스어문학", "유럽문화_러시아어문학", "아시아문화_일본어문학", "아시아문화_중국어문학", "철학과", "역사학과");
-    vnum = new Array("none", "korean", "english", "german", "france", "russia", "japan", "china", "philosophy", "history");
-  } else if (fr == "society") {
-    num = new Array("--", "정치국제학과", "공공인재_행정학트랙", "공공인재_정책학트랙", "심리학과", "문헌정보학과", "사회복지학부", "미디어커뮤니케이션학부", "도시계획부동산학과", "사회학과");
-    vnum = new Array("none", "politics", "public-admin", "public-policy", "psyche", "lis", "socialwelfare", "cmc", "planning", "sociology");
-  } else if (fr == "edu") {
-    num = new Array("--", "교육학과", "유아교육과", "영어교육과", "체육교육과");
-    vnum = new Array("none", "education", "ece", "englishedu", "pe");
-  } else if (fr == "natural") {
-    num = new Array("--", "물리학과", "화학과", "생명과학과", "수학과");
-    vnum = new Array("none", "physics", "chemistry", "bio-science", "math");
-  } else if (fr == "bne") {
-    num = new Array("--", "경영학부_경영학전공", "경영학부_글로벌금융", "경제학부", "광고홍보학과", "응용통계학과", "지식경영학부", "국제물류학과", "산업보안학과");
-    vnum = new Array("none", "biz_ba", "biz_glofi", "econ", "adpr", "stat", "gloknol", "log", "security");
-  } else if (fr == "engineering") {
-    num = new Array("--", "사회기반시스템공학부", "건축학부_건축학", "건축학부_건축공학", "화학신소재공학부", "기계공학부", "에너지시스템공학부");
-    vnum = new Array("none", "infra", "archi", "archieng", "chemeng", "me", "ese");
-  } else if (fr == "ict") {
-    num = new Array("--", "전자전기공학부", "융합공학부");
-    vnum = new Array("none", "eee", "ie");
-  } else if (fr == "ict1617") {
-    num = new Array("--", "전자전기공학부", "컴퓨터공학부_컴퓨터공학", "컴퓨터공학부_소프트웨어", "융합공학부");
-    vnum = new Array("none", "eee", "computer", "soft", "ie");
-  } else if (fr == "ict18") {
-    num = new Array("--", "전자전기공학부", "소프트웨어학부", "융합공학부");
-    vnum = new Array("none", "eee", "soft", "ie");
-  } else if (fr == "software") {
-    num = new Array("--", "소프트웨어학부");
-    vnum = new Array("none", "soft");
-  } else if (fr == "arts") {
-    num = new Array("--", "연극학과", "영화학과", "공간연출전공");
-    vnum = new Array("none", "theatre", "film", "tfdesign");
-  } else if (fr == "none") {
-    num = new Array("--");
-    vnum = new Array("none");
-  }
-
-  for (i = 0; i = document.getElementById("Major_select").length; i++) {
-    document.getElementById("Major_select").options[0] = null;
-  };
-
-  for (i = 0; i < num.length; i++) {
-    document.getElementById("Major_select").options[i] = new Option(num[i], vnum[i]);
-  }
-}
-
-function tr_collegechanges() {
-  var fr = document.getElementById("college_select").value;
-  if (fr == "humanity") {
-    num = new Array("--", "국어국문학과", "영어영문학과", "유럽문화_독일어문학", "유럽문화_프랑스어문학", "유럽문화_러시아어문학", "아시아문화_일본어문학", "아시아문화_중국어문학", "철학과", "역사학과");
-    vnum = new Array("none", "korean", "english", "german", "france", "russia", "japan", "china", "philosophy", "history");
-  } else if (fr == "society") {
-    num = new Array("--", "정치국제학과", "공공인재_행정학트랙", "공공인재_정책학트랙", "심리학과", "문헌정보학과", "사회복지학부", "미디어커뮤니케이션학부", "도시계획부동산학과", "사회학과");
-    vnum = new Array("none", "politics", "public-admin", "public-policy", "psyche", "lis", "socialwelfare", "cmc", "planning", "sociology");
-  } else if (fr == "edu") {
-    num = new Array("--", "교육학과", "유아교육과", "영어교육과", "체육교육과");
-    vnum = new Array("none", "education", "ece", "englishedu", "pe");
-  } else if (fr == "natural") {
-    num = new Array("--", "물리학과", "화학과", "생명과학과", "수학과");
-    vnum = new Array("none", "physics", "chemistry", "bio-science", "math");
-  } else if (fr == "bne") {
-    num = new Array("--", "경영학부_경영학전공", "경영학부_글로벌금융", "경제학부", "광고홍보학과", "응용통계학과", "국제물류학과", "산업보안학과");
-    vnum = new Array("none", "biz_ba", "biz_glofi", "econ", "adpr", "stat", "log", "security");
-  } else if (fr == "engineering") {
-    num = new Array("--", "사회기반시스템공학부", "건축학부_건축학", "건축학부_건축공학", "화학신소재공학부", "기계공학부", "에너지시스템공학부");
-    vnum = new Array("none", "infra", "archi", "archieng", "chemeng", "me", "ese");
-  } else if (fr == "ict") {
-    num = new Array("--", "전자전기공학부", "융합공학부");
-    vnum = new Array("none", "eee", "ie");
-  } else if (fr == "arts") {
-    num = new Array("--", "연극학과", "영화학과", "공간연출전공");
-    vnum = new Array("none", "theatre", "film", "tfdesign");
-  } else if (fr == "none") {
-    num = new Array("--");
-    vnum = new Array("none");
-  }
-
-  for (i = 0; i = document.getElementById("Major_select").length; i++) {
-    document.getElementById("Major_select").options[0] = null;
-  };
-
-  for (i = 0; i < num.length; i++) {
-    document.getElementById("Major_select").options[i] = new Option(num[i], vnum[i]);
-  }
-}
-
-function multimajorchanges() {
-  var major = document.getElementById("Major_select").value;
-  var Edu = ["education", "ece", "englishedu", "pe"]
-  var Archi = ["archi"]
-  var ICT = ["eee", "ie"]
-  var Soft = ["computer", "soft"]
-  var Arts = ["theatre", "film", "tfdesign"]
-  if (Edu.includes(major)) {
-    num = new Array("--", "전공심화", "복수전공", "연계전공", "융합전공", "설계전공");
-    vnum = new Array("0", "66", "50", "50", "50", "50");
-    document.getElementById("total_standard").value = "132";
-  } else if (Archi.includes(major)) {
-    num = new Array("--", "전공심화", "복수전공", "연계전공", "융합전공", "설계전공");
-    vnum = new Array("0", "105", "105", "105", "105", "105");
-    document.getElementById("total_standard").value = "160";
-  } else if (ICT.includes(major)) {
-    num = new Array("--", "전공심화", "복수전공", "연계전공", "융합전공", "설계전공");
-    vnum = new Array("0", "72", "45", "45", "45", "45");
-    document.getElementById("total_standard").value = "140";
-  } else if (Soft.includes(major)) {
-    num = new Array("--", "전공심화", "복수전공", "연계전공", "융합전공", "설계전공");
-    vnum = new Array("0", "84", "84", "84", "84", "84");
-    document.getElementById("total_standard").value = "140";
-  } else if (Arts.includes(major)) {
-    num = new Array("--", "전공심화", "복수전공", "연계전공", "융합전공", "설계전공");
-    vnum = new Array("0", "69", "54", "54", "54", "54");
-    document.getElementById("total_standard").value = "132";
-  } else {
-    num = new Array("--", "전공심화", "복수전공", "연계전공", "융합전공", "설계전공");
-    vnum = new Array("0", "66", "45", "45", "45", "45");
-    document.getElementById("total_standard").value = "132";
-  }
-
-  for (i = 0; i = document.getElementById("MultiMajor_select").length; i++) {
-    document.getElementById("MultiMajor_select").options[0] = null;
-  };
-
-  for (i = 0; i < num.length; i++) {
-    document.getElementById("MultiMajor_select").options[i] = new Option(num[i], vnum[i]);
-  }
-}
-
-function major_standard_maker() {
-  var Multimajor_standard = Number(document.getElementById("MultiMajor_select").value);
-  document.getElementById("major_standard").value = Multimajor_standard;
-  var Multimajor = document.getElementById("MultiMajor_select");
-  var Multimajortext = Multimajor.options[Multimajor.selectedIndex].text;
-
-  if (Multimajortext.includes("심화")) {
-    document.getElementById("double_major_none").checked = true;
-    document.getElementById("double_major_point").value = null;
-    document.getElementById("double_major_point").readOnly = true;
-    document.getElementById("double_major_paper").checked = true;
-    document.getElementById("double_table").style.display = "none";
-
-    document.getElementById("link_major_none").checked = true;
-    document.getElementById("link_major_point").value = null;
-    document.getElementById("link_major_point").readOnly = true;
-    document.getElementById("cross_point1").value = null;
-    document.getElementById("cross_point1").readOnly = true;
-    document.getElementById("link_table").style.display = "none";
-
-    document.getElementById("fusion_major_none").checked = true;
-    document.getElementById("fusion_major_point").value = null;
-    document.getElementById("fusion_major_point").readOnly = true;
-    document.getElementById("cross_point2").value = null;
-    document.getElementById("cross_point2").readOnly = true;
-    document.getElementById("fusion_table").style.display = "none";
-
-    document.getElementById("plan_major_none").checked = true;
-    document.getElementById("plan_major_point").value = null;
-    document.getElementById("plan_major_point").readOnly = true;
-    document.getElementById("cross_point3").value = null;
-    document.getElementById("cross_point3").readOnly = true;
-    document.getElementById("plan_table").style.display = "none";
-  } else if (Multimajortext.includes("복수")) {
-    document.getElementById("double_major_none").checked = false;
-    document.getElementById("double_major_point").readOnly = false;
-    document.getElementById("double_major_paper").checked = false;
-    document.getElementById("double_table").style.display = "";
-
-    document.getElementById("link_major_none").checked = true;
-    document.getElementById("link_major_point").value = null;
-    document.getElementById("link_major_point").readOnly = true;
-    document.getElementById("cross_point1").value = null;
-    document.getElementById("cross_point1").readOnly = true;
-    document.getElementById("link_table").style.display = "none";
-
-    document.getElementById("fusion_major_none").checked = true;
-    document.getElementById("fusion_major_point").value = null;
-    document.getElementById("fusion_major_point").readOnly = true;
-    document.getElementById("cross_point2").value = null;
-    document.getElementById("cross_point2").readOnly = true;
-    document.getElementById("fusion_table").style.display = "none";
-
-    document.getElementById("plan_major_none").checked = true;
-    document.getElementById("plan_major_point").value = null;
-    document.getElementById("plan_major_point").readOnly = true;
-    document.getElementById("cross_point3").value = null;
-    document.getElementById("cross_point3").readOnly = true;
-    document.getElementById("plan_table").style.display = "none";
-  } else if (Multimajortext.includes("연계")) {
-    document.getElementById("double_major_none").checked = true;
-    document.getElementById("double_major_point").value = null;
-    document.getElementById("double_major_point").readOnly = true;
-    document.getElementById("double_major_paper").checked = true;
-    document.getElementById("double_table").style.display = "none";
-
-    document.getElementById("link_major_none").checked = false;
-    document.getElementById("link_major_point").readOnly = false;
-    document.getElementById("cross_point1").readOnly = false;
-    document.getElementById("link_table").style.display = "";
-
-    document.getElementById("fusion_major_none").checked = true;
-    document.getElementById("fusion_major_point").value = null;
-    document.getElementById("fusion_major_point").readOnly = true;
-    document.getElementById("cross_point2").value = null;
-    document.getElementById("cross_point2").readOnly = true;
-    document.getElementById("fusion_table").style.display = "none";
-
-    document.getElementById("plan_major_none").checked = true;
-    document.getElementById("plan_major_point").value = null;
-    document.getElementById("plan_major_point").readOnly = true;
-    document.getElementById("cross_point3").value = null;
-    document.getElementById("cross_point3").readOnly = true;
-    document.getElementById("plan_table").style.display = "none";
-  } else if (Multimajortext.includes("융합")) {
-    document.getElementById("double_major_none").checked = true;
-    document.getElementById("double_major_point").value = null;
-    document.getElementById("double_major_point").readOnly = true;
-    document.getElementById("double_major_paper").checked = true;
-    document.getElementById("double_table").style.display = "none";
-
-    document.getElementById("link_major_none").checked = true;
-    document.getElementById("link_major_point").value = null;
-    document.getElementById("link_major_point").readOnly = true;
-    document.getElementById("cross_point1").value = null;
-    document.getElementById("cross_point1").readOnly = true;
-    document.getElementById("link_table").style.display = "none";
-
-    document.getElementById("fusion_major_none").checked = false;
-    document.getElementById("fusion_major_point").readOnly = false;
-    document.getElementById("cross_point2").readOnly = false;
-    document.getElementById("fusion_table").style.display = "";
-
-    document.getElementById("plan_major_none").checked = true;
-    document.getElementById("plan_major_point").value = null;
-    document.getElementById("plan_major_point").readOnly = true;
-    document.getElementById("cross_point3").value = null;
-    document.getElementById("cross_point3").readOnly = true;
-    document.getElementById("plan_table").style.display = "none";
-  } else if (Multimajortext.includes("설계")) {
-    document.getElementById("double_major_none").checked = true;
-    document.getElementById("double_major_point").value = null;
-    document.getElementById("double_major_point").readOnly = true;
-    document.getElementById("double_major_paper").checked = true;
-    document.getElementById("double_table").style.display = "none";
-
-    document.getElementById("link_major_none").checked = true;
-    document.getElementById("link_major_point").value = null;
-    document.getElementById("link_major_point").readOnly = true;
-    document.getElementById("cross_point1").value = null;
-    document.getElementById("cross_point1").readOnly = true;
-    document.getElementById("link_table").style.display = "none";
-
-    document.getElementById("fusion_major_none").checked = true;
-    document.getElementById("fusion_major_point").value = null;
-    document.getElementById("fusion_major_point").readOnly = true;
-    document.getElementById("cross_point2").value = null;
-    document.getElementById("cross_point2").readOnly = true;
-    document.getElementById("fusion_table").style.display = "none";
-
-    document.getElementById("plan_major_none").checked = false;
-    document.getElementById("plan_major_point").readOnly = false;
-    document.getElementById("cross_point3").readOnly = false;
-    document.getElementById("plan_table").style.display = "";
-  } else if (Multimajor_standard == 0) {
-    document.getElementById("double_major_none").checked = false;
-    document.getElementById("double_major_point").readOnly = false;
-    document.getElementById("double_major_paper").checked = false;
-    document.getElementById("double_table").style.display = "none";
-
-    document.getElementById("link_major_none").checked = false;
-    document.getElementById("link_major_point").readOnly = false;
-    document.getElementById("cross_point1").readOnly = false;
-    document.getElementById("link_table").style.display = "none";
-
-    document.getElementById("fusion_major_none").checked = false;
-    document.getElementById("fusion_major_point").readOnly = false;
-    document.getElementById("cross_point2").readOnly = false;
-    document.getElementById("fusion_table").style.display = "none";
-
-    document.getElementById("plan_major_none").checked = false;
-    document.getElementById("plan_major_point").readOnly = false;
-    document.getElementById("cross_point3").readOnly = false;
-    document.getElementById("plan_table").style.display = "none";
-  }
-}
-
-//편입생 관련
-
-function tr_major_standard_maker() {
-  var Multimajor_standard = Number(document.getElementById("MultiMajor_select").value);
-  document.getElementById("major_standard").value = Multimajor_standard;
-  var Multimajor = document.getElementById("MultiMajor_select");
-  var Multimajortext = Multimajor.options[Multimajor.selectedIndex].text;
-
-  if (Multimajortext.includes("심화") || Multimajortext.includes("해당없음") || Multimajortext.includes("N/A")) {
-    document.getElementById("double_major_none").checked = true;
-    document.getElementById("double_major_point").value = null;
-    document.getElementById("double_major_point").readOnly = true;
-    document.getElementById("double_major_paper").checked = true;
-    document.getElementById("double_table").style.display = "none";
-
-    document.getElementById("link_major_none").checked = true;
-    document.getElementById("link_major_point").value = null;
-    document.getElementById("link_major_point").readOnly = true;
-    document.getElementById("cross_point1").value = null;
-    document.getElementById("cross_point1").readOnly = true;
-    document.getElementById("link_table").style.display = "none";
-
-    document.getElementById("fusion_major_none").checked = true;
-    document.getElementById("fusion_major_point").value = null;
-    document.getElementById("fusion_major_point").readOnly = true;
-    document.getElementById("cross_point2").value = null;
-    document.getElementById("cross_point2").readOnly = true;
-    document.getElementById("fusion_table").style.display = "none";
-
-    document.getElementById("plan_major_none").checked = true;
-    document.getElementById("plan_major_point").value = null;
-    document.getElementById("plan_major_point").readOnly = true;
-    document.getElementById("cross_point3").value = null;
-    document.getElementById("cross_point3").readOnly = true;
-    document.getElementById("plan_table").style.display = "none";
-  } else if (Multimajortext.includes("복수")) {
-    document.getElementById("double_major_none").checked = false;
-    document.getElementById("double_major_point").readOnly = false;
-    document.getElementById("double_major_paper").checked = false;
-    document.getElementById("double_table").style.display = "";
-
-    document.getElementById("link_major_none").checked = true;
-    document.getElementById("link_major_point").value = null;
-    document.getElementById("link_major_point").readOnly = true;
-    document.getElementById("cross_point1").value = null;
-    document.getElementById("cross_point1").readOnly = true;
-    document.getElementById("link_table").style.display = "none";
-
-    document.getElementById("fusion_major_none").checked = true;
-    document.getElementById("fusion_major_point").value = null;
-    document.getElementById("fusion_major_point").readOnly = true;
-    document.getElementById("cross_point2").value = null;
-    document.getElementById("cross_point2").readOnly = true;
-    document.getElementById("fusion_table").style.display = "none";
-
-    document.getElementById("plan_major_none").checked = true;
-    document.getElementById("plan_major_point").value = null;
-    document.getElementById("plan_major_point").readOnly = true;
-    document.getElementById("cross_point3").value = null;
-    document.getElementById("cross_point3").readOnly = true;
-    document.getElementById("plan_table").style.display = "none";
-  } else if (Multimajortext.includes("연계")) {
-    document.getElementById("double_major_none").checked = true;
-    document.getElementById("double_major_point").value = null;
-    document.getElementById("double_major_point").readOnly = true;
-    document.getElementById("double_major_paper").checked = true;
-    document.getElementById("double_table").style.display = "none";
-
-    document.getElementById("link_major_none").checked = false;
-    document.getElementById("link_major_point").readOnly = false;
-    document.getElementById("cross_point1").readOnly = false;
-    document.getElementById("link_table").style.display = "";
-
-    document.getElementById("fusion_major_none").checked = true;
-    document.getElementById("fusion_major_point").value = null;
-    document.getElementById("fusion_major_point").readOnly = true;
-    document.getElementById("cross_point2").value = null;
-    document.getElementById("cross_point2").readOnly = true;
-    document.getElementById("fusion_table").style.display = "none";
-
-    document.getElementById("plan_major_none").checked = true;
-    document.getElementById("plan_major_point").value = null;
-    document.getElementById("plan_major_point").readOnly = true;
-    document.getElementById("cross_point3").value = null;
-    document.getElementById("cross_point3").readOnly = true;
-    document.getElementById("plan_table").style.display = "none";
-  } else if (Multimajortext.includes("융합")) {
-    document.getElementById("double_major_none").checked = true;
-    document.getElementById("double_major_point").value = null;
-    document.getElementById("double_major_point").readOnly = true;
-    document.getElementById("double_major_paper").checked = true;
-    document.getElementById("double_table").style.display = "none";
-
-    document.getElementById("link_major_none").checked = true;
-    document.getElementById("link_major_point").value = null;
-    document.getElementById("link_major_point").readOnly = true;
-    document.getElementById("cross_point1").value = null;
-    document.getElementById("cross_point1").readOnly = true;
-    document.getElementById("link_table").style.display = "none";
-
-    document.getElementById("fusion_major_none").checked = false;
-    document.getElementById("fusion_major_point").readOnly = false;
-    document.getElementById("cross_point2").readOnly = false;
-    document.getElementById("fusion_table").style.display = "";
-
-    document.getElementById("plan_major_none").checked = true;
-    document.getElementById("plan_major_point").value = null;
-    document.getElementById("plan_major_point").readOnly = true;
-    document.getElementById("cross_point3").value = null;
-    document.getElementById("cross_point3").readOnly = true;
-    document.getElementById("plan_table").style.display = "none";
-  } else if (Multimajortext.includes("설계")) {
-    document.getElementById("double_major_none").checked = true;
-    document.getElementById("double_major_point").value = null;
-    document.getElementById("double_major_point").readOnly = true;
-    document.getElementById("double_major_paper").checked = true;
-    document.getElementById("double_table").style.display = "none";
-
-    document.getElementById("link_major_none").checked = true;
-    document.getElementById("link_major_point").value = null;
-    document.getElementById("link_major_point").readOnly = true;
-    document.getElementById("cross_point1").value = null;
-    document.getElementById("cross_point1").readOnly = true;
-    document.getElementById("link_table").style.display = "none";
-
-    document.getElementById("fusion_major_none").checked = true;
-    document.getElementById("fusion_major_point").value = null;
-    document.getElementById("fusion_major_point").readOnly = true;
-    document.getElementById("cross_point2").value = null;
-    document.getElementById("cross_point2").readOnly = true;
-    document.getElementById("fusion_table").style.display = "none";
-
-    document.getElementById("plan_major_none").checked = false;
-    document.getElementById("plan_major_point").readOnly = false;
-    document.getElementById("cross_point3").readOnly = false;
-    document.getElementById("plan_table").style.display = "";
-  }
-}
-
-function tr_total_point_sum() {
-  var Liberal_point = Number(document.getElementById("liberal_input").value);
-  var Basepoint = Number(document.getElementById("base_input").value);
-  var Majorpoint = Number(document.getElementById("major_input").value);
-  var Doublepoint = Number(document.getElementById("double_major_point").value);
-  var Linkpoint = Number(document.getElementById("link_major_point").value);
-  var Fusionpoint = Number(document.getElementById("fusion_major_point").value);
-  var Planpoint = Number(document.getElementById("plan_major_point").value);
-  var Minorpoint = Number(document.getElementById("minor_point").value);
-  var Freepoint = Number(document.getElementById("free_point").value);
-  var Teachpoint = Number(document.getElementById("teaching_point").value);
-
-  document.getElementById("the_total").value = Liberal_point + Basepoint + Majorpoint + Doublepoint + Linkpoint + Fusionpoint + Planpoint + Minorpoint + Freepoint + Teachpoint;
-}
-
-function OfficeNumber() {
-  var Office = {
-    //인문대학
-    "korean": "국어국문학과",
-    "english": "영어영문학과",
-    "german": "유럽문화학부 독일어문학",
-    "france": "유럽문화학부 프랑스어문학",
-    "russia": "유럽문화학부 러시아어문학",
-    "japan": "아시아문화학부 일본어문학",
-    "china": "아시아문화학부 중국어문학",
-    "philosophy": "철학과",
-    "history": "역사학과",
-    //사회과학대학
-    "psyche": "심리학과",
-    "politics": "정치국제학과",
-    "lis": "문헌정보학과",
-    "socialwelfare": "사회복지학부",
-    "cmc": "미디어커뮤니케이션학부",
-    "cmc2": "미디어커뮤니케이션학부",
-    "planning": "도시계획/부동산학과",
-    "sociology": "사회학과",
-    "public-admin": "공공인재학부",
-    "public-policy": "공공인재학부",
-    "public": "공공인재학부",
-    //사범대학
-    "education": "교육학과",
-    "ece": "유아교육과",
-    "englishedu": "영어교육과",
-    "pe": "체육교육과",
-    //자연과학대학
-    "physics": "물리학과",
-    "chemistry": "화학과",
-    "bio-science": "생명과학과",
-    "math": "수학과",
-    //경영경제대학
-    "biz_ba": "경영학부",
-    "biz_glofi": "경영학부",
-    "econ": "경제학부",
-    "adpr": "광고홍보학과",
-    "stat": "응용통계학과",
-    "gloknol": "지식경영학부",
-    "log": "국제물류학과",
-    "security": "산업보안학과",
-    //공과대학
-    "infra": "사회기반시스템공학부",
-    "archi": "건축학부",
-    "archieng": "건축학부",
-    "chemeng": "화학신소재공학부",
-    "me": "기계공학부",
-    "ese": "에너지시스템공학부",
-    //창의ICT공과대학
-    "eee": "전자전기공학부",
-    "eee1214": "전자전기공학부",
-    "ie": "융합공학부",
-    "ie1214": "융합공학부",
-    //소프트웨어대학
-    "soft": "소프트웨어학부",
-    "computer": "소프트웨어학부",
-    "computer12": "소프트웨어학부",
-    //예술대학
-    "theatre": "연극학과",
-    "film": "영화학과",
-    "tfdesign": "공간연출전공"
-  };
-  var PhoneNumber = {
-    //인문대학
-    "korean": "02-820-5084",
-    "english": "02-820-5095",
-    "german": "02-820-5105",
-    "france": "02-820-5171",
-    "russia": "02-820-5239",
-    "japan": "02-820-5118",
-    "china": "02-820-5243",
-    "philosophy": "02-820-5130",
-    "history": "02-820-5137",
-    //사회과학대학
-    "psyche": "02-820-5124",
-    "politics": "02-820-5473",
-    "lis": "02-820-5144",
-    "socialwelfare": "02-820-5149",
-    "cmc": "02-820-5481",
-    "cmc2": "02-820-5481",
-    "planning": "02-820-5108",
-    "sociology": "02-820-6351",
-    "public-admin": "02-820-5445",
-    "public-policy": "02-820-5445",
-    "public": "02-820-5445",
-    //사범대학
-    "education": "02-820-5362",
-    "ece": "02-820-5372",
-    "englishedu": "02-820-5391",
-    "pe": "02-820-5382",
-    //자연과학대학
-    "physics": "02-820-5189",
-    "chemistry": "02-820-5196",
-    "bio-science": "02-820-5206",
-    "math": "02-820-5214",
-    //경영경제대학
-    "biz_ba": "02-820-5539",
-    "biz_glofi": "02-820-5540",
-    "econ": "02-820-5487",
-    "adpr": "02-820-5504",
-    "stat": "02-820-5499",
-    "gloknol": "02-820-5527",
-    "log": "02-820-5537",
-    "security": "02-820-5730",
-    //공과대학
-    "infra": "02-820-5253",
-    "archi": "02-820-5260",
-    "archieng": "02-820-5260",
-    "chemeng": "02-820-5268",
-    "me": "02-820-5276",
-    "ese": "02-820-5867",
-    //창의ICT공과대학
-    "eee": "02-820-5285",
-    "eee1214": "02-820-5285",
-    "ie": "02-820-5940",
-    "ie1214": "02-820-5940",
-    //소프트웨어대학
-    "soft": "02-820-5301",
-    "computer": "02-820-5301",
-    "computer12": "02-820-5301",
-    //예술대학
-    "theatre": "02-765-0717",
-    "film": "02-820-5799",
-    "tfdesign": "02-820-5809"
-  };
-  var Major = document.getElementById("Major_select").value;
-  if (Major == "none") {
-    document.getElementById("dept").value = "-";
-    document.getElementById("phone").value = "-";
-  } else {
-    document.getElementById("dept").value = Office[Major];
-    document.getElementById("phone").value = PhoneNumber[Major];
-    document.getElementById("phonenumber").setAttribute("href", "tel:" + PhoneNumber[Major]); //전화연결 가능
-  }
-}
+};
 
 //연도별 학과 전공기초, 전공필수 기준
 function BaseNeceStandard12to14() {
@@ -1441,40 +1555,5 @@ function BaseNeceStandard_tr2017() {
   } else {
     document.getElementById("base_standard").value = Baseselect[i];
     document.getElementById("nece_standard").value = Neceselect[i];
-  }
-}
-
-function checkcont1(none, point) {
-  var none_checked = document.getElementById(none).checked;
-  if (!none_checked) {
-    document.getElementById(point).readOnly = false;
-  } else {
-    document.getElementById(point).value = null;
-    document.getElementById(point).readOnly = true;
-  }
-}
-
-function checkcont(none, point, cross) {
-  var none_checked = document.getElementById(none).checked;
-  if (!none_checked) {
-    document.getElementById(point).readOnly = false;
-    document.getElementById(cross).readOnly = false;
-  } else {
-    document.getElementById(point).value = null;
-    document.getElementById(point).readOnly = true;
-    document.getElementById(cross).value = null;
-    document.getElementById(cross).readOnly = true;
-  }
-}
-
-function FusionStandardCheck() {
-  var fusion_min = document.getElementById("fusion-options").value;
-  var crosspoint = document.getElementById("cross_point2");
-  if (fusion_min == 45) {
-    document.getElementById("fusion_standard").value = 45;
-    crosspoint.setAttribute("max", 15);
-  } else {
-    document.getElementById("fusion_standard").value = 36;
-    crosspoint.setAttribute("max", 12);
   }
 }
