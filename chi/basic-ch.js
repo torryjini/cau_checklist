@@ -79,6 +79,331 @@ var Modal = {
   }
 }
 
+var Result = {
+  lib12to14: function() {
+    var AdYear = Number(document.getElementById("ad-year").value);
+    var College = document.getElementById("college_select").value;
+    var elective_point = Number(document.getElementById("elective_liberal").value);
+    var common_kor_point = Number(document.getElementById("common_kor").value);
+    var common_eng_point = Number(document.getElementById("common_eng").value);
+    var common_eng_ex = document.getElementById("eng_ex").checked;
+    var common_etc_point = Number(document.getElementById("common_etc").value);
+    var account_check_SF = document.getElementById("account_check").checked;
+    var core_total_point = Number(document.getElementById("core_total").value);
+    var liberal_total_point = Number(document.getElementById("liberal_total").value);
+    var word = "👉入学年度 : " + AdYear + "年\n";
+
+    if (AdYear < 1000) {
+      document.getElementById("student-info").scrollIntoView();
+      swal("请选择入学年度!", "", "error");
+      return false;
+    }
+
+    if (common_kor_point < 2) {
+      word += "👉共同教养\n - 국어 : 缺少" + [2 - common_kor_point] + " 学分\n";
+    } else {
+      word += "👉共同教养\n - 국어 : 通过\n";
+    }
+
+    if (common_eng_point < 4 && common_eng_ex) {
+      word += " - 英语 : 免\n"
+    } else if (common_eng_point < 4 && !common_eng_ex) {
+      word += " - 英语 : 缺少" + [4 - common_eng_point] + " 学分\n";
+    } else {
+      word += " - 英语 : 通过\n";
+    }
+
+    if (!account_check_SF) {
+      if (common_etc_point < 8) {
+        word += " - 其他 : 缺少" + [8 - common_etc_point] + " 学分\n"
+      } else {
+        word += " - 其他 : 通过\n"
+      }
+    } else {
+      if (common_etc_point < 6) {
+        word += " - 其他 : 缺少" + [6 - common_etc_point] + " 学分(회계와사회 : 免)\n"
+      } else {
+        word += " - 其他 : 通过(회계와사회 : 免)\n"
+      }
+    }
+
+    if (core_total_point < 9) {
+      word += "👉核心教养 : 缺少" + [9 - core_total_point] + " 学分"
+    } else {
+      word += "👉核心教养 : 通过最少学分"
+    }
+
+    word += "\n👉选择教养 : " + elective_point + " 学分"
+
+    if (liberal_total_point <= 45) {
+      word += "\n👉教养领域 总计 : 缺少" + liberal_total_point + " 学分"
+    } else {
+      word += "\n👉教养领域 总计 : " + liberal_total_point + " 学分_超过" + [liberal_total_point - 45] + "学分（学分超过45学分时只认证45学分。）"
+    }
+
+    if (common_kor_point == 2 && core_total_point >= 9) {
+      if (common_eng_point >= 4 && common_etc_point == 8) {
+        swal("教养领域结果", word, "success")
+      } else if (common_eng_point <= 4 && common_eng_ex && common_etc_point == 8) {
+        swal("教养领域结果", word, "success")
+      } else if (common_eng_point >= 4 && common_etc_point >= 6 && account_check_SF) {
+        swal("教养领域结果", word, "success")
+      } else if (common_eng_point <= 4 && common_eng_ex && common_etc_point >= 6 && account_check_SF) {
+        swal("教养领域结果", word, "success")
+      } else {
+        swal("教养领域结果", word, "error")
+      }
+    } else {
+      swal("教养领域结果", word, "error")
+    }
+  },
+  lib2015: function() {
+    var AdYear = Number(document.getElementById("ad-year").value);
+    var College = document.getElementById("college_select").value;
+    var elective_point = Number(document.getElementById("elective_liberal").value);
+    var common_kor_point = Number(document.getElementById("common_kor").value);
+    var common_eng_point = Number(document.getElementById("common_eng").value);
+    var common_eng_ex = document.getElementById("eng_ex").checked;
+    var common_etc_point = Number(document.getElementById("common_etc").value);
+    var account_check_SF = document.getElementById("account_check").checked;
+    var core_total_point = Number(document.getElementById("core_total").value);
+    var MACH1 = Number(document.getElementById("mach1").value);
+    var MACH1none = document.getElementById("mach1_none").checked;
+    var MACH2 = Number(document.getElementById("mach2").value);
+    var MACH2none = document.getElementById("mach2_none").checked;
+    var MACH1_st = Number(document.getElementById("mach1_st").value);
+    var MACH2_st = Number(document.getElementById("mach2_st").value);
+    var liberal_total_point = Number(document.getElementById("liberal_total").value);
+    var word = "👉入学年度 : " + AdYear + "年\n";
+
+    if (College == "none") {
+      document.getElementById("student-info").scrollIntoView();
+      swal("请选择所属大学!", "", "error");
+      return false;
+    }
+
+    if (common_kor_point < 2) {
+      word += "👉共同教养\n - 국어 : 缺少" + [2 - common_kor_point] + "学分\n";
+    } else {
+      word += "👉共同教养\n - 국어 : 通过\n";
+    }
+
+    if (common_eng_point < 2 && common_eng_ex) {
+      word += " - 英语 : 免\n"
+    } else if (common_eng_point < 2 && !common_eng_ex) {
+      word += " - 英语 : 缺少" + [2 - common_eng_point] + " 学分\n";
+    } else {
+      word += " - 英语 : 通过\n";
+    }
+
+    if (!account_check_SF) {
+      if (common_etc_point < 8) {
+        word += " - 其他 : 缺少" + [8 - common_etc_point] + " 学分\n"
+      } else {
+        word += " - 其他 : 通过\n"
+      }
+    } else {
+      if (common_etc_point < 6) {
+        word += " - 其他 : 缺少" + [6 - common_etc_point] + " 学分(회계와사회 : 免)\n"
+      } else {
+        word += " - 其他 : 通过(회계와사회 : 免)\n"
+      }
+    }
+
+    if (core_total_point < 12) {
+      word += "👉核心教养 : 缺少" + [12 - core_total_point] + " 学分\n- 核心教养的4种领域中每个领域需要进修1个以上的课程!"
+    } else {
+      word += "👉核心教养 : 通过最少学分\n- 确认核心教养各领域的进修情况（每个领域需要进修1个以上的课程!）"
+    }
+
+    word += "\n👉选择教养 : " + elective_point + " 学分"
+
+    if (liberal_total_point <= 45) {
+      word += "\n👉教养领域 总计 : 缺少" + liberal_total_point + " 学分 "
+    } else {
+      word += "\n👉教养领域 总计 : " + liberal_total_point + " 学分_ 超过" + [liberal_total_point - 45] + "学分（学分超过45学分时只认证45学分。）"
+    }
+
+    if (!MACH1none) {
+      if (MACH1 < 4) {
+        word += "\n👉MACH교양 : 缺少" + [4 - MACH1] + " 学分"
+      } else {
+        word += "\n👉MACH교양 : 通过"
+      }
+    }
+
+    if (!MACH2none) {
+      if (MACH2 < 4) {
+        word += "\n👉MACH실습 : 缺少" + [2 - MACH2] + " 学分"
+      } else {
+        word += "\n👉MACH실습 : 通过"
+      }
+    }
+
+    if (common_kor_point == 2 && core_total_point >= 11 && MACH1 >= MACH1_st && MACH2 >= MACH2_st) {
+      if (common_eng_point == 2 && common_etc_point == 8) {
+        swal("教养领域结果", word, "success")
+      } else if (common_eng_point <= 2 && common_eng_ex && common_etc_point == 8) {
+        swal("教养领域结果", word, "success")
+      } else if (common_eng_point == 2 && common_etc_point >= 6 && account_check_SF) {
+        swal("教养领域结果", word, "success")
+      } else if (common_eng_point <= 2 && common_eng_ex && common_etc_point >= 6 && account_check_SF) {
+        swal("教养领域结果", word, "success")
+      } else {
+        swal("教养领域结果", word, "error")
+      }
+    } else {
+      swal("教养领域结果", word, "error")
+    }
+  },
+  lib2016: function() {
+    var AdYear = Number(document.getElementById("ad-year").value);
+    var College = document.getElementById("college_select").value;
+    var elective_point = Number(document.getElementById("elective_liberal").value);
+    var common_kor_point = Number(document.getElementById("common_kor").value);
+    var common_eng_point = Number(document.getElementById("common_eng").value);
+    var common_eng_ex = document.getElementById("eng_ex").checked;
+    var cometcst = Number(document.getElementById("com_etc_st").value);
+    var common_etc_point = Number(document.getElementById("common_etc").value);
+    var account_check_SF = document.getElementById("account_check").checked;
+    var Core1 = document.getElementById("core1").checked;
+    var Core2 = document.getElementById("core2").checked;
+    var Core3 = document.getElementById("core3").checked;
+    var Core4 = document.getElementById("core4").checked;
+    var Core5 = document.getElementById("core5").checked;
+    var core_total_point = Number(document.getElementById("core_total").value);
+    var MACH1 = Number(document.getElementById("mach1").value);
+    var MACH1none = document.getElementById("mach1_none").checked;
+    var MACH2 = Number(document.getElementById("mach2").value);
+    var MACH2none = document.getElementById("mach2_none").checked;
+    var MACH1_st = Number(document.getElementById("mach1_st").value);
+    var MACH2_st = Number(document.getElementById("mach2_st").value);
+    var liberal_total_point = Number(document.getElementById("liberal_total").value);
+    var word = "👉入学年度 : " + AdYear + "年\n";
+
+    if (AdYear < 1000) {
+      document.getElementById("student-info").scrollIntoView();
+      swal("请选择入学年度!", "", "error");
+      return false;
+    }
+
+    if (College == "none") {
+      document.getElementById("student-info").scrollIntoView();
+      swal("请选择所属大学!", "", "error");
+      return false;
+    }
+
+    if (core_total_point > 0 && !Core1 && !Core2 && !Core3 && !Core4 && !Core5) {
+      swal("请选择核心教养!", "", "error")
+      return false;
+    }
+
+    if (Core1 || Core2 || Core3 || Core4 || Core5) {
+      if (core_total_point == 0) {
+        swal("请输入核心教养学分!", "", "error")
+        return false;
+      }
+    }
+
+    if (common_kor_point < 2) {
+      word += "👉共同教养\n - 국어 : 缺少" + [2 - common_kor_point] + " 学分\n";
+    } else {
+      word += "👉共同教养\n - 국어 : 通过\n";
+    }
+
+    if (common_eng_point < 2 && common_eng_ex) {
+      word += " - 英语 : 免\n"
+    } else if (common_eng_point < 2 && !common_eng_ex) {
+      word += " - 英语 : 缺少" + [2 - common_eng_point] + " 学分\n";
+    } else {
+      word += " - 英语 : 通过\n";
+    }
+
+    if (!account_check_SF) {
+      if (common_etc_point < cometcst) {
+        word += " - 其他 : 缺少" + [cometcst - common_etc_point] + " 学分\n"
+      } else {
+        word += " - 其他 : 通过\n"
+      }
+    } else {
+      if (common_etc_point < cometcst - 2) {
+        word += " - 其他 : 缺少" + [cometcst - 2 - common_etc_point] + " 学分(앙트레프레너십시대의회계 : 免)\n"
+      } else {
+        word += " - 其他 : 通过(앙트레프레너십시대의회계 : 免)\n"
+      }
+    }
+
+    if (Core1 && Core2 && Core3 && Core4 && Core5 && core_total_point >= 14) {
+      word += "👉核心教养 : 通过"
+    } else if (core_total_point < 15) {
+      word += "👉核心教养 : 缺少" + [15 - core_total_point] + " 学分\n-  未进修领域 : "
+    } else {
+      word += "👉核心教养 : 通过最少学分\n-未进修领域 : "
+    }
+
+    if (!Core1) {
+      word += "도전 "
+    }
+    if (!Core2) {
+      word += "창의 "
+    }
+    if (!Core3) {
+      word += "융합 "
+    }
+    if (!Core4) {
+      word += "신뢰 "
+    }
+    if (!Core5) {
+      word += "소통"
+    }
+
+    var Engin = ["engineering", "ict", "software"]
+    if (AdYear >= 2019 && Engin.includes(College)) {
+      word += "\n - 需进修一个以上的MACH教养!"
+    }
+
+    word += "\n👉选择教养 : " + elective_point + " 学分"
+
+    if (!MACH1none) {
+      if (MACH1 < 4) {
+        word += "\n👉MACH교양 : 缺少" + [4 - MACH1] + " 学分"
+      } else {
+        word += "\n👉MACH교양 : 通过"
+      }
+    }
+
+    if (!MACH2none) {
+      if (MACH2 < 4) {
+        word += "\n👉MACH실습 : 缺少" + [2 - MACH2] + " 学分"
+      } else {
+        word += "\n👉MACH실습 : 通过"
+      }
+    }
+
+    if (liberal_total_point <= 45) {
+      word += "\n👉教养领域 总计 : 缺少" + liberal_total_point + " 学分"
+    } else {
+      word += "\n👉教养领域 总计 : " + liberal_total_point + " 学分_超过" + [liberal_total_point - 45] + "学分（学分超过45学分时只认证45学分）"
+    }
+
+    if (common_kor_point == 2 && Core1 && Core2 && Core3 && Core4 && Core5 && core_total_point >= 14 && MACH1 >= MACH1_st && MACH2 >= MACH2_st) {
+      if (common_eng_point == 2 && common_etc_point >= cometcst) {
+        swal("教养领域结果", word, "success")
+      } else if (common_eng_point <= 2 && common_eng_ex && common_etc_point >= cometcst) {
+        swal("教养领域结果", word, "success")
+      } else if (common_eng_point == 2 && common_etc_point >= [cometcst - 2] && account_check_SF) {
+        swal("教养领域结果", word, "success")
+      } else if (common_eng_point <= 2 && common_eng_ex && common_etc_point >= [cometcst - 2] && account_check_SF) {
+        swal("教养领域结果", word, "success")
+      } else {
+        swal("教养领域结果", word, "error")
+      }
+    } else {
+      swal("教养领域结果", word, "error")
+    }
+  }
+}
+
 function Major_result() {
   var AdYear = Number(document.getElementById("ad-year").value);
   var Majorstandard = document.getElementById("MultiMajor_select").value;
@@ -195,7 +520,7 @@ function Etc_result() {
     if (!English_result || !Hanja_result || !Korean_result || !Paper_result || !Paper_result2) {
       swal("其他毕业条件结果", word, "warning");
     }
-  } else if(Average_result <= 2) {
+  } else if (Average_result <= 2) {
     swal("其他毕业条件结果", word, "error");
   }
 }
