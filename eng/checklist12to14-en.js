@@ -1,33 +1,3 @@
-function koreancheck() {
-  AdYear = Number(document.getElementById("ad-year").value);
-  if(AdYear == 2014 || AdYear == 0){
-    document.getElementById("Korean").checked = false;
-  } else {
-    document.getElementById("Korean").checked = true;
-  }
-}
-
-function liberalmodal() {
-  var word = "Requirements for general credits"
-  var content = "👉Mandatory\n- 국어 : 글쓰기\n- 영어 : English1(Communication in English)\nEnglish2(English fo Professional Track)"
-   + "\n- Others : 논리와사고(ACT) / 회계와사회 / 독서와토론(창의와소통) / 한국사\n"
-   + "No need to take '회계와사회' if you already took 회계학원론(회계원리)"
-   + "\n👉Core : More than 9 credits are needed"
-   + "\n👉Electives : Free to choose any\n" + "👉Any credits over 45 are not counted!"
-  swal(word, content, "info");
-}
-
-function majormodal() {
-  var word = "Requirements for major credits"
-  var content = "👉Major : Check the department's detailed requiremetns\n" +
-    "👉Double major : Check each department's detailed requiremetns\n ㄴBasics of double majors are counted as Free choice" +
-    "\n👉연계/융합/설계전공 : Check for required courses for each track!" +
-    "\n👉Minor : Earn more than 6 credits from required courses of your minor" +
-    "\n👉Teaching : Check for details(Tel.02-820-5080)" +
-    "\n👉Total credits : Only 132 credits count for graduation\n(only up to 45 credits for general courses)"
-  swal(word, content, "info");
-}
-
 function Liberal_cal() {
   var AdYear = Number(document.getElementById("ad-year").value);
   var College = document.getElementById("college_select").value;
