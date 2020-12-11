@@ -401,6 +401,67 @@ var Result = {
     } else {
       swal("教养领域结果", word, "error")
     }
+  },
+  etc: function() {
+    var English_result = document.getElementById("English").checked;
+    var Hanja_result = document.getElementById("Hanja").checked;
+    var Korean_result = document.getElementById("Korean").checked;
+    var Paper_result = document.getElementById("major_paper").checked;
+    var Paper_result2 = document.getElementById("double_major_paper").checked;
+    var Average_result = Number(document.getElementById("average").value);
+
+    if (Average_result > 4.5) {
+      swal("平均学分4.5满分!", "", "error")
+      return false;
+    }
+
+    var word = "👉졸업인정제\n";
+
+    if (!English_result) {
+      word += "- 영어 : 未通过\n"
+    } else {
+      word += "- 영어 : 通过\n"
+    }
+
+    if (Hanja_result) {
+      word += "- 한자 : 通过\n"
+    } else {
+      word += "- 한자 : 未通过\n"
+    }
+
+    if (Korean_result) {
+      word += "- 한국어(TOPIK) : 通过\n"
+    } else {
+      word += "- 한국어(TOPIK) : 未通过\n"
+    }
+
+    if (Paper_result) {
+      word += "👉毕业考试/论文\n- 主专业 : 合格\n"
+    } else {
+      word += "👉毕业考试/论文\n- 主专业 : 不合格\n"
+    }
+
+    if (Paper_result2) {
+      word += "- 双专业 : 合格 / 无 \n"
+    } else {
+      word += "- 双专业 : 不合格\n"
+    }
+
+    if (Average_result >= 2) {
+      word += "👉平均学分 : 合格"
+    } else {
+      word += "👉平均学分 : 不合格_不可毕业"
+    }
+
+    if (English_result && Hanja_result && Korean_result && Paper_result && Paper_result2 && Average_result >= 2) {
+      swal("其他毕业条件结果", word, "success");
+    } else if (Average_result >= 2) {
+      if (!English_result || !Hanja_result || !Korean_result || !Paper_result || !Paper_result2) {
+        swal("其他毕业条件结果", word, "warning");
+      }
+    } else if (Average_result <= 2) {
+      swal("其他毕业条件结果", word, "error");
+    }
   }
 }
 
@@ -458,69 +519,5 @@ function Major_result() {
     return false;
   } else {
     BaseNeceresult(Majorstandard);
-  }
-}
-
-// 여기서부터는 졸업인정제 등 졸업요건 관련
-
-function Etc_result() {
-  var English_result = document.getElementById("English").checked;
-  var Hanja_result = document.getElementById("Hanja").checked;
-  var Korean_result = document.getElementById("Korean").checked;
-  var Paper_result = document.getElementById("major_paper").checked;
-  var Paper_result2 = document.getElementById("double_major_paper").checked;
-  var Average_result = Number(document.getElementById("average").value);
-
-  if (Average_result > 4.5) {
-    swal("平均学分4.5满分!", "", "error")
-    return false;
-  }
-
-  var word = "👉졸업인정제\n";
-
-  if (!English_result) {
-    word += "- 영어 : 未通过\n"
-  } else {
-    word += "- 영어 : 通过\n"
-  }
-
-  if (Hanja_result) {
-    word += "- 한자 : 通过\n"
-  } else {
-    word += "- 한자 : 未通过\n"
-  }
-
-  if (Korean_result) {
-    word += "- 한국어(TOPIK) : 通过\n"
-  } else {
-    word += "- 한국어(TOPIK) : 未通过\n"
-  }
-
-  if (Paper_result) {
-    word += "👉毕业考试/论文\n- 主专业 : 合格\n"
-  } else {
-    word += "👉毕业考试/论文\n- 主专业 : 不合格\n"
-  }
-
-  if (Paper_result2) {
-    word += "- 双专业 : 合格 / 无 \n"
-  } else {
-    word += "- 双专业 : 不合格\n"
-  }
-
-  if (Average_result >= 2) {
-    word += "👉平均学分 : 合格"
-  } else {
-    word += "👉平均学分 : 不合格_不可毕业"
-  }
-
-  if (English_result && Hanja_result && Korean_result && Paper_result && Paper_result2 && Average_result >= 2) {
-    swal("其他毕业条件结果", word, "success");
-  } else if (Average_result >= 2) {
-    if (!English_result || !Hanja_result || !Korean_result || !Paper_result || !Paper_result2) {
-      swal("其他毕业条件结果", word, "warning");
-    }
-  } else if (Average_result <= 2) {
-    swal("其他毕业条件结果", word, "error");
   }
 }
