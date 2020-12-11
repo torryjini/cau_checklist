@@ -1,16 +1,3 @@
-function majormodal() {
-  var word = "학점 이수기준"
-  var content = "👉교양 : 이수 의무 없음\n" +
-    "👉전공 : 각 학과별 세부 기준 참고\n" +
-    "👉다전공 : 2학년 편입생만 해당." +
-    "\n- 복수전공 : 복수전공 학과의 기준 참고\n복수전공의 전공기초는 자유선택으로 인정" +
-    "\n- 연계/융합/설계전공 : 각 과정별 교과과정표를 참고하여 필수 과목 확인!" +
-    "\n👉부전공 : 부전공 전공필수 6학점 이상 포함하여 수강" +
-    "\n👉교직 : 교직과정 이수 확인(Tel.02-820-5080)" +
-    "\n👉총 이수학점 : 66 학점 이상(2학년 편입은 99 학점 이상)"
-  swal(word, content, "info");
-}
-
 function tr_multimajorchanges() {
   var SecYear = document.getElementById("2ndyear").checked;
   var major = document.getElementById("Major_select").value;

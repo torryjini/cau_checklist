@@ -1,33 +1,3 @@
-function koreancheck() {
-  AdYear = Number(document.getElementById("ad-year").value);
-  if (AdYear == 2014 || AdYear == 0) {
-    document.getElementById("Korean").checked = false;
-  } else {
-    document.getElementById("Korean").checked = true;
-  }
-}
-
-function liberalmodal() {
-  var word = "교양영역 이수기준"
-  var content = "👉공통교양\n- 국어 : 글쓰기\n- 영어 : English1(Communication in English)\nEnglish2(English fo Professional Track)" +
-    "\n- 기타 : 논리와사고(ACT) / 회계와사회 / 독서와토론(창의와소통) / 한국사\n" +
-    "회계학원론(회계원리)을 이수했을 경우, '회계와사회' 면제" +
-    "\n👉핵심교양 : 이수학점 및 역량 관계없이 최소 3과목 이상 이수 시 인정" +
-    "\n👉선택교양 : 자율이수\n" + "👉총 교양학점 45학점까지만 인정됩니다!"
-  swal(word, content, "info");
-}
-
-function majormodal() {
-  var word = "전공영역 이수기준"
-  var content = "👉전공 : 각 학과별 세부 기준 참고\n" +
-    "👉복수전공 : 복수전공 학과의 기준 참고\n복수전공의 전공기초는 자유선택으로 인정" +
-    "\n👉연계/융합/설계전공 : 각 과정별 교과과정표를 참고하여 필수 과목 확인!" +
-    "\n👉부전공 : 부전공 전공필수 6학점 이상 포함하여 수강" +
-    "\n👉교직 : 교직과정 이수 확인(Tel.02-820-5080)" +
-    "\n👉총 이수학점 : 132 학점 이상\n(교양은 최대 45학점까지 인정)"
-  swal(word, content, "info");
-}
-
 function Liberal_cal() {
   var AdYear = Number(document.getElementById("ad-year").value);
   var College = document.getElementById("college_select").value;

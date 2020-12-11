@@ -55,7 +55,7 @@
         </tr>
         <tr>
           <td>
-            <select id="ad-year" onchange="Reset.form('Major_select_form');Reset.form('Multimajor_form');Reset.form('Major');koreancheck();Reset.majorselect();Reset.majortable();Change.year1214();" required>
+            <select id="ad-year" onchange="Reset.form('Major_select_form');Reset.form('Multimajor_form');Reset.form('Major');Check.korean();Reset.majorselect();Reset.majortable();Change.year1214();" required>
               <option value="0">--</option>
               <option value="2012">2012</option>
               <option value="2013">2013</option>
@@ -104,7 +104,7 @@
             <img class="legend-icon" src="../legend-icon.png"> 교양영역
           </legend>
           <div class="item">
-            <button type="button" class="info-btn" onclick="liberalmodal()"><i class="fas fa-info-circle"></i> 세부기준</button>
+            <button type="button" class="info-btn" onclick="Modal.lib12to14()"><i class="fas fa-info-circle"></i> 세부기준</button>
           </div>
         </div>
         <tr>
@@ -227,7 +227,7 @@
             <img class="legend-icon" src="../legend-icon.png"> 전공영역
           </legend>
           <div class="item">
-            <button type="button" class="info-btn" onclick="majormodal()"><i class="fas fa-info-circle"></i> 세부기준</button>
+            <button type="button" class="info-btn" onclick="Modal.major12to15()"><i class="fas fa-info-circle"></i> 세부기준</button>
           </div>
         </div>
         <tr>
