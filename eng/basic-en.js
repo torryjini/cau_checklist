@@ -403,6 +403,67 @@ var Result = {
     } else {
       swal("General credits result", word, "error")
     }
+  },
+  etc: function() {
+    var English_result = document.getElementById("English").checked;
+    var Hanja_result = document.getElementById("Hanja").checked;
+    var Korean_result = document.getElementById("Korean").checked;
+    var Paper_result = document.getElementById("major_paper").checked;
+    var Paper_result2 = document.getElementById("double_major_paper").checked;
+    var Average_result = Number(document.getElementById("average").value);
+
+    if (Average_result > 4.5) {
+      swal("You cannot enter credits above 4.5!", "", "error")
+      return false;
+    }
+
+    var word = "👉Graduation Recognition System\n";
+
+    if (!English_result) {
+      word += "- 영어 : not qualified\n"
+    } else {
+      word += "- 영어 : Qualified\n"
+    }
+
+    if (Hanja_result) {
+      word += "- 한자 : Qualified\n"
+    } else {
+      word += "- 한자 : Not qualified\n"
+    }
+
+    if (Korean_result) {
+      word += "- 한국어(TOPIK) : Qualified\n"
+    } else {
+      word += "- 한국어(TOPIK) : Not qualified\n"
+    }
+
+    if (Paper_result) {
+      word += "👉Grad Exam/Thesis\n- Major : Qualified\n"
+    } else {
+      word += "👉Grad Exam/Thesis\n- Major : Not qualified\n"
+    }
+
+    if (Paper_result2) {
+      word += "- Double major : Qualified/N/A\n"
+    } else {
+      word += "- Double major : Not qualified\n"
+    }
+
+    if (Average_result >= 2) {
+      word += "👉GPA : Qualified"
+    } else {
+      word += "👉GPA : Not qualified for gradution"
+    }
+
+    if (English_result && Hanja_result && Korean_result && Paper_result && Paper_result2 && Average_result >= 2) {
+      swal("Other requirements result", word, "success");
+    } else if (Average_result >= 2) {
+      if (!English_result || !Hanja_result || !Korean_result || !Paper_result || !Paper_result2) {
+        swal("Other requirements result", word, "warning");
+      }
+    } else if(Average_result <= 2) {
+      swal("Other requirements result", word, "error");
+    }
   }
 }
 
@@ -460,69 +521,5 @@ function Major_result() {
     return false;
   } else {
     BaseNeceresult(Majorstandard);
-  }
-}
-
-// 여기서부터는 졸업인정제 등 졸업요건 관련
-
-function Etc_result() {
-  var English_result = document.getElementById("English").checked;
-  var Hanja_result = document.getElementById("Hanja").checked;
-  var Korean_result = document.getElementById("Korean").checked;
-  var Paper_result = document.getElementById("major_paper").checked;
-  var Paper_result2 = document.getElementById("double_major_paper").checked;
-  var Average_result = Number(document.getElementById("average").value);
-
-  if (Average_result > 4.5) {
-    swal("You cannot enter credits above 4.5!", "", "error")
-    return false;
-  }
-
-  var word = "👉Graduation Recognition System\n";
-
-  if (!English_result) {
-    word += "- 영어 : not qualified\n"
-  } else {
-    word += "- 영어 : Qualified\n"
-  }
-
-  if (Hanja_result) {
-    word += "- 한자 : Qualified\n"
-  } else {
-    word += "- 한자 : Not qualified\n"
-  }
-
-  if (Korean_result) {
-    word += "- 한국어(TOPIK) : Qualified\n"
-  } else {
-    word += "- 한국어(TOPIK) : Not qualified\n"
-  }
-
-  if (Paper_result) {
-    word += "👉Grad Exam/Thesis\n- Major : Qualified\n"
-  } else {
-    word += "👉Grad Exam/Thesis\n- Major : Not qualified\n"
-  }
-
-  if (Paper_result2) {
-    word += "- Double major : Qualified/N/A\n"
-  } else {
-    word += "- Double major : Not qualified\n"
-  }
-
-  if (Average_result >= 2) {
-    word += "👉GPA : Qualified"
-  } else {
-    word += "👉GPA : Not qualified for gradution"
-  }
-
-  if (English_result && Hanja_result && Korean_result && Paper_result && Paper_result2 && Average_result >= 2) {
-    swal("Other requirements result", word, "success");
-  } else if (Average_result >= 2) {
-    if (!English_result || !Hanja_result || !Korean_result || !Paper_result || !Paper_result2) {
-      swal("Other requirements result", word, "warning");
-    }
-  } else if(Average_result <= 2) {
-    swal("Other requirements result", word, "error");
   }
 }
