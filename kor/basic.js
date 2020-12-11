@@ -79,6 +79,330 @@ var Modal = {
   }
 }
 
+var Result = {
+  lib12to14: function() {
+    var AdYear = Number(document.getElementById("ad-year").value);
+    var College = document.getElementById("college_select").value;
+    var elective_point = Number(document.getElementById("elective_liberal").value);
+    var common_kor_point = Number(document.getElementById("common_kor").value);
+    var common_eng_point = Number(document.getElementById("common_eng").value);
+    var common_eng_ex = document.getElementById("eng_ex").checked;
+    var common_etc_point = Number(document.getElementById("common_etc").value);
+    var account_check_SF = document.getElementById("account_check").checked;
+    var core_total_point = Number(document.getElementById("core_total").value);
+    var liberal_total_point = Number(document.getElementById("liberal_total").value);
+    var word = "👉입학연도 : " + AdYear + "년\n";
+
+    if (AdYear < 1000) {
+      document.getElementById("student-info").scrollIntoView();
+      swal("입학연도를 선택하세요!", "", "error");
+      return false;
+    }
+
+    if (common_kor_point < 2) {
+      word += "👉공통교양\n - 국어 : " + [2 - common_kor_point] + " 학점 미달\n";
+    } else {
+      word += "👉공통교양\n - 국어 : 기준 통과\n";
+    }
+
+    if (common_eng_point < 4 && common_eng_ex) {
+      word += " - 영어 : 면제\n"
+    } else if (common_eng_point < 4 && !common_eng_ex) {
+      word += " - 영어 : " + [4 - common_eng_point] + " 학점 미달\n";
+    } else {
+      word += " - 영어 : 기준 통과\n";
+    }
+
+    if (!account_check_SF) {
+      if (common_etc_point < 8) {
+        word += " - 기타 : " + [8 - common_etc_point] + " 학점 미달\n"
+      } else {
+        word += " - 기타 : 기준 통과\n"
+      }
+    } else {
+      if (common_etc_point < 6) {
+        word += " - 기타 : " + [6 - common_etc_point] + " 학점 미달(회계와사회 : 면제)\n"
+      } else {
+        word += " - 기타 : 기준 통과(회계와사회 : 면제)\n"
+      }
+    }
+
+    if (core_total_point < 9) {
+      word += "👉핵심교양 : " + [9 - core_total_point] + " 학점 미달"
+    } else {
+      word += "👉핵심교양 : 기준 통과"
+    }
+
+    word += "\n👉선택교양 : " + elective_point + " 학점"
+
+    if (liberal_total_point <= 45) {
+      word += "\n👉교양영역 계 : " + liberal_total_point + " 학점"
+    } else {
+      word += "\n👉교양영역 계 : " + liberal_total_point + " 학점_ " + [liberal_total_point - 45] + "학점 초과_45 학점만 인정"
+    }
+
+    if (common_kor_point == 2 && core_total_point >= 9) {
+      if (common_eng_point >= 4 && common_etc_point == 8) {
+        swal("교양영역 결과", word, "success")
+      } else if (common_eng_point <= 4 && common_eng_ex && common_etc_point == 8) {
+        swal("교양영역 결과", word, "success")
+      } else if (common_eng_point >= 4 && common_etc_point >= 6 && account_check_SF) {
+        swal("교양영역 결과", word, "success")
+      } else if (common_eng_point <= 4 && common_eng_ex && common_etc_point >= 6 && account_check_SF) {
+        swal("교양영역 결과", word, "success")
+      } else {
+        swal("교양영역 결과", word, "error")
+      }
+    } else {
+      swal("교양영역 결과", word, "error")
+    }
+  },
+  lib2015: function() {
+    var AdYear = Number(document.getElementById("ad-year").value);
+    var College = document.getElementById("college_select").value;
+    var elective_point = Number(document.getElementById("elective_liberal").value);
+    var common_kor_point = Number(document.getElementById("common_kor").value);
+    var common_eng_point = Number(document.getElementById("common_eng").value);
+    var common_eng_ex = document.getElementById("eng_ex").checked;
+    var common_etc_point = Number(document.getElementById("common_etc").value);
+    var account_check_SF = document.getElementById("account_check").checked;
+    var core_total_point = Number(document.getElementById("core_total").value);
+    var liberal_total_point = Number(document.getElementById("liberal_total").value);
+    var MACH1 = Number(document.getElementById("mach1").value);
+    var MACH1none = document.getElementById("mach1_none").checked;
+    var MACH2 = Number(document.getElementById("mach2").value);
+    var MACH2none = document.getElementById("mach2_none").checked;
+    var MACH1_st = Number(document.getElementById("mach1_st").value);
+    var MACH2_st = Number(document.getElementById("mach2_st").value);
+    var word = "👉입학연도 : " + AdYear + "년\n";
+
+    if (College == "none") {
+      document.getElementById("student-info").scrollIntoView();
+      swal("소속 대학을 선택하세요!", "", "error");
+      return false;
+    }
+
+    if (common_kor_point < 2) {
+      word += "👉공통교양\n - 국어 : " + [2 - common_kor_point] + " 학점 미달\n";
+    } else {
+      word += "👉공통교양\n - 국어 : 기준 통과\n";
+    }
+
+    if (common_eng_point < 2 && common_eng_ex) {
+      word += " - 영어 : 면제\n"
+    } else if (common_eng_point < 2 && !common_eng_ex) {
+      word += " - 영어 : " + [2 - common_eng_point] + " 학점 미달\n";
+    } else {
+      word += " - 영어 : 기준 통과\n";
+    }
+
+    if (!account_check_SF) {
+      if (common_etc_point < 8) {
+        word += " - 기타 : " + [8 - common_etc_point] + " 학점 미달\n"
+      } else {
+        word += " - 기타 : 기준 통과\n"
+      }
+    } else {
+      if (common_etc_point < 6) {
+        word += " - 기타 : " + [6 - common_etc_point] + " 학점 미달(회계와사회 : 면제)\n"
+      } else {
+        word += " - 기타 : 기준 통과(회계와사회 : 면제)\n"
+      }
+    }
+
+    if (core_total_point < 12) {
+      word += "👉핵심교양 : " + [12 - core_total_point] + " 학점 미달\n- 핵심 역량 4개 영역 각 1과목 이상 이수 필요!"
+    } else {
+      word += "👉핵심교양 : 최소학점 기준 통과\n- 핵심 역량 4개 영역 각 1과목 이상 이수 확인!"
+    }
+
+    word += "\n👉선택교양 : " + elective_point + " 학점"
+
+    if (!MACH1none) {
+      if (MACH1 < 4) {
+        word += "\n👉MACH교양 : " + [4 - MACH1] + " 학점 미달"
+      } else {
+        word += "\n👉MACH교양 : 기준 통과"
+      }
+    }
+
+    if (!MACH2none) {
+      if (MACH2 < 4) {
+        word += "\n👉MACH실습 : " + [2 - MACH2] + " 학점 미달"
+      } else {
+        word += "\n👉MACH실습 : 기준 통과"
+      }
+    }
+
+    if (liberal_total_point <= 45) {
+      word += "\n👉교양영역 계 : " + liberal_total_point + " 학점"
+    } else {
+      word += "\n👉교양영역 계 : " + liberal_total_point + " 학점_ " + [liberal_total_point - 45] + "학점 초과_45 학점만 인정"
+    }
+
+    if (common_kor_point == 2 && core_total_point >= 11 && MACH1 >= MACH1_st && MACH2 >= MACH2_st) {
+      if (common_eng_point == 2 && common_etc_point == 8) {
+        swal("교양영역 결과", word, "success")
+      } else if (common_eng_point <= 2 && common_eng_ex && common_etc_point == 8) {
+        swal("교양영역 결과", word, "success")
+      } else if (common_eng_point == 2 && common_etc_point >= 6 && account_check_SF) {
+        swal("교양영역 결과", word, "success")
+      } else if (common_eng_point <= 2 && common_eng_ex && common_etc_point >= 6 && account_check_SF) {
+        swal("교양영역 결과", word, "success")
+      } else {
+        swal("교양영역 결과", word, "error")
+      }
+    } else {
+      swal("교양영역 결과", word, "error")
+    }
+  },
+  lib2016: function() {
+    var AdYear = Number(document.getElementById("ad-year").value);
+    var College = document.getElementById("college_select").value;
+    var elective_point = Number(document.getElementById("elective_liberal").value);
+    var common_kor_point = Number(document.getElementById("common_kor").value);
+    var common_eng_point = Number(document.getElementById("common_eng").value);
+    var common_eng_ex = document.getElementById("eng_ex").checked;
+    var cometcst = Number(document.getElementById("com_etc_st").value);
+    var common_etc_point = Number(document.getElementById("common_etc").value);
+    var account_check_SF = document.getElementById("account_check").checked;
+    var Core1 = document.getElementById("core1").checked;
+    var Core2 = document.getElementById("core2").checked;
+    var Core3 = document.getElementById("core3").checked;
+    var Core4 = document.getElementById("core4").checked;
+    var Core5 = document.getElementById("core5").checked;
+    var core_total_point = Number(document.getElementById("core_total").value);
+    var liberal_total_point = Number(document.getElementById("liberal_total").value);
+    var MACH1 = Number(document.getElementById("mach1").value);
+    var MACH1none = document.getElementById("mach1_none").checked;
+    var MACH2 = Number(document.getElementById("mach2").value);
+    var MACH2none = document.getElementById("mach2_none").checked;
+    var MACH1_st = Number(document.getElementById("mach1_st").value);
+    var MACH2_st = Number(document.getElementById("mach2_st").value);
+    var word = "👉입학연도 : " + AdYear + "년\n";
+
+    if (AdYear < 1000) {
+      document.getElementById("student-info").scrollIntoView();
+      swal("입학연도를 선택하세요!", "", "error");
+      return false;
+    }
+
+    if (College == "none") {
+      document.getElementById("student-info").scrollIntoView();
+      swal("소속 대학을 선택하세요!", "", "error");
+      return false;
+    }
+
+    if (core_total_point > 0 && !Core1 && !Core2 && !Core3 && !Core4 && !Core5) {
+      swal("핵심교양 영역을 체크하세요!", "", "error")
+      return false;
+    }
+
+    if (Core1 || Core2 || Core3 || Core4 || Core5) {
+      if (core_total_point == 0) {
+        swal("핵심교양 학점을 입력하세요!", "", "error")
+        return false;
+      }
+    }
+
+    if (common_kor_point < 2) {
+      word += "👉공통교양\n - 국어 : " + [2 - common_kor_point] + " 학점 미달\n";
+    } else {
+      word += "👉공통교양\n - 국어 : 기준 통과\n";
+    }
+
+    if (common_eng_point < 2 && common_eng_ex) {
+      word += " - 영어 : 면제\n"
+    } else if (common_eng_point < 2 && !common_eng_ex) {
+      word += " - 영어 : " + [2 - common_eng_point] + " 학점 미달\n";
+    } else {
+      word += " - 영어 : 기준 통과\n";
+    }
+
+    if (!account_check_SF) {
+      if (common_etc_point < cometcst) {
+        word += " - 기타 : " + [cometcst - common_etc_point] + " 학점 미달\n"
+      } else {
+        word += " - 기타 : 기준 통과\n"
+      }
+    } else {
+      if (common_etc_point < cometcst - 2) {
+        word += " - 기타 : " + [cometcst - 2 - common_etc_point] + " 학점 미달(앙트레프레너십시대의회계 : 면제)\n"
+      } else {
+        word += " - 기타 : 기준 통과(앙트레프레너십시대의회계 : 면제)\n"
+      }
+    }
+
+    if (Core1 && Core2 && Core3 && Core4 && Core5 && core_total_point >= 14) {
+      word += "👉핵심교양 : 기준 통과"
+    } else if (core_total_point < 15) {
+      word += "👉핵심교양 : " + [15 - core_total_point] + " 학점 미달\n- 미이수 영역 : "
+    } else {
+      word += "👉핵심교양 : 최소학점 기준 통과\n- 미이수 영역 : "
+    }
+
+    if (!Core1) {
+      word += "도전 "
+    }
+    if (!Core2) {
+      word += "창의 "
+    }
+    if (!Core3) {
+      word += "융합 "
+    }
+    if (!Core4) {
+      word += "신뢰 "
+    }
+    if (!Core5) {
+      word += "소통"
+    }
+
+    var Engin =["engineering", "ict", "software"]
+    if (AdYear >= 2019 && Engin.includes(College)) {
+      word += "\n - MACH 교양 1 과목 이상 이수 확인!"
+    }
+
+    word += "\n👉선택교양 : " + elective_point + " 학점"
+
+    if (!MACH1none) {
+      if (MACH1 < 4) {
+        word += "\n👉MACH교양 : " + [4 - MACH1] + " 학점 미달"
+      } else {
+        word += "\n👉MACH교양 : 기준 통과"
+      }
+    }
+
+    if (!MACH2none) {
+      if (MACH2 < 4) {
+        word += "\n👉MACH실습 : " + [2 - MACH2] + " 학점 미달"
+      } else {
+        word += "\n👉MACH실습 : 기준 통과"
+      }
+    }
+
+    if (liberal_total_point <= 45) {
+      word += "\n👉교양영역 계 : " + liberal_total_point + " 학점"
+    } else {
+      word += "\n👉교양영역 계 : " + liberal_total_point + " 학점_ " + [liberal_total_point - 45] + "학점 초과_45 학점만 인정"
+    }
+
+    if (common_kor_point == 2 && Core1 && Core2 && Core3 && Core4 && Core5 && core_total_point >= 14 && MACH1 >= MACH1_st && MACH2 >= MACH2_st) {
+      if (common_eng_point == 2 && common_etc_point >= cometcst) {
+        swal("교양영역 결과", word, "success")
+      } else if (common_eng_point <= 2 && common_eng_ex && common_etc_point >= cometcst) {
+        swal("교양영역 결과", word, "success")
+      } else if (common_eng_point == 2 && common_etc_point >= [cometcst - 2] && account_check_SF) {
+        swal("교양영역 결과", word, "success")
+      } else if (common_eng_point <= 2 && common_eng_ex && common_etc_point >= [cometcst - 2] && account_check_SF) {
+        swal("교양영역 결과", word, "success")
+      } else {
+        swal("교양영역 결과", word, "error")
+      }
+    } else {
+      swal("교양영역 결과", word, "error")
+    }
+  }
+}
 
 function Major_result() {
   var AdYear = Number(document.getElementById("ad-year").value);
