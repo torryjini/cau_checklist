@@ -401,6 +401,67 @@ var Result = {
     } else {
       swal("교양영역 결과", word, "error")
     }
+  },
+  etc: function() {
+    var English_result = document.getElementById("English").checked;
+    var Hanja_result = document.getElementById("Hanja").checked;
+    var Korean_result = document.getElementById("Korean").checked;
+    var Paper_result = document.getElementById("major_paper").checked;
+    var Paper_result2 = document.getElementById("double_major_paper").checked;
+    var Average_result = Number(document.getElementById("average").value);
+
+    if (Average_result > 4.5) {
+      swal("평균평점은 4.5 만점입니다!", "", "error")
+      return false;
+    }
+
+    var word = "👉졸업인정제\n";
+
+    if (!English_result) {
+      word += "- 영어 : 미통과\n"
+    } else {
+      word += "- 영어 : 통과\n"
+    }
+
+    if (Hanja_result) {
+      word += "- 한자 : 통과\n"
+    } else {
+      word += "- 한자 : 미통과\n"
+    }
+
+    if (Korean_result) {
+      word += "- 한국어 : 통과\n"
+    } else {
+      word += "- 한국어 : 미통과\n"
+    }
+
+    if (Paper_result) {
+      word += "👉졸업시험/논문\n- 주전공 : 합격\n"
+    } else {
+      word += "👉졸업시험/논문\n- 주전공 : 불합격\n"
+    }
+
+    if (Paper_result2) {
+      word += "- 복수전공 : 통과/해당없음\n"
+    } else {
+      word += "- 복수전공 : 불합격\n"
+    }
+
+    if (Average_result >= 2) {
+      word += "👉평균평점 : 통과"
+    } else {
+      word += "👉평균평점 : 미통과_졸업불가"
+    }
+
+    if (English_result && Hanja_result && Korean_result && Paper_result && Paper_result2 && Average_result >= 2) {
+      swal("기타 졸업요건 결과", word, "success");
+    } else if (Average_result >= 2) {
+      if (!English_result || !Hanja_result || !Korean_result || !Paper_result || !Paper_result2) {
+        swal("기타 졸업요건 결과", word, "warning");
+      }
+    } else if (Average_result <= 2) {
+      swal("기타 졸업요건 결과", word, "error");
+    }
   }
 }
 
@@ -470,65 +531,3 @@ function Major_result() {
 //    + "졸업불가 : 학점 이수 기준 중 하나라도 부족하거나 전 학년 평점이 2.0 미만인 경우 졸업불가"
 //   swal(word, content, "info");
 // }
-
-function Etc_result() {
-  var English_result = document.getElementById("English").checked;
-  var Hanja_result = document.getElementById("Hanja").checked;
-  var Korean_result = document.getElementById("Korean").checked;
-  var Paper_result = document.getElementById("major_paper").checked;
-  var Paper_result2 = document.getElementById("double_major_paper").checked;
-  var Average_result = Number(document.getElementById("average").value);
-
-  if (Average_result > 4.5) {
-    swal("평균평점은 4.5 만점입니다!", "", "error")
-    return false;
-  }
-
-  var word = "👉졸업인정제\n";
-
-  if (!English_result) {
-    word += "- 영어 : 미통과\n"
-  } else {
-    word += "- 영어 : 통과\n"
-  }
-
-  if (Hanja_result) {
-    word += "- 한자 : 통과\n"
-  } else {
-    word += "- 한자 : 미통과\n"
-  }
-
-  if (Korean_result) {
-    word += "- 한국어 : 통과\n"
-  } else {
-    word += "- 한국어 : 미통과\n"
-  }
-
-  if (Paper_result) {
-    word += "👉졸업시험/논문\n- 주전공 : 합격\n"
-  } else {
-    word += "👉졸업시험/논문\n- 주전공 : 불합격\n"
-  }
-
-  if (Paper_result2) {
-    word += "- 복수전공 : 통과/해당없음\n"
-  } else {
-    word += "- 복수전공 : 불합격\n"
-  }
-
-  if (Average_result >= 2) {
-    word += "👉평균평점 : 통과"
-  } else {
-    word += "👉평균평점 : 미통과_졸업불가"
-  }
-
-  if (English_result && Hanja_result && Korean_result && Paper_result && Paper_result2 && Average_result >= 2) {
-    swal("기타 졸업요건 결과", word, "success");
-  } else if (Average_result >= 2) {
-    if (!English_result || !Hanja_result || !Korean_result || !Paper_result || !Paper_result2) {
-      swal("기타 졸업요건 결과", word, "warning");
-    }
-  } else if (Average_result <= 2) {
-    swal("기타 졸업요건 결과", word, "error");
-  }
-}
