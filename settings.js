@@ -483,6 +483,14 @@ var Check = {
       document.getElementById("teaching_none").checked = true;
       document.getElementById("teaching_table").style.display = "none";
     }
+  },
+  korean:function() {
+    AdYear = Number(document.getElementById("ad-year").value);
+    if (AdYear == 2014 || AdYear == 0) {
+      document.getElementById("Korean").checked = false;
+    } else {
+      document.getElementById("Korean").checked = true;
+    }
   }
 }
 
