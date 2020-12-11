@@ -1,11 +1,11 @@
 var Modal = {
-   lib12to14: function() {
+  lib12to14: function() {
     var word = "Requirements for general credits"
-    var content = "👉Mandatory\n- 국어 : 글쓰기\n- 영어 : English1(Communication in English)\nEnglish2(English fo Professional Track)"
-     + "\n- Others : 논리와사고(ACT) / 회계와사회 / 독서와토론(창의와소통) / 한국사\n"
-     + "No need to take '회계와사회' if you already took 회계학원론(회계원리)"
-     + "\n👉Core : More than 9 credits are needed"
-     + "\n👉Electives : Free to choose any\n" + "👉Any credits over 45 are not counted!"
+    var content = "👉Mandatory\n- 국어 : 글쓰기\n- 영어 : English1(Communication in English)\nEnglish2(English fo Professional Track)" +
+      "\n- Others : 논리와사고(ACT) / 회계와사회 / 독서와토론(창의와소통) / 한국사\n" +
+      "No need to take '회계와사회' if you already took 회계학원론(회계원리)" +
+      "\n👉Core : More than 9 credits are needed" +
+      "\n👉Electives : Free to choose any\n" + "👉Any credits over 45 are not counted!"
     swal(word, content, "info");
   },
   lib2015: function() {
@@ -359,7 +359,7 @@ var Result = {
       word += "소통"
     }
 
-    var Engin =["engineering", "ict", "software"]
+    var Engin = ["engineering", "ict", "software"]
     if (AdYear >= 2019 && Engin.includes(College)) {
       word += "\n - Check if you have taken at least one MACH subject!"
     }
@@ -461,65 +461,1133 @@ var Result = {
       if (!English_result || !Hanja_result || !Korean_result || !Paper_result || !Paper_result2) {
         swal("Other requirements result", word, "warning");
       }
-    } else if(Average_result <= 2) {
+    } else if (Average_result <= 2) {
       swal("Other requirements result", word, "error");
     }
-  }
-}
+  },
+  major: function Major_result() {
+    var AdYear = Number(document.getElementById("ad-year").value);
+    var Majorstandard = document.getElementById("MultiMajor_select").value;
+    var MajorSelect = document.getElementById("Major_select").value;
+    var LinkCross = Number(document.getElementById("cross_point1").value);
+    var Fusion = document.getElementById("fusion-options");
+    var Fusiontext = Fusion.options[Fusion.selectedIndex].text;
+    var FusionCross = Number(document.getElementById("cross_point2").value);
+    var PlanCross = Number(document.getElementById("cross_point3").value);
 
-function Major_result() {
-  var AdYear = Number(document.getElementById("ad-year").value);
-  var Majorstandard = document.getElementById("MultiMajor_select").value;
-  var MajorSelect = document.getElementById("Major_select").value;
-  var LinkCross = Number(document.getElementById("cross_point1").value);
-  var Fusion = document.getElementById("fusion-options");
-  var Fusiontext = Fusion.options[Fusion.selectedIndex].text;
-  var FusionCross = Number(document.getElementById("cross_point2").value);
-  var PlanCross = Number(document.getElementById("cross_point3").value);
-
-  if (AdYear < 1000) {
-    document.getElementById("student-info").scrollIntoView();
-    swal("Choose your entrance year!", "", "error");
-    return false;
-  }
-
-  if (Fusiontext.includes("문화") || Fusiontext.includes("창업") || Fusiontext.includes("게임")) {
-    if (FusionCross > 6) {
-      document.getElementById("double_major_none").scrollIntoView();
-      swal("Maximum credits for\n" + Fusiontext + " 융합전공 are 6!", "", "error")
+    if (AdYear < 1000) {
+      document.getElementById("student-info").scrollIntoView();
+      swal("Choose your entrance year!", "", "error");
       return false;
     }
-  } else if (Fusiontext.includes("금융")) {
-    if (FusionCross > 15) {
-      document.getElementById("double_major_none").scrollIntoView();
-      swal("Maximum credits for\n" + Fusiontext + " 융합전공 are 15!", "", "error")
-      return false;
-    }
-  } else if (Fusiontext.includes("인문") || Fusiontext.includes("보안") || Fusiontext.includes("테크") || Fusiontext.includes("벤처")) {
-    if (FusionCross > 12) {
-      document.getElementById("double_major_none").scrollIntoView();
-      swal("Maximum credits for\n" + Fusiontext + " 융합전공 are 12!", "", "error")
-      return false;
-    }
-  }
 
-  if (MajorSelect == "none") {
-    document.getElementById("student-info").scrollIntoView();
-    swal("Choose your major!", "", "error");
-    return false;
-  } else if (Majorstandard < 45) {
-    document.getElementById("student-info").scrollIntoView();
-    swal("Choose your multiple major!", "", "error");
-    return false;
-  } else if (LinkCross > 12) {
-    document.getElementById("double_major_point").scrollIntoView();
-    swal("Maximum cross credits for 연계전공 are 12!", "", "error")
-    return false;
-  } else if (PlanCross > 6) {
-    document.getElementById("link_major_none").scrollIntoView();
-    swal("Maximum cross credits for 자기설계전공 are 6!", "", "error")
-    return false;
-  } else {
-    BaseNeceresult(Majorstandard);
+    if (Fusiontext.includes("문화") || Fusiontext.includes("창업") || Fusiontext.includes("게임")) {
+      if (FusionCross > 6) {
+        document.getElementById("double_major_none").scrollIntoView();
+        swal("Maximum credits for\n" + Fusiontext + " 융합전공 are 6!", "", "error")
+        return false;
+      }
+    } else if (Fusiontext.includes("금융")) {
+      if (FusionCross > 15) {
+        document.getElementById("double_major_none").scrollIntoView();
+        swal("Maximum credits for\n" + Fusiontext + " 융합전공 are 15!", "", "error")
+        return false;
+      }
+    } else if (Fusiontext.includes("인문") || Fusiontext.includes("보안") || Fusiontext.includes("테크") || Fusiontext.includes("벤처")) {
+      if (FusionCross > 12) {
+        document.getElementById("double_major_none").scrollIntoView();
+        swal("Maximum credits for\n" + Fusiontext + " 융합전공 are 12!", "", "error")
+        return false;
+      }
+    }
+
+    if (MajorSelect == "none") {
+      document.getElementById("student-info").scrollIntoView();
+      swal("Choose your major!", "", "error");
+      return false;
+    } else if (Majorstandard < 45) {
+      document.getElementById("student-info").scrollIntoView();
+      swal("Choose your multiple major!", "", "error");
+      return false;
+    } else if (LinkCross > 12) {
+      document.getElementById("double_major_point").scrollIntoView();
+      swal("Maximum cross credits for 연계전공 are 12!", "", "error")
+      return false;
+    } else if (PlanCross > 6) {
+      document.getElementById("link_major_none").scrollIntoView();
+      swal("Maximum cross credits for 자기설계전공 are 6!", "", "error")
+      return false;
+    } else {
+      if (AdYear <= 2014) {
+        Result.basenece12to14(Majorstandard);
+      } else if (AdYear == 2015) {
+        Result.basenece2015(Majorstandard);
+      } else {
+        Result.basenece2016(Majorstandard);
+      }
+    }
+  },
+  basenece12to14: function(Majorstandard) {
+    var AdYear = Number(document.getElementById("ad-year").value);
+    var Major = document.getElementById("Major_select");
+    var Majortext = Major.options[Major.selectedIndex].text;
+    var Multimajor = document.getElementById("MultiMajor_select");
+    var Multimajortext = Multimajor.options[Multimajor.selectedIndex].text;
+    var BaseStandard = document.getElementById("base_standard").value;
+    var NeceStandard = document.getElementById("nece_standard").value;
+    var Basepoint = Number(document.getElementById("base_input").value);
+    var Necepoint = Number(document.getElementById("nece_input").value);
+    var Majorpoint = Number(document.getElementById("major_input").value);
+    Majorstandard = Number(Majorstandard);
+    var word = "👉Entrance Year : " + AdYear + "\nMajor : " + Majortext + "\n👉Multiple Major : " + Multimajortext + "\n";
+
+    var FusionOption = Number(document.getElementById("fusion-options").value);
+    if (Multimajortext.includes("융합")) {
+      if (FusionOption == 0) {
+        swal("Choose your 융합전공!", "", "error");
+        document.getElementById("double_major_none").scrollIntoView();
+        return false;
+      }
+    }
+
+    if (Majorpoint < Necepoint) {
+      swal("Major courses include required courses!", "", "error");
+      return false;
+    }
+
+    if (Basepoint < BaseStandard) {
+      word += "👉Basics : " + [BaseStandard - Basepoint] + " more credits required\n";
+    } else {
+      word += "👉Basics : Passed the requirement\n";
+    }
+
+    if (Necepoint < NeceStandard) {
+      word += "👉Required : " + [NeceStandard - Necepoint] + " more credits required\n";
+    } else {
+      word += "👉Required : Passed the requirement\n";
+    }
+
+    if (Majorpoint < Majorstandard) {
+      word += "👉Major course : " + [Majorstandard - Majorpoint] + " more credits required\n"
+    } else {
+      word += "👉Major course : Passed the requirement\n"
+    }
+
+    var Doublecheck = document.getElementById("double_major_none").checked;
+    var Doublepoint = Number(document.getElementById("double_major_point").value);
+    if (!Doublecheck) {
+      if (Doublepoint < 45) {
+        word += "👉Double major : " + [45 - Doublepoint] + " more credits required\n"
+      } else {
+        word += "👉Double major : Passed the minimum credits requirement\n"
+      }
+    }
+
+    var Linkcheck = document.getElementById("link_major_none").checked;
+    var LinkCross = Number(document.getElementById("cross_point1").value);
+    var Linkpoint = Number(document.getElementById("link_major_point").value) + LinkCross;
+    if (!Linkcheck) {
+      if (Linkpoint < 36) {
+        word += "👉연계전공 : " + [36 - Linkpoint] + " more credits required\n"
+      } else {
+        word += "👉연계전공 : Passed the minimum credits requirement\n"
+      }
+    }
+
+
+    var Fusioncheck = document.getElementById("fusion_major_none").checked;
+    var Fusion = document.getElementById("fusion-options");
+    var Fusiontext = Fusion.options[Fusion.selectedIndex].text;
+    var Fusionpoint = Number(document.getElementById("fusion_major_point").value) + Number(document.getElementById("cross_point2").value);
+    var FusionStandard = Number(document.getElementById("fusion_standard").value);
+    if (!Fusioncheck) {
+      if (Fusionpoint < FusionStandard) {
+        word += "👉" + Fusiontext + "융합전공 : " + [FusionStandard - Fusionpoint] + " more credits required\n"
+      } else {
+        word += "👉" + Fusiontext + "융합전공 : Passed the minimum credits requirement\n"
+      }
+    }
+
+    var Plancheck = document.getElementById("plan_major_none").checked;
+    var Planpoint = Number(document.getElementById("plan_major_point").value) + Number(document.getElementById("cross_point3").value);
+    if (!Plancheck) {
+      if (Planpoint < 36) {
+        word += "👉설계전공 : " + [36 - Planpoint] + " more credits required\n"
+      } else {
+        word += "👉설계전공 : Passed the minimum credits requirement\n"
+      }
+    }
+
+    var Minorcheck = document.getElementById("minor_none").checked;
+    var Minorpoint = Number(document.getElementById("minor_point").value);
+    if (!Minorcheck) {
+      if (Minorpoint < 21) {
+        word += "👉Minor : " + [21 - Minorpoint] + " more credits required\n"
+      } else {
+        word += "👉Minor : Passed the minimum credits requirement\n"
+      }
+    }
+
+    var Freepoint = Number(document.getElementById("free_point").value);
+    word += "👉Free choice : " + Freepoint + " credits\n"
+
+
+    var Teachingcheck = document.getElementById("teaching_none").checked;
+    var Teachingpoint = Number(document.getElementById("teaching_point").value);
+    if (!Teachingcheck) {
+      if (Teachingpoint < 22)
+        word += "👉Teaching : " + [22 - Teachingpoint] + " more credits required\n"
+      else {
+        word += "👉Teaching : Passed the minimum credits requirement\n"
+      }
+    }
+
+    var TotalStandard = Number(document.getElementById("total_standard").value);
+    var TotalPoint = Number(document.getElementById("the_total").value);
+    if (TotalPoint < TotalStandard) {
+      word += "👉Total credits : " + [TotalStandard - TotalPoint] + " more credits required"
+    } else {
+      word += "👉Total credits : Passed the requirement"
+    }
+
+    if (Basepoint >= BaseStandard && Necepoint >= NeceStandard && Majorpoint >= Majorstandard && TotalPoint >= TotalStandard) {
+      if (Minorcheck && Teachingcheck) {
+        if (Multimajortext.includes("심화")) {
+          swal("Major credits result", word, "success")
+        } else if (Multimajortext.includes("복수")) {
+          if (Doublepoint >= 45) {
+            swal("Major credits result", word, "success")
+          } else {
+            swal("Major credits result", word, "error")
+          }
+        } else if (Multimajortext.includes("연계")) {
+          if (Linkpoint >= 36) {
+            swal("Major credits result", word, "success")
+          } else {
+            swal("Major credits result", word, "error")
+          }
+        } else if (Multimajortext.includes("융합")) {
+          if (Fusionpoint >= FusionStandard) {
+            swal("Major credits result", word, "success")
+          } else {
+            swal("Major credits result", word, "error")
+          }
+        } else if (Multimajortext.includes("설계")) {
+          if (Planpoint >= 36) {
+            swal("Major credits result", word, "success")
+          } else {
+            swal("Major credits result", word, "error")
+          }
+        }
+      } else if (Minorpoint >= 21 && Teachingcheck) {
+        if (Multimajortext.includes("심화")) {
+          swal("Major credits result", word, "success")
+        } else if (Multimajortext.includes("복수")) {
+          if (Doublepoint >= 45) {
+            swal("Major credits result", word, "success")
+          } else {
+            swal("Major credits result", word, "error")
+          }
+        } else if (Multimajortext.includes("연계")) {
+          if (Linkpoint >= 36) {
+            swal("Major credits result", word, "success")
+          } else {
+            swal("Major credits result", word, "error")
+          }
+        } else if (Multimajortext.includes("융합")) {
+          if (Fusionpoint >= FusionStandard) {
+            swal("Major credits result", word, "success")
+          } else {
+            swal("Major credits result", word, "error")
+          }
+        } else if (Multimajortext.includes("설계")) {
+          if (Planpoint >= 36) {
+            swal("Major credits result", word, "success")
+          } else {
+            swal("Major credits result", word, "error")
+          }
+        }
+      } else if (Minorpoint >= 21 && Teachingpoint >= 22) {
+        if (Multimajortext.includes("심화")) {
+          swal("Major credits result", word, "success")
+        } else if (Multimajortext.includes("복수")) {
+          if (Doublepoint >= 45) {
+            swal("Major credits result", word, "success")
+          } else {
+            swal("Major credits result", word, "error")
+          }
+        } else if (Multimajortext.includes("연계")) {
+          if (Linkpoint >= 36) {
+            swal("Major credits result", word, "success")
+          } else {
+            swal("Major credits result", word, "error")
+          }
+        } else if (Multimajortext.includes("융합")) {
+          if (Fusionpoint >= FusionStandard) {
+            swal("Major credits result", word, "success")
+          } else {
+            swal("Major credits result", word, "error")
+          }
+        } else if (Multimajortext.includes("설계")) {
+          if (Planpoint >= 36) {
+            swal("Major credits result", word, "success")
+          } else {
+            swal("Major credits result", word, "error")
+          }
+        }
+      } else if (Minorcheck && Teachingpoint >= 22) {
+        if (Multimajortext.includes("심화")) {
+          swal("Major credits result", word, "success")
+        } else if (Multimajortext.includes("복수")) {
+          if (Doublepoint >= 45) {
+            swal("Major credits result", word, "success")
+          } else {
+            swal("Major credits result", word, "error")
+          }
+        } else if (Multimajortext.includes("연계")) {
+          if (Linkpoint >= 36) {
+            swal("Major credits result", word, "success")
+          } else {
+            swal("Major credits result", word, "error")
+          }
+        } else if (Multimajortext.includes("융합")) {
+          if (Fusionpoint >= FusionStandard) {
+            swal("Major credits result", word, "success")
+          } else {
+            swal("Major credits result", word, "error")
+          }
+        } else if (Multimajortext.includes("설계")) {
+          if (Planpoint >= 36) {
+            swal("Major credits result", word, "success")
+          } else {
+            swal("Major credits result", word, "error")
+          }
+        }
+      } else {
+        swal("Major credits result", word, "error")
+      }
+    } else {
+      swal("Major credits result", word, "error")
+    }
+  },
+  basenece2015: function(Majorstandard) {
+    var AdYear = Number(document.getElementById("ad-year").value);
+    var Major = document.getElementById("Major_select");
+    var Majortext = Major.options[Major.selectedIndex].text;
+    var Multimajor = document.getElementById("MultiMajor_select");
+    var Multimajortext = Multimajor.options[Multimajor.selectedIndex].text;
+    var BaseStandard = document.getElementById("base_standard").value;
+    var NeceStandard = document.getElementById("nece_standard").value;
+    var Basepoint = Number(document.getElementById("base_input").value);
+    var Necepoint = Number(document.getElementById("nece_input").value);
+    var Majorpoint = Number(document.getElementById("major_input").value);
+    Majorstandard = Number(Majorstandard);
+    var word = "👉Entrance Year : " + AdYear;
+
+    if (Majortext.includes("트랙")) {
+      word += "\n👉Major : 공공인재학부 " + Majortext + "\n👉Multiple Major : " + Multimajortext + "\n";
+    } else {
+      word += "\n👉Major : " + Majortext + "\n👉Multiple Major : " + Multimajortext + "\n";
+    }
+
+    var FusionOption = Number(document.getElementById("fusion-options").value);
+    if (Multimajortext.includes("융합")) {
+      if (FusionOption == 0) {
+        swal("Choose your 융합전공!", "", "error");
+        document.getElementById("double_major_none").scrollIntoView();
+        return false;
+      }
+    }
+
+    if (Majorpoint < Necepoint) {
+      swal("Major courses include required courses!", "", "error");
+      return false;
+    }
+
+    if (Basepoint < BaseStandard) {
+      word += "👉Basics : " + [BaseStandard - Basepoint] + " more credits required\n";
+    } else {
+      word += "👉Basics : Passed the requirement\n";
+    }
+
+    if (Necepoint < NeceStandard) {
+      word += "👉Required : " + [NeceStandard - Necepoint] + " more credits required\n";
+    } else {
+      word += "👉Required : Passed the requirement\n";
+    }
+
+    if (Majorpoint < Majorstandard) {
+      word += "👉Major course : " + [Majorstandard - Majorpoint] + " more credits required\n"
+    } else {
+      word += "👉Major course : Passed the requirement\n"
+    }
+
+    var Doublecheck = document.getElementById("double_major_none").checked;
+    var Doublepoint = Number(document.getElementById("double_major_point").value);
+    if (!Doublecheck) {
+      if (Doublepoint < 45) {
+        word += "👉Double major : " + [45 - Doublepoint] + " more credits required\n"
+      } else {
+        word += "👉Double major : Passed the minimum credits requirement\n"
+      }
+    }
+
+    var Linkcheck = document.getElementById("link_major_none").checked;
+    var LinkCross = Number(document.getElementById("cross_point1").value);
+    var Linkpoint = Number(document.getElementById("link_major_point").value) + LinkCross;
+    if (!Linkcheck) {
+      if (Linkpoint < 36) {
+        word += "👉연계전공 : " + [36 - Linkpoint] + " more credits required\n"
+      } else {
+        word += "👉연계전공 : Passed the minimum credits requirement\n"
+      }
+    }
+
+    var Fusioncheck = document.getElementById("fusion_major_none").checked;
+    var Fusion = document.getElementById("fusion-options");
+    var Fusiontext = Fusion.options[Fusion.selectedIndex].text;
+    var Fusionpoint = Number(document.getElementById("fusion_major_point").value) + Number(document.getElementById("cross_point2").value);
+    var FusionStandard = Number(document.getElementById("fusion_standard").value);
+    if (!Fusioncheck) {
+      if (Fusionpoint < FusionStandard) {
+        word += "👉" + Fusiontext + "융합전공 : " + [FusionStandard - Fusionpoint] + " more credits required\n"
+      } else {
+        word += "👉" + Fusiontext + "융합전공 : Passed the minimum credits requirement\n"
+      }
+    }
+
+    var Plancheck = document.getElementById("plan_major_none").checked;
+    var Planpoint = Number(document.getElementById("plan_major_point").value) + Number(document.getElementById("cross_point3").value);
+    if (!Plancheck) {
+      if (Planpoint < 36) {
+        word += "👉설계전공 : " + [36 - Planpoint] + " more credits required\n"
+      } else {
+        word += "👉설계전공 : Passed the minimum credits requirement\n"
+      }
+    }
+
+    var Minorcheck = document.getElementById("minor_none").checked;
+    var Minorpoint = Number(document.getElementById("minor_point").value);
+    if (!Minorcheck) {
+      if (Minorpoint < 21) {
+        word += "👉Minor : " + [21 - Minorpoint] + " more credits required\n"
+      } else {
+        word += "👉Minor : Passed the minimum credits requirement\n"
+      }
+    }
+
+    var Freepoint = Number(document.getElementById("free_point").value);
+    word += "👉Free choice : " + Freepoint + " credits\n"
+
+    var Teachingcheck = document.getElementById("teaching_none").checked;
+    var Teachingpoint = Number(document.getElementById("teaching_point").value);
+    if (!Teachingcheck) {
+      if (Teachingpoint < 22)
+        word += "👉Teaching : " + [22 - Teachingpoint] + " more credits required\n"
+      else {
+        word += "👉Teaching : Passed the minimum credits requirement\n"
+      }
+    }
+
+    var TotalStandard = Number(document.getElementById("total_standard").value);
+    var TotalPoint = Number(document.getElementById("the_total").value);
+    if (TotalPoint < TotalStandard) {
+      word += "👉Total credits : " + [TotalStandard - TotalPoint] + " more credits required"
+    } else {
+      word += "👉Total credits : Passed the requirement"
+    }
+
+    if (Basepoint >= BaseStandard && Necepoint >= NeceStandard && Majorpoint >= Majorstandard && TotalPoint >= TotalStandard) {
+      if (Minorcheck && Teachingcheck) {
+        if (Multimajortext.includes("심화")) {
+          swal("Major credits result", word, "success")
+        } else if (Multimajortext.includes("복수")) {
+          if (Doublepoint >= 45) {
+            swal("Major credits result", word, "success")
+          } else {
+            swal("Major credits result", word, "error")
+          }
+        } else if (Multimajortext.includes("연계")) {
+          if (Linkpoint >= 36) {
+            swal("Major credits result", word, "success")
+          } else {
+            swal("Major credits result", word, "error")
+          }
+        } else if (Multimajortext.includes("융합")) {
+          if (Fusionpoint >= FusionStandard) {
+            swal("Major credits result", word, "success")
+          } else {
+            swal("Major credits result", word, "error")
+          }
+        } else if (Multimajortext.includes("설계")) {
+          if (Planpoint >= 36) {
+            swal("Major credits result", word, "success")
+          } else {
+            swal("Major credits result", word, "error")
+          }
+        }
+      } else if (Minorpoint >= 21 && Teachingcheck) {
+        if (Multimajortext.includes("심화")) {
+          swal("Major credits result", word, "success")
+        } else if (Multimajortext.includes("복수")) {
+          if (Doublepoint >= 45) {
+            swal("Major credits result", word, "success")
+          } else {
+            swal("Major credits result", word, "error")
+          }
+        } else if (Multimajortext.includes("연계")) {
+          if (Linkpoint >= 36) {
+            swal("Major credits result", word, "success")
+          } else {
+            swal("Major credits result", word, "error")
+          }
+        } else if (Multimajortext.includes("융합")) {
+          if (Fusionpoint >= FusionStandard) {
+            swal("Major credits result", word, "success")
+          } else {
+            swal("Major credits result", word, "error")
+          }
+        } else if (Multimajortext.includes("설계")) {
+          if (Planpoint >= 36) {
+            swal("Major credits result", word, "success")
+          } else {
+            swal("Major credits result", word, "error")
+          }
+        }
+      } else if (Minorpoint >= 21 && Teachingpoint >= 22) {
+        if (Multimajortext.includes("심화")) {
+          swal("Major credits result", word, "success")
+        } else if (Multimajortext.includes("복수")) {
+          if (Doublepoint >= 45) {
+            swal("Major credits result", word, "success")
+          } else {
+            swal("Major credits result", word, "error")
+          }
+        } else if (Multimajortext.includes("연계")) {
+          if (Linkpoint >= 36) {
+            swal("Major credits result", word, "success")
+          } else {
+            swal("Major credits result", word, "error")
+          }
+        } else if (Multimajortext.includes("융합")) {
+          if (Fusionpoint >= FusionStandard) {
+            swal("Major credits result", word, "success")
+          } else {
+            swal("Major credits result", word, "error")
+          }
+        } else if (Multimajortext.includes("설계")) {
+          if (Planpoint >= 36) {
+            swal("Major credits result", word, "success")
+          } else {
+            swal("Major credits result", word, "error")
+          }
+        }
+      } else if (Minorcheck && Teachingpoint >= 22) {
+        if (Multimajortext.includes("심화")) {
+          swal("Major credits result", word, "success")
+        } else if (Multimajortext.includes("복수")) {
+          if (Doublepoint >= 45) {
+            swal("Major credits result", word, "success")
+          } else {
+            swal("Major credits result", word, "error")
+          }
+        } else if (Multimajortext.includes("연계")) {
+          if (Linkpoint >= 36) {
+            swal("Major credits result", word, "success")
+          } else {
+            swal("Major credits result", word, "error")
+          }
+        } else if (Multimajortext.includes("융합")) {
+          if (Fusionpoint >= FusionStandard) {
+            swal("Major credits result", word, "success")
+          } else {
+            swal("Major credits result", word, "error")
+          }
+        } else if (Multimajortext.includes("설계")) {
+          if (Planpoint >= 36) {
+            swal("Major credits result", word, "success")
+          } else {
+            swal("Major credits result", word, "error")
+          }
+        }
+      } else {
+        swal("Major credits result", word, "error")
+      }
+    } else {
+      swal("Major credits result", word, "error")
+    }
+  },
+  basenece2016: function(Majorstandard) {
+    var AdYear = Number(document.getElementById("ad-year").value);
+    var Major = document.getElementById("Major_select");
+    var Majortext = Major.options[Major.selectedIndex].text;
+    var Multimajor = document.getElementById("MultiMajor_select");
+    var Multimajortext = Multimajor.options[Multimajor.selectedIndex].text;
+    var BaseStandard = document.getElementById("base_standard").value;
+    var NeceStandard = document.getElementById("nece_standard").value;
+    var Basepoint = Number(document.getElementById("base_input").value);
+    var Necepoint = Number(document.getElementById("nece_input").value);
+    var Majorpoint = Number(document.getElementById("major_input").value);
+    Majorstandard = Number(Majorstandard);
+    var word = "👉Entrance Year : " + AdYear;
+
+    if (Majortext.includes("트랙")) {
+      word += "\n👉Major : 공공인재학부" + Majortext + "\n👉Multiple Major : " + Multimajortext + "\n";
+    } else {
+      word += "\n👉Major : " + Majortext + "\n👉Multiple Major : " + Multimajortext + "\n";
+    }
+
+    var FusionOption = Number(document.getElementById("fusion-options").value);
+    if (Multimajortext.includes("융합")) {
+      if (FusionOption == 0) {
+        swal("Choose your 융합전공!", "", "error");
+        document.getElementById("double_major_none").scrollIntoView();
+        return false;
+      }
+    }
+
+    if (Majorpoint < Necepoint) {
+      swal("Major courses include required courses!", "", "error");
+      return false;
+    }
+
+    if (Basepoint < BaseStandard) {
+      word += "👉Basics : " + [BaseStandard - Basepoint] + " more credits required\n";
+    } else {
+      word += "👉Basics : Passed the requirement\n";
+    }
+
+    if (Necepoint < NeceStandard) {
+      word += "👉Required : " + [NeceStandard - Necepoint] + " more credits required\n";
+    } else {
+      word += "👉Required : Passed the requirement\n";
+    }
+
+    if (Majorpoint < Majorstandard) {
+      word += "👉Major course : " + [Majorstandard - Majorpoint] + " more credits required\n"
+    } else {
+      word += "👉Major course : Passed the requirement\n"
+    }
+
+    var Doublecheck = document.getElementById("double_major_none").checked;
+    var Doublepoint = Number(document.getElementById("double_major_point").value);
+    if (!Doublecheck) {
+      if (Doublepoint < 45) {
+        word += "👉Double major : " + [45 - Doublepoint] + " more credits required\n"
+      } else {
+        word += "👉Double major : Passed the minimum credits requirement\n"
+      }
+    }
+
+    var Linkcheck = document.getElementById("link_major_none").checked;
+    var LinkCross = Number(document.getElementById("cross_point1").value);
+    var Linkpoint = Number(document.getElementById("link_major_point").value) + LinkCross;
+    if (!Linkcheck) {
+      if (Linkpoint < 36) {
+        word += "👉연계전공 : " + [36 - Linkpoint] + " more credits required\n"
+      } else {
+        word += "👉연계전공 : Passed the minimum credits requirement\n"
+      }
+    }
+
+
+    var Fusioncheck = document.getElementById("fusion_major_none").checked;
+    var Fusion = document.getElementById("fusion-options");
+    var Fusiontext = Fusion.options[Fusion.selectedIndex].text;
+    var Fusionpoint = Number(document.getElementById("fusion_major_point").value) + Number(document.getElementById("cross_point2").value);
+    var FusionStandard = Number(document.getElementById("fusion_standard").value);
+    if (!Fusioncheck) {
+      if (Fusionpoint < FusionStandard) {
+        word += "👉" + Fusiontext + "융합전공 : " + [FusionStandard - Fusionpoint] + " more credits required\n"
+      } else {
+        word += "👉" + Fusiontext + "융합전공 : Passed the minimum credits requirement\n"
+      }
+    }
+
+    var Plancheck = document.getElementById("plan_major_none").checked;
+    var Planpoint = Number(document.getElementById("plan_major_point").value) + Number(document.getElementById("cross_point3").value);
+    if (!Plancheck) {
+      if (Planpoint < 36) {
+        word += "👉설계전공 : " + [36 - Planpoint] + " more credits required\n"
+      } else {
+        word += "👉설계전공 : Passed the minimum credits requirement\n"
+      }
+    }
+
+    var Minorcheck = document.getElementById("minor_none").checked;
+    var Minorpoint = Number(document.getElementById("minor_point").value);
+    if (!Minorcheck) {
+      if (Minorpoint < 21) {
+        word += "👉Minor : " + [21 - Minorpoint] + " more credits required\n"
+      } else {
+        word += "👉Minor : Passed the minimum credits requirement\n"
+      }
+    }
+
+    var Freepoint = Number(document.getElementById("free_point").value);
+    if (Freepoint < 1) {
+      word += "👉Free choice : " + Freepoint + " credits_Take CAU세미나\n"
+    } else {
+      word += "👉Free choice : " + Freepoint + " credits\n_Check CAU세미나!\n"
+    }
+
+    var Teachingcheck = document.getElementById("teaching_none").checked;
+    var Teachingpoint = Number(document.getElementById("teaching_point").value);
+    if (!Teachingcheck) {
+      if (Teachingpoint < 22)
+        word += "👉Teaching : " + [22 - Teachingpoint] + " more credits required\n"
+      else {
+        word += "👉Teaching : Passed the minimum credits requirement\n"
+      }
+    }
+
+    var TotalStandard = Number(document.getElementById("total_standard").value);
+    var TotalPoint = Number(document.getElementById("the_total").value);
+    if (TotalPoint < TotalStandard) {
+      word += "👉Total credits : " + [TotalStandard - TotalPoint] + " more credits required"
+    } else {
+      word += "👉Total credits : Passed the requirement"
+    }
+
+    if (Basepoint >= BaseStandard && Necepoint >= NeceStandard && Majorpoint >= Majorstandard && Freepoint >= 1 && TotalPoint >= TotalStandard) {
+      if (Minorcheck && Teachingcheck) {
+        if (Multimajortext.includes("심화")) {
+          swal("Major credits result", word, "success")
+        } else if (Multimajortext.includes("복수")) {
+          if (Doublepoint >= 45) {
+            swal("Major credits result", word, "success")
+          } else {
+            swal("Major credits result", word, "error")
+          }
+        } else if (Multimajortext.includes("연계")) {
+          if (Linkpoint >= 36) {
+            swal("Major credits result", word, "success")
+          } else {
+            swal("Major credits result", word, "error")
+          }
+        } else if (Multimajortext.includes("융합")) {
+          if (Fusionpoint >= FusionStandard) {
+            swal("Major credits result", word, "success")
+          } else {
+            swal("Major credits result", word, "error")
+          }
+        } else if (Multimajortext.includes("설계")) {
+          if (Planpoint >= 36) {
+            swal("Major credits result", word, "success")
+          } else {
+            swal("Major credits result", word, "error")
+          }
+        }
+      } else if (Minorpoint >= 21 && Teachingcheck) {
+        if (Multimajortext.includes("심화")) {
+          swal("Major credits result", word, "success")
+        } else if (Multimajortext.includes("복수")) {
+          if (Doublepoint >= 45) {
+            swal("Major credits result", word, "success")
+          } else {
+            swal("Major credits result", word, "error")
+          }
+        } else if (Multimajortext.includes("연계")) {
+          if (Linkpoint >= 36) {
+            swal("Major credits result", word, "success")
+          } else {
+            swal("Major credits result", word, "error")
+          }
+        } else if (Multimajortext.includes("융합")) {
+          if (Fusionpoint >= FusionStandard) {
+            swal("Major credits result", word, "success")
+          } else {
+            swal("Major credits result", word, "error")
+          }
+        } else if (Multimajortext.includes("설계")) {
+          if (Planpoint >= 36) {
+            swal("Major credits result", word, "success")
+          } else {
+            swal("Major credits result", word, "error")
+          }
+        }
+      } else if (Minorpoint >= 21 && Teachingpoint >= 22) {
+        if (Multimajortext.includes("심화")) {
+          swal("Major credits result", word, "success")
+        } else if (Multimajortext.includes("복수")) {
+          if (Doublepoint >= 45) {
+            swal("Major credits result", word, "success")
+          } else {
+            swal("Major credits result", word, "error")
+          }
+        } else if (Multimajortext.includes("연계")) {
+          if (Linkpoint >= 36) {
+            swal("Major credits result", word, "success")
+          } else {
+            swal("Major credits result", word, "error")
+          }
+        } else if (Multimajortext.includes("융합")) {
+          if (Fusionpoint >= FusionStandard) {
+            swal("Major credits result", word, "success")
+          } else {
+            swal("Major credits result", word, "error")
+          }
+        } else if (Multimajortext.includes("설계")) {
+          if (Planpoint >= 36) {
+            swal("Major credits result", word, "success")
+          } else {
+            swal("Major credits result", word, "error")
+          }
+        }
+      } else if (Minorcheck && Teachingpoint >= 22) {
+        if (Multimajortext.includes("심화")) {
+          swal("Major credits result", word, "success")
+        } else if (Multimajortext.includes("복수")) {
+          if (Doublepoint >= 45) {
+            swal("Major credits result", word, "success")
+          } else {
+            swal("Major credits result", word, "error")
+          }
+        } else if (Multimajortext.includes("연계")) {
+          if (Linkpoint >= 36) {
+            swal("Major credits result", word, "success")
+          } else {
+            swal("Major credits result", word, "error")
+          }
+        } else if (Multimajortext.includes("융합")) {
+          if (Fusionpoint >= FusionStandard) {
+            swal("Major credits result", word, "success")
+          } else {
+            swal("Major credits result", word, "error")
+          }
+        } else if (Multimajortext.includes("설계")) {
+          if (Planpoint >= 36) {
+            swal("Major credits result", word, "success")
+          } else {
+            swal("Major credits result", word, "error")
+          }
+        }
+      } else {
+        swal("Major credits result", word, "error")
+      }
+    } else {
+      swal("Major credits result", word, "error")
+    }
+  },
+  major_tr: function() {
+    var AdYear = Number(document.getElementById("ad-year").value);
+    var SecYear = document.getElementById("2ndyear").checked;
+    var Majorstandard = document.getElementById("MultiMajor_select").value;
+    var MajorSelect = document.getElementById("Major_select").value;
+    var Multimajor = document.getElementById("MultiMajor_select");
+    var Multimajortext = Multimajor.options[Multimajor.selectedIndex].text;
+    var LinkCross = Number(document.getElementById("cross_point1").value);
+    var Fusion = document.getElementById("fusion-options");
+    var Fusiontext = Fusion.options[Fusion.selectedIndex].text;
+    var FusionCross = Number(document.getElementById("cross_point2").value);
+    var PlanCross = Number(document.getElementById("cross_point3").value);
+    if (AdYear < 1000) {
+      document.getElementById("student-info").scrollIntoView();
+      swal("Choose your transfer year!", "", "error");
+      return false;
+    }
+
+    if (Fusiontext.includes("문화") || Fusiontext.includes("창업") || Fusiontext.includes("게임")) {
+      if (FusionCross > 6) {
+        document.getElementById("double_major_none").scrollIntoView();
+        swal("Maximum credits for\n" + Fusiontext + "융합전공 are 6!", "", "error")
+        return false;
+      }
+    } else if (Fusiontext.includes("금융")) {
+      if (FusionCross > 15) {
+        document.getElementById("double_major_none").scrollIntoView();
+        swal("Maximum credits for\n" + Fusiontext + "융합전공 are 15!", "", "error")
+        return false;
+      }
+    } else if (Fusiontext.includes("인문") || Fusiontext.includes("보안") || Fusiontext.includes("테크") || Fusiontext.includes("벤처")) {
+      if (FusionCross > 12) {
+        document.getElementById("double_major_none").scrollIntoView();
+        swal("Maximum credits for\n" + Fusiontext + "융합전공 are 12!", "", "error")
+        return false;
+      }
+    }
+
+    if (MajorSelect == "none") {
+      document.getElementById("student-info").scrollIntoView();
+      swal("Choose your major!", "", "error");
+      return false;
+    } else if (SecYear && Multimajortext.includes("N/A")) {
+      document.getElementById("student-info").scrollIntoView();
+      swal("Choose your multiple major!", "If you transferred to 2nd year, multiple majors are required!", "error");
+      return false;
+    } else if (LinkCross > 12) {
+      document.getElementById("double_major_point").scrollIntoView();
+      swal("Maximum cross credits for 연계전공 are 12!", "", "error")
+      return false;
+    } else if (PlanCross > 6) {
+      document.getElementById("link_major_none").scrollIntoView();
+      swal("Maximum cross credits for 자기설계전공 are 6!", "", "error")
+      return false;
+    } else {
+      Result.basenece_tr(Majorstandard);
+    }
+  },
+  basenece_tr: function(Majorstandard) {
+    var AdYear = Number(document.getElementById("ad-year").value);
+    var SecYear = document.getElementById("2ndyear").checked;
+    var Major = document.getElementById("Major_select");
+    var Majortext = Major.options[Major.selectedIndex].text;
+    var Multimajor = document.getElementById("MultiMajor_select");
+    var Multimajortext = Multimajor.options[Multimajor.selectedIndex].text;
+    var Liberal_point = Number(document.getElementById("liberal_input").value);
+    var BaseStandard = document.getElementById("base_standard").value;
+    var NeceStandard = document.getElementById("nece_standard").value;
+    var Basepoint = Number(document.getElementById("base_input").value);
+    var Necepoint = Number(document.getElementById("nece_input").value);
+    var Majorpoint = Number(document.getElementById("major_input").value);
+    Majorstandard = Number(Majorstandard);
+    var word = "👉Transfer year : " + AdYear;
+
+    if (SecYear) {
+      word += "- 2nd year transfer";
+    } else {
+      word += "- 3rd year transfer"
+    }
+
+    if (Majortext.includes("트랙")) {
+      word += "\n👉Major : 공공인재학부" + Majortext + "\n👉Multiple Major : " + Multimajortext + "\n👉교양 : " + Liberal_point + " credits\n";
+    } else {
+      word += "\n👉Major : " + Majortext + "\n👉Multiple Major : " + Multimajortext + "\n👉교양 : " + Liberal_point + " credits\n";
+    }
+
+    var FusionOption = Number(document.getElementById("fusion-options").value);
+    if (Multimajortext.includes("융합")) {
+      if (FusionOption == 0) {
+        swal("Choose your 융합전공!", "", "error");
+        document.getElementById("double_major_none").scrollIntoView();
+        return false;
+      }
+    }
+
+    if (Majorpoint < Necepoint) {
+      swal("Major courses include required courses!", "", "error");
+      return false;
+    }
+
+    if (Basepoint < BaseStandard) {
+      word += "👉Basics : " + [BaseStandard - Basepoint] + " more credits required\n";
+    } else {
+      word += "👉Basics : Passed the requirement\n";
+    }
+
+    if (Necepoint < NeceStandard) {
+      word += "👉Required : " + [NeceStandard - Necepoint] + " more credits required\n";
+    } else {
+      word += "👉Required : Passed the requirement\n";
+    }
+
+    if (Majorpoint < Majorstandard) {
+      word += "👉Major course : " + [Majorstandard - Majorpoint] + " more credits required\n"
+    } else {
+      word += "👉Major course : Passed the requirement\n"
+    }
+
+    var Doublecheck = document.getElementById("double_major_none").checked;
+    var Doublepoint = Number(document.getElementById("double_major_point").value);
+    if (!Doublecheck) {
+      if (Doublepoint < 45) {
+        word += "👉Double major : " + [45 - Doublepoint] + " more credits required\n"
+      } else {
+        word += "👉Double major : Passed the minimum credits requirement\n"
+      }
+    }
+
+    var Linkcheck = document.getElementById("link_major_none").checked;
+    var LinkCross = Number(document.getElementById("cross_point1").value);
+    var Linkpoint = Number(document.getElementById("link_major_point").value) + LinkCross;
+    if (!Linkcheck) {
+      if (Linkpoint < 36) {
+        word += "👉연계전공 : " + [36 - Linkpoint] + " more credits required\n"
+      } else {
+        word += "👉연계전공 : Passed the minimum credits requirement\n"
+      }
+    }
+
+    var Fusioncheck = document.getElementById("fusion_major_none").checked;
+    var Fusion = document.getElementById("fusion-options");
+    var Fusiontext = Fusion.options[Fusion.selectedIndex].text;
+    var Fusionpoint = Number(document.getElementById("fusion_major_point").value) + Number(document.getElementById("cross_point2").value);
+    var FusionStandard = Number(document.getElementById("fusion_standard").value);
+    if (!Fusioncheck) {
+      if (Fusionpoint < FusionStandard) {
+        word += Fusiontext + "👉융합전공 : " + [FusionStandard - Fusionpoint] + " more credits required\n"
+      } else {
+        word += Fusiontext + "👉융합전공 : Passed the minimum credits requirement\n"
+      }
+    }
+
+    var Plancheck = document.getElementById("plan_major_none").checked;
+    var Planpoint = Number(document.getElementById("plan_major_point").value) + Number(document.getElementById("cross_point3").value);
+    if (!Plancheck) {
+      if (Planpoint < 36) {
+        word += "👉설계전공 : " + [36 - Planpoint] + " more credits required\n"
+      } else {
+        word += "👉설계전공 : Passed the minimum credits requirement\n"
+      }
+    }
+
+    var Minorcheck = document.getElementById("minor_none").checked;
+    var Minorpoint = Number(document.getElementById("minor_point").value);
+    if (!Minorcheck) {
+      if (Minorpoint < 21) {
+        word += "👉Minor : " + [21 - Minorpoint] + " more credits required\n"
+      } else {
+        word += "👉Minor : Passed the minimum credits requirement\n"
+      }
+    }
+
+    var Freepoint = Number(document.getElementById("free_point").value);
+    word += "👉Free choice : " + Freepoint + " credits\n"
+
+    var Teachingcheck = document.getElementById("teaching_none").checked;
+    var Teachingpoint = Number(document.getElementById("teaching_point").value);
+    if (!Teachingcheck) {
+      if (Teachingpoint < 22)
+        word += "👉Teaching : " + [22 - Teachingpoint] + " more credits required\n"
+      else {
+        word += "👉Teaching : Passed the minimum credits requirement\n"
+      }
+    }
+
+    var TotalPoint = Number(document.getElementById("the_total").value);
+    var TotalStandard = Number(document.getElementById("total_standard").value);
+    if (TotalPoint < TotalStandard) {
+      word += "👉Total credits : " + [TotalStandard - TotalPoint] + " more credits required"
+    } else {
+      word += "👉Total credits : Passed the requirement"
+    }
+
+    if (Basepoint >= BaseStandard && Necepoint >= NeceStandard && Majorpoint >= Majorstandard && TotalPoint >= TotalStandard) {
+      if (Minorcheck && Teachingcheck) {
+        if (Multimajortext.includes("N/A")) {
+          swal("Total credits result", word, "success")
+        } else if (Multimajortext.includes("심화")) {
+          swal("Total credits result", word, "success")
+        } else if (Multimajortext.includes("복수")) {
+          if (Doublepoint >= 45) {
+            swal("Total credits result", word, "success")
+          } else {
+            swal("Total credits result", word, "error")
+          }
+        } else if (Multimajortext.includes("연계")) {
+          if (Linkpoint >= 36) {
+            swal("Total credits result", word, "success")
+          } else {
+            swal("Total credits result", word, "error")
+          }
+        } else if (Multimajortext.includes("융합")) {
+          if (Fusionpoint >= FusionStandard) {
+            swal("Total credits result", word, "success")
+          } else {
+            swal("Total credits result", word, "error")
+          }
+        } else if (Multimajortext.includes("설계")) {
+          if (Planpoint >= 36) {
+            swal("Total credits result", word, "success")
+          } else {
+            swal("Total credits result", word, "error")
+          }
+        }
+      } else if (Minorpoint >= 21 && Teachingcheck) {
+        if (Multimajortext.includes("N/A")) {
+          swal("Total credits result", word, "success")
+        } else if (Multimajortext.includes("심화")) {
+          swal("Total credits result", word, "success")
+        } else if (Multimajortext.includes("복수")) {
+          if (Doublepoint >= 45) {
+            swal("Total credits result", word, "success")
+          } else {
+            swal("Total credits result", word, "error")
+          }
+        } else if (Multimajortext.includes("연계")) {
+          if (Linkpoint >= 36) {
+            swal("Total credits result", word, "success")
+          } else {
+            swal("Total credits result", word, "error")
+          }
+        } else if (Multimajortext.includes("융합")) {
+          if (Fusionpoint >= FusionStandard) {
+            swal("Total credits result", word, "success")
+          } else {
+            swal("Total credits result", word, "error")
+          }
+        } else if (Multimajortext.includes("설계")) {
+          if (Planpoint >= 36) {
+            swal("Total credits result", word, "success")
+          } else {
+            swal("Total credits result", word, "error")
+          }
+        }
+      } else if (Minorpoint >= 21 && Teachingpoint >= 22) {
+        if (Multimajortext.includes("N/A")) {
+          swal("Total credits result", word, "success")
+        } else if (Multimajortext.includes("심화")) {
+          swal("Total credits result", word, "success")
+        } else if (Multimajortext.includes("복수")) {
+          if (Doublepoint >= 45) {
+            swal("Total credits result", word, "success")
+          } else {
+            swal("Total credits result", word, "error")
+          }
+        } else if (Multimajortext.includes("연계")) {
+          if (Linkpoint >= 36) {
+            swal("Total credits result", word, "success")
+          } else {
+            swal("Total credits result", word, "error")
+          }
+        } else if (Multimajortext.includes("융합")) {
+          if (Fusionpoint >= FusionStandard) {
+            swal("Total credits result", word, "success")
+          } else {
+            swal("Total credits result", word, "error")
+          }
+        } else if (Multimajortext.includes("설계")) {
+          if (Planpoint >= 36) {
+            swal("Total credits result", word, "success")
+          } else {
+            swal("Total credits result", word, "error")
+          }
+        }
+      } else if (Minorcheck && Teachingpoint >= 22) {
+        if (Multimajortext.includes("N/A")) {
+          swal("Total credits result", word, "success")
+        } else if (Multimajortext.includes("심화")) {
+          swal("Total credits result", word, "success")
+        } else if (Multimajortext.includes("복수")) {
+          if (Doublepoint >= 45) {
+            swal("Total credits result", word, "success")
+          } else {
+            swal("Total credits result", word, "error")
+          }
+        } else if (Multimajortext.includes("연계")) {
+          if (Linkpoint >= 36) {
+            swal("Total credits result", word, "success")
+          } else {
+            swal("Total credits result", word, "error")
+          }
+        } else if (Multimajortext.includes("융합")) {
+          if (Fusionpoint >= FusionStandard) {
+            swal("Total credits result", word, "success")
+          } else {
+            swal("Total credits result", word, "error")
+          }
+        } else if (Multimajortext.includes("설계")) {
+          if (Planpoint >= 36) {
+            swal("Total credits result", word, "success")
+          } else {
+            swal("Total credits result", word, "error")
+          }
+        }
+      } else {
+        swal("Total credits result", word, "error")
+      }
+    } else {
+      swal("Total credits result", word, "error")
+    }
   }
 }
