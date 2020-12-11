@@ -1,33 +1,3 @@
-function koreancheck() {
-  AdYear = Number(document.getElementById("ad-year").value);
-  if (AdYear == 2014 || AdYear == 0) {
-    document.getElementById("Korean").checked = false;
-  } else {
-    document.getElementById("Korean").checked = true;
-  }
-}
-
-function liberalmodal() {
-  var word = "教养领域进修要求"
-  var content = "👉共同教养\n- 국어 : 글쓰기\n- 英语 : English1(Communication in English)\nEnglish2(English fo Professional Track)" +
-    "\n- 其他 : 논리와사고(ACT)/회계와사회/독서와토론(창의와소통)/한국사\n" +
-    "进修회계학원론(회계원리)时, 免'회계와사회'" +
-    "\n👉核心教养 : 受讲9学分以上。" +
-    "\n👉选择教养 : 自律进修\n" + "教养最多只认证45学分!"
-  swal(word, content, "info");
-}
-
-function majormodal() {
-  var word = "专业领域进修要求"
-  var content = "👉专业 : 请参考各专业的具体要求\n" +
-    "👉双专业 : 请参考双专业学科的要求\n双专业的专业基础认证为自由选择" +
-    "\n👉联系/融合/设计专业(연계/융합/설계전공) : 请参考各部分的教课课程表确认必修课程！" +
-    "\n👉副专业 : 需要包括副专业的专业必修6学分以上" +
-    "\n👉教职 : 确认教职过程进修情况请联系\n(Tel.02-820-5080)" +
-    "\n👉总进修学分 : 132学分以上\n(教养最多可以认证45学分)"
-  swal(word, content, "info");
-}
-
 function Liberal_cal() {
   var AdYear = Number(document.getElementById("ad-year").value);
   var College = document.getElementById("college_select").value;

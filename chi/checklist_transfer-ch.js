@@ -1,16 +1,3 @@
-function majormodal() {
-  var word = "学分进修基准"
-  var content = "👉教养 : 不需要进修\n" +
-    "👉专业 : 请参考各专业的具体要求\n" +
-    "👉多专业 : 只针对2年级插班生" +
-    "\n- 双专业 : 请参考双专业学科的要求\n 双专业的专业基础认证为自由选择" +
-    "\n- 联系/融合/设计专业(연계/융합/설계전공) : 请参考各部分的教课课程表确认必修课程!" +
-    "\n👉副专业 : 需要包括副专业的专业必修6学分以上" +
-    "\n👉教职 : 确认教职过程进修情况请联系(Tel.02-820-5080)" +
-    "\n👉总进修学分 : 66 学分以上(2年级插班生：99学分以上)"
-  swal(word, content, "info");
-}
-
 function tr_multimajorchanges() {
   var SecYear = document.getElementById("2ndyear").checked;
   var major = document.getElementById("Major_select").value;
