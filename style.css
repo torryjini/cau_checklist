@@ -123,10 +123,14 @@ label {
 
 input[type=button] {
   border-color: #9BFA73;
+  color: var(--text-color);
+  background-color: #4CAF50;
 }
 
 input[type=reset] {
   border-color: #FF5050;
+  color: var(--text-color);
+  background-color: #ff4040;
 }
 
 input[type=button], input[type=reset] {
@@ -135,8 +139,17 @@ input[type=button], input[type=reset] {
   cursor: pointer;
   border-radius: 2rem;
   font-size: 1.2rem;
-  background-color: var(--text-color);
   font-weight: 600;
+}
+
+input[type=button]:hover {
+  color: #4CAF50;
+  background-color: var(--text-color);
+}
+
+input[type=reset]:hover {
+  color: #ff4040;
+  background-color: var(--text-color);
 }
 
 p {
@@ -164,13 +177,15 @@ p {
   border-color: var(--text-color);
   color: white;
   padding: 0.5rem;
+  padding-top: 0.3rem;
   border-radius: 2rem;
   font-size: 1rem;
   cursor: pointer;
 }
 
 .index-info:hover {
-  background-color: RoyalBlue;
+  color: var(--background-color);
+  background-color: var(--text-color);
 }
 
 .legend-icon {
@@ -256,16 +271,6 @@ p {
   margin: auto;
   text-align: center;
   display: block;
-}
-
-input[type=button]:hover {
-  color: var(--text-color);
-  background-color: RoyalBlue;
-}
-
-input[type=reset]:hover {
-  color: var(--text-color);
-  background-color: RoyalBlue;
 }
 
 #check4grad_logo {
