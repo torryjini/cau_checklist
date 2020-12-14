@@ -132,7 +132,7 @@
           <td><input type="text" class="standard_number" id="base_standard" value="" readonly tabindex="-1">
           </td>
           <td colspan="3">
-            <input type="number" id="base_input" placeholder="0" name="major" value="" onchange="Total.tr_sum();Color.number('total_standard','the_total');Color.number('base_standard','base_input');" onkeyup="Total.tr_sum();Color.number('total_standard','the_total');Color.number('base_standard','base_input');" min="0" max="99" class="inputnumber" maxlength="2"
+            <input type="number" id="base_input" placeholder="0" name="major" value="" onchange="Total.tr_sum();Color.number('total_standard','the_total');Color.number('base_standard','base_input');" onkeyup="Total.tr_sum();Color.number('total_standard','the_total');Color.number('base_standard','base_input');" min="0" max="99" class="inputnumber" maxlength="4"
               oninput="maxLengthCheck(this)"><label for="base_input"> 学分</label>
           </td>
         </tr>
@@ -141,7 +141,7 @@
           <td><input type="text" class="standard_number" id="nece_standard" value="" readonly tabindex="-1">
           </td>
           <td colspan="3">
-            <input type="number" id="nece_input" placeholder="0" name="major" value="" onchange="Total.tr_sum();Color.number('total_standard','the_total');Color.number('nece_standard','nece_input');" onkeyup="Total.tr_sum();Color.number('total_standard','the_total');Color.number('nece_standard','nece_input');" min="0" max="99" class="inputnumber" maxlength="2"
+            <input type="number" id="nece_input" placeholder="0" name="major" value="" onchange="Total.tr_sum();Color.number('total_standard','the_total');Color.number('nece_standard','nece_input');" onkeyup="Total.tr_sum();Color.number('total_standard','the_total');Color.number('nece_standard','nece_input');" min="0" max="200" class="inputnumber" maxlength="5"
               oninput="maxLengthCheck(this)"><label for="nece_input"> 学分</label>
           </td>
         </tr>
@@ -151,7 +151,7 @@
             <input type="text" class="standard_number" id="major_standard" value="45" readonly tabindex="-1">
             <br>(包括专业必修)</td>
           <td colspan="3">
-            <input type="number" id="major_input" placeholder="0" name="major" value="" onchange="Total.tr_sum();Color.number('total_standard','the_total');Color.number('major_standard','major_input');" onkeyup="Total.tr_sum();Color.number('total_standard','the_total');Color.number('major_standard','major_input');" min="0" max="99" class="inputnumber" maxlength="2"
+            <input type="number" id="major_input" placeholder="0" name="major" value="" onchange="Total.tr_sum();Color.number('total_standard','the_total');Color.number('major_standard','major_input');" onkeyup="Total.tr_sum();Color.number('total_standard','the_total');Color.number('major_standard','major_input');" min="0" max="200" class="inputnumber" maxlength="5"
               oninput="maxLengthCheck(this)"><label for="major_input"> 学分</label>
           </td>
           <!-- <td>전공 심화 : 최소 66 学分<br>복수/설계/연계/융합 : 최소 45 学分</td> -->
@@ -230,7 +230,7 @@
           <td><input type="text" class="standard_number" id="minor_st" value="21" readonly tabindex="-1"></td>
           <td colspan="3">
             <input type="number" id="minor_point" placeholder="0" value="" onchange="Total.tr_sum();Color.number('total_standard','the_total');Color.number('minor_st','minor_point');" onkeyup="Total.tr_sum();Color.number('total_standard','the_total');Color.number('minor_st','minor_point');" class="inputnumber"
-             min="0" maxlength="2" oninput="maxLengthCheck(this)"><label for="minor_point"> 学分</label> <br>
+             min="0" max="50" maxlength="2" oninput="maxLengthCheck(this)"><label for="minor_point"> 学分</label> <br>
             <input type="checkbox" id="minor_none" onclick="Check.none('minor_none', 'minor_point')" tabindex="-1"><label for="minor_none">无</label>
           </td>
           <!-- <td>부전공 전공 필수 6学分 이상 포함하여 수강</td> -->
@@ -240,7 +240,7 @@
           <td><input type="text" class="standard_number" id="free_st" value="0" readonly tabindex="-1"></td>
           <td colspan="3">
             <input type="number" id="free_point" placeholder="0" value="" onchange="Total.tr_sum();Color.number('total_standard','the_total');" onkeyup="Total.tr_sum();Color.number('total_standard','the_total');"
-             class="inputnumber" min="0" maxlength="2" oninput="maxLengthCheck(this)"><label for="free_point"> 学分</label>
+             class="inputnumber" min="0" max="100" maxlength="4" oninput="maxLengthCheck(this)"><label for="free_point"> 学分</label>
           </td>
           <!-- <td>CAU세미나(1),(2) 총 1 学分 필수이수</td> -->
         </tr>
