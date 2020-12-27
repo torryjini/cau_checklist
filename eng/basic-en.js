@@ -338,7 +338,7 @@ var Result = {
     if (Core1 && Core2 && Core3 && Core4 && Core5 && core_total_point >= 13) {
       word += "👉Core : Passed the requirement"
     } else if (core_total_point < 15) {
-      word += "👉Core : " + [15 - core_total_point] + " more credits required\n- Incomplete course : "
+      word += "👉Core : " + core_total_point + " credits\n- Incomplete course : "
     } else {
       word += "👉Core : Passed the minimum credits requirement\n- Incomplete course : "
     }
