@@ -336,7 +336,7 @@ var Result = {
     if (Core1 && Core2 && Core3 && Core4 && Core5 && core_total_point >= 13) {
       word += "👉核心教养 : 通过"
     } else if (core_total_point < 15) {
-      word += "👉核心教养 : 缺少" + [15 - core_total_point] + " 学分\n-  未进修领域 : "
+      word += "👉核心教养 : " + core_total_point + " 学分\n-  未进修领域 : "
     } else {
       word += "👉核心教养 : 通过最少学分\n-未进修领域 : "
     }
