@@ -336,7 +336,7 @@ var Result = {
     if (Core1 && Core2 && Core3 && Core4 && Core5 && core_total_point >= 13) {
       word += "👉핵심교양 : 기준 통과"
     } else if (core_total_point < 15) {
-      word += "👉핵심교양 : " + [15 - core_total_point] + " 학점 미달\n- 미이수 영역 : "
+      word += "👉핵심교양 : " + core_total_point + " 학점\n- 미이수 영역 : "
     } else {
       word += "👉핵심교양 : 최소학점 기준 통과\n- 미이수 영역 : "
     }
