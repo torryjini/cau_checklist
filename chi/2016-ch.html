@@ -115,8 +115,12 @@
         </div>
         <tr>
           <th colspan="2">区分</th>
-          <th>最少学分</th>
-          <th>最多学分</th>
+          <th>
+            <div class="chnth">最少学分</div>
+          </th>
+          <th>
+            <div class="chnth">最多学分</div>
+          </th>
           <th colspan="2">进修学分</th>
           <!-- <th>이수기준</th> -->
         </tr>
@@ -379,8 +383,8 @@
             <th>자유선택<br>自由选择</th>
             <td><input type="text" class="standard_number" id="free_st" value="1" readonly tabindex="-1"></td>
             <td colspan="3">
-              <input type="number" id="free_point" placeholder="0" value="" onchange="Total.sum();Color.number('total_standard','the_total');" onkeyup="Total.sum();Color.number('total_standard','the_total');" class="inputnumber" min="0" max="100" maxlength="4"
-                oninput="maxLengthCheck(this)"><label for="free_point"> 学分</label>
+              <input type="number" id="free_point" placeholder="0" value="" onchange="Total.sum();Color.number('total_standard','the_total');" onkeyup="Total.sum();Color.number('total_standard','the_total');" class="inputnumber" min="0" max="100"
+                maxlength="4" oninput="maxLengthCheck(this)"><label for="free_point"> 学分</label>
             </td>
             <!-- <td>CAU세미나(1),(2) 총 1 학점 필수이수</td> -->
           </tr>
