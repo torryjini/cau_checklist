@@ -387,6 +387,10 @@ p {
     margin-left: 0;
   }
 
+  .chnth { /* 중문 페이지 교양 th tag */
+    font-size: 0.8rem;
+  }
+
   .checkselect {
     width: 3.5rem;
     height: 2.2rem;
