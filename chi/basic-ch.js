@@ -333,7 +333,7 @@ var Result = {
       }
     }
 
-    if (Core1 && Core2 && Core3 && Core4 && Core5 && core_total_point >= 13) {
+    if (Core1 && Core2 && Core3 && Core4 && Core5 && core_total_point >= 12) {
       word += "👉核心教养 : 通过"
     } else if (core_total_point < 15) {
       word += "👉核心教养 : " + core_total_point + " 学分\n-  未进修领域 : "
@@ -386,7 +386,7 @@ var Result = {
       word += "\n👉教养领域 总计 : " + liberal_total_point + " 学分_超过" + [liberal_total_point - 45] + "学分（学分超过45学分时只认证45学分）"
     }
 
-    if (common_kor_point == 2 && Core1 && Core2 && Core3 && Core4 && Core5 && core_total_point >= 13 && MACH1 >= MACH1_st && MACH2 >= MACH2_st) {
+    if (common_kor_point == 2 && Core1 && Core2 && Core3 && Core4 && Core5 && core_total_point >= 12 && MACH1 >= MACH1_st && MACH2 >= MACH2_st) {
       if (common_eng_point == 2 && common_etc_point >= cometcst) {
         swal("教养领域结果", word, "success")
       } else if (common_eng_point <= 2 && common_eng_ex && common_etc_point >= cometcst) {
