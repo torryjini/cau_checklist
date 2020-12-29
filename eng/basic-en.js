@@ -335,7 +335,7 @@ var Result = {
       }
     }
 
-    if (Core1 && Core2 && Core3 && Core4 && Core5 && core_total_point >= 13) {
+    if (Core1 && Core2 && Core3 && Core4 && Core5 && core_total_point >= 12) {
       word += "👉Core : Passed the requirement"
     } else if (core_total_point < 15) {
       word += "👉Core : " + core_total_point + " credits\n- Incomplete course : "
@@ -388,7 +388,7 @@ var Result = {
       word += "\n👉Total : " + liberal_total_point + " credits_" + [liberal_total_point - 45] + "credits exceeded\nAny credits over 45 don't count."
     }
 
-    if (common_kor_point == 2 && Core1 && Core2 && Core3 && Core4 && Core5 && core_total_point >= 13 && MACH1 >= MACH1_st && MACH2 >= MACH2_st) {
+    if (common_kor_point == 2 && Core1 && Core2 && Core3 && Core4 && Core5 && core_total_point >= 12 && MACH1 >= MACH1_st && MACH2 >= MACH2_st) {
       if (common_eng_point == 2 && common_etc_point >= cometcst) {
         swal("General credits result", word, "success")
       } else if (common_eng_point <= 2 && common_eng_ex && common_etc_point >= cometcst) {
