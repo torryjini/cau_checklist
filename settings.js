@@ -1084,7 +1084,33 @@ var Office = {
   //예술대학
   "theatre": "연극학과",
   "film": "영화학과",
-  "tfdesign": "공간연출전공"
+  "tfdesign": "공간연출전공",
+  "creativewriting": "문예창작학과",
+  "photo": "사진학과",
+  "dance": "무용학과",
+  "kopaint": "한국화학과",
+  "fineart": "서양화학",
+  "sculpture": "조소학과",
+  "craftart": "공예학과",
+  "id": "산업디자인학과",
+  "vd": "시각디자인학과",
+  "indesign": "실내환경디자인",
+  "fashion": "패션학과",
+  "compose": "음악학부",
+  "vocal": "음악학부",
+  "piano": "음악학부",
+  "orchestra": "음악학부",
+  "koreanmusic": "전통예술학부",
+  //생명공학대학
+  "animal": "동물생명공학과",
+  "plantbio": "식물시스템과학과",
+  "foodscience": "식품공학과",
+  "foodnutri": "식품영양학과",
+  "systembio": "시스템생명공학과",
+  //체육대학
+  "leisure": "스포츠과학부",
+  "sportindustry": "스포츠과학부",
+  "golf": "스포츠과학부"
 };
 
 var PhoneNumber = {
@@ -1149,6 +1175,33 @@ var PhoneNumber = {
   "theatre": "02-765-0717",
   "film": "02-820-5799",
   "tfdesign": "02-820-5809",
+  "creativewriting": "031-670-3078",
+  "photo": "031-670-3112",
+  "dance": " 031-670-3119",
+  "kopaint": "031-670-3094",
+  "fineart": "031-670-3099",
+  "sculpture": "031-670-3124",
+  "craftart": "031-670-3106",
+  "id": "031-670-3127",
+  "vd": "031-670-3129",
+  "indesign": "031-670-4788",
+  "fashion": "031-670-3277",
+  "compose": "031-670-3285",
+  "vocal": "031-670-3285",
+  "piano": "031-670-3285",
+  "orchestra": "031-670-3285",
+  "koreanmusic": "031-670-4813",
+  //생명공학대학
+  "animal": "031-670-3084",
+  "plantbio": "031-670-3037",
+  "foodscience": "031-670-3031",
+  "foodnutri": "031-670-3083",
+  "systembio": "031-670-3062",
+  //체육대학
+  "leisure": "031-670-4525",
+  "sportindustry": "031-670-4525",
+  "golf": "031-670-4525",
+
   call: function() {
     var Major = document.getElementById("Major_select").value;
     if (Major == "none") {
