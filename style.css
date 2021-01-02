@@ -229,6 +229,11 @@ p {
   background-color: RoyalBlue;
 }
 
+.ad-banner {
+  width: 320px;
+  margin: auto;
+}
+
 .standard_number {
   width: 2.9rem;
   height: 1.5rem;
