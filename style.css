@@ -394,6 +394,14 @@ p {
     margin-left: 0;
   }
 
+  input[type=button], input[type=reset] {
+    padding: 0.6rem 1.3rem;
+    margin: 0.3rem 0.8rem;
+    cursor: pointer;
+    border-radius: 2rem;
+    font-size: 1.1rem;
+  }
+
   .chnth { /* 중문, 영문 페이지  th tag */
     font-size: 0.8rem;
   }
@@ -406,7 +414,7 @@ p {
 
   .inputnumber {
     width: 3.5rem;
-    height: 2.2rem;
+    height: 1.7rem;
     font-size: 1.3rem;
   }
 
