@@ -345,11 +345,8 @@ p {
   cursor:pointer;
 }
 
-#Davinci {
-  width: 10.5rem;
-}
 
-#phone {
+#phone, #Davinci {
   width: 7.5rem;
 }
 
@@ -485,9 +482,6 @@ p {
     background-color: #98c1fe85;
     color: var(--background-color);
   }
-}
-
-#Davinci {
 }
 
 footer {
