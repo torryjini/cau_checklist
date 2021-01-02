@@ -39,6 +39,10 @@ header {
   justify-content: center;
 }
 
+footer {
+  padding-bottom: 0;
+}
+
 h1 {
   font-family: 'Lato', sans-serif;
 }
