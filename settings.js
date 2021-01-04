@@ -251,8 +251,8 @@ var Change = {
       num = new Array("--", "물리학과", "화학과", "생명과학과", "수학과", "동물생명공학과", "식물시스템과학과", "식품공학과", "식품영양학과");
       vnum = new Array("none", "physics", "chemistry", "bio-science", "math", "animal", "plantbio", "foodscience", "foodnutri");
     } else if (fr == "biotech") {
-      num = new Array("--", "동물생명공학과", "식물시스템과학과", "식품공학과", "식품영양학과");
-      vnum = new Array("none", "animal", "plantbio", "foodscience", "foodnutri");
+      num = new Array("--", "동물생명공학과", "식물시스템과학과", "식품공학과", "식품영양학과", "시스템생명공학과");
+      vnum = new Array("none", "animal", "plantbio", "foodscience", "foodnutri", "systembio");
     } else if (fr == "bne") {
       num = new Array("--", "경영학부_경영학전공", "경영학부_글로벌금융", "경제학부", "광고홍보학과", "응용통계학과", "지식경영학부", "국제물류학과");
       vnum = new Array("none", "biz_ba", "biz_glofi", "econ", "adpr", "stat", "gloknol", "log");
@@ -310,8 +310,8 @@ var Change = {
        "조소학과", "공예학과", "시각디자인학과", "산업디자인학과", "실내환경디자인학과", "패션학과", "작곡과", "성악과", "피아노과", "관현악과", "전통예술학부");
       vnum = new Array("none", "theatre", "film", "tfdesign", "creativewriting", "photo", "dance", "kopaint", "fineart", "sculpture", "craftart", "vd", "id", "indesign", "fashion", "compose", "vocal", "piano", "orchestra", "koreanmusic");
     } else if (fr == "biotech") {
-      num = new Array("--", "동물생명공학과", "식물시스템과학과", "식품공학과", "식품영양학과");
-      vnum = new Array("none", "animal", "plantbio", "foodscience", "foodnutri");
+      num = new Array("--", "동물생명공학과", "식물시스템과학과", "식품공학과", "식품영양학과", "시스템생명공학과");
+      vnum = new Array("none", "animal", "plantbio", "foodscience", "foodnutri", "systembio");
     } else if (fr == "sport") {
       num = new Array("--", "스포츠과학부");
       vnum = new Array("none", "sportscience");
@@ -329,6 +329,7 @@ var Change = {
     }
   },
   college16: function() {
+    var AdYear = Number(document.getElementById("ad-year").value);
     var fr = document.getElementById("college_select").value;
     if (fr == "humanity") {
       num = new Array("--", "국어국문학과", "영어영문학과", "유럽문화_독일어문학", "유럽문화_프랑스어문학", "유럽문화_러시아어문학", "아시아문화_일본어문학", "아시아문화_중국어문학", "철학과", "역사학과");
@@ -364,9 +365,12 @@ var Change = {
       num = new Array("--", "연극학과", "영화학과", "공간연출전공", "문예창작학과", "사진학과", "무용학과", "한국화학과", "서양화학과",
        "조소학과", "공예학과", "시각디자인학과", "산업디자인학과", "실내환경디자인학과", "패션학과", "작곡과", "성악과", "피아노과", "관현악과", "전통예술학부");
       vnum = new Array("none", "theatre", "film", "tfdesign", "creativewriting", "photo", "dance", "kopaint", "fineart", "sculpture", "craftart", "vd", "id", "indesign", "fashion", "compose", "vocal", "piano", "orchestra", "koreanmusic");
-    } else if (fr == "biotech") {
-      num = new Array("--", "동물생명공학과", "식물시스템과학과", "식품공학과", "식품영양학과");
-      vnum = new Array("none", "animal", "plantbio", "foodscience", "foodnutri");
+    } else if (AdYear <= 2018 && fr == "biotech") {
+      num = new Array("--", "동물생명공학과", "식물시스템과학과", "식품공학과", "식품영양학과", "시스템생명공학과");
+      vnum = new Array("none", "animal", "plantbio", "foodscience", "foodnutri", "systembio");
+    } else if (AdYear >= 2019 && fr == "biotech") {
+      num = new Array("--", "동물생명공학과", "식물생명공학과", "식품공학과", "식품영양학과", "시스템생명공학과");
+      vnum = new Array("none", "animal", "plantbio", "foodscience", "foodnutri", "systembio");
     } else if (fr == "sport") {
       num = new Array("--", "스포츠과학부");
       vnum = new Array("none", "sportscience");
@@ -1141,7 +1145,7 @@ var Office = {
   "computerart": "컴퓨터예술학부",
   //생명공학대학
   "animal": "동물생명공학과",
-  "plantbio": "식물생명과학과",
+  "plantbio": "식물생명공학과",
   "foodscience": "식품공학과",
   "foodnutri": "식품영양학과",
   "systembio": "시스템생명공학과",
