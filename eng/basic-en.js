@@ -19,7 +19,7 @@ var Modal = {
   lib2016: function() {
     var AdYear = Number(document.getElementById("ad-year").value);
     var College = document.getElementById("college_select").value;
-    var Engin = ["engineering", "ict", "software"]
+    var Engin = ["engineering", "ict", "software", "artech"]
     var word = "Requirements for general credits"
     var content1618 = "👉Mandatory\n- 국어 : 글쓰기(Writing)\n- 영어 : Communication in English\n- Others : 창의와소통/ACT/한국사/\n 앙트레프레너십시대의회계(회계와사회)" +
       "\nNo need to take '앙트레프레너십시대의회계' if you already took 회계학원론(회계원리)" +
