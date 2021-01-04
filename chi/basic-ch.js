@@ -19,7 +19,7 @@ var Modal = {
   lib2016: function() {
     var AdYear = Number(document.getElementById("ad-year").value);
     var College = document.getElementById("college_select").value;
-    var Engin = ["engineering", "ict", "software"]
+    var Engin = ["engineering", "ict", "software", "artech"]
     var word = "教养领域进修要求"
     var content1618 = "👉共同教养\n- 국어 : 글쓰기\n- 英语 : Communication in English\n- 其他 : 창의와소통/ACT/한국사/앙트레프레너십시대의회계(회계와사회)" +
       "\n进修회계학원론(회계원리)时, 免'앙트레프레너십시대의회계'" +
