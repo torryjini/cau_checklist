@@ -19,7 +19,7 @@ var Modal = {
   lib2016: function() {
     var AdYear = Number(document.getElementById("ad-year").value);
     var College = document.getElementById("college_select").value;
-    var Engin = ["engineering", "ict", "software"]
+    var Engin = ["engineering", "ict", "software", "artech"]
     var word = "교양영역 이수기준"
     var content1618 = "👉공통교양\n- 국어 : 글쓰기\n- 영어 : Communication in English\n- 기타 : 창의와소통/ACT/한국사/\n 앙트레프레너십시대의회계(회계와사회)\n" +
       "회계학원론(회계원리)을 이수했을 경우, '앙트레프레너십시대의회계' 면제" +
