@@ -549,7 +549,7 @@ var Result = {
     }
 
     if (Majorpoint < Necepoint) {
-      swal("专业课程包括专业必修!", "", "error");
+      swal("专业学分包括专业必修!", "", "error");
       return false;
     }
 
@@ -798,7 +798,7 @@ var Result = {
     }
 
     if (Majorpoint < Necepoint) {
-      swal("专业课程包括专业必修!", "", "error");
+      swal("专业学分包括专业必修!", "", "error");
       return false;
     }
 
@@ -1044,8 +1044,15 @@ var Result = {
       }
     }
 
+    var Freepoint = Number(document.getElementById("free_point").value);
+    var CAUSeminar = document.getElementById("causeminar").checked;
+    if (Freepoint < 1 && CAUSeminar) {
+      swal("자유선택 학점을 입력하세요!", "", "error");
+      return false;
+    }
+
     if (Majorpoint < Necepoint) {
-      swal("专业课程包括专业必修!", "", "error");
+      swal("专业学分包括专业必修!", "", "error");
       return false;
     }
 
@@ -1122,12 +1129,13 @@ var Result = {
       }
     }
 
-    var Freepoint = Number(document.getElementById("free_point").value);
-    if (Freepoint < 1) {
-      word += "👉자유선택 : 进修" + Freepoint + " 学分_CAU세미나未受讲\n"
-    } else {
-      word += "👉자유선택 : 进修" + Freepoint + " 学分\n_必须确认CAU세미나进修情况!\n"
-    }
+      word += "👉자유선택 : 进修" + Freepoint + " 学分\n"
+
+      if (!CAUSeminar) {
+        word += "- CAU세미나(1学分) : 미이수\n"
+      } else {
+        word += "- CAU세미나(1学分) : 이수\n"
+      }
 
     var Teachingcheck = document.getElementById("teaching_none").checked;
     var Teachingpoint = Number(document.getElementById("teaching_point").value);
@@ -1147,7 +1155,7 @@ var Result = {
       word += "👉总进修学分 : 通过"
     }
 
-    if (Basepoint >= BaseStandard && Necepoint >= NeceStandard && Majorpoint >= Majorstandard && Freepoint >= 1 && TotalPoint >= TotalStandard) {
+    if (Basepoint >= BaseStandard && Necepoint >= NeceStandard && Majorpoint >= Majorstandard && Freepoint >= 1 && CAUSeminar && TotalPoint >= TotalStandard) {
       if (Minorcheck && Teachingcheck) {
         if (Multimajortext.includes("심화")) {
           swal("专业领域结果", word, "success")
@@ -1363,7 +1371,7 @@ var Result = {
     }
 
     if (Majorpoint < Necepoint) {
-      swal("专业课程包括专业必修!", "", "error");
+      swal("专业学分包括专业必修!", "", "error");
       return false;
     }
 
