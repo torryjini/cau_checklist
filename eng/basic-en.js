@@ -1054,7 +1054,7 @@ var Result = {
     var Freepoint = Number(document.getElementById("free_point").value);
     var CAUSeminar = document.getElementById("causeminar").checked;
     if (Freepoint < 1 && CAUSeminar) {
-      swal("자유선택 학점을 입력하세요!", "", "error");
+      swal("Fill in the Free choice!", "", "error");
       return false;
     }
 
