@@ -551,7 +551,7 @@ var Result = {
     }
 
     if (Majorpoint < Necepoint) {
-      swal("Major courses include required courses!", "", "error");
+      swal("Major credits include Required credits!", "", "error");
       return false;
     }
 
@@ -800,7 +800,7 @@ var Result = {
     }
 
     if (Majorpoint < Necepoint) {
-      swal("Major courses include required courses!", "", "error");
+      swal("Major credits include required credits!", "", "error");
       return false;
     }
 
@@ -1047,7 +1047,14 @@ var Result = {
     }
 
     if (Majorpoint < Necepoint) {
-      swal("Major courses include required courses!", "", "error");
+      swal("Major credits include Required credits!", "", "error");
+      return false;
+    }
+
+    var Freepoint = Number(document.getElementById("free_point").value);
+    var CAUSeminar = document.getElementById("causeminar").checked;
+    if (Freepoint < 1 && CAUSeminar) {
+      swal("자유선택 학점을 입력하세요!", "", "error");
       return false;
     }
 
@@ -1124,12 +1131,13 @@ var Result = {
       }
     }
 
-    var Freepoint = Number(document.getElementById("free_point").value);
-    if (Freepoint < 1) {
-      word += "👉Free choice : " + Freepoint + " credits_Take CAU세미나\n"
-    } else {
-      word += "👉Free choice : " + Freepoint + " credits\n_Check CAU세미나!\n"
-    }
+      word += "👉Free choice : " + Freepoint + " credits\n"
+
+      if (!CAUSeminar) {
+        word += "- CAU세미나(1credit) : Not passed\n"
+      } else {
+        word += "- CAU세미나(1credit) : Passed\n"
+      }
 
     var Teachingcheck = document.getElementById("teaching_none").checked;
     var Teachingpoint = Number(document.getElementById("teaching_point").value);
@@ -1149,7 +1157,7 @@ var Result = {
       word += "👉Total credits : Passed the requirement"
     }
 
-    if (Basepoint >= BaseStandard && Necepoint >= NeceStandard && Majorpoint >= Majorstandard && Freepoint >= 1 && TotalPoint >= TotalStandard) {
+    if (Basepoint >= BaseStandard && Necepoint >= NeceStandard && Majorpoint >= Majorstandard && Freepoint >= 1 && CAUSeminar && TotalPoint >= TotalStandard) {
       if (Minorcheck && Teachingcheck) {
         if (Multimajortext.includes("심화")) {
           swal("Major credits result", word, "success")
@@ -1365,7 +1373,7 @@ var Result = {
     }
 
     if (Majorpoint < Necepoint) {
-      swal("Major courses include required courses!", "", "error");
+      swal("Major credits include Required credits!", "", "error");
       return false;
     }
 
