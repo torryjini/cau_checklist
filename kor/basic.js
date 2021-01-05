@@ -8,7 +8,7 @@ var Modal = {
       "\n👉선택교양 : 자율이수\n" + "👉총 교양학점 45학점까지만 인정됩니다!"
     swal(word, content, "info");
   },
-  lib2015:function() {
+  lib2015: function() {
     var word = "교양영역 이수기준"
     var content = "👉공통교양\n- 국어 : 글쓰기\n- 영어 : Communication in English\n- 기타 : 창의와소통 / 회계와사회 / ACT / 한국사\n" +
       "회계학원론(회계원리)을 이수했을 경우, '회계와사회' 면제" +
@@ -357,7 +357,7 @@ var Result = {
       word += "소통"
     }
 
-    var Engin =["engineering", "ict", "software"]
+    var Engin = ["engineering", "ict", "software"]
     if (AdYear >= 2019 && Engin.includes(College)) {
       word += "\n - MACH 교양 1 과목 이상 이수 확인!"
     }
@@ -516,7 +516,7 @@ var Result = {
       swal("자기설계전공의 교차인정 최대학점은 6 학점입니다!", "", "error")
       return false;
     } else {
-      if(AdYear <= 2014){
+      if (AdYear <= 2014) {
         Result.basenece12to14(Majorstandard);
       } else if (AdYear == 2015) {
         Result.basenece2015(Majorstandard);
@@ -550,7 +550,7 @@ var Result = {
     }
 
     if (Majorpoint < Necepoint) {
-      swal("전공 과목은 전공 필수를 포함합니다!", "", "error");
+      swal("전공학점은 전공필수를 포함합니다!", "", "error");
       return false;
     }
 
@@ -793,7 +793,7 @@ var Result = {
     }
 
     if (Majorpoint < Necepoint) {
-      swal("전공 과목은 전공 필수를 포함합니다!", "", "error");
+      swal("전공학점은 전공필수를 포함합니다!", "", "error");
       return false;
     }
 
@@ -1034,7 +1034,14 @@ var Result = {
     }
 
     if (Majorpoint < Necepoint) {
-      swal("전공 과목은 전공 필수를 포함합니다!", "", "error");
+      swal("전공학점은 전공 필수를 포함합니다!", "", "error");
+      return false;
+    }
+
+    var Freepoint = Number(document.getElementById("free_point").value);
+    var CAUSeminar = document.getElementById("causeminar").checked;
+    if (Freepoint < 1 && CAUSeminar) {
+      swal("자유선택 학점을 입력하세요!", "", "error");
       return false;
     }
 
@@ -1111,11 +1118,12 @@ var Result = {
       }
     }
 
-    var Freepoint = Number(document.getElementById("free_point").value);
-    if (Freepoint < 1) {
-      word += "👉자유선택 : " + Freepoint + " 학점 이수_CAU세미나 미수강\n"
+    word += "👉자유선택 : " + Freepoint + " 학점 이수\n"
+
+    if (!CAUSeminar) {
+      word += "- CAU세미나(1학점) : 미이수\n"
     } else {
-      word += "👉자유선택 : " + Freepoint + " 학점 이수\n_CAU세미나 이수 확인 필수!\n"
+      word += "- CAU세미나(1학점) : 이수\n"
     }
 
     var Teachingcheck = document.getElementById("teaching_none").checked;
@@ -1136,7 +1144,7 @@ var Result = {
       word += "👉전체 이수학점 : 기준 통과"
     }
 
-    if (Basepoint >= BaseStandard && Necepoint >= NeceStandard && Majorpoint >= Majorstandard && Freepoint >= 1 && TotalPoint >= TotalStandard) {
+    if (Basepoint >= BaseStandard && Necepoint >= NeceStandard && Majorpoint >= Majorstandard && Freepoint >= 1 && CAUSeminar && TotalPoint >= TotalStandard) {
       if (Minorcheck && Teachingcheck) {
         if (Multimajortext.includes("심화")) {
           swal("전공영역 결과", word, "success")
@@ -1348,7 +1356,7 @@ var Result = {
     }
 
     if (Majorpoint < Necepoint) {
-      swal("전공 과목은 전공 필수를 포함합니다!", "", "error");
+      swal("전공학점은 전공필수를 포함합니다!", "", "error");
       return false;
     }
 
