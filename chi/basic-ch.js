@@ -566,9 +566,9 @@ var Result = {
     }
 
     if (Majorpoint < Majorstandard) {
-      word += "👉专业课程 : 缺少" + [Majorstandard - Majorpoint] + " 学分\n"
+      word += "👉专业 : 缺少" + [Majorstandard - Majorpoint] + " 学分\n"
     } else {
-      word += "👉专业课程 : 通过\n"
+      word += "👉专业 : 通过\n"
     }
 
     var Doublecheck = document.getElementById("double_major_none").checked;
@@ -627,7 +627,7 @@ var Result = {
     }
 
     var Freepoint = Number(document.getElementById("free_point").value);
-    word += "👉자유선택 : " + Freepoint + " 学分\n"
+    word += "👉自由选择 : " + Freepoint + " 学分\n"
 
 
     var Teachingcheck = document.getElementById("teaching_none").checked;
@@ -815,9 +815,9 @@ var Result = {
     }
 
     if (Majorpoint < Majorstandard) {
-      word += "👉专业课程 : 缺少" + [Majorstandard - Majorpoint] + " 学分\n"
+      word += "👉专业 : 缺少" + [Majorstandard - Majorpoint] + " 学分\n"
     } else {
-      word += "👉专业课程 : 通过\n"
+      word += "👉专业 : 通过\n"
     }
 
     var Doublecheck = document.getElementById("double_major_none").checked;
@@ -875,7 +875,7 @@ var Result = {
     }
 
     var Freepoint = Number(document.getElementById("free_point").value);
-    word += "👉자유선택 : " + Freepoint + " 学分\n"
+    word += "👉自由选择 : " + Freepoint + " 学分\n"
 
     var Teachingcheck = document.getElementById("teaching_none").checked;
     var Teachingpoint = Number(document.getElementById("teaching_point").value);
@@ -1047,7 +1047,7 @@ var Result = {
     var Freepoint = Number(document.getElementById("free_point").value);
     var CAUSeminar = document.getElementById("causeminar").checked;
     if (Freepoint < 1 && CAUSeminar) {
-      swal("자유선택 학점을 입력하세요!", "", "error");
+      swal("请输入自由选择的学分!", "", "error");
       return false;
     }
 
@@ -1069,9 +1069,9 @@ var Result = {
     }
 
     if (Majorpoint < Majorstandard) {
-      word += "👉专业课程 : 缺少" + [Majorstandard - Majorpoint] + " 学分\n"
+      word += "👉专业 : 缺少" + [Majorstandard - Majorpoint] + " 学分\n"
     } else {
-      word += "👉专业课程 : 通过\n"
+      word += "👉专业 : 通过\n"
     }
 
     var Doublecheck = document.getElementById("double_major_none").checked;
@@ -1129,7 +1129,7 @@ var Result = {
       }
     }
 
-      word += "👉자유선택 : 进修" + Freepoint + " 学分\n"
+      word += "👉自由选择 : 进修" + Freepoint + " 学分\n"
 
       if (!CAUSeminar) {
         word += "- CAU세미나(1学分) : 미이수\n"
@@ -1388,9 +1388,9 @@ var Result = {
     }
 
     if (Majorpoint < Majorstandard) {
-      word += "👉专业课程 : 缺少" + [Majorstandard - Majorpoint] + " 学分\n"
+      word += "👉专业 : 缺少" + [Majorstandard - Majorpoint] + " 学分\n"
     } else {
-      word += "👉专业课程 : 通过\n"
+      word += "👉专业 : 通过\n"
     }
 
     var Doublecheck = document.getElementById("double_major_none").checked;
