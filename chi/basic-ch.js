@@ -1132,9 +1132,9 @@ var Result = {
       word += "👉自由选择 : 进修" + Freepoint + " 学分\n"
 
       if (!CAUSeminar) {
-        word += "- CAU세미나(1学分) : 미이수\n"
+        word += "- CAU세미나(1学分) : 没过\n"
       } else {
-        word += "- CAU세미나(1学分) : 이수\n"
+        word += "- CAU세미나(1学分) : 通过\n"
       }
 
     var Teachingcheck = document.getElementById("teaching_none").checked;
