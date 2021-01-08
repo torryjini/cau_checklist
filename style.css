@@ -224,10 +224,26 @@ p {
   border-radius: 2rem;
   font-size: 1rem;
   cursor: pointer;
-  margin-top: 3px;
+}
+
+.info-btn-ch {
+  background-color: var(--background-color);
+  border: 1.5px;
+  border-style: solid;
+  border-color: var(--text-color);
+  color: white;
+  padding: 0.3rem;
+  border-radius: 2rem;
+  font-size: 1rem;
+  cursor: pointer;
+  margin-top: 4px;
 }
 
 .info-btn:hover {
+  background-color: RoyalBlue;
+}
+
+.info-btn-ch:hover {
   background-color: RoyalBlue;
 }
 
