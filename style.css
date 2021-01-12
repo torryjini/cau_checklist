@@ -287,7 +287,7 @@ p {
   text-align: center;
   font-size: 1.2rem;
   font-family: inherit;
-  cursor:pointer;
+  cursor: pointer;
 }
 
 .buttons {
@@ -365,16 +365,15 @@ p {
 
 #dept {
   width: 15rem;
-  cursor:pointer;
+  cursor: pointer;
 }
-
 
 #phone, #Davinci {
   width: 7.5rem;
 }
 
 #phone, #Davinci {
-  cursor:pointer;
+  cursor: pointer;
 }
 
 #fusion-options {
@@ -422,7 +421,8 @@ p {
     font-size: 1.1rem;
   }
 
-  .chnth { /* 중문, 영문 페이지  th tag */
+  .chnth {
+    /* 중문, 영문 페이지  th tag */
     font-size: 0.8rem;
   }
 
@@ -505,7 +505,13 @@ p {
     background-color: #98c1fe85;
     color: var(--background-color);
   }
+
+  #enter {
+    font-size: 1.4rem;
+    padding: 0.8rem 1.8rem;
+  }
 }
+
 
 footer {
   padding-bottom: 0;
