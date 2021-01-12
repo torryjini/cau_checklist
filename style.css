@@ -125,13 +125,13 @@ label {
 input[type=button] {
   border-color: #9BFA73;
   color: var(--text-color);
-  background-color: #4CAF50;
+  background-color: #28D06B;
 }
 
 input[type=reset] {
   border-color: #FF5050;
   color: var(--text-color);
-  background-color: #ff4040;
+  background-color: #D02828;
 }
 
 input[type=button], input[type=reset] {
@@ -144,12 +144,12 @@ input[type=button], input[type=reset] {
 }
 
 input[type=button]:hover {
-  color: #4CAF50;
+  color: #28D06B;
   background-color: var(--text-color);
 }
 
 input[type=reset]:hover {
-  color: #ff4040;
+  color: #D02828;
   background-color: var(--text-color);
 }
 
