@@ -33,8 +33,6 @@
       <a href="../index.html"><img src="../white_logo.png" id="logo"></a>
       <br>
       <button onclick="topFunction()" id="TopBtn" title="Go to top">Top</button>
-      <script type="text/javascript" src="../settings.js"></script>
-      <script type="text/javascript" src="basic.js"></script>
     </header>
     <div id="student-info">
       <div id="H2U">
@@ -260,7 +258,7 @@
           <td colspan="3">
             <input type="number" id="base_input" placeholder="0" name="major" value="" onchange="Total.sum();Color.number('total_standard','the_total');Color.number('base_standard','base_input');"
               onkeyup="Total.sum();Color.number('total_standard','the_total');Color.number('base_standard','base_input');" min="0" max="99" class="inputnumber" maxlength="2" oninput="maxLengthCheck(this)">
-              <label for="base_input"> 학점</label>
+            <label for="base_input"> 학점</label>
           </td>
         </tr>
         <tr>
@@ -349,7 +347,7 @@
           <td>
             <input type="number" id="plan_major_point" placeholder="0" value="" onchange="Total.sum();Color.number('total_standard','the_total');Color.number('plan_st','plan_major_point');"
               onkeyup="Total.sum();Color.number('total_standard','the_total');Color.number('plan_st','plan_major_point');" class="inputnumber" min="0" maxlength="2" oninput="maxLengthCheck(this)">
-              <label for="plan_major_point"> 학점</label><br>
+            <label for="plan_major_point"> 학점</label><br>
             <input type="checkbox" id="plan_major_none" onclick="Check.multinone('plan_major_none', 'plan_major_point', 'cross_point3')" tabindex="-1" hidden>
           </td>
           <th>교차<br>인정</th>
@@ -388,7 +386,7 @@
           <td colspan="3">
             <input type="number" id="teaching_point" placeholder="0" value="" onchange="Total.sum();Color.number('total_standard','the_total');Color.number('teaching_st','teaching_point');"
               onkeyup="Total.sum();Color.number('total_standard','the_total');Color.number('teaching_st','teaching_point');" min="0" max="30" class="inputnumber" maxlength="2" oninput="maxLengthCheck(this)">
-              <label for="teaching_point"> 학점</label><br>
+            <label for="teaching_point"> 학점</label><br>
             <input type="checkbox" id="teaching_none" onclick="Check.none('teaching_none', 'teaching_point')" tabindex="-1"><label for="teaching_none">해당없음</label>
           </td>
           <!-- <td>이수기준 통과 여부는 교직팀에 문의할 것</td> -->
@@ -505,6 +503,8 @@
   <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
   <!-- Go to www.addthis.com/dashboard to customize your tools -->
   <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5f5c861cc88b9f15"></script>
+  <script type="text/javascript" src="../settings.js"></script>
+  <script type="text/javascript" src="basic.js"></script>
 </body>
 
 </html>
