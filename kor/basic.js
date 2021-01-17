@@ -644,7 +644,7 @@ var Result = {
     var TotalStandard = Number(document.getElementById("total_standard").value);
     var TotalPoint = Number(document.getElementById("the_total").value);
     if (TotalPoint < TotalStandard) {
-      word += "👉전체 이수학점 : " + [TotalStandard - TotalPoint] + " 학점 미달"
+      word += "👉전체 이수학점 : 최소" + [TotalStandard - TotalPoint] + " 학점 미달"
     } else {
       word += "👉전체 이수학점 : 기준 통과"
     }
@@ -885,7 +885,7 @@ var Result = {
     var TotalStandard = Number(document.getElementById("total_standard").value);
     var TotalPoint = Number(document.getElementById("the_total").value);
     if (TotalPoint < TotalStandard) {
-      word += "👉전체 이수학점 : " + [TotalStandard - TotalPoint] + " 학점 미달"
+      word += "👉전체 이수학점 : 최소" + [TotalStandard - TotalPoint] + " 학점 미달"
     } else {
       word += "👉전체 이수학점 : 기준 통과"
     }
@@ -1139,7 +1139,7 @@ var Result = {
     var TotalStandard = Number(document.getElementById("total_standard").value);
     var TotalPoint = Number(document.getElementById("the_total").value);
     if (TotalPoint < TotalStandard) {
-      word += "👉전체 이수학점 : " + [TotalStandard - TotalPoint] + " 학점 미달"
+      word += "👉전체 이수학점 : 최소" + [TotalStandard - TotalPoint] + " 학점 미달"
     } else {
       word += "👉전체 이수학점 : 기준 통과"
     }
@@ -1448,7 +1448,7 @@ var Result = {
     var TotalPoint = Number(document.getElementById("the_total").value);
     var TotalStandard = Number(document.getElementById("total_standard").value);
     if (TotalPoint < TotalStandard) {
-      word += "👉전체 이수학점 : " + [TotalStandard - TotalPoint] + " 학점 미달"
+      word += "👉전체 이수학점 : 최소" + [TotalStandard - TotalPoint] + " 학점 미달"
     } else {
       word += "👉전체 이수학점 : 기준 통과"
     }
