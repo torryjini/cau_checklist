@@ -645,7 +645,7 @@ var Result = {
     var TotalStandard = Number(document.getElementById("total_standard").value);
     var TotalPoint = Number(document.getElementById("the_total").value);
     if (TotalPoint < TotalStandard) {
-      word += "👉Total credits : " + [TotalStandard - TotalPoint] + " more credits required"
+      word += "👉Total credits : At least" + [TotalStandard - TotalPoint] + " more credits required"
     } else {
       word += "👉Total credits : Passed the requirement"
     }
@@ -892,7 +892,7 @@ var Result = {
     var TotalStandard = Number(document.getElementById("total_standard").value);
     var TotalPoint = Number(document.getElementById("the_total").value);
     if (TotalPoint < TotalStandard) {
-      word += "👉Total credits : " + [TotalStandard - TotalPoint] + " more credits required"
+      word += "👉Total credits : At least" + [TotalStandard - TotalPoint] + " more credits required"
     } else {
       word += "👉Total credits : Passed the requirement"
     }
@@ -1152,7 +1152,7 @@ var Result = {
     var TotalStandard = Number(document.getElementById("total_standard").value);
     var TotalPoint = Number(document.getElementById("the_total").value);
     if (TotalPoint < TotalStandard) {
-      word += "👉Total credits : " + [TotalStandard - TotalPoint] + " more credits required"
+      word += "👉Total credits : At least" + [TotalStandard - TotalPoint] + " more credits required"
     } else {
       word += "👉Total credits : Passed the requirement"
     }
@@ -1465,7 +1465,7 @@ var Result = {
     var TotalPoint = Number(document.getElementById("the_total").value);
     var TotalStandard = Number(document.getElementById("total_standard").value);
     if (TotalPoint < TotalStandard) {
-      word += "👉Total credits : " + [TotalStandard - TotalPoint] + " more credits required"
+      word += "👉Total credits : At least" + [TotalStandard - TotalPoint] + " more credits required"
     } else {
       word += "👉Total credits : Passed the requirement"
     }
