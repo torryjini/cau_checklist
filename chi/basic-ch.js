@@ -100,7 +100,7 @@ var Result = {
     }
 
     if (common_kor_point < 2) {
-      word += "👉共同教养\n - 국어 : 缺少" + [2 - common_kor_point] + " 学分\n";
+      word += "👉共同教养\n - 국어 : 缺少" + [2 - common_kor_point] + "学分\n";
     } else {
       word += "👉共同教养\n - 국어 : 通过\n";
     }
@@ -108,37 +108,37 @@ var Result = {
     if (common_eng_point < 4 && common_eng_ex) {
       word += " - 英语 : 免\n"
     } else if (common_eng_point < 4 && !common_eng_ex) {
-      word += " - 英语 : 缺少" + [4 - common_eng_point] + " 学分\n";
+      word += " - 英语 : 缺少" + [4 - common_eng_point] + "学分\n";
     } else {
       word += " - 英语 : 通过\n";
     }
 
     if (!account_check_SF) {
       if (common_etc_point < 8) {
-        word += " - 其他 : 缺少" + [8 - common_etc_point] + " 学分\n"
+        word += " - 其他 : 缺少" + [8 - common_etc_point] + "学分\n"
       } else {
         word += " - 其他 : 通过\n"
       }
     } else {
       if (common_etc_point < 6) {
-        word += " - 其他 : 缺少" + [6 - common_etc_point] + " 学分(회계와사회 : 免)\n"
+        word += " - 其他 : 缺少" + [6 - common_etc_point] + "学分(회계와사회 : 免)\n"
       } else {
         word += " - 其他 : 通过(회계와사회 : 免)\n"
       }
     }
 
     if (core_total_point < 9) {
-      word += "👉核心教养 : 缺少" + [9 - core_total_point] + " 学分"
+      word += "👉核心教养 : 缺少" + [9 - core_total_point] + "学分"
     } else {
       word += "👉核心教养 : 通过最少学分"
     }
 
-    word += "\n👉选择教养 : " + elective_point + " 学分"
+    word += "\n👉选择教养 : " + elective_point + "学分"
 
     if (liberal_total_point <= 45) {
-      word += "\n👉教养领域 总计 : 缺少" + liberal_total_point + " 学分"
+      word += "\n👉教养领域 总计 : 缺少" + liberal_total_point + "学分"
     } else {
-      word += "\n👉教养领域 总计 : " + liberal_total_point + " 学分_超过" + [liberal_total_point - 45] + "学分（学分超过45学分时只认证45学分。）"
+      word += "\n👉教养领域 总计 : " + liberal_total_point + "学分_超过" + [liberal_total_point - 45] + "学分（学分超过45学分时只认证45学分。）"
     }
 
     if (common_kor_point == 2 && core_total_point >= 9) {
@@ -191,42 +191,42 @@ var Result = {
     if (common_eng_point < 2 && common_eng_ex) {
       word += " - 英语 : 免\n"
     } else if (common_eng_point < 2 && !common_eng_ex) {
-      word += " - 英语 : 缺少" + [2 - common_eng_point] + " 学分\n";
+      word += " - 英语 : 缺少" + [2 - common_eng_point] + "学分\n";
     } else {
       word += " - 英语 : 通过\n";
     }
 
     if (!account_check_SF) {
       if (common_etc_point < 8) {
-        word += " - 其他 : 缺少" + [8 - common_etc_point] + " 学分\n"
+        word += " - 其他 : 缺少" + [8 - common_etc_point] + "学分\n"
       } else {
         word += " - 其他 : 通过\n"
       }
     } else {
       if (common_etc_point < 6) {
-        word += " - 其他 : 缺少" + [6 - common_etc_point] + " 学分(회계와사회 : 免)\n"
+        word += " - 其他 : 缺少" + [6 - common_etc_point] + "学分(회계와사회 : 免)\n"
       } else {
         word += " - 其他 : 通过(회계와사회 : 免)\n"
       }
     }
 
     if (core_total_point < 12) {
-      word += "👉核心教养 : 缺少" + [12 - core_total_point] + " 学分\n- 核心教养的4种领域中每个领域需要进修1个以上的课程!"
+      word += "👉核心教养 : 缺少" + [12 - core_total_point] + "学分\n- 核心教养的4种领域中每个领域需要进修1个以上的课程!"
     } else {
       word += "👉核心教养 : 通过最少学分\n- 确认核心教养各领域的进修情况（每个领域需要进修1个以上的课程!）"
     }
 
-    word += "\n👉选择教养 : " + elective_point + " 学分"
+    word += "\n👉选择教养 : " + elective_point + "学分"
 
     if (liberal_total_point <= 45) {
-      word += "\n👉教养领域 总计 : 缺少" + liberal_total_point + " 学分 "
+      word += "\n👉教养领域 总计 : 缺少" + liberal_total_point + "学分 "
     } else {
-      word += "\n👉教养领域 总计 : " + liberal_total_point + " 学分_ 超过" + [liberal_total_point - 45] + "学分（学分超过45学分时只认证45学分。）"
+      word += "\n👉教养领域 总计 : " + liberal_total_point + "学分_ 超过" + [liberal_total_point - 45] + "学分（学分超过45学分时只认证45学分。）"
     }
 
     if (!MACH1none) {
       if (MACH1 < 4) {
-        word += "\n👉MACH교양 : 缺少" + [4 - MACH1] + " 学分"
+        word += "\n👉MACH교양 : 缺少" + [4 - MACH1] + "学分"
       } else {
         word += "\n👉MACH교양 : 通过"
       }
@@ -234,7 +234,7 @@ var Result = {
 
     if (!MACH2none) {
       if (MACH2 < 4) {
-        word += "\n👉MACH실습 : 缺少" + [2 - MACH2] + " 学分"
+        word += "\n👉MACH실습 : 缺少" + [2 - MACH2] + "学分"
       } else {
         word += "\n👉MACH실습 : 通过"
       }
@@ -306,7 +306,7 @@ var Result = {
     }
 
     if (common_kor_point < 2) {
-      word += "👉共同教养\n - 국어 : 缺少" + [2 - common_kor_point] + " 学分\n";
+      word += "👉共同教养\n - 국어 : 缺少" + [2 - common_kor_point] + "学分\n";
     } else {
       word += "👉共同教养\n - 국어 : 通过\n";
     }
@@ -314,20 +314,20 @@ var Result = {
     if (common_eng_point < 2 && common_eng_ex) {
       word += " - 英语 : 免\n"
     } else if (common_eng_point < 2 && !common_eng_ex) {
-      word += " - 英语 : 缺少" + [2 - common_eng_point] + " 学分\n";
+      word += " - 英语 : 缺少" + [2 - common_eng_point] + "学分\n";
     } else {
       word += " - 英语 : 通过\n";
     }
 
     if (!account_check_SF) {
       if (common_etc_point < cometcst) {
-        word += " - 其他 : 缺少" + [cometcst - common_etc_point] + " 学分\n"
+        word += " - 其他 : 缺少" + [cometcst - common_etc_point] + "学分\n"
       } else {
         word += " - 其他 : 通过\n"
       }
     } else {
       if (common_etc_point < cometcst - 2) {
-        word += " - 其他 : 缺少" + [cometcst - 2 - common_etc_point] + " 学分(앙트레프레너십시대의회계 : 免)\n"
+        word += " - 其他 : 缺少" + [cometcst - 2 - common_etc_point] + "学分(앙트레프레너십시대의회계 : 免)\n"
       } else {
         word += " - 其他 : 通过(앙트레프레너십시대의회계 : 免)\n"
       }
@@ -336,7 +336,7 @@ var Result = {
     if (Core1 && Core2 && Core3 && Core4 && Core5 && core_total_point >= 12) {
       word += "👉核心教养 : 通过"
     } else if (core_total_point < 15) {
-      word += "👉核心教养 : " + core_total_point + " 学分\n-  未进修领域 : "
+      word += "👉核心教养 : " + core_total_point + "学分\n-  未进修领域 : "
     } else {
       word += "👉核心教养 : 通过最少学分\n-未进修领域 : "
     }
@@ -362,11 +362,11 @@ var Result = {
       word += "\n - 需进修一个以上的MACH教养!"
     }
 
-    word += "\n👉选择教养 : " + elective_point + " 学分"
+    word += "\n👉选择教养 : " + elective_point + "学分"
 
     if (!MACH1none) {
       if (MACH1 < 4) {
-        word += "\n👉MACH교양 : 缺少" + [4 - MACH1] + " 学分"
+        word += "\n👉MACH교양 : 缺少" + [4 - MACH1] + "学分"
       } else {
         word += "\n👉MACH교양 : 通过"
       }
@@ -374,16 +374,16 @@ var Result = {
 
     if (!MACH2none) {
       if (MACH2 < 4) {
-        word += "\n👉MACH실습 : 缺少" + [2 - MACH2] + " 学分"
+        word += "\n👉MACH실습 : 缺少" + [2 - MACH2] + "学分"
       } else {
         word += "\n👉MACH실습 : 通过"
       }
     }
 
     if (liberal_total_point <= 45) {
-      word += "\n👉教养领域 总计 : 缺少" + liberal_total_point + " 学分"
+      word += "\n👉教养领域 总计 : 缺少" + liberal_total_point + "学分"
     } else {
-      word += "\n👉教养领域 总计 : " + liberal_total_point + " 学分_超过" + [liberal_total_point - 45] + "学分（学分超过45学分时只认证45学分）"
+      word += "\n👉教养领域 总计 : " + liberal_total_point + "学分_超过" + [liberal_total_point - 45] + "学分（学分超过45学分时只认证45学分）"
     }
 
     if (common_kor_point == 2 && Core1 && Core2 && Core3 && Core4 && Core5 && core_total_point >= 12 && MACH1 >= MACH1_st && MACH2 >= MACH2_st) {
@@ -554,19 +554,19 @@ var Result = {
     }
 
     if (Basepoint < BaseStandard) {
-      word += "👉专业基础 :缺少 " + [BaseStandard - Basepoint] + " 学分\n";
+      word += "👉专业基础 :缺少 " + [BaseStandard - Basepoint] + "学分\n";
     } else {
       word += "👉专业基础 : 通过\n";
     }
 
     if (Necepoint < NeceStandard) {
-      word += "👉专业必修 : 缺少" + [NeceStandard - Necepoint] + " 学分\n";
+      word += "👉专业必修 : 缺少" + [NeceStandard - Necepoint] + "学分\n";
     } else {
       word += "👉专业必修 : 通过\n";
     }
 
     if (Majorpoint < Majorstandard) {
-      word += "👉专业 : 缺少" + [Majorstandard - Majorpoint] + " 学分\n"
+      word += "👉专业 : 缺少" + [Majorstandard - Majorpoint] + "学分\n"
     } else {
       word += "👉专业 : 通过\n"
     }
@@ -575,7 +575,7 @@ var Result = {
     var Doublepoint = Number(document.getElementById("double_major_point").value);
     if (!Doublecheck) {
       if (Doublepoint < 45) {
-        word += "👉双专业 : 缺少" + [45 - Doublepoint] + " 学分\n"
+        word += "👉双专业 : 缺少" + [45 - Doublepoint] + "学分\n"
       } else {
         word += "👉双专业 : 通过最少学分\n"
       }
@@ -586,7 +586,7 @@ var Result = {
     var Linkpoint = Number(document.getElementById("link_major_point").value) + LinkCross;
     if (!Linkcheck) {
       if (Linkpoint < 36) {
-        word += "👉연계전공 : 缺少" + [36 - Linkpoint] + " 学分\n"
+        word += "👉연계전공 : 缺少" + [36 - Linkpoint] + "学分\n"
       } else {
         word += "👉연계전공 : 通过最少学分\n"
       }
@@ -600,7 +600,7 @@ var Result = {
     var FusionStandard = Number(document.getElementById("fusion_standard").value);
     if (!Fusioncheck) {
       if (Fusionpoint < FusionStandard) {
-        word += "👉" + Fusiontext + "융합전공 : 缺少" + [FusionStandard - Fusionpoint] + " 学分\n"
+        word += "👉" + Fusiontext + "융합전공 : 缺少" + [FusionStandard - Fusionpoint] + "学分\n"
       } else {
         word += "👉" + Fusiontext + "융합전공 : 通过最少学分\n"
       }
@@ -610,7 +610,7 @@ var Result = {
     var Planpoint = Number(document.getElementById("plan_major_point").value) + Number(document.getElementById("cross_point3").value);
     if (!Plancheck) {
       if (Planpoint < 36) {
-        word += "👉설계전공 : 缺少" + [36 - Planpoint] + " 学分\n"
+        word += "👉설계전공 : 缺少" + [36 - Planpoint] + "学分\n"
       } else {
         word += "👉설계전공 : 通过最少学分\n"
       }
@@ -620,21 +620,21 @@ var Result = {
     var Minorpoint = Number(document.getElementById("minor_point").value);
     if (!Minorcheck) {
       if (Minorpoint < 21) {
-        word += "👉부전공 : 缺少" + [21 - Minorpoint] + " 学分\n"
+        word += "👉부전공 : 缺少" + [21 - Minorpoint] + "学分\n"
       } else {
         word += "👉부전공 : 通过最少学分\n"
       }
     }
 
     var Freepoint = Number(document.getElementById("free_point").value);
-    word += "👉自由选择 : " + Freepoint + " 学分\n"
+    word += "👉自由选择 : " + Freepoint + "学分\n"
 
 
     var Teachingcheck = document.getElementById("teaching_none").checked;
     var Teachingpoint = Number(document.getElementById("teaching_point").value);
     if (!Teachingcheck) {
       if (Teachingpoint < 22)
-        word += "👉교직이수 : 缺少 " + [22 - Teachingpoint] + " 学分\n"
+        word += "👉교직이수 : 缺少 " + [22 - Teachingpoint] + "学分\n"
       else {
         word += "👉교직이수 : 通过最少学分\n"
       }
@@ -643,7 +643,7 @@ var Result = {
     var TotalStandard = Number(document.getElementById("total_standard").value);
     var TotalPoint = Number(document.getElementById("the_total").value);
     if (TotalPoint < TotalStandard) {
-      word += "👉总进修学分 : 缺少" + [TotalStandard - TotalPoint] + " 学分"
+      word += "👉总进修学分 : 至少需要" + [TotalStandard - TotalPoint] + "学分"
     } else {
       word += "👉总进修学分 : 通过"
     }
@@ -803,19 +803,19 @@ var Result = {
     }
 
     if (Basepoint < BaseStandard) {
-      word += "👉专业基础 : 缺少" + [BaseStandard - Basepoint] + " 学分\n";
+      word += "👉专业基础 : 缺少" + [BaseStandard - Basepoint] + "学分\n";
     } else {
       word += "👉专业基础 : 通过\n";
     }
 
     if (Necepoint < NeceStandard) {
-      word += "👉专业必修 : 缺少" + [NeceStandard - Necepoint] + " 学分\n";
+      word += "👉专业必修 : 缺少" + [NeceStandard - Necepoint] + "学分\n";
     } else {
       word += "👉专业必修 : 通过\n";
     }
 
     if (Majorpoint < Majorstandard) {
-      word += "👉专业 : 缺少" + [Majorstandard - Majorpoint] + " 学分\n"
+      word += "👉专业 : 缺少" + [Majorstandard - Majorpoint] + "学分\n"
     } else {
       word += "👉专业 : 通过\n"
     }
@@ -824,7 +824,7 @@ var Result = {
     var Doublepoint = Number(document.getElementById("double_major_point").value);
     if (!Doublecheck) {
       if (Doublepoint < 45) {
-        word += "👉双专业 : 缺少" + [45 - Doublepoint] + " 学分\n"
+        word += "👉双专业 : 缺少" + [45 - Doublepoint] + "学分\n"
       } else {
         word += "👉双专业 : 通过最少学分\n"
       }
@@ -835,7 +835,7 @@ var Result = {
     var Linkpoint = Number(document.getElementById("link_major_point").value) + LinkCross;
     if (!Linkcheck) {
       if (Linkpoint < 36) {
-        word += "👉연계전공 : 缺少" + [36 - Linkpoint] + " 学分\n"
+        word += "👉연계전공 : 缺少" + [36 - Linkpoint] + "学分\n"
       } else {
         word += "👉연계전공 : 通过最少学分\n"
       }
@@ -848,7 +848,7 @@ var Result = {
     var FusionStandard = Number(document.getElementById("fusion_standard").value);
     if (!Fusioncheck) {
       if (Fusionpoint < FusionStandard) {
-        word += "👉" + Fusiontext + "융합전공 : 缺少" + [FusionStandard - Fusionpoint] + " 学分\n"
+        word += "👉" + Fusiontext + "융합전공 : 缺少" + [FusionStandard - Fusionpoint] + "学分\n"
       } else {
         word += "👉" + Fusiontext + "융합전공 : 通过最少学分\n"
       }
@@ -858,7 +858,7 @@ var Result = {
     var Planpoint = Number(document.getElementById("plan_major_point").value) + Number(document.getElementById("cross_point3").value);
     if (!Plancheck) {
       if (Planpoint < 36) {
-        word += "👉설계전공 : 缺少" + [36 - Planpoint] + " 学分\n"
+        word += "👉설계전공 : 缺少" + [36 - Planpoint] + "学分\n"
       } else {
         word += "👉설계전공 : 通过最少学分\n"
       }
@@ -868,20 +868,20 @@ var Result = {
     var Minorpoint = Number(document.getElementById("minor_point").value);
     if (!Minorcheck) {
       if (Minorpoint < 21) {
-        word += "👉부전공 : 缺少" + [21 - Minorpoint] + " 学分\n"
+        word += "👉부전공 : 缺少" + [21 - Minorpoint] + "学分\n"
       } else {
         word += "👉부전공 : 通过最少学分\n"
       }
     }
 
     var Freepoint = Number(document.getElementById("free_point").value);
-    word += "👉自由选择 : " + Freepoint + " 学分\n"
+    word += "👉自由选择 : " + Freepoint + "学分\n"
 
     var Teachingcheck = document.getElementById("teaching_none").checked;
     var Teachingpoint = Number(document.getElementById("teaching_point").value);
     if (!Teachingcheck) {
       if (Teachingpoint < 22)
-        word += "👉교직이수 :  缺少" + [22 - Teachingpoint] + " 学分\n"
+        word += "👉교직이수 :  缺少" + [22 - Teachingpoint] + "学分\n"
       else {
         word += "👉교직이수 : 通过最少学分\n"
       }
@@ -890,7 +890,7 @@ var Result = {
     var TotalStandard = Number(document.getElementById("total_standard").value);
     var TotalPoint = Number(document.getElementById("the_total").value);
     if (TotalPoint < TotalStandard) {
-      word += "👉总进修学分 : 缺少" + [TotalStandard - TotalPoint] + " 学分"
+      word += "👉总进修学分 : 至少需要" + [TotalStandard - TotalPoint] + "学分"
     } else {
       word += "👉总进修学分 : 通过"
     }
@@ -1057,19 +1057,19 @@ var Result = {
     }
 
     if (Basepoint < BaseStandard) {
-      word += "👉专业基础 : 缺少" + [BaseStandard - Basepoint] + " 学分\n";
+      word += "👉专业基础 : 缺少" + [BaseStandard - Basepoint] + "学分\n";
     } else {
       word += "👉专业基础 : 通过\n";
     }
 
     if (Necepoint < NeceStandard) {
-      word += "👉专业必修 : 缺少" + [NeceStandard - Necepoint] + " 学分\n";
+      word += "👉专业必修 : 缺少" + [NeceStandard - Necepoint] + "学分\n";
     } else {
       word += "👉专业必修 : 通过\n";
     }
 
     if (Majorpoint < Majorstandard) {
-      word += "👉专业 : 缺少" + [Majorstandard - Majorpoint] + " 学分\n"
+      word += "👉专业 : 缺少" + [Majorstandard - Majorpoint] + "学分\n"
     } else {
       word += "👉专业 : 通过\n"
     }
@@ -1078,7 +1078,7 @@ var Result = {
     var Doublepoint = Number(document.getElementById("double_major_point").value);
     if (!Doublecheck) {
       if (Doublepoint < 45) {
-        word += "👉双专业 : 缺少" + [45 - Doublepoint] + " 学分\n"
+        word += "👉双专业 : 缺少" + [45 - Doublepoint] + "学分\n"
       } else {
         word += "👉双专业 : 通过最少学分\n"
       }
@@ -1089,7 +1089,7 @@ var Result = {
     var Linkpoint = Number(document.getElementById("link_major_point").value) + LinkCross;
     if (!Linkcheck) {
       if (Linkpoint < 36) {
-        word += "👉연계전공 : 缺少" + [36 - Linkpoint] + " 学分\n"
+        word += "👉연계전공 : 缺少" + [36 - Linkpoint] + "学分\n"
       } else {
         word += "👉연계전공 : 通过最少学分\n"
       }
@@ -1103,7 +1103,7 @@ var Result = {
     var FusionStandard = Number(document.getElementById("fusion_standard").value);
     if (!Fusioncheck) {
       if (Fusionpoint < FusionStandard) {
-        word += "👉" + Fusiontext + "융합전공 : 缺少" + [FusionStandard - Fusionpoint] + " 学分\n"
+        word += "👉" + Fusiontext + "융합전공 : 缺少" + [FusionStandard - Fusionpoint] + "学分\n"
       } else {
         word += "👉" + Fusiontext + "융합전공 : 通过最少学分\n"
       }
@@ -1113,7 +1113,7 @@ var Result = {
     var Planpoint = Number(document.getElementById("plan_major_point").value) + Number(document.getElementById("cross_point3").value);
     if (!Plancheck) {
       if (Planpoint < 36) {
-        word += "👉설계전공 : 缺少" + [36 - Planpoint] + " 学分\n"
+        word += "👉설계전공 : 缺少" + [36 - Planpoint] + "学分\n"
       } else {
         word += "👉설계전공 : 通过最少学分\n"
       }
@@ -1123,13 +1123,13 @@ var Result = {
     var Minorpoint = Number(document.getElementById("minor_point").value);
     if (!Minorcheck) {
       if (Minorpoint < 21) {
-        word += "👉부전공 : 缺少" + [21 - Minorpoint] + " 学分\n"
+        word += "👉부전공 : 缺少" + [21 - Minorpoint] + "学分\n"
       } else {
         word += "👉부전공 : 通过最少学分\n"
       }
     }
 
-      word += "👉自由选择 : 进修" + Freepoint + " 学分\n"
+      word += "👉自由选择 : 进修" + Freepoint + "学分\n"
 
       if (!CAUSeminar) {
         word += "- CAU세미나(1学分) : 没通过\n"
@@ -1141,7 +1141,7 @@ var Result = {
     var Teachingpoint = Number(document.getElementById("teaching_point").value);
     if (!Teachingcheck) {
       if (Teachingpoint < 22)
-        word += "👉교직이수 : 缺少 " + [22 - Teachingpoint] + " 学分\n"
+        word += "👉교직이수 : 缺少 " + [22 - Teachingpoint] + "学分\n"
       else {
         word += "👉교직이수 : 通过最少学分\n"
       }
@@ -1150,7 +1150,7 @@ var Result = {
     var TotalStandard = Number(document.getElementById("total_standard").value);
     var TotalPoint = Number(document.getElementById("the_total").value);
     if (TotalPoint < TotalStandard) {
-      word += "👉总进修学分 : 缺少" + [TotalStandard - TotalPoint] + " 学分"
+      word += "👉总进修学分 : 至少需要" + [TotalStandard - TotalPoint] + "学分"
     } else {
       word += "👉总进修学分 : 通过"
     }
@@ -1356,9 +1356,9 @@ var Result = {
     }
 
     if (Majortext.includes("트랙")) {
-      word += "\n👉主专业 : 공공인재학부" + Majortext + "\n👉多专业 : " + Multimajortext + "\n👉教养 : " + Liberal_point + " 学分\n";
+      word += "\n👉主专业 : 공공인재학부" + Majortext + "\n👉多专业 : " + Multimajortext + "\n👉教养 : " + Liberal_point + "学分\n";
     } else {
-      word += "\n👉主专业 : " + Majortext + "\n👉多专业 : " + Multimajortext + "\n👉教养 : " + Liberal_point + " 学分\n";
+      word += "\n👉主专业 : " + Majortext + "\n👉多专业 : " + Multimajortext + "\n👉教养 : " + Liberal_point + "学分\n";
     }
 
     var FusionOption = Number(document.getElementById("fusion-options").value);
@@ -1376,19 +1376,19 @@ var Result = {
     }
 
     if (Basepoint < BaseStandard) {
-      word += "👉专业基础 : 缺少" + [BaseStandard - Basepoint] + " 学分\n";
+      word += "👉专业基础 : 缺少" + [BaseStandard - Basepoint] + "学分\n";
     } else {
       word += "👉专业基础 : 通过\n";
     }
 
     if (Necepoint < NeceStandard) {
-      word += "👉专业必修 : 缺少" + [NeceStandard - Necepoint] + " 学分\n";
+      word += "👉专业必修 : 缺少" + [NeceStandard - Necepoint] + "学分\n";
     } else {
       word += "👉专业必修 : 通过\n";
     }
 
     if (Majorpoint < Majorstandard) {
-      word += "👉专业 : 缺少" + [Majorstandard - Majorpoint] + " 学分\n"
+      word += "👉专业 : 缺少" + [Majorstandard - Majorpoint] + "学分\n"
     } else {
       word += "👉专业 : 通过\n"
     }
@@ -1397,7 +1397,7 @@ var Result = {
     var Doublepoint = Number(document.getElementById("double_major_point").value);
     if (!Doublecheck) {
       if (Doublepoint < 45) {
-        word += "👉双专业 : 缺少" + [45 - Doublepoint] + " 学分\n"
+        word += "👉双专业 : 缺少" + [45 - Doublepoint] + "学分\n"
       } else {
         word += "👉双专业 : 通过最少学分\n"
       }
@@ -1408,7 +1408,7 @@ var Result = {
     var Linkpoint = Number(document.getElementById("link_major_point").value) + LinkCross;
     if (!Linkcheck) {
       if (Linkpoint < 36) {
-        word += "👉연계전공 : 缺少" + [36 - Linkpoint] + " 学分\n"
+        word += "👉연계전공 : 缺少" + [36 - Linkpoint] + "学分\n"
       } else {
         word += "👉연계전공 : 通过最少学分\n"
       }
@@ -1421,7 +1421,7 @@ var Result = {
     var FusionStandard = Number(document.getElementById("fusion_standard").value);
     if (!Fusioncheck) {
       if (Fusionpoint < FusionStandard) {
-        word += "👉" + Fusiontext + "융합전공 : 缺少" + [FusionStandard - Fusionpoint] + " 学分\n"
+        word += "👉" + Fusiontext + "융합전공 : 缺少" + [FusionStandard - Fusionpoint] + "学分\n"
       } else {
         word += "👉" + Fusiontext + "융합전공 : 通过最少学分\n"
       }
@@ -1431,7 +1431,7 @@ var Result = {
     var Planpoint = Number(document.getElementById("plan_major_point").value) + Number(document.getElementById("cross_point3").value);
     if (!Plancheck) {
       if (Planpoint < 36) {
-        word += "👉연계전공 : 缺少" + [36 - Planpoint] + " 学分\n"
+        word += "👉연계전공 : 缺少" + [36 - Planpoint] + "学分\n"
       } else {
         word += "👉연계전공 : 通过最少学分\n"
       }
@@ -1441,20 +1441,20 @@ var Result = {
     var Minorpoint = Number(document.getElementById("minor_point").value);
     if (!Minorcheck) {
       if (Minorpoint < 21) {
-        word += "👉부전공 : 缺少" + [21 - Minorpoint] + " 学分\n"
+        word += "👉부전공 : 缺少" + [21 - Minorpoint] + "学分\n"
       } else {
         word += "👉부전공 : 通过最少学分\n"
       }
     }
 
     var Freepoint = Number(document.getElementById("free_point").value);
-    word += "👉자유선택 : " + Freepoint + " 学分\n"
+    word += "👉자유선택 : " + Freepoint + "学分\n"
 
     var Teachingcheck = document.getElementById("teaching_none").checked;
     var Teachingpoint = Number(document.getElementById("teaching_point").value);
     if (!Teachingcheck) {
       if (Teachingpoint < 22)
-        word += "👉교직이수 : 缺少 " + [22 - Teachingpoint] + " 学分\n"
+        word += "👉교직이수 : 缺少 " + [22 - Teachingpoint] + "学分\n"
       else {
         word += "👉교직이수 : 通过最少学分\n"
       }
@@ -1463,7 +1463,7 @@ var Result = {
     var TotalPoint = Number(document.getElementById("the_total").value);
     var TotalStandard = Number(document.getElementById("total_standard").value);
     if (TotalPoint < TotalStandard) {
-      word += "👉总进修学分 : 缺少" + [TotalStandard - TotalPoint] + " 学分"
+      word += "👉总进修学分 : 至少需要" + [TotalStandard - TotalPoint] + "学分"
     } else {
       word += "👉总进修学分 : 通过"
     }
