@@ -271,7 +271,8 @@
         </tr>
         <tr id="double_table" style="display:none">
           <th>복수전공<br>Double major</th>
-          <td><input type="text" class="standard_number" id="double_st" value="45" readonly tabindex="-1"></td>
+          <td><input type="text" class="standard_number" id="double_st" value="45" readonly tabindex="-1"><br>
+            <input type="checkbox" id="double-teaching" onchange="Change.double_st_teaching();"><label for="double-teaching">복전교직</label></td>
           <td colspan="3">
             <input type="number" id="double_major_point" placeholder="0" value="" onchange="Total.sum();Color.number('total_standard','the_total');Color.number('double_st','double_major_point');"
               onkeyup="Total.sum();Color.number('total_standard','the_total');Color.number('double_st','double_major_point');" class="inputnumber" min="0" max="78" maxlength="2" oninput="maxLengthCheck(this)">

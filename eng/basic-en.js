@@ -574,10 +574,11 @@ var Result = {
     }
 
     var Doublecheck = document.getElementById("double_major_none").checked;
+    var DoubleStandard = document.getElementById("double_st").value;
     var Doublepoint = Number(document.getElementById("double_major_point").value);
     if (!Doublecheck) {
-      if (Doublepoint < 45) {
-        word += "👉Double major : " + [45 - Doublepoint] + " more credits required\n"
+      if (Doublepoint < DoubleStandard) {
+        word += "👉Double major : " + [DoubleStandard - Doublepoint] + " more credits required\n"
       } else {
         word += "👉Double major : Passed the minimum credits requirement\n"
       }
@@ -823,10 +824,11 @@ var Result = {
     }
 
     var Doublecheck = document.getElementById("double_major_none").checked;
+    var DoubleStandard = document.getElementById("double_st").value;
     var Doublepoint = Number(document.getElementById("double_major_point").value);
     if (!Doublecheck) {
-      if (Doublepoint < 45) {
-        word += "👉Double major : " + [45 - Doublepoint] + " more credits required\n"
+      if (Doublepoint < DoubleStandard) {
+        word += "👉Double major : " + [DoubleStandard - Doublepoint] + " more credits required\n"
       } else {
         word += "👉Double major : Passed the minimum credits requirement\n"
       }
@@ -1077,10 +1079,11 @@ var Result = {
     }
 
     var Doublecheck = document.getElementById("double_major_none").checked;
+    var DoubleStandard = document.getElementById("double_st").value;
     var Doublepoint = Number(document.getElementById("double_major_point").value);
     if (!Doublecheck) {
-      if (Doublepoint < 45) {
-        word += "👉Double major : " + [45 - Doublepoint] + " more credits required\n"
+      if (Doublepoint < DoubleStandard) {
+        word += "👉Double major : " + [DoubleStandard - Doublepoint] + " more credits required\n"
       } else {
         word += "👉Double major : Passed the minimum credits requirement\n"
       }
@@ -1396,10 +1399,11 @@ var Result = {
     }
 
     var Doublecheck = document.getElementById("double_major_none").checked;
+    var DoubleStandard = document.getElementById("double_st").value;
     var Doublepoint = Number(document.getElementById("double_major_point").value);
     if (!Doublecheck) {
-      if (Doublepoint < 45) {
-        word += "👉Double major : " + [45 - Doublepoint] + " more credits required\n"
+      if (Doublepoint < DoubleStandard) {
+        word += "👉Double major : " + [DoubleStandard - Doublepoint] + " more credits required\n"
       } else {
         word += "👉Double major : Passed the minimum credits requirement\n"
       }
