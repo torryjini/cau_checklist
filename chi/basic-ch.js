@@ -572,10 +572,11 @@ var Result = {
     }
 
     var Doublecheck = document.getElementById("double_major_none").checked;
+    var DoubleStandard = document.getElementById("double_st").value;
     var Doublepoint = Number(document.getElementById("double_major_point").value);
     if (!Doublecheck) {
-      if (Doublepoint < 45) {
-        word += "👉双专业 : 缺少" + [45 - Doublepoint] + "学分\n"
+      if (Doublepoint < DoubleStandard) {
+        word += "👉双专业 : 缺少" + [DoubleStandard - Doublepoint] + "学分\n"
       } else {
         word += "👉双专业 : 通过最少学分\n"
       }
@@ -821,10 +822,11 @@ var Result = {
     }
 
     var Doublecheck = document.getElementById("double_major_none").checked;
+    var DoubleStandard = document.getElementById("double_st").value;
     var Doublepoint = Number(document.getElementById("double_major_point").value);
     if (!Doublecheck) {
-      if (Doublepoint < 45) {
-        word += "👉双专业 : 缺少" + [45 - Doublepoint] + "学分\n"
+      if (Doublepoint < DoubleStandard) {
+        word += "👉双专业 : 缺少" + [DoubleStandard - Doublepoint] + "学分\n"
       } else {
         word += "👉双专业 : 通过最少学分\n"
       }
@@ -1075,10 +1077,11 @@ var Result = {
     }
 
     var Doublecheck = document.getElementById("double_major_none").checked;
+    var DoubleStandard = document.getElementById("double_st").value;
     var Doublepoint = Number(document.getElementById("double_major_point").value);
     if (!Doublecheck) {
-      if (Doublepoint < 45) {
-        word += "👉双专业 : 缺少" + [45 - Doublepoint] + "学分\n"
+      if (Doublepoint < DoubleStandard) {
+        word += "👉双专业 : 缺少" + [DoubleStandard - Doublepoint] + "学分\n"
       } else {
         word += "👉双专业 : 通过最少学分\n"
       }
@@ -1394,10 +1397,11 @@ var Result = {
     }
 
     var Doublecheck = document.getElementById("double_major_none").checked;
+    var DoubleStandard = document.getElementById("double_st").value;
     var Doublepoint = Number(document.getElementById("double_major_point").value);
     if (!Doublecheck) {
-      if (Doublepoint < 45) {
-        word += "👉双专业 : 缺少" + [45 - Doublepoint] + "学分\n"
+      if (Doublepoint < DoubleStandard) {
+        word += "👉双专业 : 缺少" + [DoubleStandard - Doublepoint] + "学分\n"
       } else {
         word += "👉双专业 : 通过最少学分\n"
       }
