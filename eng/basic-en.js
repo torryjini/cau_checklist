@@ -585,11 +585,12 @@ var Result = {
     }
 
     var Linkcheck = document.getElementById("link_major_none").checked;
+    var LinkStandard = document.getElementById("link_st").value;
     var LinkCross = Number(document.getElementById("cross_point1").value);
     var Linkpoint = Number(document.getElementById("link_major_point").value) + LinkCross;
     if (!Linkcheck) {
-      if (Linkpoint < 36) {
-        word += "👉연계전공 : " + [36 - Linkpoint] + " more credits required\n"
+      if (Linkpoint < LinkStandard) {
+        word += "👉연계전공 : " + [LinkStandard - Linkpoint] + " more credits required\n"
       } else {
         word += "👉연계전공 : Passed the minimum credits requirement\n"
       }
@@ -610,20 +611,22 @@ var Result = {
     }
 
     var Plancheck = document.getElementById("plan_major_none").checked;
+    var PlanStandard = document.getElementById("plan_st").value;
     var Planpoint = Number(document.getElementById("plan_major_point").value) + Number(document.getElementById("cross_point3").value);
     if (!Plancheck) {
-      if (Planpoint < 36) {
-        word += "👉설계전공 : " + [36 - Planpoint] + " more credits required\n"
+      if (Planpoint < PlanStandard) {
+        word += "👉설계전공 : " + [PlanStandard - Planpoint] + " more credits required\n"
       } else {
         word += "👉설계전공 : Passed the minimum credits requirement\n"
       }
     }
 
     var Minorcheck = document.getElementById("minor_none").checked;
+    var MinorStandard = document.getElementById("minor_st").value;
     var Minorpoint = Number(document.getElementById("minor_point").value);
     if (!Minorcheck) {
-      if (Minorpoint < 21) {
-        word += "👉Minor : " + [21 - Minorpoint] + " more credits required\n"
+      if (Minorpoint < MinorStandard) {
+        word += "👉Minor : " + [MinorStandard - Minorpoint] + " more credits required\n"
       } else {
         word += "👉Minor : Passed the minimum credits requirement\n"
       }
@@ -634,10 +637,11 @@ var Result = {
 
 
     var Teachingcheck = document.getElementById("teaching_none").checked;
+    var TeachingStandard = document.getElementById("teaching_st").value;
     var Teachingpoint = Number(document.getElementById("teaching_point").value);
     if (!Teachingcheck) {
-      if (Teachingpoint < 22)
-        word += "👉Teaching : " + [22 - Teachingpoint] + " more credits required\n"
+      if (Teachingpoint < TeachingStandard)
+        word += "👉Teaching : " + [TeachingStandard - Teachingpoint] + " more credits required\n"
       else {
         word += "👉Teaching : Passed the minimum credits requirement\n"
       }
@@ -835,11 +839,12 @@ var Result = {
     }
 
     var Linkcheck = document.getElementById("link_major_none").checked;
+    var LinkStandard = document.getElementById("link_st").value;
     var LinkCross = Number(document.getElementById("cross_point1").value);
     var Linkpoint = Number(document.getElementById("link_major_point").value) + LinkCross;
     if (!Linkcheck) {
-      if (Linkpoint < 36) {
-        word += "👉연계전공 : " + [36 - Linkpoint] + " more credits required\n"
+      if (Linkpoint < LinkStandard) {
+        word += "👉연계전공 : " + [LinkStandard - Linkpoint] + " more credits required\n"
       } else {
         word += "👉연계전공 : Passed the minimum credits requirement\n"
       }
@@ -859,20 +864,22 @@ var Result = {
     }
 
     var Plancheck = document.getElementById("plan_major_none").checked;
+    var PlanStandard = document.getElementById("plan_st").value;
     var Planpoint = Number(document.getElementById("plan_major_point").value) + Number(document.getElementById("cross_point3").value);
     if (!Plancheck) {
-      if (Planpoint < 36) {
-        word += "👉설계전공 : " + [36 - Planpoint] + " more credits required\n"
+      if (Planpoint < PlanStandard) {
+        word += "👉설계전공 : " + [PlanStandard - Planpoint] + " more credits required\n"
       } else {
         word += "👉설계전공 : Passed the minimum credits requirement\n"
       }
     }
 
     var Minorcheck = document.getElementById("minor_none").checked;
+    var MinorStandard = document.getElementById("minor_st").value;
     var Minorpoint = Number(document.getElementById("minor_point").value);
     if (!Minorcheck) {
-      if (Minorpoint < 21) {
-        word += "👉Minor : " + [21 - Minorpoint] + " more credits required\n"
+      if (Minorpoint < MinorStandard) {
+        word += "👉Minor : " + [MinorStandard - Minorpoint] + " more credits required\n"
       } else {
         word += "👉Minor : Passed the minimum credits requirement\n"
       }
@@ -882,10 +889,11 @@ var Result = {
     word += "👉Free choice : " + Freepoint + " credits\n"
 
     var Teachingcheck = document.getElementById("teaching_none").checked;
+    var TeachingStandard = document.getElementById("teaching_st").value;
     var Teachingpoint = Number(document.getElementById("teaching_point").value);
     if (!Teachingcheck) {
-      if (Teachingpoint < 22)
-        word += "👉Teaching : " + [22 - Teachingpoint] + " more credits required\n"
+      if (Teachingpoint < TeachingStandard)
+        word += "👉Teaching : " + [TeachingStandard - Teachingpoint] + " more credits required\n"
       else {
         word += "👉Teaching : Passed the minimum credits requirement\n"
       }
@@ -1090,11 +1098,12 @@ var Result = {
     }
 
     var Linkcheck = document.getElementById("link_major_none").checked;
+    var LinkStandard = document.getElementById("link_st").value;
     var LinkCross = Number(document.getElementById("cross_point1").value);
     var Linkpoint = Number(document.getElementById("link_major_point").value) + LinkCross;
     if (!Linkcheck) {
-      if (Linkpoint < 36) {
-        word += "👉연계전공 : " + [36 - Linkpoint] + " more credits required\n"
+      if (Linkpoint < LinkStandard) {
+        word += "👉연계전공 : " + [LinkStandard - Linkpoint] + " more credits required\n"
       } else {
         word += "👉연계전공 : Passed the minimum credits requirement\n"
       }
@@ -1115,20 +1124,22 @@ var Result = {
     }
 
     var Plancheck = document.getElementById("plan_major_none").checked;
+    var PlanStandard = document.getElementById("plan_st").value;
     var Planpoint = Number(document.getElementById("plan_major_point").value) + Number(document.getElementById("cross_point3").value);
     if (!Plancheck) {
-      if (Planpoint < 36) {
-        word += "👉설계전공 : " + [36 - Planpoint] + " more credits required\n"
+      if (Planpoint < PlanStandard) {
+        word += "👉설계전공 : " + [PlanStandard - Planpoint] + " more credits required\n"
       } else {
         word += "👉설계전공 : Passed the minimum credits requirement\n"
       }
     }
 
     var Minorcheck = document.getElementById("minor_none").checked;
+    var MinorStandard = document.getElementById("minor_st").value;
     var Minorpoint = Number(document.getElementById("minor_point").value);
     if (!Minorcheck) {
-      if (Minorpoint < 21) {
-        word += "👉Minor : " + [21 - Minorpoint] + " more credits required\n"
+      if (Minorpoint < MinorStandard) {
+        word += "👉Minor : " + [MinorStandard - Minorpoint] + " more credits required\n"
       } else {
         word += "👉Minor : Passed the minimum credits requirement\n"
       }
@@ -1143,10 +1154,11 @@ var Result = {
       }
 
     var Teachingcheck = document.getElementById("teaching_none").checked;
+    var TeachingStandard = document.getElementById("teaching_st").value;
     var Teachingpoint = Number(document.getElementById("teaching_point").value);
     if (!Teachingcheck) {
-      if (Teachingpoint < 22)
-        word += "👉Teaching : " + [22 - Teachingpoint] + " more credits required\n"
+      if (Teachingpoint < TeachingStandard)
+        word += "👉Teaching : " + [TeachingStandard - Teachingpoint] + " more credits required\n"
       else {
         word += "👉Teaching : Passed the minimum credits requirement\n"
       }
@@ -1410,11 +1422,12 @@ var Result = {
     }
 
     var Linkcheck = document.getElementById("link_major_none").checked;
+    var LinkStandard = document.getElementById("link_st").value;
     var LinkCross = Number(document.getElementById("cross_point1").value);
     var Linkpoint = Number(document.getElementById("link_major_point").value) + LinkCross;
     if (!Linkcheck) {
-      if (Linkpoint < 36) {
-        word += "👉연계전공 : " + [36 - Linkpoint] + " more credits required\n"
+      if (Linkpoint < LinkStandard) {
+        word += "👉연계전공 : " + [LinkStandard - Linkpoint] + " more credits required\n"
       } else {
         word += "👉연계전공 : Passed the minimum credits requirement\n"
       }
@@ -1434,20 +1447,22 @@ var Result = {
     }
 
     var Plancheck = document.getElementById("plan_major_none").checked;
+    var PlanStandard = document.getElementById("plan_st").value;
     var Planpoint = Number(document.getElementById("plan_major_point").value) + Number(document.getElementById("cross_point3").value);
     if (!Plancheck) {
-      if (Planpoint < 36) {
-        word += "👉설계전공 : " + [36 - Planpoint] + " more credits required\n"
+      if (Planpoint < PlanStandard) {
+        word += "👉설계전공 : " + [PlanStandard - Planpoint] + " more credits required\n"
       } else {
         word += "👉설계전공 : Passed the minimum credits requirement\n"
       }
     }
 
     var Minorcheck = document.getElementById("minor_none").checked;
+    var MinorStandard = document.getElementById("minor_st").value;
     var Minorpoint = Number(document.getElementById("minor_point").value);
     if (!Minorcheck) {
-      if (Minorpoint < 21) {
-        word += "👉Minor : " + [21 - Minorpoint] + " more credits required\n"
+      if (Minorpoint < MinorStandard) {
+        word += "👉Minor : " + [MinorStandard - Minorpoint] + " more credits required\n"
       } else {
         word += "👉Minor : Passed the minimum credits requirement\n"
       }
@@ -1457,10 +1472,11 @@ var Result = {
     word += "👉Free choice : " + Freepoint + " credits\n"
 
     var Teachingcheck = document.getElementById("teaching_none").checked;
+    var TeachingStandard = document.getElementById("teaching_st").value;
     var Teachingpoint = Number(document.getElementById("teaching_point").value);
     if (!Teachingcheck) {
-      if (Teachingpoint < 22)
-        word += "👉Teaching : " + [22 - Teachingpoint] + " more credits required\n"
+      if (Teachingpoint < TeachingStandard)
+        word += "👉Teaching : " + [TeachingStandard - Teachingpoint] + " more credits required\n"
       else {
         word += "👉Teaching : Passed the minimum credits requirement\n"
       }
