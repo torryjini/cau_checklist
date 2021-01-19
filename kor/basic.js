@@ -584,11 +584,12 @@ var Result = {
     }
 
     var Linkcheck = document.getElementById("link_major_none").checked;
+    var LinkStandard = document.getElementById("link_st").value;
     var LinkCross = Number(document.getElementById("cross_point1").value);
     var Linkpoint = Number(document.getElementById("link_major_point").value) + LinkCross;
     if (!Linkcheck) {
-      if (Linkpoint < 36) {
-        word += "👉연계전공 : " + [36 - Linkpoint] + " 학점 미달\n"
+      if (Linkpoint < LinkStandard) {
+        word += "👉연계전공 : " + [LinkStandard - Linkpoint] + " 학점 미달\n"
       } else {
         word += "👉연계전공 : 최소학점 기준 통과_필수과목 확인!\n"
       }
@@ -609,20 +610,22 @@ var Result = {
     }
 
     var Plancheck = document.getElementById("plan_major_none").checked;
+    var PlanStandard = document.getElementById("plan_st").value;
     var Planpoint = Number(document.getElementById("plan_major_point").value) + Number(document.getElementById("cross_point3").value);
     if (!Plancheck) {
-      if (Planpoint < 36) {
-        word += "👉설계전공 : " + [36 - Planpoint] + " 학점 미달\n"
+      if (Planpoint < PlanStandard) {
+        word += "👉설계전공 : " + [PlanStandard - Planpoint] + " 학점 미달\n"
       } else {
         word += "👉설계전공 : 최소학점 기준 통과\n"
       }
     }
 
     var Minorcheck = document.getElementById("minor_none").checked;
+    var MinorStandard = document.getElementById("minor_st").value;
     var Minorpoint = Number(document.getElementById("minor_point").value);
     if (!Minorcheck) {
-      if (Minorpoint < 21) {
-        word += "👉부전공 : " + [21 - Minorpoint] + " 학점 미달\n"
+      if (Minorpoint < MinorStandard) {
+        word += "👉부전공 : " + [MinorStandard - Minorpoint] + " 학점 미달\n"
       } else {
         word += "👉부전공 : 최소학점 기준 통과_필수과목 확인!\n"
       }
@@ -633,10 +636,11 @@ var Result = {
     word += "👉자유선택 : " + Freepoint + " 학점 이수\n"
 
     var Teachingcheck = document.getElementById("teaching_none").checked;
+    var TeachingStandard = document.getElementById("teaching_st").value;
     var Teachingpoint = Number(document.getElementById("teaching_point").value);
     if (!Teachingcheck) {
-      if (Teachingpoint < 22)
-        word += "👉교직이수 : " + [22 - Teachingpoint] + " 학점 미달\n"
+      if (Teachingpoint < TeachingStandard)
+        word += "👉교직이수 : " + [TeachingStandard - Teachingpoint] + " 학점 미달\n"
       else {
         word += "👉교직이수 : 최소학점 기준 통과\n"
       }
@@ -828,11 +832,12 @@ var Result = {
     }
 
     var Linkcheck = document.getElementById("link_major_none").checked;
+    var LinkStandard = document.getElementById("link_st").value;
     var LinkCross = Number(document.getElementById("cross_point1").value);
     var Linkpoint = Number(document.getElementById("link_major_point").value) + LinkCross;
     if (!Linkcheck) {
-      if (Linkpoint < 36) {
-        word += "👉연계전공 : " + [36 - Linkpoint] + " 학점 미달\n"
+      if (Linkpoint < LinkStandard) {
+        word += "👉연계전공 : " + [LinkStandard - Linkpoint] + " 학점 미달\n"
       } else {
         word += "👉연계전공 : 최소학점 기준 통과_필수과목 확인 필요\n"
       }
@@ -852,20 +857,22 @@ var Result = {
     }
 
     var Plancheck = document.getElementById("plan_major_none").checked;
+    var PlanStandard = document.getElementById("plan_st").value;
     var Planpoint = Number(document.getElementById("plan_major_point").value) + Number(document.getElementById("cross_point3").value);
     if (!Plancheck) {
-      if (Planpoint < 36) {
-        word += "👉설계전공 : " + [36 - Planpoint] + " 학점 미달\n"
+      if (Planpoint < PlanStandard) {
+        word += "👉설계전공 : " + [PlanStandard - Planpoint] + " 학점 미달\n"
       } else {
         word += "👉설계전공 : 최소학점 기준 통과\n"
       }
     }
 
     var Minorcheck = document.getElementById("minor_none").checked;
+    var MinorStandard = document.getElementById("minor_st").value;
     var Minorpoint = Number(document.getElementById("minor_point").value);
     if (!Minorcheck) {
-      if (Minorpoint < 21) {
-        word += "👉부전공 : " + [21 - Minorpoint] + " 학점 미달\n"
+      if (Minorpoint < MinorStandard) {
+        word += "👉부전공 : " + [MinorStandard - Minorpoint] + " 학점 미달\n"
       } else {
         word += "👉부전공 : 최소학점 기준 통과_필수과목 확인 필요\n"
       }
@@ -875,10 +882,11 @@ var Result = {
     word += "👉자유선택 : " + Freepoint + " 학점 이수\n"
 
     var Teachingcheck = document.getElementById("teaching_none").checked;
+    var TeachingStandard = document.getElementById("teaching_st").value;
     var Teachingpoint = Number(document.getElementById("teaching_point").value);
     if (!Teachingcheck) {
-      if (Teachingpoint < 22)
-        word += "👉교직이수 : " + [22 - Teachingpoint] + " 학점 미달\n"
+      if (Teachingpoint < TeachingStandard)
+        word += "👉교직이수 : " + [TeachingStandard - Teachingpoint] + " 학점 미달\n"
       else {
         word += "👉교직이수 : 최소학점 기준 통과\n"
       }
@@ -1077,11 +1085,12 @@ var Result = {
     }
 
     var Linkcheck = document.getElementById("link_major_none").checked;
+    var LinkStandard = document.getElementById("link_st").value;
     var LinkCross = Number(document.getElementById("cross_point1").value);
     var Linkpoint = Number(document.getElementById("link_major_point").value) + LinkCross;
     if (!Linkcheck) {
-      if (Linkpoint < 36) {
-        word += "👉연계전공 : " + [36 - Linkpoint] + " 학점 미달\n"
+      if (Linkpoint < LinkStandard) {
+        word += "👉연계전공 : " + [LinkStandard - Linkpoint] + " 학점 미달\n"
       } else {
         word += "👉연계전공 : 최소학점 기준 통과_필수과목 확인!\n"
       }
@@ -1102,20 +1111,22 @@ var Result = {
     }
 
     var Plancheck = document.getElementById("plan_major_none").checked;
+    var PlanStandard = document.getElementById("plan_st").value;
     var Planpoint = Number(document.getElementById("plan_major_point").value) + Number(document.getElementById("cross_point3").value);
     if (!Plancheck) {
-      if (Planpoint < 36) {
-        word += "👉설계전공 : " + [36 - Planpoint] + " 학점 미달\n"
+      if (Planpoint < PlanStandard) {
+        word += "👉설계전공 : " + [PlanStandard - Planpoint] + " 학점 미달\n"
       } else {
         word += "👉설계전공 : 최소학점 기준 통과\n"
       }
     }
 
     var Minorcheck = document.getElementById("minor_none").checked;
+    var MinorStandard = document.getElementById("minor_st").value;
     var Minorpoint = Number(document.getElementById("minor_point").value);
     if (!Minorcheck) {
-      if (Minorpoint < 21) {
-        word += "👉부전공 : " + [21 - Minorpoint] + " 학점 미달\n"
+      if (Minorpoint < MinorStandard) {
+        word += "👉부전공 : " + [MinorStandard - Minorpoint] + " 학점 미달\n"
       } else {
         word += "👉부전공 : 최소학점 기준 통과_필수과목 확인!\n"
       }
@@ -1130,10 +1141,11 @@ var Result = {
     }
 
     var Teachingcheck = document.getElementById("teaching_none").checked;
+    var TeachingStandard = document.getElementById("teaching_st").value;
     var Teachingpoint = Number(document.getElementById("teaching_point").value);
     if (!Teachingcheck) {
-      if (Teachingpoint < 22)
-        word += "👉교직이수 : " + [22 - Teachingpoint] + " 학점 미달\n"
+      if (Teachingpoint < TeachingStandard)
+        word += "👉교직이수 : " + [TeachingStandard - Teachingpoint] + " 학점 미달\n"
       else {
         word += "👉교직이수 : 최소학점 기준 통과\n"
       }
@@ -1393,11 +1405,12 @@ var Result = {
     }
 
     var Linkcheck = document.getElementById("link_major_none").checked;
+    var LinkStandard = document.getElementById("link_st").value;
     var LinkCross = Number(document.getElementById("cross_point1").value);
     var Linkpoint = Number(document.getElementById("link_major_point").value) + LinkCross;
     if (!Linkcheck) {
-      if (Linkpoint < 36) {
-        word += "👉연계전공 : " + [36 - Linkpoint] + " 학점 미달\n"
+      if (Linkpoint < LinkStandard) {
+        word += "👉연계전공 : " + [LinkStandard - Linkpoint] + " 학점 미달\n"
       } else {
         word += "👉연계전공 : 최소학점 기준 통과_필수과목 확인!\n"
       }
@@ -1417,20 +1430,22 @@ var Result = {
     }
 
     var Plancheck = document.getElementById("plan_major_none").checked;
+    var PlanStandard = document.getElementById("plan_st").value;
     var Planpoint = Number(document.getElementById("plan_major_point").value) + Number(document.getElementById("cross_point3").value);
     if (!Plancheck) {
-      if (Planpoint < 36) {
-        word += "👉설계전공 : " + [36 - Planpoint] + " 학점 미달\n"
+      if (Planpoint < PlanStandard) {
+        word += "👉설계전공 : " + [PlanStandard - Planpoint] + " 학점 미달\n"
       } else {
         word += "👉설계전공 : 최소학점 기준 통과\n"
       }
     }
 
     var Minorcheck = document.getElementById("minor_none").checked;
+    var MinorStandard = document.getElementById("minor_st").value;
     var Minorpoint = Number(document.getElementById("minor_point").value);
     if (!Minorcheck) {
-      if (Minorpoint < 21) {
-        word += "👉부전공 : " + [21 - Minorpoint] + " 학점 미달\n"
+      if (Minorpoint < MinorStandard) {
+        word += "👉부전공 : " + [MinorStandard - Minorpoint] + " 학점 미달\n"
       } else {
         word += "👉부전공 : 최소학점 기준 통과_필수과목 확인!\n"
       }
@@ -1440,10 +1455,11 @@ var Result = {
     word += "👉자유선택 : " + Freepoint + " 학점 이수\n"
 
     var Teachingcheck = document.getElementById("teaching_none").checked;
+    var TeachingStandard = document.getElementById("teaching_st").value;
     var Teachingpoint = Number(document.getElementById("teaching_point").value);
     if (!Teachingcheck) {
-      if (Teachingpoint < 22)
-        word += "👉교직이수 : " + [22 - Teachingpoint] + " 학점 미달\n"
+      if (Teachingpoint < TeachingStandard)
+        word += "👉교직이수 : " + [TeachingStandard - Teachingpoint] + " 학점 미달\n"
       else {
         word += "👉교직이수 : 최소학점 기준 통과\n"
       }
