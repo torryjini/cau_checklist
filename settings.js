@@ -635,6 +635,15 @@ var Change = {
     for (i = 0; i < num.length; i++) {
       document.getElementById("MultiMajor_select").options[i] = new Option(num[i], vnum[i]);
     }
+  },
+  double_st_teaching: function () {
+    var DoubleTeachCheck = document.getElementById("double-teaching").checked;
+
+    if ( DoubleTeachCheck ) {
+      document.getElementById("double_st").value = 50;
+    } else {
+      document.getElementById("double_st").value = 45;
+    }
   }
 }
 
