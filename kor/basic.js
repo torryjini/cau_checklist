@@ -573,12 +573,13 @@ var Result = {
     }
 
     var Doublecheck = document.getElementById("double_major_none").checked;
+    var DoubleStandard = document.getElementById("double_st").value;
     var Doublepoint = Number(document.getElementById("double_major_point").value);
     if (!Doublecheck) {
-      if (Doublepoint < 45) {
-        word += "👉복수전공 : " + [45 - Doublepoint] + " 학점 미달\n"
+      if (Doublepoint < DoubleStandard) {
+        word += "👉복수전공 : " + [DoubleStandard - Doublepoint] + " 학점 미달\n"
       } else {
-        word += "👉복수전공 : 최소학점 기준 통과\n"
+        word += "👉복수전공 : 최소학점 기준 통과_필수과목 확인!\n"
       }
     }
 
@@ -589,7 +590,7 @@ var Result = {
       if (Linkpoint < 36) {
         word += "👉연계전공 : " + [36 - Linkpoint] + " 학점 미달\n"
       } else {
-        word += "👉연계전공 : 최소학점 기준 통과\n"
+        word += "👉연계전공 : 최소학점 기준 통과_필수과목 확인!\n"
       }
     }
 
@@ -603,7 +604,7 @@ var Result = {
       if (Fusionpoint < FusionStandard) {
         word += "👉" + Fusiontext + "융합전공 : " + [FusionStandard - Fusionpoint] + " 학점 미달\n"
       } else {
-        word += "👉" + Fusiontext + "융합전공 : 최소학점 기준 통과\n"
+        word += "👉" + Fusiontext + "융합전공 : 최소학점 기준 통과_필수과목 확인!\n"
       }
     }
 
@@ -623,7 +624,7 @@ var Result = {
       if (Minorpoint < 21) {
         word += "👉부전공 : " + [21 - Minorpoint] + " 학점 미달\n"
       } else {
-        word += "👉부전공 : 최소학점 기준 통과\n"
+        word += "👉부전공 : 최소학점 기준 통과_필수과목 확인!\n"
       }
     }
 
@@ -816,12 +817,13 @@ var Result = {
     }
 
     var Doublecheck = document.getElementById("double_major_none").checked;
+    var DoubleStandard = document.getElementById("double_st").value;
     var Doublepoint = Number(document.getElementById("double_major_point").value);
     if (!Doublecheck) {
-      if (Doublepoint < 45) {
-        word += "👉복수전공 : " + [45 - Doublepoint] + " 학점 미달\n"
+      if (Doublepoint < DoubleStandard) {
+        word += "👉복수전공 : " + [DoubleStandard - Doublepoint] + " 학점 미달\n"
       } else {
-        word += "👉복수전공 : 최소학점 기준 통과\n"
+        word += "👉복수전공 : 최소학점 기준 통과_필수과목 확인 필요\n"
       }
     }
 
@@ -832,7 +834,7 @@ var Result = {
       if (Linkpoint < 36) {
         word += "👉연계전공 : " + [36 - Linkpoint] + " 학점 미달\n"
       } else {
-        word += "👉연계전공 : 최소학점 기준 통과\n"
+        word += "👉연계전공 : 최소학점 기준 통과_필수과목 확인 필요\n"
       }
     }
 
@@ -845,7 +847,7 @@ var Result = {
       if (Fusionpoint < FusionStandard) {
         word += "👉" + Fusiontext + "융합전공 : " + [FusionStandard - Fusionpoint] + " 학점 미달\n"
       } else {
-        word += "👉" + Fusiontext + "융합전공 : 최소학점 기준 통과\n"
+        word += "👉" + Fusiontext + "융합전공 : 최소학점 기준 통과_필수과목 확인 필요\n"
       }
     }
 
@@ -865,7 +867,7 @@ var Result = {
       if (Minorpoint < 21) {
         word += "👉부전공 : " + [21 - Minorpoint] + " 학점 미달\n"
       } else {
-        word += "👉부전공 : 최소학점 기준 통과\n"
+        word += "👉부전공 : 최소학점 기준 통과_필수과목 확인 필요\n"
       }
     }
 
@@ -1064,12 +1066,13 @@ var Result = {
     }
 
     var Doublecheck = document.getElementById("double_major_none").checked;
+    var DoubleStandard = document.getElementById("double_st").value;
     var Doublepoint = Number(document.getElementById("double_major_point").value);
     if (!Doublecheck) {
-      if (Doublepoint < 45) {
-        word += "👉복수전공 : " + [45 - Doublepoint] + " 학점 미달\n"
+      if (Doublepoint < DoubleStandard) {
+        word += "👉복수전공 : " + [DoubleStandard - Doublepoint] + " 학점 미달\n"
       } else {
-        word += "👉복수전공 : 최소학점 기준 통과\n"
+        word += "👉복수전공 : 최소학점 기준 통과_필수과목 확인!\n"
       }
     }
 
@@ -1080,7 +1083,7 @@ var Result = {
       if (Linkpoint < 36) {
         word += "👉연계전공 : " + [36 - Linkpoint] + " 학점 미달\n"
       } else {
-        word += "👉연계전공 : 최소학점 기준 통과\n"
+        word += "👉연계전공 : 최소학점 기준 통과_필수과목 확인!\n"
       }
     }
 
@@ -1094,7 +1097,7 @@ var Result = {
       if (Fusionpoint < FusionStandard) {
         word += "👉" + Fusiontext + "융합전공 : " + [FusionStandard - Fusionpoint] + " 학점 미달\n"
       } else {
-        word += "👉" + Fusiontext + "융합전공 : 최소학점 기준 통과\n"
+        word += "👉" + Fusiontext + "융합전공 : 최소학점 기준 통과_필수과목 확인!\n"
       }
     }
 
@@ -1114,7 +1117,7 @@ var Result = {
       if (Minorpoint < 21) {
         word += "👉부전공 : " + [21 - Minorpoint] + " 학점 미달\n"
       } else {
-        word += "👉부전공 : 최소학점 기준 통과\n"
+        word += "👉부전공 : 최소학점 기준 통과_필수과목 확인!\n"
       }
     }
 
@@ -1379,12 +1382,13 @@ var Result = {
     }
 
     var Doublecheck = document.getElementById("double_major_none").checked;
+    var DoubleStandard = document.getElementById("double_st").value;
     var Doublepoint = Number(document.getElementById("double_major_point").value);
     if (!Doublecheck) {
-      if (Doublepoint < 45) {
-        word += "👉복수전공 : " + [45 - Doublepoint] + " 학점 미달\n"
+      if (Doublepoint < DoubleStandard) {
+        word += "👉복수전공 : " + [DoubleStandard - Doublepoint] + " 학점 미달\n"
       } else {
-        word += "👉복수전공 : 최소학점 기준 통과\n"
+        word += "👉복수전공 : 최소학점 기준 통과_필수과목 확인!\n"
       }
     }
 
@@ -1395,7 +1399,7 @@ var Result = {
       if (Linkpoint < 36) {
         word += "👉연계전공 : " + [36 - Linkpoint] + " 학점 미달\n"
       } else {
-        word += "👉연계전공 : 최소학점 기준 통과\n"
+        word += "👉연계전공 : 최소학점 기준 통과_필수과목 확인!\n"
       }
     }
 
@@ -1408,7 +1412,7 @@ var Result = {
       if (Fusionpoint < FusionStandard) {
         word += "👉" + Fusiontext + "융합전공 : " + [FusionStandard - Fusionpoint] + " 학점 미달\n"
       } else {
-        word += "👉" + Fusiontext + "융합전공 : 최소학점 기준 통과\n"
+        word += "👉" + Fusiontext + "융합전공 : 최소학점 기준 통과_필수과목 확인!\n"
       }
     }
 
@@ -1428,7 +1432,7 @@ var Result = {
       if (Minorpoint < 21) {
         word += "👉부전공 : " + [21 - Minorpoint] + " 학점 미달\n"
       } else {
-        word += "👉부전공 : 최소학점 기준 통과\n"
+        word += "👉부전공 : 최소학점 기준 통과_필수과목 확인!\n"
       }
     }
 
