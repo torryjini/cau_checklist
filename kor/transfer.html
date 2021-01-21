@@ -146,7 +146,6 @@
             <input type="number" id="major_input" placeholder="0" name="major" value="" onchange="Total.tr_sum();Color.number('total_standard','the_total');Color.number('major_standard','major_input');"
               onkeyup="Total.tr_sum();Color.number('total_standard','the_total');Color.number('major_standard','major_input');" min="0" max="200" class="inputnumber" maxlength="3" oninput="maxLengthCheck(this)"><label for="major_input"> 학점</label>
           </td>
-          <!-- <td>전공 심화 : 최소 66 학점<br>복수/설계/연계/융합 : 최소 45 학점</td> -->
         </tr>
         <tr id="double_table" style="display:none">
           <th>복수전공</th>
@@ -157,7 +156,6 @@
               학점</label><br>
             <input type="checkbox" id="double_major_none" onclick="Check.none('double_major_none', 'double_major_point')" checked tabindex="-1" hidden>
           </td>
-          <!-- <td>복수전공 전공기초는 자유선택으로 인정<br>복수전공을 교직이수할 경우,<br>복수전공 이수학점이 상향 조정됨</td> -->
         </tr>
         <tr id="link_table" style="display:none">
           <th>연계전공</th>
@@ -172,9 +170,6 @@
             <input type="number" id="cross_point1" placeholder="0" value="" onchange="Total.tr_sum()" onkeyup="Total.tr_sum()" class="inputnumber" min="0" max="12" maxlength="2" oninput="maxLengthCheck(this)"><label for="cross_point1">
               학점</label>
           </td>
-          <!-- <td rowspan="2">수강 및 학사안내 연계/융합전공
-          <br>교과과정표와 대조하여 확인
-          <br>융합전공 별로 최소 학점이 36 또는 45 학점이며<br>교차인정 학점도 상이하므로 확인 필수</td> -->
         </tr>
         <tr id="fusion_table" style="display:none">
           <th>융합전공</th>
@@ -219,7 +214,6 @@
             <input type="number" id="cross_point3" placeholder="0" value="" onchange="Total.tr_sum()" onkeyup="Total.tr_sum()" class="inputnumber" min="0" max="6" maxlength="1" oninput="maxLengthCheck(this)">
             <label for="cross_point3"> 학점</label>
           </td>
-          <!-- <td>설계전공 허가 사항(교과과정표)와 대조하여 확인</td> -->
         </tr>
         <tr>
           <th>부전공</th>
@@ -229,7 +223,6 @@
               onkeyup="Total.tr_sum();Color.number('total_standard','the_total');Color.number('minor_st','minor_point');" class="inputnumber" min="0" max="50" maxlength="2" oninput="maxLengthCheck(this)"><label for="minor_point"> 학점</label> <br>
             <input type="checkbox" id="minor_none" onclick="Check.none('minor_none', 'minor_point')" tabindex="-1"><label for="minor_none">해당없음</label>
           </td>
-          <!-- <td>부전공 전공 필수 6학점 이상 포함하여 수강</td> -->
         </tr>
         <tr>
           <th>자유선택</th>
@@ -238,7 +231,6 @@
             <input type="number" id="free_point" placeholder="0" value="" onchange="Total.tr_sum();Color.number('total_standard','the_total');" onkeyup="Total.tr_sum();Color.number('total_standard','the_total');" class="inputnumber" min="0" max="100"
               maxlength="2" oninput="maxLengthCheck(this)"><label for="free_point"> 학점</label>
           </td>
-          <!-- <td>CAU세미나(1),(2) 총 1 학점 필수이수</td> -->
         </tr>
         <tr id="teaching_table" style="display:none">
           <th>교직</th>
@@ -249,7 +241,6 @@
               <label for="teaching_point"> 학점</label><br>
             <input type="checkbox" id="teaching_none" onclick="Check.none('teaching_none', 'teaching_point')" tabindex="-1"><label for="teaching_none">해당없음</label>
           </td>
-          <!-- <td>이수기준 통과 여부는 교직팀에 문의할 것</td> -->
         </tr>
         <tr>
           <th>총 이수학점</th>
@@ -257,7 +248,6 @@
           <td colspan="3">
             <input type="text" id="the_total" value="0" class="totalnumber" onchange="Color.number('total_standard','the_total');" readonly tabindex="-1"> 학점
           </td>
-          <!-- <td>교양학점은 최대 45학점까지 인정</td> -->
         </tr>
       </table>
     </form>
@@ -273,12 +263,6 @@
       </a>
     </div>
     <br>
-    <!-- <div class="ad-banner">
-      <ins class="kakao_ad_area" style="display:none;" data-ad-unit="DAN-Wi3uauRvCbNQnWG2" data-ad-width="320" data-ad-height="100"></ins>
-    </div>
-    <script type="text/javascript" src="//t1.daumcdn.net/kas/static/ba.min.js" async></script> -->
-    <!-- Go to www.addthis.com/dashboard to customize your tools -->
-    <!-- <div class="addthis_inline_share_toolbox"></div> -->
     <br>
     <form id='etc'>
       <table border="solid" width="100%">

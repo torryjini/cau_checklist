@@ -335,7 +335,7 @@ var Result = {
 
     if (Core1 && Core2 && Core3 && Core4 && Core5 && core_total_point >= 12) {
       word += "👉핵심교양 : 기준 통과"
-    } else if (core_total_point < 15) {
+    } else if (core_total_point < 14) {
       word += "👉핵심교양 : " + core_total_point + " 학점\n- 미이수 영역 : "
     } else {
       word += "👉핵심교양 : 최소학점 기준 통과\n- 미이수 영역 : "
@@ -386,7 +386,7 @@ var Result = {
       word += "\n👉교양영역 계 : " + liberal_total_point + " 학점_ " + [liberal_total_point - 45] + "학점 초과_45 학점만 인정"
     }
 
-    if (common_kor_point == 2 && Core1 && Core2 && Core3 && Core4 && Core5 && core_total_point >= 12 && MACH1 >= MACH1_st && MACH2 >= MACH2_st) {
+    if (common_kor_point == 2 && Core1 && Core2 && Core3 && Core4 && Core5 && core_total_point >= 14 && MACH1 >= MACH1_st && MACH2 >= MACH2_st) {
       if (common_eng_point == 2 && common_etc_point >= cometcst) {
         swal("교양영역 결과", word, "success")
       } else if (common_eng_point <= 2 && common_eng_ex && common_etc_point >= cometcst) {
