@@ -140,10 +140,22 @@ var Result = {
     if (liberal_total_point <= 45) {
       word += "\n👉Total : " + liberal_total_point + " credits"
     } else {
-      word += "\n👉Total : " + liberal_total_point + " credits_" + [liberal_total_point - 45] + "credits exceeded\nAny credits over 45 don't count."
+      word += "\n👉Total : " + liberal_total_point + " credits_" + [liberal_total_point - 45] + " credits exceeded\nAny credits over 45 don't count."
     }
 
-    if (common_kor_point == 2 && core_total_point >= 9) {
+    if (common_kor_point == 2 && core_total_point >= 9 && liberal_total_point > 45) {
+      if (common_eng_point >= 4 && common_etc_point == 8) {
+        swal("General credits result", word, "warning")
+      } else if (common_eng_point <= 4 && common_eng_ex && common_etc_point == 8) {
+        swal("General credits result", word, "warning")
+      } else if (common_eng_point >= 4 && common_etc_point >= 6 && account_check_SF) {
+        swal("General credits result", word, "warning")
+      } else if (common_eng_point <= 4 && common_eng_ex && common_etc_point >= 6 && account_check_SF) {
+        swal("General credits result", word, "warning")
+      } else {
+        swal("General credits result", word, "error")
+      }
+    } else if (common_kor_point == 2 && core_total_point >= 9 && liberal_total_point <= 45) {
       if (common_eng_point >= 4 && common_etc_point == 8) {
         swal("General credits result", word, "success")
       } else if (common_eng_point <= 4 && common_eng_ex && common_etc_point == 8) {
@@ -239,10 +251,22 @@ var Result = {
     if (liberal_total_point <= 45) {
       word += "\n👉Total : " + liberal_total_point + " credits"
     } else {
-      word += "\n👉Total : " + liberal_total_point + " credits_" + [liberal_total_point - 45] + "credits exceeded\nAny credits over 45 don't count."
+      word += "\n👉Total : " + liberal_total_point + " credits_" + [liberal_total_point - 45] + " credits exceeded\nAny credits over 45 don't count."
     }
 
-    if (common_kor_point == 2 && core_total_point >= 11 && MACH1 >= MACH1_st && MACH2 >= MACH2_st) {
+    if (common_kor_point == 2 && core_total_point >= 11 && MACH1 >= MACH1_st && MACH2 >= MACH2_st && liberal_total_point > 45) {
+      if (common_eng_point == 2 && common_etc_point == 8) {
+        swal("General credits result", word, "warning")
+      } else if (common_eng_point <= 2 && common_eng_ex && common_etc_point == 8) {
+        swal("General credits result", word, "warning")
+      } else if (common_eng_point == 2 && common_etc_point >= 6 && account_check_SF) {
+        swal("General credits result", word, "warning")
+      } else if (common_eng_point <= 2 && common_eng_ex && common_etc_point >= 6 && account_check_SF) {
+        swal("General credits result", word, "warning")
+      } else {
+        swal("General credits result", word, "error")
+      }
+    } else if (common_kor_point == 2 && core_total_point >= 11 && MACH1 >= MACH1_st && MACH2 >= MACH2_st && liberal_total_point <= 45) {
       if (common_eng_point == 2 && common_etc_point == 8) {
         swal("General credits result", word, "success")
       } else if (common_eng_point <= 2 && common_eng_ex && common_etc_point == 8) {
@@ -385,10 +409,22 @@ var Result = {
     if (liberal_total_point <= 45) {
       word += "\n👉Total : " + liberal_total_point + " credits"
     } else {
-      word += "\n👉Total : " + liberal_total_point + " credits_" + [liberal_total_point - 45] + "credits exceeded\nAny credits over 45 don't count."
+      word += "\n👉Total : " + liberal_total_point + " credits_" + [liberal_total_point - 45] + " credits exceeded\nAny credits over 45 don't count."
     }
 
-    if (common_kor_point == 2 && Core1 && Core2 && Core3 && Core4 && Core5 && core_total_point >= 14 && MACH1 >= MACH1_st && MACH2 >= MACH2_st) {
+    if (common_kor_point == 2 && Core1 && Core2 && Core3 && Core4 && Core5 && core_total_point >= 14 && MACH1 >= MACH1_st && MACH2 >= MACH2_st && liberal_total_point > 45) {
+      if (common_eng_point == 2 && common_etc_point >= cometcst) {
+        swal("General credits result", word, "warning")
+      } else if (common_eng_point <= 2 && common_eng_ex && common_etc_point >= cometcst) {
+        swal("General credits result", word, "warning")
+      } else if (common_eng_point == 2 && common_etc_point >= [cometcst - 2] && account_check_SF) {
+        swal("General credits result", word, "warning")
+      } else if (common_eng_point <= 2 && common_eng_ex && common_etc_point >= [cometcst - 2] && account_check_SF) {
+        swal("General credits result", word, "warning")
+      } else {
+        swal("General credits result", word, "error")
+      }
+    } else if (common_kor_point == 2 && Core1 && Core2 && Core3 && Core4 && Core5 && core_total_point >= 14 && MACH1 >= MACH1_st && MACH2 >= MACH2_st && liberal_total_point <= 45) {
       if (common_eng_point == 2 && common_etc_point >= cometcst) {
         swal("General credits result", word, "success")
       } else if (common_eng_point <= 2 && common_eng_ex && common_etc_point >= cometcst) {
