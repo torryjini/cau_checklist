@@ -141,7 +141,19 @@ var Result = {
       word += "\n👉教养领域 总计 : " + liberal_total_point + "学分_超过" + [liberal_total_point - 45] + "学分（学分超过45学分时只认证45学分。）"
     }
 
-    if (common_kor_point == 2 && core_total_point >= 9) {
+    if (common_kor_point == 2 && core_total_point >= 9 && liberal_total_point > 45) {
+      if (common_eng_point >= 4 && common_etc_point == 8) {
+        swal("教养领域结果", word, "warning")
+      } else if (common_eng_point <= 4 && common_eng_ex && common_etc_point == 8) {
+        swal("教养领域结果", word, "warning")
+      } else if (common_eng_point >= 4 && common_etc_point >= 6 && account_check_SF) {
+        swal("教养领域结果", word, "warning")
+      } else if (common_eng_point <= 4 && common_eng_ex && common_etc_point >= 6 && account_check_SF) {
+        swal("教养领域结果", word, "warning")
+      } else {
+        swal("教养领域结果", word, "error")
+      }
+    } else if (common_kor_point == 2 && core_total_point >= 9 && liberal_total_point <= 45) {
       if (common_eng_point >= 4 && common_etc_point == 8) {
         swal("教养领域结果", word, "success")
       } else if (common_eng_point <= 4 && common_eng_ex && common_etc_point == 8) {
@@ -218,12 +230,6 @@ var Result = {
 
     word += "\n👉选择教养 : " + elective_point + "学分"
 
-    if (liberal_total_point <= 45) {
-      word += "\n👉教养领域 总计 : 缺少" + liberal_total_point + "学分 "
-    } else {
-      word += "\n👉教养领域 总计 : " + liberal_total_point + "学分_ 超过" + [liberal_total_point - 45] + "学分（学分超过45学分时只认证45学分。）"
-    }
-
     if (!MACH1none) {
       if (MACH1 < 4) {
         word += "\n👉MACH교양 : 缺少" + [4 - MACH1] + "学分"
@@ -240,7 +246,25 @@ var Result = {
       }
     }
 
-    if (common_kor_point == 2 && core_total_point >= 11 && MACH1 >= MACH1_st && MACH2 >= MACH2_st) {
+    if (liberal_total_point <= 45) {
+      word += "\n👉教养领域 总计 : 缺少" + liberal_total_point + "学分 "
+    } else {
+      word += "\n👉教养领域 总计 : " + liberal_total_point + "学分_ 超过" + [liberal_total_point - 45] + "学分（学分超过45学分时只认证45学分。）"
+    }
+
+    if (common_kor_point == 2 && core_total_point >= 11 && MACH1 >= MACH1_st && MACH2 >= MACH2_st && liberal_total_point > 45) {
+      if (common_eng_point == 2 && common_etc_point == 8) {
+        swal("教养领域结果", word, "warning")
+      } else if (common_eng_point <= 2 && common_eng_ex && common_etc_point == 8) {
+        swal("教养领域结果", word, "warning")
+      } else if (common_eng_point == 2 && common_etc_point >= 6 && account_check_SF) {
+        swal("教养领域结果", word, "warning")
+      } else if (common_eng_point <= 2 && common_eng_ex && common_etc_point >= 6 && account_check_SF) {
+        swal("教养领域结果", word, "warning")
+      } else {
+        swal("教养领域结果", word, "error")
+      }
+    } else if (common_kor_point == 2 && core_total_point >= 11 && MACH1 >= MACH1_st && MACH2 >= MACH2_st && liberal_total_point <= 45) {
       if (common_eng_point == 2 && common_etc_point == 8) {
         swal("教养领域结果", word, "success")
       } else if (common_eng_point <= 2 && common_eng_ex && common_etc_point == 8) {
@@ -386,7 +410,19 @@ var Result = {
       word += "\n👉教养领域 总计 : " + liberal_total_point + "学分_超过" + [liberal_total_point - 45] + "学分（学分超过45学分时只认证45学分）"
     }
 
-    if (common_kor_point == 2 && Core1 && Core2 && Core3 && Core4 && Core5 && core_total_point >= 14 && MACH1 >= MACH1_st && MACH2 >= MACH2_st) {
+    if (common_kor_point == 2 && Core1 && Core2 && Core3 && Core4 && Core5 && core_total_point >= 14 && MACH1 >= MACH1_st && MACH2 >= MACH2_st && liberal_total_point > 45) {
+      if (common_eng_point == 2 && common_etc_point >= cometcst) {
+        swal("教养领域结果", word, "warning")
+      } else if (common_eng_point <= 2 && common_eng_ex && common_etc_point >= cometcst) {
+        swal("教养领域结果", word, "warning")
+      } else if (common_eng_point == 2 && common_etc_point >= [cometcst - 2] && account_check_SF) {
+        swal("教养领域结果", word, "warning")
+      } else if (common_eng_point <= 2 && common_eng_ex && common_etc_point >= [cometcst - 2] && account_check_SF) {
+        swal("教养领域结果", word, "warning")
+      } else {
+        swal("教养领域结果", word, "error")
+      }
+    } else if (common_kor_point == 2 && Core1 && Core2 && Core3 && Core4 && Core5 && core_total_point >= 14 && MACH1 >= MACH1_st && MACH2 >= MACH2_st && liberal_total_point <= 45) {
       if (common_eng_point == 2 && common_etc_point >= cometcst) {
         swal("教养领域结果", word, "success")
       } else if (common_eng_point <= 2 && common_eng_ex && common_etc_point >= cometcst) {
