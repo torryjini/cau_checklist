@@ -567,9 +567,9 @@ var Result = {
     }
 
     if (Majorpoint < Majorstandard) {
-      word += "👉전공과목 : " + [Majorstandard - Majorpoint] + " 학점 미달\n"
+      word += "👉전공 : " + [Majorstandard - Majorpoint] + " 학점 미달\n"
     } else {
-      word += "👉전공과목 : 기준 통과\n"
+      word += "👉전공 : 기준 통과\n"
     }
 
     var Doublecheck = document.getElementById("double_major_none").checked;
@@ -815,9 +815,9 @@ var Result = {
     }
 
     if (Majorpoint < Majorstandard) {
-      word += "👉전공과목 : " + [Majorstandard - Majorpoint] + " 학점 미달\n"
+      word += "👉전공 : " + [Majorstandard - Majorpoint] + " 학점 미달\n"
     } else {
-      word += "👉전공과목 : 기준 통과\n"
+      word += "👉전공 : 기준 통과\n"
     }
 
     var Doublecheck = document.getElementById("double_major_none").checked;
@@ -1068,9 +1068,9 @@ var Result = {
     }
 
     if (Majorpoint < Majorstandard) {
-      word += "👉전공과목 : " + [Majorstandard - Majorpoint] + " 학점 미달\n"
+      word += "👉전공 : " + [Majorstandard - Majorpoint] + " 학점 미달\n"
     } else {
-      word += "👉전공과목 : 기준 통과\n"
+      word += "👉전공 : 기준 통과\n"
     }
 
     var Doublecheck = document.getElementById("double_major_none").checked;
@@ -1388,9 +1388,9 @@ var Result = {
     }
 
     if (Majorpoint < Majorstandard) {
-      word += "👉전공과목 : " + [Majorstandard - Majorpoint] + " 학점 미달\n"
+      word += "👉전공 : " + [Majorstandard - Majorpoint] + " 학점 미달\n"
     } else {
-      word += "👉전공과목 : 기준 통과\n"
+      word += "👉전공 : 기준 통과\n"
     }
 
     var Doublecheck = document.getElementById("double_major_none").checked;
