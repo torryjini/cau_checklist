@@ -568,9 +568,9 @@ var Result = {
     }
 
     if (Majorpoint < Majorstandard) {
-      word += "👉Major course : " + [Majorstandard - Majorpoint] + " more credits required\n"
+      word += "👉Major : " + [Majorstandard - Majorpoint] + " more credits required\n"
     } else {
-      word += "👉Major course : Passed the requirement\n"
+      word += "👉Major : Passed the requirement\n"
     }
 
     var Doublecheck = document.getElementById("double_major_none").checked;
@@ -822,9 +822,9 @@ var Result = {
     }
 
     if (Majorpoint < Majorstandard) {
-      word += "👉Major course : " + [Majorstandard - Majorpoint] + " more credits required\n"
+      word += "👉Major : " + [Majorstandard - Majorpoint] + " more credits required\n"
     } else {
-      word += "👉Major course : Passed the requirement\n"
+      word += "👉Major : Passed the requirement\n"
     }
 
     var Doublecheck = document.getElementById("double_major_none").checked;
@@ -1081,9 +1081,9 @@ var Result = {
     }
 
     if (Majorpoint < Majorstandard) {
-      word += "👉Major course : " + [Majorstandard - Majorpoint] + " more credits required\n"
+      word += "👉Major : " + [Majorstandard - Majorpoint] + " more credits required\n"
     } else {
-      word += "👉Major course : Passed the requirement\n"
+      word += "👉Major : Passed the requirement\n"
     }
 
     var Doublecheck = document.getElementById("double_major_none").checked;
@@ -1405,9 +1405,9 @@ var Result = {
     }
 
     if (Majorpoint < Majorstandard) {
-      word += "👉Major course : " + [Majorstandard - Majorpoint] + " more credits required\n"
+      word += "👉Major : " + [Majorstandard - Majorpoint] + " more credits required\n"
     } else {
-      word += "👉Major course : Passed the requirement\n"
+      word += "👉Major : Passed the requirement\n"
     }
 
     var Doublecheck = document.getElementById("double_major_none").checked;
