@@ -81,7 +81,7 @@
           </td>
           <td>
             <form id="Multimajor_form">
-              <select id="MultiMajor_select" onchange="Standard.major();Total.sum();" required>
+              <select id="MultiMajor_select" onchange="Standard.major();Total.sum();Check.multi_teach();" required>
                 <option value="0">--</option>
               </select>
             </form>
@@ -256,7 +256,7 @@
           <th>전공</th>
           <td>
             <input type="text" class="standard_number" id="major_standard" value="" readonly tabindex="-1">
-            <br>(전공필수 포함)</td>
+            <br>(전필 포함)<br><input type="checkbox" id="major_teach"><label for="major_teach">교직이수</label></td>
           <td colspan="3">
             <input type="number" id="major_input" placeholder="0" name="major" value="" onchange="Total.sum();Color.number('total_standard','the_total');Color.number('major_standard','major_input');"
               onkeyup="Total.sum();Color.number('total_standard','the_total');Color.number('major_standard','major_input');" min="0" max="200" class="inputnumber" maxlength="3" oninput="maxLengthCheck(this)">
