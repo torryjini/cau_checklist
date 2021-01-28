@@ -86,11 +86,6 @@
             <form id="Multimajor_form">
               <select id="MultiMajor_select" onchange="Standard.major();Total.sum();" required>
                 <option value="0">--</option>
-                <option value="66">전공심화</option>
-                <option value="45">복수전공</option>
-                <option value="45">연계전공</option>
-                <option value="45">융합전공</option>
-                <option value="45">설계전공</option>
               </select>
             </form>
           </td>
@@ -209,7 +204,7 @@
     <br>
     <div class="buttons">
       <input type="reset" value="&#8635; RESET" onclick="Reset.form('Liberal');Reset.libcolor()" tabindex="-1">
-      <input type="button" value="&#10003; CHECK!" onclick="Result.lib12to14();Total.sum()">
+      <input type="button" value="&#10003; CHECK" onclick="Result.lib12to14();Total.sum()">
     </div>
     <br>
     <div class="call"><a href="tel:02-820-6633">다빈치교양대학<br><i class="fas fa-phone-alt"></i>
@@ -364,7 +359,7 @@
     <p>以上信息仅供参考，如需查询更加准确的信息请联系学科办公室查询，学科办公室联系方式如下。</p>
     <div class="buttons">
       <input type="reset" value="&#8635; RESET" onclick="Reset.form('Major');Reset.form('Major_select_form');Reset.form('Multimajor_form');Reset.majortable();" tabindex="-1">
-      <input type="button" value="&#10003; CHECK!" onclick="Result.major()">
+      <input type="button" value="&#10003; CHECK" onclick="Result.major()">
     </div>
     <br>
     <div class="call"><a id="phonenumber">
@@ -438,7 +433,7 @@
     </form><br>
     <div class="buttons">
       <input type="reset" value="&#8635; RESET" onclick="Reset.form('etc')" tabindex="-1">
-      <input type="button" value="&#10003; CHECK!" onclick="Result.etc()">
+      <input type="button" value="&#10003; CHECK" onclick="Result.etc()">
     </div>
     <!-- Go to www.addthis.com/dashboard to customize your tools -->
     <div class="addthis_inline_share_toolbox"></div>
