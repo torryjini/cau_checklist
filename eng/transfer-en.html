@@ -137,7 +137,7 @@
           <th>전공<br>Major</th>
           <td>
             <input type="text" class="standard_number" id="major_standard" value="45" readonly tabindex="-1">
-            <br>(includes "Required")</td>
+            <br><label for="major_standard">(includes "Required")</label></td>
           <td colspan="3">
             <input type="number" id="major_input" placeholder="0" name="major" value="" onchange="Total.tr_sum();Color.number('total_standard','the_total');Color.number('major_standard','major_input');"
               onkeyup="Total.tr_sum();Color.number('total_standard','the_total');Color.number('major_standard','major_input');" min="0" max="200" class="inputnumber" maxlength="3" oninput="maxLengthCheck(this)">
