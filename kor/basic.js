@@ -501,7 +501,7 @@ var Result = {
   },
   major: function() {
     var AdYear = Number(document.getElementById("ad-year").value);
-    var Majorstandard = document.getElementById("MultiMajor_select").value;
+    var Majorstandard = document.getElementById("major_standard").value;
     var MajorSelect = document.getElementById("Major_select").value;
     var LinkCross = Number(document.getElementById("cross_point1").value);
     var Fusion = document.getElementById("fusion-options");
@@ -534,6 +534,17 @@ var Result = {
         return false;
       }
     }
+
+    // if(document.getElementById("maj_tea_check").checked && document.getElementById("teaching_none").checked){
+    //   swal("교직이수 여부를 확인하세요!", "", "error");
+    //   return false;
+    // } else if (document.getElementById("double-teaching").checked && document.getElementById("teaching_none").checked) {
+    //   swal("교직이수 여부를 확인하세요!", "", "error");
+    //   return false;
+    // } else if (document.getElementById("maj_tea_check").checked = false && document.getElementById("double-teaching").checked) {
+    //   swal("교직이수 여부를 확인하세요!", "", "error");
+    //   return false;
+    // }
 
     if (MajorSelect == "none") {
       document.getElementById("student-info").scrollIntoView();
@@ -1318,7 +1329,7 @@ var Result = {
   major_tr: function() {
     var AdYear = Number(document.getElementById("ad-year").value);
     var SecYear = document.getElementById("2ndyear").checked;
-    var Majorstandard = document.getElementById("MultiMajor_select").value;
+    var Majorstandard = document.getElementById("major_standard").value;
     var MajorSelect = document.getElementById("Major_select").value;
     var Multimajor = document.getElementById("MultiMajor_select");
     var Multimajortext = Multimajor.options[Multimajor.selectedIndex].text;
