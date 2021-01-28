@@ -728,6 +728,19 @@ var Check = {
       document.getElementById("major_teach").checked = false;
     }
   },
+  double_teach_show: function() {
+    var teachingmajor = ["education", "ece", "englishedu", "pe",
+      "korean", "english", "german", "russia", "japan", "china", "philosophy", "history",
+      "psyche", "lis", "physics", "chemistry", "bio-science", "math", "foodnutri", "theatre", "film",
+      "photo", "dance", "kopaint", "fineart", "craftart", "koreanmusic"
+    ]
+    var major = document.getElementById("Major_select").value;
+    if (teachingmajor.includes(major)) {
+      document.getElementById("dou_tea_check").style.display = "";
+    } else {
+      document.getElementById("dou_tea_check").style.display = "none";
+    }
+  },
   korean: function() {
     AdYear = Number(document.getElementById("ad-year").value);
     if (AdYear == 2014 || AdYear == 0) {
