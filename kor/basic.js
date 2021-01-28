@@ -535,16 +535,24 @@ var Result = {
       }
     }
 
-    // if(document.getElementById("maj_tea_check").checked && document.getElementById("teaching_none").checked){
-    //   swal("교직이수 여부를 확인하세요!", "", "error");
-    //   return false;
-    // } else if (document.getElementById("double-teaching").checked && document.getElementById("teaching_none").checked) {
-    //   swal("교직이수 여부를 확인하세요!", "", "error");
-    //   return false;
-    // } else if (document.getElementById("maj_tea_check").checked = false && document.getElementById("double-teaching").checked) {
-    //   swal("교직이수 여부를 확인하세요!", "", "error");
-    //   return false;
-    // }
+    var MajorTeachCheck = document.getElementById("major_teach").checked;
+    var DoubleTeachCheck = document.getElementById("double-teaching").checked;
+    var Teachingnone = document.getElementById("teaching_none").checked;
+
+    if (Teachingnone) {
+      if (MajorTeachCheck) {
+        swal("교직이수 여부를 확인하세요!", "", "error");
+        return false;
+      } else if (DoubleTeachCheck) {
+        swal("교직이수 여부를 확인하세요!", "", "error");
+        return false;
+      }
+    } else if (!MajorTeachCheck) {
+      if (DoubleTeachCheck) {
+        swal("교직이수 여부를 확인하세요!", "", "error");
+        return false;
+      }
+    }
 
     if (MajorSelect == "none") {
       document.getElementById("student-info").scrollIntoView();
