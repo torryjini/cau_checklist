@@ -501,7 +501,7 @@ var Result = {
   },
   major: function() {
     var AdYear = Number(document.getElementById("ad-year").value);
-    var Majorstandard = document.getElementById("MultiMajor_select").value;
+    var Majorstandard = document.getElementById("major_standard").value;
     var MajorSelect = document.getElementById("Major_select").value;
     var LinkCross = Number(document.getElementById("cross_point1").value);
     var Fusion = document.getElementById("fusion-options");
@@ -1329,7 +1329,7 @@ var Result = {
   major_tr: function() {
     var AdYear = Number(document.getElementById("ad-year").value);
     var SecYear = document.getElementById("2ndyear").checked;
-    var Majorstandard = document.getElementById("MultiMajor_select").value;
+    var Majorstandard = document.getElementById("major_standard").value;
     var MajorSelect = document.getElementById("Major_select").value;
     var Multimajor = document.getElementById("MultiMajor_select");
     var Multimajortext = Multimajor.options[Multimajor.selectedIndex].text;
