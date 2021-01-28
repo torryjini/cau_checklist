@@ -123,15 +123,15 @@ label {
 }
 
 input[type=button] {
-  border-color: #9BFA73;
   color: var(--text-color);
   background-color: #28D06B;
+  border: none;
 }
 
 input[type=reset] {
-  border-color: #FF5050;
   color: var(--text-color);
   background-color: #D02828;
+  border: none;
 }
 
 input[type=button], input[type=reset] {
@@ -414,11 +414,11 @@ p {
   }
 
   input[type=button], input[type=reset] {
-    padding: 0.6rem 1.3rem;
+    padding: 0.5rem 1rem;
     margin: 0.3rem 0.8rem;
     cursor: pointer;
     border-radius: 2rem;
-    font-size: 1.1rem;
+    font-size: 1rem;
   }
 
   .chnth {
@@ -507,8 +507,8 @@ p {
   }
 
   #enter {
-    font-size: 1.4rem;
-    padding: 0.8rem 1.8rem;
+    font-size: 1.2rem;
+    padding: 0.6rem 1.6rem;
   }
 }
 
