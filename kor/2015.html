@@ -58,7 +58,7 @@
           </td>
           <td>
             <form id="Major_select_form">
-              <select id="college_select" onchange="Change.college15();Reset.form('Major');Liberal.sum();Reset.majortable();Liberal.mach();">
+              <select id="college_select" onchange="Change.college15();Reset.form('Major');Reset.form('Multimajor_form');Liberal.sum();Reset.majortable();Liberal.mach();">
                 <option value="none">--</option>
                 <option value="humanity">인문대학</option>
                 <option value="society">사회과학대학</option>
@@ -86,7 +86,7 @@
           </td>
           <td>
             <form id="Multimajor_form">
-              <select id="MultiMajor_select" onchange="Standard.major();Total.sum();Check.multi_teach();Reset.maj_dou_teach();" required>
+              <select id="MultiMajor_select" onchange="Standard.major();Total.sum();Check.multi_teach();Reset.maj_dou_teach();Check.double_teach_show();Check.double_teach_show();" required>
                 <option value="0">--</option>
               </select>
             </form>

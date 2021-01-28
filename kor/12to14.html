@@ -61,7 +61,7 @@
           </td>
           <td>
             <form id="Major_select_form">
-              <select id="college_select" onchange="Change.college1214();Reset.form('Major');Reset.majortable();">
+              <select id="college_select" onchange="Change.college1214();Reset.form('Major');Reset.form('Multimajor_form');Reset.majortable();">
                 <option value="none">--</option>
               </select>
           </td>
@@ -79,7 +79,7 @@
           </td>
           <td>
             <form id="Multimajor_form">
-              <select id="MultiMajor_select" onchange="Standard.major();Total.sum();Check.multi_teach();Reset.maj_dou_teach();" required>
+              <select id="MultiMajor_select" onchange="Standard.major();Total.sum();Check.multi_teach();Reset.maj_dou_teach();Check.double_teach_show();" required>
                 <option value="0">--</option>
               </select>
             </form>

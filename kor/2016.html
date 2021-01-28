@@ -52,7 +52,7 @@
         </tr>
         <tr>
           <td>
-            <select id="ad-year" onchange="Reset.form('Major_select_form');Reset.form('Multimajor_form');Reset.majorselect();Reset.form('Major');Reset.majortable();Change.year16();" required>
+            <select id="ad-year" onchange="Reset.form('Major_select_form');Reset.majorselect();Reset.form('Major');Reset.form('Multimajor_form');Reset.majortable();Change.year16();" required>
               <option value="0">--</option>
               <option value="2016">2016</option>
               <option value="2017">2017</option>
@@ -63,7 +63,7 @@
           </td>
           <td>
             <form id="Major_select_form">
-              <select id="college_select" onchange="Change.college16();Reset.form('Major');Liberal.sum();Reset.majortable();Liberal.etcchange();Liberal.mach();">
+              <select id="college_select" onchange="Change.college16();Reset.form('Major');Reset.form('Multimajor_form');Liberal.sum();Reset.majortable();Liberal.etcchange();Liberal.mach();">
                 <option value="none">--</option>
               </select>
           </td>
@@ -81,7 +81,7 @@
           </td>
           <td>
             <form id="Multimajor_form">
-              <select id="MultiMajor_select" onchange="Standard.major();Total.sum();Check.multi_teach();Reset.maj_dou_teach();" required>
+              <select id="MultiMajor_select" onchange="Standard.major();Total.sum();Check.multi_teach();Reset.maj_dou_teach();Check.double_teach_show();" required>
                 <option value="0">--</option>
               </select>
             </form>
@@ -258,7 +258,8 @@
             <input type="text" class="standard_number" id="major_standard" value="" readonly tabindex="-1">
             <br><label for="major_standard">(전필 포함)</label><br>
             <div id="maj_tea_check" style="display:none;">
-               <input type="checkbox" id="major_teach" onchange="Change.major_st_teaching();"><label for="major_teach">교직이수</label></div></td>
+              <input type="checkbox" id="major_teach" onchange="Change.major_st_teaching();"><label for="major_teach">교직이수</label></div>
+          </td>
           <td colspan="3">
             <input type="number" id="major_input" placeholder="0" name="major" value="" onchange="Total.sum();Color.number('total_standard','the_total');Color.number('major_standard','major_input');"
               onkeyup="Total.sum();Color.number('total_standard','the_total');Color.number('major_standard','major_input');" min="0" max="200" class="inputnumber" maxlength="3" oninput="maxLengthCheck(this)">
@@ -268,7 +269,10 @@
         <tr id="double_table" style="display:none">
           <th>복수전공</th>
           <td><input type="text" class="standard_number" id="double_st" value="45" readonly tabindex="-1"><br>
-            <input type="checkbox" id="double-teaching" onchange="Change.double_st_teaching();"><label for="double-teaching">복전교직</label></td>
+            <div id="dou_tea_check">
+              <input type="checkbox" id="double-teaching" onchange="Change.double_st_teaching();"><label for="double-teaching">복전교직</label>
+            </div>
+          </td>
           <td colspan="3">
             <input type="number" id="double_major_point" placeholder="0" value="" onchange="Total.sum();Color.number('total_standard','the_total');Color.number('double_st','double_major_point');"
               onkeyup="Total.sum();Color.number('total_standard','the_total');Color.number('double_st','double_major_point');" class="inputnumber" min="0" max="78" maxlength="2" oninput="maxLengthCheck(this)">

@@ -59,11 +59,11 @@
               <option value="2019">2019</option>
               <option value="2020">2020</option>
             </select>
-            <input type="checkbox" id="2ndyear" onchange="Reset.form('Major_select_form');Reset.form('Major');Reset.majorselect();Reset.majortable();" tabindex="-1"><label for="2ndyear">2학년편입</label>
+            <input type="checkbox" id="2ndyear" onchange="Reset.form('Major_select_form');Reset.form('Major');Reset.form('Multimajor_form');Reset.majorselect();Reset.majortable();" tabindex="-1"><label for="2ndyear">2학년편입</label>
           </td>
           <td>
             <form id="Major_select_form">
-              <select id="college_select" onchange="Change.tr_college();Reset.form('Major');Reset.majortable();">
+              <select id="college_select" onchange="Change.tr_college();Reset.form('Major');Reset.form('Multimajor_form');Reset.majortable();">
                 <option value="none">--</option>
               </select>
           </td>
