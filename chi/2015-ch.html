@@ -256,7 +256,7 @@
           <th>전공<br>专业</th>
           <td>
             <input type="text" class="standard_number" id="major_standard" value="" readonly tabindex="-1">
-            <br>(包括专业必修)</td>
+            <br><label for="major_standard">(包括专业必修)</label></td>
           <td colspan="3">
             <input type="number" id="major_input" placeholder="0" name="major" value="" onchange="Total.sum();Color.number('total_standard','the_total');Color.number('major_standard','major_input');"
               onkeyup="Total.sum();Color.number('total_standard','the_total');Color.number('major_standard','major_input');" min="0" max="200" class="inputnumber" maxlength="3" oninput="maxLengthCheck(this)">
