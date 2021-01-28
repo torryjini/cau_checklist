@@ -53,6 +53,11 @@ var Reset = {
     document.getElementById("common_kor").style.color = "red";
     document.getElementById("common_eng").style.color = "red";
     document.getElementById("common_etc").style.color = "red";
+  },
+  maj_dou_teach: function() {
+    document.getElementById("major_teach").checked = false;
+    document.getElementById("double-teaching").checked = false;
+    document.getElementById("double_st").value = document.getElementById("MultiMajor_select").value;
   }
 }
 
@@ -109,7 +114,7 @@ var Liberal = {
       Liberal.standardsum();
     }
   },
-   mach: function() {
+  mach: function() {
     var AdYear = document.getElementById("ad-year").value;
     var College = document.getElementById("college_select").value;
     var ICT = ["ict", "ict1617", "ict18"]
@@ -264,7 +269,7 @@ var Change = {
       vnum = new Array("none", "infra", "archi", "archieng", "chemeng", "me", "eee1214", "computer12", "ie1214");
     } else if (fr == "arts") {
       num = new Array("--", "연극학과", "영화학과", "공간연출전공", "문예창작학과", "사진학과", "무용학과", "한국화학과", "서양화학과",
-       "조소학과", "공예학과", "시각디자인학과", "산업디자인학과", "실내환경디자인학과", "패션학과", "작곡과", "성악과", "피아노과", "관현악과", "전통예술학부");
+        "조소학과", "공예학과", "시각디자인학과", "산업디자인학과", "실내환경디자인학과", "패션학과", "작곡과", "성악과", "피아노과", "관현악과", "전통예술학부");
       vnum = new Array("none", "theatre", "film", "tfdesign", "creativewriting", "photo", "dance", "kopaint", "fineart", "sculpture", "craftart", "vd", "id", "indesign", "fashion", "compose", "vocal", "piano", "orchestra", "koreanmusic");
     } else if (fr == "sport") {
       num = new Array("--", "스포츠과학부");
@@ -307,7 +312,7 @@ var Change = {
       vnum = new Array("none", "eee", "computer", "soft", "ie");
     } else if (fr == "arts") {
       num = new Array("--", "연극학과", "영화학과", "공간연출전공", "문예창작학과", "사진학과", "무용학과", "한국화학과", "서양화학과",
-       "조소학과", "공예학과", "시각디자인학과", "산업디자인학과", "실내환경디자인학과", "패션학과", "작곡과", "성악과", "피아노과", "관현악과", "전통예술학부");
+        "조소학과", "공예학과", "시각디자인학과", "산업디자인학과", "실내환경디자인학과", "패션학과", "작곡과", "성악과", "피아노과", "관현악과", "전통예술학부");
       vnum = new Array("none", "theatre", "film", "tfdesign", "creativewriting", "photo", "dance", "kopaint", "fineart", "sculpture", "craftart", "vd", "id", "indesign", "fashion", "compose", "vocal", "piano", "orchestra", "koreanmusic");
     } else if (fr == "biotech") {
       num = new Array("--", "동물생명공학과", "식물시스템과학과", "식품공학과", "식품영양학과", "시스템생명공학과");
@@ -363,7 +368,7 @@ var Change = {
       vnum = new Array("none", "soft");
     } else if (fr == "arts") {
       num = new Array("--", "연극학과", "영화학과", "공간연출전공", "문예창작학과", "사진학과", "무용학과", "한국화학과", "서양화학과",
-       "조소학과", "공예학과", "시각디자인학과", "산업디자인학과", "실내환경디자인학과", "패션학과", "작곡과", "성악과", "피아노과", "관현악과", "전통예술학부");
+        "조소학과", "공예학과", "시각디자인학과", "산업디자인학과", "실내환경디자인학과", "패션학과", "작곡과", "성악과", "피아노과", "관현악과", "전통예술학부");
       vnum = new Array("none", "theatre", "film", "tfdesign", "creativewriting", "photo", "dance", "kopaint", "fineart", "sculpture", "craftart", "vd", "id", "indesign", "fashion", "compose", "vocal", "piano", "orchestra", "koreanmusic");
     } else if (AdYear <= 2018 && fr == "biotech") {
       num = new Array("--", "동물생명공학과", "식물시스템과학과", "식품공학과", "식품영양학과", "시스템생명공학과");
@@ -436,7 +441,8 @@ var Change = {
     var ICT = ["eee", "ie"]
     var Soft = ["computer", "soft"]
     var ArtSport = ["theatre", "film", "tfdesign", "creativewriting", "photo", "dance", "piano", "vocal", "compose", "orchestra",
-    "kopaint", "fineart", "sculpture", "craftart", "vd", "id", "indesign", "fashion", "koreanmusic", "sportscience"]
+      "kopaint", "fineart", "sculpture", "craftart", "vd", "id", "indesign", "fashion", "koreanmusic", "sportscience"
+    ]
     if (Edu.includes(major)) {
       num = new Array("--", "전공심화", "복수전공", "연계전공", "융합전공", "설계전공");
       vnum = new Array("0", "66", "50", "50", "50", "50");
@@ -636,10 +642,19 @@ var Change = {
       document.getElementById("MultiMajor_select").options[i] = new Option(num[i], vnum[i]);
     }
   },
-  double_st_teaching: function () {
+  major_st_teaching: function() {
+    var MajorTeachCheck = document.getElementById("major_teach").checked;
+
+    if (MajorTeachCheck) {
+      document.getElementById("major_standard").value = 50;
+    } else {
+      document.getElementById("major_standard").value = 45;
+    }
+  },
+  double_st_teaching: function() {
     var DoubleTeachCheck = document.getElementById("double-teaching").checked;
 
-    if ( DoubleTeachCheck ) {
+    if (DoubleTeachCheck) {
       document.getElementById("double_st").value = 50;
     } else {
       document.getElementById("double_st").value = 45;
@@ -698,7 +713,22 @@ var Check = {
       document.getElementById("teaching_table").style.display = "none";
     }
   },
-  korean:function() {
+  multi_teach: function() {
+    var teachingmajor = ["education", "ece", "englishedu", "pe",
+      "korean", "english", "german", "russia", "japan", "china", "philosophy", "history",
+      "psyche", "lis", "physics", "chemistry", "bio-science", "math", "foodnutri", "theatre", "film",
+      "photo", "dance", "kopaint", "fineart", "craftart", "koreanmusic"
+    ]
+    var major = document.getElementById("Major_select").value;
+    var Multimajor_standard = Number(document.getElementById("MultiMajor_select").value);
+    if (Multimajor_standard == 45 && teachingmajor.includes(major)) {
+      document.getElementById("maj_tea_check").style.display = "";
+    } else {
+      document.getElementById("maj_tea_check").style.display = "none";
+      document.getElementById("major_teach").checked = false;
+    }
+  },
+  korean: function() {
     AdYear = Number(document.getElementById("ad-year").value);
     if (AdYear == 2014 || AdYear == 0) {
       document.getElementById("Korean").checked = false;
@@ -1265,7 +1295,7 @@ var PhoneNumber = {
   }
 };
 
-var Base = {//전공기초 2012년부터
+var Base = { //전공기초 2012년부터
   //인문대학
   "korean": ["10", "10", "10", "10", "10", "10", "10", "10", "10"],
   "english": ["12", "12", "12", "12", "12", "12", "12", "12", "12"],
@@ -1372,7 +1402,7 @@ var Nece = { //전공필수 2012년부터
   "socialwelfare": ["18", "18", "18", "18", "18", "18", "18", "18", "18"],
   "cmc": ["9", "9", "9", "9", "9", "9", "9", "9", "9"],
   "planning": ["18", "18", "18", "18", "18", "18", "18", "18", "18"],
-  "sociology": ["9", "9", "9" , "9", "9", "9", "9", "9", "12"],
+  "sociology": ["9", "9", "9", "9", "9", "9", "9", "9", "12"],
   "public": ["19", "19", "19", "19", "19", "19", "19", "19", "19"],
   "public-admin": ["19", "19", "19", "19", "19", "19", "19", "18", "18"],
   "public-policy": ["17", "17", "17", "17", "17", "17", "17", "18", "18"],
