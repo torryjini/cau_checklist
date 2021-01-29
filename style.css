@@ -222,7 +222,7 @@ p {
   color: white;
   padding: 0.3rem;
   border-radius: 2rem;
-  font-size: 1rem;
+  font-size: 0.9rem;
   cursor: pointer;
 }
 
@@ -234,9 +234,10 @@ p {
   color: white;
   padding: 0.3rem;
   border-radius: 2rem;
-  font-size: 1rem;
+  font-size: 0.9rem;
   cursor: pointer;
   margin-top: 4px;
+  margin-bottom: 4px;
 }
 
 .info-btn:hover {
@@ -419,6 +420,10 @@ p {
     cursor: pointer;
     border-radius: 2rem;
     font-size: 1rem;
+  }
+
+  legend {
+    font-size: 1.4rem;
   }
 
   .chnth {
