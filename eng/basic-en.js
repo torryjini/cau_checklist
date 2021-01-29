@@ -574,7 +574,6 @@ var Result = {
     var Basepoint = Number(document.getElementById("base_input").value);
     var Necepoint = Number(document.getElementById("nece_input").value);
     var Majorpoint = Number(document.getElementById("major_input").value);
-    Majorstandard = Number(Majorstandard);
     var word = "👉Entrance Year : " + AdYear + "\nMajor : " + Majortext + "\n👉Multiple Major : " + Multimajortext + "\n";
 
     var FusionOption = Number(document.getElementById("fusion-options").value);
@@ -822,7 +821,6 @@ var Result = {
     var Basepoint = Number(document.getElementById("base_input").value);
     var Necepoint = Number(document.getElementById("nece_input").value);
     var Majorpoint = Number(document.getElementById("major_input").value);
-    Majorstandard = Number(Majorstandard);
     var word = "👉Entrance Year : " + AdYear;
 
     if (Majortext.includes("트랙")) {
@@ -1074,7 +1072,6 @@ var Result = {
     var Basepoint = Number(document.getElementById("base_input").value);
     var Necepoint = Number(document.getElementById("nece_input").value);
     var Majorpoint = Number(document.getElementById("major_input").value);
-    Majorstandard = Number(Majorstandard);
     var word = "👉Entrance Year : " + AdYear;
 
     if (Majortext.includes("트랙")) {
@@ -1399,7 +1396,6 @@ var Result = {
     var Basepoint = Number(document.getElementById("base_input").value);
     var Necepoint = Number(document.getElementById("nece_input").value);
     var Majorpoint = Number(document.getElementById("major_input").value);
-    Majorstandard = Number(Majorstandard);
     var word = "👉Transfer year : " + AdYear;
 
     if (SecYear) {
