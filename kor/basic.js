@@ -592,7 +592,6 @@ var Result = {
     var Basepoint = Number(document.getElementById("base_input").value);
     var Necepoint = Number(document.getElementById("nece_input").value);
     var Majorpoint = Number(document.getElementById("major_input").value);
-    Majorstandard = Number(Majorstandard);
     var word = "👉입학연도 : " + AdYear + "년" + "\n👉주전공 : " + Majortext + "\n👉다전공 : " + Multimajortext + "\n";
 
     var FusionOption = Number(document.getElementById("fusion-options").value);
@@ -840,7 +839,6 @@ var Result = {
     var Basepoint = Number(document.getElementById("base_input").value);
     var Necepoint = Number(document.getElementById("nece_input").value);
     var Majorpoint = Number(document.getElementById("major_input").value);
-    Majorstandard = Number(Majorstandard);
     var word = "👉입학연도 : " + AdYear + "년\n👉주전공 : " + Majortext + "\n👉다전공 : " + Multimajortext + "\n";
 
     var FusionOption = Number(document.getElementById("fusion-options").value);
@@ -1086,7 +1084,6 @@ var Result = {
     var Basepoint = Number(document.getElementById("base_input").value);
     var Necepoint = Number(document.getElementById("nece_input").value);
     var Majorpoint = Number(document.getElementById("major_input").value);
-    Majorstandard = Number(Majorstandard);
     var word = "👉입학연도 : " + AdYear + "년\n👉주전공 : " + Majortext + "\n👉다전공 : " + Multimajortext + "\n";
 
     var FusionOption = Number(document.getElementById("fusion-options").value);
@@ -1405,7 +1402,6 @@ var Result = {
     var Basepoint = Number(document.getElementById("base_input").value);
     var Necepoint = Number(document.getElementById("nece_input").value);
     var Majorpoint = Number(document.getElementById("major_input").value);
-    Majorstandard = Number(Majorstandard);
     var word = "👉편입학연도 : " + AdYear + "년";
 
     if (SecYear) {
