@@ -572,7 +572,6 @@ var Result = {
     var Basepoint = Number(document.getElementById("base_input").value);
     var Necepoint = Number(document.getElementById("nece_input").value);
     var Majorpoint = Number(document.getElementById("major_input").value);
-    Majorstandard = Number(Majorstandard);
     var word = "👉入学年度 : " + AdYear + "年" + "\n👉主专业 : " + Majortext + "\n👉多专业 : " + Multimajortext + "\n";
 
     var FusionOption = Number(document.getElementById("fusion-options").value);
@@ -820,7 +819,6 @@ var Result = {
     var Basepoint = Number(document.getElementById("base_input").value);
     var Necepoint = Number(document.getElementById("nece_input").value);
     var Majorpoint = Number(document.getElementById("major_input").value);
-    Majorstandard = Number(Majorstandard);
     var word = "👉入学年度 : " + AdYear + "年";
 
     if (Majortext.includes("트랙")) {
@@ -1072,7 +1070,6 @@ var Result = {
     var Basepoint = Number(document.getElementById("base_input").value);
     var Necepoint = Number(document.getElementById("nece_input").value);
     var Majorpoint = Number(document.getElementById("major_input").value);
-    Majorstandard = Number(Majorstandard);
     var word = "👉入学年度 : " + AdYear + "年";
 
     if (Majortext.includes("트랙")) {
@@ -1397,7 +1394,6 @@ var Result = {
     var Basepoint = Number(document.getElementById("base_input").value);
     var Necepoint = Number(document.getElementById("nece_input").value);
     var Majorpoint = Number(document.getElementById("major_input").value);
-    Majorstandard = Number(Majorstandard);
     var word = "👉插班年度 : " + AdYear + "年";
 
     if (SecYear) {
