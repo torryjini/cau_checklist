@@ -57,7 +57,7 @@ var Reset = {
   maj_dou_teach: function() {
     document.getElementById("major_teach").checked = false;
     document.getElementById("double-teaching").checked = false;
-    document.getElementById("double_st").value = document.getElementById("MultiMajor_select").value;
+    document.getElementById("double_st").value = 45;
   }
 }
 
