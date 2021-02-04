@@ -26,6 +26,13 @@ function yearchanges(fr) {
   }
 }
 
+//version Modal
+function versioninfo() {
+  word = "Version"
+  var content = "Updated in Feb. 2021"
+  swal(word, content, "info");
+}
+
 //Get the button "top" 버튼 관련
 var mybutton = document.getElementById("TopBtn");
 
