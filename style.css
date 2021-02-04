@@ -74,7 +74,9 @@ li {
 
 ol {
   margin-top: 0.5rem;
-  margin-left: 15%;
+  list-style-type: none;
+  text-align: center;
+  padding: 0;
 }
 
 select {
@@ -408,7 +410,6 @@ p {
   }
 
   ol {
-    padding-left: 20px;
     margin-left: 0;
   }
 
