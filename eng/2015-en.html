@@ -39,13 +39,19 @@
       <div id="H2U">
         <h2 id="H2Utitle"><img src="../check4grad.png" id="c4g_logo"></h2>
         <ol>
-          <li><a href="https://mportal.cau.ac.kr" target="_blank"><u>CAU Portal</u></a> Log in - 강의마당 - 졸업관련 성적조회</li>
-          <li>Put your information for Basic Info section.</li>
-          <li>After accurately entering your current credits for General, Major and Other requirements, CHECK for results!</li>
+          <li><a href="https://mportal.cau.ac.kr" target="_blank"><u>CAU Portal</u></a> - 강의마당 - 졸업관련 성적조회</li>
+          <li>&#10003; = Passed / ! = Warning / X = Not passed</li>
         </ol>
       </div>
       <table border="solid" width="100%">
-        <legend><img class="legend-icon" src="../legend-icon.png"> Basic Info</legend>
+        <div id="container">
+          <legend>
+            <img class="legend-icon" src="../legend-icon.png"> Basic info
+          </legend>
+          <div class="item">
+            <button type="button" class="info-btn" onclick="versioninfo();"><i class="fas fa-info-circle"></i> Ver.</button>
+          </div>
+        </div>
         <tr>
           <th width="50%">Entrance year</th>
           <th width="50%">College</th>
