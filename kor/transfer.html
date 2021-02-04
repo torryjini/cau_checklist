@@ -39,13 +39,19 @@
       <div id="H2U">
         <h2 id="H2Utitle"><img src="../check4grad.png" id="c4g_logo"></h2>
         <ol>
-          <li><a href="https://mportal.cau.ac.kr" target="_blank"><u>중앙대포탈</u></a> 로그인 - 강의마당 - 졸업관련 성적조회</li>
-          <li>기본정보에 편입학연도, 소속학과 선택(2학년 편입생은 다전공 대상)</li>
-          <li>학점 이수 내역, 기타 졸업요건에 정확히 입력 후 CHECK</li>
+          <li><a href="https://mportal.cau.ac.kr" target="_blank"><u>중앙대포탈</u></a> - 강의마당 - 졸업관련 성적조회</li>
+          <li>&#10003; = 기준통과 / ! = 주의요망 / X = 졸업불가</li>
         </ol>
       </div>
       <table border="solid" width="100%">
-        <legend><img class="legend-icon" src="../legend-icon.png"> 기본정보</legend>
+        <div id="container">
+          <legend>
+            <img class="legend-icon" src="../legend-icon.png"> 기본정보
+          </legend>
+          <div class="item">
+            <button type="button" class="info-btn" onclick="versioninfo();"><i class="fas fa-info-circle"></i> Ver.</button>
+          </div>
+        </div>
         <tr>
           <th width="50%">편입학연도</th>
           <th width="50%">대학</th>
