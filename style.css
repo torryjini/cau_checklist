@@ -177,9 +177,7 @@ p {
   border-style: solid;
   border-color: var(--text-color);
   color: white;
-  padding: 0.5rem;
-  padding-top: 0.3rem;
-  border-radius: 2rem;
+  border-radius: 1rem;
   font-size: 1rem;
   cursor: pointer;
 }
