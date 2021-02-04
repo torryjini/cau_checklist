@@ -1,7 +1,29 @@
+//index 페이지 함수
 function index_info() {
   title = "CAU CHECK4GRAD"
   word = "Version. Feb. 2021\nCode by THINGCOL\nTranslated by HUA & SUN\nE-mail : torryjini@naver.com\n© 2021. THINGCOL all rights reserved."
   swal(title, word, "info")
+}
+
+
+function yearchanges(fr) {
+  if (fr == "entrance") {
+    //뿌려줄값을 배열로정렬
+    num = new Array("--", "2012 ~ 2014", "2015", "2016 ~");
+    vnum = new Array("0", "2014", "2015", "2016");
+  } else if (fr == "transfer") {
+    num = new Array("--", "2017 ~");
+    vnum = new Array("0", "2017");
+  }
+  // 셀렉트안의 리스트를 기본값으로 한다.
+
+  for (i = 0; i < document.getElementById("index-year").length; i++) {
+    document.getElementById("index-year").options[0] = null;
+  };
+  //포문을 이용하여 두번째(test2)셀렉트 박스에 값을 뿌려줍니당)
+  for (i = 0; i < num.length; i++) {
+    document.getElementById("index-year").options[i] = new Option(num[i], vnum[i]);
+  }
 }
 
 //Get the button "top" 버튼 관련
