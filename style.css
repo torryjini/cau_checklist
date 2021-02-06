@@ -159,6 +159,7 @@ p {
   text-align: center;
   padding-left: 2rem;
   padding-right: 2rem;
+  margin-bottom: 0.3rem;
 }
 
 .swal-text {
@@ -173,7 +174,7 @@ p {
   font-size: 1rem;
 }
 
-.index-info {
+/* .index-info {
   background-color: var(--background-color);
   border: 1.5px;
   border-style: solid;
@@ -182,11 +183,19 @@ p {
   border-radius: 1rem;
   font-size: 1rem;
   cursor: pointer;
-}
+} */
 
 .index-info:hover {
   color: var(--background-color);
   background-color: var(--text-color);
+}
+
+.about-privacy {
+  cursor: pointer;
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+  margin-top: 0.2rem;
+  margin-bottom: 1rem;
 }
 
 .legend-icon {

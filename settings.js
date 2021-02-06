@@ -1,7 +1,7 @@
 //index 페이지 함수
 function index_info() {
   title = "CAU CHECK4GRAD"
-  word = "Version. Feb. 2021\nCode by THINGCOL\nTranslated by HUA & SUN\nE-mail : torryjini@naver.com\n© 2021. THINGCOL all rights reserved."
+  word = "Code by THINGCOL\nTranslated by HUA & SUN\nE-mail : torryjini@naver.com\n© 2021. THINGCOL all rights reserved."
   swal(title, word, "info")
 }
 
