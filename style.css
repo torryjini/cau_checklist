@@ -381,13 +381,6 @@ p {
 
 #phone, #Davinci {
   cursor: pointer;
-}
-
-#Davinci {
-  width: 7rem;
-}
-
-#phone {
   width: 8rem;
 }
 
