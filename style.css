@@ -184,7 +184,6 @@ p {
   font-size: 1rem;
   cursor: pointer;
 } */
-
 .index-info:hover {
   color: var(--background-color);
   background-color: var(--text-color);
@@ -298,6 +297,8 @@ p {
   font-size: 1.2rem;
   font-family: inherit;
   cursor: pointer;
+  width: 16rem;
+  margin: auto;
 }
 
 .buttons {
@@ -379,11 +380,15 @@ p {
 }
 
 #phone, #Davinci {
-  width: 8rem;
+  cursor: pointer;
 }
 
-#phone, #Davinci {
-  cursor: pointer;
+#Davinci {
+  width: 7rem;
+}
+
+#phone {
+  width: 8rem;
 }
 
 #fusion-options {
@@ -524,7 +529,6 @@ p {
     padding: 0.6rem 1.6rem;
   }
 }
-
 
 footer {
   padding-bottom: 0;
