@@ -454,8 +454,8 @@ var Change = {
       num = new Array("--", "전자전기공학부", "융합공학부");
       vnum = new Array("none", "eee", "ie");
     } else if (fr == "arts") {
-      num = new Array("--", "연극전공", "영화전공", "공간연출전공", "문예창작전공", "무용전공", "미술학부_조소전공", "디자인학부_공예전공");
-      vnum = new Array("none", "theatre", "film", "tfdesign", "creativewriting", "dance", "sculpture", "craftart");
+      num = new Array("--", "연극전공", "영화전공", "공간연출전공", "문예창작전공", "무용전공", "미술학부_서양화전공", "미술학부_조소전공", "디자인학부_공예전공", "시각디자인전공");
+      vnum = new Array("none", "theatre", "film", "tfdesign", "creativewriting", "dance", "fineart", "sculpture", "craftart", "vd");
     } else if (fr == "biotech") {
       num = new Array("--", "동물생명공학과", "식물생명공학과", "식품공학과", "식품영양학과", "시스템생명공학과");
       vnum = new Array("none", "animal", "plantbio", "foodscience", "foodnutri", "systembio");
@@ -1607,11 +1607,11 @@ var Base_tr = { // 전공기초: [2017, 2018, 2019, 2020]
   "creativewriting": ["0", "0", "0", "0"],
   "dance": ["0", "0", "0", "0"],
   // "kopaint": ["10", "10", "10", "10"],
-  // "fineart": ["10", "10", "10", "10"],
+  "fineart": ["0", "0", "0", "0"],
   "sculpture": ["10", "10", "10", "10"],
   "craftart": ["10", "10", "10", "10"],
   // "id": ["14", "14", "15", "15"],
-  // "vd": ["14", "14", "14", "14"],
+  "vd": ["0", "0", "0", "0"],
   // "indesign": ["12", "12", "12", "12"],
   // "fashion": ["14", "14", "14", "14"],
   // "compose": ["14", "14", "14", "14"],
@@ -1686,11 +1686,11 @@ var Nece_tr = { //전공필수: [2017, 2018, 2019, 2020]
   "creativewriting": ["15", "15", "15", "15"],
   "dance": ["14", "14", "14", "14"],
   // "kopaint": ["10", "10", "10", "10"],
-  // "fineart": ["10", "10", "10", "10"],
+  "fineart": ["9", "9", "12", "12"],
   "sculpture": ["23", "23", "23", "23"],
   "craftart": ["14", "14", "14", "14"],
   // "id": ["14", "14", "15", "15"],
-  // "vd": ["14", "14", "14", "14"],
+  "vd": ["17", "17", "17", "17"],
   // "indesign": ["12", "12", "12", "12"],
   // "fashion": ["14", "14", "14", "14"],
   // "compose": ["14", "14", "14", "14"],
