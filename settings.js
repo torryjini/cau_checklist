@@ -1235,10 +1235,10 @@ var Office = {
   "vd": "디자인학부 시각디자인전공",
   "indesign": "디자인학부 실내환경디자인전공",
   "fashion": "디자인학부 패션전공",
-  "compose": "음악학부",
+  "compose": "음악학부 작곡전공",
   "vocal": "음악학부 성악전공",
   "piano": "음악학부 피아노전공",
-  "orchestra": "음악학부",
+  "orchestra": "음악학부 관현악전공",
   "koreanmusic": "전통예술학부",
   //예술공학대학
   "computerart": "컴퓨터예술학부",
