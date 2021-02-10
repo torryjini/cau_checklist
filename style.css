@@ -372,15 +372,14 @@ p {
   color: var(--text-color);
   background-color: var(--background-color);
   text-align: center;
+  cursor: pointer;
 }
 
 #dept {
   width: 16rem;
-  cursor: pointer;
 }
 
 #phone, #Davinci {
-  cursor: pointer;
   width: 8rem;
 }
 
