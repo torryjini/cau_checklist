@@ -90,7 +90,7 @@
         </tr>
         <tr>
           <td>
-            <select id="Major_select" onchange="Standard.BaseNece();PhoneNumber.call();Reset.form('Multimajor_form');Reset.majortable();Check.teach();Change.multimajor();" required>
+            <select id="Major_select" onchange="Standard.BaseNece();PhoneNumber.call();PhoneNumber.DavinciCall();Reset.form('Multimajor_form');Reset.majortable();Check.teach();Change.multimajor();" required>
               <option value="none">--</option>
             </select>
             </form>
@@ -218,7 +218,7 @@
       <input type="button" value="&#10003; CHECK" onclick="Result.lib2015();Total.sum();">
     </div>
     <br>
-    <div class="call"><a href="tel:02-820-6633">다빈치교양대학<br><i class="fas fa-phone-alt"></i>
+    <div class="call"><a id="Davincicall">다빈치교양대학<br><i class="fas fa-phone-alt"></i>
         <input type="text" id="Davinci" value="02-820-6633" readonly tabindex="-1"></a>
     </div>
     <br>
