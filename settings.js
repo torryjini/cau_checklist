@@ -1352,6 +1352,21 @@ var PhoneNumber = {
       document.getElementById("phone").value = PhoneNumber[Major];
       document.getElementById("phonenumber").setAttribute("href", "tel:" + PhoneNumber[Major]); //전화연결 가능
     }
+  },
+  DavinciCall: function() {
+    var Major = document.getElementById("Major_select").value;
+    var Ansung = ["creativewriting", "photo", "dance", "kopaint", "fineart", "sculpture",
+    "craftart", "id", "vd", "indesign", "fashion", "compose",
+    "vocal", "piano", "orchestra", "koreanmusic", "computerart",
+    "animal", "plantbio", "foodscience", "foodnutri", "systembio", "sportscience"]
+
+    if (Ansung.includes(Major)) {
+      document.getElementById("Davinci").value = "031-670-4820";
+      document.getElementById("Davincicall").setAttribute("href", "tel:031-670-4820");
+    } else {
+      document.getElementById("Davinci").value = "02-820-6633";
+      document.getElementById("Davincicall").setAttribute("href", "tel:02-820-6633");
+    }
   }
 };
 
