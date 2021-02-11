@@ -402,74 +402,7 @@
       </div>
       <br>
       <br>
-      <form id='etc'>
-        <table border="solid" width="100%">
-          <legend><img class="legend-icon" src="../legend-icon.png"> 其他毕业要求</legend>
-          <tr>
-            <th colspan="2">区分</th>
-            <th>结果</th>
-            <th>要求</th>
-          </tr>
-          <tr>
-            <th rowspan="3">졸업<br>인정제</th>
-            <th>영어</th>
-            <td>
-              <input type="checkbox" id="English" checked><label for="English">合格</label>
-            </td>
-            <td rowspan="2"><label>*只对韩国学生</label></td>
-          </tr>
-          <tr>
-            <th>한자</th>
-            <td>
-              <input type="checkbox" id="Hanja" checked><label for="Hanja">合格</label>
-            </td>
-          </tr>
-          <tr>
-            <th>
-              <div class="chnth">한국어</div>
-            </th>
-            <td>
-              <input type="checkbox" id="Korean"><label for="Korean">合格</label>
-            </td>
-            <td><label>TOPIK 4 级以上<br>(针对留学生)</label></td>
-          </tr>
-          <tr>
-            <th rowspan="2">
-              <div class="chnth">毕业考试</div>
-              /论文
-            </th>
-            <th>
-              <div class="chnth">主专业</div>
-            </th>
-            <td>
-              <input type="checkbox" id="major_paper"><label for="major_paper">合格</label>
-            </td>
-            <td></td>
-          </tr>
-          <tr>
-            <th>
-              <div class="chnth">双专业</div>
-            </th>
-            <td>
-              <input type="checkbox" id="double_major_paper"><label for="double_major_paper">合格/无</label>
-            </td>
-            <td></td>
-          </tr>
-          <tr>
-            <th colspan="2">总绩点</th>
-            <td><input type="number" placeholder="0" id="average" value="" max="4.5" min="0" step=".01" class="inputnumber" maxlength="4" oninput="maxLengthCheck(this)" onkeyup="Color.gpa();" onchange="Color.gpa();"><label for="average"> /
-                4.5</label>
-            </td>
-            <td>
-              <div class="chnth"><label>平均学分未满2.0不可毕业</label></div>
-            </td>
-          </tr>
-        </table>
-      </form><br>
-      <div class="buttons">
-        <input type="reset" value="&#8635; RESET" onclick="Reset.form('etc')" tabindex="-1">
-        <input type="button" value="&#10003; CHECK" onclick="Result.etc()">
-      </div>
+      <div w3-include-html="etc.html"></div>
       <!-- Go to www.addthis.com/dashboard to customize your tools -->
       <div class="addthis_inline_share_toolbox"></div>
       <br>
@@ -502,6 +435,9 @@
   <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5f5c861cc88b9f15"></script>
   <script type="text/javascript" src="../settings.js"></script>
   <script type="text/javascript" src="basic-ch.js"></script>
+  <script>
+    includeHTML();
+  </script>
 </body>
 
 </html>
