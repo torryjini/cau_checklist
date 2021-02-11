@@ -145,30 +145,30 @@ var Result = {
 
     if (common_kor_point == 2 && core_total_point >= 9 && liberal_total_point > 45) {
       if (common_eng_point >= 4 && common_etc_point == 8) {
-        swal("General credits result", word, "warning")
+        swal("General Credits Results", word, "warning")
       } else if (common_eng_point <= 4 && common_eng_ex && common_etc_point == 8) {
-        swal("General credits result", word, "warning")
+        swal("General Credits Results", word, "warning")
       } else if (common_eng_point >= 4 && common_etc_point >= 6 && account_check_SF) {
-        swal("General credits result", word, "warning")
+        swal("General Credits Results", word, "warning")
       } else if (common_eng_point <= 4 && common_eng_ex && common_etc_point >= 6 && account_check_SF) {
-        swal("General credits result", word, "warning")
+        swal("General Credits Results", word, "warning")
       } else {
-        swal("General credits result", word, "error")
+        swal("General Credits Results", word, "error")
       }
     } else if (common_kor_point == 2 && core_total_point >= 9 && liberal_total_point <= 45) {
       if (common_eng_point >= 4 && common_etc_point == 8) {
-        swal("General credits result", word, "success")
+        swal("General Credits Results", word, "success")
       } else if (common_eng_point <= 4 && common_eng_ex && common_etc_point == 8) {
-        swal("General credits result", word, "success")
+        swal("General Credits Results", word, "success")
       } else if (common_eng_point >= 4 && common_etc_point >= 6 && account_check_SF) {
-        swal("General credits result", word, "success")
+        swal("General Credits Results", word, "success")
       } else if (common_eng_point <= 4 && common_eng_ex && common_etc_point >= 6 && account_check_SF) {
-        swal("General credits result", word, "success")
+        swal("General Credits Results", word, "success")
       } else {
-        swal("General credits result", word, "error")
+        swal("General Credits Results", word, "error")
       }
     } else {
-      swal("General credits result", word, "error")
+      swal("General Credits Results", word, "error")
     }
   },
   lib2015: function() {
@@ -256,30 +256,30 @@ var Result = {
 
     if (common_kor_point == 2 && core_total_point >= 11 && MACH1 >= MACH1_st && MACH2 >= MACH2_st && liberal_total_point > 45) {
       if (common_eng_point == 2 && common_etc_point == 8) {
-        swal("General credits result", word, "warning")
+        swal("General Credits Results", word, "warning")
       } else if (common_eng_point <= 2 && common_eng_ex && common_etc_point == 8) {
-        swal("General credits result", word, "warning")
+        swal("General Credits Results", word, "warning")
       } else if (common_eng_point == 2 && common_etc_point >= 6 && account_check_SF) {
-        swal("General credits result", word, "warning")
+        swal("General Credits Results", word, "warning")
       } else if (common_eng_point <= 2 && common_eng_ex && common_etc_point >= 6 && account_check_SF) {
-        swal("General credits result", word, "warning")
+        swal("General Credits Results", word, "warning")
       } else {
-        swal("General credits result", word, "error")
+        swal("General Credits Results", word, "error")
       }
     } else if (common_kor_point == 2 && core_total_point >= 11 && MACH1 >= MACH1_st && MACH2 >= MACH2_st && liberal_total_point <= 45) {
       if (common_eng_point == 2 && common_etc_point == 8) {
-        swal("General credits result", word, "success")
+        swal("General Credits Results", word, "success")
       } else if (common_eng_point <= 2 && common_eng_ex && common_etc_point == 8) {
-        swal("General credits result", word, "success")
+        swal("General Credits Results", word, "success")
       } else if (common_eng_point == 2 && common_etc_point >= 6 && account_check_SF) {
-        swal("General credits result", word, "success")
+        swal("General Credits Results", word, "success")
       } else if (common_eng_point <= 2 && common_eng_ex && common_etc_point >= 6 && account_check_SF) {
-        swal("General credits result", word, "success")
+        swal("General Credits Results", word, "success")
       } else {
-        swal("General credits result", word, "error")
+        swal("General Credits Results", word, "error")
       }
     } else {
-      swal("General credits result", word, "error")
+      swal("General Credits Results", word, "error")
     }
   },
   lib2016: function() {
@@ -414,30 +414,30 @@ var Result = {
 
     if (common_kor_point == 2 && Core1 && Core2 && Core3 && Core4 && Core5 && core_total_point >= 14 && MACH1 >= MACH1_st && MACH2 >= MACH2_st && liberal_total_point > 45) {
       if (common_eng_point == 2 && common_etc_point >= cometcst) {
-        swal("General credits result", word, "warning")
+        swal("General Credits Results", word, "warning")
       } else if (common_eng_point <= 2 && common_eng_ex && common_etc_point >= cometcst) {
-        swal("General credits result", word, "warning")
+        swal("General Credits Results", word, "warning")
       } else if (common_eng_point == 2 && common_etc_point >= [cometcst - 2] && account_check_SF) {
-        swal("General credits result", word, "warning")
+        swal("General Credits Results", word, "warning")
       } else if (common_eng_point <= 2 && common_eng_ex && common_etc_point >= [cometcst - 2] && account_check_SF) {
-        swal("General credits result", word, "warning")
+        swal("General Credits Results", word, "warning")
       } else {
-        swal("General credits result", word, "error")
+        swal("General Credits Results", word, "error")
       }
     } else if (common_kor_point == 2 && Core1 && Core2 && Core3 && Core4 && Core5 && core_total_point >= 14 && MACH1 >= MACH1_st && MACH2 >= MACH2_st && liberal_total_point <= 45) {
       if (common_eng_point == 2 && common_etc_point >= cometcst) {
-        swal("General credits result", word, "success")
+        swal("General Credits Results", word, "success")
       } else if (common_eng_point <= 2 && common_eng_ex && common_etc_point >= cometcst) {
-        swal("General credits result", word, "success")
+        swal("General Credits Results", word, "success")
       } else if (common_eng_point == 2 && common_etc_point >= [cometcst - 2] && account_check_SF) {
-        swal("General credits result", word, "success")
+        swal("General Credits Results", word, "success")
       } else if (common_eng_point <= 2 && common_eng_ex && common_etc_point >= [cometcst - 2] && account_check_SF) {
-        swal("General credits result", word, "success")
+        swal("General Credits Results", word, "success")
       } else {
-        swal("General credits result", word, "error")
+        swal("General Credits Results", word, "error")
       }
     } else {
-      swal("General credits result", word, "error")
+      swal("General Credits Results", word, "error")
     }
   },
   etc: function() {
@@ -492,13 +492,13 @@ var Result = {
     }
 
     if (English_result && Hanja_result && Korean_result && Paper_result && Paper_result2 && Average_result >= 2) {
-      swal("Other requirements result", word, "success");
+      swal("Other Requirements Results", word, "success");
     } else if (Average_result >= 2) {
       if (!English_result || !Hanja_result || !Korean_result || !Paper_result || !Paper_result2) {
-        swal("Other requirements result", word, "warning");
+        swal("Other Requirements Results", word, "warning");
       }
     } else if (Average_result <= 2) {
-      swal("Other requirements result", word, "error");
+      swal("Other Requirements Results", word, "error");
     }
   },
   major: function Major_result() {
@@ -693,121 +693,121 @@ var Result = {
     if (Basepoint >= BaseStandard && Necepoint >= NeceStandard && Majorpoint >= Majorstandard && TotalPoint >= TotalStandard) {
       if (Minorcheck && Teachingcheck) {
         if (Multimajortext.includes("심화")) {
-          swal("Major credits result", word, "success")
+          swal("Major Credits Results", word, "success")
         } else if (Multimajortext.includes("복수")) {
           if (Doublepoint >= 45) {
-            swal("Major credits result", word, "success")
+            swal("Major Credits Results", word, "success")
           } else {
-            swal("Major credits result", word, "error")
+            swal("Major Credits Results", word, "error")
           }
         } else if (Multimajortext.includes("연계")) {
           if (Linkpoint >= 36) {
-            swal("Major credits result", word, "success")
+            swal("Major Credits Results", word, "success")
           } else {
-            swal("Major credits result", word, "error")
+            swal("Major Credits Results", word, "error")
           }
         } else if (Multimajortext.includes("융합")) {
           if (Fusionpoint >= FusionStandard) {
-            swal("Major credits result", word, "success")
+            swal("Major Credits Results", word, "success")
           } else {
-            swal("Major credits result", word, "error")
+            swal("Major Credits Results", word, "error")
           }
         } else if (Multimajortext.includes("설계")) {
           if (Planpoint >= 36) {
-            swal("Major credits result", word, "success")
+            swal("Major Credits Results", word, "success")
           } else {
-            swal("Major credits result", word, "error")
+            swal("Major Credits Results", word, "error")
           }
         }
       } else if (Minorpoint >= 21 && Teachingcheck) {
         if (Multimajortext.includes("심화")) {
-          swal("Major credits result", word, "success")
+          swal("Major Credits Results", word, "success")
         } else if (Multimajortext.includes("복수")) {
           if (Doublepoint >= 45) {
-            swal("Major credits result", word, "success")
+            swal("Major Credits Results", word, "success")
           } else {
-            swal("Major credits result", word, "error")
+            swal("Major Credits Results", word, "error")
           }
         } else if (Multimajortext.includes("연계")) {
           if (Linkpoint >= 36) {
-            swal("Major credits result", word, "success")
+            swal("Major Credits Results", word, "success")
           } else {
-            swal("Major credits result", word, "error")
+            swal("Major Credits Results", word, "error")
           }
         } else if (Multimajortext.includes("융합")) {
           if (Fusionpoint >= FusionStandard) {
-            swal("Major credits result", word, "success")
+            swal("Major Credits Results", word, "success")
           } else {
-            swal("Major credits result", word, "error")
+            swal("Major Credits Results", word, "error")
           }
         } else if (Multimajortext.includes("설계")) {
           if (Planpoint >= 36) {
-            swal("Major credits result", word, "success")
+            swal("Major Credits Results", word, "success")
           } else {
-            swal("Major credits result", word, "error")
+            swal("Major Credits Results", word, "error")
           }
         }
       } else if (Minorpoint >= 21 && Teachingpoint >= 22) {
         if (Multimajortext.includes("심화")) {
-          swal("Major credits result", word, "success")
+          swal("Major Credits Results", word, "success")
         } else if (Multimajortext.includes("복수")) {
           if (Doublepoint >= 45) {
-            swal("Major credits result", word, "success")
+            swal("Major Credits Results", word, "success")
           } else {
-            swal("Major credits result", word, "error")
+            swal("Major Credits Results", word, "error")
           }
         } else if (Multimajortext.includes("연계")) {
           if (Linkpoint >= 36) {
-            swal("Major credits result", word, "success")
+            swal("Major Credits Results", word, "success")
           } else {
-            swal("Major credits result", word, "error")
+            swal("Major Credits Results", word, "error")
           }
         } else if (Multimajortext.includes("융합")) {
           if (Fusionpoint >= FusionStandard) {
-            swal("Major credits result", word, "success")
+            swal("Major Credits Results", word, "success")
           } else {
-            swal("Major credits result", word, "error")
+            swal("Major Credits Results", word, "error")
           }
         } else if (Multimajortext.includes("설계")) {
           if (Planpoint >= 36) {
-            swal("Major credits result", word, "success")
+            swal("Major Credits Results", word, "success")
           } else {
-            swal("Major credits result", word, "error")
+            swal("Major Credits Results", word, "error")
           }
         }
       } else if (Minorcheck && Teachingpoint >= 22) {
         if (Multimajortext.includes("심화")) {
-          swal("Major credits result", word, "success")
+          swal("Major Credits Results", word, "success")
         } else if (Multimajortext.includes("복수")) {
           if (Doublepoint >= 45) {
-            swal("Major credits result", word, "success")
+            swal("Major Credits Results", word, "success")
           } else {
-            swal("Major credits result", word, "error")
+            swal("Major Credits Results", word, "error")
           }
         } else if (Multimajortext.includes("연계")) {
           if (Linkpoint >= 36) {
-            swal("Major credits result", word, "success")
+            swal("Major Credits Results", word, "success")
           } else {
-            swal("Major credits result", word, "error")
+            swal("Major Credits Results", word, "error")
           }
         } else if (Multimajortext.includes("융합")) {
           if (Fusionpoint >= FusionStandard) {
-            swal("Major credits result", word, "success")
+            swal("Major Credits Results", word, "success")
           } else {
-            swal("Major credits result", word, "error")
+            swal("Major Credits Results", word, "error")
           }
         } else if (Multimajortext.includes("설계")) {
           if (Planpoint >= 36) {
-            swal("Major credits result", word, "success")
+            swal("Major Credits Results", word, "success")
           } else {
-            swal("Major credits result", word, "error")
+            swal("Major Credits Results", word, "error")
           }
         }
       } else {
-        swal("Major credits result", word, "error")
+        swal("Major Credits Results", word, "error")
       }
     } else {
-      swal("Major credits result", word, "error")
+      swal("Major Credits Results", word, "error")
     }
   },
   basenece2015: function(Majorstandard) {
@@ -944,121 +944,121 @@ var Result = {
     if (Basepoint >= BaseStandard && Necepoint >= NeceStandard && Majorpoint >= Majorstandard && TotalPoint >= TotalStandard) {
       if (Minorcheck && Teachingcheck) {
         if (Multimajortext.includes("심화")) {
-          swal("Major credits result", word, "success")
+          swal("Major Credits Results", word, "success")
         } else if (Multimajortext.includes("복수")) {
           if (Doublepoint >= 45) {
-            swal("Major credits result", word, "success")
+            swal("Major Credits Results", word, "success")
           } else {
-            swal("Major credits result", word, "error")
+            swal("Major Credits Results", word, "error")
           }
         } else if (Multimajortext.includes("연계")) {
           if (Linkpoint >= 36) {
-            swal("Major credits result", word, "success")
+            swal("Major Credits Results", word, "success")
           } else {
-            swal("Major credits result", word, "error")
+            swal("Major Credits Results", word, "error")
           }
         } else if (Multimajortext.includes("융합")) {
           if (Fusionpoint >= FusionStandard) {
-            swal("Major credits result", word, "success")
+            swal("Major Credits Results", word, "success")
           } else {
-            swal("Major credits result", word, "error")
+            swal("Major Credits Results", word, "error")
           }
         } else if (Multimajortext.includes("설계")) {
           if (Planpoint >= 36) {
-            swal("Major credits result", word, "success")
+            swal("Major Credits Results", word, "success")
           } else {
-            swal("Major credits result", word, "error")
+            swal("Major Credits Results", word, "error")
           }
         }
       } else if (Minorpoint >= 21 && Teachingcheck) {
         if (Multimajortext.includes("심화")) {
-          swal("Major credits result", word, "success")
+          swal("Major Credits Results", word, "success")
         } else if (Multimajortext.includes("복수")) {
           if (Doublepoint >= 45) {
-            swal("Major credits result", word, "success")
+            swal("Major Credits Results", word, "success")
           } else {
-            swal("Major credits result", word, "error")
+            swal("Major Credits Results", word, "error")
           }
         } else if (Multimajortext.includes("연계")) {
           if (Linkpoint >= 36) {
-            swal("Major credits result", word, "success")
+            swal("Major Credits Results", word, "success")
           } else {
-            swal("Major credits result", word, "error")
+            swal("Major Credits Results", word, "error")
           }
         } else if (Multimajortext.includes("융합")) {
           if (Fusionpoint >= FusionStandard) {
-            swal("Major credits result", word, "success")
+            swal("Major Credits Results", word, "success")
           } else {
-            swal("Major credits result", word, "error")
+            swal("Major Credits Results", word, "error")
           }
         } else if (Multimajortext.includes("설계")) {
           if (Planpoint >= 36) {
-            swal("Major credits result", word, "success")
+            swal("Major Credits Results", word, "success")
           } else {
-            swal("Major credits result", word, "error")
+            swal("Major Credits Results", word, "error")
           }
         }
       } else if (Minorpoint >= 21 && Teachingpoint >= 22) {
         if (Multimajortext.includes("심화")) {
-          swal("Major credits result", word, "success")
+          swal("Major Credits Results", word, "success")
         } else if (Multimajortext.includes("복수")) {
           if (Doublepoint >= 45) {
-            swal("Major credits result", word, "success")
+            swal("Major Credits Results", word, "success")
           } else {
-            swal("Major credits result", word, "error")
+            swal("Major Credits Results", word, "error")
           }
         } else if (Multimajortext.includes("연계")) {
           if (Linkpoint >= 36) {
-            swal("Major credits result", word, "success")
+            swal("Major Credits Results", word, "success")
           } else {
-            swal("Major credits result", word, "error")
+            swal("Major Credits Results", word, "error")
           }
         } else if (Multimajortext.includes("융합")) {
           if (Fusionpoint >= FusionStandard) {
-            swal("Major credits result", word, "success")
+            swal("Major Credits Results", word, "success")
           } else {
-            swal("Major credits result", word, "error")
+            swal("Major Credits Results", word, "error")
           }
         } else if (Multimajortext.includes("설계")) {
           if (Planpoint >= 36) {
-            swal("Major credits result", word, "success")
+            swal("Major Credits Results", word, "success")
           } else {
-            swal("Major credits result", word, "error")
+            swal("Major Credits Results", word, "error")
           }
         }
       } else if (Minorcheck && Teachingpoint >= 22) {
         if (Multimajortext.includes("심화")) {
-          swal("Major credits result", word, "success")
+          swal("Major Credits Results", word, "success")
         } else if (Multimajortext.includes("복수")) {
           if (Doublepoint >= 45) {
-            swal("Major credits result", word, "success")
+            swal("Major Credits Results", word, "success")
           } else {
-            swal("Major credits result", word, "error")
+            swal("Major Credits Results", word, "error")
           }
         } else if (Multimajortext.includes("연계")) {
           if (Linkpoint >= 36) {
-            swal("Major credits result", word, "success")
+            swal("Major Credits Results", word, "success")
           } else {
-            swal("Major credits result", word, "error")
+            swal("Major Credits Results", word, "error")
           }
         } else if (Multimajortext.includes("융합")) {
           if (Fusionpoint >= FusionStandard) {
-            swal("Major credits result", word, "success")
+            swal("Major Credits Results", word, "success")
           } else {
-            swal("Major credits result", word, "error")
+            swal("Major Credits Results", word, "error")
           }
         } else if (Multimajortext.includes("설계")) {
           if (Planpoint >= 36) {
-            swal("Major credits result", word, "success")
+            swal("Major Credits Results", word, "success")
           } else {
-            swal("Major credits result", word, "error")
+            swal("Major Credits Results", word, "error")
           }
         }
       } else {
-        swal("Major credits result", word, "error")
+        swal("Major Credits Results", word, "error")
       }
     } else {
-      swal("Major credits result", word, "error")
+      swal("Major Credits Results", word, "error")
     }
   },
   basenece2016: function(Majorstandard) {
@@ -1208,121 +1208,121 @@ var Result = {
     if (Basepoint >= BaseStandard && Necepoint >= NeceStandard && Majorpoint >= Majorstandard && Freepoint >= 1 && CAUSeminar && TotalPoint >= TotalStandard) {
       if (Minorcheck && Teachingcheck) {
         if (Multimajortext.includes("심화")) {
-          swal("Major credits result", word, "success")
+          swal("Major Credits Results", word, "success")
         } else if (Multimajortext.includes("복수")) {
           if (Doublepoint >= 45) {
-            swal("Major credits result", word, "success")
+            swal("Major Credits Results", word, "success")
           } else {
-            swal("Major credits result", word, "error")
+            swal("Major Credits Results", word, "error")
           }
         } else if (Multimajortext.includes("연계")) {
           if (Linkpoint >= 36) {
-            swal("Major credits result", word, "success")
+            swal("Major Credits Results", word, "success")
           } else {
-            swal("Major credits result", word, "error")
+            swal("Major Credits Results", word, "error")
           }
         } else if (Multimajortext.includes("융합")) {
           if (Fusionpoint >= FusionStandard) {
-            swal("Major credits result", word, "success")
+            swal("Major Credits Results", word, "success")
           } else {
-            swal("Major credits result", word, "error")
+            swal("Major Credits Results", word, "error")
           }
         } else if (Multimajortext.includes("설계")) {
           if (Planpoint >= 36) {
-            swal("Major credits result", word, "success")
+            swal("Major Credits Results", word, "success")
           } else {
-            swal("Major credits result", word, "error")
+            swal("Major Credits Results", word, "error")
           }
         }
       } else if (Minorpoint >= 21 && Teachingcheck) {
         if (Multimajortext.includes("심화")) {
-          swal("Major credits result", word, "success")
+          swal("Major Credits Results", word, "success")
         } else if (Multimajortext.includes("복수")) {
           if (Doublepoint >= 45) {
-            swal("Major credits result", word, "success")
+            swal("Major Credits Results", word, "success")
           } else {
-            swal("Major credits result", word, "error")
+            swal("Major Credits Results", word, "error")
           }
         } else if (Multimajortext.includes("연계")) {
           if (Linkpoint >= 36) {
-            swal("Major credits result", word, "success")
+            swal("Major Credits Results", word, "success")
           } else {
-            swal("Major credits result", word, "error")
+            swal("Major Credits Results", word, "error")
           }
         } else if (Multimajortext.includes("융합")) {
           if (Fusionpoint >= FusionStandard) {
-            swal("Major credits result", word, "success")
+            swal("Major Credits Results", word, "success")
           } else {
-            swal("Major credits result", word, "error")
+            swal("Major Credits Results", word, "error")
           }
         } else if (Multimajortext.includes("설계")) {
           if (Planpoint >= 36) {
-            swal("Major credits result", word, "success")
+            swal("Major Credits Results", word, "success")
           } else {
-            swal("Major credits result", word, "error")
+            swal("Major Credits Results", word, "error")
           }
         }
       } else if (Minorpoint >= 21 && Teachingpoint >= 22) {
         if (Multimajortext.includes("심화")) {
-          swal("Major credits result", word, "success")
+          swal("Major Credits Results", word, "success")
         } else if (Multimajortext.includes("복수")) {
           if (Doublepoint >= 45) {
-            swal("Major credits result", word, "success")
+            swal("Major Credits Results", word, "success")
           } else {
-            swal("Major credits result", word, "error")
+            swal("Major Credits Results", word, "error")
           }
         } else if (Multimajortext.includes("연계")) {
           if (Linkpoint >= 36) {
-            swal("Major credits result", word, "success")
+            swal("Major Credits Results", word, "success")
           } else {
-            swal("Major credits result", word, "error")
+            swal("Major Credits Results", word, "error")
           }
         } else if (Multimajortext.includes("융합")) {
           if (Fusionpoint >= FusionStandard) {
-            swal("Major credits result", word, "success")
+            swal("Major Credits Results", word, "success")
           } else {
-            swal("Major credits result", word, "error")
+            swal("Major Credits Results", word, "error")
           }
         } else if (Multimajortext.includes("설계")) {
           if (Planpoint >= 36) {
-            swal("Major credits result", word, "success")
+            swal("Major Credits Results", word, "success")
           } else {
-            swal("Major credits result", word, "error")
+            swal("Major Credits Results", word, "error")
           }
         }
       } else if (Minorcheck && Teachingpoint >= 22) {
         if (Multimajortext.includes("심화")) {
-          swal("Major credits result", word, "success")
+          swal("Major Credits Results", word, "success")
         } else if (Multimajortext.includes("복수")) {
           if (Doublepoint >= 45) {
-            swal("Major credits result", word, "success")
+            swal("Major Credits Results", word, "success")
           } else {
-            swal("Major credits result", word, "error")
+            swal("Major Credits Results", word, "error")
           }
         } else if (Multimajortext.includes("연계")) {
           if (Linkpoint >= 36) {
-            swal("Major credits result", word, "success")
+            swal("Major Credits Results", word, "success")
           } else {
-            swal("Major credits result", word, "error")
+            swal("Major Credits Results", word, "error")
           }
         } else if (Multimajortext.includes("융합")) {
           if (Fusionpoint >= FusionStandard) {
-            swal("Major credits result", word, "success")
+            swal("Major Credits Results", word, "success")
           } else {
-            swal("Major credits result", word, "error")
+            swal("Major Credits Results", word, "error")
           }
         } else if (Multimajortext.includes("설계")) {
           if (Planpoint >= 36) {
-            swal("Major credits result", word, "success")
+            swal("Major Credits Results", word, "success")
           } else {
-            swal("Major credits result", word, "error")
+            swal("Major Credits Results", word, "error")
           }
         }
       } else {
-        swal("Major credits result", word, "error")
+        swal("Major Credits Results", word, "error")
       }
     } else {
-      swal("Major credits result", word, "error")
+      swal("Major Credits Results", word, "error")
     }
   },
   major_tr: function() {
@@ -1525,129 +1525,129 @@ var Result = {
     if (Basepoint >= BaseStandard && Necepoint >= NeceStandard && Majorpoint >= Majorstandard && TotalPoint >= TotalStandard) {
       if (Minorcheck && Teachingcheck) {
         if (Multimajortext.includes("N/A")) {
-          swal("Total credits result", word, "success")
+          swal("Total Credits Results", word, "success")
         } else if (Multimajortext.includes("심화")) {
-          swal("Total credits result", word, "success")
+          swal("Total Credits Results", word, "success")
         } else if (Multimajortext.includes("복수")) {
           if (Doublepoint >= 45) {
-            swal("Total credits result", word, "success")
+            swal("Total Credits Results", word, "success")
           } else {
-            swal("Total credits result", word, "error")
+            swal("Total Credits Results", word, "error")
           }
         } else if (Multimajortext.includes("연계")) {
           if (Linkpoint >= 36) {
-            swal("Total credits result", word, "success")
+            swal("Total Credits Results", word, "success")
           } else {
-            swal("Total credits result", word, "error")
+            swal("Total Credits Results", word, "error")
           }
         } else if (Multimajortext.includes("융합")) {
           if (Fusionpoint >= FusionStandard) {
-            swal("Total credits result", word, "success")
+            swal("Total Credits Results", word, "success")
           } else {
-            swal("Total credits result", word, "error")
+            swal("Total Credits Results", word, "error")
           }
         } else if (Multimajortext.includes("설계")) {
           if (Planpoint >= 36) {
-            swal("Total credits result", word, "success")
+            swal("Total Credits Results", word, "success")
           } else {
-            swal("Total credits result", word, "error")
+            swal("Total Credits Results", word, "error")
           }
         }
       } else if (Minorpoint >= 21 && Teachingcheck) {
         if (Multimajortext.includes("N/A")) {
-          swal("Total credits result", word, "success")
+          swal("Total Credits Results", word, "success")
         } else if (Multimajortext.includes("심화")) {
-          swal("Total credits result", word, "success")
+          swal("Total Credits Results", word, "success")
         } else if (Multimajortext.includes("복수")) {
           if (Doublepoint >= 45) {
-            swal("Total credits result", word, "success")
+            swal("Total Credits Results", word, "success")
           } else {
-            swal("Total credits result", word, "error")
+            swal("Total Credits Results", word, "error")
           }
         } else if (Multimajortext.includes("연계")) {
           if (Linkpoint >= 36) {
-            swal("Total credits result", word, "success")
+            swal("Total Credits Results", word, "success")
           } else {
-            swal("Total credits result", word, "error")
+            swal("Total Credits Results", word, "error")
           }
         } else if (Multimajortext.includes("융합")) {
           if (Fusionpoint >= FusionStandard) {
-            swal("Total credits result", word, "success")
+            swal("Total Credits Results", word, "success")
           } else {
-            swal("Total credits result", word, "error")
+            swal("Total Credits Results", word, "error")
           }
         } else if (Multimajortext.includes("설계")) {
           if (Planpoint >= 36) {
-            swal("Total credits result", word, "success")
+            swal("Total Credits Results", word, "success")
           } else {
-            swal("Total credits result", word, "error")
+            swal("Total Credits Results", word, "error")
           }
         }
       } else if (Minorpoint >= 21 && Teachingpoint >= 22) {
         if (Multimajortext.includes("N/A")) {
-          swal("Total credits result", word, "success")
+          swal("Total Credits Results", word, "success")
         } else if (Multimajortext.includes("심화")) {
-          swal("Total credits result", word, "success")
+          swal("Total Credits Results", word, "success")
         } else if (Multimajortext.includes("복수")) {
           if (Doublepoint >= 45) {
-            swal("Total credits result", word, "success")
+            swal("Total Credits Results", word, "success")
           } else {
-            swal("Total credits result", word, "error")
+            swal("Total Credits Results", word, "error")
           }
         } else if (Multimajortext.includes("연계")) {
           if (Linkpoint >= 36) {
-            swal("Total credits result", word, "success")
+            swal("Total Credits Results", word, "success")
           } else {
-            swal("Total credits result", word, "error")
+            swal("Total Credits Results", word, "error")
           }
         } else if (Multimajortext.includes("융합")) {
           if (Fusionpoint >= FusionStandard) {
-            swal("Total credits result", word, "success")
+            swal("Total Credits Results", word, "success")
           } else {
-            swal("Total credits result", word, "error")
+            swal("Total Credits Results", word, "error")
           }
         } else if (Multimajortext.includes("설계")) {
           if (Planpoint >= 36) {
-            swal("Total credits result", word, "success")
+            swal("Total Credits Results", word, "success")
           } else {
-            swal("Total credits result", word, "error")
+            swal("Total Credits Results", word, "error")
           }
         }
       } else if (Minorcheck && Teachingpoint >= 22) {
         if (Multimajortext.includes("N/A")) {
-          swal("Total credits result", word, "success")
+          swal("Total Credits Results", word, "success")
         } else if (Multimajortext.includes("심화")) {
-          swal("Total credits result", word, "success")
+          swal("Total Credits Results", word, "success")
         } else if (Multimajortext.includes("복수")) {
           if (Doublepoint >= 45) {
-            swal("Total credits result", word, "success")
+            swal("Total Credits Results", word, "success")
           } else {
-            swal("Total credits result", word, "error")
+            swal("Total Credits Results", word, "error")
           }
         } else if (Multimajortext.includes("연계")) {
           if (Linkpoint >= 36) {
-            swal("Total credits result", word, "success")
+            swal("Total Credits Results", word, "success")
           } else {
-            swal("Total credits result", word, "error")
+            swal("Total Credits Results", word, "error")
           }
         } else if (Multimajortext.includes("융합")) {
           if (Fusionpoint >= FusionStandard) {
-            swal("Total credits result", word, "success")
+            swal("Total Credits Results", word, "success")
           } else {
-            swal("Total credits result", word, "error")
+            swal("Total Credits Results", word, "error")
           }
         } else if (Multimajortext.includes("설계")) {
           if (Planpoint >= 36) {
-            swal("Total credits result", word, "success")
+            swal("Total Credits Results", word, "success")
           } else {
-            swal("Total credits result", word, "error")
+            swal("Total Credits Results", word, "error")
           }
         }
       } else {
-        swal("Total credits result", word, "error")
+        swal("Total Credits Results", word, "error")
       }
     } else {
-      swal("Total credits result", word, "error")
+      swal("Total Credits Results", word, "error")
     }
   }
 }
