@@ -374,63 +374,7 @@
     </div>
     <br>
     <br>
-    <form id='etc'>
-      <table border="solid" width="100%">
-        <legend><img class="legend-icon" src="../legend-icon.png"> 기타 졸업요건 </legend>
-        <tr>
-          <th colspan="2">구분</th>
-          <th>통과 여부</th>
-          <th>이수 기준</th>
-        </tr>
-        <tr>
-          <th rowspan="3">졸업<br>인정제</th>
-          <th>영어</th>
-          <td>
-            <input type="checkbox" id="English"><label for="English">통과/면제</label>
-          </td>
-          <td><label>전공영어강의 3개 수강<br>혹은 영어성적 제출</label></td>
-        </tr>
-        <tr>
-          <th>한자</th>
-          <td>
-            <input type="checkbox" id="Hanja"><label for="Hanja">통과/면제</label>
-          </td>
-          <td><label>한자시험 3급 이상<br>혹은 한자 교과목 2개 수강</label></td>
-        </tr>
-        <tr>
-          <th>한국어</th>
-          <td>
-            <input type="checkbox" id="Korean"><label for="Korean">통과/면제</label>
-          </td>
-          <td><label>TOPIK 4급 이상<br>(외국인 유학생만 해당)</label></td>
-        </tr>
-        <tr>
-          <th rowspan="2">졸업시험<br>/논문</th>
-          <th>주전공</th>
-          <td>
-            <input type="checkbox" id="major_paper"><label for="major_paper">합격</label>
-          </td>
-          <td></td>
-        </tr>
-        <tr>
-          <th>복수전공</th>
-          <td>
-            <input type="checkbox" id="double_major_paper"><label for="double_major_paper">합격/해당없음</label>
-          </td>
-          <td></td>
-        </tr>
-        <tr>
-          <th colspan="2">전 학년 평점</th>
-          <td><input type="number" placeholder="0" id="average" value="" max="4.5" min="0" step=".01" class="inputnumber" maxlength="4" oninput="maxLengthCheck(this)" onkeyup="Color.gpa();" onchange="Color.gpa();"><label for="average"> / 4.5</label>
-          </td>
-          <td><label>최종 평점 2.0 미만 졸업 불가</label></td>
-        </tr>
-      </table>
-    </form><br>
-    <div class="buttons">
-      <input type="reset" value="&#8635; RESET" onclick="Reset.form('etc')" tabindex="-1">
-      <input type="button" value="&#10003; CHECK" onclick="Result.etc()">
-    </div>
+    <div w3-include-html="etc.html"></div>
     <!-- Go to www.addthis.com/dashboard to customize your tools -->
     <div class="addthis_inline_share_toolbox"></div>
     <br>
@@ -463,6 +407,9 @@
   <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5f5c861cc88b9f15"></script>
   <script type="text/javascript" src="../settings.js"></script>
   <script type="text/javascript" src="basic.js"></script>
+  <script>
+    includeHTML();
+  </script>
 </body>
 
 </html>
