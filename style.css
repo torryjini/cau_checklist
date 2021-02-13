@@ -159,7 +159,8 @@ p {
   text-align: center;
   padding-left: 2rem;
   padding-right: 2rem;
-  margin-bottom: 1rem;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
 }
 
 .swal-text {
@@ -310,7 +311,7 @@ p {
 #check4grad_logo {
   width: auto;
   height: auto;
-  max-width: 17rem;
+  max-width: 15rem;
 }
 
 #c4g_logo {
@@ -322,8 +323,8 @@ p {
 #index_logo {
   width: auto;
   height: auto;
-  max-width: 12rem;
-  max-height: 12rem;
+  max-width: 10rem;
+  max-height: 10rem;
 }
 
 #logo {
