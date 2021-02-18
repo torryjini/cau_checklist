@@ -63,9 +63,11 @@ ul {
   padding-top: 2rem;
   text-align: center;
   list-style: none;
-  margin: auto;
+  /* margin: auto; */
   display: table;
   padding-left: 0;
+  margin-top: 3rem;
+  margin-left: 1.5rem;
 }
 
 li {
@@ -159,7 +161,7 @@ p {
   text-align: center;
   padding-left: 2rem;
   padding-right: 2rem;
-  margin-top: 0.5rem;
+  margin-top: 0.2rem;
   margin-bottom: 0.5rem;
 }
 
@@ -168,7 +170,7 @@ p {
 }
 
 .index_select {
-  width: 8rem;
+  width: 7.5rem;
   height: 2.5rem;
   margin-top: 0.5rem;
   border-radius: 5px;
@@ -308,10 +310,25 @@ p {
   display: block;
 }
 
+.index-container {
+  margin-top: 2rem;
+  display: grid;
+  width: 80%;
+  grid-template-columns: 80% 20%;
+}
+
+.index-badges {
+  margin-top: 1rem;
+}
+
+#index-header {
+  margin-right: 3rem;
+}
+
 #check4grad_logo {
   width: auto;
   height: auto;
-  max-width: 15rem;
+  max-width: 20rem;
 }
 
 #c4g_logo {
@@ -323,8 +340,8 @@ p {
 #index_logo {
   width: auto;
   height: auto;
-  max-width: 10rem;
-  max-height: 10rem;
+  max-width: 18rem;
+  max-height: 18rem;
 }
 
 #logo {
@@ -416,6 +433,12 @@ p {
     margin-right: 0.5rem;
   }
 
+  ul {
+    margin-top: auto;
+    padding-top: 1rem;
+    margin: auto;
+  }
+
   ol {
     margin-left: 0;
   }
@@ -455,7 +478,29 @@ p {
     font-size: 1.3rem;
   }
 
+  .index-container {
+    margin-top: 0;
+    display: block;
+    width: 100%;
+  }
+
+  .index-badges {
+    margin-top: 0.4rem;
+  }
+
+  #index-header {
+    margin-right: 0;
+  }
+
+  #check4grad_logo {
+    width: auto;
+    height: auto;
+    max-width: 15rem;
+  }
+
   #index_logo {
+    width: auto;
+    height: auto;
     max-width: 10rem;
     max-height: 10rem;
   }
