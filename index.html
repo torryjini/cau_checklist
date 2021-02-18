@@ -30,39 +30,43 @@
 </head>
 
 <body>
-  <header>
-    <br><br>
-    <h1><img src="check4grad.png" id="check4grad_logo"></h1>
-    <img src="white_logo.png" id="index_logo">
-  </header>
-  <ul>
-    <li>언 어<br>
-      <select class="index_select" id="langbox" onchange="location = this.value">
-        <option value="#">한국어</option>
-        <option value="index-ch.html">中 文</option>
-        <option value="index-en.html">English</option>
-      </select></li>
-    <form>
-      <li>입학유형<br>
-        <select class="index_select" id="ent_style" onchange="yearchanges(document.getElementById('ent_style').value)">
-          <option value="entrance">신입학</option>
-          <option value="transfer">편입학</option>
+  <div class="index-container">
+    <header id="index-header">
+      <br><br>
+      <h1><img src="check4grad.png" id="check4grad_logo"></h1>
+      <img src="white_logo.png" id="index_logo">
+    </header>
+    <ul>
+      <li>언 어<br>
+        <select class="index_select" id="langbox" onchange="location = this.value">
+          <option value="#">한국어</option>
+          <option value="index-ch.html">中 文</option>
+          <option value="index-en.html">English</option>
         </select></li>
-      <li>입학시기<br>
-        <select id="index-year" class="index_select">
-          <option value="0">--</option>
-          <option value="2014">2012 ~ 2014</option>
-          <option value="2015">2015</option>
-          <option value="2016">2016 ~</option>
-        </select></li>
-      <br>
-      <input type="button" id="enter" value="ENTER" onclick="doLink()">
-    </form>
-  </ul>
+      <form>
+        <li>입학유형<br>
+          <select class="index_select" id="ent_style" onchange="yearchanges(document.getElementById('ent_style').value)">
+            <option value="entrance">신입학</option>
+            <option value="transfer">편입학</option>
+          </select></li>
+        <li>입학시기<br>
+          <select id="index-year" class="index_select">
+            <option value="0">--</option>
+            <option value="2014">2012 ~ 2014</option>
+            <option value="2015">2015</option>
+            <option value="2016">2016 ~</option>
+          </select></li>
+        <br>
+        <input type="button" id="enter" value="ENTER" onclick="doLink()">
+      </form>
+    </ul>
+  </div>
   <footer>
-    <a href='https://play.google.com/store/apps/details?id=com.thingcol.check4grad&hl=ko&pcampaignid=pcampaignidMKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1' target="_blank">
-      <img alt='다운로드하기 Google Play' src='https://play.google.com/intl/ko/badges/static/images/badges/ko_badge_web_generic.png'/ style="height:4rem;width:auto;"></a>
-    <br><a href="https://www.youtube.com/c/%EC%A1%B0%EC%BD%94%EB%94%A9JoCoding/featured" target="_blank"><img src="제작도움.PNG" style="width:11rem;height:auto;"></a>
+    <div class="index-badges">
+      <a href='https://play.google.com/store/apps/details?id=com.thingcol.check4grad&hl=ko&pcampaignid=pcampaignidMKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1' target="_blank">
+        <img alt='다운로드하기 Google Play' src='https://play.google.com/intl/ko/badges/static/images/badges/ko_badge_web_generic.png' / style="height:3.8rem;width:auto;"></a><br>
+      <a href="https://www.youtube.com/c/%EC%A1%B0%EC%BD%94%EB%94%A9JoCoding/featured" target="_blank"><img src="제작도움.PNG" style="width:10rem;height:auto;"></a>
+    </div>
     <p>© 2021. THINGCOL all rights reserved.</p>
     <a class="about-privacy" href="privacy.html" target="_blank">Privacy</a><a class="about-privacy" onclick="index_info()">About</a><br><br>
   </footer>

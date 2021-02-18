@@ -29,40 +29,44 @@
 </head>
 
 <body>
-  <header>
-    <br><br>
-    <h1><img src="check4grad.png" id="check4grad_logo"></h1>
-    <img src="white_logo.png" id="index_logo">
-  </header>
-  <ul>
-    <li>Language<br>
-      <select class="index_select" id="langbox" onchange="location = this.value">
-        <option value="#">English</option>
-        <option value="index.html">Korean</option>
-        <option value="index-ch.html">Chinese</option>
-      </select></li>
-    <form>
-      <li>Admission type<br>
-        <select class="index_select" id="ent_style" onchange="yearchanges(document.getElementById('ent_style').value)">
-          <option value="entrance">Non-transfer</option>
-          <option value="transfer">Transfer</option>
+  <div class="index-container">
+    <header>
+      <br><br>
+      <h1><img src="check4grad.png" id="check4grad_logo"></h1>
+      <img src="white_logo.png" id="index_logo">
+    </header>
+    <ul>
+      <li>Language<br>
+        <select class="index_select" id="langbox" onchange="location = this.value">
+          <option value="#">English</option>
+          <option value="index.html">Korean</option>
+          <option value="index-ch.html">Chinese</option>
         </select></li>
-      <li>Entrance year<br>
-        <select id="index-year" class="index_select">
-          <option value="0">--</option>
-          <option value="2014">2012 ~ 2014</option>
-          <option value="2015">2015</option>
-          <option value="2016">2016 ~</option>
-        </select></li>
-      <br>
-      <input type="button" id="enter" value="ENTER" onclick="doLink()">
-    </form>
-  </ul>
+      <form>
+        <li>Admission type<br>
+          <select class="index_select" id="ent_style" onchange="yearchanges(document.getElementById('ent_style').value)">
+            <option value="entrance">Non-transfer</option>
+            <option value="transfer">Transfer</option>
+          </select></li>
+        <li>Entrance year<br>
+          <select id="index-year" class="index_select">
+            <option value="0">--</option>
+            <option value="2014">2012 ~ 2014</option>
+            <option value="2015">2015</option>
+            <option value="2016">2016 ~</option>
+          </select></li>
+        <br>
+        <input type="button" id="enter" value="ENTER" onclick="doLink()">
+      </form>
+    </ul>
+  </div>
   <footer>
-    <a href='https://play.google.com/store/apps/details?id=com.thingcol.check4grad&hl=ko&pcampaignid=pcampaignidMKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1' target="_blank">
-      <img alt='Get it on Google Play' src='https://play.google.com/intl/ko/badges/static/images/badges/en_badge_web_generic.png'/ style="height:4rem;width:auto;"></a>
-      <p>© 2021. THINGCOL all rights reserved.</p>
-      <a class="about-privacy" href="privacy.html" target="_blank">Privacy</a><a class="about-privacy" onclick="index_info()">About</a><br><br>
+    <div class="index-badges">
+      <a href='https://play.google.com/store/apps/details?id=com.thingcol.check4grad&hl=ko&pcampaignid=pcampaignidMKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1' target="_blank">
+        <img alt='Get it on Google Play' src='https://play.google.com/intl/ko/badges/static/images/badges/en_badge_web_generic.png' / style="height:3.8rem;width:auto;"></a>
+    </div>
+    <p>© 2021. THINGCOL all rights reserved.</p>
+    <a class="about-privacy" href="privacy.html" target="_blank">Privacy</a><a class="about-privacy" onclick="index_info()">About</a><br><br>
   </footer>
 
   <script>
