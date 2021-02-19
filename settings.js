@@ -358,7 +358,7 @@ var Change = {
       num = new Array("--", "국어국문학과", "영어영문학과", "유럽문화_독일어문학", "유럽문화_프랑스어문학", "유럽문화_러시아어문학", "아시아문화_일본어문학", "아시아문화_중국어문학", "철학과", "역사학과");
       vnum = new Array("none", "korean", "english", "german", "france", "russia", "japan", "china", "philosophy", "history");
     } else if (fr == "society") {
-      num = new Array("--", "정치국제학과", "공공인재_행정학트랙", "공공인재_정책학트랙", "심리학과", "문헌정보학과", "사회복지학부", "미디어커뮤니케이션학부", "도시계획부동산학과", "사회학과");
+      num = new Array("--", "정치국제학과", "공공인재학부_행정학트랙", "공공인재학부_정책학트랙", "심리학과", "문헌정보학과", "사회복지학부", "미디어커뮤니케이션학부", "도시계획부동산학과", "사회학과");
       vnum = new Array("none", "politics", "public-admin", "public-policy", "psyche", "lis", "socialwelfare", "cmc", "planning", "sociology");
     } else if (fr == "edu") {
       num = new Array("--", "교육학과", "유아교육과", "영어교육과", "체육교육과");
@@ -405,7 +405,7 @@ var Change = {
       num = new Array("--", "국어국문학과", "영어영문학과", "유럽문화_독일어문학", "유럽문화_프랑스어문학", "유럽문화_러시아어문학", "아시아문화_일본어문학", "아시아문화_중국어문학", "철학과", "역사학과");
       vnum = new Array("none", "korean", "english", "german", "france", "russia", "japan", "china", "philosophy", "history");
     } else if (fr == "society") {
-      num = new Array("--", "정치국제학과", "공공인재_행정학트랙", "공공인재_정책학트랙", "심리학과", "문헌정보학과", "사회복지학부", "미디어커뮤니케이션학부", "도시계획부동산학과", "사회학과");
+      num = new Array("--", "정치국제학과", "공공인재학부_행정학트랙", "공공인재학부_정책학트랙", "심리학과", "문헌정보학과", "사회복지학부", "미디어커뮤니케이션학부", "도시계획부동산학과", "사회학과");
       vnum = new Array("none", "politics", "public-admin", "public-policy", "psyche", "lis", "socialwelfare", "cmc", "planning", "sociology");
     } else if (fr == "edu") {
       num = new Array("--", "교육학과", "유아교육과", "영어교육과", "체육교육과");
@@ -466,7 +466,7 @@ var Change = {
       num = new Array("--", "국어국문학과", "영어영문학과", "유럽문화_독일어문학", "유럽문화_프랑스어문학", "유럽문화_러시아어문학", "아시아문화_일본어문학", "아시아문화_중국어문학", "철학과", "역사학과");
       vnum = new Array("none", "korean", "english", "german", "france", "russia", "japan", "china", "philosophy", "history");
     } else if (fr == "society") {
-      num = new Array("--", "정치국제학과", "공공인재_행정학트랙", "공공인재_정책학트랙", "심리학과", "문헌정보학과", "사회복지학부", "미디어커뮤니케이션학부", "도시계획부동산학과", "사회학과");
+      num = new Array("--", "정치국제학과", "공공인재학부_행정학트랙", "공공인재학부_정책학트랙", "심리학과", "문헌정보학과", "사회복지학부", "미디어커뮤니케이션학부", "도시계획부동산학과", "사회학과");
       vnum = new Array("none", "politics", "public-admin", "public-policy", "psyche", "lis", "socialwelfare", "cmc", "planning", "sociology");
     } else if (fr == "edu") {
       num = new Array("--", "교육학과", "유아교육과", "영어교육과", "체육교육과");
