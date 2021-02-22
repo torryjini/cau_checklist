@@ -485,8 +485,8 @@ var Change = {
       vnum = new Array("none", "eee", "ie");
     } else if (fr == "arts") {
       num = new Array("--", "공연영상창작학부_연극전공", "공연영상창작학부_영화전공", "공연영상창작학부_공간연출전공", "공연영상창작학부_문예창작전공", "공연영상창작학부_무용전공", "미술학부_서양화전공", "미술학부_조소전공",
-       "디자인학부_공예전공", "디자인학부_시각디자인전공", "디자인학부_산업디자인전공", "디자인학부_실내환경디자인전공", "디자인학부_패션전공");
-      vnum = new Array("none", "theatre", "film", "tfdesign", "creativewriting", "dance", "fineart", "sculpture", "craftart", "vd", "id", "indesign", "fashion");
+       "디자인학부_공예전공", "디자인학부_시각디자인전공", "디자인학부_산업디자인전공", "디자인학부_실내환경디자인전공", "디자인학부_패션전공", "음악학부_관현악전공");
+      vnum = new Array("none", "theatre", "film", "tfdesign", "creativewriting", "dance", "fineart", "sculpture", "craftart", "vd", "id", "indesign", "fashion", "orchestra");
     } else if (fr == "biotech") {
       num = new Array("--", "동물생명공학과", "식물생명공학과", "식품공학과", "식품영양학과", "시스템생명공학과");
       vnum = new Array("none", "animal", "plantbio", "foodscience", "foodnutri", "systembio");
@@ -1648,7 +1648,7 @@ var Base_tr = { // 전공기초: [2017, 2018, 2019, 2020]
   // "compose": ["14", "14", "14", "14"],
   // "vocal": ["15", "14", "14", "14"],
   // "piano": ["15", "15", "15", "15"],
-  // "orchestra": ["15", "15", "15", "15"],
+  "orchestra": ["0", "0", "0", "0"],
   //생명공학대학
   "animal": ["0", "0", "0", "0"],
   "plantbio": ["0", "0", "0", "0"],
@@ -1727,7 +1727,7 @@ var Nece_tr = { //전공필수: [2017, 2018, 2019, 2020]
   // "compose": ["14", "14", "14", "14"],
   // "vocal": ["15", "14", "14", "14"],
   // "piano": ["15", "15", "15", "15"],
-  // "orchestra": ["15", "15", "15", "15"],
+  "orchestra": ["12", "12", "12", "12"],
   //생명공학대학
   "animal": ["18", "18", "18", "18"],
   "plantbio": ["18", "18", "18", "18"],
