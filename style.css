@@ -159,8 +159,8 @@ input[type=reset]:hover {
 
 p {
   text-align: center;
-  padding-left: 2rem;
-  padding-right: 2rem;
+  padding-left: 5rem;
+  padding-right: 5rem;
   margin-top: 0.2rem;
   margin-bottom: 0.5rem;
 }
@@ -443,12 +443,17 @@ p {
     margin-left: 0;
   }
 
+  p {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+
   input[type=button], input[type=reset] {
-    padding: 0.5rem 1rem;
+    padding: 0.7rem 1.3rem;
     margin: 0.5rem 1rem;
     cursor: pointer;
     border-radius: 2rem;
-    font-size: 1rem;
+    font-size: 1.1rem;
   }
 
   legend {
