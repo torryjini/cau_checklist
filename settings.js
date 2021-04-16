@@ -146,11 +146,9 @@ var Color = {
   }
 }
 
-var AdYear = document.getElementById("ad-year").value;
-
 var Liberal = {
   standardsum: function() {
-    // var AdYear = Number(document.getElementById("ad-year").value);
+    var AdYear = Number(document.getElementById("ad-year").value);
     var College = document.getElementById("college_select").value;
     var elec_st = Number(document.getElementById("elective_st").value);
     var kor_st = Number(document.getElementById("com_kor_st").value);
@@ -168,7 +166,7 @@ var Liberal = {
     }
   },
   etcchange: function() {
-    // var AdYear = Number(document.getElementById("ad-year").value);
+    var AdYear = Number(document.getElementById("ad-year").value);
     var College = document.getElementById("college_select").value;
     var Engin = ["engineering", "ict", "ict1617", "ict18", "software"]
     if (AdYear >= 2016 && AdYear <= 2018 && Engin.includes(College)) {
@@ -182,7 +180,7 @@ var Liberal = {
     }
   },
   mach: function() {
-    // var AdYear = Number(document.getElementById("ad-year").value);
+    var AdYear = document.getElementById("ad-year").value;
     var College = document.getElementById("college_select").value;
     var ICT = ["ict", "ict1617", "ict18"]
 
@@ -215,7 +213,7 @@ var Liberal = {
     }
   },
   sum: function() {
-    // var AdYear = Number(document.getElementById("ad-year").value);
+    var AdYear = Number(document.getElementById("ad-year").value);
     var College = document.getElementById("college_select").value;
     var elective_point = Number(document.getElementById("elective_liberal").value);
     var common_kor_point = Number(document.getElementById("common_kor").value);
@@ -236,17 +234,17 @@ var Liberal = {
 
 var Change = {
   year1214: function() {
-    // var AdYear = document.getElementById("ad-year").value;
-    if (AdYear == 2012) {
+    var fr = document.getElementById("ad-year").value;
+    if (fr == 2012) {
       num = new Array("--", "인문대학", "사회과학대학", "사범대학", "자연과학대학", "공과대학", "경영경제대학", "예술대학", "체육대학");
       vnum = new Array("none", "humanity", "society", "edu", "natural", "engineering12", "bne", "arts", "sport");
-    } else if (AdYear == 2013) {
+    } else if (fr == 2013) {
       num = new Array("--", "인문대학", "사회과학대학", "사범대학", "자연과학대학", "공과대학", "경영경제대학", "예술대학", "체육대학");
       vnum = new Array("none", "humanity", "society", "edu", "natural", "engineering", "bne", "arts", "sport");
-    } else if (AdYear == 2014) {
+    } else if (fr == 2014) {
       num = new Array("--", "인문대학", "사회과학대학", "사범대학", "자연과학대학", "공과대학", "경영경제대학", "예술대학", "생명공학대학", "체육대학");
       vnum = new Array("none", "humanity", "society", "edu", "natural", "engineering", "bne", "arts", "biotech", "sport");
-    } else if (AdYear == "0") {
+    } else if (fr == "0") {
       num = new Array("--");
       vnum = new Array("none");
     }
@@ -260,17 +258,17 @@ var Change = {
     }
   },
   year16: function() {
-    // var AdYear = document.getElementById("ad-year").value;
-    if (AdYear == 2016 || AdYear == 2017) {
+    var fr = document.getElementById("ad-year").value;
+    if (fr == 2016 || fr == 2017) {
       num = new Array("--", "인문대학", "사회과학대학", "사범대학", "자연과학대학", "공과대학", "창의ICT공과대학", "경영경제대학", "예술대학", "생명공학대학", "체육대학");
       vnum = new Array("none", "humanity", "society", "edu", "natural", "engineering", "ict1617", "bne", "arts", "biotech", "sport");
-    } else if (AdYear == 2018) {
+    } else if (fr == 2018) {
       num = new Array("--", "인문대학", "사회과학대학", "사범대학", "자연과학대학", "공과대학", "창의ICT공과대학", "경영경제대학", "예술대학", "생명공학대학", "체육대학");
       vnum = new Array("none", "humanity", "society", "edu", "natural", "engineering", "ict18", "bne", "arts", "biotech", "sport");
-    } else if (AdYear >= 2019) {
+    } else if (fr >= 2019) {
       num = new Array("--", "인문대학", "사회과학대학", "사범대학", "자연과학대학", "공과대학", "창의ICT공과대학", "소프트웨어대학", "경영경제대학", "예술대학", "예술공학대학", "생명공학대학", "체육대학");
       vnum = new Array("none", "humanity", "society", "edu", "natural", "engineering", "ict", "software", "bne", "arts", "artech", "biotech", "sport");
-    } else if (AdYear == "0") {
+    } else if (fr == "0") {
       num = new Array("--");
       vnum = new Array("none");
     }
@@ -284,11 +282,11 @@ var Change = {
     }
   },
   tr_year: function() {
-    // var AdYear = document.getElementById("ad-year").value;
-    if (AdYear >= 2017) {
+    var fr = document.getElementById("ad-year").value;
+    if (fr >= 2017) {
       num = new Array("--", "인문대학", "사회과학대학", "사범대학", "자연과학대학", "공과대학", "창의ICT공과대학", "경영경제대학", "예술대학", "생명공학대학", "체육대학");
       vnum = new Array("none", "humanity", "society", "edu", "natural", "engineering", "ict", "bne", "arts", "biotech", "sport");
-    } else if (AdYear == "0") {
+    } else if (fr == "0") {
       num = new Array("--");
       vnum = new Array("none");
     }
@@ -302,7 +300,7 @@ var Change = {
     }
   },
   college1214: function() {
-    // var AdYear = document.getElementById("ad-year").value;
+    var AdYear = document.getElementById("ad-year").value;
     var fr = document.getElementById("college_select").value;
     if (fr == "humanity") {
       num = new Array("--", "국어국문학과", "영어영문학과", "유럽문화_독일어문학", "유럽문화_프랑스어문학", "유럽문화_러시아어문학", "아시아문화_일본어문학", "아시아문화_중국어문학", "철학과", "역사학과");
@@ -401,7 +399,7 @@ var Change = {
     }
   },
   college16: function() {
-    // var AdYear = Number(document.getElementById("ad-year").value);
+    var AdYear = Number(document.getElementById("ad-year").value);
     var fr = document.getElementById("college_select").value;
     if (fr == "humanity") {
       num = new Array("--", "국어국문학과", "영어영문학과", "유럽문화_독일어문학", "유럽문화_프랑스어문학", "유럽문화_러시아어문학", "아시아문화_일본어문학", "아시아문화_중국어문학", "철학과", "역사학과");
@@ -822,7 +820,7 @@ var Check = {
     }
   },
   korean: function() {
-    // AdYear = Number(document.getElementById("ad-year").value);
+    AdYear = Number(document.getElementById("ad-year").value);
     if (AdYear == 2014 || AdYear == 0) {
       document.getElementById("Korean").checked = false;
     } else {
@@ -1126,7 +1124,7 @@ var Standard = {
   },
   BaseNece: function() {
     var Major = document.getElementById("Major_select").value;
-    // var AdYear = Number(document.getElementById("ad-year").value);
+    var AdYear = Number(document.getElementById("ad-year").value);
     var i = AdYear - 2012;
     var Baseselect = Base[Major];
     var Neceselect = Nece[Major];
@@ -1140,7 +1138,7 @@ var Standard = {
   },
   BaseNece_tr: function() {
     var Major = document.getElementById("Major_select").value;
-    // var AdYear = Number(document.getElementById("ad-year").value);
+    var AdYear = Number(document.getElementById("ad-year").value);
     var SecYear = document.getElementById("2ndyear").checked;
     var i = AdYear - 2017;
     var Baseselect = Base_tr[Major];
