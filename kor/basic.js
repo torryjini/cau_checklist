@@ -95,8 +95,7 @@ var Result = {
 
     if (AdYear < 1000) {
       document.getElementById("student-info").scrollIntoView();
-      swal("입학연도를 선택하세요!", "", "error");
-      return false;
+      return swal("입학연도를 선택하세요!", "", "error");
     }
 
     if (common_kor_point < 2) {
@@ -190,8 +189,7 @@ var Result = {
 
     if (College == "none") {
       document.getElementById("student-info").scrollIntoView();
-      swal("소속 대학을 선택하세요!", "", "error");
-      return false;
+      return swal("소속 대학을 선택하세요!", "", "error");
     }
 
     if (common_kor_point < 2) {
@@ -307,25 +305,21 @@ var Result = {
 
     if (AdYear < 1000) {
       document.getElementById("student-info").scrollIntoView();
-      swal("입학연도를 선택하세요!", "", "error");
-      return false;
+      return swal("입학연도를 선택하세요!", "", "error");
     }
 
     if (College == "none") {
       document.getElementById("student-info").scrollIntoView();
-      swal("소속 대학을 선택하세요!", "", "error");
-      return false;
+      return swal("소속 대학을 선택하세요!", "", "error");
     }
 
     if (core_total_point > 0 && !Core1 && !Core2 && !Core3 && !Core4 && !Core5) {
-      swal("핵심교양 영역을 체크하세요!", "", "error")
-      return false;
+      return swal("핵심교양 영역을 체크하세요!", "", "error");
     }
 
     if (Core1 || Core2 || Core3 || Core4 || Core5) {
       if (core_total_point == 0) {
-        swal("핵심교양 학점을 입력하세요!", "", "error")
-        return false;
+        return swal("핵심교양 학점을 입력하세요!", "", "error");
       }
     }
 
@@ -447,8 +441,7 @@ var Result = {
     var Average_result = Number(document.getElementById("average").value);
 
     if (Average_result > 4.5) {
-      swal("평균평점은 4.5 만점입니다!", "", "error")
-      return false;
+      return swal("평균평점은 4.5 만점입니다!", "", "error");
     }
 
     var word = "👉졸업인정제\n";
@@ -511,27 +504,23 @@ var Result = {
 
     if (AdYear < 1000) {
       document.getElementById("student-info").scrollIntoView();
-      swal("입학연도를 선택하세요!", "", "error");
-      return false;
+      return swal("입학연도를 선택하세요!", "", "error");
     }
 
     if (Fusiontext.includes("문화") || Fusiontext.includes("창업") || Fusiontext.includes("게임")) {
       if (FusionCross > 6) {
         document.getElementById("double_major_none").scrollIntoView();
-        swal(Fusiontext + "융합전공 교차인정\n최대학점은 6 학점입니다!", "", "error")
-        return false;
+        return swal(Fusiontext + "융합전공 교차인정\n최대학점은 6 학점입니다!", "", "error");
       }
     } else if (Fusiontext.includes("금융")) {
       if (FusionCross > 15) {
         document.getElementById("double_major_none").scrollIntoView();
-        swal(Fusiontext + "융합전공 교차인정\n최대학점은 15 학점입니다!", "", "error")
-        return false;
+        return swal(Fusiontext + "융합전공 교차인정\n최대학점은 15 학점입니다!", "", "error");
       }
     } else if (Fusiontext.includes("인문") || Fusiontext.includes("보안") || Fusiontext.includes("테크") || Fusiontext.includes("벤처")) {
       if (FusionCross > 12) {
         document.getElementById("double_major_none").scrollIntoView();
-        swal(Fusiontext + "융합전공 교차인정\n최대학점은 12 학점입니다!", "", "error")
-        return false;
+        return swal(Fusiontext + "융합전공 교차인정\n최대학점은 12 학점입니다!", "", "error");
       }
     }
 
@@ -541,35 +530,28 @@ var Result = {
 
     if (Teachingnone) {
       if (MajorTeachCheck) {
-        swal("교직이수 여부를 확인하세요!", "", "error");
-        return false;
+        return swal("교직이수 여부를 확인하세요!", "", "error");
       } else if (DoubleTeachCheck) {
-        swal("교직이수 여부를 확인하세요!", "", "error");
-        return false;
+        return swal("교직이수 여부를 확인하세요!", "", "error");
       }
     } else if (!MajorTeachCheck) {
       if (DoubleTeachCheck) {
-        swal("교직이수 여부를 확인하세요!", "", "error");
-        return false;
+        return swal("교직이수 여부를 확인하세요!", "", "error");
       }
     }
 
     if (MajorSelect == "none") {
       document.getElementById("student-info").scrollIntoView();
-      swal("전공 학과를 선택하세요!", "", "error");
-      return false;
+      return swal("전공 학과를 선택하세요!", "", "error");
     } else if (Majorstandard < 45) {
       document.getElementById("student-info").scrollIntoView();
-      swal("다전공을 선택하세요!", "", "error");
-      return false;
+      return swal("다전공을 선택하세요!", "", "error");
     } else if (LinkCross > 12) {
       document.getElementById("double_major_point").scrollIntoView();
-      swal("연계전공의 교차인정 최대학점은 12 학점입니다!", "", "error")
-      return false;
+      return swal("연계전공의 교차인정 최대학점은 12 학점입니다!", "", "error");
     } else if (PlanCross > 6) {
       document.getElementById("link_major_none").scrollIntoView();
-      swal("자기설계전공의 교차인정 최대학점은 6 학점입니다!", "", "error")
-      return false;
+      return swal("자기설계전공의 교차인정 최대학점은 6 학점입니다!", "", "error");
     } else {
       if (AdYear <= 2014) {
         Result.basenece12to14(Majorstandard);
@@ -597,15 +579,13 @@ var Result = {
     var FusionOption = Number(document.getElementById("fusion-options").value);
     if (Multimajortext.includes("융합")) {
       if (FusionOption == 0) {
-        swal("세부 융합전공을 선택하세요!", "", "error");
         document.getElementById("double_major_none").scrollIntoView();
-        return false;
+        return swal("세부 융합전공을 선택하세요!", "", "error");
       }
     }
 
     if (Majorpoint < Necepoint) {
-      swal("전공학점은 전공필수를 포함합니다!", "", "error");
-      return false;
+      return swal("전공학점은 전공필수를 포함합니다!", "", "error");
     }
 
     if (Basepoint < BaseStandard) {
@@ -844,15 +824,13 @@ var Result = {
     var FusionOption = Number(document.getElementById("fusion-options").value);
     if (Multimajortext.includes("융합")) {
       if (FusionOption == 0) {
-        swal("세부 융합전공을 선택하세요!", "", "error");
         document.getElementById("double_major_none").scrollIntoView();
-        return false;
+        return swal("세부 융합전공을 선택하세요!", "", "error");
       }
     }
 
     if (Majorpoint < Necepoint) {
-      swal("전공학점은 전공필수를 포함합니다!", "", "error");
-      return false;
+      return swal("전공학점은 전공필수를 포함합니다!", "", "error");
     }
 
     if (Basepoint < BaseStandard) {
@@ -1089,22 +1067,19 @@ var Result = {
     var FusionOption = Number(document.getElementById("fusion-options").value);
     if (Multimajortext.includes("융합")) {
       if (FusionOption == 0) {
-        swal("세부 융합전공을 선택하세요!", "", "error");
         document.getElementById("double_major_none").scrollIntoView();
-        return false;
+        return swal("세부 융합전공을 선택하세요!", "", "error");
       }
     }
 
     if (Majorpoint < Necepoint) {
-      swal("전공학점은 전공 필수를 포함합니다!", "", "error");
-      return false;
+      return swal("전공학점은 전공 필수를 포함합니다!", "", "error");
     }
 
     var Freepoint = Number(document.getElementById("free_point").value);
     var CAUSeminar = document.getElementById("causeminar").checked;
     if (Freepoint < 1 && CAUSeminar) {
-      swal("자유선택 학점을 입력하세요!", "", "error");
-      return false;
+      return swal("자유선택 학점을 입력하세요!", "", "error");
     }
 
     if (Basepoint < BaseStandard) {
@@ -1345,46 +1320,38 @@ var Result = {
     var PlanCross = Number(document.getElementById("cross_point3").value);
     if (AdYear < 1000) {
       document.getElementById("student-info").scrollIntoView();
-      swal("편입학연도를 선택하세요!", "", "error");
-      return false;
+      return swal("편입학연도를 선택하세요!", "", "error");
     }
 
     if (Fusiontext.includes("문화") || Fusiontext.includes("창업") || Fusiontext.includes("게임")) {
       if (FusionCross > 6) {
         document.getElementById("double_major_none").scrollIntoView();
-        swal(Fusiontext + "융합전공 교차인정\n최대학점은 6 학점입니다!", "", "error")
-        return false;
+        return swal(Fusiontext + "융합전공 교차인정\n최대학점은 6 학점입니다!", "", "error");
       }
     } else if (Fusiontext.includes("금융")) {
       if (FusionCross > 15) {
         document.getElementById("double_major_none").scrollIntoView();
-        swal(Fusiontext + "융합전공 교차인정\n최대학점은 15 학점입니다!", "", "error")
-        return false;
+        return swal(Fusiontext + "융합전공 교차인정\n최대학점은 15 학점입니다!", "", "error");
       }
     } else if (Fusiontext.includes("인문") || Fusiontext.includes("보안") || Fusiontext.includes("테크") || Fusiontext.includes("벤처")) {
       if (FusionCross > 12) {
         document.getElementById("double_major_none").scrollIntoView();
-        swal(Fusiontext + "융합전공 교차인정\n최대학점은 12 학점입니다!", "", "error")
-        return false;
+        return swal(Fusiontext + "융합전공 교차인정\n최대학점은 12 학점입니다!", "", "error");
       }
     }
 
     if (MajorSelect == "none") {
       document.getElementById("student-info").scrollIntoView();
-      swal("전공 학과를 선택하세요!", "", "error");
-      return false;
+      return swal("전공 학과를 선택하세요!", "", "error");
     } else if (SecYear && Multimajortext.includes("해당")) {
       document.getElementById("student-info").scrollIntoView();
-      swal("다전공을 선택하세요!", "2학년 편입은 다전공 대상입니다.", "error");
-      return false;
+      return swal("다전공을 선택하세요!", "2학년 편입은 다전공 대상입니다.", "error");
     } else if (LinkCross > 12) {
       document.getElementById("double_major_point").scrollIntoView();
-      swal("연계전공의 교차인정 최대학점은 12 학점입니다!", "", "error")
-      return false;
+      return swal("연계전공의 교차인정 최대학점은 12 학점입니다!", "", "error");
     } else if (PlanCross > 6) {
       document.getElementById("link_major_none").scrollIntoView();
-      swal("자기설계전공의 교차인정 최대학점은 6 학점입니다!", "", "error")
-      return false;
+      return swal("자기설계전공의 교차인정 최대학점은 6 학점입니다!", "", "error");
     } else {
       Result.basenece_tr(Majorstandard);
     }
@@ -1415,15 +1382,13 @@ var Result = {
     var FusionOption = Number(document.getElementById("fusion-options").value);
     if (Multimajortext.includes("융합")) {
       if (FusionOption == 0) {
-        swal("세부 융합전공을 선택하세요!", "", "error");
         document.getElementById("double_major_none").scrollIntoView();
-        return false;
+        return swal("세부 융합전공을 선택하세요!", "", "error");
       }
     }
 
     if (Majorpoint < Necepoint) {
-      swal("전공학점은 전공필수를 포함합니다!", "", "error");
-      return false;
+      return swal("전공학점은 전공필수를 포함합니다!", "", "error");
     }
 
     if (Basepoint < BaseStandard) {
