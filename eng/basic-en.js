@@ -1,6 +1,6 @@
 const Modal = {
   lib12to14: function() {
-    const word = "Requirements for general credits"
+    let word = "Requirements for general credits"
     const content = "👉Mandatory\n- 국어 : 글쓰기\n- 영어 : English1(Communication in English)\nEnglish2(English fo Professional Track)" +
       "\n- Others : 논리와사고(ACT) / 회계와사회 / 독서와토론(창의와소통) / 한국사\n" +
       "No need to take '회계와사회' if you already took 회계학원론(회계원리)" +
@@ -9,7 +9,7 @@ const Modal = {
     swal(word, content, "info");
   },
   lib2015: function() {
-    const word = "Requirements for general credits"
+    let word = "Requirements for general credits"
     const content = "👉Mandatory\n- 국어 : 글쓰기\n- 영어 : Communication in English\n- Others : 창의와소통 / 회계와사회 / ACT / 한국사\n" +
       "No need to take '회계와사회' if you already took 회계학원론(회계원리)" +
       "\n👉Core : Complete at least one course from 4 different areas\n" +
@@ -20,7 +20,7 @@ const Modal = {
     const AdYear = Number(document.getElementById("ad-year").value);
     const College = document.getElementById("college_select").value;
     const Engin = ["engineering", "ict", "software", "artech"]
-    const word = "Requirements for general credits"
+    let word = "Requirements for general credits"
     const content1618 = "👉Mandatory\n- 국어 : 글쓰기(Writing)\n- 영어 : Communication in English\n- Others : 창의와소통/ACT/한국사/\n 앙트레프레너십시대의회계(회계와사회)" +
       "\nNo need to take '앙트레프레너십시대의회계' if you already took 회계학원론(회계원리)" +
       "\n👉Core : 도전 / 창의 / 융합 / 신뢰 / 소통\n" +
@@ -48,7 +48,7 @@ const Modal = {
     }
   },
   major12to15: function() {
-    const word = "Requirements for major credits"
+    let word = "Requirements for major credits"
     const content = "👉Major : Check the department's detailed requiremetns\n" +
       "👉Double major : Check each department's detailed requiremetns\n ㄴBasics of double majors are counted as Free choice" +
       "\n👉연계/융합/설계전공 : Check for required courses for each track!" +
@@ -58,7 +58,7 @@ const Modal = {
     swal(word, content, "info");
   },
   major2016: function() {
-    const word = "Requirements for major credits"
+    let word = "Requirements for major credits"
     const content = "👉Major : Check the department's detailed requiremetns\n" +
       "👉Double major : Check each department's detailed requiremetns\n ㄴBasics of double majors are counted as Free choice" +
       "\n👉연계/융합/설계전공 : Check for required courses for each track!" +
@@ -69,7 +69,7 @@ const Modal = {
     swal(word, content, "info");
   },
   major_tr: function() {
-    const word = "Requirements for credits"
+    let word = "Requirements for credits"
     const content = "👉General courses : No need to take credits\n" +
       "👉Major : Check the department's detailed requiremetns\n" +
       "👉Double major : Check each department's detailed requiremetns\nBasics of double majors are counted as Free choice" +
@@ -93,7 +93,7 @@ const Result = {
     const account_check_SF = document.getElementById("account_check").checked;
     const core_total_point = Number(document.getElementById("core_total").value);
     const liberal_total_point = Number(document.getElementById("liberal_total").value);
-    const word = "👉Entrance Year : " + AdYear + "\n";
+    let word = "👉Entrance Year : " + AdYear + "\n";
 
     if (AdYear < 1000) {
       document.getElementById("student-info").scrollIntoView();
@@ -187,7 +187,7 @@ const Result = {
     const MACH1_st = Number(document.getElementById("mach1_st").value);
     const MACH2_st = Number(document.getElementById("mach2_st").value);
     const liberal_total_point = Number(document.getElementById("liberal_total").value);
-    const word = "👉Entrance Year : " + AdYear + "\n";
+    let word = "👉Entrance Year : " + AdYear + "\n";
 
     if (College == "none") {
       document.getElementById("student-info").scrollIntoView();
@@ -303,7 +303,7 @@ const Result = {
     const MACH1_st = Number(document.getElementById("mach1_st").value);
     const MACH2_st = Number(document.getElementById("mach2_st").value);
     const liberal_total_point = Number(document.getElementById("liberal_total").value);
-    const word = "👉Entrance Year : " + AdYear + "\n";
+    let word = "👉Entrance Year : " + AdYear + "\n";
 
     if (AdYear < 1000) {
       document.getElementById("student-info").scrollIntoView();
@@ -446,7 +446,7 @@ const Result = {
       return swal("You cannot enter credits above 4.5!", "", "error");
     }
 
-    const word = "👉Graduation Recognition System\n";
+    let word = "👉Graduation Recognition System\n";
 
     if (!English_result) {
       word += "- 영어 : not qualified\n"
@@ -559,7 +559,7 @@ const Result = {
     const Basepoint = Number(document.getElementById("base_input").value);
     const Necepoint = Number(document.getElementById("nece_input").value);
     const Majorpoint = Number(document.getElementById("major_input").value);
-    const word = "👉Entrance Year : " + AdYear + "\nMajor : " + Majortext + "\n👉Multiple Major : " + Multimajortext + "\n";
+    let word = "👉Entrance Year : " + AdYear + "\nMajor : " + Majortext + "\n👉Multiple Major : " + Multimajortext + "\n";
 
     const FusionOption = Number(document.getElementById("fusion-options").value);
     if (Multimajortext.includes("융합")) {
@@ -804,7 +804,7 @@ const Result = {
     const Basepoint = Number(document.getElementById("base_input").value);
     const Necepoint = Number(document.getElementById("nece_input").value);
     const Majorpoint = Number(document.getElementById("major_input").value);
-    const word = "👉Entrance Year : " + AdYear;
+    let word = "👉Entrance Year : " + AdYear;
 
     if (Majortext.includes("트랙")) {
       word += "\n👉Major : 공공인재학부 " + Majortext + "\n👉Multiple Major : " + Multimajortext + "\n";
@@ -1053,7 +1053,7 @@ const Result = {
     const Basepoint = Number(document.getElementById("base_input").value);
     const Necepoint = Number(document.getElementById("nece_input").value);
     const Majorpoint = Number(document.getElementById("major_input").value);
-    const word = "👉Entrance Year : " + AdYear;
+    let word = "👉Entrance Year : " + AdYear;
 
     if (Majortext.includes("트랙")) {
       word += "\n👉Major : 공공인재학부" + Majortext + "\n👉Multiple Major : " + Multimajortext + "\n";
@@ -1366,7 +1366,7 @@ const Result = {
     const Basepoint = Number(document.getElementById("base_input").value);
     const Necepoint = Number(document.getElementById("nece_input").value);
     const Majorpoint = Number(document.getElementById("major_input").value);
-    const word = "👉Transfer year : " + AdYear;
+    let word = "👉Transfer year : " + AdYear;
 
     if (SecYear) {
       word += "- 2nd year transfer";
