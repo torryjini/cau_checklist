@@ -1,6 +1,6 @@
 const Modal = {
   lib12to14: function() {
-    const word = "교양영역 이수기준"
+    let word = "교양영역 이수기준"
     const content = "👉공통교양\n- 국어 : 글쓰기\n- 영어 : English1(Communication in English)\nEnglish2(English fo Professional Track)" +
       "\n- 기타 : 논리와사고(ACT) / 회계와사회 / 독서와토론(창의와소통) / 한국사\n" +
       "회계학원론(회계원리)을 이수했을 경우, '회계와사회' 면제" +
@@ -9,7 +9,7 @@ const Modal = {
     swal(word, content, "info");
   },
   lib2015: function() {
-    const word = "교양영역 이수기준"
+    let word = "교양영역 이수기준"
     const content = "👉공통교양\n- 국어 : 글쓰기\n- 영어 : Communication in English\n- 기타 : 창의와소통 / 회계와사회 / ACT / 한국사\n" +
       "회계학원론(회계원리)을 이수했을 경우, '회계와사회' 면제" +
       "\n👉핵심교양 : 서로 다른 4개 영역에서 각 1과목 이상 이수\n" +
@@ -20,7 +20,7 @@ const Modal = {
     const AdYear = Number(document.getElementById("ad-year").value);
     const College = document.getElementById("college_select").value;
     const Engin = ["engineering", "ict", "software", "artech"]
-    const word = "교양영역 이수기준"
+    let word = "교양영역 이수기준"
     const content1618 = "👉공통교양\n- 국어 : 글쓰기\n- 영어 : Communication in English\n- 기타 : 창의와소통/ACT/한국사/\n 앙트레프레너십시대의회계(회계와사회)\n" +
       "회계학원론(회계원리)을 이수했을 경우, '앙트레프레너십시대의회계' 면제" +
       "\n👉핵심교양 : 도전 / 창의 / 융합 / 신뢰 / 소통\n" +
@@ -45,7 +45,7 @@ const Modal = {
     }
   },
   major12to15: function() {
-    const word = "전공영역 이수기준"
+    let word = "전공영역 이수기준"
     const content = "👉전공 : 각 학과별 세부 기준 참고\n" +
       "👉복수전공 : 복수전공 학과의 기준 참고\n복수전공의 전공기초는 자유선택으로 인정" +
       "\n👉연계/융합/설계전공 : 각 과정별 교과과정표를 참고하여 필수 과목 확인!" +
@@ -55,7 +55,7 @@ const Modal = {
     swal(word, content, "info");
   },
   major2016: function() {
-    const word = "전공영역 이수기준"
+    let word = "전공영역 이수기준"
     const content = "👉전공 : 각 학과별 세부 기준 참고\n" +
       "👉복수전공 : 복수전공 학과의 기준 참고\n복수전공의 전공기초는 자유선택으로 인정" +
       "\n👉연계/융합/설계전공 : 각 과정별 교과과정표를 참고하여 필수 과목 확인!" +
@@ -66,7 +66,7 @@ const Modal = {
     swal(word, content, "info");
   },
   major_tr: function() {
-    const word = "학점 이수기준"
+    let word = "학점 이수기준"
     const content = "👉교양 : 이수 의무 없음\n" +
       "👉전공 : 각 학과별 세부 기준 참고\n" +
       "👉다전공 : 2학년 편입생만 해당." +
@@ -91,7 +91,7 @@ const Result = {
     const account_check_SF = document.getElementById("account_check").checked;
     const core_total_point = Number(document.getElementById("core_total").value);
     const liberal_total_point = Number(document.getElementById("liberal_total").value);
-    const word = "👉입학연도 : " + AdYear + "년\n";
+    let word = "👉입학연도 : " + AdYear + "년\n";
 
     if (AdYear < 1000) {
       document.getElementById("student-info").scrollIntoView();
@@ -185,7 +185,7 @@ const Result = {
     const MACH2none = document.getElementById("mach2_none").checked;
     const MACH1_st = Number(document.getElementById("mach1_st").value);
     const MACH2_st = Number(document.getElementById("mach2_st").value);
-    const word = "👉입학연도 : " + AdYear + "년\n";
+    let word = "👉입학연도 : " + AdYear + "년\n";
 
     if (College == "none") {
       document.getElementById("student-info").scrollIntoView();
@@ -301,7 +301,7 @@ const Result = {
     const MACH2none = document.getElementById("mach2_none").checked;
     const MACH1_st = Number(document.getElementById("mach1_st").value);
     const MACH2_st = Number(document.getElementById("mach2_st").value);
-    const word = "👉입학연도 : " + AdYear + "년\n";
+    let word = "👉입학연도 : " + AdYear + "년\n";
 
     if (AdYear < 1000) {
       document.getElementById("student-info").scrollIntoView();
@@ -444,7 +444,7 @@ const Result = {
       return swal("평균평점은 4.5 만점입니다!", "", "error");
     }
 
-    const word = "👉졸업인정제\n";
+    let word = "👉졸업인정제\n";
 
     if (!English_result) {
       word += "- 영어 : 미통과\n"
@@ -574,7 +574,7 @@ const Result = {
     const Basepoint = Number(document.getElementById("base_input").value);
     const Necepoint = Number(document.getElementById("nece_input").value);
     const Majorpoint = Number(document.getElementById("major_input").value);
-    const word = "👉입학연도 : " + AdYear + "년" + "\n👉주전공 : " + Majortext + "\n👉다전공 : " + Multimajortext + "\n";
+    let word = "👉입학연도 : " + AdYear + "년" + "\n👉주전공 : " + Majortext + "\n👉다전공 : " + Multimajortext + "\n";
 
     const FusionOption = Number(document.getElementById("fusion-options").value);
     if (Multimajortext.includes("융합")) {
@@ -819,7 +819,7 @@ const Result = {
     const Basepoint = Number(document.getElementById("base_input").value);
     const Necepoint = Number(document.getElementById("nece_input").value);
     const Majorpoint = Number(document.getElementById("major_input").value);
-    const word = "👉입학연도 : " + AdYear + "년\n👉주전공 : " + Majortext + "\n👉다전공 : " + Multimajortext + "\n";
+    let word = "👉입학연도 : " + AdYear + "년\n👉주전공 : " + Majortext + "\n👉다전공 : " + Multimajortext + "\n";
 
     const FusionOption = Number(document.getElementById("fusion-options").value);
     if (Multimajortext.includes("융합")) {
@@ -1062,7 +1062,7 @@ const Result = {
     const Basepoint = Number(document.getElementById("base_input").value);
     const Necepoint = Number(document.getElementById("nece_input").value);
     const Majorpoint = Number(document.getElementById("major_input").value);
-    const word = "👉입학연도 : " + AdYear + "년\n👉주전공 : " + Majortext + "\n👉다전공 : " + Multimajortext + "\n";
+    let word = "👉입학연도 : " + AdYear + "년\n👉주전공 : " + Majortext + "\n👉다전공 : " + Multimajortext + "\n";
 
     const FusionOption = Number(document.getElementById("fusion-options").value);
     if (Multimajortext.includes("융합")) {
@@ -1369,7 +1369,7 @@ const Result = {
     const Basepoint = Number(document.getElementById("base_input").value);
     const Necepoint = Number(document.getElementById("nece_input").value);
     const Majorpoint = Number(document.getElementById("major_input").value);
-    const word = "👉편입학연도 : " + AdYear + "년";
+    let word = "👉편입학연도 : " + AdYear + "년";
 
     if (SecYear) {
       word += " - 2학년편입";
