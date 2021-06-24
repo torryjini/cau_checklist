@@ -1,7 +1,7 @@
-var Modal = {
+const Modal = {
   lib12to14: function() {
-    var word = "Requirements for general credits"
-    var content = "👉Mandatory\n- 국어 : 글쓰기\n- 영어 : English1(Communication in English)\nEnglish2(English fo Professional Track)" +
+    const word = "Requirements for general credits"
+    const content = "👉Mandatory\n- 국어 : 글쓰기\n- 영어 : English1(Communication in English)\nEnglish2(English fo Professional Track)" +
       "\n- Others : 논리와사고(ACT) / 회계와사회 / 독서와토론(창의와소통) / 한국사\n" +
       "No need to take '회계와사회' if you already took 회계학원론(회계원리)" +
       "\n👉Core : More than 9 credits are needed" +
@@ -9,29 +9,29 @@ var Modal = {
     swal(word, content, "info");
   },
   lib2015: function() {
-    var word = "Requirements for general credits"
-    var content = "👉Mandatory\n- 국어 : 글쓰기\n- 영어 : Communication in English\n- Others : 창의와소통 / 회계와사회 / ACT / 한국사\n" +
+    const word = "Requirements for general credits"
+    const content = "👉Mandatory\n- 국어 : 글쓰기\n- 영어 : Communication in English\n- Others : 창의와소통 / 회계와사회 / ACT / 한국사\n" +
       "No need to take '회계와사회' if you already took 회계학원론(회계원리)" +
       "\n👉Core : Complete at least one course from 4 different areas\n" +
       "👉Electives : free to choose any\n" + "👉Any credits over 45 are not counted!"
     swal(word, content, "info");
   },
   lib2016: function() {
-    var AdYear = Number(document.getElementById("ad-year").value);
-    var College = document.getElementById("college_select").value;
-    var Engin = ["engineering", "ict", "software", "artech"]
-    var word = "Requirements for general credits"
-    var content1618 = "👉Mandatory\n- 국어 : 글쓰기(Writing)\n- 영어 : Communication in English\n- Others : 창의와소통/ACT/한국사/\n 앙트레프레너십시대의회계(회계와사회)" +
+    const AdYear = Number(document.getElementById("ad-year").value);
+    const College = document.getElementById("college_select").value;
+    const Engin = ["engineering", "ict", "software", "artech"]
+    const word = "Requirements for general credits"
+    const content1618 = "👉Mandatory\n- 국어 : 글쓰기(Writing)\n- 영어 : Communication in English\n- Others : 창의와소통/ACT/한국사/\n 앙트레프레너십시대의회계(회계와사회)" +
       "\nNo need to take '앙트레프레너십시대의회계' if you already took 회계학원론(회계원리)" +
       "\n👉Core : 도전 / 창의 / 융합 / 신뢰 / 소통\n" +
       "Take more than one class per each area!\nElectives : free to choose any\n" +
       "👉Any credits over 45 are not counted!"
-    var contenteng = "👉Mandatory\n- 국어 : 글쓰기(Writing)\n- 영어 : Communication in English\n- Others : 창의와소통/ACT/한국사/\n앙트레프레너십시대의회계/\n디자인적사고와문제해결" +
+    const contenteng = "👉Mandatory\n- 국어 : 글쓰기(Writing)\n- 영어 : Communication in English\n- Others : 창의와소통/ACT/한국사/\n앙트레프레너십시대의회계/\n디자인적사고와문제해결" +
       "\nNo need to take '앙트레프레너십시대의회계' if you already took 회계학원론(회계원리)" +
       "\n👉Core : 도전 / 창의 / 융합 / 신뢰 / 소통\n" +
       "Take more than one class per each area!\nElectives : free to choose any\n" +
       "👉Any credits over 45 are not counted!"
-    var content = "👉Mandatory\n- 국어 : 글쓰기(Writing)\n- 영어 : Communication in English\n- Others : 창의와소통/ACT/한국사/\n앙트레프레너십시대의회계/\n컴퓨팅적사고와문제해결" +
+    const content = "👉Mandatory\n- 국어 : 글쓰기(Writing)\n- 영어 : Communication in English\n- Others : 창의와소통/ACT/한국사/\n앙트레프레너십시대의회계/\n컴퓨팅적사고와문제해결" +
       "\nNo need to take '앙트레프레너십시대의회계' if you already took 회계학원론(회계원리)" +
       "\n👉Core : 도전 / 창의 / 융합 / 신뢰 / 소통\n" +
       "Take more than one class per each area!\nElectives : free to choose any\n" +
@@ -48,8 +48,8 @@ var Modal = {
     }
   },
   major12to15: function() {
-    var word = "Requirements for major credits"
-    var content = "👉Major : Check the department's detailed requiremetns\n" +
+    const word = "Requirements for major credits"
+    const content = "👉Major : Check the department's detailed requiremetns\n" +
       "👉Double major : Check each department's detailed requiremetns\n ㄴBasics of double majors are counted as Free choice" +
       "\n👉연계/융합/설계전공 : Check for required courses for each track!" +
       "\n👉Minor : Earn more than 6 credits from required courses of your minor" +
@@ -58,8 +58,8 @@ var Modal = {
     swal(word, content, "info");
   },
   major2016: function() {
-    var word = "Requirements for major credits"
-    var content = "👉Major : Check the department's detailed requiremetns\n" +
+    const word = "Requirements for major credits"
+    const content = "👉Major : Check the department's detailed requiremetns\n" +
       "👉Double major : Check each department's detailed requiremetns\n ㄴBasics of double majors are counted as Free choice" +
       "\n👉연계/융합/설계전공 : Check for required courses for each track!" +
       "\n👉Minor : Earn more than 6 credits from required courses of your minor" +
@@ -69,8 +69,8 @@ var Modal = {
     swal(word, content, "info");
   },
   major_tr: function() {
-    var word = "Requirements for credits"
-    var content = "👉General courses : No need to take credits\n" +
+    const word = "Requirements for credits"
+    const content = "👉General courses : No need to take credits\n" +
       "👉Major : Check the department's detailed requiremetns\n" +
       "👉Double major : Check each department's detailed requiremetns\nBasics of double majors are counted as Free choice" +
       "\n👉연계/융합/설계전공 : Check for required courses for each track!" +
@@ -81,24 +81,23 @@ var Modal = {
   }
 }
 
-var Result = {
+const Result = {
   lib12to14: function() {
-    var AdYear = Number(document.getElementById("ad-year").value);
-    var College = document.getElementById("college_select").value;
-    var elective_point = Number(document.getElementById("elective_liberal").value);
-    var common_kor_point = Number(document.getElementById("common_kor").value);
-    var common_eng_point = Number(document.getElementById("common_eng").value);
-    var common_eng_ex = document.getElementById("eng_ex").checked;
-    var common_etc_point = Number(document.getElementById("common_etc").value);
-    var account_check_SF = document.getElementById("account_check").checked;
-    var core_total_point = Number(document.getElementById("core_total").value);
-    var liberal_total_point = Number(document.getElementById("liberal_total").value);
-    var word = "👉Entrance Year : " + AdYear + "\n";
+    const AdYear = Number(document.getElementById("ad-year").value);
+    const College = document.getElementById("college_select").value;
+    const elective_point = Number(document.getElementById("elective_liberal").value);
+    const common_kor_point = Number(document.getElementById("common_kor").value);
+    const common_eng_point = Number(document.getElementById("common_eng").value);
+    const common_eng_ex = document.getElementById("eng_ex").checked;
+    const common_etc_point = Number(document.getElementById("common_etc").value);
+    const account_check_SF = document.getElementById("account_check").checked;
+    const core_total_point = Number(document.getElementById("core_total").value);
+    const liberal_total_point = Number(document.getElementById("liberal_total").value);
+    const word = "👉Entrance Year : " + AdYear + "\n";
 
     if (AdYear < 1000) {
       document.getElementById("student-info").scrollIntoView();
-      swal("Choose your entrance year!", "", "error");
-      return false;
+      return swal("Choose your entrance year!", "", "error");
     }
 
     if (common_kor_point < 2) {
@@ -172,28 +171,27 @@ var Result = {
     }
   },
   lib2015: function() {
-    var AdYear = Number(document.getElementById("ad-year").value);
-    var College = document.getElementById("college_select").value;
-    var elective_point = Number(document.getElementById("elective_liberal").value);
-    var common_kor_point = Number(document.getElementById("common_kor").value);
-    var common_eng_point = Number(document.getElementById("common_eng").value);
-    var common_eng_ex = document.getElementById("eng_ex").checked;
-    var common_etc_point = Number(document.getElementById("common_etc").value);
-    var account_check_SF = document.getElementById("account_check").checked;
-    var core_total_point = Number(document.getElementById("core_total").value);
-    var MACH1 = Number(document.getElementById("mach1").value);
-    var MACH1none = document.getElementById("mach1_none").checked;
-    var MACH2 = Number(document.getElementById("mach2").value);
-    var MACH2none = document.getElementById("mach2_none").checked;
-    var MACH1_st = Number(document.getElementById("mach1_st").value);
-    var MACH2_st = Number(document.getElementById("mach2_st").value);
-    var liberal_total_point = Number(document.getElementById("liberal_total").value);
-    var word = "👉Entrance Year : " + AdYear + "\n";
+    const AdYear = Number(document.getElementById("ad-year").value);
+    const College = document.getElementById("college_select").value;
+    const elective_point = Number(document.getElementById("elective_liberal").value);
+    const common_kor_point = Number(document.getElementById("common_kor").value);
+    const common_eng_point = Number(document.getElementById("common_eng").value);
+    const common_eng_ex = document.getElementById("eng_ex").checked;
+    const common_etc_point = Number(document.getElementById("common_etc").value);
+    const account_check_SF = document.getElementById("account_check").checked;
+    const core_total_point = Number(document.getElementById("core_total").value);
+    const MACH1 = Number(document.getElementById("mach1").value);
+    const MACH1none = document.getElementById("mach1_none").checked;
+    const MACH2 = Number(document.getElementById("mach2").value);
+    const MACH2none = document.getElementById("mach2_none").checked;
+    const MACH1_st = Number(document.getElementById("mach1_st").value);
+    const MACH2_st = Number(document.getElementById("mach2_st").value);
+    const liberal_total_point = Number(document.getElementById("liberal_total").value);
+    const word = "👉Entrance Year : " + AdYear + "\n";
 
     if (College == "none") {
       document.getElementById("student-info").scrollIntoView();
-      swal("Choose your college!", "", "error");
-      return false;
+      return swal("Choose your college!", "", "error");
     }
 
     if (common_kor_point < 2) {
@@ -283,51 +281,47 @@ var Result = {
     }
   },
   lib2016: function() {
-    var AdYear = Number(document.getElementById("ad-year").value);
-    var College = document.getElementById("college_select").value;
-    var elective_point = Number(document.getElementById("elective_liberal").value);
-    var common_kor_point = Number(document.getElementById("common_kor").value);
-    var common_eng_point = Number(document.getElementById("common_eng").value);
-    var common_eng_ex = document.getElementById("eng_ex").checked;
-    var cometcst = Number(document.getElementById("com_etc_st").value);
-    var common_etc_point = Number(document.getElementById("common_etc").value);
-    var account_check_SF = document.getElementById("account_check").checked;
-    var Core1 = document.getElementById("core1").checked;
-    var Core2 = document.getElementById("core2").checked;
-    var Core3 = document.getElementById("core3").checked;
-    var Core4 = document.getElementById("core4").checked;
-    var Core5 = document.getElementById("core5").checked;
-    var core_total_point = Number(document.getElementById("core_total").value);
-    var MACH1 = Number(document.getElementById("mach1").value);
-    var MACH1none = document.getElementById("mach1_none").checked;
-    var MACH2 = Number(document.getElementById("mach2").value);
-    var MACH2none = document.getElementById("mach2_none").checked;
-    var MACH1_st = Number(document.getElementById("mach1_st").value);
-    var MACH2_st = Number(document.getElementById("mach2_st").value);
-    var liberal_total_point = Number(document.getElementById("liberal_total").value);
-    var word = "👉Entrance Year : " + AdYear + "\n";
+    const AdYear = Number(document.getElementById("ad-year").value);
+    const College = document.getElementById("college_select").value;
+    const elective_point = Number(document.getElementById("elective_liberal").value);
+    const common_kor_point = Number(document.getElementById("common_kor").value);
+    const common_eng_point = Number(document.getElementById("common_eng").value);
+    const common_eng_ex = document.getElementById("eng_ex").checked;
+    const cometcst = Number(document.getElementById("com_etc_st").value);
+    const common_etc_point = Number(document.getElementById("common_etc").value);
+    const account_check_SF = document.getElementById("account_check").checked;
+    const Core1 = document.getElementById("core1").checked;
+    const Core2 = document.getElementById("core2").checked;
+    const Core3 = document.getElementById("core3").checked;
+    const Core4 = document.getElementById("core4").checked;
+    const Core5 = document.getElementById("core5").checked;
+    const core_total_point = Number(document.getElementById("core_total").value);
+    const MACH1 = Number(document.getElementById("mach1").value);
+    const MACH1none = document.getElementById("mach1_none").checked;
+    const MACH2 = Number(document.getElementById("mach2").value);
+    const MACH2none = document.getElementById("mach2_none").checked;
+    const MACH1_st = Number(document.getElementById("mach1_st").value);
+    const MACH2_st = Number(document.getElementById("mach2_st").value);
+    const liberal_total_point = Number(document.getElementById("liberal_total").value);
+    const word = "👉Entrance Year : " + AdYear + "\n";
 
     if (AdYear < 1000) {
       document.getElementById("student-info").scrollIntoView();
-      swal("Choose your entrance year!", "", "error");
-      return false;
+      return swal("Choose your entrance year!", "", "error");
     }
 
     if (College == "none") {
       document.getElementById("student-info").scrollIntoView();
-      swal("Choose your college!", "", "error");
-      return false;
+      return swal("Choose your college!", "", "error");
     }
 
     if (core_total_point > 0 && !Core1 && !Core2 && !Core3 && !Core4 && !Core5) {
-      swal("Check core courses!", "", "error")
-      return false;
+      return swal("Check core courses!", "", "error");
     }
 
     if (Core1 || Core2 || Core3 || Core4 || Core5) {
       if (core_total_point == 0) {
-        swal("Enter your credits for core courses!", "", "error")
-        return false;
+        return swal("Enter your credits for core courses!", "", "error");
       }
     }
 
@@ -383,7 +377,7 @@ var Result = {
       word += "소통"
     }
 
-    var Engin = ["engineering", "ict", "software"]
+    const Engin = ["engineering", "ict", "software"]
     if (AdYear >= 2019 && Engin.includes(College)) {
       word += "\n - Check if you have taken at least one MACH subject!"
     }
@@ -441,19 +435,18 @@ var Result = {
     }
   },
   etc: function() {
-    var English_result = document.getElementById("English").checked;
-    var Hanja_result = document.getElementById("Hanja").checked;
-    var Korean_result = document.getElementById("Korean").checked;
-    var Paper_result = document.getElementById("major_paper").checked;
-    var Paper_result2 = document.getElementById("double_major_paper").checked;
-    var Average_result = Number(document.getElementById("average").value);
+    const English_result = document.getElementById("English").checked;
+    const Hanja_result = document.getElementById("Hanja").checked;
+    const Korean_result = document.getElementById("Korean").checked;
+    const Paper_result = document.getElementById("major_paper").checked;
+    const Paper_result2 = document.getElementById("double_major_paper").checked;
+    const Average_result = Number(document.getElementById("average").value);
 
     if (Average_result > 4.5) {
-      swal("You cannot enter credits above 4.5!", "", "error")
-      return false;
+      return swal("You cannot enter credits above 4.5!", "", "error");
     }
 
-    var word = "👉Graduation Recognition System\n";
+    const word = "👉Graduation Recognition System\n";
 
     if (!English_result) {
       word += "- 영어 : not qualified\n"
@@ -502,57 +495,49 @@ var Result = {
     }
   },
   major: function Major_result() {
-    var AdYear = Number(document.getElementById("ad-year").value);
-    var Majorstandard = document.getElementById("major_standard").value;
-    var MajorSelect = document.getElementById("Major_select").value;
-    var LinkCross = Number(document.getElementById("cross_point1").value);
-    var Fusion = document.getElementById("fusion-options");
-    var Fusiontext = Fusion.options[Fusion.selectedIndex].text;
-    var FusionCross = Number(document.getElementById("cross_point2").value);
-    var PlanCross = Number(document.getElementById("cross_point3").value);
+    const AdYear = Number(document.getElementById("ad-year").value);
+    const Majorstandard = document.getElementById("major_standard").value;
+    const MajorSelect = document.getElementById("Major_select").value;
+    const LinkCross = Number(document.getElementById("cross_point1").value);
+    const Fusion = document.getElementById("fusion-options");
+    const Fusiontext = Fusion.options[Fusion.selectedIndex].text;
+    const FusionCross = Number(document.getElementById("cross_point2").value);
+    const PlanCross = Number(document.getElementById("cross_point3").value);
 
     if (AdYear < 1000) {
       document.getElementById("student-info").scrollIntoView();
-      swal("Choose your entrance year!", "", "error");
-      return false;
+      return swal("Choose your entrance year!", "", "error");
     }
 
     if (Fusiontext.includes("문화") || Fusiontext.includes("창업") || Fusiontext.includes("게임")) {
       if (FusionCross > 6) {
         document.getElementById("double_major_none").scrollIntoView();
-        swal("Maximum credits for\n" + Fusiontext + " 융합전공 are 6!", "", "error")
-        return false;
+        return swal("Maximum credits for\n" + Fusiontext + " 융합전공 are 6!", "", "error");
       }
     } else if (Fusiontext.includes("금융")) {
       if (FusionCross > 15) {
         document.getElementById("double_major_none").scrollIntoView();
-        swal("Maximum credits for\n" + Fusiontext + " 융합전공 are 15!", "", "error")
-        return false;
+        return swal("Maximum credits for\n" + Fusiontext + " 융합전공 are 15!", "", "error");
       }
     } else if (Fusiontext.includes("인문") || Fusiontext.includes("보안") || Fusiontext.includes("테크") || Fusiontext.includes("벤처")) {
       if (FusionCross > 12) {
         document.getElementById("double_major_none").scrollIntoView();
-        swal("Maximum credits for\n" + Fusiontext + " 융합전공 are 12!", "", "error")
-        return false;
+        return swal("Maximum credits for\n" + Fusiontext + " 융합전공 are 12!", "", "error");
       }
     }
 
     if (MajorSelect == "none") {
       document.getElementById("student-info").scrollIntoView();
-      swal("Choose your major!", "", "error");
-      return false;
+      return swal("Choose your major!", "", "error");
     } else if (Majorstandard < 45) {
       document.getElementById("student-info").scrollIntoView();
-      swal("Choose your multiple major!", "", "error");
-      return false;
+      return swal("Choose your multiple major!", "", "error");
     } else if (LinkCross > 12) {
       document.getElementById("double_major_point").scrollIntoView();
-      swal("Maximum cross credits for 연계전공 are 12!", "", "error")
-      return false;
+      return swal("Maximum cross credits for 연계전공 are 12!", "", "error");
     } else if (PlanCross > 6) {
       document.getElementById("link_major_none").scrollIntoView();
-      swal("Maximum cross credits for 자기설계전공 are 6!", "", "error")
-      return false;
+      return swal("Maximum cross credits for 자기설계전공 are 6!", "", "error");
     } else {
       if (AdYear <= 2014) {
         Result.basenece12to14(Majorstandard);
@@ -564,30 +549,28 @@ var Result = {
     }
   },
   basenece12to14: function(Majorstandard) {
-    var AdYear = Number(document.getElementById("ad-year").value);
-    var Major = document.getElementById("Major_select");
-    var Majortext = Major.options[Major.selectedIndex].text;
-    var Multimajor = document.getElementById("MultiMajor_select");
-    var Multimajortext = Multimajor.options[Multimajor.selectedIndex].text;
-    var BaseStandard = document.getElementById("base_standard").value;
-    var NeceStandard = document.getElementById("nece_standard").value;
-    var Basepoint = Number(document.getElementById("base_input").value);
-    var Necepoint = Number(document.getElementById("nece_input").value);
-    var Majorpoint = Number(document.getElementById("major_input").value);
-    var word = "👉Entrance Year : " + AdYear + "\nMajor : " + Majortext + "\n👉Multiple Major : " + Multimajortext + "\n";
+    const AdYear = Number(document.getElementById("ad-year").value);
+    const Major = document.getElementById("Major_select");
+    const Majortext = Major.options[Major.selectedIndex].text;
+    const Multimajor = document.getElementById("MultiMajor_select");
+    const Multimajortext = Multimajor.options[Multimajor.selectedIndex].text;
+    const BaseStandard = document.getElementById("base_standard").value;
+    const NeceStandard = document.getElementById("nece_standard").value;
+    const Basepoint = Number(document.getElementById("base_input").value);
+    const Necepoint = Number(document.getElementById("nece_input").value);
+    const Majorpoint = Number(document.getElementById("major_input").value);
+    const word = "👉Entrance Year : " + AdYear + "\nMajor : " + Majortext + "\n👉Multiple Major : " + Multimajortext + "\n";
 
-    var FusionOption = Number(document.getElementById("fusion-options").value);
+    const FusionOption = Number(document.getElementById("fusion-options").value);
     if (Multimajortext.includes("융합")) {
       if (FusionOption == 0) {
-        swal("Choose your 융합전공!", "", "error");
         document.getElementById("double_major_none").scrollIntoView();
-        return false;
+        return swal("Choose your 융합전공!", "", "error");
       }
     }
 
     if (Majorpoint < Necepoint) {
-      swal("Major credits include Required credits!", "", "error");
-      return false;
+      return swal("Major credits include Required credits!", "", "error");
     }
 
     if (Basepoint < BaseStandard) {
@@ -608,9 +591,9 @@ var Result = {
       word += "👉Major : Passed the requirement\n"
     }
 
-    var Doublecheck = document.getElementById("double_major_none").checked;
-    var DoubleStandard = document.getElementById("double_st").value;
-    var Doublepoint = Number(document.getElementById("double_major_point").value);
+    const Doublecheck = document.getElementById("double_major_none").checked;
+    const DoubleStandard = document.getElementById("double_st").value;
+    const Doublepoint = Number(document.getElementById("double_major_point").value);
     if (!Doublecheck) {
       if (Doublepoint < DoubleStandard) {
         word += "👉Double major : " + [DoubleStandard - Doublepoint] + " more credits required\n"
@@ -619,10 +602,10 @@ var Result = {
       }
     }
 
-    var Linkcheck = document.getElementById("link_major_none").checked;
-    var LinkStandard = document.getElementById("link_st").value;
-    var LinkCross = Number(document.getElementById("cross_point1").value);
-    var Linkpoint = Number(document.getElementById("link_major_point").value) + LinkCross;
+    const Linkcheck = document.getElementById("link_major_none").checked;
+    const LinkStandard = document.getElementById("link_st").value;
+    const LinkCross = Number(document.getElementById("cross_point1").value);
+    const Linkpoint = Number(document.getElementById("link_major_point").value) + LinkCross;
     if (!Linkcheck) {
       if (Linkpoint < LinkStandard) {
         word += "👉연계전공 : " + [LinkStandard - Linkpoint] + " more credits required\n"
@@ -632,11 +615,11 @@ var Result = {
     }
 
 
-    var Fusioncheck = document.getElementById("fusion_major_none").checked;
-    var Fusion = document.getElementById("fusion-options");
-    var Fusiontext = Fusion.options[Fusion.selectedIndex].text;
-    var Fusionpoint = Number(document.getElementById("fusion_major_point").value) + Number(document.getElementById("cross_point2").value);
-    var FusionStandard = Number(document.getElementById("fusion_standard").value);
+    const Fusioncheck = document.getElementById("fusion_major_none").checked;
+    const Fusion = document.getElementById("fusion-options");
+    const Fusiontext = Fusion.options[Fusion.selectedIndex].text;
+    const Fusionpoint = Number(document.getElementById("fusion_major_point").value) + Number(document.getElementById("cross_point2").value);
+    const FusionStandard = Number(document.getElementById("fusion_standard").value);
     if (!Fusioncheck) {
       if (Fusionpoint < FusionStandard) {
         word += "👉" + Fusiontext + "융합전공 : " + [FusionStandard - Fusionpoint] + " more credits required\n"
@@ -645,9 +628,9 @@ var Result = {
       }
     }
 
-    var Plancheck = document.getElementById("plan_major_none").checked;
-    var PlanStandard = document.getElementById("plan_st").value;
-    var Planpoint = Number(document.getElementById("plan_major_point").value) + Number(document.getElementById("cross_point3").value);
+    const Plancheck = document.getElementById("plan_major_none").checked;
+    const PlanStandard = document.getElementById("plan_st").value;
+    const Planpoint = Number(document.getElementById("plan_major_point").value) + Number(document.getElementById("cross_point3").value);
     if (!Plancheck) {
       if (Planpoint < PlanStandard) {
         word += "👉설계전공 : " + [PlanStandard - Planpoint] + " more credits required\n"
@@ -656,9 +639,9 @@ var Result = {
       }
     }
 
-    var Minorcheck = document.getElementById("minor_none").checked;
-    var MinorStandard = document.getElementById("minor_st").value;
-    var Minorpoint = Number(document.getElementById("minor_point").value);
+    const Minorcheck = document.getElementById("minor_none").checked;
+    const MinorStandard = document.getElementById("minor_st").value;
+    const Minorpoint = Number(document.getElementById("minor_point").value);
     if (!Minorcheck) {
       if (Minorpoint < MinorStandard) {
         word += "👉Minor : " + [MinorStandard - Minorpoint] + " more credits required\n"
@@ -667,13 +650,13 @@ var Result = {
       }
     }
 
-    var Freepoint = Number(document.getElementById("free_point").value);
+    const Freepoint = Number(document.getElementById("free_point").value);
     word += "👉Free choice : " + Freepoint + " credits\n"
 
 
-    var Teachingcheck = document.getElementById("teaching_none").checked;
-    var TeachingStandard = document.getElementById("teaching_st").value;
-    var Teachingpoint = Number(document.getElementById("teaching_point").value);
+    const Teachingcheck = document.getElementById("teaching_none").checked;
+    const TeachingStandard = document.getElementById("teaching_st").value;
+    const Teachingpoint = Number(document.getElementById("teaching_point").value);
     if (!Teachingcheck) {
       if (Teachingpoint < TeachingStandard)
         word += "👉Teaching : " + [TeachingStandard - Teachingpoint] + " more credits required\n"
@@ -682,8 +665,8 @@ var Result = {
       }
     }
 
-    var TotalStandard = Number(document.getElementById("total_standard").value);
-    var TotalPoint = Number(document.getElementById("the_total").value);
+    const TotalStandard = Number(document.getElementById("total_standard").value);
+    const TotalPoint = Number(document.getElementById("the_total").value);
     if (TotalPoint < TotalStandard) {
       word += "👉Total credits : At least " + [TotalStandard - TotalPoint] + " more credits required"
     } else {
@@ -811,17 +794,17 @@ var Result = {
     }
   },
   basenece2015: function(Majorstandard) {
-    var AdYear = Number(document.getElementById("ad-year").value);
-    var Major = document.getElementById("Major_select");
-    var Majortext = Major.options[Major.selectedIndex].text;
-    var Multimajor = document.getElementById("MultiMajor_select");
-    var Multimajortext = Multimajor.options[Multimajor.selectedIndex].text;
-    var BaseStandard = document.getElementById("base_standard").value;
-    var NeceStandard = document.getElementById("nece_standard").value;
-    var Basepoint = Number(document.getElementById("base_input").value);
-    var Necepoint = Number(document.getElementById("nece_input").value);
-    var Majorpoint = Number(document.getElementById("major_input").value);
-    var word = "👉Entrance Year : " + AdYear;
+    const AdYear = Number(document.getElementById("ad-year").value);
+    const Major = document.getElementById("Major_select");
+    const Majortext = Major.options[Major.selectedIndex].text;
+    const Multimajor = document.getElementById("MultiMajor_select");
+    const Multimajortext = Multimajor.options[Multimajor.selectedIndex].text;
+    const BaseStandard = document.getElementById("base_standard").value;
+    const NeceStandard = document.getElementById("nece_standard").value;
+    const Basepoint = Number(document.getElementById("base_input").value);
+    const Necepoint = Number(document.getElementById("nece_input").value);
+    const Majorpoint = Number(document.getElementById("major_input").value);
+    const word = "👉Entrance Year : " + AdYear;
 
     if (Majortext.includes("트랙")) {
       word += "\n👉Major : 공공인재학부 " + Majortext + "\n👉Multiple Major : " + Multimajortext + "\n";
@@ -829,18 +812,16 @@ var Result = {
       word += "\n👉Major : " + Majortext + "\n👉Multiple Major : " + Multimajortext + "\n";
     }
 
-    var FusionOption = Number(document.getElementById("fusion-options").value);
+    const FusionOption = Number(document.getElementById("fusion-options").value);
     if (Multimajortext.includes("융합")) {
       if (FusionOption == 0) {
-        swal("Choose your 융합전공!", "", "error");
         document.getElementById("double_major_none").scrollIntoView();
-        return false;
+        return swal("Choose your 융합전공!", "", "error");
       }
     }
 
     if (Majorpoint < Necepoint) {
-      swal("Major credits include required credits!", "", "error");
-      return false;
+      return swal("Major credits include required credits!", "", "error");
     }
 
     if (Basepoint < BaseStandard) {
@@ -861,9 +842,9 @@ var Result = {
       word += "👉Major : Passed the requirement\n"
     }
 
-    var Doublecheck = document.getElementById("double_major_none").checked;
-    var DoubleStandard = document.getElementById("double_st").value;
-    var Doublepoint = Number(document.getElementById("double_major_point").value);
+    const Doublecheck = document.getElementById("double_major_none").checked;
+    const DoubleStandard = document.getElementById("double_st").value;
+    const Doublepoint = Number(document.getElementById("double_major_point").value);
     if (!Doublecheck) {
       if (Doublepoint < DoubleStandard) {
         word += "👉Double major : " + [DoubleStandard - Doublepoint] + " more credits required\n"
@@ -872,10 +853,10 @@ var Result = {
       }
     }
 
-    var Linkcheck = document.getElementById("link_major_none").checked;
-    var LinkStandard = document.getElementById("link_st").value;
-    var LinkCross = Number(document.getElementById("cross_point1").value);
-    var Linkpoint = Number(document.getElementById("link_major_point").value) + LinkCross;
+    const Linkcheck = document.getElementById("link_major_none").checked;
+    const LinkStandard = document.getElementById("link_st").value;
+    const LinkCross = Number(document.getElementById("cross_point1").value);
+    const Linkpoint = Number(document.getElementById("link_major_point").value) + LinkCross;
     if (!Linkcheck) {
       if (Linkpoint < LinkStandard) {
         word += "👉연계전공 : " + [LinkStandard - Linkpoint] + " more credits required\n"
@@ -884,11 +865,11 @@ var Result = {
       }
     }
 
-    var Fusioncheck = document.getElementById("fusion_major_none").checked;
-    var Fusion = document.getElementById("fusion-options");
-    var Fusiontext = Fusion.options[Fusion.selectedIndex].text;
-    var Fusionpoint = Number(document.getElementById("fusion_major_point").value) + Number(document.getElementById("cross_point2").value);
-    var FusionStandard = Number(document.getElementById("fusion_standard").value);
+    const Fusioncheck = document.getElementById("fusion_major_none").checked;
+    const Fusion = document.getElementById("fusion-options");
+    const Fusiontext = Fusion.options[Fusion.selectedIndex].text;
+    const Fusionpoint = Number(document.getElementById("fusion_major_point").value) + Number(document.getElementById("cross_point2").value);
+    const FusionStandard = Number(document.getElementById("fusion_standard").value);
     if (!Fusioncheck) {
       if (Fusionpoint < FusionStandard) {
         word += "👉" + Fusiontext + "융합전공 : " + [FusionStandard - Fusionpoint] + " more credits required\n"
@@ -897,9 +878,9 @@ var Result = {
       }
     }
 
-    var Plancheck = document.getElementById("plan_major_none").checked;
-    var PlanStandard = document.getElementById("plan_st").value;
-    var Planpoint = Number(document.getElementById("plan_major_point").value) + Number(document.getElementById("cross_point3").value);
+    const Plancheck = document.getElementById("plan_major_none").checked;
+    const PlanStandard = document.getElementById("plan_st").value;
+    const Planpoint = Number(document.getElementById("plan_major_point").value) + Number(document.getElementById("cross_point3").value);
     if (!Plancheck) {
       if (Planpoint < PlanStandard) {
         word += "👉설계전공 : " + [PlanStandard - Planpoint] + " more credits required\n"
@@ -908,9 +889,9 @@ var Result = {
       }
     }
 
-    var Minorcheck = document.getElementById("minor_none").checked;
-    var MinorStandard = document.getElementById("minor_st").value;
-    var Minorpoint = Number(document.getElementById("minor_point").value);
+    const Minorcheck = document.getElementById("minor_none").checked;
+    const MinorStandard = document.getElementById("minor_st").value;
+    const Minorpoint = Number(document.getElementById("minor_point").value);
     if (!Minorcheck) {
       if (Minorpoint < MinorStandard) {
         word += "👉Minor : " + [MinorStandard - Minorpoint] + " more credits required\n"
@@ -919,12 +900,12 @@ var Result = {
       }
     }
 
-    var Freepoint = Number(document.getElementById("free_point").value);
+    const Freepoint = Number(document.getElementById("free_point").value);
     word += "👉Free choice : " + Freepoint + " credits\n"
 
-    var Teachingcheck = document.getElementById("teaching_none").checked;
-    var TeachingStandard = document.getElementById("teaching_st").value;
-    var Teachingpoint = Number(document.getElementById("teaching_point").value);
+    const Teachingcheck = document.getElementById("teaching_none").checked;
+    const TeachingStandard = document.getElementById("teaching_st").value;
+    const Teachingpoint = Number(document.getElementById("teaching_point").value);
     if (!Teachingcheck) {
       if (Teachingpoint < TeachingStandard)
         word += "👉Teaching : " + [TeachingStandard - Teachingpoint] + " more credits required\n"
@@ -933,8 +914,8 @@ var Result = {
       }
     }
 
-    var TotalStandard = Number(document.getElementById("total_standard").value);
-    var TotalPoint = Number(document.getElementById("the_total").value);
+    const TotalStandard = Number(document.getElementById("total_standard").value);
+    const TotalPoint = Number(document.getElementById("the_total").value);
     if (TotalPoint < TotalStandard) {
       word += "👉Total credits : At least " + [TotalStandard - TotalPoint] + " more credits required"
     } else {
@@ -1062,17 +1043,17 @@ var Result = {
     }
   },
   basenece2016: function(Majorstandard) {
-    var AdYear = Number(document.getElementById("ad-year").value);
-    var Major = document.getElementById("Major_select");
-    var Majortext = Major.options[Major.selectedIndex].text;
-    var Multimajor = document.getElementById("MultiMajor_select");
-    var Multimajortext = Multimajor.options[Multimajor.selectedIndex].text;
-    var BaseStandard = document.getElementById("base_standard").value;
-    var NeceStandard = document.getElementById("nece_standard").value;
-    var Basepoint = Number(document.getElementById("base_input").value);
-    var Necepoint = Number(document.getElementById("nece_input").value);
-    var Majorpoint = Number(document.getElementById("major_input").value);
-    var word = "👉Entrance Year : " + AdYear;
+    const AdYear = Number(document.getElementById("ad-year").value);
+    const Major = document.getElementById("Major_select");
+    const Majortext = Major.options[Major.selectedIndex].text;
+    const Multimajor = document.getElementById("MultiMajor_select");
+    const Multimajortext = Multimajor.options[Multimajor.selectedIndex].text;
+    const BaseStandard = document.getElementById("base_standard").value;
+    const NeceStandard = document.getElementById("nece_standard").value;
+    const Basepoint = Number(document.getElementById("base_input").value);
+    const Necepoint = Number(document.getElementById("nece_input").value);
+    const Majorpoint = Number(document.getElementById("major_input").value);
+    const word = "👉Entrance Year : " + AdYear;
 
     if (Majortext.includes("트랙")) {
       word += "\n👉Major : 공공인재학부" + Majortext + "\n👉Multiple Major : " + Multimajortext + "\n";
@@ -1080,25 +1061,22 @@ var Result = {
       word += "\n👉Major : " + Majortext + "\n👉Multiple Major : " + Multimajortext + "\n";
     }
 
-    var FusionOption = Number(document.getElementById("fusion-options").value);
+    const FusionOption = Number(document.getElementById("fusion-options").value);
     if (Multimajortext.includes("융합")) {
       if (FusionOption == 0) {
-        swal("Choose your 융합전공!", "", "error");
         document.getElementById("double_major_none").scrollIntoView();
-        return false;
+        return swal("Choose your 융합전공!", "", "error");
       }
     }
 
     if (Majorpoint < Necepoint) {
-      swal("Major credits include Required credits!", "", "error");
-      return false;
+      return swal("Major credits include Required credits!", "", "error");
     }
 
-    var Freepoint = Number(document.getElementById("free_point").value);
-    var CAUSeminar = document.getElementById("causeminar").checked;
+    const Freepoint = Number(document.getElementById("free_point").value);
+    const CAUSeminar = document.getElementById("causeminar").checked;
     if (Freepoint < 1 && CAUSeminar) {
-      swal("Fill in the Free choice!", "", "error");
-      return false;
+      return swal("Fill in the Free choice!", "", "error");
     }
 
     if (Basepoint < BaseStandard) {
@@ -1119,9 +1097,9 @@ var Result = {
       word += "👉Major : Passed the requirement\n"
     }
 
-    var Doublecheck = document.getElementById("double_major_none").checked;
-    var DoubleStandard = document.getElementById("double_st").value;
-    var Doublepoint = Number(document.getElementById("double_major_point").value);
+    const Doublecheck = document.getElementById("double_major_none").checked;
+    const DoubleStandard = document.getElementById("double_st").value;
+    const Doublepoint = Number(document.getElementById("double_major_point").value);
     if (!Doublecheck) {
       if (Doublepoint < DoubleStandard) {
         word += "👉Double major : " + [DoubleStandard - Doublepoint] + " more credits required\n"
@@ -1130,10 +1108,10 @@ var Result = {
       }
     }
 
-    var Linkcheck = document.getElementById("link_major_none").checked;
-    var LinkStandard = document.getElementById("link_st").value;
-    var LinkCross = Number(document.getElementById("cross_point1").value);
-    var Linkpoint = Number(document.getElementById("link_major_point").value) + LinkCross;
+    const Linkcheck = document.getElementById("link_major_none").checked;
+    const LinkStandard = document.getElementById("link_st").value;
+    const LinkCross = Number(document.getElementById("cross_point1").value);
+    const Linkpoint = Number(document.getElementById("link_major_point").value) + LinkCross;
     if (!Linkcheck) {
       if (Linkpoint < LinkStandard) {
         word += "👉연계전공 : " + [LinkStandard - Linkpoint] + " more credits required\n"
@@ -1143,11 +1121,11 @@ var Result = {
     }
 
 
-    var Fusioncheck = document.getElementById("fusion_major_none").checked;
-    var Fusion = document.getElementById("fusion-options");
-    var Fusiontext = Fusion.options[Fusion.selectedIndex].text;
-    var Fusionpoint = Number(document.getElementById("fusion_major_point").value) + Number(document.getElementById("cross_point2").value);
-    var FusionStandard = Number(document.getElementById("fusion_standard").value);
+    const Fusioncheck = document.getElementById("fusion_major_none").checked;
+    const Fusion = document.getElementById("fusion-options");
+    const Fusiontext = Fusion.options[Fusion.selectedIndex].text;
+    const Fusionpoint = Number(document.getElementById("fusion_major_point").value) + Number(document.getElementById("cross_point2").value);
+    const FusionStandard = Number(document.getElementById("fusion_standard").value);
     if (!Fusioncheck) {
       if (Fusionpoint < FusionStandard) {
         word += "👉" + Fusiontext + "융합전공 : " + [FusionStandard - Fusionpoint] + " more credits required\n"
@@ -1156,9 +1134,9 @@ var Result = {
       }
     }
 
-    var Plancheck = document.getElementById("plan_major_none").checked;
-    var PlanStandard = document.getElementById("plan_st").value;
-    var Planpoint = Number(document.getElementById("plan_major_point").value) + Number(document.getElementById("cross_point3").value);
+    const Plancheck = document.getElementById("plan_major_none").checked;
+    const PlanStandard = document.getElementById("plan_st").value;
+    const Planpoint = Number(document.getElementById("plan_major_point").value) + Number(document.getElementById("cross_point3").value);
     if (!Plancheck) {
       if (Planpoint < PlanStandard) {
         word += "👉설계전공 : " + [PlanStandard - Planpoint] + " more credits required\n"
@@ -1167,9 +1145,9 @@ var Result = {
       }
     }
 
-    var Minorcheck = document.getElementById("minor_none").checked;
-    var MinorStandard = document.getElementById("minor_st").value;
-    var Minorpoint = Number(document.getElementById("minor_point").value);
+    const Minorcheck = document.getElementById("minor_none").checked;
+    const MinorStandard = document.getElementById("minor_st").value;
+    const Minorpoint = Number(document.getElementById("minor_point").value);
     if (!Minorcheck) {
       if (Minorpoint < MinorStandard) {
         word += "👉Minor : " + [MinorStandard - Minorpoint] + " more credits required\n"
@@ -1186,9 +1164,9 @@ var Result = {
         word += "- CAU세미나(1credit) : Passed\n"
       }
 
-    var Teachingcheck = document.getElementById("teaching_none").checked;
-    var TeachingStandard = document.getElementById("teaching_st").value;
-    var Teachingpoint = Number(document.getElementById("teaching_point").value);
+    const Teachingcheck = document.getElementById("teaching_none").checked;
+    const TeachingStandard = document.getElementById("teaching_st").value;
+    const Teachingpoint = Number(document.getElementById("teaching_point").value);
     if (!Teachingcheck) {
       if (Teachingpoint < TeachingStandard)
         word += "👉Teaching : " + [TeachingStandard - Teachingpoint] + " more credits required\n"
@@ -1197,8 +1175,8 @@ var Result = {
       }
     }
 
-    var TotalStandard = Number(document.getElementById("total_standard").value);
-    var TotalPoint = Number(document.getElementById("the_total").value);
+    const TotalStandard = Number(document.getElementById("total_standard").value);
+    const TotalPoint = Number(document.getElementById("the_total").value);
     if (TotalPoint < TotalStandard) {
       word += "👉Total credits : At least " + [TotalStandard - TotalPoint] + " more credits required"
     } else {
@@ -1326,77 +1304,69 @@ var Result = {
     }
   },
   major_tr: function() {
-    var AdYear = Number(document.getElementById("ad-year").value);
-    var SecYear = document.getElementById("2ndyear").checked;
-    var Majorstandard = document.getElementById("major_standard").value;
-    var MajorSelect = document.getElementById("Major_select").value;
-    var Multimajor = document.getElementById("MultiMajor_select");
-    var Multimajortext = Multimajor.options[Multimajor.selectedIndex].text;
-    var LinkCross = Number(document.getElementById("cross_point1").value);
-    var Fusion = document.getElementById("fusion-options");
-    var Fusiontext = Fusion.options[Fusion.selectedIndex].text;
-    var FusionCross = Number(document.getElementById("cross_point2").value);
-    var PlanCross = Number(document.getElementById("cross_point3").value);
+    const AdYear = Number(document.getElementById("ad-year").value);
+    const SecYear = document.getElementById("2ndyear").checked;
+    const Majorstandard = document.getElementById("major_standard").value;
+    const MajorSelect = document.getElementById("Major_select").value;
+    const Multimajor = document.getElementById("MultiMajor_select");
+    const Multimajortext = Multimajor.options[Multimajor.selectedIndex].text;
+    const LinkCross = Number(document.getElementById("cross_point1").value);
+    const Fusion = document.getElementById("fusion-options");
+    const Fusiontext = Fusion.options[Fusion.selectedIndex].text;
+    const FusionCross = Number(document.getElementById("cross_point2").value);
+    const PlanCross = Number(document.getElementById("cross_point3").value);
     if (AdYear < 1000) {
       document.getElementById("student-info").scrollIntoView();
-      swal("Choose your transfer year!", "", "error");
-      return false;
+      return swal("Choose your transfer year!", "", "error");
     }
 
     if (Fusiontext.includes("문화") || Fusiontext.includes("창업") || Fusiontext.includes("게임")) {
       if (FusionCross > 6) {
         document.getElementById("double_major_none").scrollIntoView();
-        swal("Maximum credits for\n" + Fusiontext + "융합전공 are 6!", "", "error")
-        return false;
+        return swal("Maximum credits for\n" + Fusiontext + "융합전공 are 6!", "", "error");
       }
     } else if (Fusiontext.includes("금융")) {
       if (FusionCross > 15) {
         document.getElementById("double_major_none").scrollIntoView();
-        swal("Maximum credits for\n" + Fusiontext + "융합전공 are 15!", "", "error")
-        return false;
+        return swal("Maximum credits for\n" + Fusiontext + "융합전공 are 15!", "", "error");
       }
     } else if (Fusiontext.includes("인문") || Fusiontext.includes("보안") || Fusiontext.includes("테크") || Fusiontext.includes("벤처")) {
       if (FusionCross > 12) {
         document.getElementById("double_major_none").scrollIntoView();
-        swal("Maximum credits for\n" + Fusiontext + "융합전공 are 12!", "", "error")
-        return false;
+        return swal("Maximum credits for\n" + Fusiontext + "융합전공 are 12!", "", "error");
       }
     }
 
     if (MajorSelect == "none") {
       document.getElementById("student-info").scrollIntoView();
-      swal("Choose your major!", "", "error");
-      return false;
+      return swal("Choose your major!", "", "error");
     } else if (SecYear && Multimajortext.includes("N/A")) {
       document.getElementById("student-info").scrollIntoView();
-      swal("Choose your multiple major!", "If you transferred to 2nd year, multiple majors are required!", "error");
-      return false;
+      return swal("Choose your multiple major!", "If you transferred to 2nd year, multiple majors are required!", "error");
     } else if (LinkCross > 12) {
       document.getElementById("double_major_point").scrollIntoView();
-      swal("Maximum cross credits for 연계전공 are 12!", "", "error")
-      return false;
+      return swal("Maximum cross credits for 연계전공 are 12!", "", "error");
     } else if (PlanCross > 6) {
       document.getElementById("link_major_none").scrollIntoView();
-      swal("Maximum cross credits for 자기설계전공 are 6!", "", "error")
-      return false;
+      return swal("Maximum cross credits for 자기설계전공 are 6!", "", "error");
     } else {
       Result.basenece_tr(Majorstandard);
     }
   },
   basenece_tr: function(Majorstandard) {
-    var AdYear = Number(document.getElementById("ad-year").value);
-    var SecYear = document.getElementById("2ndyear").checked;
-    var Major = document.getElementById("Major_select");
-    var Majortext = Major.options[Major.selectedIndex].text;
-    var Multimajor = document.getElementById("MultiMajor_select");
-    var Multimajortext = Multimajor.options[Multimajor.selectedIndex].text;
-    var Liberal_point = Number(document.getElementById("liberal_input").value);
-    var BaseStandard = document.getElementById("base_standard").value;
-    var NeceStandard = document.getElementById("nece_standard").value;
-    var Basepoint = Number(document.getElementById("base_input").value);
-    var Necepoint = Number(document.getElementById("nece_input").value);
-    var Majorpoint = Number(document.getElementById("major_input").value);
-    var word = "👉Transfer year : " + AdYear;
+    const AdYear = Number(document.getElementById("ad-year").value);
+    const SecYear = document.getElementById("2ndyear").checked;
+    const Major = document.getElementById("Major_select");
+    const Majortext = Major.options[Major.selectedIndex].text;
+    const Multimajor = document.getElementById("MultiMajor_select");
+    const Multimajortext = Multimajor.options[Multimajor.selectedIndex].text;
+    const Liberal_point = Number(document.getElementById("liberal_input").value);
+    const BaseStandard = document.getElementById("base_standard").value;
+    const NeceStandard = document.getElementById("nece_standard").value;
+    const Basepoint = Number(document.getElementById("base_input").value);
+    const Necepoint = Number(document.getElementById("nece_input").value);
+    const Majorpoint = Number(document.getElementById("major_input").value);
+    const word = "👉Transfer year : " + AdYear;
 
     if (SecYear) {
       word += "- 2nd year transfer";
@@ -1410,18 +1380,16 @@ var Result = {
       word += "\n👉Major : " + Majortext + "\n👉Multiple Major : " + Multimajortext + "\n👉교양 : " + Liberal_point + " credits\n";
     }
 
-    var FusionOption = Number(document.getElementById("fusion-options").value);
+    const FusionOption = Number(document.getElementById("fusion-options").value);
     if (Multimajortext.includes("융합")) {
       if (FusionOption == 0) {
-        swal("Choose your 융합전공!", "", "error");
         document.getElementById("double_major_none").scrollIntoView();
-        return false;
+        return swal("Choose your 융합전공!", "", "error");
       }
     }
 
     if (Majorpoint < Necepoint) {
-      swal("Major credits include Required credits!", "", "error");
-      return false;
+      return swal("Major credits include Required credits!", "", "error");
     }
 
     if (Basepoint < BaseStandard) {
@@ -1442,9 +1410,9 @@ var Result = {
       word += "👉Major : Passed the requirement\n"
     }
 
-    var Doublecheck = document.getElementById("double_major_none").checked;
-    var DoubleStandard = document.getElementById("double_st").value;
-    var Doublepoint = Number(document.getElementById("double_major_point").value);
+    const Doublecheck = document.getElementById("double_major_none").checked;
+    const DoubleStandard = document.getElementById("double_st").value;
+    const Doublepoint = Number(document.getElementById("double_major_point").value);
     if (!Doublecheck) {
       if (Doublepoint < DoubleStandard) {
         word += "👉Double major : " + [DoubleStandard - Doublepoint] + " more credits required\n"
@@ -1453,10 +1421,10 @@ var Result = {
       }
     }
 
-    var Linkcheck = document.getElementById("link_major_none").checked;
-    var LinkStandard = document.getElementById("link_st").value;
-    var LinkCross = Number(document.getElementById("cross_point1").value);
-    var Linkpoint = Number(document.getElementById("link_major_point").value) + LinkCross;
+    const Linkcheck = document.getElementById("link_major_none").checked;
+    const LinkStandard = document.getElementById("link_st").value;
+    const LinkCross = Number(document.getElementById("cross_point1").value);
+    const Linkpoint = Number(document.getElementById("link_major_point").value) + LinkCross;
     if (!Linkcheck) {
       if (Linkpoint < LinkStandard) {
         word += "👉연계전공 : " + [LinkStandard - Linkpoint] + " more credits required\n"
@@ -1465,11 +1433,11 @@ var Result = {
       }
     }
 
-    var Fusioncheck = document.getElementById("fusion_major_none").checked;
-    var Fusion = document.getElementById("fusion-options");
-    var Fusiontext = Fusion.options[Fusion.selectedIndex].text;
-    var Fusionpoint = Number(document.getElementById("fusion_major_point").value) + Number(document.getElementById("cross_point2").value);
-    var FusionStandard = Number(document.getElementById("fusion_standard").value);
+    const Fusioncheck = document.getElementById("fusion_major_none").checked;
+    const Fusion = document.getElementById("fusion-options");
+    const Fusiontext = Fusion.options[Fusion.selectedIndex].text;
+    const Fusionpoint = Number(document.getElementById("fusion_major_point").value) + Number(document.getElementById("cross_point2").value);
+    const FusionStandard = Number(document.getElementById("fusion_standard").value);
     if (!Fusioncheck) {
       if (Fusionpoint < FusionStandard) {
         word += Fusiontext + "👉융합전공 : " + [FusionStandard - Fusionpoint] + " more credits required\n"
@@ -1478,9 +1446,9 @@ var Result = {
       }
     }
 
-    var Plancheck = document.getElementById("plan_major_none").checked;
-    var PlanStandard = document.getElementById("plan_st").value;
-    var Planpoint = Number(document.getElementById("plan_major_point").value) + Number(document.getElementById("cross_point3").value);
+    const Plancheck = document.getElementById("plan_major_none").checked;
+    const PlanStandard = document.getElementById("plan_st").value;
+    const Planpoint = Number(document.getElementById("plan_major_point").value) + Number(document.getElementById("cross_point3").value);
     if (!Plancheck) {
       if (Planpoint < PlanStandard) {
         word += "👉설계전공 : " + [PlanStandard - Planpoint] + " more credits required\n"
@@ -1489,9 +1457,9 @@ var Result = {
       }
     }
 
-    var Minorcheck = document.getElementById("minor_none").checked;
-    var MinorStandard = document.getElementById("minor_st").value;
-    var Minorpoint = Number(document.getElementById("minor_point").value);
+    const Minorcheck = document.getElementById("minor_none").checked;
+    const MinorStandard = document.getElementById("minor_st").value;
+    const Minorpoint = Number(document.getElementById("minor_point").value);
     if (!Minorcheck) {
       if (Minorpoint < MinorStandard) {
         word += "👉Minor : " + [MinorStandard - Minorpoint] + " more credits required\n"
@@ -1500,12 +1468,12 @@ var Result = {
       }
     }
 
-    var Freepoint = Number(document.getElementById("free_point").value);
+    const Freepoint = Number(document.getElementById("free_point").value);
     word += "👉Free choice : " + Freepoint + " credits\n"
 
-    var Teachingcheck = document.getElementById("teaching_none").checked;
-    var TeachingStandard = document.getElementById("teaching_st").value;
-    var Teachingpoint = Number(document.getElementById("teaching_point").value);
+    const Teachingcheck = document.getElementById("teaching_none").checked;
+    const TeachingStandard = document.getElementById("teaching_st").value;
+    const Teachingpoint = Number(document.getElementById("teaching_point").value);
     if (!Teachingcheck) {
       if (Teachingpoint < TeachingStandard)
         word += "👉Teaching : " + [TeachingStandard - Teachingpoint] + " more credits required\n"
@@ -1514,8 +1482,8 @@ var Result = {
       }
     }
 
-    var TotalPoint = Number(document.getElementById("the_total").value);
-    var TotalStandard = Number(document.getElementById("total_standard").value);
+    const TotalPoint = Number(document.getElementById("the_total").value);
+    const TotalStandard = Number(document.getElementById("total_standard").value);
     if (TotalPoint < TotalStandard) {
       word += "👉Total credits : At least " + [TotalStandard - TotalPoint] + " more credits required"
     } else {
