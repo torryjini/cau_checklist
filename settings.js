@@ -29,12 +29,12 @@ function yearchanges(fr) {
 //version Modal
 function versioninfo() {
   word = "Version"
-  var content = "Updated in Feb. 2021"
+  const content = "Updated in Feb. 2021"
   swal(word, content, "info");
 }
 
 //Get the button "top" 버튼 관련
-var mybutton = document.getElementById("TopBtn");
+const mybutton = document.getElementById("TopBtn");
 
 // When the user scrolls down 10px from the top of the document, show the button
 window.onscroll = function() {
@@ -91,7 +91,7 @@ function includeHTML() {
   }
 }
 
-var Reset = {
+const Reset = {
   form: function(id) {
     document.getElementById(id).reset();
   },
@@ -126,10 +126,10 @@ var Reset = {
   }
 }
 
-var Color = {
+const Color = {
   number: function(st, number) {
-    var standard = Number(document.getElementById(st).value);
-    var point = Number(document.getElementById(number).value);
+    const standard = Number(document.getElementById(st).value);
+    const point = Number(document.getElementById(number).value);
     if (point >= standard) {
       document.getElementById(number).style.color = "blue";
     } else {
@@ -137,7 +137,7 @@ var Color = {
     }
   },
   gpa: function() {
-    var point = Number(document.getElementById("average").value);
+    const point = Number(document.getElementById("average").value);
     if (point >= 2) {
       document.getElementById("average").style.color = "blue";
     } else {
@@ -146,18 +146,18 @@ var Color = {
   }
 }
 
-var Liberal = {
+const Liberal = {
   standardsum: function() {
-    var AdYear = Number(document.getElementById("ad-year").value);
-    var College = document.getElementById("college_select").value;
-    var elec_st = Number(document.getElementById("elective_st").value);
-    var kor_st = Number(document.getElementById("com_kor_st").value);
-    var eng_st = Number(document.getElementById("com_eng_st").value);
-    var etc_st = Number(document.getElementById("com_etc_st").value);
-    var core_st = Number(document.getElementById("core_st").value);
-    var MACH1_st = Number(document.getElementById("mach1_st").value);
-    var MACH2_st = Number(document.getElementById("mach2_st").value);
-    var Engin = ["engineering", "ict", "ict1617", "ict18", "software"]
+    const AdYear = Number(document.getElementById("ad-year").value);
+    const College = document.getElementById("college_select").value;
+    const elec_st = Number(document.getElementById("elective_st").value);
+    const kor_st = Number(document.getElementById("com_kor_st").value);
+    const eng_st = Number(document.getElementById("com_eng_st").value);
+    const etc_st = Number(document.getElementById("com_etc_st").value);
+    const core_st = Number(document.getElementById("core_st").value);
+    const MACH1_st = Number(document.getElementById("mach1_st").value);
+    const MACH2_st = Number(document.getElementById("mach2_st").value);
+    const Engin = ["engineering", "ict", "ict1617", "ict18", "software"]
 
     if (AdYear >= 2015 && AdYear <= 2018 && Engin.includes(College)) {
       document.getElementById("total_lib_st").value = elec_st + kor_st + eng_st + etc_st + core_st + MACH1_st + MACH2_st;
@@ -166,9 +166,9 @@ var Liberal = {
     }
   },
   etcchange: function() {
-    var AdYear = Number(document.getElementById("ad-year").value);
-    var College = document.getElementById("college_select").value;
-    var Engin = ["engineering", "ict", "ict1617", "ict18", "software"]
+    const AdYear = Number(document.getElementById("ad-year").value);
+    const College = document.getElementById("college_select").value;
+    const Engin = ["engineering", "ict", "ict1617", "ict18", "software"]
     if (AdYear >= 2016 && AdYear <= 2018 && Engin.includes(College)) {
       document.getElementById("com_etc_st").value = 8;
       document.getElementById("etc_max").value = 8;
@@ -180,9 +180,9 @@ var Liberal = {
     }
   },
   mach: function() {
-    var AdYear = document.getElementById("ad-year").value;
-    var College = document.getElementById("college_select").value;
-    var ICT = ["ict", "ict1617", "ict18"]
+    const AdYear = document.getElementById("ad-year").value;
+    const College = document.getElementById("college_select").value;
+    const ICT = ["ict", "ict1617", "ict18"]
 
     if (AdYear >= 2015 && AdYear <= 2018 && ICT.includes(College)) {
       document.getElementById("mach1_table").style.display = "";
@@ -213,16 +213,16 @@ var Liberal = {
     }
   },
   sum: function() {
-    var AdYear = Number(document.getElementById("ad-year").value);
-    var College = document.getElementById("college_select").value;
-    var elective_point = Number(document.getElementById("elective_liberal").value);
-    var common_kor_point = Number(document.getElementById("common_kor").value);
-    var common_eng_point = Number(document.getElementById("common_eng").value);
-    var common_etc_point = Number(document.getElementById("common_etc").value);
-    var core_total_point = Number(document.getElementById("core_total").value);
-    var MACH1 = Number(document.getElementById("mach1").value);
-    var MACH2 = Number(document.getElementById("mach2").value);
-    var Engin = ["engineering", "ict", "ict1617", "ict18", "software"]
+    const AdYear = Number(document.getElementById("ad-year").value);
+    const College = document.getElementById("college_select").value;
+    const elective_point = Number(document.getElementById("elective_liberal").value);
+    const common_kor_point = Number(document.getElementById("common_kor").value);
+    const common_eng_point = Number(document.getElementById("common_eng").value);
+    const common_etc_point = Number(document.getElementById("common_etc").value);
+    const core_total_point = Number(document.getElementById("core_total").value);
+    const MACH1 = Number(document.getElementById("mach1").value);
+    const MACH2 = Number(document.getElementById("mach2").value);
+    const Engin = ["engineering", "ict", "ict1617", "ict18", "software"]
 
     if (AdYear >= 2015 && AdYear <= 2018 && Engin.includes(College)) {
       document.getElementById("liberal_total").value = elective_point + common_kor_point + common_eng_point + common_etc_point + core_total_point + MACH1 + MACH2;
@@ -232,9 +232,9 @@ var Liberal = {
   }
 }
 
-var Change = {
+const Change = {
   year1214: function() {
-    var fr = document.getElementById("ad-year").value;
+    const fr = document.getElementById("ad-year").value;
     if (fr == 2012) {
       num = new Array("--", "인문대학", "사회과학대학", "사범대학", "자연과학대학", "공과대학", "경영경제대학", "예술대학", "체육대학");
       vnum = new Array("none", "humanity", "society", "edu", "natural", "engineering12", "bne", "arts", "sport");
@@ -258,7 +258,7 @@ var Change = {
     }
   },
   year16: function() {
-    var fr = document.getElementById("ad-year").value;
+    const fr = document.getElementById("ad-year").value;
     if (fr == 2016 || fr == 2017) {
       num = new Array("--", "인문대학", "사회과학대학", "사범대학", "자연과학대학", "공과대학", "창의ICT공과대학", "경영경제대학", "예술대학", "생명공학대학", "체육대학");
       vnum = new Array("none", "humanity", "society", "edu", "natural", "engineering", "ict1617", "bne", "arts", "biotech", "sport");
@@ -282,7 +282,7 @@ var Change = {
     }
   },
   tr_year: function() {
-    var fr = document.getElementById("ad-year").value;
+    const fr = document.getElementById("ad-year").value;
     if (fr >= 2017) {
       num = new Array("--", "인문대학", "사회과학대학", "사범대학", "자연과학대학", "공과대학", "창의ICT공과대학", "경영경제대학", "예술대학", "생명공학대학", "체육대학");
       vnum = new Array("none", "humanity", "society", "edu", "natural", "engineering", "ict", "bne", "arts", "biotech", "sport");
@@ -300,8 +300,8 @@ var Change = {
     }
   },
   college1214: function() {
-    var AdYear = document.getElementById("ad-year").value;
-    var fr = document.getElementById("college_select").value;
+    const AdYear = document.getElementById("ad-year").value;
+    const fr = document.getElementById("college_select").value;
     if (fr == "humanity") {
       num = new Array("--", "국어국문학과", "영어영문학과", "유럽문화_독일어문학", "유럽문화_프랑스어문학", "유럽문화_러시아어문학", "아시아문화_일본어문학", "아시아문화_중국어문학", "철학과", "역사학과");
       vnum = new Array("none", "korean", "english", "german", "france", "russia", "japan", "china", "philosophy", "history");
@@ -353,7 +353,7 @@ var Change = {
     }
   },
   college15: function() {
-    var fr = document.getElementById("college_select").value;
+    const fr = document.getElementById("college_select").value;
     if (fr == "humanity") {
       num = new Array("--", "국어국문학과", "영어영문학과", "유럽문화_독일어문학", "유럽문화_프랑스어문학", "유럽문화_러시아어문학", "아시아문화_일본어문학", "아시아문화_중국어문학", "철학과", "역사학과");
       vnum = new Array("none", "korean", "english", "german", "france", "russia", "japan", "china", "philosophy", "history");
@@ -399,8 +399,8 @@ var Change = {
     }
   },
   college16: function() {
-    var AdYear = Number(document.getElementById("ad-year").value);
-    var fr = document.getElementById("college_select").value;
+    const AdYear = Number(document.getElementById("ad-year").value);
+    const fr = document.getElementById("college_select").value;
     if (fr == "humanity") {
       num = new Array("--", "국어국문학과", "영어영문학과", "유럽문화_독일어문학", "유럽문화_프랑스어문학", "유럽문화_러시아어문학", "아시아문화_일본어문학", "아시아문화_중국어문학", "철학과", "역사학과");
       vnum = new Array("none", "korean", "english", "german", "france", "russia", "japan", "china", "philosophy", "history");
@@ -461,7 +461,7 @@ var Change = {
     }
   },
   tr_college: function() {
-    var fr = document.getElementById("college_select").value;
+    const fr = document.getElementById("college_select").value;
     if (fr == "humanity") {
       num = new Array("--", "국어국문학과", "영어영문학과", "유럽문화_독일어문학", "유럽문화_프랑스어문학", "유럽문화_러시아어문학", "아시아문화_일본어문학", "아시아문화_중국어문학", "철학과", "역사학과");
       vnum = new Array("none", "korean", "english", "german", "france", "russia", "japan", "china", "philosophy", "history");
@@ -507,12 +507,12 @@ var Change = {
     }
   },
   multimajor: function() {
-    var major = document.getElementById("Major_select").value;
-    var Edu = ["education", "ece", "englishedu", "pe"]
-    var Archi = ["archi"]
-    var ICT = ["eee", "ie"]
-    var Soft = ["computer", "soft"]
-    var ArtSport = ["theatre", "film", "tfdesign", "creativewriting", "photo", "dance", "piano", "vocal", "compose", "orchestra",
+    const major = document.getElementById("Major_select").value;
+    const Edu = ["education", "ece", "englishedu", "pe"]
+    const Archi = ["archi"]
+    const ICT = ["eee", "ie"]
+    const Soft = ["computer", "soft"]
+    const ArtSport = ["theatre", "film", "tfdesign", "creativewriting", "photo", "dance", "piano", "vocal", "compose", "orchestra",
       "kopaint", "fineart", "sculpture", "craftart", "vd", "id", "indesign", "fashion", "koreanmusic", "sportscience"
     ]
     if (Edu.includes(major)) {
@@ -550,12 +550,12 @@ var Change = {
     }
   },
   multi_tr_kor: function() {
-    var SecYear = document.getElementById("2ndyear").checked;
-    var major = document.getElementById("Major_select").value;
-    var Edu = ["education", "ece", "englishedu", "pe"]
-    var Archi = ["archi"]
-    var ICT = ["eee", "ie"]
-    var ArtSport = ["theatre", "film", "tfdesign", "creativewriting", "photo", "dance", "piano", "vocal", "compose", "orchestra",
+    const SecYear = document.getElementById("2ndyear").checked;
+    const major = document.getElementById("Major_select").value;
+    const Edu = ["education", "ece", "englishedu", "pe"]
+    const Archi = ["archi"]
+    const ICT = ["eee", "ie"]
+    const ArtSport = ["theatre", "film", "tfdesign", "creativewriting", "photo", "dance", "piano", "vocal", "compose", "orchestra",
       "kopaint", "fineart", "sculpture", "craftart", "vd", "id", "indesign", "fashion", "sportscience"
     ]
     if (Edu.includes(major)) {
@@ -606,12 +606,12 @@ var Change = {
     }
   },
   multi_tr_eng: function() {
-    var SecYear = document.getElementById("2ndyear").checked;
-    var major = document.getElementById("Major_select").value;
-    var Edu = ["education", "ece", "englishedu", "pe"]
-    var Archi = ["archi"]
-    var ICT = ["eee", "ie"]
-    var ArtSport = ["theatre", "film", "tfdesign", "creativewriting", "photo", "dance", "piano", "vocal", "compose", "orchestra",
+    const SecYear = document.getElementById("2ndyear").checked;
+    const major = document.getElementById("Major_select").value;
+    const Edu = ["education", "ece", "englishedu", "pe"]
+    const Archi = ["archi"]
+    const ICT = ["eee", "ie"]
+    const ArtSport = ["theatre", "film", "tfdesign", "creativewriting", "photo", "dance", "piano", "vocal", "compose", "orchestra",
       "kopaint", "fineart", "sculpture", "craftart", "vd", "id", "indesign", "fashion", "sportscience"
     ]
     if (Edu.includes(major)) {
@@ -663,12 +663,12 @@ var Change = {
     }
   },
   multi_tr_chi: function() {
-    var SecYear = document.getElementById("2ndyear").checked;
-    var major = document.getElementById("Major_select").value;
-    var Edu = ["education", "ece", "englishedu", "pe"]
-    var Archi = ["archi"]
-    var ICT = ["eee", "ie"]
-    var ArtSport = ["theatre", "film", "tfdesign", "creativewriting", "photo", "dance", "piano", "vocal", "compose", "orchestra",
+    const SecYear = document.getElementById("2ndyear").checked;
+    const major = document.getElementById("Major_select").value;
+    const Edu = ["education", "ece", "englishedu", "pe"]
+    const Archi = ["archi"]
+    const ICT = ["eee", "ie"]
+    const ArtSport = ["theatre", "film", "tfdesign", "creativewriting", "photo", "dance", "piano", "vocal", "compose", "orchestra",
       "kopaint", "fineart", "sculpture", "craftart", "vd", "id", "indesign", "fashion", "sportscience"
     ]
     if (Edu.includes(major)) {
@@ -721,7 +721,7 @@ var Change = {
     }
   },
   major_st_teaching: function() {
-    var MajorTeachCheck = document.getElementById("major_teach").checked;
+    const MajorTeachCheck = document.getElementById("major_teach").checked;
 
     if (MajorTeachCheck) {
       document.getElementById("major_standard").value = 50;
@@ -730,7 +730,7 @@ var Change = {
     }
   },
   double_st_teaching: function() {
-    var DoubleTeachCheck = document.getElementById("double-teaching").checked;
+    const DoubleTeachCheck = document.getElementById("double-teaching").checked;
 
     if (DoubleTeachCheck) {
       document.getElementById("double_st").value = 50;
@@ -740,9 +740,9 @@ var Change = {
   }
 }
 
-var Check = {
+const Check = {
   none: function(none, point) {
-    var none_checked = document.getElementById(none).checked;
+    const none_checked = document.getElementById(none).checked;
     if (!none_checked) {
       document.getElementById(point).readOnly = false;
     } else {
@@ -751,7 +751,7 @@ var Check = {
     }
   },
   multinone: function(none, point, cross) {
-    var none_checked = document.getElementById(none).checked;
+    const none_checked = document.getElementById(none).checked;
     if (!none_checked) {
       document.getElementById(point).readOnly = false;
       document.getElementById(cross).readOnly = false;
@@ -763,8 +763,8 @@ var Check = {
     }
   },
   fusionstandard: function() {
-    var fusion_min = document.getElementById("fusion-options").value;
-    var crosspoint = document.getElementById("cross_point2");
+    const fusion_min = document.getElementById("fusion-options").value;
+    const crosspoint = document.getElementById("cross_point2");
     if (fusion_min == 45) {
       document.getElementById("fusion_standard").value = 45;
       crosspoint.setAttribute("max", 15);
@@ -774,12 +774,12 @@ var Check = {
     }
   },
   teach: function() { //교직과정 설치 학과 구분
-    var teachingmajor = ["education", "ece", "englishedu", "pe",
+    const teachingmajor = ["education", "ece", "englishedu", "pe",
       "korean", "english", "german", "russia", "japan", "china", "philosophy", "history",
       "psyche", "lis", "physics", "chemistry", "bio-science", "math", "foodnutri", "theatre", "film",
       "photo", "dance", "kopaint", "fineart", "craftart", "koreanmusic"
     ]
-    var major = document.getElementById("Major_select").value;
+    const major = document.getElementById("Major_select").value;
     if (teachingmajor.includes(major)) {
       document.getElementById("teaching_point").readOnly = false;
       document.getElementById("teaching_none").checked = false;
@@ -792,13 +792,13 @@ var Check = {
     }
   },
   multi_teach: function() {
-    var teachingmajor = ["education", "ece", "englishedu", "pe",
+    const teachingmajor = ["education", "ece", "englishedu", "pe",
       "korean", "english", "german", "russia", "japan", "china", "philosophy", "history",
       "psyche", "lis", "physics", "chemistry", "bio-science", "math", "foodnutri", "theatre", "film",
       "photo", "dance", "kopaint", "fineart", "craftart", "koreanmusic"
     ]
-    var major = document.getElementById("Major_select").value;
-    var Multimajor_standard = Number(document.getElementById("MultiMajor_select").value);
+    const major = document.getElementById("Major_select").value;
+    const Multimajor_standard = Number(document.getElementById("MultiMajor_select").value);
     if (Multimajor_standard == 45 && teachingmajor.includes(major)) {
       document.getElementById("maj_tea_check").style.display = "";
     } else {
@@ -807,12 +807,12 @@ var Check = {
     }
   },
   double_teach_show: function() {
-    var teachingmajor = ["education", "ece", "englishedu", "pe",
+    const teachingmajor = ["education", "ece", "englishedu", "pe",
       "korean", "english", "german", "russia", "japan", "china", "philosophy", "history",
       "psyche", "lis", "physics", "chemistry", "bio-science", "math", "foodnutri", "theatre", "film",
       "photo", "dance", "kopaint", "fineart", "craftart", "koreanmusic"
     ]
-    var major = document.getElementById("Major_select").value;
+    const major = document.getElementById("Major_select").value;
     if (teachingmajor.includes(major)) {
       document.getElementById("dou_tea_check").style.display = "";
     } else {
@@ -829,12 +829,12 @@ var Check = {
   }
 }
 
-var Standard = {
+const Standard = {
   major: function() {
-    var Multimajor_standard = Number(document.getElementById("MultiMajor_select").value);
+    const Multimajor_standard = Number(document.getElementById("MultiMajor_select").value);
     document.getElementById("major_standard").value = Multimajor_standard;
-    var Multimajor = document.getElementById("MultiMajor_select");
-    var Multimajortext = Multimajor.options[Multimajor.selectedIndex].text;
+    const Multimajor = document.getElementById("MultiMajor_select");
+    const Multimajortext = Multimajor.options[Multimajor.selectedIndex].text;
 
     if (Multimajortext.includes("심화")) {
       document.getElementById("double_major_none").checked = true;
@@ -987,10 +987,10 @@ var Standard = {
     }
   },
   tr_major: function() {
-    var Multimajor_standard = Number(document.getElementById("MultiMajor_select").value);
+    const Multimajor_standard = Number(document.getElementById("MultiMajor_select").value);
     document.getElementById("major_standard").value = Multimajor_standard;
-    var Multimajor = document.getElementById("MultiMajor_select");
-    var Multimajortext = Multimajor.options[Multimajor.selectedIndex].text;
+    const Multimajor = document.getElementById("MultiMajor_select");
+    const Multimajortext = Multimajor.options[Multimajor.selectedIndex].text;
 
     if (Multimajortext.includes("심화") || Multimajortext.includes("해당없음") || Multimajortext.includes("N/A")) {
       document.getElementById("double_major_none").checked = true;
@@ -1123,11 +1123,11 @@ var Standard = {
     }
   },
   BaseNece: function() {
-    var Major = document.getElementById("Major_select").value;
-    var AdYear = Number(document.getElementById("ad-year").value);
-    var i = AdYear - 2012;
-    var Baseselect = Base[Major];
-    var Neceselect = Nece[Major];
+    const Major = document.getElementById("Major_select").value;
+    const AdYear = Number(document.getElementById("ad-year").value);
+    const i = AdYear - 2012;
+    const Baseselect = Base[Major];
+    const Neceselect = Nece[Major];
     if (Major == "none") {
       document.getElementById("base_standard").value = "-";
       document.getElementById("nece_standard").value = "-";
@@ -1137,12 +1137,12 @@ var Standard = {
     }
   },
   BaseNece_tr: function() {
-    var Major = document.getElementById("Major_select").value;
-    var AdYear = Number(document.getElementById("ad-year").value);
-    var SecYear = document.getElementById("2ndyear").checked;
-    var i = AdYear - 2017;
-    var Baseselect = Base_tr[Major];
-    var Neceselect = Nece_tr[Major];
+    const Major = document.getElementById("Major_select").value;
+    const AdYear = Number(document.getElementById("ad-year").value);
+    const SecYear = document.getElementById("2ndyear").checked;
+    const i = AdYear - 2017;
+    const Baseselect = Base_tr[Major];
+    const Neceselect = Nece_tr[Major];
     if (Major == "none") {
       document.getElementById("base_standard").value = "-";
       document.getElementById("nece_standard").value = "-";
@@ -1159,18 +1159,18 @@ var Standard = {
   }
 }
 
-var Total = {
+const Total = {
   sum: function() {
-    var LiberalTotal = Number(document.getElementById("liberal_total").value);
-    var Basepoint = Number(document.getElementById("base_input").value);
-    var Majorpoint = Number(document.getElementById("major_input").value);
-    var Doublepoint = Number(document.getElementById("double_major_point").value);
-    var Linkpoint = Number(document.getElementById("link_major_point").value);
-    var Fusionpoint = Number(document.getElementById("fusion_major_point").value);
-    var Planpoint = Number(document.getElementById("plan_major_point").value);
-    var Minorpoint = Number(document.getElementById("minor_point").value);
-    var Freepoint = Number(document.getElementById("free_point").value);
-    var Teachpoint = Number(document.getElementById("teaching_point").value);
+    const LiberalTotal = Number(document.getElementById("liberal_total").value);
+    const Basepoint = Number(document.getElementById("base_input").value);
+    const Majorpoint = Number(document.getElementById("major_input").value);
+    const Doublepoint = Number(document.getElementById("double_major_point").value);
+    const Linkpoint = Number(document.getElementById("link_major_point").value);
+    const Fusionpoint = Number(document.getElementById("fusion_major_point").value);
+    const Planpoint = Number(document.getElementById("plan_major_point").value);
+    const Minorpoint = Number(document.getElementById("minor_point").value);
+    const Freepoint = Number(document.getElementById("free_point").value);
+    const Teachpoint = Number(document.getElementById("teaching_point").value);
     if (LiberalTotal > 45) {
       document.getElementById("the_total").value = 45 + Basepoint + Majorpoint + Doublepoint + Linkpoint + Fusionpoint + Planpoint + Minorpoint + Freepoint + Teachpoint;
     } else {
@@ -1178,22 +1178,22 @@ var Total = {
     }
   },
   tr_sum: function() {
-    var Liberal_point = Number(document.getElementById("liberal_input").value);
-    var Basepoint = Number(document.getElementById("base_input").value);
-    var Majorpoint = Number(document.getElementById("major_input").value);
-    var Doublepoint = Number(document.getElementById("double_major_point").value);
-    var Linkpoint = Number(document.getElementById("link_major_point").value);
-    var Fusionpoint = Number(document.getElementById("fusion_major_point").value);
-    var Planpoint = Number(document.getElementById("plan_major_point").value);
-    var Minorpoint = Number(document.getElementById("minor_point").value);
-    var Freepoint = Number(document.getElementById("free_point").value);
-    var Teachpoint = Number(document.getElementById("teaching_point").value);
+    const Liberal_point = Number(document.getElementById("liberal_input").value);
+    const Basepoint = Number(document.getElementById("base_input").value);
+    const Majorpoint = Number(document.getElementById("major_input").value);
+    const Doublepoint = Number(document.getElementById("double_major_point").value);
+    const Linkpoint = Number(document.getElementById("link_major_point").value);
+    const Fusionpoint = Number(document.getElementById("fusion_major_point").value);
+    const Planpoint = Number(document.getElementById("plan_major_point").value);
+    const Minorpoint = Number(document.getElementById("minor_point").value);
+    const Freepoint = Number(document.getElementById("free_point").value);
+    const Teachpoint = Number(document.getElementById("teaching_point").value);
 
     document.getElementById("the_total").value = Liberal_point + Basepoint + Majorpoint + Doublepoint + Linkpoint + Fusionpoint + Planpoint + Minorpoint + Freepoint + Teachpoint;
   }
 }
 
-var Office = {
+const Office = {
   //인문대학
   "korean": "국어국문학과",
   "english": "영어영문학과",
@@ -1283,7 +1283,7 @@ var Office = {
   "sportscience": "스포츠과학부"
 };
 
-var PhoneNumber = {
+const PhoneNumber = {
   //인문대학
   "korean": "02-820-5084",
   "english": "02-820-5095",
@@ -1374,7 +1374,7 @@ var PhoneNumber = {
   "sportscience": "031-670-4525",
 
   call: function() {
-    var Major = document.getElementById("Major_select").value;
+    const Major = document.getElementById("Major_select").value;
     if (Major == "none") {
       document.getElementById("dept").value = "-";
       document.getElementById("phone").value = "-";
@@ -1385,8 +1385,8 @@ var PhoneNumber = {
     }
   },
   DavinciCall: function() {
-    var Major = document.getElementById("Major_select").value;
-    var Ansung = ["creativewriting", "photo", "dance", "kopaint", "fineart", "sculpture",
+    const Major = document.getElementById("Major_select").value;
+    const Ansung = ["creativewriting", "photo", "dance", "kopaint", "fineart", "sculpture",
     "craftart", "id", "vd", "indesign", "fashion", "compose",
     "vocal", "piano", "orchestra", "koreanmusic", "computerart",
     "animal", "plantbio", "foodscience", "foodnutri", "systembio", "sportscience"]
@@ -1401,7 +1401,7 @@ var PhoneNumber = {
   }
 };
 
-var Base = { //전공기초 2012년부터
+const Base = { //전공기초 2012년부터
   //인문대학
   "korean": ["10", "10", "10", "10", "10", "10", "10", "10", "10", "10"],
   "english": ["12", "12", "12", "12", "12", "12", "12", "12", "12", "12"],
@@ -1490,7 +1490,7 @@ var Base = { //전공기초 2012년부터
   "sportscience": ["14", "14", "14", "14", "14", "14", "14", "14", "14", "14"]
 }
 
-var Nece = { //전공필수 2012년부터
+const Nece = { //전공필수 2012년부터
   //인문대학
   "korean": ["12", "12", "12", "12", "12", "12", "12", "12", "12", "12"],
   "english": ["9", "9", "9", "9", "9", "9", "9", "9", "9", "9"],
@@ -1578,7 +1578,7 @@ var Nece = { //전공필수 2012년부터
   "sportscience": ["18", "18", "18", "18", "18", "18", "18", "18", "18", "18"]
 }
 
-var Base_tr = { // 전공기초: [2017, 2018, 2019, 2020, 2021]
+const Base_tr = { // 전공기초: [2017, 2018, 2019, 2020, 2021]
   //인문대학
   "korean": ["10", "10", "10", "10", "10"],
   "english": ["12", "12", "12", "12", "12"],
@@ -1659,7 +1659,7 @@ var Base_tr = { // 전공기초: [2017, 2018, 2019, 2020, 2021]
   "sportscience": ["0", "0", "0", "0", "0"]
 };
 
-var Nece_tr = { //전공필수: [2017, 2018, 2019, 2020, 2021]
+const Nece_tr = { //전공필수: [2017, 2018, 2019, 2020, 2021]
   //인문대학
   "korean": ["12", "12", "12", "12", "12"],
   "english": ["9", "9", "9", "9", "9"],
