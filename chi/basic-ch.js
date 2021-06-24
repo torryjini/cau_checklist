@@ -1,6 +1,6 @@
 const Modal = {
   lib12to14: function() {
-    const word = "教养领域进修要求"
+    let word = "教养领域进修要求"
     const content = "👉共同教养\n- 국어 : 글쓰기\n- 英语 : English1(Communication in English)\nEnglish2(English fo Professional Track)" +
       "\n- 其他 : 논리와사고(ACT)/회계와사회/독서와토론(창의와소통)/한국사\n" +
       "进修회계학원론(회계원리)时, 免'회계와사회'" +
@@ -9,7 +9,7 @@ const Modal = {
     swal(word, content, "info");
   },
   lib2015: function() {
-    const word = "教养领域进修要求"
+    let word = "教养领域进修要求"
     const content = "👉共同教养\n- 국어 : 글쓰기\n- 英语 : Communication in English\n- 其他 : 창의와소통/회계와사회/ACT/한국사\n" +
       "进修회계학원론(회계원리)时, 免'회계와사회'" +
       "\n👉核心教养 : 4种领域中各领域需要修一个以上课程 \n" +
@@ -20,7 +20,7 @@ const Modal = {
     const AdYear = Number(document.getElementById("ad-year").value);
     const College = document.getElementById("college_select").value;
     const Engin = ["engineering", "ict", "software", "artech"]
-    const word = "教养领域进修要求"
+    let word = "教养领域进修要求"
     const content1618 = "👉共同教养\n- 국어 : 글쓰기\n- 英语 : Communication in English\n- 其他 : 창의와소통/ACT/한국사/앙트레프레너십시대의회계(회계와사회)" +
       "\n进修회계학원론(회계원리)时, 免'앙트레프레너십시대의회계'" +
       "\n👉核心教养 : 도전 / 창의 / 융합 / 신뢰 / 소통\n" +
@@ -45,7 +45,7 @@ const Modal = {
     }
   },
   major12to15: function() {
-    const word = "专业领域进修要求"
+    let word = "专业领域进修要求"
     const content = "👉专业 : 请参考各专业的具体要求\n" +
       "👉双专业 : 请参考双专业学科的要求\n双专业的专业基础认证为自由选择" +
       "\n👉联系/融合/设计专业(연계/융합/설계전공) : 请参考各部分的教课课程表确认必修课程！" +
@@ -55,7 +55,7 @@ const Modal = {
     swal(word, content, "info");
   },
   major2016: function() {
-    const word = "专业领域进修要求"
+    let word = "专业领域进修要求"
     const content = "👉专业 : 请参考各学科的具体要求。\n" +
       "👉双专业 : 请参考双专业学科的要求\n 双专业的专业基础认证为自由选择" +
       "\n👉联系/融合/设计专业(연계/융합/설계전공) : 请参考各部分的教课课程表确认必修课程!" +
@@ -66,7 +66,7 @@ const Modal = {
     swal(word, content, "info");
   },
   major_tr: function() {
-    const word = "学分进修基准"
+    let word = "学分进修基准"
     const content = "👉教养 : 不需要进修\n" +
       "👉专业 : 请参考各专业的具体要求\n" +
       "👉多专业 : 只针对2年级插班生" +
@@ -91,7 +91,7 @@ const Result = {
     const account_check_SF = document.getElementById("account_check").checked;
     const core_total_point = Number(document.getElementById("core_total").value);
     const liberal_total_point = Number(document.getElementById("liberal_total").value);
-    const word = "👉入学年度 : " + AdYear + "年\n";
+    let word = "👉入学年度 : " + AdYear + "年\n";
 
     if (AdYear < 1000) {
       document.getElementById("student-info").scrollIntoView();
@@ -185,7 +185,7 @@ const Result = {
     const MACH1_st = Number(document.getElementById("mach1_st").value);
     const MACH2_st = Number(document.getElementById("mach2_st").value);
     const liberal_total_point = Number(document.getElementById("liberal_total").value);
-    const word = "👉入学年度 : " + AdYear + "年\n";
+    let word = "👉入学年度 : " + AdYear + "年\n";
 
     if (College == "none") {
       document.getElementById("student-info").scrollIntoView();
@@ -301,7 +301,7 @@ const Result = {
     const MACH1_st = Number(document.getElementById("mach1_st").value);
     const MACH2_st = Number(document.getElementById("mach2_st").value);
     const liberal_total_point = Number(document.getElementById("liberal_total").value);
-    const word = "👉入学年度 : " + AdYear + "年\n";
+    let word = "👉入学年度 : " + AdYear + "年\n";
 
     if (AdYear < 1000) {
       document.getElementById("student-info").scrollIntoView();
@@ -444,7 +444,7 @@ const Result = {
       return swal("平均学分4.5满分!", "", "error");
     }
 
-    const word = "👉졸업인정제\n";
+    let word = "👉졸업인정제\n";
 
     if (!English_result) {
       word += "- 영어 : 未通过\n"
@@ -557,7 +557,7 @@ const Result = {
     const Basepoint = Number(document.getElementById("base_input").value);
     const Necepoint = Number(document.getElementById("nece_input").value);
     const Majorpoint = Number(document.getElementById("major_input").value);
-    const word = "👉入学年度 : " + AdYear + "年" + "\n👉主专业 : " + Majortext + "\n👉多专业 : " + Multimajortext + "\n";
+    let word = "👉入学年度 : " + AdYear + "年" + "\n👉主专业 : " + Majortext + "\n👉多专业 : " + Multimajortext + "\n";
 
     const FusionOption = Number(document.getElementById("fusion-options").value);
     if (Multimajortext.includes("융합")) {
@@ -802,7 +802,7 @@ const Result = {
     const Basepoint = Number(document.getElementById("base_input").value);
     const Necepoint = Number(document.getElementById("nece_input").value);
     const Majorpoint = Number(document.getElementById("major_input").value);
-    const word = "👉入学年度 : " + AdYear + "年";
+    let word = "👉入学年度 : " + AdYear + "年";
 
     if (Majortext.includes("트랙")) {
       word += "\n👉主专业 : 공공인재학부" + Majortext + "\n👉多专业 : " + Multimajortext + "\n";
@@ -1051,7 +1051,7 @@ const Result = {
     const Basepoint = Number(document.getElementById("base_input").value);
     const Necepoint = Number(document.getElementById("nece_input").value);
     const Majorpoint = Number(document.getElementById("major_input").value);
-    const word = "👉入学年度 : " + AdYear + "年";
+    let word = "👉入学年度 : " + AdYear + "年";
 
     if (Majortext.includes("트랙")) {
       word += "\n👉主专业 : 공공인재학부" + Majortext + "\n👉多专业 : " + Multimajortext + "\n";
@@ -1364,7 +1364,7 @@ const Result = {
     const Basepoint = Number(document.getElementById("base_input").value);
     const Necepoint = Number(document.getElementById("nece_input").value);
     const Majorpoint = Number(document.getElementById("major_input").value);
-    const word = "👉插班年度 : " + AdYear + "年";
+    let word = "👉插班年度 : " + AdYear + "年";
 
     if (SecYear) {
       word += "- 二年级插班";
