@@ -6,7 +6,7 @@ const Modal = {
       "进修회계학원론(회계원리)时, 免'회계와사회'" +
       "\n👉核心教养 : 受讲9学分以上。" +
       "\n👉选择教养 : 自律进修\n" + "教养最多只认证45学分!"
-    swal(word, content, "info");
+    return swal(word, content, "info");
   },
   lib2015: function() {
     let word = "教养领域进修要求"
@@ -14,7 +14,7 @@ const Modal = {
       "进修회계학원론(회계원리)时, 免'회계와사회'" +
       "\n👉核心教养 : 4种领域中各领域需要修一个以上课程 \n" +
       "👉选择教养 : 自律进修\n" + "👉教养学分最多可以认证45学分!"
-    swal(word, content, "info");
+    return swal(word, content, "info");
   },
   lib2016: function() {
     const AdYear = Number(document.getElementById("ad-year").value);
@@ -36,12 +36,12 @@ const Modal = {
 
     if (Engin.includes(College)) {
       if (AdYear >= 2016 && AdYear <= 2018) {
-        swal(word, content1618, "info");
+        return swal(word, content1618, "info");
       } else {
-        swal(word, contenteng, "info");
+        return swal(word, contenteng, "info");
       }
     } else {
-      swal(word, content, "info");
+      return swal(word, content, "info");
     }
   },
   major12to15: function() {
@@ -52,7 +52,7 @@ const Modal = {
       "\n👉副专业 : 需要包括副专业的专业必修6学分以上" +
       "\n👉教职 : 确认教职过程进修情况请联系\n(Tel.02-820-5080)" +
       "\n👉总进修学分 : 132学分以上\n(教养最多可以认证45学分)"
-    swal(word, content, "info");
+    return swal(word, content, "info");
   },
   major2016: function() {
     let word = "专业领域进修要求"
@@ -63,7 +63,7 @@ const Modal = {
       "\n👉自由选择 : 必修修完CAU세미나1学分" +
       "\n👉教职 : 确认教职过程进修情况请联系\n(Tel.02-820-5080)" +
       "\n👉总进修学分 : 132 学分以上\n(教养最多可以认证45学分)"
-    swal(word, content, "info");
+    return swal(word, content, "info");
   },
   major_tr: function() {
     let word = "学分进修基准"
@@ -75,7 +75,7 @@ const Modal = {
       "\n👉副专业 : 需要包括副专业的专业必修6学分以上" +
       "\n👉教职 : 确认教职过程进修情况请联系(Tel.02-820-5080)" +
       "\n👉总进修学分 : 66 学分以上(2年级插班生：99学分以上)"
-    swal(word, content, "info");
+    return swal(word, content, "info");
   }
 }
 
@@ -142,30 +142,30 @@ const Result = {
 
     if (common_kor_point == 2 && core_total_point >= 9 && liberal_total_point > 45) {
       if (common_eng_point >= 4 && common_etc_point == 8) {
-        swal("教养领域结果", word, "warning")
+        return swal("教养领域结果", word, "warning")
       } else if (common_eng_point <= 4 && common_eng_ex && common_etc_point == 8) {
-        swal("教养领域结果", word, "warning")
+        return swal("教养领域结果", word, "warning")
       } else if (common_eng_point >= 4 && common_etc_point >= 6 && account_check_SF) {
-        swal("教养领域结果", word, "warning")
+        return swal("教养领域结果", word, "warning")
       } else if (common_eng_point <= 4 && common_eng_ex && common_etc_point >= 6 && account_check_SF) {
-        swal("教养领域结果", word, "warning")
+        return swal("教养领域结果", word, "warning")
       } else {
-        swal("教养领域结果", word, "error")
+        return swal("教养领域结果", word, "error")
       }
     } else if (common_kor_point == 2 && core_total_point >= 9 && liberal_total_point <= 45) {
       if (common_eng_point >= 4 && common_etc_point == 8) {
-        swal("教养领域结果", word, "success")
+        return swal("教养领域结果", word, "success")
       } else if (common_eng_point <= 4 && common_eng_ex && common_etc_point == 8) {
-        swal("教养领域结果", word, "success")
+        return swal("教养领域结果", word, "success")
       } else if (common_eng_point >= 4 && common_etc_point >= 6 && account_check_SF) {
-        swal("教养领域结果", word, "success")
+        return swal("教养领域结果", word, "success")
       } else if (common_eng_point <= 4 && common_eng_ex && common_etc_point >= 6 && account_check_SF) {
-        swal("教养领域结果", word, "success")
+        return swal("教养领域结果", word, "success")
       } else {
-        swal("教养领域结果", word, "error")
+        return swal("教养领域结果", word, "error")
       }
     } else {
-      swal("教养领域结果", word, "error")
+      return swal("教养领域结果", word, "error")
     }
   },
   lib2015: function() {
@@ -252,30 +252,30 @@ const Result = {
 
     if (common_kor_point == 2 && core_total_point >= 11 && MACH1 >= MACH1_st && MACH2 >= MACH2_st && liberal_total_point > 45) {
       if (common_eng_point == 2 && common_etc_point == 8) {
-        swal("教养领域结果", word, "warning")
+        return swal("教养领域结果", word, "warning")
       } else if (common_eng_point <= 2 && common_eng_ex && common_etc_point == 8) {
-        swal("教养领域结果", word, "warning")
+        return swal("教养领域结果", word, "warning")
       } else if (common_eng_point == 2 && common_etc_point >= 6 && account_check_SF) {
-        swal("教养领域结果", word, "warning")
+        return swal("教养领域结果", word, "warning")
       } else if (common_eng_point <= 2 && common_eng_ex && common_etc_point >= 6 && account_check_SF) {
-        swal("教养领域结果", word, "warning")
+        return swal("教养领域结果", word, "warning")
       } else {
-        swal("教养领域结果", word, "error")
+        return swal("教养领域结果", word, "error")
       }
     } else if (common_kor_point == 2 && core_total_point >= 11 && MACH1 >= MACH1_st && MACH2 >= MACH2_st && liberal_total_point <= 45) {
       if (common_eng_point == 2 && common_etc_point == 8) {
-        swal("教养领域结果", word, "success")
+        return swal("教养领域结果", word, "success")
       } else if (common_eng_point <= 2 && common_eng_ex && common_etc_point == 8) {
-        swal("教养领域结果", word, "success")
+        return swal("教养领域结果", word, "success")
       } else if (common_eng_point == 2 && common_etc_point >= 6 && account_check_SF) {
-        swal("教养领域结果", word, "success")
+        return swal("教养领域结果", word, "success")
       } else if (common_eng_point <= 2 && common_eng_ex && common_etc_point >= 6 && account_check_SF) {
-        swal("教养领域结果", word, "success")
+        return swal("教养领域结果", word, "success")
       } else {
-        swal("教养领域结果", word, "error")
+        return swal("教养领域结果", word, "error")
       }
     } else {
-      swal("教养领域结果", word, "error")
+      return swal("教养领域结果", word, "error")
     }
   },
   lib2016: function() {
@@ -406,30 +406,30 @@ const Result = {
 
     if (common_kor_point == 2 && Core1 && Core2 && Core3 && Core4 && Core5 && core_total_point >= 14 && MACH1 >= MACH1_st && MACH2 >= MACH2_st && liberal_total_point > 45) {
       if (common_eng_point == 2 && common_etc_point >= cometcst) {
-        swal("教养领域结果", word, "warning")
+        return swal("教养领域结果", word, "warning")
       } else if (common_eng_point <= 2 && common_eng_ex && common_etc_point >= cometcst) {
-        swal("教养领域结果", word, "warning")
+        return swal("教养领域结果", word, "warning")
       } else if (common_eng_point == 2 && common_etc_point >= [cometcst - 2] && account_check_SF) {
-        swal("教养领域结果", word, "warning")
+        return swal("教养领域结果", word, "warning")
       } else if (common_eng_point <= 2 && common_eng_ex && common_etc_point >= [cometcst - 2] && account_check_SF) {
-        swal("教养领域结果", word, "warning")
+        return swal("教养领域结果", word, "warning")
       } else {
-        swal("教养领域结果", word, "error")
+        return swal("教养领域结果", word, "error")
       }
     } else if (common_kor_point == 2 && Core1 && Core2 && Core3 && Core4 && Core5 && core_total_point >= 14 && MACH1 >= MACH1_st && MACH2 >= MACH2_st && liberal_total_point <= 45) {
       if (common_eng_point == 2 && common_etc_point >= cometcst) {
-        swal("教养领域结果", word, "success")
+        return swal("教养领域结果", word, "success")
       } else if (common_eng_point <= 2 && common_eng_ex && common_etc_point >= cometcst) {
-        swal("教养领域结果", word, "success")
+        return swal("教养领域结果", word, "success")
       } else if (common_eng_point == 2 && common_etc_point >= [cometcst - 2] && account_check_SF) {
-        swal("教养领域结果", word, "success")
+        return swal("教养领域结果", word, "success")
       } else if (common_eng_point <= 2 && common_eng_ex && common_etc_point >= [cometcst - 2] && account_check_SF) {
-        swal("教养领域结果", word, "success")
+        return swal("教养领域结果", word, "success")
       } else {
-        swal("教养领域结果", word, "error")
+        return swal("教养领域结果", word, "error")
       }
     } else {
-      swal("教养领域结果", word, "error")
+      return swal("教养领域结果", word, "error")
     }
   },
   etc: function() {
@@ -483,13 +483,13 @@ const Result = {
     }
 
     if (English_result && Hanja_result && Korean_result && Paper_result && Paper_result2 && Average_result >= 2) {
-      swal("其他毕业条件结果", word, "success");
+      return swal("其他毕业条件结果", word, "success");
     } else if (Average_result >= 2) {
       if (!English_result || !Hanja_result || !Korean_result || !Paper_result || !Paper_result2) {
-        swal("其他毕业条件结果", word, "warning");
+        return swal("其他毕业条件结果", word, "warning");
       }
     } else if (Average_result <= 2) {
-      swal("其他毕业条件结果", word, "error");
+      return swal("其他毕业条件结果", word, "error");
     }
   },
   major: function() {
@@ -674,121 +674,121 @@ const Result = {
     if (Basepoint >= BaseStandard && Necepoint >= NeceStandard && Majorpoint >= Majorstandard && TotalPoint >= TotalStandard) {
       if (Minorcheck && Teachingcheck) {
         if (Multimajortext.includes("심화")) {
-          swal("专业领域结果", word, "success")
+          return swal("专业领域结果", word, "success")
         } else if (Multimajortext.includes("복수")) {
           if (Doublepoint >= 45) {
-            swal("专业领域结果", word, "success")
+            return swal("专业领域结果", word, "success")
           } else {
-            swal("专业领域结果", word, "error")
+            return swal("专业领域结果", word, "error")
           }
         } else if (Multimajortext.includes("연계")) {
           if (Linkpoint >= 36) {
-            swal("专业领域结果", word, "success")
+            return swal("专业领域结果", word, "success")
           } else {
-            swal("专业领域结果", word, "error")
+            return swal("专业领域结果", word, "error")
           }
         } else if (Multimajortext.includes("융합")) {
           if (Fusionpoint >= FusionStandard) {
-            swal("专业领域结果", word, "success")
+            return swal("专业领域结果", word, "success")
           } else {
-            swal("专业领域结果", word, "error")
+            return swal("专业领域结果", word, "error")
           }
         } else if (Multimajortext.includes("설계")) {
           if (Planpoint >= 36) {
-            swal("专业领域结果", word, "success")
+            return swal("专业领域结果", word, "success")
           } else {
-            swal("专业领域结果", word, "error")
+            return swal("专业领域结果", word, "error")
           }
         }
       } else if (Minorpoint >= 21 && Teachingcheck) {
         if (Multimajortext.includes("심화")) {
-          swal("专业领域结果", word, "success")
+          return swal("专业领域结果", word, "success")
         } else if (Multimajortext.includes("복수")) {
           if (Doublepoint >= 45) {
-            swal("专业领域结果", word, "success")
+            return swal("专业领域结果", word, "success")
           } else {
-            swal("专业领域结果", word, "error")
+            return swal("专业领域结果", word, "error")
           }
         } else if (Multimajortext.includes("연계")) {
           if (Linkpoint >= 36) {
-            swal("专业领域结果", word, "success")
+            return swal("专业领域结果", word, "success")
           } else {
-            swal("专业领域结果", word, "error")
+            return swal("专业领域结果", word, "error")
           }
         } else if (Multimajortext.includes("융합")) {
           if (Fusionpoint >= FusionStandard) {
-            swal("专业领域结果", word, "success")
+            return swal("专业领域结果", word, "success")
           } else {
-            swal("专业领域结果", word, "error")
+            return swal("专业领域结果", word, "error")
           }
         } else if (Multimajortext.includes("설계")) {
           if (Planpoint >= 36) {
-            swal("专业领域结果", word, "success")
+            return swal("专业领域结果", word, "success")
           } else {
-            swal("专业领域结果", word, "error")
+            return swal("专业领域结果", word, "error")
           }
         }
       } else if (Minorpoint >= 21 && Teachingpoint >= 22) {
         if (Multimajortext.includes("심화")) {
-          swal("专业领域结果", word, "success")
+          return swal("专业领域结果", word, "success")
         } else if (Multimajortext.includes("복수")) {
           if (Doublepoint >= 45) {
-            swal("专业领域结果", word, "success")
+            return swal("专业领域结果", word, "success")
           } else {
-            swal("专业领域结果", word, "error")
+            return swal("专业领域结果", word, "error")
           }
         } else if (Multimajortext.includes("연계")) {
           if (Linkpoint >= 36) {
-            swal("专业领域结果", word, "success")
+            return swal("专业领域结果", word, "success")
           } else {
-            swal("专业领域结果", word, "error")
+            return swal("专业领域结果", word, "error")
           }
         } else if (Multimajortext.includes("융합")) {
           if (Fusionpoint >= FusionStandard) {
-            swal("专业领域结果", word, "success")
+            return swal("专业领域结果", word, "success")
           } else {
-            swal("专业领域结果", word, "error")
+            return swal("专业领域结果", word, "error")
           }
         } else if (Multimajortext.includes("설계")) {
           if (Planpoint >= 36) {
-            swal("专业领域结果", word, "success")
+            return swal("专业领域结果", word, "success")
           } else {
-            swal("专业领域结果", word, "error")
+            return swal("专业领域结果", word, "error")
           }
         }
       } else if (Minorcheck && Teachingpoint >= 22) {
         if (Multimajortext.includes("심화")) {
-          swal("专业领域结果", word, "success")
+          return swal("专业领域结果", word, "success")
         } else if (Multimajortext.includes("복수")) {
           if (Doublepoint >= 45) {
-            swal("专业领域结果", word, "success")
+            return swal("专业领域结果", word, "success")
           } else {
-            swal("专业领域结果", word, "error")
+            return swal("专业领域结果", word, "error")
           }
         } else if (Multimajortext.includes("연계")) {
           if (Linkpoint >= 36) {
-            swal("专业领域结果", word, "success")
+            return swal("专业领域结果", word, "success")
           } else {
-            swal("专业领域结果", word, "error")
+            return swal("专业领域结果", word, "error")
           }
         } else if (Multimajortext.includes("융합")) {
           if (Fusionpoint >= FusionStandard) {
-            swal("专业领域结果", word, "success")
+            return swal("专业领域结果", word, "success")
           } else {
-            swal("专业领域结果", word, "error")
+            return swal("专业领域结果", word, "error")
           }
         } else if (Multimajortext.includes("설계")) {
           if (Planpoint >= 36) {
-            swal("专业领域结果", word, "success")
+            return swal("专业领域结果", word, "success")
           } else {
-            swal("专业领域结果", word, "error")
+            return swal("专业领域结果", word, "error")
           }
         }
       } else {
-        swal("专业领域结果", word, "error")
+        return swal("专业领域结果", word, "error")
       }
     } else {
-      swal("专业领域结果", word, "error")
+      return swal("专业领域结果", word, "error")
     }
   },
   basenece2015: function(Majorstandard) {
@@ -923,121 +923,121 @@ const Result = {
     if (Basepoint >= BaseStandard && Necepoint >= NeceStandard && Majorpoint >= Majorstandard && TotalPoint >= TotalStandard) {
       if (Minorcheck && Teachingcheck) {
         if (Multimajortext.includes("심화")) {
-          swal("专业领域结果", word, "success")
+          return swal("专业领域结果", word, "success")
         } else if (Multimajortext.includes("복수")) {
           if (Doublepoint >= 45) {
-            swal("专业领域结果", word, "success")
+            return swal("专业领域结果", word, "success")
           } else {
-            swal("专业领域结果", word, "error")
+            return swal("专业领域结果", word, "error")
           }
         } else if (Multimajortext.includes("연계")) {
           if (Linkpoint >= 36) {
-            swal("专业领域结果", word, "success")
+            return swal("专业领域结果", word, "success")
           } else {
-            swal("专业领域结果", word, "error")
+            return swal("专业领域结果", word, "error")
           }
         } else if (Multimajortext.includes("융합")) {
           if (Fusionpoint >= FusionStandard) {
-            swal("专业领域结果", word, "success")
+            return swal("专业领域结果", word, "success")
           } else {
-            swal("专业领域结果", word, "error")
+            return swal("专业领域结果", word, "error")
           }
         } else if (Multimajortext.includes("설계")) {
           if (Planpoint >= 36) {
-            swal("专业领域结果", word, "success")
+            return swal("专业领域结果", word, "success")
           } else {
-            swal("专业领域结果", word, "error")
+            return swal("专业领域结果", word, "error")
           }
         }
       } else if (Minorpoint >= 21 && Teachingcheck) {
         if (Multimajortext.includes("심화")) {
-          swal("专业领域结果", word, "success")
+          return swal("专业领域结果", word, "success")
         } else if (Multimajortext.includes("복수")) {
           if (Doublepoint >= 45) {
-            swal("专业领域结果", word, "success")
+            return swal("专业领域结果", word, "success")
           } else {
-            swal("专业领域结果", word, "error")
+            return swal("专业领域结果", word, "error")
           }
         } else if (Multimajortext.includes("연계")) {
           if (Linkpoint >= 36) {
-            swal("专业领域结果", word, "success")
+            return swal("专业领域结果", word, "success")
           } else {
-            swal("专业领域结果", word, "error")
+            return swal("专业领域结果", word, "error")
           }
         } else if (Multimajortext.includes("융합")) {
           if (Fusionpoint >= FusionStandard) {
-            swal("专业领域结果", word, "success")
+            return swal("专业领域结果", word, "success")
           } else {
-            swal("专业领域结果", word, "error")
+            return swal("专业领域结果", word, "error")
           }
         } else if (Multimajortext.includes("설계")) {
           if (Planpoint >= 36) {
-            swal("专业领域结果", word, "success")
+            return swal("专业领域结果", word, "success")
           } else {
-            swal("专业领域结果", word, "error")
+            return swal("专业领域结果", word, "error")
           }
         }
       } else if (Minorpoint >= 21 && Teachingpoint >= 22) {
         if (Multimajortext.includes("심화")) {
-          swal("专业领域结果", word, "success")
+          return swal("专业领域结果", word, "success")
         } else if (Multimajortext.includes("복수")) {
           if (Doublepoint >= 45) {
-            swal("专业领域结果", word, "success")
+            return swal("专业领域结果", word, "success")
           } else {
-            swal("专业领域结果", word, "error")
+            return swal("专业领域结果", word, "error")
           }
         } else if (Multimajortext.includes("연계")) {
           if (Linkpoint >= 36) {
-            swal("专业领域结果", word, "success")
+            return swal("专业领域结果", word, "success")
           } else {
-            swal("专业领域结果", word, "error")
+            return swal("专业领域结果", word, "error")
           }
         } else if (Multimajortext.includes("융합")) {
           if (Fusionpoint >= FusionStandard) {
-            swal("专业领域结果", word, "success")
+            return swal("专业领域结果", word, "success")
           } else {
-            swal("专业领域结果", word, "error")
+            return swal("专业领域结果", word, "error")
           }
         } else if (Multimajortext.includes("설계")) {
           if (Planpoint >= 36) {
-            swal("专业领域结果", word, "success")
+            return swal("专业领域结果", word, "success")
           } else {
-            swal("专业领域结果", word, "error")
+            return swal("专业领域结果", word, "error")
           }
         }
       } else if (Minorcheck && Teachingpoint >= 22) {
         if (Multimajortext.includes("심화")) {
-          swal("专业领域结果", word, "success")
+          return swal("专业领域结果", word, "success")
         } else if (Multimajortext.includes("복수")) {
           if (Doublepoint >= 45) {
-            swal("专业领域结果", word, "success")
+            return swal("专业领域结果", word, "success")
           } else {
-            swal("专业领域结果", word, "error")
+            return swal("专业领域结果", word, "error")
           }
         } else if (Multimajortext.includes("연계")) {
           if (Linkpoint >= 36) {
-            swal("专业领域结果", word, "success")
+            return swal("专业领域结果", word, "success")
           } else {
-            swal("专业领域结果", word, "error")
+            return swal("专业领域结果", word, "error")
           }
         } else if (Multimajortext.includes("융합")) {
           if (Fusionpoint >= FusionStandard) {
-            swal("专业领域结果", word, "success")
+            return swal("专业领域结果", word, "success")
           } else {
-            swal("专业领域结果", word, "error")
+            return swal("专业领域结果", word, "error")
           }
         } else if (Multimajortext.includes("설계")) {
           if (Planpoint >= 36) {
-            swal("专业领域结果", word, "success")
+            return swal("专业领域结果", word, "success")
           } else {
-            swal("专业领域结果", word, "error")
+            return swal("专业领域结果", word, "error")
           }
         }
       } else {
-        swal("专业领域结果", word, "error")
+        return swal("专业领域结果", word, "error")
       }
     } else {
-      swal("专业领域结果", word, "error")
+      return swal("专业领域结果", word, "error")
     }
   },
   basenece2016: function(Majorstandard) {
@@ -1184,121 +1184,121 @@ const Result = {
     if (Basepoint >= BaseStandard && Necepoint >= NeceStandard && Majorpoint >= Majorstandard && Freepoint >= 1 && CAUSeminar && TotalPoint >= TotalStandard) {
       if (Minorcheck && Teachingcheck) {
         if (Multimajortext.includes("심화")) {
-          swal("专业领域结果", word, "success")
+          return swal("专业领域结果", word, "success")
         } else if (Multimajortext.includes("복수")) {
           if (Doublepoint >= 45) {
-            swal("专业领域结果", word, "success")
+            return swal("专业领域结果", word, "success")
           } else {
-            swal("专业领域结果", word, "error")
+            return swal("专业领域结果", word, "error")
           }
         } else if (Multimajortext.includes("연계")) {
           if (Linkpoint >= 36) {
-            swal("专业领域结果", word, "success")
+            return swal("专业领域结果", word, "success")
           } else {
-            swal("专业领域结果", word, "error")
+            return swal("专业领域结果", word, "error")
           }
         } else if (Multimajortext.includes("융합")) {
           if (Fusionpoint >= FusionStandard) {
-            swal("专业领域结果", word, "success")
+            return swal("专业领域结果", word, "success")
           } else {
-            swal("专业领域结果", word, "error")
+            return swal("专业领域结果", word, "error")
           }
         } else if (Multimajortext.includes("설계")) {
           if (Planpoint >= 36) {
-            swal("专业领域结果", word, "success")
+            return swal("专业领域结果", word, "success")
           } else {
-            swal("专业领域结果", word, "error")
+            return swal("专业领域结果", word, "error")
           }
         }
       } else if (Minorpoint >= 21 && Teachingcheck) {
         if (Multimajortext.includes("심화")) {
-          swal("专业领域结果", word, "success")
+          return swal("专业领域结果", word, "success")
         } else if (Multimajortext.includes("복수")) {
           if (Doublepoint >= 45) {
-            swal("专业领域结果", word, "success")
+            return swal("专业领域结果", word, "success")
           } else {
-            swal("专业领域结果", word, "error")
+            return swal("专业领域结果", word, "error")
           }
         } else if (Multimajortext.includes("연계")) {
           if (Linkpoint >= 36) {
-            swal("专业领域结果", word, "success")
+            return swal("专业领域结果", word, "success")
           } else {
-            swal("专业领域结果", word, "error")
+            return swal("专业领域结果", word, "error")
           }
         } else if (Multimajortext.includes("융합")) {
           if (Fusionpoint >= FusionStandard) {
-            swal("专业领域结果", word, "success")
+            return swal("专业领域结果", word, "success")
           } else {
-            swal("专业领域结果", word, "error")
+            return swal("专业领域结果", word, "error")
           }
         } else if (Multimajortext.includes("설계")) {
           if (Planpoint >= 36) {
-            swal("专业领域结果", word, "success")
+            return swal("专业领域结果", word, "success")
           } else {
-            swal("专业领域结果", word, "error")
+            return swal("专业领域结果", word, "error")
           }
         }
       } else if (Minorpoint >= 21 && Teachingpoint >= 22) {
         if (Multimajortext.includes("심화")) {
-          swal("专业领域结果", word, "success")
+          return swal("专业领域结果", word, "success")
         } else if (Multimajortext.includes("복수")) {
           if (Doublepoint >= 45) {
-            swal("专业领域结果", word, "success")
+            return swal("专业领域结果", word, "success")
           } else {
-            swal("专业领域结果", word, "error")
+            return swal("专业领域结果", word, "error")
           }
         } else if (Multimajortext.includes("연계")) {
           if (Linkpoint >= 36) {
-            swal("专业领域结果", word, "success")
+            return swal("专业领域结果", word, "success")
           } else {
-            swal("专业领域结果", word, "error")
+            return swal("专业领域结果", word, "error")
           }
         } else if (Multimajortext.includes("융합")) {
           if (Fusionpoint >= FusionStandard) {
-            swal("专业领域结果", word, "success")
+            return swal("专业领域结果", word, "success")
           } else {
-            swal("专业领域结果", word, "error")
+            return swal("专业领域结果", word, "error")
           }
         } else if (Multimajortext.includes("설계")) {
           if (Planpoint >= 36) {
-            swal("专业领域结果", word, "success")
+            return swal("专业领域结果", word, "success")
           } else {
-            swal("专业领域结果", word, "error")
+            return swal("专业领域结果", word, "error")
           }
         }
       } else if (Minorcheck && Teachingpoint >= 22) {
         if (Multimajortext.includes("심화")) {
-          swal("专业领域结果", word, "success")
+          return swal("专业领域结果", word, "success")
         } else if (Multimajortext.includes("복수")) {
           if (Doublepoint >= 45) {
-            swal("专业领域结果", word, "success")
+            return swal("专业领域结果", word, "success")
           } else {
-            swal("专业领域结果", word, "error")
+            return swal("专业领域结果", word, "error")
           }
         } else if (Multimajortext.includes("연계")) {
           if (Linkpoint >= 36) {
-            swal("专业领域结果", word, "success")
+            return swal("专业领域结果", word, "success")
           } else {
-            swal("专业领域结果", word, "error")
+            return swal("专业领域结果", word, "error")
           }
         } else if (Multimajortext.includes("융합")) {
           if (Fusionpoint >= FusionStandard) {
-            swal("专业领域结果", word, "success")
+            return swal("专业领域结果", word, "success")
           } else {
-            swal("专业领域结果", word, "error")
+            return swal("专业领域结果", word, "error")
           }
         } else if (Multimajortext.includes("설계")) {
           if (Planpoint >= 36) {
-            swal("专业领域结果", word, "success")
+            return swal("专业领域结果", word, "success")
           } else {
-            swal("专业领域结果", word, "error")
+            return swal("专业领域结果", word, "error")
           }
         }
       } else {
-        swal("专业领域结果", word, "error")
+        return swal("专业领域结果", word, "error")
       }
     } else {
-      swal("专业领域结果", word, "error")
+      return swal("专业领域结果", word, "error")
     }
   },
   major_tr: function() {
@@ -1491,129 +1491,129 @@ const Result = {
     if (Basepoint >= BaseStandard && Necepoint >= NeceStandard && Majorpoint >= Majorstandard && TotalPoint >= TotalStandard) {
       if (Minorcheck && Teachingcheck) {
         if (Multimajortext.includes("해당")) {
-          swal("学分进修结果", word, "success")
+          return swal("学分进修结果", word, "success")
         } else if (Multimajortext.includes("심화")) {
-          swal("学分进修结果", word, "success")
+          return swal("学分进修结果", word, "success")
         } else if (Multimajortext.includes("복수")) {
           if (Doublepoint >= 45) {
-            swal("学分进修结果", word, "success")
+            return swal("学分进修结果", word, "success")
           } else {
-            swal("学分进修结果", word, "error")
+            return swal("学分进修结果", word, "error")
           }
         } else if (Multimajortext.includes("연계")) {
           if (Linkpoint >= 36) {
-            swal("学分进修结果", word, "success")
+            return swal("学分进修结果", word, "success")
           } else {
-            swal("学分进修结果", word, "error")
+            return swal("学分进修结果", word, "error")
           }
         } else if (Multimajortext.includes("융합")) {
           if (Fusionpoint >= FusionStandard) {
-            swal("学分进修结果", word, "success")
+            return swal("学分进修结果", word, "success")
           } else {
-            swal("学分进修结果", word, "error")
+            return swal("学分进修结果", word, "error")
           }
         } else if (Multimajortext.includes("설계")) {
           if (Planpoint >= 36) {
-            swal("学分进修结果", word, "success")
+            return swal("学分进修结果", word, "success")
           } else {
-            swal("学分进修结果", word, "error")
+            return swal("学分进修结果", word, "error")
           }
         }
       } else if (Minorpoint >= 21 && Teachingcheck) {
         if (Multimajortext.includes("해당")) {
-          swal("学分进修结果", word, "success")
+          return swal("学分进修结果", word, "success")
         } else if (Multimajortext.includes("심화")) {
-          swal("学分进修结果", word, "success")
+          return swal("学分进修结果", word, "success")
         } else if (Multimajortext.includes("복수")) {
           if (Doublepoint >= 45) {
-            swal("学分进修结果", word, "success")
+            return swal("学分进修结果", word, "success")
           } else {
-            swal("学分进修结果", word, "error")
+            return swal("学分进修结果", word, "error")
           }
         } else if (Multimajortext.includes("연계")) {
           if (Linkpoint >= 36) {
-            swal("学分进修结果", word, "success")
+            return swal("学分进修结果", word, "success")
           } else {
-            swal("学分进修结果", word, "error")
+            return swal("学分进修结果", word, "error")
           }
         } else if (Multimajortext.includes("융합")) {
           if (Fusionpoint >= FusionStandard) {
-            swal("学分进修结果", word, "success")
+            return swal("学分进修结果", word, "success")
           } else {
-            swal("学分进修结果", word, "error")
+            return swal("学分进修结果", word, "error")
           }
         } else if (Multimajortext.includes("설계")) {
           if (Planpoint >= 36) {
-            swal("学分进修结果", word, "success")
+            return swal("学分进修结果", word, "success")
           } else {
-            swal("学分进修结果", word, "error")
+            return swal("学分进修结果", word, "error")
           }
         }
       } else if (Minorpoint >= 21 && Teachingpoint >= 22) {
         if (Multimajortext.includes("해당")) {
-          swal("学分进修结果", word, "success")
+          return swal("学分进修结果", word, "success")
         } else if (Multimajortext.includes("심화")) {
-          swal("学分进修结果", word, "success")
+          return swal("学分进修结果", word, "success")
         } else if (Multimajortext.includes("복수")) {
           if (Doublepoint >= 45) {
-            swal("学分进修结果", word, "success")
+            return swal("学分进修结果", word, "success")
           } else {
-            swal("学分进修结果", word, "error")
+            return swal("学分进修结果", word, "error")
           }
         } else if (Multimajortext.includes("연계")) {
           if (Linkpoint >= 36) {
-            swal("学分进修结果", word, "success")
+            return swal("学分进修结果", word, "success")
           } else {
-            swal("学分进修结果", word, "error")
+            return swal("学分进修结果", word, "error")
           }
         } else if (Multimajortext.includes("융합")) {
           if (Fusionpoint >= FusionStandard) {
-            swal("学分进修结果", word, "success")
+            return swal("学分进修结果", word, "success")
           } else {
-            swal("学分进修结果", word, "error")
+            return swal("学分进修结果", word, "error")
           }
         } else if (Multimajortext.includes("설계")) {
           if (Planpoint >= 36) {
-            swal("学分进修结果", word, "success")
+            return swal("学分进修结果", word, "success")
           } else {
-            swal("学分进修结果", word, "error")
+            return swal("学分进修结果", word, "error")
           }
         }
       } else if (Minorcheck && Teachingpoint >= 22) {
         if (Multimajortext.includes("해당")) {
-          swal("学分进修结果", word, "success")
+          return swal("学分进修结果", word, "success")
         } else if (Multimajortext.includes("심화")) {
-          swal("学分进修结果", word, "success")
+          return swal("学分进修结果", word, "success")
         } else if (Multimajortext.includes("복수")) {
           if (Doublepoint >= 45) {
-            swal("学分进修结果", word, "success")
+            return swal("学分进修结果", word, "success")
           } else {
-            swal("学分进修结果", word, "error")
+            return swal("学分进修结果", word, "error")
           }
         } else if (Multimajortext.includes("연계")) {
           if (Linkpoint >= 36) {
-            swal("学分进修结果", word, "success")
+            return swal("学分进修结果", word, "success")
           } else {
-            swal("学分进修结果", word, "error")
+            return swal("学分进修结果", word, "error")
           }
         } else if (Multimajortext.includes("융합")) {
           if (Fusionpoint >= FusionStandard) {
-            swal("学分进修结果", word, "success")
+            return swal("学分进修结果", word, "success")
           } else {
-            swal("学分进修结果", word, "error")
+            return swal("学分进修结果", word, "error")
           }
         } else if (Multimajortext.includes("설계")) {
           if (Planpoint >= 36) {
-            swal("学分进修结果", word, "success")
+            return swal("学分进修结果", word, "success")
           } else {
-            swal("学分进修结果", word, "error")
+            return swal("学分进修结果", word, "error")
           }
         }
       } else {
-        swal("学分进修结果", word, "error")
+        return swal("学分进修结果", word, "error")
       }
     } else {
-      swal("学分进修结果", word, "error")
+      return swal("学分进修结果", word, "error")
     }
   }
 }
