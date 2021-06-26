@@ -83,9 +83,9 @@
         "\n 👉本CHECKLIST只供参考,确认相关信息之后请再联系学科办公室加以确认 ❗ "
 
       if (Year == 0) {
-        swal("请选择入学时期!", "", "error")
+        return swal("请选择入学时期!", "", "error")
       } else {
-        swal("注意",
+        return swal("注意",
           word, "warning").then(okay => {
           if (EntStyle == "entrance") {
             if (Year >= 2016) {

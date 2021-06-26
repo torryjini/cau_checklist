@@ -78,9 +78,9 @@
         "\n👉Please contact the psychology department office for confirmation after using the checklist."
 
       if (Year == 0) {
-        swal("Select your entrance year!", "", "error")
+        return swal("Select your entrance year!", "", "error")
       } else {
-        swal("Warning",
+        return swal("Warning",
           word, "warning").then(okay => {
           if (EntStyle == "entrance") {
             if (Year >= 2016) {
