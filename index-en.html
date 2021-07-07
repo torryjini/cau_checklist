@@ -80,6 +80,8 @@ app<!DOCTYPE html>
       if (Year == 0) {
         return swal("Select your entrance year!", "", "error")
       } else {
+        localStorage.setItem("usertype", entStyle);
+        localStorage.setItem("useryear", Year);
         return swal("Warning",
           word, "warning").then(okay => {
           if (entStyle == "entrance") {
@@ -95,6 +97,29 @@ app<!DOCTYPE html>
           }
         });
       }
+
+      function linkSavedInfo() {
+        const savedUserType = localStorage.getItem("usertype");
+        const savedUserYear = localStorage.getItem("useryear");
+
+        if(savedUserType === null || savedUserYear === null) {
+          return ;
+        } else if(savedUserType === "entrance") {
+          if (savedUserYear === "2016") {
+            window.location.href = "eng/2016-en.html";
+          } else if(savedUserYear === "2015") {
+            window.location.href = "eng/2015-en.html";
+          } else if(savedUserYear === "2014") {
+            window.location.href = "eng/12to14-en.html";
+          } else {
+            return ;
+          }
+        } else if (savedUserType === "transfer") {
+          window.location.href = "eng/transfer-en.html";
+        }
+      }
+
+      linkSavedInfo();
     }
   </script>
   <!-- Go to www.addthis.com/dashboard to customize your tools -->

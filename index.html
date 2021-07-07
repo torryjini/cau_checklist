@@ -37,7 +37,7 @@
       <img src="white_logo.png" id="index_logo">
     </header>
     <ul>
-      <li>언 어<br>
+      <li>한/A/文<br>
         <select class="index_select" id="langbox" onchange="location = this.value">
           <option value="#">한국어</option>
           <option value="index-ch.html">中 文</option>
@@ -72,24 +72,20 @@
 
   <script>
     function doLink() {
-      const EntStyle = document.getElementById("ent_style").value;
+      const entStyle = document.getElementById("ent_style").value;
       const Year = document.getElementById('index-year').value;
       const word = "👉본 체크리스트는 수강신청 및 졸업준비를 위한 참고용입니다." +
         "\n👉학점 기준 및 졸업요건 통과 여부를 확인할 수 있습니다." +
         "\n👉사용 후, 학과 사무실에 문의하여 확인하시기 바랍니다."
 
-      const savedUserLang = localStorage.getItem("userLang");
-      const savedUserType = localStorage.getItem("userType");
-      const savedUserYear = localStorage.getItem("userYear");
-
       if (Year == 0) {
         return swal("입학시기를 선택하세요!", "", "error")
       } else {
-        localStorage.setItem("usertype", EntStyle);
+        localStorage.setItem("usertype", entStyle);
         localStorage.setItem("useryear", Year);
         return swal("주의사항",
           word, "warning").then(okay => {
-          if (EntStyle == "entrance") {
+          if (entStyle == "entrance") {
             if (Year >= 2016) {
               window.location.href = "kor/2016.html";
             } else if (Year == 2015) {
@@ -97,12 +93,35 @@
             } else if (Year == 2014) {
               window.location.href = "kor/12to14.html";
             }
-          } else if (EntStyle == "transfer") {
+          } else if (entStyle == "transfer") {
             window.location.href = "kor/transfer.html";
           }
         });
       }
     }
+
+    function linkSavedInfo() {
+      const savedUserType = localStorage.getItem("usertype");
+      const savedUserYear = localStorage.getItem("useryear");
+
+      if(savedUserType === null || savedUserYear === null) {
+        return ;
+      } else if(savedUserType === "entrance") {
+        if (savedUserYear === "2016") {
+          window.location.href = "kor/2016.html";
+        } else if(savedUserYear === "2015") {
+          window.location.href = "kor/2015.html";
+        } else if(savedUserYear === "2014") {
+          window.location.href = "kor/12to14.html";
+        } else {
+          return ;
+        }
+      } else if (savedUserType === "transfer") {
+        window.location.href = "kor/transfer.html";
+      }
+    }
+
+    linkSavedInfo();
   </script>
   <!-- Go to www.addthis.com/dashboard to customize your tools -->
   <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5f5c861cc88b9f15"></script>

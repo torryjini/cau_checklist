@@ -85,6 +85,8 @@
       if (Year == 0) {
         return swal("请选择入学时期!", "", "error")
       } else {
+        localStorage.setItem("usertype", entStyle);
+        localStorage.setItem("useryear", Year);
         return swal("注意",
           word, "warning").then(okay => {
           if (entStyle == "entrance") {
@@ -101,6 +103,29 @@
         });
       }
     }
+
+    function linkSavedInfo() {
+      const savedUserType = localStorage.getItem("usertype");
+      const savedUserYear = localStorage.getItem("useryear");
+
+      if(savedUserType === null || savedUserYear === null) {
+        return ;
+      } else if(savedUserType === "entrance") {
+        if (savedUserYear === "2016") {
+          window.location.href = "chi/2016-ch.html";
+        } else if(savedUserYear === "2015") {
+          window.location.href = "chi/2015-ch.html";
+        } else if(savedUserYear === "2014") {
+          window.location.href = "chi/12to14-ch.html";
+        } else {
+          return ;
+        }
+      } else if (savedUserType === "transfer") {
+        window.location.href = "chi/transfer-ch.html";
+      }
+    }
+
+    linkSavedInfo();
   </script>
   <!-- Go to www.addthis.com/dashboard to customize your tools -->
   <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5f5c861cc88b9f15"></script>

@@ -5,6 +5,10 @@ function index_info() {
   swal(title, word, "info")
 }
 
+function resetSavedInfo() {
+  localStorage.removeItem("usertype");
+  localStorage.removeItem("useryear");
+}
 
 function yearchanges(fr) {
   if (fr == "entrance") {
