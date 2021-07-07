@@ -72,15 +72,21 @@
 
   <script>
     function doLink() {
-      var EntStyle = document.getElementById("ent_style").value;
-      var Year = document.getElementById('index-year').value;
-      var word = "👉본 체크리스트는 수강신청 및 졸업준비를 위한 참고용입니다." +
+      const EntStyle = document.getElementById("ent_style").value;
+      const Year = document.getElementById('index-year').value;
+      const word = "👉본 체크리스트는 수강신청 및 졸업준비를 위한 참고용입니다." +
         "\n👉학점 기준 및 졸업요건 통과 여부를 확인할 수 있습니다." +
         "\n👉사용 후, 학과 사무실에 문의하여 확인하시기 바랍니다."
+
+      const savedUserLang = localStorage.getItem("userLang");
+      const savedUserType = localStorage.getItem("userType");
+      const savedUserYear = localStorage.getItem("userYear");
 
       if (Year == 0) {
         return swal("입학시기를 선택하세요!", "", "error")
       } else {
+        localStorage.setItem("usertype", EntStyle);
+        localStorage.setItem("useryear", Year);
         return swal("주의사항",
           word, "warning").then(okay => {
           if (EntStyle == "entrance") {
