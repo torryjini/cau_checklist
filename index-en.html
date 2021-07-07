@@ -71,7 +71,7 @@ app<!DOCTYPE html>
 
   <script>
     function doLink() {
-      const EntStyle = document.getElementById("ent_style").value;
+      const entStyle = document.getElementById("ent_style").value;
       const Year = document.getElementById('index-year').value;
       const word = "👉This checklist is to be used as a reference for enrollment and graduation preparation." +
         "\n👉You can check your graduation requirements such as required GPA and etc." +
@@ -82,7 +82,7 @@ app<!DOCTYPE html>
       } else {
         return swal("Warning",
           word, "warning").then(okay => {
-          if (EntStyle == "entrance") {
+          if (entStyle == "entrance") {
             if (Year >= 2016) {
               window.location.href = "eng/2016-en.html";
             } else if (Year == 2015) {
@@ -90,7 +90,7 @@ app<!DOCTYPE html>
             } else if (Year == 2014) {
               window.location.href = "eng/12to14-en.html";
             }
-          } else if (EntStyle == "transfer") {
+          } else if (entStyle == "transfer") {
             window.location.href = "eng/transfer-en.html";
           }
         });

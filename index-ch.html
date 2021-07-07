@@ -76,7 +76,7 @@
 
   <script>
     function doLink() {
-      const EntStyle = document.getElementById("ent_style").value;
+      const entStyle = document.getElementById("ent_style").value;
       const Year = document.getElementById('index-year').value;
       const word = "👉本CHECKLIST可以确认关于学分,选课,毕业等的相关信息。" +
         "\n 👉同学们可以通过本CHECKLIST方便查找自己的学分进修情况以及所缺条件。😎" +
@@ -87,7 +87,7 @@
       } else {
         return swal("注意",
           word, "warning").then(okay => {
-          if (EntStyle == "entrance") {
+          if (entStyle == "entrance") {
             if (Year >= 2016) {
               window.location.href = "chi/2016-ch.html";
             } else if (Year == 2015) {
@@ -95,7 +95,7 @@
             } else if (Year == 2014) {
               window.location.href = "chi/12to14-ch.html";
             }
-          } else if (EntStyle == "transfer") {
+          } else if (entStyle == "transfer") {
             window.location.href = "chi/transfer-ch.html";
           }
         });
